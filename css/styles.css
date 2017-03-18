@@ -49,14 +49,14 @@ h1, h2, h3, h4, h5, h6{color:#2f2f2f; font-family:"Ubuntu",arial;}
 #introduction h2{font-size:3.231em; font-weight:bold; margin:0 0 5px 0;}
 #introduction p{font-size:1.154em; line-height:140%;}
 #introleft{float:left; width:540px; margin:0 0 25px 0;}
-#introquote{float:right; font-style:italic; font-size:1.15em; width:335px; background:url("../images/leftquotemark.png") no-repeat 0 0; padding:28px 0 0 45px; margin:20px 0 25px 0;}
-#introduction .quotename{float:right; height:27px; background:url("../images/rightquotemark.png") no-repeat right top; margin:10px 0 0 0; padding:0 50px 0 0; font:0.9em "Ubuntu"; color:#4086c6;}
-a.findoutmore, a.findoutmore:visited{padding:10px; font:0.9em "Ubuntu",arial; font-weight:bold; color:#fff; text-shadow:0 0 1px #1e5298; background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.12,rgb(109,171,229)),color-stop(0.56,rgb(59,126,189))); background-image:-moz-linear-gradient(center bottom,rgb(109,171,229) 12%,rgb(59,126,189) 56%); background-color:#468ac9; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; margin:13px 0 0 0; float:left;}
-a.findoutmore:hover{background-color:#2f2f2f; background-image:none; text-shadow:0 0 1px #000; text-decoration:none;}
+#introquote{float:right; font-style:italic; font-size:1.05em; width:335px; background:url("../images/leftquotemark.png") no-repeat 0 0; padding:28px 0 0 45px; margin:20px 0 25px 0;}
+#introduction .quotename{float:right; height:27px; background:url("../images/rightquotemark.png") no-repeat right top; margin:10px 0 0 0; padding:0 50px 0 0; font:0.95em "Ubuntu"; color:#4086c6;}
+a.largeButton, a.largeButton:visited{padding:7px 12px 7px 12px; font:0.9em "Ubuntu",arial; font-weight:bold; color:#fff; text-shadow:0 0 1px #1e5298; background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.12,rgb(109,171,229)),color-stop(0.56,rgb(59,126,189))); background-image:-moz-linear-gradient(center bottom,rgb(109,171,229) 12%,rgb(59,126,189) 56%); background-color:#468ac9; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; margin:13px 0 0 0; float:left;}
+a.largeButton:hover{background-color:#2f2f2f; background-image:none; text-shadow:0 0 1px #000; text-decoration:none;}
 
 /* Main Content */
 
-#maincontent{border-top:1px #dbdbdb solid; padding:25px 0 0 0; overflow:hidden;}
+#maincontent{border-top:1px #dbdbdb solid; padding:18px 0 0 0; overflow:hidden;}
 #aboutleft{float:left; width:540px;}
 #aboutleft h3{font-size:1.5em; font-weight:bold; margin:0 0 15px 0;}
 #aboutleft h4{font-size:1.3em; font-weight:bold; margin:0 0 15px 0;}
