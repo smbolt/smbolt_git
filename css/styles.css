@@ -63,7 +63,10 @@ a.largeButton:hover{background-color:#2f2f2f; background-image:none; text-shadow
 #aboutleft p{line-height:135%; margin:0 0 15px 0;}
 #experience{float:left; width:720px;}
 #experience h3{font-size:1.5em; font-weight:bold; margin:0 0 15px 0;}
-#experience h4{font-size:1.3em; font-weight:bold; margin:0 0 15px 0;}
+#experience h4{font-size:1.3em; font-weight:bold; margin:5px 0 5px 0;}
+#experience h4.orgname{color:#4086c6; padding-right: 15px;}
+#experience h4 a{text-decoration:underline; font-size:0.9em; font-weight:bold; margin:5px 0 5px 0; padding-right: 15px;}
+#experience h4 span.orgDates{font-size:0.9em; font-weight:normal;}
 #experience p{font-size:1.2em;line-height:135%; margin:0 0 15px 0;}
 #articlesright{float:right; width:380px;}
 #articlesright article{clear:both; margin:0 0 20px 0; overflow:hidden;}
@@ -164,6 +167,7 @@ a.readmore:hover{background-color:#2f2f2f; background-image:none; text-shadow:0 
 #introquote{display:none;}
 #aboutleft{width:320px; font-size:0.9em;}
 #experience{width:460px; font-size:0.9em;}
+#experience h4 {width:460px; font-size:0.9em;}
 #articlesright{width:320px; float:left; border-top:1px #dbdbdb solid; padding:20px 0 0 0; margin:10px 0 0 0;}
 #articlesright article{font-size:0.9em;}
 #articlesright figure{display:none;}
