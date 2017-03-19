@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6{color:#2f2f2f; font-family:"Ubuntu",arial;}
 /* Intro */
 
 #introduction{margin-top:25px;}
-#introduction h2{font-size:2.5em; font-weight:bold; margin:0 0 5px 0;}
+#introduction h2{font-size:2.3em; font-weight:bold; margin:0 0 5px 0;}
 #introduction p{font-size:1.154em; line-height:140%;}
 #introleft{float:left; width:540px; margin:0 0 25px 0;}
 #introquote{float:right; font-style:italic; font-size:1.05em; width:335px; background:url("../images/leftquotemark.png") no-repeat 0 0; padding:28px 0 0 45px; margin:20px 0 25px 0;}
