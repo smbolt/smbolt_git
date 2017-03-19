@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptedFileUtility", "EncryptedFileUtility.csproj", "{72124052-45E1-4EDE-BE30-99AE60E2F148}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{56250B5D-64FD-47E0-AC98-B64D27439DF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{D5B64C79-C19E-4EA8-9B74-6A750499496C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adsdi.GS", "..\Shared\GS\Adsdi.GS.csproj", "{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72124052-45E1-4EDE-BE30-99AE60E2F148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72124052-45E1-4EDE-BE30-99AE60E2F148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72124052-45E1-4EDE-BE30-99AE60E2F148}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{72124052-45E1-4EDE-BE30-99AE60E2F148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72124052-45E1-4EDE-BE30-99AE60E2F148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72124052-45E1-4EDE-BE30-99AE60E2F148}.Release|x86.ActiveCfg = Release|Any CPU
+		{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E}.Debug|x86.ActiveCfg = Debug|x86
+		{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E}.Debug|x86.Build.0 = Debug|x86
+		{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E}.Release|x86.ActiveCfg = Release|x86
+		{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72124052-45E1-4EDE-BE30-99AE60E2F148} = {56250B5D-64FD-47E0-AC98-B64D27439DF4}
+		{8AEE7EB5-E86D-4CC8-A9F1-6422B80E497E} = {D5B64C79-C19E-4EA8-9B74-6A750499496C}
+	EndGlobalSection
+EndGlobal

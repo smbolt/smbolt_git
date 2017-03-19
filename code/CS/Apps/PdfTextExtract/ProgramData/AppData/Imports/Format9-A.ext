@@ -1,0 +1,173 @@
+<ExtractSpecSet>
+  <ExtractSpec Name="Format9-A" RecogSpecName="Format9" Desc="Enable Wet/Damp Gas Settlement Statement">
+    <Tsd Name="ReportUnit" Iterate="True" IsElement="True" ElementName="ReportUnit">
+      <Cmd Code="SetTextStart(settle_gas_stmt.rpt)" />
+      <Cmd Code="SetTextEnd(totals [dec] [dec] [eol])" />
+      <TsdSet>
+        <Tsd Name="Header" IsElement="True" ElementName="ReportHeader">
+          <Cmd Code="SetTextStart()" />
+          <Cmd Code="SetTextEnd(lease &amp; contract information, exclude)" />
+          <Cmd Code="LocateToken(printed:,required,end)" />
+          <Cmd Code="ExtractNextToken([date]DatePrinted.MM/DD/YYYY,required)" />
+          <Cmd Code="ExtractNextToken([time]TimePrinted.H24:MM:SS,required)" />
+        </Tsd>
+        <Tsd Name="LeaseAndContract" IsElement="True" ElementName="LeaseAndContract">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(settlement summary, exclude)" />
+          <Cmd Code="LocateToken(pressure base [eol],end,required)" />
+          <Cmd Code="ExtractNextToken(ContractBtuCondition,required)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,8)" />
+          <Cmd Code="ExtractStoredToken([mm/yyyy]AccountingMonth.MM/DD/YYYY,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([mm/yyyy]ProductionMonth.MM/DD/YYYY,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]ContractPressureBase,last,required,remove)" />
+          <Cmd Code="ExtractStoredToken(ContractNumber,last,required,remove)" />
+          <Cmd Code="ExtractStoredToken(State,last,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]AllocationDecimal,last,required,remove)" />
+          <Cmd Code="ExtractStoredToken(LeaseNumber,last,required,remove)" />
+          <Cmd Code="ExtractStoredToken(LeaseName,join,required,remove)" />
+        </Tsd>
+        <Tsd Name="SettlementSummary" IsElement="True" ElementName="SettlementSummary">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(wellhead information liquid settlement,exclude)" />
+          <Cmd Code="LocateToken(operator name:,end,required)" />
+          <Cmd Code="ExtractNextLine(OperatorName,advanceToEol,required)" />
+          <Cmd Code="LocateToken(operator id:,end,required)" />
+          <Cmd Code="ExtractNextToken(OperatorId,required)" />
+          <Cmd Code="LocateToken(value value adjustments tax value [eol],end,required)" />
+          <Cmd Code="ExtractNextLine(CounterPartyName,advanceToEol,required)" />
+          <Cmd Code="LocateToken(ctr pty name: [eol],end,required)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,6)" />
+          <Cmd Code="ExtractStoredToken([dec]LiquidValue,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]GrossValue,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]FeesAndAdjustments,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]Tax,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]TaxReimbursement,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NetValue,0,required,remove)" />
+          <Cmd Code="LocateToken(ctr pty id:,end,required)" />
+          <Cmd Code="ExtractNextToken(CounterPartyId,required)" />
+        </Tsd>
+        <Tsd Name="WellheadLiquid" IsElement="True">
+          <Cmd Code="SetTextStart($priorEnd)" />
+					
+          <Cmd Code="SetTextEnd(residue settlement,exclude)" />
+          <Cmd Code="SetVariable([bool]IsEightColumn,find,recovered settlement liquid [eol])" />
+          <Cmd Code="LocateToken(gross wellhead,end,required)" />
+          <Cmd Code="ExtractNextToken([decn]WHGrossMCF,required)"  />
+          <Cmd Code="ExtractNextToken([decn]WHGrossMMBTU,required)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,numericOnly)"/>
+          <Cmd Code="ExtractStoredToken([dec]EthaneTheoGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]EthaneFixedRcvPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]EthaneRcvGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]EthaneRcvShrinkMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]EthaneContractPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]EthaneSettlementGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]EthanePrice,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="ExtractStoredToken([dec]EthaneLiquidValue,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,numericOnly)" />
+          <Cmd Code="ExtractStoredToken([dec]PropaneTheoGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]PropaneFixedRcvPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]PropaneRcvGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]PropaneRcvShrinkMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]PropaneContractPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]PropaneSettlementGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]PropanePrice,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="ExtractStoredToken([dec]PropaneLiquidValue,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="LocateToken(compressor fuel,end,required)" />
+          <Cmd Code="ExtractNextToken(WHCompressorFuelMCF,required,sr[signedParen1])" />
+          <Cmd Code="ExtractNextToken(WHCompressorFuelMMBTU,required,sr[signedParen1])" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,numericOnly)" />
+          <Cmd Code="ExtractStoredToken([dec]IsobutaneTheoGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]IsobutaneFixedRcvPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsobutaneRcvGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsobutaneRcvShrinkMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]IsobutaneContractPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsobutaneSettlementGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsobutanePrice,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsobutaneLiquidValue,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="LocateToken(net of compression,end,required)" />
+          <Cmd Code="ExtractNextToken([decn]WHNetOfCompressionMCF,required)"  />
+          <Cmd Code="ExtractNextToken([decn]WHNetOfCompressionMMBTU,required)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,numericOnly)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalButaneTheoGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]NormalButaneFixedRcvPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalButaneRcvGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalButaneRcvShrinkMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]NormalButaneContractPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalButaneSettlementGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalButanePrice,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalButaneLiquidValue,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="LocateToken(bypass,end,required)" />
+          <Cmd Code="ExtractNextToken(WHBypassMCF,required,sr[signedParen1])" />
+          <Cmd Code="ExtractNextToken(WHBypassMMBTU,required,sr[signedParen1])" />
+          <Cmd Code="TokenizeNextLine(numericOnly)" Break="True" />
+          <Cmd Code="ExtractStoredToken([dec]IsopentaneTheoGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]IsopentaneFixedRcvPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsopentaneRcvGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsopentaneRcvShrinkMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]IsopentaneContractPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsopentaneSettlementGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsopentanePrice,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="ExtractStoredToken([dec]IsopentaneLiquidValue,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,numericOnly)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalPentaneTheoGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]NormalPentaneFixedRcvPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalPentaneRcvGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalPentaneRcvShrinkMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]NormalPentaneContractPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalPentaneSettlementGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalPentanePrice,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="ExtractStoredToken([dec]NormalPentaneLiquidValue,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="LocateToken(system fuel,end,required)" />
+          <Cmd Code="ExtractNextToken(WHSystemFuelMCF,required,sr[signedParen1])" />
+          <Cmd Code="ExtractNextToken(WHSystemFuelMMBTU,required,sr[signedParen1])" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,numericOnly)" />
+          <Cmd Code="ExtractStoredToken([dec]HexaneTheoGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]HexaneFixedRcvPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]HexaneRcvGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]HexaneRcvShrinkMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]HexaneContractPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]HexaneSettlementGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]HexanePrice,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="ExtractStoredToken([dec]HexaneLiquidValue,0,requiredIf[IsEightColumn],remove)" />
+          <Cmd Code="LocateToken(plant fuel,end,required)" />
+          <Cmd Code="ExtractNextToken(WHPlantFuelMCF,required,sr[signedParen1])" />
+          <Cmd Code="ExtractNextToken(WHPlantFuelMMBTU,required,sr[signedParen1])" />
+          <Cmd Code="LocateToken(net delivered,end,required)" />
+          <Cmd Code="ExtractNextToken([decn]WHNetDeliveredMCF,required)"  />
+          <Cmd Code="ExtractNextToken([decn]WHNetDeliveredMMBTU,required)" />
+          <Cmd Code="LocateToken(compressibility factor:,end,required)" />
+          <Cmd Code="ExtractNextToken([decn]CompressibilityFactor,required)"  />
+          <Cmd Code="TokenizeNextLine(advanceToEol,numericOnly)" />
+          <Cmd Code="ExtractStoredToken([dec]TotalTheoGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]TotalRcvGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]TotalRcvShrinkMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]TotalSettlementGals,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([dec]TotalLiquidValue,0,requiredIf[IsEightColumn],remove)" />
+        </Tsd>
+        <Tsd Name="ResidueSettlement" IsElement="True">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(fees &amp; adjustments analysis plant contacts, exclude)" />
+          <Cmd Code="LocateToken(settlement residue mmbtu,end,required)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,numericOnly,sr[signedParen1])" />
+          <Cmd Code="ExtractStoredToken([decn]ResStlNetDelMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]ResStlBypassMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]ResStlPlantFuelMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]ResStlShrinkMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]ResStlSysFuelMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]ResStlTheoResMMBTU,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([int]ResStlContractPct,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]ResStlSettleResMCF,0,required,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]ResStlSettleResMMBTU,0,required,remove)" />
+        </Tsd>
+        <Tsd Name="FeesAndAdj" IsElement="True">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(comments, exclude)" />
+        </Tsd>
+        <Tsd Name="Analysis" IsElement="True">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd()" />
+        </Tsd>
+      </TsdSet>
+    </Tsd>
+  </ExtractSpec>
+</ExtractSpecSet>

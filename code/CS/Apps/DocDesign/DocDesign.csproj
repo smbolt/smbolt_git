@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09FB4F89-56DB-4781-9576-A3E0884EA087}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Adsdi.DocDesign</RootNamespace>
+    <AssemblyName>Adsdi.DocDesign</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="ProgramData\AppData\AppConfig\AppConfig.xmlx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Org.GS\Org.GS.csproj">
+      <Project>{a43ec37d-35c1-4f80-9d14-978da1312fa9}</Project>
+      <Name>Org.GS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.SF\Org.SF.csproj">
+      <Project>{75752b95-5d39-4ee6-bb41-3555122e62b1}</Project>
+      <Name>Org.SF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.TW\Org.TW.csproj">
+      <Project>{50478633-ce77-48a3-ae74-e8352cfbc4f2}</Project>
+      <Name>Org.TW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DocGen\DocGen.csproj">
+      <Project>{6b3f3afe-2e90-435d-9406-49feb7f8955b}</Project>
+      <Name>DocGen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\adsdi.ico" />
+    <None Include="Images\Code.png" />
+    <None Include="Images\DocTree.png" />
+    <None Include="Images\GenerateDocument.png" />
+    <None Include="Images\ControlPanel.png" />
+    <None Include="Images\Info.png" />
+    <None Include="Images\Properties.png" />
+    <None Include="Images\Image.png" />
+    <None Include="Images\ZoomIn.png" />
+    <None Include="Images\ZoomOut.png" />
+    <None Include="Images\Debug.png" />
+    <None Include="Images\EmptyCell.png" />
+    <Content Include="LocalConfig.xml" />
+    <Content Include="ProgramData\AppData\AppConfig\AppConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProgramData\AppData\CentralConfig\" />
+    <Folder Include="ProgramData\AppData\Doc\" />
+    <Folder Include="ProgramData\AppData\Exports\" />
+    <Folder Include="ProgramData\AppData\Help\" />
+    <Folder Include="ProgramData\AppData\Imports\" />
+    <Folder Include="ProgramData\AppData\Log\" />
+    <Folder Include="ProgramData\AppData\Performance\" />
+    <Folder Include="ProgramData\AppData\Reports\" />
+    <Folder Include="ProgramData\AppData\Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

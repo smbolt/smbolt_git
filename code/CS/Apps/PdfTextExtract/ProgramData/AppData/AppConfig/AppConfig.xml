@@ -1,0 +1,73 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="PdfTextExtract">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="ConfigItem1" V="ConfigValue1" />
+          <CI K="UseConfigErrorForm" V="True" />
+          <CI K="SelectedRootFolder" V="C:\_work\Merrick-OK\Plnt Stmt Op Alloc" />
+          <CI K="SelectedFileNameFilter" V="ONEOK Plant" />
+          <CI K="InDiagnosticsMode" V="True" />
+          <CI K="RunPostLoadCommands" V="True" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="85" />
+          <CI K="MainFormVerticalSize" V="85" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="RootFolders">
+          <LI V="C:\_work\WL_Temp\4.5.2 NonOperated" />
+          <LI V="C:\_work\Merrick-OK\Plnt Stmt Op Alloc" />
+        </ConfigList>
+        <ConfigList Name="FileNameFilters">
+          <LI V="ONEOK Plant" />
+          <LI V="Enable Plant Statement" />
+          <LI V="Daily Completion Report 1-Final" />
+          <LI V="Geosteer" />
+          <LI V="Branch" />
+          <LI V="Branch 1H-16" />
+          <LI V="Asset Partner" />
+          <LI V="Daily Completion Report" />
+          <LI V="Asset Partner Drilling Reports Final" />
+        </ConfigList>
+        <ConfigList Name="PostLoadCommands">
+          <LI V="LoadFiles" />
+          <LI V="RecognizeFormats" />
+          <LI V="SelectOnlyItemInGrid" />
+          <LI V="ProcessFile" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+      <UIState>
+        <UIWindowSet>
+          <UIWindow Name="MainForm" TypeName="frmMain" StartPosition="CenterScreen" IsMainForm="True">
+            <WindowLocation IsVisible="True" SizeMode="PercentOfScreen" Location="0,0" Size="0.9,0.95" />
+          </UIWindow>
+          <UIWindow Name="PdfViewer" TypeName="PdfViewer" WindowTitle="PDF Viewer" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="2152,106" Size="1319,866" />
+          </UIWindow>
+          <UIWindow Name="RawExtractedText" TypeName="RichTextViewer" WindowTitle="Raw Text Extract" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="2041,75" Size="1319,866" />
+          </UIWindow>
+          <UIWindow Name="FormatRecognition" TypeName="RichTextViewer" WindowTitle="Format Recognition" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="200,200" Size="1319,866" />
+          </UIWindow>
+          <UIWindow Name="ConfigEdit" TypeName="RichTextViewer" WindowTitle="Config Editor" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="200,200" Size="1319,866" />
+          </UIWindow>
+          <UIWindow Name="TextExtractDesigner" TypeName="TextExtractDesigner" WindowTitle="Text Extract Designer" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="95,43" Size="1319,866" />
+          </UIWindow>
+          <UIWindow Name="TextExtractResults" TypeName="RichTextViewer" WindowTitle="Text Extract Results" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="20,7" Size="1619,979" />
+          </UIWindow>
+        </UIWindowSet>
+      </UIState>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,30 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="CodePusher">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="ProfilesPath" V="$IMPORTS$\CodePusherConfig.xml" />
+          <CI K="~InDiagnosticsMode" V="True" />
+          <CI K="~LogToMemory" V="True" />
+          <CI K="~Deserialize_DebugBreak" V="IncludedFileSet" />
+          <CI K="~Serialize_DebugBreak" V="UIState" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="Value1" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

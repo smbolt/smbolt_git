@@ -1,0 +1,88 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="AppLauncher">
+      <CISet>
+				<CIGroup Name="Variables">
+					<CI K="$ORGDEV$" V="C:\DevProjects\Main\GitRepos\Org\Source" />
+					<CI K="$GPDEV$" V="C:\DEV-MAIN\Main" />
+					<CI K="$DEVPATH$" V="" />
+					<CI K="RunActionSetAtStartup" V="True" />
+				</CIGroup>
+        <CIGroup Name="Options">
+          <CI K="DefaultEnvironment" V="Local" />
+        </CIGroup>
+        <CIGroup Name="MainModule">
+          <CI K="RunSoftwareUpdates" V="False" />
+          <CI K="UseModuleSet" V="True" />
+          <CI K="ModulePath" V="$MEFCATALOG$" />
+          <CI K="ModuleToRun" V="Counting" />
+          <CI K="ModuleVersion" V="LatestVersion" />
+          <CI K="CheckForUpdatesDisabledUntil" V="20150907235959" />
+          <CI K="ErrorFormBackgroundColor" V="28.117.188" />
+        </CIGroup>
+      </CISet>
+			<FSActionSet>
+				<FSActionGroup Name="Copy_CountingModule" Src="$DEVPATH$\Apps\Counting\bin\Debug" Dst="$MEFCATALOG$\Counting">
+					<FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite">
+						<FSItem Name="*.dll" />
+						<FSItem Name="*.pdb" />
+					</FSAction>
+				</FSActionGroup>
+			</FSActionSet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="COKC.Counting">
+      <CISet>
+        <CIGroup Name="Options">
+					<CI K="OrgId" V="1" />
+          <CI K="DbSpecPrefix" V="COKC" />
+          <CI K="MainFormHorizontalSize" V="65" />
+          <CI K="MainFormVerticalSize" V="80" />
+        </CIGroup>
+        <CIGroup Name="COKCConfigDbSpec">
+          <CI K="COKCDbServer" V="104.232.39.137,36501" />
+          <CI K="COKCDbDsn" V="" />
+          <CI K="COKCDbName" V="Counting" />
+          <CI K="COKCDbUserId" V="sa" />
+          <CI K="COKCDbPassword" V="wrnCu8Kyw6/DrsOqw6DDncK4wqvCrsK9wrg=" />
+          <CI K="COKCDbPasswordEncoded" V="True" />
+          <CI K="COKCDbType" V="SqlServer" />
+          <CI K="COKCDbUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="LocalWsSpec">
+          <CI K="LocalWsBinding" V="BasicHttp" />
+          <CI K="LocalWsHost" V="localhost" />
+          <CI K="LocalWsPort" V="32001" />
+          <CI K="LocalWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="ThemeColors">
+          <CI K="ThemeExtraLightColor" V="188.215.237" />
+          <CI K="ThemeLightColor" V="156.195.228" />
+          <CI K="ThemeMidLightColor" V="106.160.204" />
+          <CI K="ThemeBaseColor" V="70.130.180" />
+          <CI K="ThemeMidDarkColor" V="41.62.80" />
+          <CI K="ThemeDarkColor" V="18.84.138" />
+          <CI K="ThemeExtraDarkColor" V="10.45.73" />
+          <CI K="ThemePanelBackgroundColor" V="250.235.215" />
+          <CI K="ThemePanelHeaderColor" V="243.206.156" />
+        </CIGroup>				
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Environments">
+          <LI V="Local" />
+          <LI V="Test" />
+          <LI V="Production" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,60 @@
+<FormatSpecSet>
+  <FormatSpec Name="Format1" Desc="Format 1" Vendor="" Type="Inclusion" IsActive="True">
+    <RecogSpecSet>
+      <RecogSpec>
+        <RecogLineSet>
+          <RecogLine ID="0" Use="S" Text="newfield - asset/partner report page" />
+          <RecogLine ID="1" Use="R" Text="general information daily summary information daily cost information rig information" />
+          <RecogLine ID="2" Use="R" Text="well type category prospect report no date td tvd afe no drilling contractor" />
+          <RecogLine ID="3" Use="R" Text="job afe amt total afe amt rig name" />
+          <RecogLine ID="4" Use="R" Text="ft drilled hrs drilled average rop" />
+          <RecogLine ID="5" Use="R" Text="ft rotate cum ft ft slide cum ft daily mud cost cum mud cost" />
+          <RecogLine ID="6" Use="R" Text="daily intangible daily tangible elevation" />
+          <RecogLine ID="7" Use="R" Text="hrs rotate cum hrs hrs slide cum hrs" />
+          <RecogLine ID="8" Use="R" Text="present mud weight hole conditions" />
+          <RecogLine ID="9" Use="R" Text="bckgrnd gas conn. gas trip gas" />
+          <RecogLine ID="10" Use="R" Text="pick up weight (1000  lbs) rotating weight (1000  lbs) slack off weight (1000  lbs)" />
+          <RecogLine ID="11" Use="S" Text="casing information" />
+          <RecogLine ID="12" Use="R" Text="type od weight grade connection top  md top tvd bottom md bottom tvd condition shoe test (ppg)" />
+          <RecogLine ID="13" Use="R" Text="directional - surveys" />
+          <RecogLine ID="14" Use="R" Text="daily activities" />
+          <RecogLine ID="15" Use="S" Text="summary of operations" />
+        </RecogLineSet>
+      </RecogSpec>
+    </RecogSpecSet>
+    <TextStructureDefinition>
+      <TextStructureLevel Level="1">
+        <LevelLimitsSet>
+          <LevelLimits>
+            <LevelStart LineFind="1" FindMatchType="Equals" OffsetDir="Back" OffsetType="Match" OffsetMatch="0" OffsetMatchType="StartsWith" />
+            <LevelEnd LineFind="15" FindMatchType="Equals"  />
+          </LevelLimits>
+        </LevelLimitsSet>
+      </TextStructureLevel>
+      <TextStructureLevel Level="2">
+        <LevelLimitsSet>
+          <LevelLimits>
+            <LevelStart LineFind="0" FindMatchType="StartsWith" />
+            <LevelEnd LineFind="8" FindMatchType="Equals" OffsetDir="Back" OffsetType="Scalar" OffsetScalar="1" />
+          </LevelLimits>
+          <LevelLimits>
+            <LevelStart LineFind="8" FindMatchType="Equals" />
+            <LevelEnd LineFind="11" FindMatchType="Equals" OffsetDir="Back" OffsetType="Scalar" OffsetScalar="1" />
+          </LevelLimits>
+          <LevelLimits>
+            <LevelStart LineFind="11" />
+            <LevelEnd LineFind="13" OffsetDir="Back" OffsetType="Scalar" OffsetScalar="1" />
+          </LevelLimits>
+          <LevelLimits>
+            <LevelStart LineFind="13" />
+            <LevelEnd LineFind="14" OffsetDir="Back" OffsetType="Scalar" OffsetScalar="1" />
+          </LevelLimits>
+          <LevelLimits>
+            <LevelStart LineFind="14" />
+            <LevelEnd LineFind="15" />
+          </LevelLimits>
+        </LevelLimitsSet>
+      </TextStructureLevel>
+    </TextStructureDefinition>
+  </FormatSpec>
+</FormatSpecSet>

@@ -1,0 +1,29 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="ExcelExtract">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="CommandLine" V="-s -i &quot;C:\_work\ExcelExtract\InputFiles\5 15 Gulfport Gas Statements.xlsx&quot; -o &quot;C:\_work\ExcelExtract\OutputFiles\5 15 Gulfport Gas Statements.xml&quot;" />
+          <CI K="aCommandLine" V="-s -i &quot;C:\_work\ExcelExtract\InputFiles\5 15 Gulfport Gas Statements.xlsx&quot; -o &quot;_work\ExcelExtract\OutputFiles\5 15 Gulfport Gas Statements.xml&quot;" />
+          <CI K="#CommandLine" V="abc" />
+          <CI K="~CommandLine" V="-h" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Continuous" />
+          <CI K="LogFileSizeManagementMethod" V="TotalBytes" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="2000000" />
+          <CI K="LogFileSizeTrim" V="1500000" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

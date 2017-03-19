@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.ServiceAlert", "Org.ServiceAlert.csproj", "{7D3A1393-25ED-4457-95D1-D4FED571A999}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{96D5A739-2A2E-433E-A037-D042549B236B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D3A1393-25ED-4457-95D1-D4FED571A999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3A1393-25ED-4457-95D1-D4FED571A999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3A1393-25ED-4457-95D1-D4FED571A999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3A1393-25ED-4457-95D1-D4FED571A999}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7D3A1393-25ED-4457-95D1-D4FED571A999} = {96D5A739-2A2E-433E-A037-D042549B236B}
+	EndGlobalSection
+EndGlobal

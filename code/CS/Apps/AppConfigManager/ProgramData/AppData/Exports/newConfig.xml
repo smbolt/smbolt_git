@@ -1,0 +1,99 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="WellMaster">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="SecurityModel" V="Config" />
+          <CI K="~EmulateUser" V="GULFPORT\lelliott" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Continuous" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="TestList1">
+          <LI V="TestEntry1" />
+          <LI V="TestEntry2" />
+        </ConfigList>
+      </ConfigListSet>
+      <ProgramFunctionControl>
+        <ProgramFunctionSet>
+          <ProgramFunction FunctionNumber="1" FunctionName="MinimalUse" />
+          <ProgramFunction FunctionNumber="2" FunctionName="ViewOperatorList" />
+          <ProgramFunction FunctionNumber="3" FunctionName="ViewWellList" />
+          <ProgramFunction FunctionNumber="4" FunctionName="ViewOperatorDetail" />
+          <ProgramFunction FunctionNumber="5" FunctionName="ViewWellDetail" />
+          <ProgramFunction FunctionNumber="6" FunctionName="UpdateOperators" />
+          <ProgramFunction FunctionNumber="7" FunctionName="UpdateWells" />
+          <ProgramFunction FunctionNumber="8" FunctionName="ViewSiteAdmin" />
+          <ProgramFunction FunctionNumber="9" FunctionName="UpdateSiteAdmin" />
+          <ProgramFunction FunctionNumber="999" FunctionName="UnlimitedUse" />
+        </ProgramFunctionSet>
+        <ProgramRoleSet>
+          <ProgramRole RoleNumber="1" OrgRoleName="WellMasterMinimal" ClientRoleName="CLWellMasterMinimal" FunctionsAllowed="1" InheritedRoles="" CLSecurity="False" Hide="False" />
+          <ProgramRole RoleNumber="2" OrgRoleName="WellMasterViewer" ClientRoleName="CLWellMasterViewer" FunctionsAllowed="2,3,4,5" InheritedRoles="1" CLSecurity="False" Hide="False" />
+          <ProgramRole RoleNumber="3" OrgRoleName="WellMasterOperatorsAdmin" ClientRoleName="CLWellMasterOperatorsAdmin" FunctionsAllowed="6" InheritedRoles="1,2" CLSecurity="False" Hide="False" />
+          <ProgramRole RoleNumber="4" OrgRoleName="WellMasterWellsAdmin" ClientRoleName="CLWellMasterWellsAdmin" FunctionsAllowed="7" InheritedRoles="1,2" CLSecurity="False" Hide="False" />
+          <ProgramRole RoleNumber="5" OrgRoleName="WellMasterSiteAdmin" ClientRoleName="CLWellMasterSiteAdmin" FunctionsAllowed="8,9" InheritedRoles="3,4" CLSecurity="False" Hide="False" />
+          <ProgramRole RoleNumber="999" OrgRoleName="UnlimitedUsers" ClientRoleName="NotUsed" FunctionsAllowed="999" InheritedRoles="" CLSecurity="False" Hide="False" />
+        </ProgramRoleSet>
+      </ProgramFunctionControl>
+    </ProgramConfig>
+  </ProgramConfigSet>
+  <ConfigSecurity PasswordMinLth="6" PasswordMaxLth="20" PasswordReqMixCase="True" PasswordReqNbr="True" PasswordReqChgFreq="90">
+    <ConfigUserSet>
+      <ConfigUser UserType="Person" UserID="001" UserName="GULFPORT\sbolt" Password="wmpw" FirstName="Steve" LastName="Bolt" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="999" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="002" UserName="GULFPORT\ebrinker" Password="wmpw" FirstName="Erich" LastName="Brinker" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="002" />
+          <ConfigGroupAssignment GroupID="003" />
+          <ConfigGroupAssignment GroupID="004" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="003" UserName="GULFPORT\cmok" Password="wmpw" FirstName="Cheryn" LastName="Mok" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="003" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="004" UserName="GULFPORT\lelliott" Password="wmpw" FirstName="Lee" LastName="Elliott" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="004" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="005" UserName="GULFPORT\mcraft" Password="wmpw" FirstName="Mallory" LastName="Craft" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="005" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="006" UserName="GULFPORT\minimal" Password="wmpw" FirstName="Minimal" LastName="User" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="001" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="007" UserName="GULFPORT\kroper" Password="wmpw" FirstName="Kelly" LastName="Roper" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="999" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+    </ConfigUserSet>
+    <ConfigGroupSet>
+      <ConfigGroup GroupID="001" GroupName="WellMasterMinimal" />
+      <ConfigGroup GroupID="002" GroupName="WellMasterViewer" />
+      <ConfigGroup GroupID="003" GroupName="WellMasterOperatorsAdmin" />
+      <ConfigGroup GroupID="004" GroupName="WellMasterWellsAdmin" />
+      <ConfigGroup GroupID="005" GroupName="WellMasterSiteAdmin" />
+      <ConfigGroup GroupID="999" GroupName="UnlimitedUsers" />
+    </ConfigGroupSet>
+  </ConfigSecurity>
+</AppConfig>

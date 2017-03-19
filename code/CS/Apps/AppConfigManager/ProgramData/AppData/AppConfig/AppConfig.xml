@@ -1,0 +1,24 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="Global">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="GlobalOption1" V="GlobalValue1" />
+        </CIGroup>
+      </CISet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="AppConfigManager">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="~Serialize_DebugBreak" V="VariableSet" />
+          <CI K="~Deserialize_DebugBreak" V="ConfigList" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,76 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="Global">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="DbSpecName" V="AdsdiOrgEF$HOST$" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigSmtpSpec">
+          <CI K="DefaultSmtpServer" V="mail.authsmtp.com" />
+          <CI K="DefaultSmtpPort" V="2525" />
+          <CI K="DefaultSmtpUserID" V="ac59089" />
+          <CI K="DefaultSmtpPassword" V="gen126Authsmtp" />
+          <CI K="DefaultEnableSSL" V="False" />
+          <CI K="DefaultPickUpFromIIS" V="False" />
+          <CI K="DefaultAllowAnonymous" V="False" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigSmsSpec">
+          <CI K="CdyneSmsLicenseKey" V="1B5B5A5E-2ABF-4326-AEED-D005B9FAA313" />
+          <CI K="CdyneSmsEndPoint" V="http://sms2.cdyne.com/sms.svc/Soap" />
+          <CI K="SuppressSmsSend" V="False" />
+          <CI K="UseSmsAlerts" V="True" />
+          <CI K="DefaultSmsNumber1" V="4056502029" />
+        </CIGroup>
+        <CIGroup Name="OKC1EDW2001ConfigDbSpec">
+          <CI K="OKC1EDW2001DbServer" V="OKC1EDW2001" />
+          <CI K="OKC1EDW2001DbDsn" V="" />
+          <CI K="OKC1EDW2001DbName" V="ProductionReportingTest" />
+          <CI K="OKC1EDW2001DbUserId" V="" />
+          <CI K="OKC1EDW2001DbPassword" V="" />
+          <CI K="OKC1EDW2001DbType" V="SqlServer" />
+          <CI K="OKC1EDW2001DbUseWindowsAuth" V="True" />
+          <CI K="OKC1EDW2001DbEfProvider" V="" />
+          <CI K="OKC1EDW2001DbEfMetadata" V="" />
+        </CIGroup>
+        <CIGroup Name="GP-SQL-01ConfigDbSpec">
+          <CI K="GP-SQL-01DbServer" V="GP-SQL-01" />
+          <CI K="GP-SQL-01DbDsn" V="" />
+          <CI K="GP-SQL-01DbName" V="ProductionReportingTest" />
+          <CI K="GP-SQL-01DbUserId" V="" />
+          <CI K="GP-SQL-01DbPassword" V="" />
+          <CI K="GP-SQL-01DbType" V="SqlServer" />
+          <CI K="GP-SQL-01DbUseWindowsAuth" V="True" />
+          <CI K="GP-SQL-01DbEfProvider" V="" />
+          <CI K="GP-SQL-01DbEfMetadata" V="" />
+        </CIGroup>
+      </CISet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="ChartViewer">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="DefaultEnvironment" V="Prod - GP-SQL-01" />
+          <CI K="FormVerticalSize" V="95" />
+          <CI K="FormHorizontalSize" V="95" />
+          <CI K="DisableEnvironmentDropDown" V="False" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Environments">
+          <LI V="Local - STEVEBLT" />
+          <LI V="Test  - OKC1EDW2001" />
+          <LI V="Prod - GP-SQL-01" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

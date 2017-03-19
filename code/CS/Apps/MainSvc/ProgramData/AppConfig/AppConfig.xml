@@ -1,0 +1,99 @@
+﻿<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="MainSvc">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="RunUnitDiagnosticsMode" V="None" />
+          <CI K="SkipInitLogging" V="True" />
+          <CI K="UseSupportEmail" V="True" />
+          <CI K="SuppressEmailSend" V="False" />
+          <CI K="EmailReplyToAddress" V="stephen.m.bolt@gmail.com" />
+          <CI K="LogConfigDbSpec" V="Log" />
+          <CI K="RunActionSetAtStartup" V="True" />
+          <CI K="UseMEFModulesPath" V="True" />
+          <CI K="MEFModulesPath" V="C:\DEV-MAIN\Main\Libs\Gulfport.Dx.Tasks\bin\Debug" />
+          <CI K="SoftwareDbSpecPrefix" V="OrgSoftware" />
+          <CI K="NotifyDbSpecPrefix" V="Notify" />
+          <CI K="NotifyConfigSetName" V="IM-AppIntegrationOps" />
+          <CI K="DefaultNotifyEventName" V="WebServiceDefault" />
+          <CI K="NotifyConfigMode" V="FromDatabase" />
+          <CI K="NotifySmtpSpecPrefix" V="Default" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="Database" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="NotSet" />
+          <CI K="LogFileSizeManagementMethod" V="NotManagedByThisApp" />
+          <CI K="LogFileSizeManagementAgent" V="None" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="LogConfigDbSpec">
+          <CI K="LogDbServer" V="OKC1EDW2001" />
+          <CI K="LogDbDsn" V="" />
+          <CI K="LogDbName" V="Logging" />
+          <CI K="LogDbUserId" V="" />
+          <CI K="LogDbPassword" V="" />
+          <CI K="LogDbType" V="SqlServer" />
+          <CI K="LogDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="NotifyConfigDbSpec">
+          <CI K="NotifyDbServer" V="OKC1EDW2001" />
+          <CI K="NotifyDbName" V="Notifications" />
+          <CI K="NotifyDbType" V="SqlServer" />
+          <CI K="NotifyDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="OrgSoftwareConfigDbSpec">
+          <CI K="OrgSoftwareDbServer" V="107.161.158.19,36501" />
+          <CI K="OrgSoftwareDbDsn" V="" />
+          <CI K="OrgSoftwareDbName" V="Software" />
+          <CI K="OrgSoftwareDbUserId" V="sa" />
+          <CI K="OrgSoftwareDbPassword" V="wrnCu8Kyw6/DrsOqw6DDn8K8wq3CvMK3" />
+          <CI K="OrgSoftwareDbPasswordEncoded" V="True" />
+          <CI K="OrgSoftwareDbType" V="SqlServer" />
+          <CI K="OrgSoftwareDbUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigSmtpSpec">
+          <CI K="DefaultSmtpServer" V="smtp.gulfportenergy.com" />
+          <CI K="DefaultSmtpPort" V="25" />
+          <CI K="DefaultSmtpUserID" V="" />
+          <CI K="DefaultSmtpPassword" V="" />
+          <CI K="DefaultEnableSSL" V="False" />
+          <CI K="DefaultPickUpFromIIS" V="False" />
+          <CI K="DefaultAllowAnonymous" V="True" />
+          <CI K="DefaultEmailFromAddress" V="kroper@gulfportenergy.com" />
+        </CIGroup>
+      </CISet>
+      <NotifyConfigSet Name="Default">
+        <NotifyConfig Name="Default" SupportEmail="sbolt@gulfportenergy.com" SupportPhone="405-242-4411">
+          <NotifyGroupSet>
+            <NotifyGroup Name="Ops1">
+              <NotifyPerson Name="Kelly Roper" IsActive="True" EmailAddress="kroper@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Steve Bolt" IsActive="True" EmailAddress="sbolt@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Nathan Reid" IsActive="True" EmailAddress="nreid@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            </NotifyGroup>
+          </NotifyGroupSet>
+          <NotifyEventSet>
+            <NotifyEvent Name="Default" IsActive="True" DefaultSubject="WebService Catch - All Error">
+              <NotifyGroupReference Name="Ops1" IsActive="True" />
+            </NotifyEvent>
+          </NotifyEventSet>
+        </NotifyConfig>
+        <NotifyConfig Name="Dummy" SupportEmail="kroper@gulfportenergy.com" SupportPhone="405-242-4411">
+          <NotifyGroupSet>
+            <NotifyGroup Name="Ops1">
+              <NotifyPerson Name="Kelly Roper" IsActive="False" EmailAddress="kroper@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Steve Bolt" IsActive="True" EmailAddress="sbolt@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            </NotifyGroup>
+          </NotifyGroupSet>
+          <NotifyEventSet>
+            <NotifyEvent Name="Dummy_Success" IsActive="True" DefaultSubject="Dummy Task Completed Successfully">
+              <NotifyGroupReference Name="Ops1" IsActive="True" />
+            </NotifyEvent>
+          </NotifyEventSet>
+        </NotifyConfig>
+      </NotifyConfigSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

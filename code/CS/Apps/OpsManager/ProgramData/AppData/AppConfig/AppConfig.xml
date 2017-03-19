@@ -1,0 +1,52 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="OpsManager">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="InitialEnv" V="Test" />
+        </CIGroup>
+        <CIGroup Name="TaskSchedulingProdConfigDbSpec">
+          <CI K="TaskSchedulingProdDbServer" V="OKC1EDW0001" />
+          <CI K="TaskSchedulingProdDbName" V="TaskScheduling" />
+          <CI K="TaskSchedulingProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TaskSchedulingTestConfigDbSpec">
+          <CI K="TaskSchedulingTestDbServer" V="OKC1EDW2001" />
+          <CI K="TaskSchedulingTestDbName" V="TaskScheduling" />
+          <CI K="TaskSchedulingTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="LoggingTestConfigDbSpec">
+          <CI K="LoggingTestDbServer" V="OKC1EDW2001" />
+          <CI K="LoggingTestDbName" V="Logging" />
+          <CI K="LoggingTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="LoggingProdConfigDbSpec">
+          <CI K="LoggingProdDbServer" V="OKC1EDW0001" />
+          <CI K="LoggingProdDbName" V="Logging" />
+          <CI K="LoggingProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="NotifyTestConfigDbSpec">
+          <CI K="NotifyTestDbServer" V="OKC1EDW2001" />
+          <CI K="NotifyTestDbName" V="Notifications" />
+          <CI K="NotifyTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="NotifyProdConfigDbSpec">
+          <CI K="NotifyProdDbServer" V="OKC1EDW0001" />
+          <CI K="NotifyProdDbName" V="Notifications" />
+          <CI K="NotifyProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Environments">
+          <LI V="Test" />
+          <LI V="Prod" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dict1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,7 @@
+<LocalConfig>
+  <CI K="Vendor" V="ADSDI LLC" />
+  <CI K="AppType" V="WinApp" />
+  <CI K="AppName" V="CodePusher" />
+  <CI K="UseLocalAppData" V="True" />
+  <CI K="AppConfigPath" V="C:\DevBuild\0000-BUILD-CFG\CodePusherCfg\AppConfig.xml" />
+</LocalConfig>

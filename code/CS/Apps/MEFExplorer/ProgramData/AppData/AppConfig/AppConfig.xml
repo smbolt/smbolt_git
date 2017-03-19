@@ -1,0 +1,47 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="MEFExplorer">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$VAR1$" V="Value1" />
+          <CI K="$VAR2$" V="Value2" />
+          <CI K="$VAR3$" V="Value3" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="LastUsedFolderPath" V="C:\DEV-MAIN\Main\Apps\MEFExplorer\ProgramData\AppData\MEFCatalog" />
+          <CI K="DefaultFolderPath" V="C:\DEV-MAIN\Main" />
+        </CIGroup>
+      </CISet>
+      <FSActionSet>
+        <FSActionGroup Name="Copy_LoeForecaster" Src="C:\_work\MEF\LoeForecaster" Dst="$MEFCATALOG$\LoeForecaster">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Src="~\1.0.0.0" Dst="~\1.0.0.0" Options="Clear,Overwrite">
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+          <FSAction Name="Step2" FileSystemCommand="Copy" Src="~\1.0.1.0" Dst="~\1.0.1.0" Options="Clear,Overwrite">
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+        <FSActionGroup Name="Copy_DxTasks" Src="C:\DEV-MAIN\Main\Libs\Gulfport.Dx.Tasks\bin\Debug" Dst="$MEFCATALOG$\DxTasks">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite">
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+        <FSActionGroup Name="Copy_SoftwareTasks" Src="C:\DEV-MAIN\Main\Libs\Org.SoftwareTasks\bin\Debug" Dst="$MEFCATALOG$\SoftwareTasks">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite">
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+        <FSActionGroup Name="Copy_WSO" Src="C:\DEV-MAIN\Main\Libs\Org.WSO\bin\Debug" Dst="$MEFCATALOG$\WSO">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite">
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+      </FSActionSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

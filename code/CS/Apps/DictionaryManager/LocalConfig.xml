@@ -1,0 +1,7 @@
+<LocalConfig>
+  <CI K="Vendor" V="ADSDI" />
+  <CI K="AppType" V="WinApp" />
+  <CI K="AppName" V="DictionaryManager" />
+  <CI K="UseLocalAppData" V="True" />
+  <CI K="UseStartupLogging" V="True" />
+</LocalConfig>

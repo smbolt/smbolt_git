@@ -1,0 +1,18 @@
+﻿<RecogSpecSet>
+  <RecogSpec Name="Format9" Desc="Enable Wet/Damp Gas Settlement Statement" Vendor="" Type="Inclusion" IsActive="True">
+    <RecogLineSet>
+      <RecogLine ID="0" Use="R" Text="settle_gas_stmt.rpt" />
+      <RecogLine ID="1" Use="R" Text="percent of proceeds statement (fixed recovery)" />
+      <RecogLine ID="2" Use="R" Text="lease &amp; contract information" />
+      <RecogLine ID="3" Use="R" Text="accounting allocation contract contract btu" />
+      <RecogLine ID="4" Use="R" Text="system name lease name decimal condition" />
+      <RecogLine ID="5" Use="R" Text="month month number state number pressure base" />
+      <RecogLine ID="6" Use="R" Text="value value adjustments tax value" />
+      <RecogLine ID="7" Use="R" Text="wellhead information liquid settlement" />
+      <RecogLine ID="8" Use="R" Text="net delivered mmbtu bypass mmbtu plant fuel mmbtu shrink mmbtu residue system fuel mmbtu theo residue mmbtu contract % settlement residue mcf settlement residue mmbtu" />
+      <RecogLine ID="9" Use="R" Text="fees &amp; adjustments analysis plant contacts" />
+      <RecogLine ID="10" Use="R" Text="primary customer care toll free contracts customer care toll free" />
+      <RecogLine ID="10" Use="R" Text="hexanes plus" />
+    </RecogLineSet>
+  </RecogSpec>
+</RecogSpecSet>

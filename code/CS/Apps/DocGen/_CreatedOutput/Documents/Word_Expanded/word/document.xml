@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 wp14">
+  <w:body>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblStyle w:val="TableGrid"/>
+        <w:tblW w:w="5000" w:type="pct"/>
+        <w:tblBorders>
+          <w:top w:val="nil"/>
+          <w:left w:val="nil"/>
+          <w:bottom w:val="nil"/>
+          <w:right w:val="nil"/>
+          <w:insideH w:val="nil"/>
+          <w:insideV w:val="nil"/>
+        </w:tblBorders>
+        <w:tblCellMar>
+          <w:top w:w="14" w:type="dxa"/>
+          <w:left w:w="14" w:type="dxa"/>
+          <w:bottom w:w="14" w:type="dxa"/>
+          <w:right w:w="14" w:type="dxa"/>
+        </w:tblCellMar>
+        <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="10540"/>
+      </w:tblGrid>
+      <w:tr w:rsidR="00271D53">
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="5000" w:type="pct"/>
+          </w:tcPr>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblStyle w:val="TableGrid"/>
+              <w:tblW w:w="5000" w:type="pct"/>
+              <w:tblBorders>
+                <w:top w:val="nil"/>
+                <w:left w:val="nil"/>
+                <w:bottom w:val="nil"/>
+                <w:right w:val="nil"/>
+                <w:insideH w:val="nil"/>
+                <w:insideV w:val="nil"/>
+              </w:tblBorders>
+              <w:tblCellMar>
+                <w:top w:w="14" w:type="dxa"/>
+                <w:left w:w="14" w:type="dxa"/>
+                <w:bottom w:w="14" w:type="dxa"/>
+                <w:right w:w="14" w:type="dxa"/>
+              </w:tblCellMar>
+              <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="10510"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="00271D53">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                    <w:left w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                    <w:bottom w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                    <w:right w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p w:rsidR="00271D53" w:rsidRPr="001911EE" w:rsidRDefault="00F662CA" w:rsidP="001911EE">
+                  <w:pPr>
+                    <w:pStyle w:val="ResumeTitle1"/>
+                  </w:pPr>
+                  <w:r w:rsidRPr="001911EE">
+                    <w:t>Stephen M. Bolt</w:t>
+                  </w:r>
+                  <w:bookmarkStart w:id="0" w:name="_GoBack"/>
+                  <w:bookmarkEnd w:id="0"/>
+                </w:p>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:pPr>
+                    <w:jc w:val="center"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>10313 S. Trafalgar Dr. Oklahoma City, OK 73139</w:t>
+                  </w:r>
+                </w:p>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:pPr>
+                    <w:jc w:val="center"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="0000FF"/>
+                      <w:sz w:val="20"/>
+                      <w:u w:val="single"/>
+                    </w:rPr>
+                    <w:t>stephen.m.bolt@gmail.com</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="00271D53">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                    <w:bottom w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:pPr>
+                    <w:jc w:val="center"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:b/>
+                      <w:color w:val="000000"/>
+                    </w:rPr>
+                    <w:t>High Level Technology and Management Profile</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="00271D53">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                    <w:left w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                    <w:bottom w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                    <w:right w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t xml:space="preserve">Highly accomplished senior technology professional with deep understanding and experience in a wide array of </w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>technologies and a long and successful career developing technology solutions to meet critical business needs.</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="00271D53">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                    <w:bottom w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:pPr>
+                    <w:jc w:val="center"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:b/>
+                      <w:color w:val="000000"/>
+                    </w:rPr>
+                    <w:t>Core Competencies</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="00271D53">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                    <w:left w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                    <w:bottom w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                    <w:right w:val="single" w:sz="1" w:space="0" w:color="BFBFBF"/>
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>* Solid leadership skills  * Excellent communicator</w:t>
+                  </w:r>
+                </w:p>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>* Expert level w/Microsoft.Net/C# * 10 years Windows Forms</w:t>
+                  </w:r>
+                </w:p>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t xml:space="preserve">* WCF web </w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>services * 20 years development experience</w:t>
+                  </w:r>
+                </w:p>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>* ASP.Net Web Forms, MVC, JQuery * Continuous improvement mindset</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="00271D53">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                    <w:bottom w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:pPr>
+                    <w:jc w:val="center"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:b/>
+                      <w:color w:val="000000"/>
+                    </w:rPr>
+                    <w:t>Professional Experience</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="00271D53">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                    <w:bottom w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>PATIENTLINK ENTERPRISES - OKLAHOMA CITY</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="00271D53">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                    <w:bottom w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>Systems Architect</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="00271D53">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct"/>
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                    <w:bottom w:val="single" w:sz="12" w:space="0" w:color="000000"/>
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="BFBFBF"/>
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t xml:space="preserve">Responsible for the complete re-engineering of primary </w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>Windows Forms/C# software product for medical software company. Additionally, led the design and development of all internal infrastructure and online sites and services.  All applications based on Microsoft .NET Framework, with approximately 90% in C# and</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t xml:space="preserve"> 10% in VB.Net. Strong experience with Windows Forms applications for desktop deployment. Web sites were developed in C#/ASP.Net and web services were WCF. Data was SQL Server and XML file systems. Experience with ASP.Net Web Forms, MVC and JQuery.</w:t>
+                  </w:r>
+                </w:p>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00271D53"/>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>Develo</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>ped and implementetd reusable/shared components for application communications, logging, encryption, and configuration along with shared UI components including forms and custom controls.</w:t>
+                  </w:r>
+                </w:p>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00271D53"/>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>Designed and developed low-level image processing technology to com</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>pletely replace a vendor-supplied solution which was performing poorly and allowed very limited visibility and control.</w:t>
+                  </w:r>
+                </w:p>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00271D53"/>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>Established and developed internal development environment including servers/processes for source control, obfuscation, builds and auto</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>mated migration processes.</w:t>
+                  </w:r>
+                </w:p>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00271D53"/>
+                <w:p w:rsidR="00271D53" w:rsidRDefault="00F662CA">
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:ascii="Calibri"/>
+                      <w:color w:val="000000"/>
+                      <w:sz w:val="20"/>
+                    </w:rPr>
+                    <w:t>Worked closely with company ownership concerning all technology decisions, but primary focus was on systems architecture, design, development and operations.</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p w:rsidR="00271D53" w:rsidRDefault="00271D53"/>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p w:rsidR="00F662CA" w:rsidRDefault="00F662CA"/>
+    <w:sectPr w:rsidR="00F662CA">
+      <w:pgSz w:w="12240" w:h="15840"/>
+      <w:pgMar w:top="1008" w:right="864" w:bottom="1008" w:left="864" w:header="432" w:footer="432" w:gutter="0"/>
+      <w:cols w:space="720"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

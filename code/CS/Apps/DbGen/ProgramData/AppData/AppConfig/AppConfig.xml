@@ -1,0 +1,39 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="DbGen">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="RepositoryPath" V="C:\DevProjects\Main\Source" />
+          <CI K="RepositoryMajorSection" V="Shared" />
+        </CIGroup>
+        <CIGroup Name="CLPostingsNB-98ConfigDbSpec">
+          <CI K="CLPostingsNB-98DbServer" V="nb-98\sql2012nb98" />
+          <CI K="CLPostingsNB-98DbDsn" V="" />
+          <CI K="CLPostingsNB-98DbName" V="CLPostings" />
+          <CI K="CLPostingsNB-98DbUserId" V="sa" />
+          <CI K="CLPostingsNB-98DbPassword" V="gen126Adsdi" />
+          <CI K="CLPostingsNB-98DbType" V="SqlServer" />
+          <CI K="CLPostingsNB-98UseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="NB99SQL2012EE3ConfigDbSpec">
+          <CI K="NB99SQL2012EE3DbServer" V="NB-99\SQL2012EE3" />
+          <CI K="NB99SQL2012EE3DbDsn" V="" />
+          <CI K="NB99SQL2012EE3DbName" V="Metrix" />
+          <CI K="NB99SQL2012EE3DbUserId" V="sa" />
+          <CI K="NB99SQL2012EE3DbPassword" V="gen126" />
+          <CI K="NB99SQL2012EE3DbType" V="SqlServer" />
+          <CI K="NB99SQL2012EE3UseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="STEVEBLTBOLTLTConfigDbSpec">
+          <CI K="STEVEBLTBOLTLTDbServer" V="NB-99\SQL2012EE3" />
+          <CI K="STEVEBLTBOLTLTDbDsn" V="" />
+          <CI K="STEVEBLTBOLTLTDbName" V="Metrix" />
+          <CI K="STEVEBLTBOLTLTDbUserId" V="sa" />
+          <CI K="STEVEBLTBOLTLTDbPassword" V="gen126@Local" />
+          <CI K="STEVEBLTBOLTLTDbType" V="SqlServer" />
+          <CI K="STEVEBLTBOLTLTUseWindowsAuth" V="False" />
+        </CIGroup>
+      </CISet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

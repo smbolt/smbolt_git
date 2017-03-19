@@ -1,0 +1,268 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="Global">
+      <CISet>
+        <CIGroup Name="MEF">
+          <CI K="GlobalKey1" V="GlobalValue1" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="STEVEBLTConfigDbSpec">
+          <CI K="STEVEBLTDbServer" V="STEVEBLT\BOLTLT" />
+          <CI K="STEVEBLTDbDsn" V="" />
+          <CI K="STEVEBLTDbName" V="ProductionReportingTest" />
+          <CI K="STEVEBLTDbUserId" V="sa" />
+          <CI K="STEVEBLTDbPassword" V="gen126@Local" />
+          <CI K="STEVEBLTDbType" V="SqlServer" />
+          <CI K="STEVEBLTDbUseWindowsAuth" V="False" />
+          <CI K="STEVEBLTDbEfProvider" V="" />
+          <CI K="STEVEBLTDbEfMetadata" V="" />
+        </CIGroup>
+        <CIGroup Name="OKC1EDW2001ConfigDbSpec">
+          <CI K="OKC1EDW2001DbServer" V="OKC1EDW2001" />
+          <CI K="OKC1EDW2001DbDsn" V="" />
+          <CI K="OKC1EDW2001DbName" V="ProductionReportingTest" />
+          <CI K="OKC1EDW2001DbUserId" V="" />
+          <CI K="OKC1EDW2001DbPassword" V="" />
+          <CI K="OKC1EDW2001DbType" V="SqlServer" />
+          <CI K="OKC1EDW2001DbUseWindowsAuth" V="True" />
+          <CI K="OKC1EDW2001DbEfProvider" V="" />
+          <CI K="OKC1EDW2001DbEfMetadata" V="" />
+        </CIGroup>
+        <CIGroup Name="GP-SQL-01ConfigDbSpec">
+          <CI K="GP-SQL-01DbServer" V="GP-SQL-01" />
+          <CI K="GP-SQL-01DbDsn" V="" />
+          <CI K="GP-SQL-01DbName" V="ProductionReportingTest" />
+          <CI K="GP-SQL-01DbUserId" V="" />
+          <CI K="GP-SQL-01DbPassword" V="" />
+          <CI K="GP-SQL-01DbType" V="SqlServer" />
+          <CI K="GP-SQL-01DbUseWindowsAuth" V="True" />
+          <CI K="GP-SQL-01DbEfProvider" V="" />
+          <CI K="GP-SQL-01DbEfMetadata" V="" />
+        </CIGroup>
+      </CISet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="AppLauncher_O">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="DefaultEnvironment" V="Local" />
+        </CIGroup>
+        <CIGroup Name="Modularity">
+          <CI K="RunSoftwareUpdates" V="False" />
+          <CI K="ModulePath" V="C:\DevProjects\Main\GitRepos\Org\Source\Apps\Counting\bin\Debug" />
+          <CI K="ModuleToRun" V="COKC.Counting" />
+          <CI K="ModuleTitle" V="Counting" />
+          <CI K="ModuleVersion" V="LatestVersion" />
+          <CI K="CheckForUpdatesDisabledUntil" V="20150907235959" />
+          <CI K="ErrorFormBackgroundColor" V="28.117.188" />
+        </CIGroup>
+        <CIGroup Name="LocalWsSpec">
+          <CI K="LocalWsBinding" V="BasicHttp" />
+          <CI K="LocalWsHost" V="localhost" />
+          <CI K="LocalWsPort" V="32001" />
+          <CI K="LocalWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+      </CISet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Environments">
+          <DI K="Production" V="Prod" />
+          <DI K="Test" V="Test" />
+          <DI K="Local" V="Local" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="AppLauncher_G">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="RunSoftwareUpdates" V="False" />
+          <CI K="DefaultEnvironment" V="Local" />
+        </CIGroup>
+        <CIGroup Name="Modularity">
+          <CI K="ModulePath" V="C:\DEV-MAIN\Main\Apps\EPRCManager\bin\Debug" />
+          <CI K="ModuleToRun" V="EPRCManager" />
+          <CI K="ModuleVersion" V="LatestVersion" />
+          <CI K="STEVEBLTModulePath" V="C:\DEV-MAIN\Main\Apps\LoeManager\bin\Debug" />
+          <CI K="STEVEBLTModuleToRun" V="LoeManager" />
+          <CI K="STEVEBLTModuleVersion" V="LatestVersion" />
+        </CIGroup>
+      </CISet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="BulkTrans.RPDM">
+      <CISet>
+        <CIGroup Name="Data">
+          <CI K="ConnectionStringName" V="TruckingEntities" />
+          <CI K="DataStoreName" V="Trucking" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="TruckingNB-98ConfigDbSpec">
+          <CI K="TruckingNB-98DbServer" V="nb-98\sql2012nb98" />
+          <CI K="TruckingNB-98DbDsn" V="" />
+          <CI K="TruckingNB-98DbName" V="Trucking" />
+          <CI K="TruckingNB-98DbUserId" V="sa" />
+          <CI K="TruckingNB-98DbPassword" V="gen126@Adsdi" />
+          <CI K="TruckingNB-98DbType" V="SqlServer" />
+          <CI K="TruckingNB-98UseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="TruckingNB-99ConfigDbSpec">
+          <CI K="TruckingNB-99DbServer" V="nb-99\sql2012ee3" />
+          <CI K="TruckingNB-99DbDsn" V="" />
+          <CI K="TruckingNB-99DbName" V="Trucking" />
+          <CI K="TruckingNB-99DbUserId" V="TruckingApp" />
+          <CI K="TruckingNB-99DbPassword" V="trucking" />
+          <CI K="TruckingNB-99DbType" V="SqlServer" />
+          <CI K="TruckingNB-99UseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="75" />
+          <CI K="MainFormVerticalSize" V="80" />
+          <CI K="ThemeColorPrimary" V="28.117.188" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="DefaultEnvironment" V="Test  - OKC1EDW2001" />
+          <CI K="ShowEnvironmentDropDown" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Environments">
+          <LI V="Local" />
+          <LI V="Test" />
+          <LI V="Production" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="COKC.Counting">
+      <CISet>
+        <CIGroup Name="Options">
+					<CI K="OrgId" V="1" />
+          <CI K="DbSpecPrefix" V="COKC" />
+        </CIGroup>
+        <CIGroup Name="COKCConfigDbSpec">
+          <CI K="COKCDbServer" V="104.232.39.137,36501" />
+          <CI K="COKCDbDsn" V="" />
+          <CI K="COKCDbName" V="Counting" />
+          <CI K="COKCDbUserId" V="sa" />
+          <CI K="COKCDbPassword" V="wrnCu8Kyw6/DrsOqw6DDncK4wqvCrsK9wrg=" />
+          <CI K="COKCDbPasswordEncoded" V="True" />
+          <CI K="COKCDbType" V="SqlServer" />
+          <CI K="COKCDbUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="65" />
+          <CI K="MainFormVerticalSize" V="80" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Environments">
+          <LI V="Local" />
+          <LI V="Test" />
+          <LI V="Production" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="Gulfport.EPRCManager">
+      <CISet>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="70" />
+          <CI K="MainFormVerticalSize" V="80" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="DefaultEnvironment" V="Test  - OKC1EDW2001" />
+          <CI K="ShowEnvironmentDropDown" V="True" />
+          <CI K="StartTab" V="WIPTab" />
+        </CIGroup>
+        <CIGroup Name="ForecastOptions">
+          <CI K="ForecastStartDate" V="01/01/2014" />
+          <CI K="ForecastEndDate" V="12/31/2022" />
+        </CIGroup>
+        <CIGroup Name="TwoStream_Options">
+          <CI K="TwoStream_MaxThreads" V="32" />
+          <CI K="UseAriesForecastVariables" V="True" />
+          <CI K="ExcludeDelayDays" V="True" />
+        </CIGroup>
+        <CIGroup Name="ThreeStream_Options">
+          <CI K="ThreeStream_MaxThreads" V="16" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Environments">
+          <LI V="Local - STEVEBLT" />
+          <LI V="Test  - OKC1EDW2001" />
+          <LI V="Prod - GP-SQL-01" />
+        </ConfigList>
+        <ConfigList Name="TabsToShow">
+          <LI V="WellsTab" />
+          <LI V="~ProductionTab" />
+          <LI V="ForecastingTab" />
+          <LI V="WIPTab" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="Gulfport.LoeManager">
+      <CISet>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="70" />
+          <CI K="MainFormVerticalSize" V="80" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="DefaultEnvironment" V="Test  - OKC1EDW2001" />
+          <CI K="ShowEnvironmentDropDown" V="True" />
+          <CI K="StartTab" V="LoeDataTab" />
+          <CI K="ConnectionPrefix" V="Loe" />
+        </CIGroup>
+        <CIGroup Name="LoeSTEVEBLTConfigDbSpec">
+          <CI K="LoeSTEVEBLTDbServer" V="OKC1EDW2001" />
+          <CI K="LoeSTEVEBLTDbDsn" V="" />
+          <CI K="LoeSTEVEBLTDbName" V="EDM" />
+          <CI K="LoeSTEVEBLTDbUserId" V="" />
+          <CI K="LoeSTEVEBLTDbPassword" V="" />
+          <CI K="LoeSTEVEBLTDbType" V="SqlServer" />
+          <CI K="LoeSTEVEBLTDbUseWindowsAuth" V="True" />
+          <CI K="LoeSTEVEBLTDbEfProvider" V="" />
+          <CI K="LoeSTEVEBLTDbEfMetadata" V="" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Environments">
+          <LI V="Local - STEVEBLT" />
+          <LI V="Test  - OKC1EDW2001" />
+          <LI V="Prod - GP-SQL-01" />
+        </ConfigList>
+        <ConfigList Name="TabsToShow">
+          <LI V="SummaryTab" />
+          <LI V="SummaryChartsTab" />
+          <LI V="LoeByWellTab" />
+          <LI V="LoeByACTab" />
+          <LI V="LoeDataTab" />
+          <LI V="CostsTab" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

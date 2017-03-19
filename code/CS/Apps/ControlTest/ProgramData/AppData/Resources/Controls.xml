@@ -1,0 +1,381 @@
+<ControlSpec>
+  <UIControl Type="Org.UI.UIPanel" Name="StatePanel" Model="State" ModelSort="StateName" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="States" Location="20,20" Size="660,150" BorderStyle="FixedSingle" TabIndex="10">
+      <UIControl Type="Label" Text="State Short" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtStateShort" Size="50,20" Location="24,43" TextAlign="Center" MaxLength="2" TabIndex="11" InitialFocus="True" />
+      <UIControl Type="Label" Text="State Name" AutoSize="True" Location="95,27" />
+      <UIControl Type="TextBox" Name="txtStateName" Size="150,20" Location="95,43" TabIndex="12" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="20,110" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="540,110" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="435,110" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvState" Location="20,185" Size="660,290" BorderStyle="FixedSingle" TabIndex="20">
+      <GridView ViewName="StateView">
+        <GridColumn Text="State Abbr" Tag="StateCode" Width="100" />
+        <GridColumn Text="StateName" Width="200" Fill="True" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="CityPanel" Model="City" ModelSort="CityName" ModelCacheRequired="State" BackColor="SystemColors.Control" BorderStyle="FixedSingle" Debug="False">
+    <UIControl Type="GroupBox" Text="Cities" Location="20,20" Size="600,160" BorderStyle="FixedSingle" TabIndex="10">
+      <UIControl Type="Label" Text="City Name" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtCityName" Size="150,20" Location="24,43" TabIndex="11" Required="True" InitialFocus="True" />
+      <UIControl Type="Label" Text="State" AutoSize="True" Location="180,27" />
+      <UIControl Type="ComboBox" Name="cboStateAbbr" Size="60,20" Tag="StateCode" ListSource="State" Location="185,43" Required="True" TabIndex="11" />
+      <UIControl Type="Label" Name="lblStateName" BorderStyle="None" Text="[full state name]" Tag="StateName" Size="120,20" Location="255,46" />
+      <UIControl Type="Label" Text="Gas Tax" AutoSize="True" Location="385,27" />
+      <UIControl Type="TextBox" Name="txtGasTax" Tag="GasTaxPerGallon" Size="90,20" Location="385,43" Required="True" TabIndex="12" TextAlign="Right" />
+      <UIControl Type="Label" Text="Diesel Tax" AutoSize="True" Location="485,27" />
+      <UIControl Type="TextBox" Name="txtDieselTax" Tag="DieselTaxPerGallon" Size="90,20" Location="485,43" Required="True" TabIndex="13" TextAlign="Right" />
+      <UIControl Type="Label" Text="Gas Margin" AutoSize="True" Location="385,70" />
+      <UIControl Type="TextBox" Name="txtGasMargin" Size="90,20" Location="385,86" Required="True" TabIndex="14" TextAlign="Right" />
+      <UIControl Type="Label" Text="Diesel Margin" AutoSize="True" Location="485,70" />
+      <UIControl Type="TextBox" Name="txtDieselMargin" Size="90,20" Location="485,86" Required="True" TabIndex="15" TextAlign="Right" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,125" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="375,125" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="477,125" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvCity" Location="20,197" Size="600,270" BorderStyle="FixedSingle" EventSpec="Click|ClickEvent|SelectionChanged|GridRowChanged|RowLeave|GridRowLeave">
+      <GridView ViewName="CityView">
+        <GridColumn Text="City Name" Width="110" />
+        <GridColumn Text="State" Tag="StateCode" Width="60" />
+        <GridColumn Text="StateName" Model="State" ModelKey="StateCode" ForeignEntryRequired="False" Width="0" Visible="False" />
+        <GridColumn Text="Gas Tax" Tag="GasTaxPerGallon" Width="85" Align="Right" />
+        <GridColumn Text="Diesel Tax" Tag="DieselTaxPerGallon" Width="85" Align="Right" />
+        <GridColumn Text="Gas Margin" Width="85" Align="Right" />
+        <GridColumn Text="Diesel Margin" Width="85" Align="Right" Fill="True" />
+        <GridColumn Text="City ID" Tag="CityId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="CompanyPanel" Model="Company" ModelSort="CompanyName" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Companies" Location="20,20" Size="680,180" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="Company Name" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtCompanyName" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="Company Address" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtCompanyAddress" Size="150,20" Location="180,45" />
+      <UIControl Type="Label" Text="City State" AutoSize="True" Location="340,27" />
+      <UIControl Type="TextBox" Name="txtCityStateID" Size="150,20" Location="340,45" />
+      <UIControl Type="Label" Text="Zip Code" AutoSize="True" Location="500,27" />
+      <UIControl Type="TextBox" Name="txtZip" Size="150,20" Location="500,45" />
+      <UIControl Type="Label" Text="Phone Number" AutoSize="True" Location="20,77" />
+      <UIControl Type="TextBox" Name="txtPhoneNumber" Size="150,20" Location="24,95" />
+      <UIControl Type="Label" Text="Fax Number" AutoSize="True" Location="180,77" />
+      <UIControl Type="TextBox" Name="txtFaxNumber" Size="150,20" Location="180,95" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,140" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="445,140" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="550,140" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvCompany" Location="20,220" Size="680,360" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="Company Name" Width="60" />
+        <GridColumn Text="Company Address" Width="60" />
+        <GridColumn Text="City State" Width="60" />
+        <GridColumn Text="Zip Code" Width="60" />
+        <GridColumn Text="Phone Number" Width="60" />
+        <GridColumn Text="Fax Number" Width="0" Visible="False" />
+        <GridColumn Text="Sur MPG" Width="0" Visible="False" />
+        <GridColumn Text="Base Freight Rate" Width="0" Visible="False" />
+        <GridColumn Text="Registration Due" Width="0" Visible="False" />
+        <GridColumn Text="Ifta Due" Width="0" Visible="False" />
+        <GridColumn Text="Weight Distance Due" Width="0" Visible="False" />
+        <GridColumn Text="Insurance Due" Width="0" Visible="Fasle" />
+        <GridColumn Text="Comp ID" Tag="CompId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="DriverPanel" Model="Driver" ModelSort="LastName" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Drivers" Location="20,20" Size="680,220" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="First Name" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtFirstName" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="Last Name" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtLastName" Size="150,20" Location="180,45" />
+      <UIControl Type="Label" Text="PhoneNumber" AutoSize="True" Location="340,27" />
+      <UIControl Type="TextBox" Name="txtPhoneNumber" Size="150,20" Location="340,45" />
+      <UIControl Type="Label" Text="Email" AutoSize="True" Location="500,27" />
+      <UIControl Type="TextBox" Name="txtEmail" Size="150,20" Location="500,45" />
+      <UIControl Type="Label" Text="DOB" AutoSize="True" Location="20,77" />
+      <UIControl Type="TextBox" Name="txtDOB" Size="150,20" Location="24,95" />
+      <UIControl Type="Label" Text="SSNumber" AutoSize="True" Location="180,77" />
+      <UIControl Type="TextBox" Name="txtSSNumber" Size="150,20" Location="180,95" />
+      <UIControl Type="Label" Text="DLNumber" AutoSize="True" Location="340,77" />
+      <UIControl Type="TextBox" Name="txtDLNumber" Size="150,20" Location="340,95" />
+      <UIControl Type="Label" Text="DriverActive" AutoSize="True" Location="500,77" />
+      <UIControl Type="CheckBox" Name="ckDriverActive" Size="150,20" Location="500,95" />
+      <UIControl Type="Label" Text="DriverRate" AutoSize="True" Location="20,127" />
+      <UIControl Type="TextBox" Name="txtDriverRate" Size="150,20" Location="24,145" />
+      <UIControl Type="Label" Text="UnitNumber" AutoSize="True" Location="180,127" />
+      <UIControl Type="TextBox" Name="txtUnitNumber" Size="150,20" Location="180,145" />
+      <UIControl Type="Label" Text="TLNumber" AutoSize="True" Location="340,127" />
+      <UIControl Type="TextBox" Name="txtTLNumber" Size="150,20" Location="340,145" />
+      <UIControl Type="Label" Text="HireDate" AutoSize="True" Location="500,127" />
+      <UIControl Type="TextBox" Name="txtHireDate" Size="150,20" Location="500,145" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,180" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,180" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,180" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvDriver" Location="20,260" Size="680,320" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="First Name" Width="60" />
+        <GridColumn Text="Last Name" Width="60" />
+        <GridColumn Text="Phone Number" Width="60" />
+        <GridColumn Text="Email" Width="60" />
+        <GridColumn Text="DOB" Width="60" />
+        <GridColumn Text="Driver Rate" Width="0" Visible="False" />
+        <GridColumn Text="Driver Active" Width="0" Visible="False" />
+        <GridColumn Text="SS Number" Width="0" Visible="False" />
+        <GridColumn Text="DOB" Width="0" Visible="False" />
+        <GridColumn Text="Unit Number" Width="0" Visible="False" />
+        <GridColumn Text="TL Number" Width="0" Visible="False" />
+        <GridColumn Text="Hire Date" Width="0" Visible="False" />
+        <GridColumn Text="Driver ID" Tag="DriverId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="DeliveryPanel" Model="DeliveryLocation" ModelSort="DeliveryLocationName" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Deliveriess" Location="20,20" Size="680,180" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="Delivery Location Name" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtDelLocationName" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="Delivery Location Address" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtDelLocAddress" Size="150,20" Location="180,45" />
+      <UIControl Type="Label" Text="City / State" AutoSize="True" Location="340,27" />
+      <UIControl Type="TextBox" Name="txtCityState" Size="150,20" Location="340,45" />
+      <UIControl Type="Label" Text="Delivery Active" AutoSize="True" Location="500,27" />
+      <UIControl Type="CheckBox" Name="ckDelActive" Size="150,20" Location="500,45" />
+      <UIControl Type="Label" Text="Email Address" AutoSize="True" Location="20,77" />
+      <UIControl Type="TextBox" Name="txtEmail" Size="150,20" Location="24,95" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,140" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,140" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,140" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvDelivery" Location="20,220" Size="680,260" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="Delivery Location Name" Width="60" />
+        <GridColumn Text="Delivery Location Address" Width="60" />
+        <GridColumn Text="City / State" Width="60" />
+        <GridColumn Text="Email" Width="60" />
+        <GridColumn Text="Delivery ID" Tag="DeliveryId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="PayDescriptionPanel" Model="Pay" ModelSort="PayDescriptionName" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Pay" Location="20,20" Size="660,140" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="Pay Description" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtPayDescription" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="Pay Rate" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtPayRate" Size="150,20" Location="180,45" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,90" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,90" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,90" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvPayDescription" Location="20,180" Size="660,300" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="Pay Description" Width="60" />
+        <GridColumn Text="Pay Rate" Width="60" />
+        <GridColumn Text="Pay ID" Tag="PayId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="ProductPanel" Model="Product" ModelSort="SaleProduct" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Products" Location="20,20" Size="680,200" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="Product" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtProducct" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="Gallons" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtGallons" Size="150,20" Location="180,45" />
+      <UIControl Type="Label" Text="Gas" AutoSize="True" Location="20,77" />
+      <UIControl Type="CheckBox" Name="ckGas" Size="150,20" Location="24,95" />
+      <UIControl Type="Label" Text="Diesel" AutoSize="True" Location="180,77" />
+      <UIControl Type="CheckBox" Name="ckDiesel" Size="150,20" Location="180,95" />
+      <UIControl Type="Label" Text="E10" AutoSize="True" Location="340,77" />
+      <UIControl Type="CheckBox" Name="ckE10" Size="150,20" Location="340,95" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,160" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,160" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,160" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvProduct" Location="20,240" Size="680,340" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="Product" Width="60" />
+        <GridColumn Text="Gallons" Width="60" />
+        <GridColumn Text="Gas" Width="60" />
+        <GridColumn Text="Diesel" Width="60" />
+        <GridColumn Text="E10" Width="60" />
+        <GridColumn Text="Product ID" Tag="ProductId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.Navigator" Name="NavMain" BackColor="SystemColors.Control" BorderStyle="None">
+    <UIControl Type="Org.UI.NavSection" Name="NavTopSection" Text="Administration" Height="80" IsCollapsed="False" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+      <UIControl Type="Org.UI.NavButton" Text="First Button" Size="100,24" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Org.UI.NavButton" Text="Second Button" Size="100,24" TabIndex="16" EventSpec="Click|ClickEvent" />
+    </UIControl>
+    <UIControl Type="Org.UI.NavSection" Name="NavSecondSection" Text="Operations" Height="80" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+      <UIControl Type="Org.UI.NavButton" Text="Third Button" Size="100,24" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Org.UI.NavButton" Text="Fourth Button" Size="100,24" TabIndex="16" EventSpec="Click|ClickEvent" />
+    </UIControl>
+    <UIControl Type="Org.UI.NavSection" Name="NavThirdSection" Text="Set Up" Height="80" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+      <UIControl Type="Org.UI.NavButton" Text="Fifth Button" Size="100,24" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Org.UI.NavButton" Text="Sixth Button" Size="100,24" TabIndex="16" EventSpec="Click|ClickEvent" />
+    </UIControl>
+    <UIControl Type="Org.UI.NavSection" Name="NavFourthSection" Text="Utilities" Height="80" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+      <UIControl Type="Org.UI.NavButton" Text="Seventh Button" Size="100,24" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Org.UI.NavButton" Text="Eighth Button" Size="100,24" TabIndex="16" EventSpec="Click|ClickEvent" />
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="ExpensePanel" Model="Expense" ModelSort="ExpenseName" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Expenses" Location="20,20" Size="660,140" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="ExpenseName" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtExpenseName" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="Fuel" AutoSize="True" Location="180,27" />
+      <UIControl Type="CheckBox" Name="ckFuel" Size="150,20" Location="180,45" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,100" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,100" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,100" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvExpense" Location="20,180" Size="660,300" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="ExpenseName" Width="60" />
+        <GridColumn Text="Expense ID" Tag="ExpenseId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="SupplierPanel" Model="Supplier" ModelSort="SupplierName" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Suppliers" Location="20,20" Size="660,140" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="SupplierName" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtSupplierName" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="CityState" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtCityState" Size="150,20" Location="180,45" />
+      <UIControl Type="Label" Text="EmailAddress" AutoSize="True" Location="340,27" />
+      <UIControl Type="TextBox" Name="txtEmailAddress" Size="150,20" Location="340,45" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,100" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,100" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,100" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvSupplier" Location="20,180" Size="660,300" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="SupplierName" Width="60" />
+        <GridColumn Text="CityState" Width="60" />
+        <GridColumn Text="EmailAddress" Width="60" />
+        <GridColumn Text="Supplier ID" Tag="SupplierId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="RefinerPanel" Model="Refiner" ModelSort="RefinerName" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Refiners" Location="20,20" Size="660,140" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="RefinerName" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtRefinerName" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="CityState" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtCityState" Size="150,20" Location="180,45" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,100" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,100" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,100" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvRefiner" Location="20,180" Size="660,300" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="RefinerName" Width="60" />
+        <GridColumn Text="CityState" Width="60" />
+        <GridColumn Text="Refiner ID" Tag="RefinerId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+  <UIControl Type="Org.UI.UIPanel" Name="HighwayPanel" Model="Highway" ModelSort="HwyID" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Highways" Location="20,20" Size="660,140" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="HighwayID" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtHighwayID" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="HighwayDescription" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtHighway" Size="150,20" Location="180,45" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,100" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,100" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,100" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvHighway" Location="20,180" Size="660,300" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="HighwayID" Width="60" />
+        <GridColumn Text="HighwayName" Width="60" />
+        <GridColumn Text="Highway ID" Tag="HighwayId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+<<<<<<< HEAD
+  <UIControl Type="Org.UI.UIPanel" Name="TerminalPanel" Model="Terminal" ModelSort="TerminalName" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Terminals" Location="20,20" Size="660,140" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="TerminalName" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtTerminalName" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="CityState" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtCityState" Size="150,20" Location="180,45" />
+=======
+  <UIControl Type="Org.UI.UIPanel" Name="TerminalPanel" Model="Terminal" ModelSort="TerminalID" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Terminals" Location="20,20" Size="660,140" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="TerminalID" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtTerminalID" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="TerminalName" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtTerminalName" Size="150,20" Location="180,45" />
+>>>>>>> 74f11dae445693d45a9bfd81efab565d85e636cb
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,100" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,100" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,100" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvTerminal" Location="20,180" Size="660,300" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+<<<<<<< HEAD
+        <GridColumn Text="TerminalName" Width="60" />
+        <GridColumn Text="CityState" Width="60" />
+=======
+        <GridColumn Text="TerminalID" Width="60" />
+        <GridColumn Text="TerminalName" Width="60" />
+>>>>>>> 74f11dae445693d45a9bfd81efab565d85e636cb
+        <GridColumn Text="Terminal ID" Tag="TerminalId" Width="0" Visible="False" />
+      </GridView>
+    </UIControl>
+  </UIControl>
+<<<<<<< HEAD
+  <UIControl Type="Org.UI.UIPanel" Name="TankPanel" Model="Tank" ModelSort="CapacityGallons" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Tanks" Location="20,20" Size="660,140" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="DeliveryLocationID" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtDeliveryLocationID" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="ProductID" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtProductID" Size="150,20" Location="180,45" />
+      <UIControl Type="Label" Text="CapacityGallons" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtCapacityGallons" Size="150,20" Location="180,45" />
+      <UIControl Type="Label" Text="MinimumGallons" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtMinimumGallons" Size="150,20" Location="180,45" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,100" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,100" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,100" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvTanks" Location="20,180" Size="660,300" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="DeliveryLocationID" Width="60" />
+        <GridColumn Text="ProductID" Width="60" />
+        <GridColumn Text="CapacityGallons" Width="60" />
+        <GridColumn Text="MinimumGallons" Width="60" />
+        <GridColumn Text="Tank ID" Tag="TankId" Width="0" Visible="False" />
+=======
+  <UIControl Type="Org.UI.UIPanel" Name="TankPanel" Model="Tanks" ModelSort="DeliveryLocationID" BackColor="SystemColors.Control" BorderStyle="FixedSingle">
+    <UIControl Type="GroupBox" Text="Tanks" Location="20,20" Size="680,180" BorderStyle="FixedSingle">
+      <UIControl Type="Label" Text="DeliveryLocationID" AutoSize="True" Location="20,27" />
+      <UIControl Type="TextBox" Name="txtTDeliveryLocationID" Size="150,20" Location="24,45" />
+      <UIControl Type="Label" Text="Station" AutoSize="True" Location="180,27" />
+      <UIControl Type="TextBox" Name="txtStation" Size="150,20" Location="180,45" />
+      <UIControl Type="Label" Text="Product" AutoSize="True" Location="340,27" />
+      <UIControl Type="TextBox" Name="txtProduct" Size="150,20" Location="340,45" />
+      <UIControl Type="Label" Text="CapacityGallons" AutoSize="True" Location="500,27" />
+      <UIControl Type="TextBox" Name="txtCapacityGallons" Size="150,20" Location="500,45" />
+      <UIControl Type="Label" Text="MinimumGallons" AutoSize="True" Location="20,77" />
+      <UIControl Type="TextBox" Name="txtMinimumGallons" Size="150,20" Location="24,95" />
+      <UIControl Type="Button" Text="Add New" Size="100,24" Location="23,140" TabIndex="16" EventSpec="Click|ClickEvent" />
+      <UIControl Type="Button" Text="OK" Size="100,24" Location="447,140" TabIndex="18" EventSpec="Click|ClickEvent" Enabled="False" />
+      <UIControl Type="Button" Text="Cancel" Size="100,24" Location="552,140" TabIndex="19" EventSpec="Click|ClickEvent" Enabled="False" />
+    </UIControl>
+    <UIControl Type="DataGridView" Name="gvTank" Location="20,220" Size="680,260" BorderStyle="FixedSingle">
+      <GridView ViewName="DriverView">
+        <GridColumn Text="Tanks" Width="60" />
+        <GridColumn Text="Stations" Width="60" />
+        <GridColumn Text="Product" Width="60" />
+        <GridColumn Text="CapacityGallons" Width="60" />
+        <GridColumn Text="MinimumGallons" Width="60" />
+        <GridColumn Text="Delivery Location ID" Tag="DeliveryLocationId" Width="0" Visible="False" />
+>>>>>>> 74f11dae445693d45a9bfd81efab565d85e636cb
+      </GridView>
+    </UIControl>
+  </UIControl>
+</ControlSpec>

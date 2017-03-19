@@ -1,0 +1,22 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="IfxExtract">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="ConnectionString" V="DRIVER={IBM INFORMIX ODBC DRIVER (64-bit)};Server=demo_on;Host=192.168.1.150;Service=9088;Protocol=olsoctcp;OPTIONS=;UID=informix;PWD=informix;NEEDODBCTYPESONLY=1;Database=OpsMgmt;" />
+					<CI K="ConnectionString2" V="DRIVER={IBM INFORMIX ODBC DRIVER (64-bit)};Server=demo_on;Host=192.168.1.150;Service=9088;Protocol=olsoctcp;OPTIONS=;UID=informix;PWD=informix;NEEDODBCTYPESONLY=1;Database=stores;" />
+				</CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

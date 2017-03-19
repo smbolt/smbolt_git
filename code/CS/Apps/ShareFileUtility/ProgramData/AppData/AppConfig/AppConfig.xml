@@ -1,0 +1,129 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="ShareFileUtility">
+      <CISet>
+        <CIGroup Name="CommandLine">
+          <CI K="@#CommandLine" V="-testNotifications -e NotificationTest_Warning"/>
+          <CI K="aCommandLine" V="-clearRemoteFolder"/>
+          <CI K="~~CommandLine" V="-deleteRemoteFile -f &quot;2015-12-16 HackberrySCADA.csv&quot; "/>
+          <CI K="!!CommandLine" V="-listRemoteFolder"/>
+          <CI K="###CommandLine" V="-uploadSingleFile -i &quot;\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\ShareFileUpload\ReadyToProcess\2015-12-07 HackberrySCADA.csv&quot; " />
+          <CI K="bCommandLine" V="-uploadByFolder -i &quot;\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\ShareFileUpload\ReadyToProcess&quot; " />
+          <CI K="CommandLine" V="-downloadFiles -o &quot;\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\ShareFileUpload\Downloaded&quot; " />
+          <CI K="#CommandLine" V="abcd" />
+          <CI K="@CommandLine" V="-editConfig" />
+          <CI K="##CommandLine" V="-uploadWatchFolder" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="ClientName" V="Default" />
+          <CI K="ArchiveFolder" V="\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\ShareFileUpload\Processed" />
+          <CI K="OverrideWaitMode" V="True" />
+          <CI K="AllowDuplicateFiles" V="True" />
+          <CI K="MaxUploadSize" V="2000000" />
+          <CI K="MaxFilesUpload" V="20" />
+          <CI K="MaxDownloadSize" V="2000000" />
+          <CI K="MaxFilesDownload" V="1" />
+          <CI K="FolderFilter" V="*.*" />
+          <CI K="DownloadFileName" V="SCADA_@CCYYMMDD@" />
+          <CI K="DownloadOptions" V="OverwriteFile" />
+          <CI K="SmtpSpecPrefix" V="Default" />
+          <CI K="SendNotifications" V="True" />
+          <CI K="NotificationCompletionLimit" V="15000" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigs">
+          <CI K="DefaultHostName" V="gulfportenergy.sf-api.com" />
+          <CI K="DefaultUserName" V="sbolt@gulfportenergy.com" />
+          <CI K="DefaultPassword" V="gen126@Gulfport" />
+          <CI K="DefaultClientId" V="fNPDiJP3kLDsqf4ZsYqKeZNMK6IIp8Uw" />
+          <CI K="DefaultClientSecret" V="e7qQvOzdGwAmSSxp1ymsjx2BR40L96RUOtHdeLimCUiVuTEr" />
+          <CI K="DefaultRootFolderId" V="foaff055-5f1f-4bc4-a16d-a4ededa104c2" />
+          <CI K="DefaultRemoteTargetFolderName" V="UPLOAD" />
+          <CI K="DefaultRemoteArchiveFolderName" V="ARCHIVE" />
+          <CI K="DefaultSuppressRemoteDelete" V="True" />
+          <CI K="DefaultArchiveRemoteFiles" V="False" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Continuous" />
+          <CI K="LogFileSizeManagementMethod" V="TotalBytes" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="2000000" />
+          <CI K="LogFileSizeTrim" V="1500000" />
+        </CIGroup>
+        <CIGroup Name="AuthSmtpConfigSmtpSpec">
+          <CI K="AuthSmtpSmtpServer" V="mail.authsmtp.com" />
+          <CI K="AuthSmtpSmtpPort" V="2525" />
+          <CI K="AuthSmtpSmtpUserID" V="ac59089" />
+          <CI K="AuthSmtpSmtpPassword" V="gen126Authsmtp" />
+          <CI K="AuthSmtpEnableSSL" V="False" />
+          <CI K="AuthSmtpPickUpFromIIS" V="False" />
+          <CI K="AuthSmtpAllowAnonymous" V="False" />
+          <CI K="AuthSmtpEmailFromAddress" V="sbolt@gulfportenergy.com" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigSmtpSpec">
+          <CI K="DefaultSmtpServer" V="smtp.gulfportenergy.com" />
+          <CI K="DefaultSmtpPort" V="25" />
+          <CI K="DefaultSmtpUserID" V="" />
+          <CI K="DefaultSmtpPassword" V="" />
+          <CI K="DefaultEnableSSL" V="False" />
+          <CI K="DefaultPickUpFromIIS" V="False" />
+          <CI K="DefaultAllowAnonymous" V="True" />
+          <CI K="DefaultEmailFromAddress" V="sbolt@gulfportenergy.com" />
+        </CIGroup>
+      </CISet>
+      <NotificationConfig SupportEmail="sbolt@gulfportenergy.com" SupportPhone="405-650-2029">
+        <NotifyGroupSet>
+          <NotifyGroup Name="Ops1">
+            <NotifyPerson Name="Steve Bolt" EmailAddress="sbolt@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            <NotifyPerson Name="Steve Bolt (home)" EmailAddress="stephen.m.bolt@gmail.com" IsEmailActive="False" SmsNumber="" IsSmsActive="False" />
+          </NotifyGroup>
+          <NotifyGroup Name="Ops2">
+            <NotifyPerson Name="Steve Bolt" EmailAddress="sbolt@gulfportenergy.com" IsEmailActive="False" SmsNumber="" IsSmsActive="False" />
+            <NotifyPerson Name="Steve Bolt (home)" EmailAddress="stephen.m.bolt@gmail.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+          </NotifyGroup>
+        </NotifyGroupSet>
+        <NotifyEventSet>
+          <NotifyEvent Name="NotificationTest_Success" Active="True" MessageSubject="Notification Test Successful">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+            <NotifyGroupReference Name="Ops2" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="UploadSingleFile_Success" Active="True" MessageSubject="Gulfport ShareFile Single File Upload - Successful">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="UploadSingleFile_Failed" Active="True" MessageSubject="Gulfport ShareFile Single File Upload - Failed">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="UploadByFolder_Success" Active="True" MessageSubject="Gulfport ShareFile Upload by Folder - Successful">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="UploadByFolder_Warning" Active="True" MessageSubject="Gulfport ShareFile Upload by Folder - Warning Issued">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="UploadByFolder_Failed" Active="True" MessageSubject="Gulfport ShareFile Upload by Folder - Failed">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="UploadWatchFolder_Success" Active="True" MessageSubject="Gulfport ShareFile Upload Watch Folder - Successful">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="UploadWatchFolder_Warning" Active="True" MessageSubject="Gulfport ShareFile Upload Watch Folder - Warning Issued">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="UploadWatchFolder_Failed" Active="True" MessageSubject="Gulfport ShareFile Upload Watch Folder - Failed">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="Initialization_Failed" Active="True" MessageSubject="Gulfport ShareFile Utility - Failed with Initialization Error">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="*_Failed" Active="True" MessageSubject="Gulfport ShareFile Utility - Operation Failed">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+          <NotifyEvent Name="*_Warning" Active="True" MessageSubject="Gulfport ShareFile Utility - Warning Issued">
+            <NotifyGroupReference Name="Ops1" Active="True" />
+          </NotifyEvent>
+        </NotifyEventSet>
+      </NotificationConfig>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

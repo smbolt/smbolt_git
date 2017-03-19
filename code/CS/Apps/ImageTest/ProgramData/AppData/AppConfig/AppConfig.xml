@@ -1,0 +1,39 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="ImageTest">
+      <CISet>
+        <CIGroup Name="MEF">
+          <CI K="ImagesFolder" V="C:\_data\Images" />
+          <CI K="SelectedImageFormat" V="tif" />
+          <CI K="ConnectToDb" V="True" />
+          <CI K="ProcessImages" V="True" />
+          <CI K="InitialTab" V="Images" />
+        </CIGroup>
+        <CIGroup Name="Options">
+					<CI K="MainFormHorizontalSize" V="85" />
+					<CI K="MainFormVerticalSize" V="90" />
+          <CI K="DbSpecPrefix" V="COKC" />
+          <CI K="OrgId" V="1" />
+        </CIGroup>
+        <CIGroup Name="COKCConfigDbSpec">
+          <CI K="COKCDbServer" V="104.232.39.137,36501" />
+          <CI K="COKCDbDsn" V="" />
+          <CI K="COKCDbName" V="Counting" />
+          <CI K="COKCDbUserId" V="sa" />
+          <CI K="COKCDbPassword" V="wrnCu8Kyw6/DrsOqw6DDncK4wqvCrsK9wrg=" />
+          <CI K="COKCDbPasswordEncoded" V="True" />
+          <CI K="COKCDbType" V="SqlServer" />
+          <CI K="COKCDbUseWindowsAuth" V="False" />
+        </CIGroup>
+      </CISet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Environments">
+          <DI K="GP Test" V="GPTest" />
+          <DI K="GP Prod" V="GPProd" />
+          <DI K="Org" V="Org" />
+          <DI K="Local" V="Local" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

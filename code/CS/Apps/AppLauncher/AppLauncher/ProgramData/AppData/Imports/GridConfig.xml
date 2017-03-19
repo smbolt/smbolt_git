@@ -1,0 +1,22 @@
+﻿<GridViewSet DefaultViewName="WellMaster">
+  <GridView ViewName="WellMaster" IsDefault="True">
+      <GridColumn Name="PRCWellId" Text="PRC Well ID" ColumnName="PRCWellId" Width="60" Align="Left" Fill="False" MaxChars="0" />
+      <GridColumn Name="WellName" Text="Well Name" ColumnName="WellName" Width="120" Align="Left" Fill="False" MaxChars="0" />
+      <GridColumn Name="PRCWellStatus" Text="PRC Status" ColumnName="PRCWellStatus" Width="80" Align="Left" Fill="False" MaxChars="0" />
+      <GridColumn Name="PRCPadID" Text="PRC Pad ID" ColumnName="PadId" Width="80" Align="Left" Fill="False" MaxChars="0" />
+      <GridColumn Name="SSIWellID" Text="SSI Well ID" ColumnName="SSIWellId" Width="80" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="GISWellID" Text="GIS Well ID" ColumnName="GISWellId" Width="80" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="WI" Text="WI" ColumnName="WI" Width="80" Align="Right" Fill="False" MaxChars="0" />
+    <GridColumn Name="NRI" Text="NRI" ColumnName="NRI" Width="80" Align="Right" Fill="False" MaxChars="0" />
+    <GridColumn Name="FVItemCount" Text="FV Item Count" ColumnName="FieldVisorDetailCount" Width="80" Align="Right" Fill="True" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="Pads" IsDefault="True">
+    <GridColumn Name="PadId" Text="PRC Pad ID" ColumnName="PadId" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="PadName" Text="Well Name" ColumnName="PadName" Width="120" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="StationId" Text="Station ID" ColumnName="StationId" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="GPORPadID" Text="GPOR Pad ID" ColumnName="GPORPadID" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="PRCPadStatus" Text="PRC Status" ColumnName="PRCPadStatus" Width="80" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="PhaseWindow" Text="Phase Window" ColumnName="PhaseWindow" Width="80" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="PadPerformanceAvailable" Text="Pad Perf Available" ColumnName="PadPerformanceAvailable" Width="80" Align="Left" Fill="True" MaxChars="0" />
+  </GridView>
+</GridViewSet>

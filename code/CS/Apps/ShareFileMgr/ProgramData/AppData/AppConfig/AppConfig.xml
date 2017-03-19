@@ -1,0 +1,61 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="ShareFileMgr">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="ClientName" V="Default" />
+          <CI K="ArchiveFolder" V="\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\ShareFileUpload\Processed" />
+          <CI K="OverrideWaitMode" V="True" />
+          <CI K="AllowDuplicateFiles" V="True" />
+          <CI K="MaxUploadSize" V="2000000" />
+          <CI K="MaxFilesUpload" V="20" />
+          <CI K="MaxDownloadSize" V="2000000" />
+          <CI K="MaxFilesDownload" V="1" />
+          <CI K="FolderFilter" V="*.*" />
+          <CI K="DownloadFileName" V="DONOTUSE_SCADA_@CCYYMMDD@" />
+          <CI K="DownloadOptions" V="OverwriteFile" />
+          <CI K="SmtpSpecPrefix" V="Default" />
+          <CI K="SendNotifications" V="True" />
+          <CI K="NotificationCompletionLimit" V="15000" />
+          <CI K="ModulesPath" V="C:\DEV-MAIN\Main\Libs\Gulfport.MWStmt.Tasks\bin\Debug" />
+          <CI K="SkipAppConfigVerification" V="True" />
+          <CI K="IsDryRun" V="True" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfig">
+          <CI K="DefaultHostName" V="gulfportenergy.sf-api.com" />
+          <CI K="DefaultUserName" V="sbolt@gulfportenergy.com" />
+          <CI K="DefaultPassword" V="gen126@Gulfport" />
+          <CI K="DefaultClientId" V="fNPDiJP3kLDsqf4ZsYqKeZNMK6IIp8Uw" />
+          <CI K="DefaultClientSecret" V="e7qQvOzdGwAmSSxp1ymsjx2BR40L96RUOtHdeLimCUiVuTEr" />
+          <CI K="@DefaultRootFolderId" V="foaff055-5f1f-4bc4-a16d-a4ededa104c2" />
+          <CI K="DefaultRootFolderId" V="foe61dc7-3122-49ca-89ce-2fc3c3cc71b6" />
+          <CI K="@2DefaultRootFolderId" V="fob6a812-2280-410d-9dc4-ded67ac3e4c1" />
+          <CI K="DefaultRemoteTargetFolderName" V="Alicia Woodring" />
+          <CI K="DefaultRemoteArchiveFolderName" V="ARCHIVE" />
+          <CI K="DefaultSuppressRemoteDelete" V="False" />
+          <CI K="DefaultArchiveRemoteFiles" V="False" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Continuous" />
+          <CI K="LogFileSizeManagementMethod" V="TotalBytes" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="2000000" />
+          <CI K="LogFileSizeTrim" V="1500000" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>
