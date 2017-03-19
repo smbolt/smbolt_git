@@ -5,8 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all">
-<link href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <script src="js/IE9.js"></script>
@@ -22,7 +22,8 @@
     <nav>
       <ul>
         <li><a href="../index.html">Home</a></li>
-        <li><a href="experience/experience_main.html">Accomplishments</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Articles</a></li>
         <li><a href="#">Code</a></li>
         <li><a href="#">About</a></li>
       </ul>
@@ -35,24 +36,76 @@
     <h3>Introduction</h3>
     <p>
        In the sections below my work experience is listed with the most recent information first.  The content is a bit more informal than what would find in my resume. 
-       My intention in setting this more casual tone is to provide a context for some more inclusive discussion - mainly related to my rationale for choosing to engage
-       with the organizations and projects and why I chose to leave.  It also allows me to embed some links to some of the articles I have placed on this site.
+       My intention in setting the more casual tone is to provide a natural context for some more inclusive discussion - mainly related to my rationale for choosing to 
+       work the organizations or engagements and why I chose to leave.  It also allows me to embed some links to some of the articles I have placed on this site.
     </p>
 
     <h3>Work History</h3>
 
-    <h4>Lead Systems Analyst / Solutions Architect</h4>
+    <h4 style="text-decoration: underline;">Lead Systems Analyst / Solutions Architect</h4>
     <h4><span><a class="orgname" target="_blank" href="http://www.gulfportenergy.com/">Gulfport Energy Corporation</a></span>
-        <span style="font-size:0.9em; font-weight:bold;">January 2015 to present</span></h4>
+        <span>(Oil and Gas Industry) - January 2015 to present</span></h4>
     <p>
-       Maecenas eu purus ipsum, non accumsan metus. Mauris augue dui, condimentum quis aliquam non, tincidunt id tortor. 
-       Donec dignissim sem sed nisl luctus scelerisque. Cras lacinia aliquam orci ac ultricies. Vestibulum ac lacus eu nisi commodo sollicitudin. 
-       Curabitur at consectetur leo. Donec augue velit, ornare in fermentum quis, tristique id augue.
+       I currently work at Gulfport Energy Corporation where my title is 'Lead Systems Analyst'.  I function as the principle architect and lead developer
+       of the company's custom application development. I have a small team of software and SharePoint developers and provide leadership and mentoring for 
+       other teams regarding custom application development. I work closely other technology leads and their teams and with various departmental management
+       and staff to gather requirements and deliver technology value.
     </p>
-    <p>
-       Cras sem est, luctus ac pharetra id, feugiat id enim. Nullam at massa felis, vitae hendrerit tellus. Sed placerat arcu sed risus commodo iaculis. 
-       Aenean at felis enim. Mauris eget est in diam sagittis ultrices sit amet eu mi. Sed ultrices, orci et tincidunt fringilla, diam diam consequat elit, 
-       vel tempus mauris mi vitae sem. Ut lectus est, commodo a pulvinar at, faucibus et ligula.
+
+    <h4 class="appindent" style="font-style: italic;">Accomplishments</h4>
+
+    <p class="appindent">
+       <span class="appname">Well Master Web Site </span> - An Angular 1.3 web site using a C# Web API 2 backend that provides view and update
+       capabilities for wells and related entities in a central database where information is collected and rationalized.
+    </p>
+    <p class="appindent">
+       <span class="appname">Cost Forecasting Desktop App</span> - A highly complex C# WinForms application using 
+       <span class="tooltip">MEF<span class="tooltiptext">Microsoft Extensibility Framework</span></span> 
+       for modularity and DevExpress components for displaying hierarchical grids of data and supporting exports to Excel files. This application was 
+       developed in 2016 for the 2017 budget year. This application provided a huge savings in the assembly and analysis of costs related to drilling, 
+       completion and production operations in Ohio. The VP of Operations has asked for the two other department conduction field operations (Louisiana 
+       and Oklahoma) to use this application for their 2018 budgeting.
+    </p>
+    <p class="appindent">
+       <span class="appname">Generic, Windows Service-Based Task Processing Engine</span> - A multi-threaded Windows Service built with C# 4.5 and leveraging 
+       <span class="tooltip">MEF<span class="tooltiptext">Microsoft Extensibility Framework</span></span> for loading pluggable modules that perform
+       task processing functionality. This 'task processing service/engine' has been deployed in multiple instances with each instance being responsible
+       for hosting various types of 'task processing modules'. This 'generic framework' with clean separation between the 'task processing engine' and the individual
+       'task processing modules' has saved significant development effort since only the 'pluggable modules' need to be built when new work is required. 
+       Modules can be built for just about any imaginable task and they all run in a completely consistent generic framework.
+    </p>
+    <p class="appindent">
+       The generic task processing service and the over 20 task processing modules deployed so far make use of a database for scheduling, parameterization, and
+       configuration <span class="tooltip">WCF<span class="tooltiptext">Windows Communication Framework</span></span> web service requests which are processed by similar 
+       pluggable 'request processing modules'. A separate C# WinForms desktop application called the 'OpsManager' is used to create and update schedules and parameters.
+    </p>
+    <p class="appindent">
+       <span class="appname">Generic, WCF-Based Request Processing Web Service</span> - A <span class="tooltip">WCF<span class="tooltiptext">Windows Communication Framework</span></span> 
+       web service built with C# 4.5 and leveraging <span class="tooltip">MEF<span class="tooltiptext">Microsoft Extensibility Framework</span></span> for loading pluggable 
+       modules that perform request processing functionality. This web service has been deployed in multiple instances with each instance being responsible
+       for hosting various types of 'request processing modules'. This 'generic framework' with clean separation between the 'web service engine' and the individual
+       'request processing modules' has saved significant development effort since only the 'pluggable modules' need to be built when new work is required. 
+       Modules can be built for just about any imaginable request-response type of functionality and they all run in a completely consistent generic framework.
+    </p>
+
+    <h4 class="appindent" style="font-style: italic;">Current Projects</h4>
+
+    <p class="appindent">
+       <span class="appname">Implementation of CygNet SCADA System for Ohio </span> - I am currently heavily involved with the implementation of the CygNet SCADA
+       System for Gulfport's Ohio assets. Of particular focus for me has been the consideration of hosting options as we currently have a number of systems on premise
+       and others being hosted by various cloud-based technology providers. I have also been heavily invovled with infrastructure planning and implementation
+       and ensuring that we are prepared for the systems stringent operational requirements and can also support both planned infrastructure and application maintenance
+       and unplanned operational issues.
+    </p>
+
+    <p class="appindent">
+       <span class="appname">Text Processing Workbench </span> - I am currently developing a 'Text Processing Workbench' which will be used to extract raw text
+       from PDF documents and determine, through text pattern recognition, whether the document is of a recognized type.  For recognized documents, additional functionality
+       based in a configurable command language (also developed by me) will first impose a hierarchical structure upon the text (as many hierarchical layers as desired), and then 
+       extract the desired text values from each hierarchical node and create a format-configurable output XML document.  The Text Processing Workbench has been 
+       designed to allow non-programmers to develop document recognition configurations and text extraction configurations for any PDF file which will be used as a 
+       source for data collection. The workbench utilizes modular text-processing components that be embedded in other applications to automate the extraction of valuable
+       data from PDF files and support downstream integration.
     </p>
   </div>
 </div>

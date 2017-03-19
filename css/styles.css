@@ -28,6 +28,11 @@ header, section, footer, aside, nav, article{display:block;}
 h1, h2, h3, h4, h5, h6{color:#2f2f2f; font-family:"Ubuntu",arial;}
 .bold{font-weight:bold;}
 .blue{color:#4086c6;}
+.appname{font-family: "Ubuntu",arial; font-weight:bold;}
+.appindent{padding-left:0.6em;}
+.tooltip { position: relative; display: inline-block; border-bottom: 1px dotted #4086c6; color:#4086c6;}
+.tooltip .tooltiptext { visibility: hidden; width: 200px; bottom: 100%; left:50%; margin-left:-100px; background-color: #4086c6; color: #fff; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; z-index: 1; }
+.tooltip:hover .tooltiptext { visibility: visible; }
 
 /* Header */
 
@@ -39,7 +44,7 @@ h1, h2, h3, h4, h5, h6{color:#2f2f2f; font-family:"Ubuntu",arial;}
 #websitetitle h1{font-size:2.538em; font-weight:normal;}
 #websitetitle h2{font:1.462em "Georgia"; font-style:italic; font-weight:normal; margin:-3px 0 0 0;}
 #mainheader nav{float:right; font:1.615em "Ubuntu",arial,; margin:8px 0 0 0;}
-#mainheader nav li{list-style-type:none; display:inline; margin:0 0 0 65px;}
+#mainheader nav li{list-style-type:none; display:inline; margin:0 0 0 35px;}
 #mainheader a, #mainheader:visited{color:#2f2f2f;}
 #mainheader a:hover{text-decoration:none; color:#7e7e7e;}
 
@@ -61,13 +66,15 @@ a.largeButton:hover{background-color:#2f2f2f; background-image:none; text-shadow
 #aboutleft h3{font-size:1.5em; font-weight:bold; margin:0 0 15px 0;}
 #aboutleft h4{font-size:1.3em; font-weight:bold; margin:0 0 15px 0;}
 #aboutleft p{line-height:135%; margin:0 0 15px 0;}
-#experience{float:left; width:720px;}
+#experience{float:left; width:100%;}
 #experience h3{font-size:1.5em; font-weight:bold; margin:0 0 15px 0;}
 #experience h4{font-size:1.3em; font-weight:bold; margin:5px 0 5px 0;}
 #experience h4.orgname{color:#4086c6; padding-right: 15px;}
-#experience h4 a{text-decoration:underline; font-size:0.9em; font-weight:bold; margin:5px 0 5px 0; padding-right: 15px;}
-#experience h4 span.orgDates{font-size:0.9em; font-weight:normal;}
-#experience p{font-size:1.2em;line-height:135%; margin:0 0 15px 0;}
+#experience h4 a{text-decoration:underline; font-size:1.0em; font-weight:bold; margin:5px 0 5px 0; padding-right: 15px;}
+#experience h4 span {font-size:0.9em; font-weight:bold;}
+#experience p{font-size:1.2em;line-height:135%; margin:9px 0 15px 0;}
+#experience ul{font-size:1.2em; list-style-type: circle;}
+#experience ul li{display:list-item;}
 #articlesright{float:right; width:380px;}
 #articlesright article{clear:both; margin:0 0 20px 0; overflow:hidden;}
 #articlesright figure{padding:5px; border:1px #dbdbdb solid; float:left; width:119px; height:119px; margin:0 15px 0 0;}
