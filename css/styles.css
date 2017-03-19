@@ -65,7 +65,7 @@ a.largeButton:hover{background-color:#2f2f2f; background-image:none; text-shadow
 #aboutleft{float:left; width:540px;}
 #aboutleft h3{font-size:1.5em; font-weight:bold; margin:0 0 15px 0;}
 #aboutleft h4{font-size:1.3em; font-weight:bold; margin:0 0 15px 0;}
-#aboutleft p{line-height:135%; margin:0 0 15px 0;}
+#aboutleft p{font-size:1.2em;line-height:135%; margin:9px 0 15px 0;}
 #experience{float:left; width:100%;}
 #experience h3{font-size:1.5em; font-weight:bold; margin:0 0 15px 0;}
 #experience h4{font-size:1.3em; font-weight:bold; margin:5px 0 5px 0;}
