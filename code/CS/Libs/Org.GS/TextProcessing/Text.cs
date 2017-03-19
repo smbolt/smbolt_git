@@ -11,15 +11,15 @@ namespace Org.GS.TextProcessing
 {
   public class Text
   {
-		public static bool BreakpointEnabled = false;
-		public static bool KeepBreakpointEnabled = false;
+    public static bool BreakpointEnabled = false;
+    public static bool KeepBreakpointEnabled = false;
     public static bool InDiagnosticsMode { get; set; }
     public Dictionary<string, string> MetaData { get; set; }
     public string RawText { get; set; }
     public string Name { get; set; }
 
     private ExtractSpec _extractSpec;
-    public ExtractSpec ExtractSpec 
+    public ExtractSpec ExtractSpec
     {
       get { return _extractSpec; }
       set { _extractSpec = value; }
@@ -58,7 +58,7 @@ namespace Org.GS.TextProcessing
 
     public bool IsRoot { get { return Get_IsRoot(); } }
     public Text Root { get { return Get_Root(); } }
-    
+
     public string FullReport { get { return Get_FullReport(); } }
     public XElement ExtractXml { get; set; }
 
@@ -71,7 +71,7 @@ namespace Org.GS.TextProcessing
     public CmdxData CmdxData { get; set; }
 
     private Dictionary<string, XElement> _exportTemplates;
-   
+
     private StringBuilder _sb;
     public string Log { get { return this.Root == null ? "" : this.Root.Get_Log(); } }
 
@@ -100,87 +100,87 @@ namespace Org.GS.TextProcessing
         this.TextSet.Clear();
 
         foreach (var tsd in extractSpec.Values)
-          CreateStructure(tsd, this, 0);   
+          CreateStructure(tsd, this, 0);
       }
-			catch (CxException) { throw; }
+      catch (CxException) { throw; }
       catch (Exception ex)
       {
-        throw new CxException(50, new object[] { this, extractSpec, ex } );
+        throw new CxException(50, new object[] { this, extractSpec, ex });
       }
     }
 
     private void CreateStructure(Tsd tsd, Text t, int startPos)
     {
-			try
-			{
-				if (tsd == null || t == null || t.RawText.IsBlank())
-					return;
+      try
+      {
+        if (tsd == null || t == null || t.RawText.IsBlank())
+          return;
 
-				t.BegPos = startPos;
-				t.EndPos = -1;
-				t.CurrPos = startPos;
-				int textLength = t.RawText.Length;
+        t.BegPos = startPos;
+        t.EndPos = -1;
+        t.CurrPos = startPos;
+        int textLength = t.RawText.Length;
 
-				string name = tsd.Name;
-				int level = t.Level;
-				string code = tsd.Code;
+        string name = tsd.Name;
+        int level = t.Level;
+        string code = tsd.Code;
 
-				int cmdNbr = 0;
+        int cmdNbr = 0;
 
-				if (Text.InDiagnosticsMode && tsd.Debug)
-				{
-					Debugger.Break();
-					string report = t.FullReport;
-				}
+        if (Text.InDiagnosticsMode && tsd.Debug)
+        {
+          Debugger.Break();
+          string report = t.FullReport;
+        }
 
-				var cmdxFactory = new CmdxFactory();
+        var cmdxFactory = new CmdxFactory();
 
-				do
-				{
-					foreach (var cmd in tsd.StructureCommands)
-					{
-						var cmdx = cmdxFactory.CreateCmdx(cmd);
-						cmdNbr++;
+        do
+        {
+          foreach (var cmd in tsd.StructureCommands)
+          {
+            var cmdx = cmdxFactory.CreateCmdx(cmd);
+            cmdNbr++;
 
-						string textZoom = this.AreaOfCurrPos;
+            string textZoom = this.AreaOfCurrPos;
 
-						this.WriteLog(cmdx.Code + g.crlf + textZoom);
+            this.WriteLog(cmdx.Code + g.crlf + textZoom);
 
-						if (BreakpointEnabled)
-						{
-							if (cmdx.Break)
-							{
-								if (!KeepBreakpointEnabled)
-									BreakpointEnabled = false;
-								Debugger.Break();
-							}
-						}
+            if (BreakpointEnabled)
+            {
+              if (cmdx.Break)
+              {
+                if (!KeepBreakpointEnabled)
+                  BreakpointEnabled = false;
+                Debugger.Break();
+              }
+            }
 
             t.Cmdx = cmdx;
 
-						switch (cmdx.Verb)
-						{
-							case Verb.SetTextStart:
-								t.BegPos = t.FindTextPosition(cmdx, t.CurrPos);
-								break;
+            switch (cmdx.Verb)
+            {
+              case Verb.SetTextStart:
+                t.BegPos = t.FindTextPosition(cmdx, t.CurrPos);
+                break;
 
-							case Verb.SetTextEnd:
-								if (t.BegPos > -1)
-									t.EndPos = t.FindTextPosition(cmdx, t.BegPos);
-								else
-									t.EndPos = -1;
-								break;
-						}
-					}
+              case Verb.SetTextEnd:
+                if (t.BegPos > -1)
+                  t.EndPos = t.FindTextPosition(cmdx, t.BegPos);
+                else
+                  t.EndPos = -1;
+                break;
+            }
+          }
 
-					if (t.BegPos == -1 || t.EndPos == -1)
-						return;
+          if (t.BegPos == -1 || t.EndPos == -1)
+            return;
 
-					if (t.BegPos >= t.EndPos)
-						return;
+          if (t.BegPos >= t.EndPos)
+            return;
 
-					if (t.RawText.Length < t.EndPos)
-						return;
+          if (t.RawText.Length < t.EndPos)
+            return;
 
           //int intervalLength = t.EndPos - t.BegPos;
           //while (t.RawText.Length > t.BegPos + intervalLength)
@@ -188,55 +188,55 @@ namespace Org.GS.TextProcessing
 
           //}
 
-					tsd.BeginPosition = t.BegPos;
-					tsd.EndPosition = t.EndPos;
-					t.CurrPos = t.EndPos + 1;
+          tsd.BeginPosition = t.BegPos;
+          tsd.EndPosition = t.EndPos;
+          t.CurrPos = t.EndPos + 1;
 
-					string subText = t.RawText.Substring(t.BegPos, t.EndPos - t.BegPos);
+          string subText = t.RawText.Substring(t.BegPos, t.EndPos - t.BegPos);
 
-					var childText = new Text(subText, t);
-					childText.BegPosInParent = t.BegPos;
-					childText.EndPosInParent = t.EndPos;
+          var childText = new Text(subText, t);
+          childText.BegPosInParent = t.BegPos;
+          childText.EndPosInParent = t.EndPos;
 
-					//string parentTextDump = t.TextDump;	
-					//string childTextDump = childText.TextDump;
+          //string parentTextDump = t.TextDump;	
+          //string childTextDump = childText.TextDump;
 
-					childText.Tsd = tsd;
-					childText.Name = tsd.Name;
+          childText.Tsd = tsd;
+          childText.Name = tsd.Name;
 
-					if (tsd.Iterate)
-					{
-						int seq = 0;
-						childText.Name = tsd.Name + "[" + seq.ToString() + "]";
-						while (t.TextSet.ContainsKey(childText.Name))
-						{
-							seq++;
-							childText.Name = tsd.Name + "[" + seq.ToString() + "]";
-						}
-					}
-					else
-					{
-						if (t.TextSet.ContainsKey(childText.Name))
-							throw new CxException(51, new object[] { this, childText.Name });
-					}
+          if (tsd.Iterate)
+          {
+            int seq = 0;
+            childText.Name = tsd.Name + "[" + seq.ToString() + "]";
+            while (t.TextSet.ContainsKey(childText.Name))
+            {
+              seq++;
+              childText.Name = tsd.Name + "[" + seq.ToString() + "]";
+            }
+          }
+          else
+          {
+            if (t.TextSet.ContainsKey(childText.Name))
+              throw new CxException(51, new object[] { this, childText.Name });
+          }
 
-					t.WriteLog("Creating new Text object named '" + childText.Name + "' as a child of the parent Text object named '" + t.Name + "'." +
-										 "Starting at position " + t.BegPos.ToString("###,##0") + " and having a length of " + childText.TextLength.ToString("###,##0") + ".");
+          t.WriteLog("Creating new Text object named '" + childText.Name + "' as a child of the parent Text object named '" + t.Name + "'." +
+                     "Starting at position " + t.BegPos.ToString("###,##0") + " and having a length of " + childText.TextLength.ToString("###,##0") + ".");
 
-					t.TextSet.Add(childText.Name, childText);
+          t.TextSet.Add(childText.Name, childText);
 
-					foreach (var kvpChildTsd in tsd.TsdSet)
-					{
-						CreateStructure(kvpChildTsd.Value, childText, 0);
-					}
-				}
-				while (tsd.Iterate && t.CurrPos < t.TextLth);
-			}
-			catch (CxException) { throw; }
-			catch (Exception ex)
-			{
-				throw new CxException(52, new object[] { this, tsd, startPos, ex } );
-			}
+          foreach (var kvpChildTsd in tsd.TsdSet)
+          {
+            CreateStructure(kvpChildTsd.Value, childText, 0);
+          }
+        }
+        while (tsd.Iterate && t.CurrPos < t.TextLth);
+      }
+      catch (CxException) { throw; }
+      catch (Exception ex)
+      {
+        throw new CxException(52, new object[] { this, tsd, startPos, ex });
+      }
     }
 
     public void ExtractData()
@@ -267,22 +267,22 @@ namespace Org.GS.TextProcessing
 
     private void ExtractData(XElement parent, Text t)
     {
-			try
-			{
-				if (t.Tsd == null)
-					return;
+      try
+      {
+        if (t.Tsd == null)
+          return;
 
-				if (t.Tsd.Debug)
-				{
-					Debugger.Break();
-				}
+        if (t.Tsd.Debug)
+        {
+          Debugger.Break();
+        }
 
-				XElement xml = parent;
+        XElement xml = parent;
 
-				var tsd = t.Tsd;
+        var tsd = t.Tsd;
 
         if (tsd.IsExportXml)
-				{
+        {
           if (tsd.IsExportElement)
           {
             string elementName = tsd.ExportName;
@@ -320,127 +320,127 @@ namespace Org.GS.TextProcessing
             // but since its currently logically possible (code in Tsd to support it), we'll keep it for now
             Debugger.Break(); // need to code here
           }
-				}
+        }
 
-				t.CurrPos = 0;
-				int textLength = t.RawText.Length;
-				string extractedValue = String.Empty;
+        t.CurrPos = 0;
+        int textLength = t.RawText.Length;
+        string extractedValue = String.Empty;
 
-				string textZoom = this.AreaOfCurrPos;
+        string textZoom = this.AreaOfCurrPos;
 
-				var cmdxFactory = new CmdxFactory();
+        var cmdxFactory = new CmdxFactory();
 
-				foreach (var cmd in tsd.TextExtractCommands)
-				{
-					string code = cmd.Code;
-					extractedValue = String.Empty;
+        foreach (var cmd in tsd.TextExtractCommands)
+        {
+          string code = cmd.Code;
+          extractedValue = String.Empty;
           XElement xElement = null;
 
-					Cmdx cmdx = cmdxFactory.CreateCmdx(cmd);
+          Cmdx cmdx = cmdxFactory.CreateCmdx(cmd);
 
           if (!cmdx.ActiveToRun)
             continue;
-          
-					this.WriteLog(cmdx.Code + g.crlf + textZoom);
 
-					if (BreakpointEnabled)
-					{
-						if (cmdx.Break)
-						{
-							if (!KeepBreakpointEnabled)
-								BreakpointEnabled = false;
-							Debugger.Break();
-						}
-					}
+          this.WriteLog(cmdx.Code + g.crlf + textZoom);
+
+          if (BreakpointEnabled)
+          {
+            if (cmdx.Break)
+            {
+              if (!KeepBreakpointEnabled)
+                BreakpointEnabled = false;
+              Debugger.Break();
+            }
+          }
 
           t.Cmdx = cmdx;
 
-					switch (cmdx.Verb)
-					{
+          switch (cmdx.Verb)
+          {
             case Verb.AddExportTemplate:
               t.AddExportTemplate();
               cmd.ActiveToRun = false;
               continue;
 
-						case Verb.CreateElement:
+            case Verb.CreateElement:
               xElement = t.CreateElement(cmdx);
               if (xElement != null)
               {
                 xml.Add(xElement);
                 xml = xElement;
               }
-							break;
+              break;
 
-						case Verb.SetVariable:
-							t.SetVariable(cmdx);
-							break;
+            case Verb.SetVariable:
+              t.SetVariable(cmdx);
+              break;
 
-						case Verb.LocateToken:
-							t.CurrPos = t.FindTextPosition(cmdx, t.CurrPos);
-							break;
+            case Verb.LocateToken:
+              t.CurrPos = t.FindTextPosition(cmdx, t.CurrPos);
+              break;
 
-						case Verb.ExtractNextToken:
-							extractedValue = t.ExtractNextToken(cmdx);
-							break;
+            case Verb.ExtractNextToken:
+              extractedValue = t.ExtractNextToken(cmdx);
+              break;
 
-						case Verb.ExtractNextTokens:
-							extractedValue = t.ExtractNextTokens(cmdx);
-							break;
+            case Verb.ExtractNextTokens:
+              extractedValue = t.ExtractNextTokens(cmdx);
+              break;
 
-						case Verb.ExtractTextBefore:
+            case Verb.ExtractTextBefore:
               extractedValue = t.ExtractTextBefore(cmdx);
-							break;
+              break;
 
-						case Verb.ExtractNextLine:
-							extractedValue = t.ExtractNextLine(cmdx);
-							break;
+            case Verb.ExtractNextLine:
+              extractedValue = t.ExtractNextLine(cmdx);
+              break;
 
-						case Verb.TokenizeNextLine:
-							t.TokenizeNextLine(cmdx);
-							break;
+            case Verb.TokenizeNextLine:
+              t.TokenizeNextLine(cmdx);
+              break;
 
-						case Verb.RemoveTokens:
-							t.RemoveTokens(cmdx);
-							break;
+            case Verb.RemoveTokens:
+              t.RemoveTokens(cmdx);
+              break;
 
-						case Verb.ExtractStoredToken:
-							extractedValue = t.ExtractStoredToken(cmdx);
-							break;
+            case Verb.ExtractStoredToken:
+              extractedValue = t.ExtractStoredToken(cmdx);
+              break;
 
-						case Verb.ExtractStoredTokens:
-							extractedValue = t.ExtractStoredTokens(cmdx);
-							break;
+            case Verb.ExtractStoredTokens:
+              extractedValue = t.ExtractStoredTokens(cmdx);
+              break;
 
-						case Verb.Truncate:
-							t.Truncate(cmdx);
-							break;
-					}
+            case Verb.Truncate:
+              t.Truncate(cmdx);
+              break;
+          }
 
-					if (extractedValue.IsNotBlank())
-					{
+          if (extractedValue.IsNotBlank())
+          {
             if (extractedValue.StartsWith("$"))
-							extractedValue = extractedValue.Substring(1);
+              extractedValue = extractedValue.Substring(1);
 
             if (extractedValue.EndsWith("%"))
-              extractedValue = extractedValue.Substring(0, extractedValue.Length - 1); 
+              extractedValue = extractedValue.Substring(0, extractedValue.Length - 1);
 
-						if (xml.AttributeExists(cmd.DataName))
-							throw new CxException(55, new object[] { parent, xml, cmd.DataName, t, cmdx });
+            if (xml.AttributeExists(cmd.DataName))
+              throw new CxException(55, new object[] { parent, xml, cmd.DataName, t, cmdx });
 
-						xml.AddAttribute(cmd.DataName, extractedValue);
-					}
-				}
+            xml.AddAttribute(cmd.DataName, extractedValue);
+          }
+        }
 
-				foreach (var childText in t.TextSet.Values)
-				{
-					ExtractData(xml, childText);
-				}
-			}
-			catch (CxException) { throw; }
-			catch (Exception ex)
-			{
-				throw new CxException(54, new object[] { parent, t, ex }); 
-			}
+        foreach (var childText in t.TextSet.Values)
+        {
+          ExtractData(xml, childText);
+        }
+      }
+      catch (CxException) { throw; }
+      catch (Exception ex)
+      {
+        throw new CxException(54, new object[] { parent, t, ex });
+      }
     }
 
     private void Initialize(Text parent)
@@ -504,54 +504,54 @@ namespace Org.GS.TextProcessing
 
     public string GetToken(int beg, int lth, bool allowTruncation = false)
     {
-			try
-			{
-				if (this.TextLength == 0)
-					return String.Empty;
+      try
+      {
+        if (this.TextLength == 0)
+          return String.Empty;
 
-				if (this.RawText.Length < beg + lth - 1)
-				{
-					if (allowTruncation)
-					{
-						return GetToken(beg, allowTruncation);
-					}
-					else
-					{
-						throw new CxException(57, new object[] { this, beg, lth, allowTruncation });
-					}
-				}
+        if (this.RawText.Length < beg + lth - 1)
+        {
+          if (allowTruncation)
+          {
+            return GetToken(beg, allowTruncation);
+          }
+          else
+          {
+            throw new CxException(57, new object[] { this, beg, lth, allowTruncation });
+          }
+        }
 
-				return this.RawText.Substring(beg, lth).Trim();
-			}
-			catch (CxException) { throw; }
-			catch (Exception ex)
-			{
-				throw new CxException(56, new object[] { this, beg, lth, allowTruncation, ex });
-			}
+        return this.RawText.Substring(beg, lth).Trim();
+      }
+      catch (CxException) { throw; }
+      catch (Exception ex)
+      {
+        throw new CxException(56, new object[] { this, beg, lth, allowTruncation, ex });
+      }
     }
 
     public string GetToken(int startingAt, bool allowTruncation = false)
     {
-			try
-			{
-				if (this.TextLength == 0)
-					return String.Empty;
+      try
+      {
+        if (this.TextLength == 0)
+          return String.Empty;
 
-				if (startingAt > this.TextLength - 1)
-				{
-					if (allowTruncation)
-						return String.Empty;
-					else
-						throw new CxException(58, new object[] { this, startingAt, allowTruncation });
-				}
+        if (startingAt > this.TextLength - 1)
+        {
+          if (allowTruncation)
+            return String.Empty;
+          else
+            throw new CxException(58, new object[] { this, startingAt, allowTruncation });
+        }
 
-				return this.RawText.Substring(startingAt).Trim();
-			}
-			catch (CxException) { throw; }
-			catch (Exception ex)
-			{
-				throw new CxException(59, new object[] { this, startingAt, allowTruncation, ex });
-			}
+        return this.RawText.Substring(startingAt).Trim();
+      }
+      catch (CxException) { throw; }
+      catch (Exception ex)
+      {
+        throw new CxException(59, new object[] { this, startingAt, allowTruncation, ex });
+      }
     }
 
     private string Get_FullPath()
@@ -689,7 +689,7 @@ namespace Org.GS.TextProcessing
 
       return true;
     }
-		
+
     private int Get_PriorEndPosition()
     {
       if (this.TextSet == null)
@@ -698,7 +698,7 @@ namespace Org.GS.TextProcessing
       if (this.TextSet.Count == 0)
         throw new CxException(49, new object[] { this });
 
-      return this.TextSet.Values.Last().EndPosInParent;			
+      return this.TextSet.Values.Last().EndPosInParent;
     }
 
     public void RemoveTokens(List<Token> tokensToRemove)
@@ -811,7 +811,7 @@ namespace Org.GS.TextProcessing
       if (_sb == null)
         _sb = new StringBuilder();
 
-      _sb.Append(DateTime.Now.ToString("yyyyMMdd HHmmss.fff") + " - " + message + g.crlf); 
+      _sb.Append(DateTime.Now.ToString("yyyyMMdd HHmmss.fff") + " - " + message + g.crlf);
     }
 
     public Text Clone()
