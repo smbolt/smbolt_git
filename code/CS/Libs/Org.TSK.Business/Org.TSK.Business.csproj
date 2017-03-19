@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Org.TSK.Business</RootNamespace>
+    <AssemblyName>Org.TSK.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\CurrentPeriod.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\RunDay.cs" />
+    <Compile Include="Models\RunHistory.cs" />
+    <Compile Include="Models\RunStats.cs" />
+    <Compile Include="Models\TimeInterval.cs" />
+    <Compile Include="Models\ScheduleDateControl.cs" />
+    <Compile Include="Models\PeriodHistory.cs" />
+    <Compile Include="Models\ScheduledRun.cs" />
+    <Compile Include="Models\ScheduledRunSet.cs" />
+    <Compile Include="Models\ScheduledTask.cs" />
+    <Compile Include="Models\ScheduledTaskSet.cs" />
+    <Compile Include="Models\TaskParameter.cs" />
+    <Compile Include="Models\TaskParameterSet.cs" />
+    <Compile Include="Models\TaskSchedule.cs" />
+    <Compile Include="Models\TaskScheduleElement.cs" />
+    <Compile Include="Models\TaskScheduleIntervalType.cs" />
+    <Compile Include="Models\PeriodContext.cs" />
+    <Compile Include="Models\TaskScheduleExecutionType.cs" />
+    <Compile Include="Models\TimeIntervalSet.cs" />
+    <Compile Include="TaskRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Org.GS\Org.GS.csproj">
+      <Project>{a43ec37d-35c1-4f80-9d14-978da1312fa9}</Project>
+      <Name>Org.GS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
