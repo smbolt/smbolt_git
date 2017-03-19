@@ -96,5 +96,165 @@
     </nav>
   </footer>
 </div>
+
+<div>
+
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+<span class="kwrd">using</span> System;
+<span class="kwrd">using</span> System.Collections.Generic;
+<span class="kwrd">using</span> System.Linq;
+<span class="kwrd">using</span> System.Text;
+<span class="kwrd">using</span> System.Threading.Tasks;
+<span class="kwrd">using</span> Org.GS.Configuration;
+
+<span class="kwrd">namespace</span> Org.GS
+{
+  <span class="kwrd">public</span> <span class="kwrd">enum</span> TaskRequestType
+  {
+    ScheduledTask,
+    OtherJob,
+    OnDemand
+  }
+
+  <span class="kwrd">public</span> <span class="kwrd">class</span> TaskRequest
+  {
+    <span class="kwrd">public</span> <span class="kwrd">string</span> TaskName { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">string</span> ProcessorName { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">string</span> ProcessorVersion { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">string</span> ProcessorNameAndVersion { <span class="kwrd">get</span> { <span class="kwrd">return</span> <span class="kwrd">this</span>.ProcessorName + <span class="str">"_"</span> + <span class="kwrd">this</span>.ProcessorVersion; } }
+    <span class="kwrd">public</span> TaskRequestType TaskRequestType { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">bool</span> TrackHistory { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">int</span>? RunId { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">int</span> ScheduledTaskId { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">int</span> ProcessorTypeId { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> ParmSet ParmSet { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> DateTime ScheduledRunDateTime { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> DateTime TimeDispatched { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> DateTime TimeCompleted { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">string</span> TaskRequestId { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">bool</span> RunUntilTask { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">int</span>? RunUntilPeriodContextId { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">int</span>? RunUntilOffsetMinutes { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">bool</span> SuppressNotificationsOnSuccess { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">bool</span> AllowConcurrent { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">bool</span> IsDryRun { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> <span class="kwrd">object</span> Object { <span class="kwrd">get</span>; <span class="kwrd">set</span>; }
+    <span class="kwrd">public</span> TimeSpan RemainingTimeTilSchedule { <span class="kwrd">get</span> { <span class="kwrd">return</span> Get_RemainingTimeTilSchedule(); } }
+    <span class="kwrd">public</span> <span class="kwrd">string</span> RemainingTimeTilScheduleFmt { <span class="kwrd">get</span> { <span class="kwrd">return</span> Get_RemainingTimeTilScheduleFmt(); } }
+
+    <span class="kwrd">public</span> TaskRequest(<span class="kwrd">int</span> scheduledTaskId, <span class="kwrd">string</span> taskName, <span class="kwrd">string</span> processorName, <span class="kwrd">string</span> processorVersion, <span class="kwrd">int</span> processorTypeId, 
+                      TaskRequestType taskRequestType, ParmSet parmSet, DateTime scheduledRunDateTime, <span class="kwrd">bool</span> trackHistory, <span class="kwrd">bool</span> runUntilTask, 
+                      <span class="kwrd">int</span>? runUntilPeriodContextId, <span class="kwrd">int</span>? runUntilOffsetMinutes, <span class="kwrd">bool</span> suppressNotificationsOnSuccess)
+    {
+      <span class="kwrd">this</span>.ScheduledTaskId = scheduledTaskId;
+      <span class="kwrd">this</span>.TaskName = taskName;
+      <span class="kwrd">this</span>.ProcessorName = processorName;
+      <span class="kwrd">this</span>.ProcessorVersion = processorVersion;
+      <span class="kwrd">this</span>.ProcessorTypeId = processorTypeId;
+      <span class="kwrd">this</span>.TaskRequestType = taskRequestType;
+      <span class="kwrd">this</span>.TrackHistory = trackHistory;
+      <span class="kwrd">this</span>.RunId = <span class="kwrd">null</span>;
+      <span class="kwrd">this</span>.ParmSet = parmSet;
+      <span class="kwrd">this</span>.ScheduledRunDateTime = scheduledRunDateTime;
+      <span class="kwrd">this</span>.TimeDispatched = DateTime.MinValue;
+      <span class="kwrd">this</span>.TimeCompleted = DateTime.MinValue;
+      <span class="kwrd">this</span>.TaskRequestId = String.Empty;
+      <span class="kwrd">this</span>.RunUntilTask = runUntilTask;
+      <span class="kwrd">this</span>.RunUntilPeriodContextId = runUntilPeriodContextId;
+      <span class="kwrd">this</span>.RunUntilOffsetMinutes = runUntilOffsetMinutes;
+      <span class="kwrd">this</span>.SuppressNotificationsOnSuccess = suppressNotificationsOnSuccess;
+      <span class="kwrd">this</span>.AllowConcurrent = <span class="kwrd">false</span>;
+      <span class="kwrd">this</span>.IsDryRun = GetIsDryRun();
+      <span class="kwrd">this</span>.Object = <span class="kwrd">null</span>;
+    }
+
+    <span class="kwrd">private</span> <span class="kwrd">bool</span> GetIsDryRun()
+    {
+      <span class="kwrd">bool</span> isDryRun = <span class="kwrd">false</span>;
+
+      <span class="kwrd">foreach</span> (<span class="kwrd">var</span> parm <span class="kwrd">in</span> <span class="kwrd">this</span>.ParmSet)
+      {
+        <span class="kwrd">if</span> (parm.ParameterName == <span class="str">"IsDryRun"</span>)
+        {
+          isDryRun = parm.ParameterValue.ToString().ToBoolean();
+          <span class="kwrd">break</span>;
+        }
+      }
+      <span class="kwrd">return</span> isDryRun;
+    }
+
+    <span class="kwrd">private</span> TimeSpan Get_RemainingTimeTilSchedule()
+    {
+      <span class="kwrd">if</span> (<span class="kwrd">this</span>.ScheduledRunDateTime &lt; DateTime.Now)
+        <span class="kwrd">return</span> <span class="kwrd">new</span> TimeSpan(0); 
+
+      <span class="kwrd">return</span> <span class="kwrd">this</span>.ScheduledRunDateTime - DateTime.Now;
+    }
+
+    <span class="kwrd">private</span> <span class="kwrd">string</span> Get_RemainingTimeTilScheduleFmt()
+    {
+      <span class="kwrd">if</span> (<span class="kwrd">this</span>.ScheduledRunDateTime &lt; DateTime.Now)
+        <span class="kwrd">return</span> <span class="str">"0 seconds"</span>;
+
+      TimeSpan ts = <span class="kwrd">this</span>.ScheduledRunDateTime - DateTime.Now;
+      <span class="kwrd">return</span> ts.TotalSeconds.ToString(<span class="str">"####.000"</span>) + <span class="str">" seconds."</span>;
+    }
+
+    <span class="kwrd">public</span> <span class="kwrd">string</span> GetParmReport()
+    {
+      StringBuilder sb = <span class="kwrd">new</span> StringBuilder();
+
+      sb.Append(<span class="str">"TASK PARAMETERS REPORT"</span> + g.crlf2 +
+                <span class="str">"Task: "</span> + <span class="kwrd">this</span>.TaskName + <span class="str">" at "</span> + <span class="kwrd">this</span>.ScheduledRunDateTime + g.crlf2 +
+                <span class="str">"Parameter Name"</span>.PadTo(40) + <span class="str">"Data Type"</span>.PadTo(50) + <span class="str">"Parameter Value"</span> + g.crlf +
+                <span class="str">"--------------------------------------------------------------------------------------------------------------------------------------"</span> + g.crlf);
+
+      <span class="kwrd">foreach</span> (<span class="kwrd">var</span> parm <span class="kwrd">in</span> <span class="kwrd">this</span>.ParmSet)
+      {
+        sb.Append(parm.ParameterName.PadTo(40) + parm.ParameterType.ToString().PadTo(50));
+
+        <span class="kwrd">switch</span> (parm.ParameterType.Name)
+        {
+          <span class="kwrd">case</span> <span class="str">"String"</span>:
+          <span class="kwrd">case</span> <span class="str">"Int32"</span>:
+            sb.Append(parm.ParameterValue);
+            <span class="kwrd">break</span>;
+
+          <span class="kwrd">case</span> <span class="str">"ConfigDbSpec"</span>:
+            <span class="kwrd">var</span> configDbSpec = parm.ParameterValue <span class="kwrd">as</span> ConfigDbSpec;
+            sb.Append(configDbSpec.ConnectionString);
+            <span class="kwrd">break</span>;
+
+          <span class="kwrd">case</span> <span class="str">"ConfigWsSpec"</span>:
+            <span class="kwrd">var</span> configWsSpec = parm.ParameterValue <span class="kwrd">as</span> ConfigWsSpec;
+            sb.Append(configWsSpec.WebServiceEndpoint);
+            <span class="kwrd">break</span>;
+
+          <span class="kwrd">case</span> <span class="str">"Dictionary`2"</span>:
+            <span class="kwrd">var</span> dict = parm.ParameterValue <span class="kwrd">as</span> Dictionary&lt;<span class="kwrd">string</span>, <span class="kwrd">string</span>&gt;;
+            sb.Remove(sb.Length - 50, 50);
+            sb.Append(<span class="str">"Dictionary&lt;string, string&gt;"</span>);
+            <span class="kwrd">foreach</span> (<span class="kwrd">var</span> kvp <span class="kwrd">in</span> dict)
+            {
+              sb.Append(g.crlf + String.Empty.PadTo(2) + kvp.Key.PadTo(40) + <span class="str">"  "</span> + kvp.Value);
+            }
+            <span class="kwrd">break</span>;
+
+          <span class="kwrd">default</span>:
+            sb.Append(<span class="str">"[Type:"</span> + parm.ParameterType.Name + <span class="str">"] "</span> + parm.ParameterValue.ToString());
+            <span class="kwrd">break</span>;
+        }
+        sb.Append(g.crlf);
+      }
+
+      <span class="kwrd">return</span> sb.ToString();
+    }
+  }
+}
+</pre>
+
+</div>
+
 </body>
 </html>
