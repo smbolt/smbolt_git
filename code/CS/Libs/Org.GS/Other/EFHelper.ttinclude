@@ -1,0 +1,51 @@
+using DB = Org.DB;
+using Org.GS;
+using Org.GS.Configuration;
+
+// BEGINNING OF CLASS TO GENERATE EF CONNECTION STRINGS FROM Org.GS.Configuration.ConfigDbSpec DATA
+// IMPORT THIS CODE BY PLACING THE VALUE "include file="[include file path]" IN THE CONTEXT TEMPLATE
+// BE SURE TO FORMAT THE INCLUDE STATEMENT APPROPRIATELY.
+// SEE THE TOPIC "T4 Include Directive" in MSDN
+// REPLACE THE [include file path] part with fully qualified (rooted) path for this file.
+
+// ADDITIONALLY - SEE THE FOLLOWING WORD DOCUMENTS IN THE Org.GS\Other FOLDER WHICH DOCUMENT OTHER NECESSARY CHANGES TO THE T4 TEMPLATES
+// 1. Modifying EF Context Template.docx - for instructions for a couple simple modifications to the Context Template.
+// 2. Modifying EF Entity Template.docx - for instructions for a couple simple modifications to the Entity Template.
+
+public static class EFHelper
+{
+  public static string BuildSqlServerEfConnectionString(ConfigDbSpec configDbSpec)
+  {
+	  string connString = BuildSqlServerEfConnectionString(
+      configDbSpec.DbServer, configDbSpec.DbName, configDbSpec.DbUseWindowsAuth,
+      configDbSpec.DbUserId, configDbSpec.DbPassword, configDbSpec.DbEfProvider, configDbSpec.DbEfMetadata
+    ); 
+		return connString;
+  }
+
+  public static string BuildSqlServerEfConnectionString(string dbServer, string dbName, bool useWindowsAuth, string userId, string password, string efProvider, string efMetadata)
+  {
+    System.Data.SqlClient.SqlConnectionStringBuilder connStringBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
+    connStringBuilder.DataSource = dbServer;
+    connStringBuilder.InitialCatalog = dbName;
+    connStringBuilder.IntegratedSecurity = useWindowsAuth;
+    if (!useWindowsAuth)
+    {
+      connStringBuilder.UserID = userId;
+      connStringBuilder.Password = password;
+    }
+    string sqlConnString = connStringBuilder.ToString();
+
+    System.Data.Entity.Core.EntityClient.EntityConnectionStringBuilder entityConnStringBuilder = new System.Data.Entity.Core.EntityClient.EntityConnectionStringBuilder();
+    entityConnStringBuilder.Provider = efProvider;
+    entityConnStringBuilder.ProviderConnectionString = sqlConnString;
+    entityConnStringBuilder.Metadata = @"res://" + efMetadata + ".csdl|" +
+                                        @"res://" + efMetadata + ".ssdl|" +
+                                        @"res://" + efMetadata + ".msl";
+    string entityConnectionString = entityConnStringBuilder.ToString();
+
+    return entityConnectionString;
+  }
+}
+
+// END OF CLASS TO GENERATE EF CONNECTION STRINGS FROM Org.GS.Configuration.ConfigDbSpec DATA
