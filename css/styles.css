@@ -62,11 +62,14 @@ a.largeButton:hover{background-color:#2f2f2f; background-image:none; text-shadow
 /* Main Content */
 
 #maincontent{border-top:1px #dbdbdb solid; padding:18px 0 0 0; overflow:hidden;}
-#aboutleft{float:left; width:540px;}
+#fullwidthcontent{border-top:1px #dbdbdb solid; padding:18px 0 0 0; overflow:hidden;}
+#fullwidthcontent h3{font-size:1.5em; font-weight:bold; margin:0 0 15px 0;}
+#fullwidthcontent p{font-size:1.2em;line-height:135%; margin:9px 0 15px 0;}
+#aboutleft {float:left; width:540px;}
 #aboutleft h3{font-size:1.5em; font-weight:bold; margin:0 0 15px 0;}
 #aboutleft h4{font-size:1.3em; font-weight:bold; margin:0 0 15px 0;}
 #aboutleft p{font-size:1.2em;line-height:135%; margin:9px 0 15px 0;}
-#experience{float:left; width:100%;}
+#experience {float:left; width:100%;}
 #experience h3{font-size:1.5em; font-weight:bold; margin:0 0 15px 0;}
 #experience h4{font-size:1.3em; font-weight:bold; margin:5px 0 5px 0;}
 #experience h4.orgname{color:#4086c6; padding-right: 15px;}
@@ -244,3 +247,11 @@ a.readmore:hover{background-color:#2f2f2f; background-image:none; text-shadow:0 
 }
 
 .csharpcode .lnum { color: #606060; }
+
+img.shadow { width:99%;
+    -moz-box-shadow: 3px 3px 3px #999;
+    -webkit-box-shadow: 3px 3px 3px #999;
+    box-shadow: 3px 3px 3px #999; 
+    border-top: #ddd solid 0.5px;
+    border-left: #ddd solid 0.3px;
+}
