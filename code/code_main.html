@@ -33,7 +33,7 @@
   <h2 class="blue" style="padding: 6px 0 12px 0; font-size: 2.3em"><span class="bigblueheader">My Code</span></h2>
   <div id="aboutleft">
 
-    <h3>What I've Been Building</h3>
+    <h3>What I've Been Building...</h3>
     <p>
        Across the last 10 years I have been building a codebase for the purpose of rapid application development.  My focus has been on the parts of applications
        that are often thought of last.  It is very natural and necessary to focus on the primary/core functions when developing new applications.
@@ -42,10 +42,10 @@
        processing, etc. 
     </p>
     <p>
-       Taken as a whole this set of elements can comprise more than 50% of the total code and functions - sometime much more.  Most of these functions 
-       support some aspect of the "operational function" of the technology, not necessarily the primary "business function".  The "business function" pertains to 
+       Taken as a whole this set of elements can comprise more than 50% of the code in an application - sometime much more.  Most of these functions 
+       support some aspect of the "operational function" of the technology, not necessarily the primary "business function".  The primary "business function" pertains to 
        <span style="font-style:italic;text-decoration: underline;">what</span> an application must do.  The "operational function" pertains to 
-       <span style="font-style:italic;text-decoration: underline;">how</span> an application accomplishes its primary business function - how it delivers its value. 
+       <span style="font-style:italic;text-decoration: underline;">how</span> an application accomplishes its primary business function - or how it delivers its value. 
     </p>
   </div>
 
@@ -76,55 +76,95 @@
 <div  id="fullwidthcontent" class="bodywidth clear" style="border-top:none; padding-top: 0px;">
   <p>
      My philosophy is that <span style="font-style:italic;text-decoration: underline;">all</span> the business value potential of an application is realized through 
-     its <span style="font-style:italic;text-decoration: underline;">operation</span> (when it operates, it produces value) therefore building solid, 
-     reusable components that implement the operational aspects of applications is very important to being able to deliver business value.  And, 
-     building it <span style="font-style:italic;text-decoration: underline;">once</span> as reusable components fosters the kind of reuse, that coupled with 
-     the willingess to refactor and make fixes in the right place, produces a very solid and nicely architected set of components and enables the production 
-     of high quality applications that are developed rapidly - two things that do not normally go together.
+     its <span style="font-style:italic;text-decoration: underline;">operation</span> (when it operates, it produces value, when it's broken no value is being 
+     produced, just disruption). Therefore building solid, reusable components that implement the operational aspects of applications is very important part of being 
+     able to deliver business value.  And, building it <span style="font-style:italic;text-decoration: underline;">once</span> as reusable components fosters the 
+     kind of reuse, that coupled with the willingess to refactor and make fixes in the right place, produces a very solid and nicely architected set of components. 
+     This enables the production of high quality applications that are developed fairly rapidly - two things that do not normally go together.
   </p>
   <p>
      It is very common for these "secondary" needs to be built in an ad-hock fashion as a secondary, lower-priority focus of the development process. 
-     This typically results in a wide diversity of techniques in solving the the same common set problems or applications that "do without" some of the
+     This typically results in a wide diversity of techniques in solving the the same common set problems or in applications that "do without" some of the
      operational support they should have. This diversity leads to minimal reuse and minmal reuse typically cuts off the opportunity to drive continual 
      improvement, which leads to buggy software.
   </p>
   <p>
-     Often I when I start a new job or engagement, I would ask whether any libraries exist for handling these very common application support needs -
-     because if they do exist I would certainly use them rather the coding something different from scratch and propagating unnecessary variation. But with only 
-     one notable exception I never found what I was looking for and ended up needing to create some of these functions (again) from scratch. After having this occur
-     a few times decided that I would bring my code with me and give it to the organization or project so that I could stop having to build again these
-     common support functions.  
+     Often I when I start a new job or engagement, I would ask whether any such libraries exist (somebody must have invented the wheel by now) for handling 
+     these very common application support needs - because if they do exist I would certainly use them rather the coding something different from scratch and 
+     propagating unnecessary variation. But with only one notable exception I never found what I was looking for and ended up needing to create some of these 
+     functions (again) from scratch. After having this occur a few times decided that I would simply bring my code with me and give it to the organization or project 
+     so that I could stop having to build again these common support functions and could get started building the applications which were the reason they
+     hired me. 
   </p>
   <p>
-     As I have done over a hundred "home projects" (for learning or for a specific purpose) and have done a number of side projects of various sizes, I have 
-     continued to build up and perfect the components.  Additionally I have also developed a number of "application shells" for desktop applications, Windows 
-     Services and WCF web services and a set of commonly needed utilities.  One of these "application shells" is discussed at the bottom of the page.   
+     I have done over a hundred "home projects" (for learning or for a specific purpose) and have done a number of side projects of various sizes across the last
+     ten years.  Across this span of time I have continued to build up and perfect this set of reusable components.  Additionally I have 
+     also developed a number of "application shells" for desktop applications, Windows Services and WCF web services so I don't have to start from scratch at the 
+     higher level either.  And there is a set of commonly needed utilities.  One of the "application shells" (a Generic Task Processing Windows Services) is discussed below.   
   </p><br/>
 
   <h3>Example - Generic Task Processing Framework</h3>
   <p>
-     As an example of an "application shell" that is part of the C# codebase described above, I've placed an architectural overview of a generic task processing framework 
-     that I call "TPFX" (Task Processing Framework) in the diagram below.  
+     As an example of an "application shell" which is part of the C# codebase described above, I've placed an architectural overview of a generic task processing framework 
+     that I call "TPFX" (Task Processing Framework) in the diagram below. 
   </p>
   <p>
-     The diagram below the generic and reusable code is represented by all the elements that are not blue.  The unique task processing modules that are dynamically 
-     plugged in at run-time are the items in blue. These "blue modules" are the only code that needs to be written to implement a new function (regarless how simple or complex). 
-     Therefore, about 95% of the code is generic and completely reusable. It is also relatively perfected as it has been used, fixed, optimized, etc. repetitively.
+     You can find the code for this service in the WinService folder in the "Apps" top level folder in the repository.  Also in the Apps folder is WinServiceHost, 
+     a desktop app that contains all the "child libraries" for the task processing service and serves as a platform for the development and testing of the service.
+     Services do not have a user interfaces (they run in the background controlled by the operating system) and are therefore difficult to develop and debug. 
   </p>
   <p>
-     To implement a new instance of this service, you simply copy the binaries of the service to a new directory, run a PowerShell commmand to point a new Windows Service 
-     definition at the main executable, move some "blue modules" into a subordinate directory, update the configuration file to tell the service which tasks to run, update the database 
-     to schedule tasks and supply any necessary parameters and configure notifications - then just start the service using the Service Control Manager. 
+     Embodying the entire functionality within high-level libraries and running them inside a desktop application (WinServiceHost) allows a user interface "surface" for clicking 
+     buttons and other controls and seeing a scrolling log of activity and messages as output.  This allows the actual service, WinService, to be the thinnest wrapper
+     between the Service Control Manager of the operating system and the high-level libraries where the controlling algorithms run.  This also makes the entire application
+     very portable concering what kind of wrapper it runs in.
   </p>
   <p>
-     Building new modules can be done very rapidly as they adhere to a very simple interface and follow a consistent pattern of structure and behavior.  And because 
-     you don't have to build anything that surrounds the "blue module", scheduling, parameterization, logging, configuration, exception handling, 
-     notifications and a multi-threaded engine are all part of the "shell" and are fully reusable. 
+     In addition to the top-level (main-thread-owning) applications, a number of reusable (thread-dependent) components in the "Libs" folder are used.  
+     This includes high-level components such as including Org.TSK (implementing the task engine and task dispatcher) and Org.TSK.Business (the business classes 
+     related to task processing, scheduling parameterization, etc.).  Additional lower level libraries include Org.TP (base classes and interfaces for task processors), 
+     Org.Notify (email and SMS notifications), and as always, at the bottom of the hierarchy is Org.GS (providing a broad array of services - too many to list here, 
+     but most are organized into folders under the Org.GS folder if you want an idea) supporting the most common services to all types of applications and 
+     mid/lower-level libraries). 
   </p>
   <p>
-     Now I can focus on delivering business value instead of building again the necessary "overhead" functions of applications.  And from an operations 
-     standpoint (stability, reliability, performance, etc.), as I like to say "it runs like a refrigerator" - meaning, it does its job and quietly hums.
-  </p><br/>
+     In the diagram below the generic and reusable code is represented by everything that is not blue.  The unique task processing modules which are dynamically 
+     plugged in at run-time are the items in blue. These "blue modules" are the <span style="font-style:italic;text-decoration: underline;">only code that needs 
+     to be written</span> to implement a new function (regarless how simple or complex - to this architecture, they are all just "blue modules" that "plug in" 
+     to the higher level architecture). What this means is that about 95% of the code is generic and completely reusable. It is also quite well perfected since 
+     it has been used, fixed, optimized, etc. repetitively across several years.
+  </p>
+  <p>
+     To implement a new instance of this service, you simply copy the binaries of the service to a new directory, run a PowerShell commmand to create a new Windows Service 
+     definition pointing at the main executable, move some "blue modules" (containing the desired business functions) into a subordinate directory so they can be 
+     discovered and loaded, update the database with scheduling and any required parameters and notification configurations, update the service's main configuration 
+     file to tell the service tasks in the schedule it is responsible for... then simply start the service using the Service Control Manager. 
+  </p>
+  <p>
+     Building new modules can be done very rapidly because they all adhere to a very simple interface and follow a consistent pattern of structure and behavior.  
+     You don't have to build anything that surrounds the "blue module": scheduling, parameterization, logging, configuration, exception handling, 
+     notifications, a multi-threaded engine and more are all part of the very capable "socket" in which the modules run which is fully reusable and doesn't
+     have to know about or be responsible for any business functionality.
+  </p> 
+  <p>
+     With these libraries I can focus on delivering <span style="font-style:italic;text-decoration: underline;">business value</span> instead of building 
+     <span style="font-style:italic;text-decoration: underline;">again</span> the necessary <span style="font-style:italic;text-decoration: underline;">operational overhead</span> 
+     functions for applications.  And from an operations standpoint (concerning security, stability, reliability, performance, threading and much  more), 
+     I like to say (because it has been my objective in building this) "it runs like a refrigerator" - by which I mean, it just sits there and hums, 
+     doesn't cause any trouble and simply gets its work done on time. 
+  </p> 
+  <p> 
+     The Task Processing Framework (TPFX) is simply a completly generic and totally reusable framework totally focused on providing business value by 
+     enabling business-value-creating modules to be developed quickly and for them to have a solid "run-time home", and also by freeing them from having to worry about,
+     or even know about, anything besides each module's specific <span style="font-style:italic;text-decoration: underline;">business-value-providing</span> 
+     concerns. Everything else is provided by the framework. All the <span style="font-style:italic;text-decoration: underline;">opertional</span> requirements 
+     have been covered in a scope that is fully outside the visibiliy and concerns of the business-focused modules. 
+  </p>
+  <p>
+    <span style="font-style:italic;text-decoration: underline;">This</span> is what I mean what I speak of (application systems) architecture. And this is the kind
+    of stuff I am referring to when I talk about technology finding its purpose in being totally focused on providing business value.
+  </p>
+  <br/>
 
   <img src="../images/tpfx.png" alt="" class="shadow" width="100%"  style="margin-bottom:30px">
 </div>

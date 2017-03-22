@@ -22,10 +22,7 @@
     <nav>
       <ul>
         <li><a href="../index.html">Home</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Articles</a></li>
         <li><a href="../code/code_main.html">Code</a></li>
-        <li><a href="#">About</a></li>
       </ul>
     </nav>
   </header>
@@ -40,24 +37,25 @@
        In 2009 as CTO of a small but growing medical software company and facing the need to refresh our infrastructure, I recommended to our CEO that we transition the 
        company's systems and data to the cloud.  At that time "taking it to the cloud" would have meant a "lift and shift" to virtual servers. But apparently it was still too 
        early to be comfortable with our data and code being anywhere else but on physical servers that we could see and touch and hear. At the time I was keeping part 
-       of a five day rotation of backup tapes in my home office - putting the one I brought home on the bottom of the stack and bringing the one on top to the office.
+       of a five day rotation of backup tapes in my home office - putting the one I brought home on the bottom of the stack and bringing the one on the top of the stack to the office.
     </p>
     <p>
-       I remember the day we lost power and knowing our rack-based UPS was not going to hold for long. A colleague hurried to the server room to try to bring the PDC down
-       in a orderly fashion.  As she was quickly shutting down the old 2003 Server it politely informed her that it was installing update 1 of 173.  We had to run a long
-       cord from across the parking lot to let it finish the updates and shut down.
+       I remember a day we when we lost power.  Knowing that our rack-based UPS was not going to hold for long, a colleague hurried to the server room to bring the 
+       primary domain controller which was also our file server down in a orderly fashion.  As she was quickly shutting down the old 2003 Server PDC, it politely 
+       informed her that it had taken the initiative (probably because we had been neglecting it) to do some things it wanted to do.  It simply said "installing 
+       update 1 of 173, please do not turn off your computer".  We quickly ran a long cord from across the parking lot to let it finish the updates and shut down.
     </p>
     <p>
-       Even though getting away from another round of on-premise servers was out of the question, I ended up satisfied that we were able to implement VMware.  
+       Even though getting away from another round of on-premise servers was not on the table, I ended up somewhat satisfied that we were able to implement VMware.  
        After our transition, our only physical servers were hosting VMs running Windows 2008 Server, replacing the tired physical servers we had which were running Windows 
        2003 Server.  It was so nice to be able to create a new server in seconds, rather than having to get on the phone with our rep to order another physical box, worrying 
        about getting the details of the configuration just right, waiting for it to arrive, and then spending hours getting in the rack and on the network.
     </p>
     <p>
-       Today, nearly eight years later, we seem to be at or near an inflection point where more and more small and midsize companies are becoming more comfortable with putting
+       Today, nearly eight years later, we seem to be at or near an inflection point where an increasing number of small and midsize companies are becoming more comfortable with putting
        systems and data in the cloud. Obviously, this is a very general statement and each company is in their own unique place concering this matter. Some have been taking advantage 
        of the cloud for a few years now.  But most of the small to mid-size companies that I've been exposed to have been on a slow approach.  Regardless, there has certainly been 
-       a rise in the number of job postings asking for experience with Azure or AWS that there were a year ago.
+       a rise in the number of job postings asking for experience with Azure or AWS that there were a year ago which is evidence that such a trend is under way.
     </p>
     <p>
        My belief is that we are likely to see an accelleration in the adoption of cloud-based services among many small and midsize businesses which up to now have seemed to 
@@ -127,12 +125,8 @@
   <footer id="mainfooter" class="bodywidth clear">
     <nav class="clear">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Sitemap</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="code/code_main.html">Code</a></li>
       </ul>
     </nav>
   </footer>
