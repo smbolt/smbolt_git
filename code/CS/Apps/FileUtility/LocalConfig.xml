@@ -1,9 +1,0 @@
-<LocalConfig>
-  <CI K="Vendor" V="Organization" />
-  <CI K="AppType" V="WinApp" />
-  <CI K="AppName" V="FileUtility" />
-  <CI K="UseLocalAppData" V="True" />
-  <CI K="UseStartupLogging" V="True" />
-  <CI K="UseInitialConfig" V="False" />
-  <CI K="AttemptConfigImport" V="False" />
-</LocalConfig>
