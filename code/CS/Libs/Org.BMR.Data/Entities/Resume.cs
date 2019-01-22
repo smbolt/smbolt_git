@@ -11,22 +11,52 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Resume")]
-    public partial class Resume
-    {
-        public int ResumeId { get; set; }
-        public int AccountId { get; set; }
-        public string ResumeName { get; set; }
-        public int ResumeStatusId { get; set; }
-        public System.DateTime CreatedDateTime { get; set; }
-        public int CreatedAccountId { get; set; }
-        public Nullable<System.DateTime> ModifiedDateTime { get; set; }
-        public Nullable<int> ModifiedAccountId { get; set; }
-    
-        public virtual ResumeStatu ResumeStatu { get; set; }
-        public virtual Account Account { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Resume")]
+  public partial class Resume
+  {
+    public int ResumeId {
+      get;
+      set;
     }
+    public int AccountId {
+      get;
+      set;
+    }
+    public string ResumeName {
+      get;
+      set;
+    }
+    public int ResumeStatusId {
+      get;
+      set;
+    }
+    public System.DateTime CreatedDateTime {
+      get;
+      set;
+    }
+    public int CreatedAccountId {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> ModifiedDateTime {
+      get;
+      set;
+    }
+    public Nullable<int> ModifiedAccountId {
+      get;
+      set;
+    }
+
+    public virtual ResumeStatu ResumeStatu {
+      get;
+      set;
+    }
+    public virtual Account Account {
+      get;
+      set;
+    }
+  }
 }

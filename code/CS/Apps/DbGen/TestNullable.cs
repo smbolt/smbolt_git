@@ -5,37 +5,41 @@ using System.Text;
 
 namespace DbGen
 {
-    public class TestNullable
+  public class TestNullable
+  {
+    private long? _nullableLong;
+    public long? NullableLong
     {
-        private long? _nullableLong;
-        public long? NullableLong
-        {
-            get 
-            {
-                if (_nullableLong.HasValue)
-                    return _nullableLong.Value;
-                else
-                    return null;
-            }
+      get
+      {
+        if (_nullableLong.HasValue)
+          return _nullableLong.Value;
+        else
+          return null;
+      }
 
-            set
-            {
-                _nullableLong = value;
-            }
-        }
+      set
+      {
+        _nullableLong = value;
+      }
+    }
 
-        private long _notNullableLong;
-        public long NotNullableLong
-        {
-            get { return _notNullableLong; }
-            set { _notNullableLong = value; }
-        }
+    private long _notNullableLong;
+    public long NotNullableLong
+    {
+      get {
+        return _notNullableLong;
+      }
+      set {
+        _notNullableLong = value;
+      }
+    }
 
-        public TestNullable()
-        {
+    public TestNullable()
+    {
 
-
-        }
 
     }
+
+  }
 }

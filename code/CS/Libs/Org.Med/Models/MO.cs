@@ -8,9 +8,18 @@ namespace Org.Med.Models
 {
   public class MO
   {
-    public MOType MOType { get; set; }
-    public MO Parent { get; set; }
-    public MOSet MOSet { get; set; }
+    public MOType MOType {
+      get;
+      set;
+    }
+    public MO Parent {
+      get;
+      set;
+    }
+    public MOSet MOSet {
+      get;
+      set;
+    }
 
     public MO(MO parent = null)
     {

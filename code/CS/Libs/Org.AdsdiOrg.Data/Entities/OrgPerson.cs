@@ -11,17 +11,32 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "OrgPerson")]
-    public partial class OrgPerson
-    {
-        public int OrgPersonId { get; set; }
-        public int OrgId { get; set; }
-        public int PersonId { get; set; }
-    
-        public virtual Person Person { get; set; }
-        public virtual Organization Organization { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "OrgPerson")]
+  public partial class OrgPerson
+  {
+    public int OrgPersonId {
+      get;
+      set;
     }
+    public int OrgId {
+      get;
+      set;
+    }
+    public int PersonId {
+      get;
+      set;
+    }
+
+    public virtual Person Person {
+      get;
+      set;
+    }
+    public virtual Organization Organization {
+      get;
+      set;
+    }
+  }
 }

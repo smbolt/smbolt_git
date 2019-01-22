@@ -7,9 +7,18 @@ namespace Org.GS.Logging
 {
   public class Location
   {
-    public string Program { get; set; }
-    public string At { get; set; }
-    public string In { get; set; }
+    public string Program {
+      get;
+      set;
+    }
+    public string At {
+      get;
+      set;
+    }
+    public string In {
+      get;
+      set;
+    }
 
     public Location()
     {

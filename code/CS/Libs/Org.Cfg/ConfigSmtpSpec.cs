@@ -10,32 +10,60 @@ using Org.GS;
 
 namespace Org.Cfg
 {
-	public class ConfigSmtpSpec : CO
-	{
-		public override string CIType { get { return this.GetType().Name; } }
+  public class ConfigSmtpSpec : CO
+  {
+    public override string CIType {
+      get {
+        return this.GetType().Name;
+      }
+    }
 
-		[DefaultValue("")]
-		public string SmtpServer { get; set; }
+    [DefaultValue("")]
+    public string SmtpServer {
+      get;
+      set;
+    }
 
-		[DefaultValue("")]
-		public string SmtpPort { get; set; }
+    [DefaultValue("")]
+    public string SmtpPort {
+      get;
+      set;
+    }
 
-		[DefaultValue("")]
-		public string SmtpUserId { get; set; }
+    [DefaultValue("")]
+    public string SmtpUserId {
+      get;
+      set;
+    }
 
-		[DefaultValue("")]
-		public string SmtpPassword { get; set; }
+    [DefaultValue("")]
+    public string SmtpPassword {
+      get;
+      set;
+    }
 
-		[DefaultValue(false)]
-		public bool EnableSSL { get; set; }
+    [DefaultValue(false)]
+    public bool EnableSSL {
+      get;
+      set;
+    }
 
-		[DefaultValue(false)]
-		public bool PickUpFromIIS { get; set; }
+    [DefaultValue(false)]
+    public bool PickUpFromIIS {
+      get;
+      set;
+    }
 
-		[DefaultValue(false)]
-		public bool AllowAnonymous { get; set; }
+    [DefaultValue(false)]
+    public bool AllowAnonymous {
+      get;
+      set;
+    }
 
-		[DefaultValue("")]
-		public string EmailFromAddress { get; set; }
-	}
+    [DefaultValue("")]
+    public string EmailFromAddress {
+      get;
+      set;
+    }
+  }
 }

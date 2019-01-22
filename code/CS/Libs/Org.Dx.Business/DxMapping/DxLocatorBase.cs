@@ -9,10 +9,23 @@ namespace Org.Dx.Business
 {
   public class DxLocatorBase
   {
-    public IndexType IndexType { get; protected set; }
-    public CellSearchCriteriaSet CellSearchCriteriaSet { get; protected set; }
-    protected string RawSearchSpec { get; private set; }
-    public string Report { get { return Get_Report(); } }
+    public IndexType IndexType {
+      get;
+      protected set;
+    }
+    public CellSearchCriteriaSet CellSearchCriteriaSet {
+      get;
+      protected set;
+    }
+    protected string RawSearchSpec {
+      get;
+      private set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
     private DxSearchTarget _dxSearchTarget;
 
     public DxLocatorBase(string rawSearchSpec)
@@ -44,7 +57,7 @@ namespace Org.Dx.Business
         throw new Exception("An exception occurred while attempting to parse the searchSpec '" + this.RawSearchSpec + ".", ex);
       }
     }
-    
+
     private string Get_Report()
     {
 

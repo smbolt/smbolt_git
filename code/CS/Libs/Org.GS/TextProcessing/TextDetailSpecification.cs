@@ -8,21 +8,60 @@ namespace Org.GS
 {
   public class TextDetailSpecification
   {
-    public DetailSpecificationSwitch DetailSpecificationSwitch { get; private set; }
-    public string DetailSpecificationData { get; private set; }
-    public string StringValue { get; private set; }
-    public string LowStringValue { get; private set; }
-    public string HighStringValue { get; private set; }
-    public decimal? NumericValue { get; private set; }
-    public decimal? LowNumericValue { get; private set; }
-    public decimal? HighNumericValue { get; private set; }
-    public DateTime? DateValue { get; private set; }
-    public DateTime? LowDateValue { get; private set; }
-    public DateTime? HighDateValue { get; private set; }
-    public List<decimal> NumericValueList { get; private set; }
-    public List<string> StringValueList { get; private set; }
+    public DetailSpecificationSwitch DetailSpecificationSwitch {
+      get;
+      private set;
+    }
+    public string DetailSpecificationData {
+      get;
+      private set;
+    }
+    public string StringValue {
+      get;
+      private set;
+    }
+    public string LowStringValue {
+      get;
+      private set;
+    }
+    public string HighStringValue {
+      get;
+      private set;
+    }
+    public decimal? NumericValue {
+      get;
+      private set;
+    }
+    public decimal? LowNumericValue {
+      get;
+      private set;
+    }
+    public decimal? HighNumericValue {
+      get;
+      private set;
+    }
+    public DateTime? DateValue {
+      get;
+      private set;
+    }
+    public DateTime? LowDateValue {
+      get;
+      private set;
+    }
+    public DateTime? HighDateValue {
+      get;
+      private set;
+    }
+    public List<decimal> NumericValueList {
+      get;
+      private set;
+    }
+    public List<string> StringValueList {
+      get;
+      private set;
+    }
 
-    private TextNodeComparisonSpecifier _comparisonSpecifier;  
+    private TextNodeComparisonSpecifier _comparisonSpecifier;
     private string _rawSpecifier;
 
     public TextDetailSpecification(TextNodeComparisonSpecifier comparisionSpecifier, string rawSpecifier)
@@ -61,7 +100,7 @@ namespace Org.GS
     private void ParseSpecifier()
     {
       if (!_rawSpecifier.StartsWith("/"))
-        throw new Exception("The initialization value of the TextDetailSpecification must start with a forward slash '/'. " + 
+        throw new Exception("The initialization value of the TextDetailSpecification must start with a forward slash '/'. " +
                             "The initialization value received is '" + _rawSpecifier + "'.");
 
       string spec = _rawSpecifier.Substring(1);
@@ -86,7 +125,7 @@ namespace Org.GS
       {
         specSwitch = spec.Trim().ToLower();
       }
-      
+
       switch (specSwitch)
       {
         case "gt":
@@ -179,22 +218,22 @@ namespace Org.GS
           switch (dataTypeSpec)
           {
             case DataTypeSpec.Integer:
-            range = dd.ToRange();
-            switch (range.Length)
-            {
-              case 1:
-              case 2:
-              case 3:
-                if (!range[0].IsValidInteger())
-                  throw new Exception("The value '" + range[0] + "' is not a valid integer value.");
-                this.LowNumericValue = range[0].ToInt32();
-                if (ds == DetailSpecificationSwitch.ValueGreaterThanOrEqualTo)
+              range = dd.ToRange();
+              switch (range.Length)
+              {
+                case 1:
+                case 2:
+                case 3:
+                  if (!range[0].IsValidInteger())
+                    throw new Exception("The value '" + range[0] + "' is not a valid integer value.");
+                  this.LowNumericValue = range[0].ToInt32();
+                  if (ds == DetailSpecificationSwitch.ValueGreaterThanOrEqualTo)
                   {
                     this.NumericValue = range[0].ToInt32();
                   }
-                break;
-            }
-            break;
+                  break;
+              }
+              break;
           }
           break;
 
@@ -203,22 +242,22 @@ namespace Org.GS
           switch (dataTypeSpec)
           {
             case DataTypeSpec.Integer:
-            range = dd.ToRange();
-            switch (range.Length)
-            {
-              case 1:
-              case 2:
-              case 3:
-                if (!range[0].IsValidInteger())
-                  throw new Exception("The value '" + range[0] + "' is not a valid integer value.");
-                this.HighNumericValue = range[0].ToInt32();
-                if (ds == DetailSpecificationSwitch.ValueLessThanOrEqualTo)
+              range = dd.ToRange();
+              switch (range.Length)
+              {
+                case 1:
+                case 2:
+                case 3:
+                  if (!range[0].IsValidInteger())
+                    throw new Exception("The value '" + range[0] + "' is not a valid integer value.");
+                  this.HighNumericValue = range[0].ToInt32();
+                  if (ds == DetailSpecificationSwitch.ValueLessThanOrEqualTo)
                   {
                     this.NumericValue = range[0].ToInt32();
                   }
-                break;
-            }
-            break;
+                  break;
+              }
+              break;
           }
           break;
 
@@ -240,7 +279,7 @@ namespace Org.GS
 
                 default:
                   throw new Exception("The value '" + dd + "' does not represent a valid single comparision value. The number of comparision values found " +
-                    "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
+                                      "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
               }
               this.StringValue = dd;
               break;
@@ -257,7 +296,7 @@ namespace Org.GS
 
                 default:
                   throw new Exception("The value '" + dd + "' does not represent a valid single comparision value. The number of comparision values found " +
-                    "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
+                                      "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
               }
               break;
 
@@ -276,7 +315,7 @@ namespace Org.GS
 
                 default:
                   throw new Exception("The value '" + dd + "' does not represent a valid single comparision value. The number of comparision values found " +
-                    "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
+                                      "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
               }
               break;
 
@@ -292,7 +331,7 @@ namespace Org.GS
 
                 default:
                   throw new Exception("The value '" + dd + "' does not represent a valid single comparision value. The number of comparision values found " +
-                    "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
+                                      "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
               }
               break;
 
@@ -332,6 +371,6 @@ namespace Org.GS
       }
 
     }
-    
+
   }
 }

@@ -31,7 +31,7 @@ namespace Org.SvcManager
     private WCFHostingModel _wcfHostingModel;
     private bool _initializationComplete;
 
-    public frmAddOrUpdateWCFService(ServiceSpec existingServiceSpec, ServiceEnvironment serviceEnvironment, ServiceHost serviceHost, ServiceType serviceType, 
+    public frmAddOrUpdateWCFService(ServiceSpec existingServiceSpec, ServiceEnvironment serviceEnvironment, ServiceHost serviceHost, ServiceType serviceType,
                                     WCFHostingModel wcfHostingModel, ConfigDbSpec dbSpec, ServiceSpec parentServiceSpec, bool isNew)
     {
       InitializeComponent();
@@ -93,7 +93,7 @@ namespace Org.SvcManager
         if (!_isNew)
           serviceSpec.TaskServiceID = _existingServiceSpec.TaskServiceID;
         serviceSpec.ServiceHostID = _serviceHost.HostID;
-        serviceSpec.ParentServiceID = _wcfHostingModel == WCFHostingModel.HostedInWindowsService && _parentServiceSpec != null ? 
+        serviceSpec.ParentServiceID = _wcfHostingModel == WCFHostingModel.HostedInWindowsService && _parentServiceSpec != null ?
                                       _parentServiceSpec.TaskServiceID : (int?) null;
         serviceSpec.Name = _wcfHostingModel == WCFHostingModel.HostedInWindowsService ? "MgmtWebSvc" : txtWCFServiceName.Text.Trim();
         serviceSpec.ServiceType = ServiceType.WCFWebService;
@@ -116,7 +116,7 @@ namespace Org.SvcManager
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred while attempting to " + task + "." +
-                         g.crlf2 + ex.ToReport(), title + " - Exception Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        g.crlf2 + ex.ToReport(), title + " - Exception Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -132,11 +132,11 @@ namespace Org.SvcManager
         var configWsSpec = BuildConfigWsSpec();
 
         if (!configWsSpec.IsReadyToConnect())
-          throw new Exception("ConfigWsSpec is not ready to connect to the web service."); 
+          throw new Exception("ConfigWsSpec is not ready to connect to the web service.");
 
         var wsParms = new WsParms("Ping", configWsSpec, false);
         var messageFactory = new MessageFactory();
-        var requestMessage = messageFactory.CreateRequestMessage(wsParms); 
+        var requestMessage = messageFactory.CreateRequestMessage(wsParms);
         var responseMessage = WsClient.InvokeServiceCall(wsParms, requestMessage);
 
         this.Cursor = Cursors.Default;
@@ -161,13 +161,13 @@ namespace Org.SvcManager
 
           MessageBox.Show("The web service test failed." + g.crlf2 + errorMessage,
                           "Test Web Service Connection - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }        
+        }
       }
       catch (Exception ex)
       {
         this.Cursor = Cursors.Default;
-        MessageBox.Show("An exception occurred while attempting to test the Ping transaction in the WCF web service on host '" + _serviceHost + "'." + 
-                         g.crlf2 + ex.ToReport(), "Test Web Service Connection - Exception Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show("An exception occurred while attempting to test the Ping transaction in the WCF web service on host '" + _serviceHost + "'." +
+                        g.crlf2 + ex.ToReport(), "Test Web Service Connection - Exception Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -203,14 +203,14 @@ namespace Org.SvcManager
         }
         else
         {
-          MessageBox.Show(taskResult.Message, "Port Ping - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+          MessageBox.Show(taskResult.Message, "Port Ping - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
       }
       catch (Exception ex)
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred while attempting to execute the Port Ping of host '" + _serviceHost + "'." + g.crlf2 + ex.ToReport(),
-                        "Port Ping - Exception Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Port Ping - Exception Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -367,7 +367,7 @@ namespace Org.SvcManager
           btnTestWebService.Enabled = true;
       }
 
-      
+
     }
 
     private void EnableButtons(bool enabled)

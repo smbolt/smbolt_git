@@ -15,9 +15,16 @@ namespace Org.GS.AppDomainManagement
   public class AppDomainObjectRegistry : MarshalByRefObject, ISponsor
   {
 
-    private Dictionary<string, AppDomainObjectDescriptor> _registeredObjects { get; set; }
-    public IReadOnlyDictionary<string, AppDomainObjectDescriptor> RegisteredObjects { get { return _registeredObjects; } }
-    
+    private Dictionary<string, AppDomainObjectDescriptor> _registeredObjects {
+      get;
+      set;
+    }
+    public IReadOnlyDictionary<string, AppDomainObjectDescriptor> RegisteredObjects {
+      get {
+        return _registeredObjects;
+      }
+    }
+
     public AppDomainObjectRegistry()
     {
       _registeredObjects = new Dictionary<string, AppDomainObjectDescriptor>();

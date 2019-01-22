@@ -139,7 +139,7 @@ namespace Org.OpsManager
       catch (Exception ex)
       {
         this.Cursor = Cursors.Default;
-        MessageBox.Show("An exception occurred while attempting to save the parameter set to the database." + g.crlf2 + ex.ToReport()); 
+        MessageBox.Show("An exception occurred while attempting to save the parameter set to the database." + g.crlf2 + ex.ToReport());
       }
     }
 
@@ -233,7 +233,7 @@ namespace Org.OpsManager
         }
         else
           btnAdd.Enabled = true;
-          btnSave.Enabled = true;
+        btnSave.Enabled = true;
       }
       else
         btnAdd.Enabled = false;

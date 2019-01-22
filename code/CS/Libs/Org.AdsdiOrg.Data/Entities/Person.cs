@@ -11,45 +11,111 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Person")]
-    public partial class Person
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Person")]
+  public partial class Person
+  {
+    public Person()
     {
-        public Person()
-        {
-            this.Accounts = new HashSet<Account>();
-            this.AppLogs = new HashSet<AppLog>();
-            this.Orders = new HashSet<Order>();
-            this.OrgPersons = new HashSet<OrgPerson>();
-            this.PersonEmailAddresses = new HashSet<PersonEmailAddress>();
-            this.RelatedPersons = new HashSet<RelatedPerson>();
-            this.RelatedPersons1 = new HashSet<RelatedPerson>();
-        }
-    
-        public int PersonId { get; set; }
-        public int PersonStatusId { get; set; }
-        public string Salutation { get; set; }
-        public string Title { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
-        public string Suffix { get; set; }
-        public string Gender { get; set; }
-        public Nullable<System.DateTime> DateOfBirth { get; set; }
-        public System.DateTime CreatedDateTime { get; set; }
-        public int CreatedAccountId { get; set; }
-        public System.DateTime ModifiedDateTime { get; set; }
-        public int ModifiedAccountId { get; set; }
-    
-        public virtual ICollection<Account> Accounts { get; set; }
-        public virtual ICollection<AppLog> AppLogs { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<OrgPerson> OrgPersons { get; set; }
-        public virtual PersonStatu PersonStatu { get; set; }
-        public virtual ICollection<PersonEmailAddress> PersonEmailAddresses { get; set; }
-        public virtual ICollection<RelatedPerson> RelatedPersons { get; set; }
-        public virtual ICollection<RelatedPerson> RelatedPersons1 { get; set; }
+      this.Accounts = new HashSet<Account>();
+      this.AppLogs = new HashSet<AppLog>();
+      this.Orders = new HashSet<Order>();
+      this.OrgPersons = new HashSet<OrgPerson>();
+      this.PersonEmailAddresses = new HashSet<PersonEmailAddress>();
+      this.RelatedPersons = new HashSet<RelatedPerson>();
+      this.RelatedPersons1 = new HashSet<RelatedPerson>();
     }
+
+    public int PersonId {
+      get;
+      set;
+    }
+    public int PersonStatusId {
+      get;
+      set;
+    }
+    public string Salutation {
+      get;
+      set;
+    }
+    public string Title {
+      get;
+      set;
+    }
+    public string FirstName {
+      get;
+      set;
+    }
+    public string MiddleName {
+      get;
+      set;
+    }
+    public string LastName {
+      get;
+      set;
+    }
+    public string Suffix {
+      get;
+      set;
+    }
+    public string Gender {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> DateOfBirth {
+      get;
+      set;
+    }
+    public System.DateTime CreatedDateTime {
+      get;
+      set;
+    }
+    public int CreatedAccountId {
+      get;
+      set;
+    }
+    public System.DateTime ModifiedDateTime {
+      get;
+      set;
+    }
+    public int ModifiedAccountId {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Account> Accounts {
+      get;
+      set;
+    }
+    public virtual ICollection<AppLog> AppLogs {
+      get;
+      set;
+    }
+    public virtual ICollection<Order> Orders {
+      get;
+      set;
+    }
+    public virtual ICollection<OrgPerson> OrgPersons {
+      get;
+      set;
+    }
+    public virtual PersonStatu PersonStatu {
+      get;
+      set;
+    }
+    public virtual ICollection<PersonEmailAddress> PersonEmailAddresses {
+      get;
+      set;
+    }
+    public virtual ICollection<RelatedPerson> RelatedPersons {
+      get;
+      set;
+    }
+    public virtual ICollection<RelatedPerson> RelatedPersons1 {
+      get;
+      set;
+    }
+  }
 }

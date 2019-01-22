@@ -56,7 +56,7 @@ namespace Org.TSK
 
     private string _taskRequiringTaskRequestUpdate = String.Empty;
     private ConfigDbSpec _tasksDbSpec;
-    
+
     public TaskEngine(WinServiceParms winServiceParms, TaskEngineParms taskEngineParms)
       : base(winServiceParms, "TaskEngine")
     {
@@ -80,8 +80,8 @@ namespace Org.TSK
 
       try
       {
-        StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName + 
-              "' POINT 1.  Beginning " + base.EngineName + ".Initialize.");
+        StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName +
+                                       "' POINT 1.  Beginning " + base.EngineName + ".Initialize.");
 
         WireUpSuperMethod();
 
@@ -106,8 +106,8 @@ namespace Org.TSK
           _tasksDbSpec = g.GetDbSpec(_taskEngineParms.TasksDbSpecPrefix);
 
         if (_taskEngineParms.TaskScheduleMode == TaskScheduleMode.Database && !_tasksDbSpec.IsReadyToConnect())
-          throw new Exception("The TasksConfigDbSpec is not ready to connect to the database - connection string prefix is '" + _taskEngineParms.TasksDbSpecPrefix + ".");        
-        
+          throw new Exception("The TasksConfigDbSpec is not ready to connect to the database - connection string prefix is '" + _taskEngineParms.TasksDbSpecPrefix + ".");
+
         if (_taskEngineParms.MEFModulesPath == "$MEFCATALOG$" || _taskEngineParms.MEFModulesPath.IsBlank())
           _taskEngineParms.MEFModulesPath = g.MEFCatalog;
 
@@ -146,7 +146,7 @@ namespace Org.TSK
                 continue;
             }
 
-            StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName + " Loading MEF Catalog - path: " + leafFolder); 
+            StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName + " Loading MEF Catalog - path: " + leafFolder);
             catalog.Catalogs.Add(new DirectoryCatalog(leafFolder));
           }
 
@@ -167,12 +167,12 @@ namespace Org.TSK
         this.LoadedTaskProcessorFactories = new Dictionary<string, ITaskProcessorFactory>();
         this.TasksProcessed = 0;
 
-        StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName + 
+        StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName +
                                        "' POINT 5.  Finished " + base.EngineName + ".Initialize.");
       }
       catch (Exception ex)
       {
-        HandleExceptions("An exception occurred during " + base.EngineName + " initialization.", ex, 6027, true, true, true, true); 
+        HandleExceptions("An exception occurred during " + base.EngineName + " initialization.", ex, 6027, true, true, true, true);
       }
     }
 
@@ -188,7 +188,7 @@ namespace Org.TSK
       try
       {
         string notificationMessage = base.ServiceName + " (" + base.EngineName + ") on " + base.DomainAndComputer + " is starting";
-        string notificationSubject = notificationMessage; 
+        string notificationSubject = notificationMessage;
         ProcessNotifications(notificationSubject, notificationMessage, base.DefaultNotifyEventName);
         StartupLogging.WriteStartupLog("Just entered " + base.EngineName + ".Start");
 
@@ -196,13 +196,13 @@ namespace Org.TSK
           return true;
 
         base.Logger.Log(base.EngineName + " start method is beginning.", 6028);
-          
+
         base.TaskDispatcher = new TaskDispatcher(this.LoadedTaskProcessorFactories);
         base.TaskDispatcher.ContinueTask = true;
         base.TaskDispatcher.NotifyMessage += base.NotifyMessageHandler;
 
-        _taskEngineParms.TasksToRun = GetTasksToRun(); 
-        base.Logger.Log(_taskEngineParms.TasksToRunReport, 6116); 
+        _taskEngineParms.TasksToRun = GetTasksToRun();
+        base.Logger.Log(_taskEngineParms.TasksToRunReport, 6116);
 
         StartupLogging.WriteStartupLog(base.ServiceName + " is configured to run the following tasks:" + _taskEngineParms.TasksToRunReport);
 
@@ -278,7 +278,7 @@ namespace Org.TSK
           return g.AppConfig.GetList("TasksToRun");
 
         var tasksToRun = new List<string>();
-        
+
         using (var taskRepo = new TaskRepository(_tasksDbSpec))
         {
           var taskList = taskRepo.GetTaskAssignmentsForTaskName(base.ServiceName);
@@ -293,10 +293,10 @@ namespace Org.TSK
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to get the list of tasks to run.  The TaskAssignmentSource is '" +
-                            _taskEngineParms.TaskAssignmentSource.ToString() + "'.", ex); 
+                            _taskEngineParms.TaskAssignmentSource.ToString() + "'.", ex);
       }
     }
-    
+
     public override void Stop()
     {
       if (base.WinServiceState == WinServiceState.Stopped)
@@ -364,7 +364,7 @@ namespace Org.TSK
         base.TaskDispatcher.ContinueTask = true;
 
         if (base.WinServiceParms.RunWebService && resumeWebService)
-            StartWebService();
+          StartWebService();
 
         NotifyHostEvent(new IpdxMessage("UI", IpdxMessageType.Notification, "RESUMED"));
 
@@ -376,7 +376,7 @@ namespace Org.TSK
         HandleExceptions("An exception occurred attempting to resume the service.", ex, 6033, false, true, true, true);
       }
     }
-    
+
     private void ProcessTasks()
     {
       try
@@ -442,7 +442,7 @@ namespace Org.TSK
             base.ProcessTasks_ResetEvent.WaitOne(base.WinServiceParms.SleepInterval);
             continue;
           }
-                    
+
           base.ProcessTasks_ResetEvent.WaitOne(base.TaskRequests.WaitInterval);
 
           TaskRequest taskRequest = null;
@@ -468,13 +468,13 @@ namespace Org.TSK
             if (base.WinServiceParms.InDiagnosticsMode)
             {
               this.NotifyHostEvent("No task to process - remaining task count is " + tasksToProcessCount.ToString() + nextTaskReport +
-                  " - next task set refresh at " + base.TaskRequests.NextLoadTime.ToString("yyyyMMdd HH:mm:ss"));
+                                   " - next task set refresh at " + base.TaskRequests.NextLoadTime.ToString("yyyyMMdd HH:mm:ss"));
             }
 
             CheckTaskListRefresh();
             continue;
           }
-                  
+
           // If a task request has been pulled from the queue, we continue to process it.  It will eventually be dispatched
           // to a task processor for processing below.
 
@@ -495,9 +495,9 @@ namespace Org.TSK
           if (!base.WinServiceParms.SuppressNonErrorOutput)
           {
             this.NotifyHostEvent("The task engine will attempt to locate a task processor for and run task " + taskRequest.TaskName + " for " +
-                taskRequest.ScheduledRunDateTime.ToString("yyyy-MM-dd HH:mm:ss") +
-                " - taskId is " + taskRequest.TaskRequestId +
-                " - remaining task count is " + tasksToProcessCount.ToString() + ".");
+                                 taskRequest.ScheduledRunDateTime.ToString("yyyy-MM-dd HH:mm:ss") +
+                                 " - taskId is " + taskRequest.TaskRequestId +
+                                 " - remaining task count is " + tasksToProcessCount.ToString() + ".");
           }
 
           CheckTaskListRefresh();
@@ -517,8 +517,8 @@ namespace Org.TSK
             taskRequest.ParmSet.SetParmValue("IsDryRun", true);
           }
 
-          var processorType = g.ToEnum<ProcessorType>(taskRequest.ProcessorTypeId, ProcessorType.NotSet); 
-          
+          var processorType = g.ToEnum<ProcessorType>(taskRequest.ProcessorTypeId, ProcessorType.NotSet);
+
           if (processorType == ProcessorType.StandardCatalog)
           {
             var taskProcessorAD = GetTaskProcessorFromAppDomain(taskRequest);
@@ -548,9 +548,9 @@ namespace Org.TSK
           if (taskProcessorFactory == null)
           {
             string discardMessage = "The task '" + taskRequest.TaskName + "' will be discarded because task processor factory could not be located.";
-            ProcessNotifications(discardMessage, base.DefaultNotifyEventName); 
+            ProcessNotifications(discardMessage, base.DefaultNotifyEventName);
             this.NotifyHostEvent(discardMessage);
-            base.Logger.Log(LogSeverity.SEVR, discardMessage, 6035); 
+            base.Logger.Log(LogSeverity.SEVR, discardMessage, 6035);
             continue;
           }
 
@@ -582,10 +582,10 @@ namespace Org.TSK
             catch (Exception ex)
             {
               string errorMessage = "An exception occurred while attempting to create the TaskProcessor for '" + taskRequest.ProcessorNameAndVersion + "' from " +
-                               "the TaskProcessorFactory of type '" + taskProcessorFactory.GetType().FullName + "'.";
+                                    "the TaskProcessorFactory of type '" + taskProcessorFactory.GetType().FullName + "'.";
               this.NotifyHostEvent(errorMessage);
               base.TaskRequests.RemoveRunningTask(taskRequest);
-              HandleExceptions(errorMessage, ex, 6126, false, true, true, false); 
+              HandleExceptions(errorMessage, ex, 6126, false, true, true, false);
             }
           });
 
@@ -651,7 +651,7 @@ namespace Org.TSK
 
           if (base.ProcessTasksThread == null)
           {
-            base.Logger.Log("The ProcessTasksThread (TPL object) is null. The MonitorMainLoop is throwing this exception."); 
+            base.Logger.Log("The ProcessTasksThread (TPL object) is null. The MonitorMainLoop is throwing this exception.");
             throw new Exception("The ProcessTasksThread (TPL object) is null. The MonitorMainLoop is throwing this exception.");
           }
 
@@ -714,7 +714,7 @@ namespace Org.TSK
             return true;
           }
 
-          // see if we've reached the limit of number of retries 
+          // see if we've reached the limit of number of retries
           if (!parms.ContinueToRetryDependenciesCheck())
             return false;
 
@@ -722,7 +722,7 @@ namespace Org.TSK
           if (parms.PerformTryRestartNotification())
           {
             string message = "TaskEngine MainLoopMonitoring is attempting to restart the main processing loop - attempt number " +
-                                  parms.EngineMonitorDependencyCheckCount.ToString() + ".";
+                             parms.EngineMonitorDependencyCheckCount.ToString() + ".";
             base.Logger.Log(message);
             ProcessNotifications(message, DefaultNotifyEventName);
           }
@@ -734,7 +734,7 @@ namespace Org.TSK
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to run the dependencies check for restarting the main task processing loop after the loop " +
-                            "was detected to be faulted by the main loop monitoring process.", ex); 
+                            "was detected to be faulted by the main loop monitoring process.", ex);
       }
     }
 
@@ -767,11 +767,11 @@ namespace Org.TSK
       try
       {
         var appDomainSetUp = new AppDomainSetup();
-        string catalogFullPath = _catalogStem + @"\" + _catalogEnvironment + @"\" + _catalogNode;        
+        string catalogFullPath = _catalogStem + @"\" + _catalogEnvironment + @"\" + _catalogNode;
         appDomainSetUp.ApplicationBase = catalogFullPath + @"\" + taskRequest.CatalogName + @"\" + taskRequest.CatalogEntry + @"\" + taskRequest.ProcessorVersion;
         var objDesc = new AppDomainObjectDescriptor(taskRequest.AssemblyName, taskRequest.ProcessorNameAndVersion, taskRequest.AssemblyName, taskRequest.ObjectTypeName, appDomainSetUp);
         ITaskProcessor taskProcessor = (ITaskProcessor)_appDomainSupervisor.GetObject(objDesc);
-        return taskProcessor; 
+        return taskProcessor;
       }
       catch
       {
@@ -790,17 +790,17 @@ namespace Org.TSK
         switch (taskResult.TaskResultStatus)
         {
           case TaskResultStatus.Success:
-            NotifyHostEvent("Task Processor '" + taskProcessor.Name + " completed successfully."); 
+            NotifyHostEvent("Task Processor '" + taskProcessor.Name + " completed successfully.");
             break;
 
           case TaskResultStatus.Warning:
             NotifyHostEvent("Task Processor '" + taskProcessor.Name + " completed with status 'Warning." + g.crlf +
-                            "Warning Message is '" + taskResult.Message); 
+                            "Warning Message is '" + taskResult.Message);
             break;
 
           default:
             NotifyHostEvent("Task Processor '" + taskProcessor.Name + " ended with status '" + taskResult.TaskResultStatus.ToString() + "'." + g.crlf +
-                            "Message is '" + taskResult.Message); 
+                            "Message is '" + taskResult.Message);
             break;
 
         }
@@ -843,11 +843,11 @@ namespace Org.TSK
 
         _lastRunTaskRequest.ScheduledRunDateTime = DateTime.Now;
 
-        base.TaskRequests.AddTaskRequest(_lastRunTaskRequest); 
+        base.TaskRequests.AddTaskRequest(_lastRunTaskRequest);
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to re-execute the last run task request.", ex); 
+        throw new Exception("An exception occurred while attempting to re-execute the last run task request.", ex);
       }
     }
 
@@ -856,7 +856,7 @@ namespace Org.TSK
       try
       {
         if (this.ScheduleOnceNow)
-          return; 
+          return;
 
         if (base.TaskRequests.NextLoadTime < DateTime.Now || base.RefreshTaskRequests || base.RefreshTaskList)
         {
@@ -897,7 +897,7 @@ namespace Org.TSK
       try
       {
         if (!taskRequest.TrackHistory)
-          return; 
+          return;
 
         var runHistory = new RunHistory(taskRequest);
         using (var repo = new TaskRepository(_tasksDbSpec))
@@ -959,7 +959,7 @@ namespace Org.TSK
             {
               _catalogStem = repo.GetParameterValue("$CATALOG_STEM$");
               _catalogEnvironment = repo.GetParameterValue("$ENV$");
-              _catalogNode = repo.GetParameterValue("$CATALOG_NODE$"); 
+              _catalogNode = repo.GetParameterValue("$CATALOG_NODE$");
             }
             break;
 
@@ -974,7 +974,7 @@ namespace Org.TSK
 
         if (!Directory.Exists(fullCatalogPath))
         {
-          throw new Exception("The configured catalog path does not exist, configured value is '" + fullCatalogPath + "'."); 
+          throw new Exception("The configured catalog path does not exist, configured value is '" + fullCatalogPath + "'.");
         }
       }
       catch (Exception ex)
@@ -1000,11 +1000,11 @@ namespace Org.TSK
 
         if (base.WinServiceState == WinServiceState.Paused || this.IsSuspended)
           return;
-                                    
+
         base.IsSuspendedReported = false;
 
         if (g.DebugOrVerbose)
-            this.NotifyHostEvent(new IpdxMessage("UI", "DispatchTask being called for task " + taskRequest.TaskName));
+          this.NotifyHostEvent(new IpdxMessage("UI", "DispatchTask being called for task " + taskRequest.TaskName));
 
         ITaskProcessorFactory taskProcessorFactory = GetTaskProcessorFactory(taskRequest.TaskName + "_1.0.0.0");
 
@@ -1023,8 +1023,8 @@ namespace Org.TSK
           var taskResult = await base.TaskDispatcher.DispatchTaskAsync(taskProcessor, taskRequest);
           base.TaskRequests.RemoveRunningTask(taskRequest);
           TPL.Task.Run(() => {
-            UpdateRunHistory(taskResult); 
-            ProcessNotifications(taskResult); 
+            UpdateRunHistory(taskResult);
+            ProcessNotifications(taskResult);
           });
         });
       }
@@ -1033,19 +1033,19 @@ namespace Org.TSK
         HandleExceptions("An exception occurred in the ProcessTask method.", ex, 6037, false, true, true, true);
       }
     }
-        
+
     private void ReportSuspended()
     {
       if (!this.IsSuspendedReported)
       {
         this.NotifyHostEvent(new IpdxMessage("UI", g.crlf +
-                    "**************************************** ALL TASKS ARE SUSPENDED ****************************************" + g.crlf +
-                    "**************************************** ALL TASKS ARE SUSPENDED ****************************************" + g.crlf +
-                    "**************************************** ALL TASKS ARE SUSPENDED ****************************************" + g.crlf));
+                                             "**************************************** ALL TASKS ARE SUSPENDED ****************************************" + g.crlf +
+                                             "**************************************** ALL TASKS ARE SUSPENDED ****************************************" + g.crlf +
+                                             "**************************************** ALL TASKS ARE SUSPENDED ****************************************" + g.crlf));
         this.IsSuspendedReported = true;
       }
     }
-        
+
     public TaskRequestSet GetTaskRequests(List<string> tasksToRun)
     {
       try
@@ -1057,7 +1057,7 @@ namespace Org.TSK
 
         this.NotifyHostEvent("Loading list of Task Requests to process");
 
-        base.Logger.Log("Building list of tasks to process - source is " + _taskEngineParms.TaskScheduleMode.ToString() + ".", 6065); 
+        base.Logger.Log("Building list of tasks to process - source is " + _taskEngineParms.TaskScheduleMode.ToString() + ".", 6065);
 
         switch (_taskEngineParms.TaskScheduleMode)
         {
@@ -1065,10 +1065,12 @@ namespace Org.TSK
             bool scheduleOnceNow = false;
             if (this.TaskToRun.IsNotBlank())
             {
-              tasksToRun = new List<string>() { this.TaskToRun };
+              tasksToRun = new List<string>() {
+                this.TaskToRun
+              };
               scheduleOnceNow = true;
             }
-            var scheduledTasksFromDb = LoadTasksFromDatabase(tasksToRun, scheduleOnceNow); 
+            var scheduledTasksFromDb = LoadTasksFromDatabase(tasksToRun, scheduleOnceNow);
             scheduledTasksFromDb.LoadTasksToRun(_taskEngineParms.TaskLoadIntervalSeconds, scheduleOnceNow, false);
             taskRequests.AddTaskRequests(scheduledTasksFromDb.GetTaskRequests());
             break;
@@ -1092,7 +1094,7 @@ namespace Org.TSK
           ProcessNotifications(base.WinServiceParms.WindowsServiceName + " Task Schedule Reloaded from " + _taskEngineParms.TaskScheduleMode.ToString().Replace("From", String.Empty),
                                "The task schedule has been reloaded." + g.crlf2 + taskReport, base.DefaultNotifyEventName);
         }
-        
+
         return taskRequests;
       }
       catch (Exception ex)
@@ -1166,7 +1168,7 @@ namespace Org.TSK
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to get the ScheduledTaskSet from the AppConfig file.", ex); 
+        throw new Exception("An exception occurred while attempting to get the ScheduledTaskSet from the AppConfig file.", ex);
       }
     }
 
@@ -1185,7 +1187,7 @@ namespace Org.TSK
       message.MessageType = IpdxMessageType.Text;
       message.Recipient = "UI";
       message.Text = notifyMessage.Subject + " : " + notifyMessage.Message;
-      NotifyHostEvent(message); 
+      NotifyHostEvent(message);
     }
 
 
@@ -1202,22 +1204,22 @@ namespace Org.TSK
     //    if (this.CompositionContainer == null)
     //      return runnableTaskNames;
 
-    //    return this.CompositionContainer.GetRunnableTaskNames(taskProcessorFactories); 
+    //    return this.CompositionContainer.GetRunnableTaskNames(taskProcessorFactories);
     //  }
     //  catch(Exception ex)
     //  {
-    //    throw new Exception("An exception occurred while attempting to build a list of runnable task names from the MEF catalog.", ex); 
+    //    throw new Exception("An exception occurred while attempting to build a list of runnable task names from the MEF catalog.", ex);
     //  }
     //}
 
     private void WireUpSuperMethod()
     {
-      base.WireUpSuperMethod(SuperMethod); 
+      base.WireUpSuperMethod(SuperMethod);
     }
 
     private TaskResult SuperMethod(WsCommand command)
     {
-      TaskResult taskResult = new TaskResult(command.WsCommandName.ToString()); 
+      TaskResult taskResult = new TaskResult(command.WsCommandName.ToString());
 
       switch (command.WsCommandName)
       {
@@ -1283,7 +1285,7 @@ namespace Org.TSK
             this.NotifyHostEvent("RemoveFromQueue transaction failed - could not obtain lock.");
             taskResult.Message = "Request to remove task from the queue failed - could not obtain lock.";
             return taskResult.Failed();
-          }          
+          }
 
         case WsCommandName.RemoveFromAssignment:
           int? taskIdToRemoveFromAssignment = command?.Parms?["ScheduledTaskID"]?.DbToInt32();
@@ -1319,8 +1321,8 @@ namespace Org.TSK
       taskResult.Message = "Command '" + command + "' is not implemented in the SuperMethod method in the " + base.EngineName + ".";
       return taskResult.Failed();
     }
-    
-        
+
+
     public new void Dispose()
     {
       base.Dispose();

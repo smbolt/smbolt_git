@@ -11,7 +11,10 @@ namespace Org.WSO.Transactions
   public class GetConfigFileResponse : TransactionBase
   {
     [XMap(XType=XType.Element)]
-    public string ConfigFile { get; set; }
+    public string ConfigFile {
+      get;
+      set;
+    }
 
     public GetConfigFileResponse()
     {

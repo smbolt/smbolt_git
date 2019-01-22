@@ -250,7 +250,7 @@ namespace Org.Finance.Business
         string sql =
           "UPDATE dbo.[Transaction] " + g.crlf +
           "  SET Description = '" + trans.Description.Trim() + "', " + g.crlf +
-          "      CategoryId = " + trans.CategoryId.ToString() + " " + g.crlf + 
+          "      CategoryId = " + trans.CategoryId.ToString() + " " + g.crlf +
           "  WHERE Id = " + trans.Id.ToString() + " ";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -286,7 +286,7 @@ namespace Org.Finance.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to update the category id on " + transIds.Count.ToString() + 
+        throw new Exception("An exception occurred while attempting to update the category id on " + transIds.Count.ToString() +
                             "to " + categoryId.ToString() + ".", ex);
       }
     }
@@ -337,7 +337,7 @@ namespace Org.Finance.Business
     {
       try
       {
-        EnsureConnection();        
+        EnsureConnection();
 
         string sql =
           "INSERT INTO [Finance].[dbo].[Category] " + g.crlf +
@@ -353,10 +353,10 @@ namespace Org.Finance.Business
           "  " + (category.IsTaxRelated ? "1" : "0") + " " + g.crlf +
           ") ";
 
-          using (var cmd = new SqlCommand(sql, _conn))
-          {
-            cmd.ExecuteNonQuery();
-          }
+        using (var cmd = new SqlCommand(sql, _conn))
+        {
+          cmd.ExecuteNonQuery();
+        }
       }
       catch (Exception ex)
       {

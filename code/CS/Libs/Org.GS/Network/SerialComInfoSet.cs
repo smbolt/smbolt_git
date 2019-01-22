@@ -32,19 +32,19 @@ namespace Org.GS.Network
         if (sci.PnP_InfoFound)
         {
           sb.Append(
-                "  PnP Caption       : " + sci.PnP_Caption + g.crlf +
-                "  PnP Description   : " + sci.PnP_Description + g.crlf + 
-                "  PnP Manufacturer  : " + sci.PnP_Manufacturer + g.crlf + 
-                "  PnP Name          : " + sci.PnP_Name + g.crlf + 
-                "  PnP DeviceID      : " + sci.PnP_DeviceID + g.crlf + 
-                "  PnP PNP DeviceID  : " + sci.PnP_PNPDeviceID + g.crlf);
+            "  PnP Caption       : " + sci.PnP_Caption + g.crlf +
+            "  PnP Description   : " + sci.PnP_Description + g.crlf +
+            "  PnP Manufacturer  : " + sci.PnP_Manufacturer + g.crlf +
+            "  PnP Name          : " + sci.PnP_Name + g.crlf +
+            "  PnP DeviceID      : " + sci.PnP_DeviceID + g.crlf +
+            "  PnP PNP DeviceID  : " + sci.PnP_PNPDeviceID + g.crlf);
         }
         else
         {
-          sb.Append("  NO PNP info found" + g.crlf); 
+          sb.Append("  NO PNP info found" + g.crlf);
         }
 
-        sb.Append(g.crlf); 
+        sb.Append(g.crlf);
       }
 
       string report = sb.ToString();

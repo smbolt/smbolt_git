@@ -48,36 +48,38 @@
       this.splitterMain.Panel2.SuspendLayout();
       this.splitterMain.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
       this.mnuMain.Size = new System.Drawing.Size(911, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(180, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 678);
       this.lblStatus.Name = "lblStatus";
@@ -85,9 +87,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnGetAccounts);
       this.pnlTop.Controls.Add(this.btnGetUsers);
       this.pnlTop.Controls.Add(this.btnWebApiGetToken);
@@ -97,27 +99,27 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(911, 93);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.Location = new System.Drawing.Point(4, 117);
       this.splitterMain.Name = "splitterMain";
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.tvMain);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.txtOut);
       this.splitterMain.Size = new System.Drawing.Size(911, 561);
       this.splitterMain.SplitterDistance = 264;
       this.splitterMain.TabIndex = 3;
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtOut.Location = new System.Drawing.Point(0, 0);
@@ -127,18 +129,18 @@
       this.txtOut.Size = new System.Drawing.Size(641, 559);
       this.txtOut.TabIndex = 0;
       this.txtOut.WordWrap = false;
-      // 
+      //
       // tvMain
-      // 
+      //
       this.tvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tvMain.Location = new System.Drawing.Point(0, 0);
       this.tvMain.Name = "tvMain";
       this.tvMain.Size = new System.Drawing.Size(262, 559);
       this.tvMain.TabIndex = 0;
-      // 
+      //
       // btnConnect
-      // 
+      //
       this.btnConnect.Location = new System.Drawing.Point(15, 10);
       this.btnConnect.Name = "btnConnect";
       this.btnConnect.Size = new System.Drawing.Size(129, 23);
@@ -147,9 +149,9 @@
       this.btnConnect.Text = "Connect";
       this.btnConnect.UseVisualStyleBackColor = true;
       this.btnConnect.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnGetUsers
-      // 
+      //
       this.btnGetUsers.Location = new System.Drawing.Point(285, 10);
       this.btnGetUsers.Name = "btnGetUsers";
       this.btnGetUsers.Size = new System.Drawing.Size(129, 23);
@@ -158,9 +160,9 @@
       this.btnGetUsers.Text = "Get Users";
       this.btnGetUsers.UseVisualStyleBackColor = true;
       this.btnGetUsers.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnGetAccounts
-      // 
+      //
       this.btnGetAccounts.Location = new System.Drawing.Point(150, 10);
       this.btnGetAccounts.Name = "btnGetAccounts";
       this.btnGetAccounts.Size = new System.Drawing.Size(129, 23);
@@ -169,9 +171,9 @@
       this.btnGetAccounts.Text = "Get Accounts";
       this.btnGetAccounts.UseVisualStyleBackColor = true;
       this.btnGetAccounts.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnWebApiGetToken
-      // 
+      //
       this.btnWebApiGetToken.Location = new System.Drawing.Point(15, 39);
       this.btnWebApiGetToken.Name = "btnWebApiGetToken";
       this.btnWebApiGetToken.Size = new System.Drawing.Size(129, 23);
@@ -180,9 +182,9 @@
       this.btnWebApiGetToken.Text = "Get Web API Token";
       this.btnWebApiGetToken.UseVisualStyleBackColor = true;
       this.btnWebApiGetToken.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(919, 701);

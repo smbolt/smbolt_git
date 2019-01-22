@@ -61,7 +61,7 @@ namespace Org.Ops.Tasks
           _headerMessage.Append("Action".PadTo(13) + "Task Name".PadTo(35) + "PeriodStart".PadTo(20) + "Sender" + g.crlf);
           _headerMessage.Append("--------------------------------------------------------------------------------" + g.crlf);
 
-          
+
 
           foreach (var item in items)
           {

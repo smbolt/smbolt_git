@@ -7,8 +7,11 @@ using OopFactory.X12.Hipaa.Common;
 
 namespace OopFactory.X12.Hipaa.ClaimStatus
 {
-    public class ClaimStatusServiceLineResponse
-    {
-        public DateTime BeginDate { get; set; }
+  public class ClaimStatusServiceLineResponse
+  {
+    public DateTime BeginDate {
+      get;
+      set;
     }
+  }
 }

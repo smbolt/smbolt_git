@@ -11,20 +11,29 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PhoneNumberFormat")]
-    public partial class PhoneNumberFormat
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PhoneNumberFormat")]
+  public partial class PhoneNumberFormat
+  {
+    public PhoneNumberFormat()
     {
-        public PhoneNumberFormat()
-        {
-            this.PhoneNumbers = new HashSet<PhoneNumber>();
-        }
-    
-        public string PhoneNumberFormatCode { get; set; }
-        public string PhoneNumberFormatDesc { get; set; }
-    
-        public virtual ICollection<PhoneNumber> PhoneNumbers { get; set; }
+      this.PhoneNumbers = new HashSet<PhoneNumber>();
     }
+
+    public string PhoneNumberFormatCode {
+      get;
+      set;
+    }
+    public string PhoneNumberFormatDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<PhoneNumber> PhoneNumbers {
+      get;
+      set;
+    }
+  }
 }

@@ -70,9 +70,9 @@
       this.splitterMain.SuspendLayout();
       this.pnlFileInfo.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.ckWrapText);
       this.pnlTop.Controls.Add(this.cboFileType);
       this.pnlTop.Controls.Add(this.cboTextView);
@@ -99,9 +99,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1408, 152);
       this.pnlTop.TabIndex = 0;
-      // 
+      //
       // btnShowLastSegment
-      // 
+      //
       this.btnShowLastSegment.Location = new System.Drawing.Point(712, 66);
       this.btnShowLastSegment.Name = "btnShowLastSegment";
       this.btnShowLastSegment.Size = new System.Drawing.Size(115, 23);
@@ -110,9 +110,9 @@
       this.btnShowLastSegment.Text = "Show LastSegment";
       this.btnShowLastSegment.UseVisualStyleBackColor = true;
       this.btnShowLastSegment.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnShowFirstSegment
-      // 
+      //
       this.btnShowFirstSegment.Location = new System.Drawing.Point(528, 66);
       this.btnShowFirstSegment.Name = "btnShowFirstSegment";
       this.btnShowFirstSegment.Size = new System.Drawing.Size(115, 23);
@@ -121,9 +121,9 @@
       this.btnShowFirstSegment.Text = "Show First Segment";
       this.btnShowFirstSegment.UseVisualStyleBackColor = true;
       this.btnShowFirstSegment.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnGoToLine
-      // 
+      //
       this.btnGoToLine.Location = new System.Drawing.Point(1124, 62);
       this.btnGoToLine.Name = "btnGoToLine";
       this.btnGoToLine.Size = new System.Drawing.Size(123, 23);
@@ -132,9 +132,9 @@
       this.btnGoToLine.Text = "Go To Line";
       this.btnGoToLine.UseVisualStyleBackColor = true;
       this.btnGoToLine.Click += new System.EventHandler(this.btnGoToLine_Click);
-      // 
+      //
       // btnGo
-      // 
+      //
       this.btnGo.Location = new System.Drawing.Point(1124, 36);
       this.btnGo.Name = "btnGo";
       this.btnGo.Size = new System.Drawing.Size(123, 23);
@@ -143,9 +143,9 @@
       this.btnGo.Text = "Go";
       this.btnGo.UseVisualStyleBackColor = true;
       this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 786);
       this.lblStatus.Name = "lblStatus";
@@ -154,78 +154,80 @@
       this.lblStatus.TabIndex = 2;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1408, 24);
       this.mnuMain.TabIndex = 3;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileSelect,
-            this.mnuFileExit});
+        this.mnuFileSelect,
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(180, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuFileSelect
-      // 
+      //
       this.mnuFileSelect.Name = "mnuFileSelect";
       this.mnuFileSelect.Size = new System.Drawing.Size(180, 22);
       this.mnuFileSelect.Tag = "SelectInputFile";
       this.mnuFileSelect.Text = "&Select Input File";
       this.mnuFileSelect.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblSelectedInputFile
-      // 
+      //
       this.lblSelectedInputFile.AutoSize = true;
       this.lblSelectedInputFile.Location = new System.Drawing.Point(12, 7);
       this.lblSelectedInputFile.Name = "lblSelectedInputFile";
       this.lblSelectedInputFile.Size = new System.Drawing.Size(95, 13);
       this.lblSelectedInputFile.TabIndex = 1;
       this.lblSelectedInputFile.Text = "Selected Input File";
-      // 
+      //
       // txtInputSelectedInputFile
-      // 
+      //
       this.txtInputSelectedInputFile.Location = new System.Drawing.Point(15, 24);
       this.txtInputSelectedInputFile.Name = "txtInputSelectedInputFile";
       this.txtInputSelectedInputFile.Size = new System.Drawing.Size(813, 20);
       this.txtInputSelectedInputFile.TabIndex = 2;
-      // 
+      //
       // lblFileInfo
-      // 
+      //
       this.lblFileInfo.Location = new System.Drawing.Point(539, 7);
       this.lblFileInfo.Name = "lblFileInfo";
       this.lblFileInfo.Size = new System.Drawing.Size(294, 14);
       this.lblFileInfo.TabIndex = 1;
       this.lblFileInfo.Text = "(file info)";
       this.lblFileInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-      // 
+      //
       // lblSegmentSize
-      // 
+      //
       this.lblSegmentSize.AutoSize = true;
       this.lblSegmentSize.Location = new System.Drawing.Point(12, 51);
       this.lblSegmentSize.Name = "lblSegmentSize";
       this.lblSegmentSize.Size = new System.Drawing.Size(72, 13);
       this.lblSegmentSize.TabIndex = 1;
       this.lblSegmentSize.Text = "Segment Size";
-      // 
+      //
       // cboSegmentSize
-      // 
+      //
       this.cboSegmentSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboSegmentSize.FormattingEnabled = true;
       this.cboSegmentSize.Location = new System.Drawing.Point(15, 68);
@@ -233,18 +235,18 @@
       this.cboSegmentSize.Size = new System.Drawing.Size(169, 21);
       this.cboSegmentSize.TabIndex = 3;
       this.cboSegmentSize.SelectedIndexChanged += new System.EventHandler(this.cboSegmentSize_SelectedIndexChanged);
-      // 
+      //
       // lblSegmentCount
-      // 
+      //
       this.lblSegmentCount.AutoSize = true;
       this.lblSegmentCount.Location = new System.Drawing.Point(190, 72);
       this.lblSegmentCount.Name = "lblSegmentCount";
       this.lblSegmentCount.Size = new System.Drawing.Size(144, 13);
       this.lblSegmentCount.TabIndex = 1;
       this.lblSegmentCount.Text = "Approximate segement count";
-      // 
+      //
       // btnNextSegment
-      // 
+      //
       this.btnNextSegment.Location = new System.Drawing.Point(678, 66);
       this.btnNextSegment.Name = "btnNextSegment";
       this.btnNextSegment.Size = new System.Drawing.Size(30, 23);
@@ -253,9 +255,9 @@
       this.btnNextSegment.Text = "-->";
       this.btnNextSegment.UseVisualStyleBackColor = true;
       this.btnNextSegment.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnShowPrevSegment
-      // 
+      //
       this.btnShowPrevSegment.Location = new System.Drawing.Point(647, 66);
       this.btnShowPrevSegment.Name = "btnShowPrevSegment";
       this.btnShowPrevSegment.Size = new System.Drawing.Size(30, 23);
@@ -264,31 +266,32 @@
       this.btnShowPrevSegment.Text = "<--";
       this.btnShowPrevSegment.UseVisualStyleBackColor = true;
       this.btnShowPrevSegment.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblTextView
-      // 
+      //
       this.lblTextView.AutoSize = true;
       this.lblTextView.Location = new System.Drawing.Point(12, 96);
       this.lblTextView.Name = "lblTextView";
       this.lblTextView.Size = new System.Drawing.Size(54, 13);
       this.lblTextView.TabIndex = 1;
       this.lblTextView.Text = "Text View";
-      // 
+      //
       // cboTextView
-      // 
+      //
       this.cboTextView.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboTextView.FormattingEnabled = true;
       this.cboTextView.Items.AddRange(new object[] {
-            "Normal",
-            "Hex Dump"});
+        "Normal",
+        "Hex Dump"
+      });
       this.cboTextView.Location = new System.Drawing.Point(15, 113);
       this.cboTextView.Name = "cboTextView";
       this.cboTextView.Size = new System.Drawing.Size(169, 21);
       this.cboTextView.TabIndex = 3;
       this.cboTextView.SelectedIndexChanged += new System.EventHandler(this.cboTextView_SelectedIndexChanged);
-      // 
+      //
       // ckWrapText
-      // 
+      //
       this.ckWrapText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
       this.ckWrapText.AutoSize = true;
       this.ckWrapText.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -300,37 +303,37 @@
       this.ckWrapText.Text = "Wrap Text";
       this.ckWrapText.UseVisualStyleBackColor = true;
       this.ckWrapText.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.Location = new System.Drawing.Point(4, 229);
       this.splitterMain.Name = "splitterMain";
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.tvMain);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.txtOut);
       this.splitterMain.Size = new System.Drawing.Size(1408, 557);
       this.splitterMain.SplitterDistance = 244;
       this.splitterMain.SplitterWidth = 3;
       this.splitterMain.TabIndex = 5;
-      // 
+      //
       // tvMain
-      // 
+      //
       this.tvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tvMain.Location = new System.Drawing.Point(0, 0);
       this.tvMain.Name = "tvMain";
       this.tvMain.Size = new System.Drawing.Size(242, 555);
       this.tvMain.TabIndex = 0;
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -340,9 +343,9 @@
       this.txtOut.TabIndex = 0;
       this.txtOut.Text = "";
       this.txtOut.WordWrap = false;
-      // 
+      //
       // btnAnalyzeFile
-      // 
+      //
       this.btnAnalyzeFile.Location = new System.Drawing.Point(837, 24);
       this.btnAnalyzeFile.Name = "btnAnalyzeFile";
       this.btnAnalyzeFile.Size = new System.Drawing.Size(123, 23);
@@ -351,49 +354,50 @@
       this.btnAnalyzeFile.Text = "Analyze File";
       this.btnAnalyzeFile.UseVisualStyleBackColor = true;
       this.btnAnalyzeFile.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblFileType
-      // 
+      //
       this.lblFileType.AutoSize = true;
       this.lblFileType.Location = new System.Drawing.Point(190, 96);
       this.lblFileType.Name = "lblFileType";
       this.lblFileType.Size = new System.Drawing.Size(50, 13);
       this.lblFileType.TabIndex = 1;
       this.lblFileType.Text = "File Type";
-      // 
+      //
       // cboFileType
-      // 
+      //
       this.cboFileType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboFileType.FormattingEnabled = true;
       this.cboFileType.Items.AddRange(new object[] {
-            "XML File",
-            "Text File",
-            "Binary File"});
+        "XML File",
+        "Text File",
+        "Binary File"
+      });
       this.cboFileType.Location = new System.Drawing.Point(193, 113);
       this.cboFileType.Name = "cboFileType";
       this.cboFileType.Size = new System.Drawing.Size(169, 21);
       this.cboFileType.TabIndex = 3;
       this.cboFileType.SelectedIndexChanged += new System.EventHandler(this.cboTextView_SelectedIndexChanged);
-      // 
+      //
       // txtXmlHierarchy
-      // 
+      //
       this.txtXmlHierarchy.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtXmlHierarchy.Location = new System.Drawing.Point(377, 113);
       this.txtXmlHierarchy.Name = "txtXmlHierarchy";
       this.txtXmlHierarchy.Size = new System.Drawing.Size(451, 21);
       this.txtXmlHierarchy.TabIndex = 2;
-      // 
+      //
       // lblXmlHierarchy
-      // 
+      //
       this.lblXmlHierarchy.AutoSize = true;
       this.lblXmlHierarchy.Location = new System.Drawing.Point(374, 96);
       this.lblXmlHierarchy.Name = "lblXmlHierarchy";
       this.lblXmlHierarchy.Size = new System.Drawing.Size(77, 13);
       this.lblXmlHierarchy.TabIndex = 1;
       this.lblXmlHierarchy.Text = "XML Hierarchy";
-      // 
+      //
       // btnFormatXml
-      // 
+      //
       this.btnFormatXml.Location = new System.Drawing.Point(837, 111);
       this.btnFormatXml.Name = "btnFormatXml";
       this.btnFormatXml.Size = new System.Drawing.Size(123, 23);
@@ -402,9 +406,9 @@
       this.btnFormatXml.Text = "Format XML";
       this.btnFormatXml.UseVisualStyleBackColor = true;
       this.btnFormatXml.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlFileInfo
-      // 
+      //
       this.pnlFileInfo.Controls.Add(this.scrollFile);
       this.pnlFileInfo.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlFileInfo.Location = new System.Drawing.Point(4, 176);
@@ -412,18 +416,18 @@
       this.pnlFileInfo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
       this.pnlFileInfo.Size = new System.Drawing.Size(1408, 53);
       this.pnlFileInfo.TabIndex = 6;
-      // 
+      //
       // scrollFile
-      // 
+      //
       this.scrollFile.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.scrollFile.Location = new System.Drawing.Point(0, 33);
       this.scrollFile.Name = "scrollFile";
       this.scrollFile.Size = new System.Drawing.Size(1408, 17);
       this.scrollFile.TabIndex = 0;
       this.scrollFile.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollFile_Scroll);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1416, 809);

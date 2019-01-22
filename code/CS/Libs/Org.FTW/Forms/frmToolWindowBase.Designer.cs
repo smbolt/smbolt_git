@@ -31,17 +31,17 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmToolWindowBase));
       this.pnlMain = new System.Windows.Forms.Panel();
       this.SuspendLayout();
-      // 
+      //
       // pnlMain
-      // 
+      //
       this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlMain.Location = new System.Drawing.Point(0, 0);
       this.pnlMain.Name = "pnlMain";
       this.pnlMain.Size = new System.Drawing.Size(201, 338);
       this.pnlMain.TabIndex = 2;
-      // 
+      //
       // frmToolWindowBase
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(201, 338);

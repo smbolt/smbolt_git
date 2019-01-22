@@ -11,8 +11,12 @@ namespace Org.WebApi.Cache
   {
     public object this[string key]
     {
-      get { return this.GetValue(key); }
-      set { this.SetValue(key, value); }
+      get {
+        return this.GetValue(key);
+      }
+      set {
+        this.SetValue(key, value);
+      }
     }
 
     private object GetValue(string key)

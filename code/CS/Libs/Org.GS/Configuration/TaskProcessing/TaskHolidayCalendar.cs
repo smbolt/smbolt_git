@@ -13,7 +13,10 @@ namespace Org.GS.Configuration
   public class TaskHolidayCalendar
   {
     [XMap(DefaultValue = "")]
-    public string Values { get; set; }
+    public string Values {
+      get;
+      set;
+    }
 
     public TaskHolidayCalendar()
     {

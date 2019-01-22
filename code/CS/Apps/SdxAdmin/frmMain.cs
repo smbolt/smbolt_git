@@ -96,7 +96,7 @@ namespace Org.SdxAdmin
 
       LoadTreeView();
 
-      tabMain.SelectedTab = tabMain.TabPages[_mode.ToInt32()];      
+      tabMain.SelectedTab = tabMain.TabPages[_mode.ToInt32()];
     }
 
     private void AddSolution()
@@ -259,7 +259,9 @@ namespace Org.SdxAdmin
         tvSolutions.Nodes.Clear();
 
         var rootNode = new TreeNode(_env, 0, 0);
-        rootNode.Tag = new SdxEnvironment() { Name = _env };
+        rootNode.Tag = new SdxEnvironment() {
+          Name = _env
+        };
         tvSolutions.Nodes.Add(rootNode);
 
         foreach (var solution in solutionSet.Values)
@@ -520,7 +522,7 @@ namespace Org.SdxAdmin
       foreach (ToolStripMenuItem menuItem in ctxMenuSolution.Items)
       {
         string tag = menuItem.Tag.ObjectToTrimmedString();
-        
+
         switch (sdxObject.SdxObjectType)
         {
           case SdxObjectType.Environment:
@@ -529,21 +531,21 @@ namespace Org.SdxAdmin
 
           case SdxObjectType.Solution:
             menuItem.Visible = tag != "AddSolution" && (
-                                tag.Contains("Solution") || tag == "AddLogicalTable"
-                                );
+                                 tag.Contains("Solution") || tag == "AddLogicalTable"
+                               );
 
             break;
 
           case SdxObjectType.LogicalTable:
             menuItem.Visible = tag != "AddLogicalTable" && (
-                                tag.Contains("LogicalTable") || tag == "AddColumn"
-                                );
+                                 tag.Contains("LogicalTable") || tag == "AddColumn"
+                               );
             break;
 
           case SdxObjectType.Column:
             menuItem.Visible = tag != "AddColumn" && (
-                                tag.Contains("Column")
-                                );
+                                 tag.Contains("Column")
+                               );
             break;
         }
       }

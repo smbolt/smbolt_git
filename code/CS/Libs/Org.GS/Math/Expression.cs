@@ -11,32 +11,79 @@ namespace Org.GS.Math
     private char[] opDelim = new char[] { '(', ')', '+', '-', '/', '*', '^' };
 
     private string e;
-    public string ParentExpression { get; set; }
+    public string ParentExpression {
+      get;
+      set;
+    }
     private Dictionary<string, string> _variables;
     private EquationResultType _resultType;
-    private int ID { get; set; }
-
-    public decimal Value { get; set; }
-    public SubExpressionType SubExpressionType { get; set; }
-    public string SubExpTypeAbbr 
-    {
-        get { return this.GetSubExpTypeAbbr(); }
+    private int ID {
+      get;
+      set;
     }
 
-    public bool IsComputationComplete { get; set; }
+    public decimal Value {
+      get;
+      set;
+    }
+    public SubExpressionType SubExpressionType {
+      get;
+      set;
+    }
+    public string SubExpTypeAbbr
+    {
+      get {
+        return this.GetSubExpTypeAbbr();
+      }
+    }
 
-    public int BeginPosition { get; set; }
-    public int EndPosition { get; set; }
+    public bool IsComputationComplete {
+      get;
+      set;
+    }
 
-    public string LeftOperand { get; set; }
-    public int LeftOperandBegin { get; set; }
-    public int LeftOperandEnd { get; set; }
-    public string RightOperand { get; set; }
-    public int RightOperandBegin { get; set; }
-    public int RightOperandEnd { get; set; }
+    public int BeginPosition {
+      get;
+      set;
+    }
+    public int EndPosition {
+      get;
+      set;
+    }
 
-    public MathOperation MathOperation { get; set; }
-    public int MathOperatorPosition { get; set; }
+    public string LeftOperand {
+      get;
+      set;
+    }
+    public int LeftOperandBegin {
+      get;
+      set;
+    }
+    public int LeftOperandEnd {
+      get;
+      set;
+    }
+    public string RightOperand {
+      get;
+      set;
+    }
+    public int RightOperandBegin {
+      get;
+      set;
+    }
+    public int RightOperandEnd {
+      get;
+      set;
+    }
+
+    public MathOperation MathOperation {
+      get;
+      set;
+    }
+    public int MathOperatorPosition {
+      get;
+      set;
+    }
 
     public Expression(string expressionString, int beginPosition, int endPosition, int id, string parentExpression, Dictionary<string, string> variables)
     {
@@ -93,7 +140,7 @@ namespace Org.GS.Math
       WriteTrace(subExpression, rv, 2);
 
       if (SubExpressionSpansEntireExpression(subExpression))
-          return rv;
+        return rv;
 
       Expression recomposedExpression = RecomposeExpression(subExpression, rv);
       string returnValue = recomposedExpression.ComputeValue(equationResultType);
@@ -105,12 +152,10 @@ namespace Org.GS.Math
     {
       if (e.Contains("("))
         return GetParentheticalExpression();
-      else
-        if (e.ContainsHighLevelMathOperator())
-          return GetHighOrderOperationExpression();
-        else
-          if (e.ContainsLowLevelMathOperator())
-            return GetLowOrderOperationExpression();
+      else if (e.ContainsHighLevelMathOperator())
+        return GetHighOrderOperationExpression();
+      else if (e.ContainsLowLevelMathOperator())
+        return GetLowOrderOperationExpression();
 
       // is this needed?
       // maybe just return (or set this one as) completed...?
@@ -121,7 +166,7 @@ namespace Org.GS.Math
     {
       int op = -1; // open parenthesis position
       int cp = -1; // close parenthesis position
-            
+
       op = e.IndexOf("(");
 
       if (op == -1)
@@ -140,12 +185,12 @@ namespace Org.GS.Math
         {
           cp = i;
           break;
-        }                
+        }
       }
 
       if (cp == -1)
-          throw new Exception("Close parenthesis not found in expression '" + e + "' should be paired with open parenthesis at position '" + op.ToString() + "'.");
-            
+        throw new Exception("Close parenthesis not found in expression '" + e + "' should be paired with open parenthesis at position '" + op.ToString() + "'.");
+
       string subExpression = e.Substring(op + 1, (cp - op) - 1);
       Expression subEx = new Expression(subExpression, op, cp, this.ID, this.e, this._variables);
       subEx.SubExpressionType = SubExpressionType.Parenthetical;
@@ -161,12 +206,12 @@ namespace Org.GS.Math
 
       if (OperandsSpanEntireExpression())
       {
-          subEx = ComputeResultantExpression(SubExpressionType.HighOrder);
-          WriteTrace(subEx, subEx.GetStringValue(), 5);
-          return subEx;
+        subEx = ComputeResultantExpression(SubExpressionType.HighOrder);
+        WriteTrace(subEx, subEx.GetStringValue(), 5);
+        return subEx;
       }
 
-      subEx = ComputeAndRecompose(SubExpressionType.HighOrder); 
+      subEx = ComputeAndRecompose(SubExpressionType.HighOrder);
       WriteTrace(subEx, String.Empty, 6);
       return subEx;
     }
@@ -176,9 +221,9 @@ namespace Org.GS.Math
       this.MathOperatorPosition = LocateLowOrderMathOperator();
       this.LocateLeftOperand(false);
       this.LocateRightOperand(false);
-            
+
       if (OperandsSpanEntireExpression())
-          return ComputeResultantExpression(SubExpressionType.LowOrder);
+        return ComputeResultantExpression(SubExpressionType.LowOrder);
 
       // can we ever get here?
       return null;
@@ -187,14 +232,14 @@ namespace Org.GS.Math
     private void WriteTrace(Expression subExpression, string returnValue, int point)
     {
       g.LogToMemory(this.ID.ToString("000") + " " +
-              this.BeginPosition.ToString("000") + " " +
-              this.EndPosition.ToString("000") + " " +
-              subExpression.GetSubExpTypeAbbr() + " " +
-              subExpression.IsComputationComplete.ToString().Substring(0, 1) + " " +
-              point.ToString().Trim() + "   " + 
-              this.e.PadTo(29) +
-              subExpression.e.PadTo(29) + 
-              returnValue);
+                    this.BeginPosition.ToString("000") + " " +
+                    this.EndPosition.ToString("000") + " " +
+                    subExpression.GetSubExpTypeAbbr() + " " +
+                    subExpression.IsComputationComplete.ToString().Substring(0, 1) + " " +
+                    point.ToString().Trim() + "   " +
+                    this.e.PadTo(29) +
+                    subExpression.e.PadTo(29) +
+                    returnValue);
     }
 
     private decimal GetValueOfOperand(string operand)
@@ -203,11 +248,10 @@ namespace Org.GS.Math
 
       if (this._variables.ContainsKey(operand))
         value = Decimal.Parse(this._variables[operand]);
+      else if (operand.IsNumeric() || operand.IsDecimal())
+        value = Decimal.Parse(operand);
       else
-        if (operand.IsNumeric() || operand.IsDecimal())
-          value = Decimal.Parse(operand);
-        else
-          throw new Exception("Invalid operand '" + operand + "' in expression + '" + e + "'.");
+        throw new Exception("Invalid operand '" + operand + "' in expression + '" + e + "'.");
 
       return value;
     }
@@ -357,42 +401,42 @@ namespace Org.GS.Math
       string backPart = String.Empty;
 
       if (this.LeftOperandBegin > 0)
-          frontPart = e.Substring(0, this.LeftOperandBegin);
+        frontPart = e.Substring(0, this.LeftOperandBegin);
 
       if (this.RightOperandEnd < e.Length - 1)
-          backPart = e.Substring(this.RightOperandEnd + 1, (e.Length - this.RightOperandEnd) - 1);
+        backPart = e.Substring(this.RightOperandEnd + 1, (e.Length - this.RightOperandEnd) - 1);
 
       string interimExpression = frontPart + rv + backPart;
 
       Expression recomposedExpression = new Expression(interimExpression, 0, this.e.Length - 1, this.ID, this.e, this._variables);
 
       g.LogToMemory(this.ID.ToString("000") + " " +
-            this.BeginPosition.ToString("000") + " " +
-            this.EndPosition.ToString("000") + " " +
-            this.GetSubExpTypeAbbr() +  " " +
-            this.IsComputationComplete.ToString().Substring(0, 1) + " 9   " +
-            String.Empty.PadTo(58) + interimExpression);
+                    this.BeginPosition.ToString("000") + " " +
+                    this.EndPosition.ToString("000") + " " +
+                    this.GetSubExpTypeAbbr() +  " " +
+                    this.IsComputationComplete.ToString().Substring(0, 1) + " 9   " +
+                    String.Empty.PadTo(58) + interimExpression);
 
       return recomposedExpression;
     }
 
     private Expression RecomposeExpression(Expression subExpression, string rv)
     {
-        string frontPart = String.Empty;
-        string backPart = String.Empty;
+      string frontPart = String.Empty;
+      string backPart = String.Empty;
 
-        if (subExpression.BeginPosition > 0)
-          frontPart = this.e.Substring(0, subExpression.BeginPosition).Trim();
+      if (subExpression.BeginPosition > 0)
+        frontPart = this.e.Substring(0, subExpression.BeginPosition).Trim();
 
-        if (subExpression.EndPosition < e.Length)
-          backPart = this.e.Substring(subExpression.EndPosition + 1, (e.Length - subExpression.EndPosition) - 1).Trim();
+      if (subExpression.EndPosition < e.Length)
+        backPart = this.e.Substring(subExpression.EndPosition + 1, (e.Length - subExpression.EndPosition) - 1).Trim();
 
-        string interimResult = frontPart + rv + backPart;
-        WriteTrace(subExpression, interimResult, 4);
+      string interimResult = frontPart + rv + backPart;
+      WriteTrace(subExpression, interimResult, 4);
 
-        Expression reducedExpression = new Expression(interimResult, 0, interimResult.Length - 1, this.ID, this.e, this._variables);
+      Expression reducedExpression = new Expression(interimResult, 0, interimResult.Length - 1, this.ID, this.e, this._variables);
 
-        return reducedExpression;
+      return reducedExpression;
     }
 
     private int LocateHighOrderMathOperator()
@@ -439,12 +483,12 @@ namespace Org.GS.Math
             break;
           }
           else
-          {   // if we run into a low level operator, the operand starts 1 position to the right of it
-              if (e[i].IsLowOrderMathOperator())
-              {
-                this.LeftOperandBegin = i + 1;
-                break;
-              }
+          { // if we run into a low level operator, the operand starts 1 position to the right of it
+            if (e[i].IsLowOrderMathOperator())
+            {
+              this.LeftOperandBegin = i + 1;
+              break;
+            }
           }
         }
 
@@ -452,10 +496,10 @@ namespace Org.GS.Math
       }
       else
       {
-          this.LeftOperand = String.Empty;
-          this.LeftOperandBegin = 0;
-          this.LeftOperandEnd = this.MathOperatorPosition - 1;
-          this.LeftOperand = e.Substring(this.LeftOperandBegin, (this.LeftOperandEnd - this.LeftOperandBegin) + 1);
+        this.LeftOperand = String.Empty;
+        this.LeftOperandBegin = 0;
+        this.LeftOperandEnd = this.MathOperatorPosition - 1;
+        this.LeftOperand = e.Substring(this.LeftOperandBegin, (this.LeftOperandEnd - this.LeftOperandBegin) + 1);
       }
     }
 
@@ -477,7 +521,7 @@ namespace Org.GS.Math
             break;
           }
           else
-          {   // if we run into a low level operator, the operand starts 1 position to the right of it
+          { // if we run into a low level operator, the operand starts 1 position to the right of it
             if (e[i].IsMathOperator())
             {
               this.RightOperandEnd = i - 1;

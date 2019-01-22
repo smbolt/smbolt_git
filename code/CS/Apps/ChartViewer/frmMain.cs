@@ -20,8 +20,8 @@ namespace Org.ChartViewer
   {
     private bool _firstShowing;
     private string _saveLastSuccessfulEnvironment = String.Empty;
-    private bool _ignoreEnvironmentSelectionChange = false; 
-    private bool _producingOnly = true; 
+    private bool _ignoreEnvironmentSelectionChange = false;
+    private bool _producingOnly = true;
     private PrcDataAccess _prcData;
     private string _forecastData;
     private frmDataDisplay _fDataDisplay;
@@ -30,7 +30,7 @@ namespace Org.ChartViewer
     private a a;
 
     private SortedList<int, Well> _wells;
-    private Dictionary<string, int> _wellIds; 
+    private Dictionary<string, int> _wellIds;
 
     public frmMain()
     {
@@ -70,7 +70,7 @@ namespace Org.ChartViewer
     private void RunForecast()
     {
       this.Cursor = Cursors.WaitCursor;
-      
+
       chartMain.Series.Clear();
       chartMain.Titles.Clear();
 
@@ -94,23 +94,23 @@ namespace Org.ChartViewer
         var mainTitle = new Title();
         mainTitle.Position.X = 8;
         mainTitle.Position.Y = 3.5F;
-        mainTitle.Text = forecastParms.WellName; 
-        mainTitle.Font = new System.Drawing.Font("Calibri", 22.0F, FontStyle.Bold); 
-        chartMain.Titles.Add(mainTitle); 
+        mainTitle.Text = forecastParms.WellName;
+        mainTitle.Font = new System.Drawing.Font("Calibri", 22.0F, FontStyle.Bold);
+        chartMain.Titles.Add(mainTitle);
 
 
         var forecaster = new Forecaster(_prcData, forecastParms);
         var forecastResultsSet = forecaster.Run();
-        _fDataDisplay.SetText(forecastResultsSet.ForecastReport, forecastResultsSet.ForecastReportCSV); 
+        _fDataDisplay.SetText(forecastResultsSet.ForecastReport, forecastResultsSet.ForecastReportCSV);
 
         foreach (var forecastResult in forecastResultsSet.Values)
         {
-          var series = new Series(forecastResult.ForecastResultName); 
+          var series = new Series(forecastResult.ForecastResultName);
           series.ChartType = SeriesChartType.Line;
           series.ChartArea = chartMain.ChartAreas[0].Name;
           series.XValueType = ChartValueType.Date;
           series.BorderWidth = forecastResult.ForecastValueType == ForecastValueType.Actuals ? 1 : 2;
-          series.Color = GetLineColor(forecastResult.ForecastRequest); 
+          series.Color = GetLineColor(forecastResult.ForecastRequest);
 
           bool omitZeros = true;
           foreach (var forecastPoint in forecastResult.ForecastPointSet.Values)
@@ -119,9 +119,9 @@ namespace Org.ChartViewer
               continue;
             if (forecastPoint.ForecastValue > 0)
               omitZeros = false;
-            series.Points.AddXY(forecastPoint.ForecastDate, forecastPoint.ForecastValue); 
+            series.Points.AddXY(forecastPoint.ForecastDate, forecastPoint.ForecastValue);
           }
-          chartMain.Series.Add(series); 
+          chartMain.Series.Add(series);
         }
 
         chartMain.Invalidate();
@@ -134,7 +134,7 @@ namespace Org.ChartViewer
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         this.Cursor = Cursors.Default;
-        return; 
+        return;
       }
 
       this.Cursor = Cursors.Default;
@@ -142,7 +142,7 @@ namespace Org.ChartViewer
 
     private void ViewAriesForecastVariables()
     {
-      using (var fAriesForecastVariables = new frmAriesForecastVariables(_afvReport)) 
+      using (var fAriesForecastVariables = new frmAriesForecastVariables(_afvReport))
       {
         fAriesForecastVariables.ShowDialog();
       }
@@ -152,25 +152,38 @@ namespace Org.ChartViewer
     {
       switch (forecastRequest)
       {
-        case ForecastRequest.AriesGasForecast: return Color.Green; 
-        case ForecastRequest.EprcGasForecast: return Color.LimeGreen; 
-        case ForecastRequest.AriesGasActuals: return Color.LightGreen;
-        case ForecastRequest.EprcGasActuals: return Color.LightGreen;
+        case ForecastRequest.AriesGasForecast:
+          return Color.Green;
+        case ForecastRequest.EprcGasForecast:
+          return Color.LimeGreen;
+        case ForecastRequest.AriesGasActuals:
+          return Color.LightGreen;
+        case ForecastRequest.EprcGasActuals:
+          return Color.LightGreen;
 
-        case ForecastRequest.AriesOilForecast: return Color.DarkRed; 
-        case ForecastRequest.EprcOilForecast: return Color.Red;
-        case ForecastRequest.AriesOilActuals: return Color.LightCoral;
-        case ForecastRequest.EprcOilActuals: return Color.LightCoral;
+        case ForecastRequest.AriesOilForecast:
+          return Color.DarkRed;
+        case ForecastRequest.EprcOilForecast:
+          return Color.Red;
+        case ForecastRequest.AriesOilActuals:
+          return Color.LightCoral;
+        case ForecastRequest.EprcOilActuals:
+          return Color.LightCoral;
 
-        case ForecastRequest.AriesH2OForecast: return Color.DarkBlue;
-        case ForecastRequest.EprcH2OForecast: return Color.Blue;
-        case ForecastRequest.AriesH2OActuals: return Color.LightSteelBlue;
-        case ForecastRequest.EprcH2OActuals: return Color.LightSteelBlue;
+        case ForecastRequest.AriesH2OForecast:
+          return Color.DarkBlue;
+        case ForecastRequest.EprcH2OForecast:
+          return Color.Blue;
+        case ForecastRequest.AriesH2OActuals:
+          return Color.LightSteelBlue;
+        case ForecastRequest.EprcH2OActuals:
+          return Color.LightSteelBlue;
 
-        case ForecastRequest.TubingPressureActuals: return Color.Magenta; 
+        case ForecastRequest.TubingPressureActuals:
+          return Color.Magenta;
       }
 
-      return Color.Gray; 
+      return Color.Gray;
     }
 
     private int GetWellIdFromCbo()
@@ -192,7 +205,7 @@ namespace Org.ChartViewer
       _forecastData = "No forecast data to show";
       _fDataDisplay = new frmDataDisplay();
       _fDataDisplay.VisibleChanged += _fDataDisplay_VisibleChanged;
-      _fDataDisplay.SetText(_forecastData, _forecastData); 
+      _fDataDisplay.SetText(_forecastData, _forecastData);
       cboTimeUnit.SelectedIndex = 0;
 
       chartMain.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.DarkGray;
@@ -214,7 +227,7 @@ namespace Org.ChartViewer
       chartMain.ChartAreas[0].AxisX.MinorGrid.Interval = 2;
       chartMain.ChartAreas[0].AxisX.MinorGrid.Enabled = true;
       chartMain.ChartAreas[0].AxisX.MinorGrid.LineColor = Color.LightGray;
-      chartMain.ChartAreas[0].AxisX.MinorGrid.LineDashStyle = ChartDashStyle.Dot; 
+      chartMain.ChartAreas[0].AxisX.MinorGrid.LineDashStyle = ChartDashStyle.Dot;
 
       try
       {
@@ -239,7 +252,7 @@ namespace Org.ChartViewer
       {
         MessageBox.Show("An error occurred during program initialization." + g.crlf2 + ex.ToReport(), "ChartViewer - Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return; 
+        return;
       }
 
       try
@@ -247,7 +260,7 @@ namespace Org.ChartViewer
         if (g.AppConfig.GetBoolean("DisableEnvironmentDropDown"))
           cboEnvironment.Enabled = false;
 
-        _ignoreEnvironmentSelectionChange = true; 
+        _ignoreEnvironmentSelectionChange = true;
 
         cboEnvironment.DataSource = g.GetList("Environments");
         string defaultEnvironment = g.GetCI("DefaultEnvironment");
@@ -257,7 +270,7 @@ namespace Org.ChartViewer
           {
             if (cboEnvironment.Items[i].ToString() == defaultEnvironment)
             {
-              _ignoreEnvironmentSelectionChange = false; 
+              _ignoreEnvironmentSelectionChange = false;
               cboEnvironment.SelectedIndex = i;
               break;
             }
@@ -331,7 +344,7 @@ namespace Org.ChartViewer
       lblSSIWellIDValue.Text = well.SSIWellId.HasValue ? well.SSIWellId.Value.ToString() : String.Empty;
       lblGPWellIDValue.Text = String.Empty; // later
 
-      WellForecastVariable efv = _prcData.GetWellForecastVariables(well.PRCWellId); 
+      WellForecastVariable efv = _prcData.GetWellForecastVariables(well.PRCWellId);
       var forecastParms = GetForecastParmsFromUI();
       var forecaster = new Forecaster(_prcData, GetForecastParmsFromUI());
       WellForecastVariable afv = forecaster.GetAriesForecastVariables(forecastParms);
@@ -346,14 +359,14 @@ namespace Org.ChartViewer
       }
       else
       {
-          if (!afv.AriesVariablesExist)
+        if (!afv.AriesVariablesExist)
+        {
+          if (well.PRCWellStatus.IsProducing())
           {
-            if (well.PRCWellStatus.IsProducing())
-            {
-              string msg = "Aries forecast variables do not exist.";
-              MessageBox.Show(msg, "Forecast Viewer - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            string msg = "Aries forecast variables do not exist.";
+            MessageBox.Show(msg, "Forecast Viewer - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
           }
+        }
         else
         {
           if (afv.AriesVariablesInvalid)
@@ -371,7 +384,7 @@ namespace Org.ChartViewer
 
       if (afv != null && afv.AriesVariablesExist && !afv.AriesVariablesInvalid)
         _afvReport = afv.AriesWfvReport;
-        
+
       ckTubingPressure.Checked = ckTubingPressure.Enabled = well.PRCWellStatus.IsProducing();
 
       if (efv == null)
@@ -455,18 +468,18 @@ namespace Org.ChartViewer
       if (!well.PRCWellStatus.IsProducing())
       {
         ckAriesOilActuals.Enabled = ckAriesOilActuals.Checked = ckAriesGasActuals.Enabled = ckAriesGasActuals.Checked = ckAriesH2OActuals.Enabled = ckAriesH2OActuals.Checked =
-        ckEprcOilActuals.Enabled = ckEprcOilActuals.Checked = ckEprcGasActuals.Enabled = ckEprcGasActuals.Checked = ckEprcH2OActuals.Enabled = ckEprcH2OActuals.Checked = false;
+                                      ckEprcOilActuals.Enabled = ckEprcOilActuals.Checked = ckEprcGasActuals.Enabled = ckEprcGasActuals.Checked = ckEprcH2OActuals.Enabled = ckEprcH2OActuals.Checked = false;
       }
 
 
       ckAriesSystemOilFcst.Enabled = ckAriesSystemOilFcst.Checked = ckAriesSystemGasFcst.Enabled = ckAriesSystemGasFcst.Checked =
-      ckAriesSystemH2OFcst.Enabled = ckAriesSystemH2OFcst.Checked = true;
+                                       ckAriesSystemH2OFcst.Enabled = ckAriesSystemH2OFcst.Checked = true;
 
       ckAriesH2OForecast.Enabled = ckAriesH2OForecast.Checked = ckAriesH2OActuals.Enabled = ckAriesH2OActuals.Checked =
-      ckEprcH2OForecast.Enabled = ckEprcH2OForecast.Checked = ckEprcH2OActuals.Enabled = ckEprcH2OActuals.Checked = 
-      ckAriesSystemH2OFcst.Checked = ckAriesSystemH2OFcst.Enabled = false;
+                                     ckEprcH2OForecast.Enabled = ckEprcH2OForecast.Checked = ckEprcH2OActuals.Enabled = ckEprcH2OActuals.Checked =
+                                           ckAriesSystemH2OFcst.Checked = ckAriesSystemH2OFcst.Enabled = false;
 
-      ckTubingPressure.Checked = ckTubingPressure.Enabled = false; 
+      ckTubingPressure.Checked = ckTubingPressure.Enabled = false;
 
       if (ckAriesOilActuals.Checked && ckEprcOilActuals.Checked)
         ckAriesOilActuals.Checked = ckAriesOilActuals.Enabled = false;
@@ -475,7 +488,7 @@ namespace Org.ChartViewer
         ckAriesGasActuals.Checked = ckAriesGasActuals.Enabled = false;
 
       if (ckAriesH2OActuals.Checked && ckEprcH2OActuals.Checked)
-        ckAriesH2OActuals.Checked = ckAriesH2OActuals.Enabled = false;  
+        ckAriesH2OActuals.Checked = ckAriesH2OActuals.Enabled = false;
     }
 
     private void InitializeWellDisplay()
@@ -578,7 +591,7 @@ namespace Org.ChartViewer
 
       return forecastParms;
     }
-    
+
     private string GetDbSpecFromEnvironment()
     {
       string env = cboEnvironment.Text;
@@ -614,13 +627,13 @@ namespace Org.ChartViewer
       if (!_firstShowing)
         return;
 
-      _firstShowing = false; 
-      pnlChart.Width = this.ClientRectangle.Width;       
+      _firstShowing = false;
+      pnlChart.Width = this.ClientRectangle.Width;
     }
 
     private void frmMain_ResizeEnd(object sender, EventArgs e)
     {
-      pnlChart.Width = this.ClientRectangle.Width; 
+      pnlChart.Width = this.ClientRectangle.Width;
     }
 
     private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -638,12 +651,12 @@ namespace Org.ChartViewer
       Application.DoEvents();
 
 
-      _fDataDisplay.SetText("No forecast data", "No forecast data"); 
+      _fDataDisplay.SetText("No forecast data", "No forecast data");
 
       if (cboWell.Text.IsNotBlank())
       {
         int wellId = GetWellIdFromCbo();
-        DisplayWellInfo(_wells[wellId]); 
+        DisplayWellInfo(_wells[wellId]);
       }
     }
 
@@ -661,13 +674,13 @@ namespace Org.ChartViewer
       if (_ignoreEnvironmentSelectionChange)
       {
         _ignoreEnvironmentSelectionChange = false;
-        return; 
+        return;
       }
 
       ConnectAndInitializeForEnvironment();
-      
+
       if (!_firstShowing)
-        MessageBox.Show("Environment set to " + _prcData.SqlConnection.DataSource, "Forecast Viewer", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+        MessageBox.Show("Environment set to " + _prcData.SqlConnection.DataSource, "Forecast Viewer", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void ConnectAndInitializeForEnvironment()
@@ -685,7 +698,7 @@ namespace Org.ChartViewer
           {
             if (cboEnvironment.Items[i].ToString() == _saveLastSuccessfulEnvironment)
             {
-              _ignoreEnvironmentSelectionChange = true; 
+              _ignoreEnvironmentSelectionChange = true;
               cboEnvironment.SelectedIndex = i;
               break;
             }
@@ -696,7 +709,7 @@ namespace Org.ChartViewer
 
       _prcData = new PrcDataAccess(dbSpec.ConnectionString);
 
-      _saveLastSuccessfulEnvironment = cboEnvironment.Text; 
+      _saveLastSuccessfulEnvironment = cboEnvironment.Text;
 
       ReloadWells();
 

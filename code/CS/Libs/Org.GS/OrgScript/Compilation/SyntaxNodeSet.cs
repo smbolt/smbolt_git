@@ -8,7 +8,10 @@ namespace Org.GS.OrgScript.Compilation
 {
   public class SyntaxNodeSet : List<SyntaxNode>
   {
-    public string RawText { get; private set; }
+    public string RawText {
+      get;
+      private set;
+    }
 
     public SyntaxNodeSet(string rawText)
     {
@@ -81,7 +84,7 @@ namespace Org.GS.OrgScript.Compilation
 
           if (c == ' ')
           {
-            // If a text sequence is being processed and the character is blank, we need to write out the 
+            // If a text sequence is being processed and the character is blank, we need to write out the
             // text sequence and fall through to allow the blank character to be processed.
             if (processingText)
             {

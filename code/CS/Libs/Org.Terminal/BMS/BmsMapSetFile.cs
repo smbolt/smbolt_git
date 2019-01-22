@@ -10,20 +10,42 @@ namespace Org.Terminal.BMS
 {
   public class BmsMapSetFile
   {
-    public string MapString { get; set; }
-    public ScreenSpecSet ScreenSpecSet { get; set; }
-    public BmsStatementSet BmsStatementSet { get; set; }
-    public BmsMapSet BmsMapSet { get; set; }
-    public BmsMapErrorSet BmsMapErrorSet { get; set; }
-    public int HighestErrorCode { get { return Get_HighestErrorCode(); } }
+    public string MapString {
+      get;
+      set;
+    }
+    public ScreenSpecSet ScreenSpecSet {
+      get;
+      set;
+    }
+    public BmsStatementSet BmsStatementSet {
+      get;
+      set;
+    }
+    public BmsMapSet BmsMapSet {
+      get;
+      set;
+    }
+    public BmsMapErrorSet BmsMapErrorSet {
+      get;
+      set;
+    }
+    public int HighestErrorCode {
+      get {
+        return Get_HighestErrorCode();
+      }
+    }
 
-    public List<string> Errors { get; set; }
+    public List<string> Errors {
+      get;
+      set;
+    }
 
     public BmsMapSetFile(string mapString, BmsMapErrorSet bmsMapErrorSet)
     {
       try
       {
-        this.BmsMapErrorSet = bmsMapErrorSet; 
+        this.BmsMapErrorSet = bmsMapErrorSet;
         this.MapString = mapString;
         this.Errors = new List<string>();
 
@@ -38,7 +60,7 @@ namespace Org.Terminal.BMS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to create a new BmsMap object from the BMS string.", ex); 
+        throw new Exception("An exception occurred while attempting to create a new BmsMap object from the BMS string.", ex);
       }
     }
 
@@ -64,7 +86,7 @@ namespace Org.Terminal.BMS
             case BmsStatementType.DFHMDI:
               bmsMap = new BmsMap();
               bmsMap.Bms_DFHMDI = bmsStmt.Bms_BASE as Bms_DFHMDI;
-              bmsMap.Name = bmsMap.Bms_DFHMDI.Name; 
+              bmsMap.Name = bmsMap.Bms_DFHMDI.Name;
               this.BmsMapSet.Add(bmsMap.Name, bmsMap);
               break;
 
@@ -126,7 +148,7 @@ namespace Org.Terminal.BMS
       if (this.BmsStatementSet == null || this.BmsStatementSet.Count == 0)
         return 16;
 
-      return this.BmsStatementSet.Values.Max(s => s.ErrorCode); 
+      return this.BmsStatementSet.Values.Max(s => s.ErrorCode);
     }
   }
 }

@@ -11,16 +11,28 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PhoneNumber")]
-    public partial class PhoneNumber
-    {
-        public int PhoneNumberId { get; set; }
-        public string PhoneNumberFormatCode { get; set; }
-        public string PhoneNumberValue { get; set; }
-    
-        public virtual PhoneNumberFormat PhoneNumberFormat { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PhoneNumber")]
+  public partial class PhoneNumber
+  {
+    public int PhoneNumberId {
+      get;
+      set;
     }
+    public string PhoneNumberFormatCode {
+      get;
+      set;
+    }
+    public string PhoneNumberValue {
+      get;
+      set;
+    }
+
+    public virtual PhoneNumberFormat PhoneNumberFormat {
+      get;
+      set;
+    }
+  }
 }

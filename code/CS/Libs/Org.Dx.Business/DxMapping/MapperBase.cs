@@ -8,9 +8,18 @@ namespace Org.Dx.Business
 {
   public class MapperBase : IDataMapper  {
 
-    public MapEngine MapEngine { get; set; }
-    public DxWorksheet SourceWorksheet { get; set; }
-    public DxMap DxMap { get; set; }
+    public MapEngine MapEngine {
+      get;
+      set;
+    }
+    public DxWorksheet SourceWorksheet {
+      get;
+      set;
+    }
+    public DxMap DxMap {
+      get;
+      set;
+    }
 
     public MapperBase(MapEngine mapEngine, DxWorksheet sourceWorksheet, DxMap dxMap)
     {

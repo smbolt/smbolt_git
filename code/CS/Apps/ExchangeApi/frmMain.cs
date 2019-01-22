@@ -71,7 +71,7 @@ namespace ExchangeApi
 
       // Validate the contents of the redirection URL. In this simple validation
       // callback, the redirection URL is considered valid if it is using HTTPS
-      // to encrypt the authentication credentials. 
+      // to encrypt the authentication credentials.
       if (redirectionUri.Scheme == "https")
       {
         result = true;

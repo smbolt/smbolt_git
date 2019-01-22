@@ -9,12 +9,20 @@ namespace Org.GS
 {
   public class Cache
   {
-    public Dictionary<string, object> Sets { get { return Get_Sets(); } }
+    public Dictionary<string, object> Sets {
+      get {
+        return Get_Sets();
+      }
+    }
 
     public object this[string key]
     {
-      get { return this.GetValue(key); }
-      set { this.SetValue(key, value); }
+      get {
+        return this.GetValue(key);
+      }
+      set {
+        this.SetValue(key, value);
+      }
     }
 
     public bool ContainsKey(string key)
@@ -86,11 +94,11 @@ namespace Org.GS
       Dictionary<string, object> sets = new Dictionary<string, object>();
       foreach (var cacheSet in cacheSets)
       {
-        sets.Add(cacheSet.Key, cacheSet.Value); 
+        sets.Add(cacheSet.Key, cacheSet.Value);
       }
 
       return sets;
     }
-    
+
   }
 }

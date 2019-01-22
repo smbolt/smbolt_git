@@ -10,10 +10,22 @@ namespace Org.GS.Logging
   public class LogContext
   {
     private static bool _isInitialized = Initialize();
-    public static LogContextState LogContextState { get; set; }
-    public static bool DiagnosticLogging { get; set; }
-    public static ConfigDbSpec LogConfigDbSpec { get; set; }
-    public static ConfigLogSpec ConfigLogSpec { get; set; }
+    public static LogContextState LogContextState {
+      get;
+      set;
+    }
+    public static bool DiagnosticLogging {
+      get;
+      set;
+    }
+    public static ConfigDbSpec LogConfigDbSpec {
+      get;
+      set;
+    }
+    public static ConfigLogSpec ConfigLogSpec {
+      get;
+      set;
+    }
 
     public static void EstablishContext()
     {
@@ -86,7 +98,7 @@ namespace Org.GS.Logging
       }
 
 
-      string appDataPath = g.AppDataPath; 
+      string appDataPath = g.AppDataPath;
       string appDataLogPath = appDataPath + @"\Log";
 
       if (Directory.Exists(appDataLogPath))

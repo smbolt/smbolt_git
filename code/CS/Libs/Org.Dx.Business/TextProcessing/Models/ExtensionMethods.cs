@@ -23,7 +23,7 @@ namespace Org.Dx.Business.TextProcessing
       if (value.RawText.IsBlank())
         return new List<Text>();
 
-      return value.RawText.Split(delimiter, StringSplitOptions.RemoveEmptyEntries).StringArrayToTextList(value); 
+      return value.RawText.Split(delimiter, StringSplitOptions.RemoveEmptyEntries).StringArrayToTextList(value);
     }
 
     public static string GetTextBefore(this string value, char[] c)
@@ -38,7 +38,7 @@ namespace Org.Dx.Business.TextProcessing
       if (pos == -1)
         return value;
 
-      return value.Substring(0, pos); 
+      return value.Substring(0, pos);
     }
 
     public static string GetTextAfter(this string value, char[] chars)
@@ -70,7 +70,7 @@ namespace Org.Dx.Business.TextProcessing
       if (pos > value.Length - 1)
         return String.Empty;
 
-      return value.Substring(pos + 1); 
+      return value.Substring(pos + 1);
     }
 
     public static string GetTextBetween(this string value, char[] leftChar, char[] rightChar)

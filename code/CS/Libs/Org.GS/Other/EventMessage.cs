@@ -8,7 +8,10 @@ namespace Org.GS
 {
   public class EventMessage
   {
-    public string MessageText { get; set; }
+    public string MessageText {
+      get;
+      set;
+    }
 
     public EventMessage()
     {

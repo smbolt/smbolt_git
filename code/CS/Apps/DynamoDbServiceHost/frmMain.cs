@@ -79,7 +79,7 @@ namespace DynamoDbServiceHost
         this.Cursor = Cursors.Default;
         string errorMessage = "An exception occurred while attemting to start the DynamoDbService." + g.crlf2 + ex.ToReport();
         WriteToDisplay(errorMessage, true);
-        MessageBox.Show(errorMessage, "DynamoDbService Host - Error Starting DynamoDbService", 
+        MessageBox.Show(errorMessage, "DynamoDbService Host - Error Starting DynamoDbService",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
@@ -129,7 +129,7 @@ namespace DynamoDbServiceHost
         this.Cursor = Cursors.Default;
         string errorMessage = "An exception occurred while attemting to stop the DynamoDbService." + g.crlf2 + ex.ToReport();
         WriteToDisplay(errorMessage, true);
-        MessageBox.Show(errorMessage, "DynamoDbService Host - Error Stopping DynamoDbService", 
+        MessageBox.Show(errorMessage, "DynamoDbService Host - Error Stopping DynamoDbService",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
@@ -139,7 +139,7 @@ namespace DynamoDbServiceHost
       try
       {
         this.Cursor = Cursors.WaitCursor;
-        
+
         txtOut.Text = "Pause";
 
         SetUIForStatus();
@@ -150,7 +150,7 @@ namespace DynamoDbServiceHost
         this.Cursor = Cursors.Default;
         string errorMessage = "An exception occurred while attemting to pause the DynamoDbService." + g.crlf2 + ex.ToReport();
         WriteToDisplay(errorMessage, true);
-        MessageBox.Show(errorMessage, "DynamoDbService Host - Error Pausing DynamoDbService", 
+        MessageBox.Show(errorMessage, "DynamoDbService Host - Error Pausing DynamoDbService",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
@@ -172,7 +172,7 @@ namespace DynamoDbServiceHost
         this.Cursor = Cursors.Default;
         string errorMessage = "An exception occurred while attemting to resume the DynamoDbService." + g.crlf2 + ex.ToReport();
         WriteToDisplay(errorMessage, true);
-        MessageBox.Show(errorMessage, "DynamoDbService Host - Error Resuming DynamoDbService", 
+        MessageBox.Show(errorMessage, "DynamoDbService Host - Error Resuming DynamoDbService",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }

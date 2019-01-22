@@ -11,54 +11,197 @@ namespace Org.TSK.Business.Models
 {
   public class TaskScheduleElement
   {
-    public ScheduledTask ScheduledTask { get; set; }
-    public TaskSchedule TaskSchedule { get; set; }
-    public int TaskScheduleElementId { get; set; }
-    public int TaskScheduleId { get; set; }
-    public bool IsActive { get; set; }
-    public TaskExecutionType TaskExecutionType { get; set; }
-    public decimal? FrequencySeconds { get; set; }
-    public bool IsClockAligned { get; set; }
-    public int? ScheduleElementPriority { get; set; }
-    public DateTime? StartDate { get; set; }
-    public TimeSpan? StartTime { get; set; }
-    public DateTime? EndDate { get; set; }
-    public TimeSpan? EndTime { get; set; }
-    public IntervalType IntervalType { get; set; }
-    public bool OnSunday { get; set; }
-    public bool OnMonday { get; set; }
-    public bool OnTuesday { get; set; }
-    public bool OnWednesday { get; set; }
-    public bool OnThursday { get; set; }
-    public bool OnFriday { get; set; }
-    public bool OnSaturday { get; set; }
-    public bool OnWorkDays { get; set; }
-    public bool OnEvenDays { get; set; }
-    public bool OnOddDays { get; set; }
-    public string SpecificDays { get; set; }
-    public bool ExceptSpecificDays { get; set; }
-    public bool First { get; set; }
-    public bool Second { get; set; }
-    public bool Third { get; set; }
-    public bool Fourth { get; set; }
-    public bool Fifth { get; set; }
-    public bool Last { get; set; }
-    public bool Every { get; set; }
-    public HolidayActions HolidayActions { get; set; }
-    public PeriodContexts PeriodContexts { get; set; }
-    public int? MaxRunTimeSeconds { get; set; }
-    public int? ExecutionLimit { get; set; }
-    public DateTime RunThroughDateTime { get; set; }
-    public bool RunImmediateHasBeenScheduled { get; set; }
-    public bool RunAtHasBeenScheduled { get; set; }
-    public int MaxExecutions { get; set; }
-    public bool IsScheduleBasedOnFrequency { get { return Get_IsScheduleBasedOnFrequency(); } }
-    public string CreatedBy { get; set; }
-    public DateTime CreatedDate { get; set; }
-    public string ModifiedBy { get; set; }
-    public DateTime? ModifiedDate { get; set; }
+    public ScheduledTask ScheduledTask {
+      get;
+      set;
+    }
+    public TaskSchedule TaskSchedule {
+      get;
+      set;
+    }
+    public int TaskScheduleElementId {
+      get;
+      set;
+    }
+    public int TaskScheduleId {
+      get;
+      set;
+    }
+    public bool IsActive {
+      get;
+      set;
+    }
+    public TaskExecutionType TaskExecutionType {
+      get;
+      set;
+    }
+    public decimal? FrequencySeconds {
+      get;
+      set;
+    }
+    public bool IsClockAligned {
+      get;
+      set;
+    }
+    public int? ScheduleElementPriority {
+      get;
+      set;
+    }
+    public DateTime? StartDate {
+      get;
+      set;
+    }
+    public TimeSpan? StartTime {
+      get;
+      set;
+    }
+    public DateTime? EndDate {
+      get;
+      set;
+    }
+    public TimeSpan? EndTime {
+      get;
+      set;
+    }
+    public IntervalType IntervalType {
+      get;
+      set;
+    }
+    public bool OnSunday {
+      get;
+      set;
+    }
+    public bool OnMonday {
+      get;
+      set;
+    }
+    public bool OnTuesday {
+      get;
+      set;
+    }
+    public bool OnWednesday {
+      get;
+      set;
+    }
+    public bool OnThursday {
+      get;
+      set;
+    }
+    public bool OnFriday {
+      get;
+      set;
+    }
+    public bool OnSaturday {
+      get;
+      set;
+    }
+    public bool OnWorkDays {
+      get;
+      set;
+    }
+    public bool OnEvenDays {
+      get;
+      set;
+    }
+    public bool OnOddDays {
+      get;
+      set;
+    }
+    public string SpecificDays {
+      get;
+      set;
+    }
+    public bool ExceptSpecificDays {
+      get;
+      set;
+    }
+    public bool First {
+      get;
+      set;
+    }
+    public bool Second {
+      get;
+      set;
+    }
+    public bool Third {
+      get;
+      set;
+    }
+    public bool Fourth {
+      get;
+      set;
+    }
+    public bool Fifth {
+      get;
+      set;
+    }
+    public bool Last {
+      get;
+      set;
+    }
+    public bool Every {
+      get;
+      set;
+    }
+    public HolidayActions HolidayActions {
+      get;
+      set;
+    }
+    public PeriodContexts PeriodContexts {
+      get;
+      set;
+    }
+    public int? MaxRunTimeSeconds {
+      get;
+      set;
+    }
+    public int? ExecutionLimit {
+      get;
+      set;
+    }
+    public DateTime RunThroughDateTime {
+      get;
+      set;
+    }
+    public bool RunImmediateHasBeenScheduled {
+      get;
+      set;
+    }
+    public bool RunAtHasBeenScheduled {
+      get;
+      set;
+    }
+    public int MaxExecutions {
+      get;
+      set;
+    }
+    public bool IsScheduleBasedOnFrequency {
+      get {
+        return Get_IsScheduleBasedOnFrequency();
+      }
+    }
+    public string CreatedBy {
+      get;
+      set;
+    }
+    public DateTime CreatedDate {
+      get;
+      set;
+    }
+    public string ModifiedBy {
+      get;
+      set;
+    }
+    public DateTime? ModifiedDate {
+      get;
+      set;
+    }
 
-    public DateTime? StartDateTime { get { return Get_StartDateTime(); } }
+    public DateTime? StartDateTime {
+      get {
+        return Get_StartDateTime();
+      }
+    }
 
     public TaskScheduleElement()
     {
@@ -79,8 +222,8 @@ namespace Org.TSK.Business.Models
         return startDate.Add(this.StartTime.Value);
       }
 
-      return this.StartDate.Value.Add(this.StartTime.Value); 
-    }        
+      return this.StartDate.Value.Add(this.StartTime.Value);
+    }
 
     private bool Get_IsScheduleBasedOnFrequency()
     {
@@ -103,9 +246,15 @@ namespace Org.TSK.Business.Models
       string interval;
       switch (this.IntervalType)
       {
-        case IntervalType.DailyInterval: interval = "DI"; break;
-        case IntervalType.SingleSpan: interval = "SS"; break;
-        default: interval = "NS"; break;
+        case IntervalType.DailyInterval:
+          interval = "DI";
+          break;
+        case IntervalType.SingleSpan:
+          interval = "SS";
+          break;
+        default:
+          interval = "NS";
+          break;
       }
       string startDate = this.StartDate.HasValue ? this.StartDate.Value.ToString("yyyyMMdd") : "";
       string endDate = this.EndDate.HasValue ? this.EndDate.Value.ToString("yyyyMMdd") : "";

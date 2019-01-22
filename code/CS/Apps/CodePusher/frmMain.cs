@@ -22,11 +22,11 @@ namespace Org.CodePusher
     private ProfileSet _profiles;
     private bool _isFirstShowing;
     private string _appConfigPath;
-        
+
     public frmMain()
     {
       InitializeComponent();
-      InitializeForm();          
+      InitializeForm();
     }
 
     private void InitializeForm()
@@ -55,7 +55,7 @@ namespace Org.CodePusher
 
     private void Action(object sender, EventArgs e)
     {
-      string action = g.GetActionFromEvent(sender); 
+      string action = g.GetActionFromEvent(sender);
 
       switch (action)
       {
@@ -102,9 +102,9 @@ namespace Org.CodePusher
 
         foreach (MappingControl c in p.MappingControlSet.Values.Where(c => c.IsActive))
         {
-          sb.Append("-----------------------------------------------------------------" + g.crlf); 
+          sb.Append("-----------------------------------------------------------------" + g.crlf);
           sb.Append("Mapping Control Element:  '" + c.Name + "'" + g.crlf);
-          sb.Append("-----------------------------------------------------------------" + g.crlf); 
+          sb.Append("-----------------------------------------------------------------" + g.crlf);
           int totalSource = 0;
           int totalMoved = 0;
           int totalNameExcl = 0;
@@ -113,28 +113,28 @@ namespace Org.CodePusher
 
           if (c.ClearDestination)
           {
-              sb.Append("Deleting files in destination path '" + c.Destination + "'" + g.crlf);
-              if (Directory.Exists(c.Destination))
+            sb.Append("Deleting files in destination path '" + c.Destination + "'" + g.crlf);
+            if (Directory.Exists(c.Destination))
+            {
+              string[] filesToDelete = Directory.GetFiles(c.Destination);
+              foreach (string fileName in filesToDelete)
               {
-                  string[] filesToDelete = Directory.GetFiles(c.Destination);
-                foreach (string fileName in filesToDelete)
+                lblStatus.Text = "Deleting file: " + fileName;
+                Application.DoEvents();
+                sb.Append("DELETING FILE      " + fileName + g.crlf);
+                if (!ckReportOnly.Checked)
                 {
-                  lblStatus.Text = "Deleting file: " + fileName;
-                  Application.DoEvents();
-                  sb.Append("DELETING FILE      " + fileName + g.crlf);
-                  if (!ckReportOnly.Checked)
-                  {
-                    File.Delete(fileName);
-                    totalDeleted++;
-                  }
+                  File.Delete(fileName);
+                  totalDeleted++;
                 }
+              }
 
-                if (c.Recursive)
-                {
-                  sb.Append("RECURSIVELY DELETING DIRECTORY  " + c.Destination + g.crlf);
-                  var fsu = new FileSystemUtility();
-                  totalDeleted += DeleteDirectoryContentsRecursive(c.Destination, sb, 0); 
-                }
+              if (c.Recursive)
+              {
+                sb.Append("RECURSIVELY DELETING DIRECTORY  " + c.Destination + g.crlf);
+                var fsu = new FileSystemUtility();
+                totalDeleted += DeleteDirectoryContentsRecursive(c.Destination, sb, 0);
+              }
             }
             sb.Append(g.crlf);
           }
@@ -143,8 +143,8 @@ namespace Org.CodePusher
           {
             sb.Append("RECURSIVELY COPYING DIRECTORY  " + c.Source + " to " + c.Destination + g.crlf);
             var fsu = new FileSystemUtility();
-            totalSource += CountFilesInSourceRecursive(c.Source, 0); 
-            totalMoved += CopyFoldersAndFiles(c.Source, c.Destination, sb, 0); 
+            totalSource += CountFilesInSourceRecursive(c.Source, 0);
+            totalMoved += CopyFoldersAndFiles(c.Source, c.Destination, sb, 0);
           }
 
 
@@ -162,38 +162,38 @@ namespace Org.CodePusher
             {
               if (ie.IncludeFile(file))
               {
-                  bool includeFile = true;
-                  foreach (var fileToExclude in c.ExcludedFileSet)
+                bool includeFile = true;
+                foreach (var fileToExclude in c.ExcludedFileSet)
+                {
+                  string fileNameMatch = fileToExclude.Replace("*", String.Empty).ToLower();
+                  string fileNameLower = fileName.ToLower();
+                  if (fileNameLower.Contains(fileNameMatch))
                   {
-                    string fileNameMatch = fileToExclude.Replace("*", String.Empty).ToLower();
-                    string fileNameLower = fileName.ToLower();
-                    if (fileNameLower.Contains(fileNameMatch))
-                    {
-                      includeFile = false;
-                      break;
-                    }
+                    includeFile = false;
+                    break;
                   }
+                }
 
-                  if (includeFile)
+                if (includeFile)
+                {
+                  sb.Append("FILE MOVED         " + fileName + g.crlf);
+                  if (!ckReportOnly.Checked)
                   {
-                    sb.Append("FILE MOVED         " + fileName + g.crlf);
-                    if (!ckReportOnly.Checked)
-                    {
-                      filesPushed++;
-                      string destFileName = c.Destination + @"\" + fileName;
-                      if (!Directory.Exists(c.Destination))
-                        Directory.CreateDirectory(c.Destination);
-                      lblStatus.Text = "Copying file: " + file + "   (Count:" + filesPushed.ToString() + ")";
-                      Application.DoEvents();
-                      File.Copy(file, destFileName, true);
-                      totalMoved++;
-                    }
+                    filesPushed++;
+                    string destFileName = c.Destination + @"\" + fileName;
+                    if (!Directory.Exists(c.Destination))
+                      Directory.CreateDirectory(c.Destination);
+                    lblStatus.Text = "Copying file: " + file + "   (Count:" + filesPushed.ToString() + ")";
+                    Application.DoEvents();
+                    File.Copy(file, destFileName, true);
+                    totalMoved++;
                   }
-                  else
-                  {
-                    sb.Append("EXCLUDED (NAME)    " + fileName + g.crlf);
-                    totalNameExcl++; 
-                  }
+                }
+                else
+                {
+                  sb.Append("EXCLUDED (NAME)    " + fileName + g.crlf);
+                  totalNameExcl++;
+                }
               }
               else
               {
@@ -206,8 +206,8 @@ namespace Org.CodePusher
               sb.Append("EXCLUDED (EXT)     " + fileName + g.crlf);
               totalExtExcl++;
             }
-          } 
-               
+          }
+
           if (!profileNameShown)
           {
             sb.Append(g.crlf + "Subtotals for Mapping Control Element:  '" + c.Name + "'" + g.crlf2);
@@ -215,7 +215,7 @@ namespace Org.CodePusher
           }
 
           sb.Append("  Source      : " + c.Source +  g.crlf +
-                    "  Destination : " + c.Destination + g.crlf + 
+                    "  Destination : " + c.Destination + g.crlf +
                     "  Clear First : " + c.ClearDestination.ToString() + g.crlf);
 
           sb.Append("  Profile Destination Files Deleted         : " + totalDeleted.ToString("#,##0") + g.crlf +
@@ -228,11 +228,11 @@ namespace Org.CodePusher
           grandTotalSource += totalSource;
           grandTotalNameExcl += totalNameExcl;
           grandTotalExtExcl += totalExtExcl;
-          grandTotalMoved += totalMoved;                    
+          grandTotalMoved += totalMoved;
         }
 
 
-        sb.Append("-----------------------------------------------------------------" + g.crlf); 
+        sb.Append("-----------------------------------------------------------------" + g.crlf);
         sb.Append("Grand Totals for profile '" + p.Name + "'" + g.crlf);
         sb.Append("  Grand Total Destination Files Deleted     : " + grandTotalDeleted.ToString("#,##0") + g.crlf +
                   "  Grand Total Source Files                  : " + grandTotalSource.ToString("#,##0") + g.crlf +
@@ -251,9 +251,9 @@ namespace Org.CodePusher
       }
       catch (Exception ex)
       {
-          MessageBox.Show("An exception occurred attempting to push code." + g.crlf2 + 
-                      ex.ToReport(), "Adsdi Code Pusher - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          this.Cursor = Cursors.Default;
+        MessageBox.Show("An exception occurred attempting to push code." + g.crlf2 +
+                        ex.ToReport(), "Adsdi Code Pusher - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        this.Cursor = Cursors.Default;
       }
     }
 
@@ -323,7 +323,7 @@ namespace Org.CodePusher
         count += CountFilesInSourceRecursive(directory, 0);
       }
 
-      return count; 
+      return count;
     }
 
     private int CopyFoldersAndFiles(string sourcePath, string destPath, StringBuilder sb, int filesPushed)
@@ -390,7 +390,7 @@ namespace Org.CodePusher
       catch (Exception ex)
       {
         txtResults.Text = "An exception occurred loading code pusher profiles." + g.crlf2 + ex.ToReport() + g.crlf2 +
-                "MEMORY LOG" + g.crlf + g.MemoryLog;
+                          "MEMORY LOG" + g.crlf + g.MemoryLog;
         return;
       }
     }
@@ -436,7 +436,7 @@ namespace Org.CodePusher
     private void Load_cboMappingControlElements(string profileName)
     {
       cboMappingControlElements.Items.Clear();
-                        
+
       if (_profiles.ContainsKey(profileName))
       {
         Profile p = _profiles[profileName];
@@ -510,7 +510,7 @@ namespace Org.CodePusher
     {
       if (cboProfile.Text.IsBlank())
         return;
-            
+
       if (cboMappingControlElements.Text.IsBlank())
         return;
 

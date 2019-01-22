@@ -12,17 +12,60 @@ namespace Org.GraphicReports.Business
   public class CalendarMonth : SortedList<int, CalendarDay>
   {
     public Calendar Calendar;
-    private DateTime _firstOfMonth { get; set; }
-		public DateTime FirstDayOfMonth { get { return _firstOfMonth; } }
-		public DateTime LastDayOfMonth { get { return new DateTime(this.FirstDayOfMonth.Year, this.FirstDayOfMonth.Month, this.FirstDayOfMonth.LastDayOfMonth()); } }
-    public string MonthText { get { return _firstOfMonth.ToString("MMMM"); } }
-    public string YearText { get { return _firstOfMonth.ToString("yyyy"); } }
-    public int CCYYMM { get { return _firstOfMonth.ToString("yyyyMM").ToInt32(); } }
-    public string MonthYearLong { get { return this.MonthText + " " + this.YearText; } }
-    public string MonthYearMid { get { return _firstOfMonth.ToString("MMM") + " " + this.YearText; } }
-    public string MonthYearShort { get { return _firstOfMonth.ToString("MM/yy"); } }
-    public int DrawingLeft { get { return Get_DrawingLeft(); } }
-    public int DrawingWidth { get { return Get_DrawingWidth(); } }
+    private DateTime _firstOfMonth {
+      get;
+      set;
+    }
+    public DateTime FirstDayOfMonth {
+      get {
+        return _firstOfMonth;
+      }
+    }
+    public DateTime LastDayOfMonth {
+      get {
+        return new DateTime(this.FirstDayOfMonth.Year, this.FirstDayOfMonth.Month, this.FirstDayOfMonth.LastDayOfMonth());
+      }
+    }
+    public string MonthText {
+      get {
+        return _firstOfMonth.ToString("MMMM");
+      }
+    }
+    public string YearText {
+      get {
+        return _firstOfMonth.ToString("yyyy");
+      }
+    }
+    public int CCYYMM {
+      get {
+        return _firstOfMonth.ToString("yyyyMM").ToInt32();
+      }
+    }
+    public string MonthYearLong {
+      get {
+        return this.MonthText + " " + this.YearText;
+      }
+    }
+    public string MonthYearMid {
+      get {
+        return _firstOfMonth.ToString("MMM") + " " + this.YearText;
+      }
+    }
+    public string MonthYearShort {
+      get {
+        return _firstOfMonth.ToString("MM/yy");
+      }
+    }
+    public int DrawingLeft {
+      get {
+        return Get_DrawingLeft();
+      }
+    }
+    public int DrawingWidth {
+      get {
+        return Get_DrawingWidth();
+      }
+    }
 
     public CalendarMonth(Calendar calendar, DateTime dt)
     {
@@ -35,7 +78,7 @@ namespace Org.GraphicReports.Business
       {
         var calendarDay = new CalendarDay(this, d);
         this.Add(calendarDay.DayOfMonth, calendarDay);
-        d = d.AddDays(1); 
+        d = d.AddDays(1);
       }
     }
 
@@ -49,7 +92,7 @@ namespace Org.GraphicReports.Business
         else
           break;
       }
-      return drawingWidth; 
+      return drawingWidth;
     }
 
     private int Get_DrawingLeft()

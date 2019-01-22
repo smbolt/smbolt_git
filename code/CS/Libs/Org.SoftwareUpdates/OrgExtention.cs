@@ -14,12 +14,12 @@ namespace Org.SoftwareUpdates
   {
     public static void Extend()
     {
-      XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(Org.Software.Tasks.Concrete.CheckForUpdatesProcessor)));      
+      XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(Org.Software.Tasks.Concrete.CheckForUpdatesProcessor)));
     }
 
     //public static void ExtendWCFTransMap(WCFTransMap wcfTransMap)
     //{
-    //  wcfTransMap.AddAssembly(Assembly.GetAssembly(typeof(Org.SoftwareTasks.Concrete.CheckForUpdatesProcessor))); 
+    //  wcfTransMap.AddAssembly(Assembly.GetAssembly(typeof(Org.SoftwareTasks.Concrete.CheckForUpdatesProcessor)));
     //}
   }
 }

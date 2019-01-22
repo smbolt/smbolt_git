@@ -8,7 +8,7 @@ using Org.GS;
 
 namespace Org.DocGen.DocSpec
 {
-    //public class OxComposite : List<OpenXmlElement>
-    //{
-    //}
+  //public class OxComposite : List<OpenXmlElement>
+  //{
+  //}
 }

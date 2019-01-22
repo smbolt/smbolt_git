@@ -8,8 +8,14 @@ namespace Org.DxDocs
 {
   public class DocParm
   {
-    public string Name { get; set; }
-    public string Value { get; set; }
+    public string Name {
+      get;
+      set;
+    }
+    public string Value {
+      get;
+      set;
+    }
 
     public DocParm()
     {

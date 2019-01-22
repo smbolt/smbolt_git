@@ -6,25 +6,40 @@ using System.Xml.Serialization;
 
 namespace OopFactory.X12.Hipaa.Common
 {
-    public class Contact
+  public class Contact
+  {
+    public Contact()
     {
-        public Contact()
-        {
-            if (Numbers == null) Numbers = new List<ContactNumber>();
-        }
-
-        [XmlAttribute]
-        public string FunctionCode { get; set; }
-        public string Name { get; set; }
-        [XmlElement(ElementName="Number")]
-        public List<ContactNumber> Numbers { get; set; }
+      if (Numbers == null) Numbers = new List<ContactNumber>();
     }
 
-    public class ContactNumber
-    {
-        [XmlAttribute]
-        public string Qualifier { get; set; }
-        [XmlText]
-        public string Number { get; set; }
+    [XmlAttribute]
+    public string FunctionCode {
+      get;
+      set;
     }
+    public string Name {
+      get;
+      set;
+    }
+    [XmlElement(ElementName="Number")]
+    public List<ContactNumber> Numbers {
+      get;
+      set;
+    }
+  }
+
+  public class ContactNumber
+  {
+    [XmlAttribute]
+    public string Qualifier {
+      get;
+      set;
+    }
+    [XmlText]
+    public string Number {
+      get;
+      set;
+    }
+  }
 }

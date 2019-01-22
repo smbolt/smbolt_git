@@ -12,7 +12,10 @@ namespace Org.WSO.Transactions
   public class GetWinServiceListResponse : TransactionBase
   {
     [XMap(XType = XType.Element, CollectionElements  = "WinService", WrapperElement = "WinServiceList")]
-    public WinServiceSet WinServiceSet { get; set; }
+    public WinServiceSet WinServiceSet {
+      get;
+      set;
+    }
 
     public GetWinServiceListResponse()
     {

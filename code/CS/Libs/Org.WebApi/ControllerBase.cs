@@ -13,28 +13,68 @@ namespace Org.WebApi
   public class ControllerBase : ApiController
   {
     private Logger _logger;
-    public Logger Logger { get { return _logger; } }
+    public Logger Logger {
+      get {
+        return _logger;
+      }
+    }
 
-    protected WebContext WebContext { get; private set; }
-    protected UserSession UserSession { get; private set; }
-    public string UserName { get { return Get_UserName(); } }
-    public string UserNameShort { get { return Get_UserNameShort(); } }
+    protected WebContext WebContext {
+      get;
+      private set;
+    }
+    protected UserSession UserSession {
+      get;
+      private set;
+    }
+    public string UserName {
+      get {
+        return Get_UserName();
+      }
+    }
+    public string UserNameShort {
+      get {
+        return Get_UserNameShort();
+      }
+    }
 
-    public IEnumerable<KeyValuePair<string, string>> QS { get; set; }
+    public IEnumerable<KeyValuePair<string, string>> QS {
+      get;
+      set;
+    }
 
-    public int Page { get; set; }
-    public int PerPage { get; set; }
-    public string Sort { get; set; }
+    public int Page {
+      get;
+      set;
+    }
+    public int PerPage {
+      get;
+      set;
+    }
+    public string Sort {
+      get;
+      set;
+    }
 
     private string _sessionId;
     public string SessionId
     {
-      get { return _sessionId; }
-      set { _sessionId = value; }
+      get {
+        return _sessionId;
+      }
+      set {
+        _sessionId = value;
+      }
     }
 
-    public int OrgId { get; set; }
-    public int AccountId { get; set; }
+    public int OrgId {
+      get;
+      set;
+    }
+    public int AccountId {
+      get;
+      set;
+    }
 
     public ControllerBase()
     {
@@ -82,7 +122,7 @@ namespace Org.WebApi
                     " NewUserSession=" + newUserSession.ToString());
 
 
-      // use this code to run on different servers...       
+      // use this code to run on different servers...
 
       int requestPort = this.WebContext.Uri.Port;
       string serverName = this.WebContext.ServerName;

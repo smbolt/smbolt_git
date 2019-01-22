@@ -7,13 +7,24 @@ using System.Threading.Tasks;
 
 namespace Org.GS
 {
-  public class XmlReport 
+  public class XmlReport
   {
     public XElement _originalXml;
-    public XmlLineSet XmlLineSet { get; set; }
-    public int ErrorCount { get { return Get_ErrorCount(); } }
-    public string Report { get { return Get_Report(); } }
-    
+    public XmlLineSet XmlLineSet {
+      get;
+      set;
+    }
+    public int ErrorCount {
+      get {
+        return Get_ErrorCount();
+      }
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
+
     public XmlReport(XElement xml)
     {
       _originalXml = xml;
@@ -60,7 +71,7 @@ namespace Org.GS
         }
       }
 
-      throw new Exception("The xml line '" + xmlLine + "' (this first line of the Xml element parameter) was not found within the XmlReport lines."); 
+      throw new Exception("The xml line '" + xmlLine + "' (this first line of the Xml element parameter) was not found within the XmlReport lines.");
     }
 
     private void CreateLineSet()

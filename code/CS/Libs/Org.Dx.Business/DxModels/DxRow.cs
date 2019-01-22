@@ -9,8 +9,16 @@ namespace Org.Dx.Business
 {
   public class DxRow : DxCellSet
   {
-    public string Report { get { return base.Get_Report(); } }
-    public string VerticalReport { get { return base.Get_VerticalReport(); } }
+    public string Report {
+      get {
+        return base.Get_Report();
+      }
+    }
+    public string VerticalReport {
+      get {
+        return base.Get_VerticalReport();
+      }
+    }
 
     public DxRow(DxRowSet dxRowSet)
       : base(dxRowSet)

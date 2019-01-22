@@ -15,10 +15,16 @@ namespace Org.GS.Configuration
   public class ConfigDictionary : List<DI>
   {
     [XMap(MyParent = true)]
-    public ConfigDictionarySet ConfigDictionarySet { get; set; }
+    public ConfigDictionarySet ConfigDictionarySet {
+      get;
+      set;
+    }
 
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
 
     [XParm(Name = "parent", ParmSource = XParmSource.Parent, AttrName = "", Required = false)]

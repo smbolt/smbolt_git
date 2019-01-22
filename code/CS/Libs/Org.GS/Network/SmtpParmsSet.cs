@@ -12,7 +12,7 @@ namespace Org.GS
       if (this.Count == 0)
       {
         this.Add(smtpParms);
-          return;
+        return;
       }
 
       // don't add the same host twice

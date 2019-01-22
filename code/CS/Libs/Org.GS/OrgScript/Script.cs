@@ -20,7 +20,7 @@ namespace Org.GS
     {
       try
       {
-        _compText = _rawText.CondenseText(); 
+        _compText = _rawText.CondenseText();
 
       }
       catch (Exception ex)

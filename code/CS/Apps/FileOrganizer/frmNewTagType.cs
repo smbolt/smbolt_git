@@ -11,15 +11,15 @@ using Org.FSO;
 using Org.GS;
 using Org.GS.Configuration;
 
-namespace Org.FileOrganizer 
+namespace Org.FileOrganizer
 {
-  public partial class frmNewTagType : Form 
+  public partial class frmNewTagType : Form
   {
     private FsoRepository _fsoRepo;
 
     public string NewTagType;
 
-    public frmNewTagType(FsoRepository fsoRepo) 
+    public frmNewTagType(FsoRepository fsoRepo)
     {
       InitializeComponent();
 
@@ -54,10 +54,10 @@ namespace Org.FileOrganizer
           break;
       }
     }
-      
+
     private bool TagTypeExists(string tagTypeName)
     {
-      try 
+      try
       {
         var tagType = _fsoRepo.GetTagTypeByName(tagTypeName);
 
@@ -92,7 +92,7 @@ namespace Org.FileOrganizer
       btnCancel.Enabled = true;
     }
 
-    private void txtTagType_TextChanged(object sender,EventArgs e) 
+    private void txtTagType_TextChanged(object sender,EventArgs e)
     {
       btnOK.Enabled = txtTagType.Text.Length > 0;
     }

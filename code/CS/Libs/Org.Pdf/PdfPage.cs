@@ -11,11 +11,14 @@ namespace Org.Pdf
 {
   public class PdfPage
   {
-    public int PageNumber  { get; private set; }
+    public int PageNumber  {
+      get;
+      private set;
+    }
 
     public PdfPage(int pageNumber)
     {
-      this.PageNumber = pageNumber; 
+      this.PageNumber = pageNumber;
     }
   }
 }

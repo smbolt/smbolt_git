@@ -21,7 +21,7 @@ namespace Org.DxDocs
         try
         {
           Workbook wb = new Workbook();
-          wb.Worksheets[0].Cells["A1"].Value = "Hello"; 
+          wb.Worksheets[0].Cells["A1"].Value = "Hello";
           wb.SaveDocument(@"C:\_work\DxDocs\Doc1.xlsx");
           taskResult.EndDateTime = DateTime.Now;
           return taskResult;

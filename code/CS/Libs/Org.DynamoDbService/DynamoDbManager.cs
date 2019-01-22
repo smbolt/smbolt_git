@@ -13,7 +13,10 @@ namespace Org.DynamoDbService
   {
     public event Action<MonitorEventArgs> MonitorEvent;
 
-    public DynamoDbServiceState DynamoDbServiceState { get; private set; }
+    public DynamoDbServiceState DynamoDbServiceState {
+      get;
+      private set;
+    }
 
     private string _installDirectory;
 
@@ -51,7 +54,7 @@ namespace Org.DynamoDbService
           {
             var startInfo = new ProcessStartInfo();
             startInfo.FileName = "java";
-            startInfo.Arguments = "-DJava.library.path=" + _installDirectory + @"\DynamoDbLocal_lib " + 
+            startInfo.Arguments = "-DJava.library.path=" + _installDirectory + @"\DynamoDbLocal_lib " +
                                   "-jar " + _installDirectory + @"\DynamoDbLocal.jar -sharedDb";
             startInfo.CreateNoWindow = true;
             startInfo.UseShellExecute = false;
@@ -185,7 +188,7 @@ namespace Org.DynamoDbService
           if (!_monitorAttemptRestart)
           {
             this.MonitorEvent?.Invoke(new MonitorEventArgs(this.DynamoDbServiceState, "DynamoDbService state is " +
-                                                           this.DynamoDbServiceState.ToString() + " - restart will not be attempted."));
+                                      this.DynamoDbServiceState.ToString() + " - restart will not be attempted."));
             return;
           }
 

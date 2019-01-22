@@ -13,18 +13,34 @@ namespace Org.Dx.Business
   public class DxCommand
   {
     [XMap(IsRequired = true, IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public DxActionType DxActionType { get; set; }
+    public DxActionType DxActionType {
+      get;
+      set;
+    }
 
-    public string DxProcessingRoutineName { get { return Get_DxProcessingRoutineName(); } }
+    public string DxProcessingRoutineName {
+      get {
+        return Get_DxProcessingRoutineName();
+      }
+    }
 
     [XMap]
-    public string DxActionParms { get; set; }
+    public string DxActionParms {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue ="True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     public DxCommand()
     {

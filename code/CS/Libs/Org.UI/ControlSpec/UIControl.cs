@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
-using System.Windows.Forms; 
+using System.Windows.Forms;
 using Org.GS;
 using Org.GS.Configuration;
 
@@ -14,58 +14,145 @@ namespace Org.UI
   public class UIControl : List<UIControl>
   {
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
     [XMap]
-    public string Text { get; set; }
+    public string Text {
+      get;
+      set;
+    }
     [XMap]
-    public string Model { get; set; }
+    public string Model {
+      get;
+      set;
+    }
     [XMap]
-    public string ModelSort { get; set; }
+    public string ModelSort {
+      get;
+      set;
+    }
     [XMap]
-    public string ListSource { get; set; }
+    public string ListSource {
+      get;
+      set;
+    }
     [XMap]
-    public string ListData { get; set; }
+    public string ListData {
+      get;
+      set;
+    }
     [XMap]
-    public string Type { get; set; }
+    public string Type {
+      get;
+      set;
+    }
     [XMap]
-    public bool AutoSize { get; set; }
+    public bool AutoSize {
+      get;
+      set;
+    }
     [XMap]
-    public bool Required { get; set; }
+    public bool Required {
+      get;
+      set;
+    }
     [XMap]
-    public string Size { get; set; }
+    public string Size {
+      get;
+      set;
+    }
     [XMap]
-    public string Location { get; set; }
+    public string Location {
+      get;
+      set;
+    }
     [XMap]
-    public string Dock { get; set; }
+    public string Dock {
+      get;
+      set;
+    }
     [XMap]
-    public string BackColor { get; set; }
+    public string BackColor {
+      get;
+      set;
+    }
     [XMap]
-    public string BorderStyle { get; set; }
+    public string BorderStyle {
+      get;
+      set;
+    }
     [XMap]
-    public string TextAlign { get; set; }
+    public string TextAlign {
+      get;
+      set;
+    }
     [XMap]
-    public string MaxLength { get; set; }
+    public string MaxLength {
+      get;
+      set;
+    }
     [XMap]
-    public string TabIndex { get; set; }
+    public string TabIndex {
+      get;
+      set;
+    }
     [XMap]
-    public string Enabled { get; set; }
+    public string Enabled {
+      get;
+      set;
+    }
     [XMap]
-    public string InitialFocus { get; set; }
+    public string InitialFocus {
+      get;
+      set;
+    }
     [XMap]
-    public string EventSpec { get; set; }
+    public string EventSpec {
+      get;
+      set;
+    }
     [XMap]
-    public string Tag { get; set; }
+    public string Tag {
+      get;
+      set;
+    }
     [XMap(XType=XType.Element)]
-    public GridView GridView { get; set; }
+    public GridView GridView {
+      get;
+      set;
+    }
     [XMap]
-    public bool Debug { get; set; }
+    public bool Debug {
+      get;
+      set;
+    }
 
-    public Type ObjectType { get; set; }
-    public object ObjectReference { get; set; }
-    public Type ParentObjectType { get; set; }
-    public object ParentObjectReference { get; set; }
-    public Type TopObjectType { get; set; }
-    public object TopObjectReference { get; set; }
+    public Type ObjectType {
+      get;
+      set;
+    }
+    public object ObjectReference {
+      get;
+      set;
+    }
+    public Type ParentObjectType {
+      get;
+      set;
+    }
+    public object ParentObjectReference {
+      get;
+      set;
+    }
+    public Type TopObjectType {
+      get;
+      set;
+    }
+    public object TopObjectReference {
+      get;
+      set;
+    }
 
     public UIControl()
     {
@@ -77,9 +164,9 @@ namespace Org.UI
       this.ListData = String.Empty;
       this.Type = "System.Object";
       this.AutoSize = false;
-      this.Required = false; 
+      this.Required = false;
       this.Size = "0,0";
-      this.Location = "0,0"; 
+      this.Location = "0,0";
       this.Dock = "None";
       this.BackColor = String.Empty;
       this.BorderStyle = "None";
@@ -94,11 +181,11 @@ namespace Org.UI
       this.Debug = false;
 
       this.ObjectType = null;
-      this.ObjectReference = null; 
+      this.ObjectReference = null;
       this.ParentObjectType = null;
-      this.ParentObjectReference = null; 
+      this.ParentObjectReference = null;
       this.TopObjectType = null;
-      this.TopObjectReference = null; 
+      this.TopObjectReference = null;
     }
 
     public void AutoInit()
@@ -107,7 +194,7 @@ namespace Org.UI
       {
         case "Org.UI.NavButton":
           if (this.Name.IsBlank())
-            this.Name = this.Text.Replace(" ", String.Empty); 
+            this.Name = this.Text.Replace(" ", String.Empty);
           if (this.Tag.IsBlank())
             this.Tag = this.Name;
           break;
@@ -124,8 +211,8 @@ namespace Org.UI
       }
 
       foreach(UIControl childControl in this)
-      {          
-        AddTaggedControls(childControl, tcs); 
+      {
+        AddTaggedControls(childControl, tcs);
       }
 
       return tcs;
@@ -138,12 +225,12 @@ namespace Org.UI
         if (tcs.ContainsKey(control.Tag))
           throw new Exception("TaggedControlSet already contains a TaggedControl with tag '" + control.Tag + "'.");
 
-        tcs.Add(control.Tag, new TaggedControl(control.Tag, control, control.ObjectReference)); 
+        tcs.Add(control.Tag, new TaggedControl(control.Tag, control, control.ObjectReference));
       }
 
       foreach(UIControl childControl in control)
       {
-        AddTaggedControls(childControl, tcs); 
+        AddTaggedControls(childControl, tcs);
       }
     }
   }

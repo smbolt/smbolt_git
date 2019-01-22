@@ -13,12 +13,12 @@ namespace Org.PerfService
     /// </summary>
     static void Main()
     {
-        ServiceBase[] ServicesToRun;
-        ServicesToRun = new ServiceBase[] 
-        { 
-            new PerfService() 
-        };
-        ServiceBase.Run(ServicesToRun);
+      ServiceBase[] ServicesToRun;
+      ServicesToRun = new ServiceBase[]
+      {
+        new PerfService()
+      };
+      ServiceBase.Run(ServicesToRun);
     }
   }
 }

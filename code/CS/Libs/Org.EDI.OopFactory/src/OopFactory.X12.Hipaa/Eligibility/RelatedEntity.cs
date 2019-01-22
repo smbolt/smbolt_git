@@ -6,9 +6,12 @@ using OopFactory.X12.Hipaa.Common;
 
 namespace OopFactory.X12.Hipaa.Eligibility
 {
-    public class RelatedEntity : Entity
-    {
+  public class RelatedEntity : Entity
+  {
 
-        public ProviderInformation ProviderInfo { get; set; }
+    public ProviderInformation ProviderInfo {
+      get;
+      set;
     }
+  }
 }

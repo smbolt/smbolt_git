@@ -11,11 +11,26 @@ namespace Org.Crossword.Business
 {
   public class Puzzle
   {
-    public int Width { get; set; }
-    public int Height { get; set; }
-    public Dictionary<int, Word> Words { get; set; }
-    public Dictionary<int, Clue> Clues { get; set; }
-    public List<Cell> Cells { get; set; }
+    public int Width {
+      get;
+      set;
+    }
+    public int Height {
+      get;
+      set;
+    }
+    public Dictionary<int, Word> Words {
+      get;
+      set;
+    }
+    public Dictionary<int, Clue> Clues {
+      get;
+      set;
+    }
+    public List<Cell> Cells {
+      get;
+      set;
+    }
     private Dictionary<int, Dictionary<int, Cell>> _cells;
 
     public Puzzle(string fullPath)
@@ -28,7 +43,7 @@ namespace Org.Crossword.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to instantiate the Puzzle object.", ex); 
+        throw new Exception("An exception occurred while attempting to instantiate the Puzzle object.", ex);
       }
     }
 
@@ -37,7 +52,7 @@ namespace Org.Crossword.Business
       if (!_cells.ContainsKey(x))
         return null;
       if (!_cells[x].ContainsKey(y))
-        return null; 
+        return null;
       return _cells[x][y];
     }
 
@@ -83,7 +98,7 @@ namespace Org.Crossword.Business
         var direction = xRange.Contains("-") ? Direction.Down : Direction.Across;
 
         var word = new Word(wordId, direction, xRange, yRange);
-        this.Words.Add(word.WordId, word); 
+        this.Words.Add(word.WordId, word);
       }
 
       var clueSets = cw.Elements().Where(e => e.Name.LocalName == "clues");
@@ -94,7 +109,7 @@ namespace Org.Crossword.Business
         var b = title.Elements().Where(e => e.Name.LocalName == "b").FirstOrDefault();
         var direction = b.Value.ToLower() == "down" ? Direction.Down : Direction.Across;
 
-        var clueElements = clueSet.Elements().Where(e => e.Name.LocalName == "clue"); 
+        var clueElements = clueSet.Elements().Where(e => e.Name.LocalName == "clue");
 
         foreach (var clueElement in clueElements)
         {
@@ -103,7 +118,7 @@ namespace Org.Crossword.Business
           int format = clueElement.Attribute("format").Value.ToInt32();
           string phrase = clueElement.Value;
           var clue = new Clue(wordId, number, format, phrase, direction);
-          this.Clues.Add(clue.WordId, clue); 
+          this.Clues.Add(clue.WordId, clue);
         }
       }
     }

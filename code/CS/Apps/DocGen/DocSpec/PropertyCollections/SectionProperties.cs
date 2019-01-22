@@ -8,20 +8,20 @@ using Org.GS;
 
 namespace Org.DocGen.DocSpec
 {
-    [Meta(OxName = "sectPr", Abbr = "SectPr")]
-    public class SectionProperties : DocumentElement 
+  [Meta(OxName = "sectPr", Abbr = "SectPr")]
+  public class SectionProperties : DocumentElement
+  {
+    public SectionProperties(XElement xml, Doc doc, DocumentElement parent)
     {
-        public SectionProperties(XElement xml, Doc doc, DocumentElement parent)
-        {
-            base.Initialize(xml, doc, parent);
+      base.Initialize(xml, doc, parent);
 
-            if (xml == null)
-                return;
+      if (xml == null)
+        return;
 
-            IEnumerable<XElement> props = xml.Elements();
-            foreach (XElement prop in props)
-                this.ChildElements.Add(DeFactory.CreateDeObject(this.ParentSet, prop.Name.LocalName, prop, doc, this));
-        }
+      IEnumerable<XElement> props = xml.Elements();
+      foreach (XElement prop in props)
+        this.ChildElements.Add(DeFactory.CreateDeObject(this.ParentSet, prop.Name.LocalName, prop, doc, this));
     }
+  }
 }
 

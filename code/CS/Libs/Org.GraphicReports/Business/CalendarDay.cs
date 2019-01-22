@@ -11,10 +11,24 @@ namespace Org.GraphicReports.Business
     private Calendar _calendar;
     private CalendarMonth _calendarMonth;
     private DateTime _day;
-    public int DayOfMonth { get { return _day.Day; } }
-    public int Left { get; set; }
-    public int PixelsToDraw { get; set; }
-    public bool DrawThisDay { get { return this.PixelsToDraw > 0; } }
+    public int DayOfMonth {
+      get {
+        return _day.Day;
+      }
+    }
+    public int Left {
+      get;
+      set;
+    }
+    public int PixelsToDraw {
+      get;
+      set;
+    }
+    public bool DrawThisDay {
+      get {
+        return this.PixelsToDraw > 0;
+      }
+    }
 
     public CalendarDay(CalendarMonth calendarMonth, DateTime dt)
     {
@@ -22,7 +36,7 @@ namespace Org.GraphicReports.Business
       _calendar = calendarMonth.Calendar;
       _day = new DateTime(dt.Year, dt.Month, dt.Day);
       this.Left = -1;
-      this.PixelsToDraw = -1; 
+      this.PixelsToDraw = -1;
     }
   }
 }

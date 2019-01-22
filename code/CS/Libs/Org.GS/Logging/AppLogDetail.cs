@@ -8,11 +8,26 @@ namespace Org.GS.Logging
 {
   public class AppLogDetail
   {
-    public int LogDetailId { get; set; }
-    public int LogId { get; set; }
-    public LogDetailType LogDetailType { get; set; }
-    public int SetId { get; set; }
-    public string LogDetail { get; set; }
+    public int LogDetailId {
+      get;
+      set;
+    }
+    public int LogId {
+      get;
+      set;
+    }
+    public LogDetailType LogDetailType {
+      get;
+      set;
+    }
+    public int SetId {
+      get;
+      set;
+    }
+    public string LogDetail {
+      get;
+      set;
+    }
 
     public AppLogDetail()
     {

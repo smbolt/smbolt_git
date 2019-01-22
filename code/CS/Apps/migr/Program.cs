@@ -77,7 +77,7 @@ namespace Org.migr
       {
         if (args.Length == 0)
         {
-          _logger.Log("No command received in command line arguments."); 
+          _logger.Log("No command received in command line arguments.");
           Console.WriteLine("No command received");
           return 16;
         }
@@ -155,10 +155,10 @@ namespace Org.migr
       }
       catch (Exception ex)
       {
-        return new TaskResult("MigrExecution", "An exception occurred while attempting to deserialize the task result.", TaskResultStatus.Failed, 0, ex); 
+        return new TaskResult("MigrExecution", "An exception occurred while attempting to deserialize the task result.", TaskResultStatus.Failed, 0, ex);
       }
     }
-    
+
 
     private static string[] Initialize(string[] args)
     {
@@ -170,7 +170,7 @@ namespace Org.migr
 
         a = new a();
 
-        string configCommandLine = g.CI("CommandLine"); 
+        string configCommandLine = g.CI("CommandLine");
 
         if (configCommandLine.IsNotBlank())
           args = GetArgsFromCommandLine(configCommandLine);
@@ -244,11 +244,11 @@ namespace Org.migr
               if (axProf.Value.NameLower == _profileName.ToLower().Trim())
               {
                 _axProfileSet = axProfSet;
-                break; 
+                break;
               }
             }
             if (_axProfileSet != null)
-              break; 
+              break;
           }
         }
 
@@ -257,7 +257,7 @@ namespace Org.migr
 
         var profileParms = new AxProfileParms();
 
-        
+
         profileParms.ParmSet.AddParm("IsDryRun", _isDryRun);
         profileParms.ParmSet.AddParm("SrcEnv", _srcEnv);
         profileParms.ParmSet.AddParm("SrcApp", _srcApp);
@@ -315,7 +315,7 @@ namespace Org.migr
           if (args[i].StartsWith("-"))
             args[i] = args[i].ToLower();
         }
-        
+
         if (args.Contains("-dryrun"))
           _isDryRun = true;
 
@@ -369,7 +369,7 @@ namespace Org.migr
           // if we don't have a parameter following "-tgtApp", then we have an error
           if (args.Length < indexOfValueTgtApp + 1)
             throw new Exception("The '-tgtApp' command line argument must be followed by the target application value parameter.");
-        
+
           _tgtApp = args[indexOfValueTgtApp];
         }
         else
@@ -382,11 +382,11 @@ namespace Org.migr
         if (!args.Contains("-srcapptype"))
           throw new Exception("The '-srcAppType' command line argument is required.");
 
-          int indexOfSrcAppType = GetIndexOf("-srcapptype", args);
-          int indexOfValueSrcAppType = indexOfSrcAppType + 1;
-          if (args.Length < indexOfValueSrcAppType + 1)
-            throw new Exception("The -srcAppType command line argument must be followed by the AppType parameter.");
-          _srcAppType = args[indexOfValueSrcAppType];
+        int indexOfSrcAppType = GetIndexOf("-srcapptype", args);
+        int indexOfValueSrcAppType = indexOfSrcAppType + 1;
+        if (args.Length < indexOfValueSrcAppType + 1)
+          throw new Exception("The -srcAppType command line argument must be followed by the AppType parameter.");
+        _srcAppType = args[indexOfValueSrcAppType];
 
         if(_srcEnv == "mgr")
         {
@@ -404,7 +404,7 @@ namespace Org.migr
 
           if (!_tgtAppType.In("webservices,websites,windowsservices,modules,apps"))
             throw new Exception("The '-tgtAppType' command line argument must be followed by either 'webservices', 'websites', 'windowsservices', 'modules' or 'apps'.");
-            
+
         }
 
 
@@ -414,19 +414,19 @@ namespace Org.migr
             throw new Exception("There must be a -localTgtApp command line argument if a local module exists.");
           if(!args.Contains("-localversion"))
             throw new Exception("There must be a -localVersion command line argument if a local module exists.");
-            
+
           int indexOfLocalModule = GetIndexOf("-locmodule", args);
           int indexOfValueLocalModule = indexOfLocalModule + 1;
           if (args.Length < indexOfValueLocalModule + 1)
             throw new Exception("The -localModule command line argument must be followed by the migration/server application type parameter.");
           _localModule = args[indexOfValueLocalModule];
-          
+
           int indexOfLocalTgtApp = GetIndexOf("-localtgtapp", args);
           int indexOfValueLocalTgtApp = indexOfLocalTgtApp + 1;
           if (args.Length < indexOfValueLocalTgtApp + 1)
             throw new Exception("The -localTgtApp command line argument must be followed by the migration/server application type parameter.");
           _localTgtApp = args[indexOfValueLocalTgtApp];
-            
+
           int indexOfLocalVersion = GetIndexOf("-localversion", args);
           int indexOfValueLocalVersion = indexOfLocalVersion + 1;
           if (args.Length < indexOfValueLocalVersion + 1)
@@ -451,7 +451,7 @@ namespace Org.migr
         throw new Exception("An exception occurred while trying to process args.", ex);
       }
     }
-    
+
     private static int GetIndexOf(string item, string[] args)
     {
       if (args == null || args.Length == 0)

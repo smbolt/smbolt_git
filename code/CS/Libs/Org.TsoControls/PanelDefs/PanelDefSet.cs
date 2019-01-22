@@ -7,9 +7,9 @@ using Org.GS;
 
 namespace Org.TsoControls.PanelDefs
 {
-	[XMap(XType=XType.Element, CollectionElements = "PanelDef", WrapperElement = "PanelDefSet")]
-	public class PanelDefSet : Dictionary<string, PanelDef>
-	{
-	}
+  [XMap(XType=XType.Element, CollectionElements = "PanelDef", WrapperElement = "PanelDefSet")]
+  public class PanelDefSet : Dictionary<string, PanelDef>
+  {
+  }
 }
 

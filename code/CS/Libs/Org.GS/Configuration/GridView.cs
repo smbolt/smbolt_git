@@ -17,28 +17,37 @@ namespace Org.GS.Configuration
   public class GridView : List<GridColumn>
   {
     [XMap(IsKey = true)]
-    public string ViewName { get; set; }
+    public string ViewName {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool IsDefault { get; set; }
+    public bool IsDefault {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="Relative")]
-    public ColumnWidthMode ColumnWidthMode { get; set; }
+    public ColumnWidthMode ColumnWidthMode {
+      get;
+      set;
+    }
 
     public GridView()
     {
       this.ViewName = String.Empty;
       this.IsDefault = false;
       this.ColumnWidthMode = ColumnWidthMode.Relative;
-    }   
+    }
 
     public void AutoInit()
     {
       if (this.ColumnWidthMode == ColumnWidthMode.Relative)
       {
         int columnCount = this.Count();
-        float remainingPct = 1.0F; 
-        int totalWidth = this.Sum(x => x.Width); 
+        float remainingPct = 1.0F;
+        int totalWidth = this.Sum(x => x.Width);
         foreach(var col in this)
         {
           float pct = (float)col.Width / totalWidth;

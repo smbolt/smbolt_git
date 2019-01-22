@@ -130,7 +130,7 @@ namespace Org.EbcdicConverter
                         "EBCDIC Converter - Application Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
-      
+
     }
 
     private void cboCommand_SelectedIndexChanged(object sender, EventArgs e)

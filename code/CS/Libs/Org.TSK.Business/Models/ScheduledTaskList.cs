@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Org.TSK.Business.Models
 {
-    public class ScheduledTaskList
-    {
-    }
+  public class ScheduledTaskList
+  {
+  }
 }

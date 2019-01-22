@@ -21,10 +21,19 @@ namespace Org.GS.Dynamic
     protected bool IsInitialShowing = true;
     protected bool HasMissingCustomAttributes = false;
 
-    protected Assembly DerivedTypeAssembly { get; set; }
-    protected Dyn.DynamicControl DynamicControl { get; set; }
+    protected Assembly DerivedTypeAssembly {
+      get;
+      set;
+    }
+    protected Dyn.DynamicControl DynamicControl {
+      get;
+      set;
+    }
 
-    protected string ModuleName { get; set; }
+    protected string ModuleName {
+      get;
+      set;
+    }
 
     public DynamicFormBase()
     {
@@ -67,7 +76,7 @@ namespace Org.GS.Dynamic
       {
       }
 
-            
+
       this.mnuMain.BringToFront();
     }
 
@@ -76,7 +85,7 @@ namespace Org.GS.Dynamic
       string action = g.GetActionFromEvent(sender);
 
       lblStatus.Text = action;
-            
+
       switch (action)
       {
         case "NOTIFY_ICON":
@@ -191,7 +200,7 @@ namespace Org.GS.Dynamic
             }
           }
           break;
-        }
+      }
     }
 
     public void ArrangeControls()

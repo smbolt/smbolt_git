@@ -8,7 +8,7 @@ using Org.GS;
 
 namespace Org.TsoControls.Controls
 {
-	public class PanelControlBase : UserControl
-	{
-	}
+  public class PanelControlBase : UserControl
+  {
+  }
 }

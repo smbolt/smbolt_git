@@ -8,8 +8,14 @@ namespace Org.TSK.Business.Models
 {
   public class Host
   {
-    public int HostID { get; set; }
-    public string HostName { get; set; }
+    public int HostID {
+      get;
+      set;
+    }
+    public string HostName {
+      get;
+      set;
+    }
 
     public Host()
     {

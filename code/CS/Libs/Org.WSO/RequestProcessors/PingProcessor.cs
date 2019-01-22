@@ -15,7 +15,11 @@ namespace Org.WSO
   [Serializable]
   public class PingProcessor : RequestProcessorBase, IRequestProcessor, IDisposable
   {
-    public override int EntityId { get { return 301; } }
+    public override int EntityId {
+      get {
+        return 301;
+      }
+    }
     public static bool _isMapped = false;
 
     public PingProcessor()

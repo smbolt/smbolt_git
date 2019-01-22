@@ -8,7 +8,10 @@ namespace Org.BMR.ApiModels
 {
   public class ApiModelBase
   {
-    public int OrgId { get; set; }
+    public int OrgId {
+      get;
+      set;
+    }
 
     public ApiModelBase()
     {

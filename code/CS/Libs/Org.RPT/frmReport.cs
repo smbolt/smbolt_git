@@ -15,12 +15,12 @@ using Org.RPT;
 namespace Org.RPT
 {
   public partial class frmReport : Form
-  {        
+  {
     private ReportDefs _rDefs;
     private bool _isModal;
     private ReportData _rData;
 
-    private List<Image> pageImages; 
+    private List<Image> pageImages;
 
     public frmReport()
     {
@@ -132,10 +132,10 @@ namespace Org.RPT
       pbMain.Location = new Point(50, 50);
       pbSpacer.Location = new Point(pbMain.Left, pbMain.Top + pbMain.Height);
 
-      XmlMapper.AddAssembly(Assembly.GetExecutingAssembly());       
+      XmlMapper.AddAssembly(Assembly.GetExecutingAssembly());
 
       string reportDefs = File.ReadAllText(g.ReportsPath + @"\ReportDefs.xml");
-      XElement reportDefsXml = XElement.Parse(reportDefs); 
+      XElement reportDefsXml = XElement.Parse(reportDefs);
       var f = new ObjectFactory2();
       _rDefs = f.Deserialize(reportDefsXml) as ReportDefs;
 

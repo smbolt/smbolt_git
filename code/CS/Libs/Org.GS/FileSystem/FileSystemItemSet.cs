@@ -7,8 +7,16 @@ namespace Org.GS
 {
   public class FileSystemItemSet : SortedList<string, FileSystemItem>
   {
-    public List<FileSystemItem> Folders { get { return Get_Folders(); } }
-    public List<FileSystemItem> Files { get { return Get_Files(); } }
+    public List<FileSystemItem> Folders {
+      get {
+        return Get_Folders();
+      }
+    }
+    public List<FileSystemItem> Files {
+      get {
+        return Get_Files();
+      }
+    }
 
     private List<FileSystemItem> Get_Folders()
     {
@@ -38,7 +46,7 @@ namespace Org.GS
     //  if (folder == null)
     //  {
     //    folder = new FileSystemItem(folderName, null, FileSystemItemType.Folder);
-    //    fsiSet.Add(folder); 
+    //    fsiSet.Add(folder);
     //  }
 
     //  if (pathNodeIndex >= pathNodes.Length - 1)

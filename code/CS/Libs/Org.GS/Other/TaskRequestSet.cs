@@ -12,11 +12,30 @@ namespace Org.GS
     public SortedList<UInt64, TaskRequest> _runningTasks;
     private object TaskRequestSet_LockObject = new object();
 
-    public DateTime NextLoadTime { get; set; }
-    public bool MoreTasksToProcess { get { return Get_MoreTasksToProcess(); } }
-    public int TasksToProcessCount { get { return Get_TasksToProcessCount(); } }
-    public int WaitInterval { get { return Get_WaitInterval(); } }
-    public string TaskReport { get { return Get_TaskReport(); } }
+    public DateTime NextLoadTime {
+      get;
+      set;
+    }
+    public bool MoreTasksToProcess {
+      get {
+        return Get_MoreTasksToProcess();
+      }
+    }
+    public int TasksToProcessCount {
+      get {
+        return Get_TasksToProcessCount();
+      }
+    }
+    public int WaitInterval {
+      get {
+        return Get_WaitInterval();
+      }
+    }
+    public string TaskReport {
+      get {
+        return Get_TaskReport();
+      }
+    }
     private int _maxWaitInterval;
 
     public TaskRequestSet(int maxWaitInterval)
@@ -29,7 +48,7 @@ namespace Org.GS
     public void AddTaskRequests(List<TaskRequest> taskRequests)
     {
       foreach (var taskRequest in taskRequests)
-        this.AddTaskRequest(taskRequest); 
+        this.AddTaskRequest(taskRequest);
     }
 
     public void AddTaskRequest(TaskRequest taskRequest)
@@ -74,7 +93,7 @@ namespace Org.GS
         {
           UInt64 longSortKey = finishedTask.ScheduledRunDateTime.ToLongSortKey();
           if (_runningTasks.ContainsKey(longSortKey))
-            _runningTasks.Remove(longSortKey); 
+            _runningTasks.Remove(longSortKey);
         }
         finally
         {
@@ -128,9 +147,8 @@ namespace Org.GS
 
           if (waitMilliseconds < 0)
             return 0;
-          else
-            if (waitMilliseconds > _maxWaitInterval)
-              return _maxWaitInterval;
+          else if (waitMilliseconds > _maxWaitInterval)
+            return _maxWaitInterval;
 
           return waitMilliseconds;
         }
@@ -254,7 +272,7 @@ namespace Org.GS
         try
         {
           if (taskResult.OriginalTaskRequest == null)
-            return; 
+            return;
 
           if (!taskResult.OriginalTaskRequest.RunUntilTask || taskResult.NoWorkDone)
             return;
@@ -328,7 +346,7 @@ namespace Org.GS
           foreach (var task in this.Values)
           {
             sb.Append("    TASK: " + task.TaskName.PadTo(40) + " scheduled at " +
-                task.ScheduledRunDateTime.ToString("yyyy-MM-dd HH:mm:ss") + g.crlf);
+                      task.ScheduledRunDateTime.ToString("yyyy-MM-dd HH:mm:ss") + g.crlf);
           }
 
           if (this.TasksToProcessCount == 0)

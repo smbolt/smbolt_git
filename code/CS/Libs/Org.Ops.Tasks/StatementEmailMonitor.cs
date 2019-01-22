@@ -127,7 +127,7 @@ namespace Org.Ops.Tasks
 
         int attachmentCount = 0;
         bool attachmentSuccess = false;
-        bool attachmentError = false;       
+        bool attachmentError = false;
         foreach (var attachment in email.Attachments)
         {
           if (attachment.Name.EndsWith("png") || attachment.Name.EndsWith("jpg"))

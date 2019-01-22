@@ -16,13 +16,16 @@ namespace Org.FTW.Forms
 {
   public partial class frmToolWindowParent : Form
   {
-    public bool active { get; set; }
+    public bool active {
+      get;
+      set;
+    }
     private ToolWindowManager _twMgr;
 
     #region ToolWindow Management Items
     [DllImport("user32", CharSet = CharSet.Auto)]
     private extern static int SendMessage(
-       IntPtr handle, int msg, int wParam, IntPtr lParam);
+      IntPtr handle, int msg, int wParam, IntPtr lParam);
     [DllImport("user32.dll")]
     private static extern IntPtr GetForegroundWindow();
     private const int WM_ACTIVATE = 0x006;
@@ -61,7 +64,7 @@ namespace Org.FTW.Forms
         }
       }
 
-      //Console.WriteLine("FromAny " + anyToolWindowHandle.ToString()); 
+      //Console.WriteLine("FromAny " + anyToolWindowHandle.ToString());
 
       if (((int)m.WParam) == 0)
       {
@@ -71,7 +74,7 @@ namespace Org.FTW.Forms
           {
             this.active = true;
             SendMessage(this.Handle, WM_NCACTIVATE, 1, IntPtr.Zero);
-            //Console.WriteLine("Activate I " + this.Tag.ToString()); 
+            //Console.WriteLine("Activate I " + this.Tag.ToString());
           }
 
           foreach (frmToolWindowBase f in _twMgr.ToolWindows.Values)
@@ -82,7 +85,7 @@ namespace Org.FTW.Forms
               {
                 f.active = true;
                 SendMessage(f.Handle, WM_NCACTIVATE, 1, IntPtr.Zero);
-                //Console.WriteLine("Activate H " + f.Tag.ToString()); 
+                //Console.WriteLine("Activate H " + f.Tag.ToString());
               }
             }
           }
@@ -93,7 +96,7 @@ namespace Org.FTW.Forms
           {
             this.active = false;
             SendMessage(this.Handle, WM_NCACTIVATE, 0, IntPtr.Zero);
-            //Console.WriteLine("Activate G " + this.Tag.ToString()); 
+            //Console.WriteLine("Activate G " + this.Tag.ToString());
           }
 
           foreach (frmToolWindowBase f in _twMgr.ToolWindows.Values)
@@ -104,7 +107,7 @@ namespace Org.FTW.Forms
               {
                 f.active = false;
                 SendMessage(f.Handle, WM_NCACTIVATE, 0, IntPtr.Zero);
-                //Console.WriteLine("Deactivate G " + f.Tag.ToString()); 
+                //Console.WriteLine("Deactivate G " + f.Tag.ToString());
               }
             }
           }
@@ -128,7 +131,7 @@ namespace Org.FTW.Forms
             {
               f.active = true;
               SendMessage(f.Handle, WM_NCACTIVATE, 1, IntPtr.Zero);
-              //Console.WriteLine("Activate F " + f.Tag.ToString()); 
+              //Console.WriteLine("Activate F " + f.Tag.ToString());
             }
           }
         }
@@ -170,7 +173,7 @@ namespace Org.FTW.Forms
         {
           f.active = true;
           SendMessage(f.Handle, WM_NCACTIVATE, 1, IntPtr.Zero);
-          //Console.WriteLine("ParentActivating " + f.Tag.ToString()); 
+          //Console.WriteLine("ParentActivating " + f.Tag.ToString());
         }
       }
     }
@@ -178,13 +181,13 @@ namespace Org.FTW.Forms
     protected void base_Activated(object sender, EventArgs e)
     {
       active = true;
-      //Console.WriteLine("ActivatedEvent E " + this.Tag.ToString()); 
+      //Console.WriteLine("ActivatedEvent E " + this.Tag.ToString());
     }
 
     protected void base_Deactivate(object sender, EventArgs e)
     {
       active = false;
-      // Console.WriteLine("DeactivatedEvent E " + this.Tag.ToString()); 
+      // Console.WriteLine("DeactivatedEvent E " + this.Tag.ToString());
     }
 
 

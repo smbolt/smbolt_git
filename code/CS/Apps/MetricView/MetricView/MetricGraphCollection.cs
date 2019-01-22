@@ -4,17 +4,21 @@ using System.Text;
 
 namespace Teleflora.Operations.MetricView
 {
-    [Serializable]
-    public class MetricGraphCollection : System.Collections.Generic.SortedList<string, MetricGraphConfiguration>
+  [Serializable]
+  public class MetricGraphCollection : System.Collections.Generic.SortedList<string, MetricGraphConfiguration>
+  {
+    private int _nextNumber;
+    public int NextNumber
     {
-        private int _nextNumber;
-        public int NextNumber
-        {
-            get { return ++_nextNumber; }
-            set { _nextNumber = value; }
-        }
-
-
-
+      get {
+        return ++_nextNumber;
+      }
+      set {
+        _nextNumber = value;
+      }
     }
+
+
+
+  }
 }

@@ -40,8 +40,8 @@ namespace Org.DbGen
       a = new a();
 
       string dbSpecName = g.GetCI("DbSpecName");
-      configDbSpec = g.GetDbSpec(dbSpecName); 
-      
+      configDbSpec = g.GetDbSpec(dbSpecName);
+
       string classPath = g.CI("RepositoryMajorSection") + @"\DB_CLASSES.cs";
 
       txtLoopCount.Text = "10";
@@ -122,7 +122,7 @@ namespace Org.DbGen
 
     private void InitializeSqlConfigSpecs()
     {
-      sql1DbSpec = g.GetDbSpec("Sql1"); 
+      sql1DbSpec = g.GetDbSpec("Sql1");
       sql2DbSpec = g.GetDbSpec("Sql2");
 
       if (sql1DbSpec != null)
@@ -154,7 +154,7 @@ namespace Org.DbGen
       string code = DbHelper.GenerateDbSchema(DbHelper.SqlInstanceName, DbHelper.DatabaseName, DbHelper.DbTableSet);
       txtOut.Text = code;
       tabMain.SelectedTab = tabPageMain;
-      File.WriteAllText(_schema1FullPath, code); 
+      File.WriteAllText(_schema1FullPath, code);
 
       this.Cursor = Cursors.Default;
     }
@@ -168,7 +168,7 @@ namespace Org.DbGen
       string code = DbHelper.GenerateDbSchema(DbHelper.SqlInstanceName, DbHelper.DatabaseName, DbHelper.DbTableSet);
       txtOut2.Text = code;
       tabMain.SelectedTab = tabPageSecondary;
-      File.WriteAllText(_schema2FullPath, code); 
+      File.WriteAllText(_schema2FullPath, code);
 
       this.Cursor = Cursors.Default;
     }
@@ -182,12 +182,12 @@ namespace Org.DbGen
 
       ProcessParms processParms = new ProcessParms();
       processParms.ExecutablePath = _beyondCompareExePath;
-      processParms.Args = new string[] {  
-          "/silent",
-          "@" + _beyondCompareScriptPath,
-          _schema1FullPath,
-          _schema2FullPath, 
-          _compareResultsFullPath
+      processParms.Args = new string[] {
+        "/silent",
+        "@" + _beyondCompareScriptPath,
+        _schema1FullPath,
+        _schema2FullPath,
+        _compareResultsFullPath
       };
 
       var processHelper = new ProcessHelper();
@@ -370,7 +370,7 @@ namespace Org.DbGen
       //}
 
       ////int accountID2 = ((tbl_Account)db.DbSet<tbl_Account>().Where("where clause").SingleOrDefault()).AccountId;
-            
+
       //txtOut.Text = sb.ToString();
     }
 
@@ -401,7 +401,7 @@ namespace Org.DbGen
       //}
 
       ////int accountID2 = ((tbl_Account)db.DbSet<tbl_Account>().Where("where clause").SingleOrDefault()).AccountId;
-            
+
       //txtOut.Text = sb.ToString();
     }
 
@@ -413,7 +413,7 @@ namespace Org.DbGen
     private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
     {
       if (db == null)
-        return; 
+        return;
 
       db.Dispose();
       db = null;
@@ -541,8 +541,8 @@ namespace Org.DbGen
 
         //tt.int_pk = 0;
 
-        //tt.bigint_n = null;  
-        //tt.bigint_nn = 9223372036854775807;  
+        //tt.bigint_n = null;
+        //tt.bigint_nn = 9223372036854775807;
 
         //tt.binary_1000_n = null;
         //tt.binary_1000_nn = new byte[10] { 0,1,2,3,4,5,6,7,8,255 };
@@ -568,12 +568,12 @@ namespace Org.DbGen
         //tt.decimal18_0_n = null;
         //tt.decimal18_0_nn = 9M;
 
-        //tt.decimal18_2_n = null; 
+        //tt.decimal18_2_n = null;
         //tt.decimal18_2_nn = 9.99M;
 
         //tt.float_n = null;
         //tt.float_nn = 9.99F;
-                    
+
         //tt.image_n = null;
         //tt.image_nn = Image.FromFile(@"C:\_data\TestImage.png");
 
@@ -638,8 +638,8 @@ namespace Org.DbGen
       }
       catch(Exception ex)
       {
-          string message = ex.Message;
-          MessageBox.Show(ex.Message, "DbGen - Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        string message = ex.Message;
+        MessageBox.Show(ex.Message, "DbGen - Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 

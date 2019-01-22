@@ -11,27 +11,72 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Address")]
-    public partial class Address
-    {
-        public int AddressId { get; set; }
-        public int AddressFormatId { get; set; }
-        public string StreetAddress1 { get; set; }
-        public string StreetAddress2 { get; set; }
-        public string StreetAddress3 { get; set; }
-        public string City { get; set; }
-        public string PostalCode { get; set; }
-        public Nullable<int> PoliticalUnitId1 { get; set; }
-        public string PoliticalUnit1 { get; set; }
-        public Nullable<int> PolilticalUnitId2 { get; set; }
-        public string PoliticalUnit2 { get; set; }
-        public Nullable<int> CountryCode { get; set; }
-    
-        public virtual AddressFormat AddressFormat { get; set; }
-        public virtual PoliticalUnit PoliticalUnit { get; set; }
-        public virtual PoliticalUnit PoliticalUnit3 { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Address")]
+  public partial class Address
+  {
+    public int AddressId {
+      get;
+      set;
     }
+    public int AddressFormatId {
+      get;
+      set;
+    }
+    public string StreetAddress1 {
+      get;
+      set;
+    }
+    public string StreetAddress2 {
+      get;
+      set;
+    }
+    public string StreetAddress3 {
+      get;
+      set;
+    }
+    public string City {
+      get;
+      set;
+    }
+    public string PostalCode {
+      get;
+      set;
+    }
+    public Nullable<int> PoliticalUnitId1 {
+      get;
+      set;
+    }
+    public string PoliticalUnit1 {
+      get;
+      set;
+    }
+    public Nullable<int> PolilticalUnitId2 {
+      get;
+      set;
+    }
+    public string PoliticalUnit2 {
+      get;
+      set;
+    }
+    public Nullable<int> CountryCode {
+      get;
+      set;
+    }
+
+    public virtual AddressFormat AddressFormat {
+      get;
+      set;
+    }
+    public virtual PoliticalUnit PoliticalUnit {
+      get;
+      set;
+    }
+    public virtual PoliticalUnit PoliticalUnit3 {
+      get;
+      set;
+    }
+  }
 }

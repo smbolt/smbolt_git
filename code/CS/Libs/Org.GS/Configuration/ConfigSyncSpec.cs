@@ -9,37 +9,95 @@ namespace Org.GS.Configuration
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
   public class ConfigSyncSpec : ConfigObjectBase
   {
-    public string SpecName { get; set; }
+    public string SpecName {
+      get;
+      set;
+    }
 
-    [OrgConfigItem] public string LeftFolder { get; set; }
-    [OrgConfigItem] public string RightFolder { get; set; }
-    [OrgConfigItem] public string Filter { get; set; }
-    [OrgConfigItem] public string ScriptName { get; set; }
-    [OrgConfigItem] public bool Active { get; set; }
+    [OrgConfigItem] public string LeftFolder {
+      get;
+      set;
+    }
+    [OrgConfigItem] public string RightFolder {
+      get;
+      set;
+    }
+    [OrgConfigItem] public string Filter {
+      get;
+      set;
+    }
+    [OrgConfigItem] public string ScriptName {
+      get;
+      set;
+    }
+    [OrgConfigItem] public bool Active {
+      get;
+      set;
+    }
 
-    public string VerifiedLeftFolder { get; set; }
-    public string VerifiedRightFolder { get; set; }
-    public string VerifiedFilter { get; set; }
-    public string VerifiedScriptName { get; set; }
-    public bool VerifiedActive { get; set; }
+    public string VerifiedLeftFolder {
+      get;
+      set;
+    }
+    public string VerifiedRightFolder {
+      get;
+      set;
+    }
+    public string VerifiedFilter {
+      get;
+      set;
+    }
+    public string VerifiedScriptName {
+      get;
+      set;
+    }
+    public bool VerifiedActive {
+      get;
+      set;
+    }
 
-    public string OriginalLeftFolder { get; set; }
-    public string OriginalRightFolder { get; set; }
-    public string OriginalFilter { get; set; }
-    public string OriginalScriptName { get; set; }
-    public bool OriginalActive { get; set; }
+    public string OriginalLeftFolder {
+      get;
+      set;
+    }
+    public string OriginalRightFolder {
+      get;
+      set;
+    }
+    public string OriginalFilter {
+      get;
+      set;
+    }
+    public string OriginalScriptName {
+      get;
+      set;
+    }
+    public bool OriginalActive {
+      get;
+      set;
+    }
 
-    public bool SyncSpecVerified { get; set; }
-    public bool SkipSyncSpecConfig { get; set; }
+    public bool SyncSpecVerified {
+      get;
+      set;
+    }
+    public bool SkipSyncSpecConfig {
+      get;
+      set;
+    }
 
     public string DescriptionString
     {
-      get { return GetDescriptionString(); }
+      get {
+        return GetDescriptionString();
+      }
     }
 
     public override bool IsUpdated
     {
-      get { return IsObjectUpdated(); }
+      get {
+        return IsObjectUpdated();
+      }
     }
 
     public ConfigSyncSpec()
@@ -47,8 +105,8 @@ namespace Org.GS.Configuration
       Initialize();
     }
 
-    public ConfigSyncSpec(string namingPrefix) 
-        : base(namingPrefix)
+    public ConfigSyncSpec(string namingPrefix)
+      : base(namingPrefix)
     {
       Initialize();
     }
@@ -78,10 +136,10 @@ namespace Org.GS.Configuration
       if (this.SyncSpecVerified)
       {
         if (this.VerifiedLeftFolder == this.LeftFolder &&
-          this.VerifiedRightFolder == this.RightFolder &&
-          this.VerifiedFilter == this.Filter &&
-          this.VerifiedScriptName == this.ScriptName &&
-          this.VerifiedActive == this.Active)
+            this.VerifiedRightFolder == this.RightFolder &&
+            this.VerifiedFilter == this.Filter &&
+            this.VerifiedScriptName == this.ScriptName &&
+            this.VerifiedActive == this.Active)
           return true;
       }
 
@@ -96,10 +154,10 @@ namespace Org.GS.Configuration
     private bool IsObjectUpdated()
     {
       if (this.OriginalLeftFolder == this.LeftFolder &&
-        this.OriginalRightFolder == this.RightFolder &&
-        this.OriginalFilter == this.Filter &&
-        this.OriginalScriptName == this.ScriptName && 
-        this.OriginalActive == this.Active)
+          this.OriginalRightFolder == this.RightFolder &&
+          this.OriginalFilter == this.Filter &&
+          this.OriginalScriptName == this.ScriptName &&
+          this.OriginalActive == this.Active)
         return false;
 
       return true;

@@ -9,16 +9,42 @@ namespace Org.GS.Security
 {
   public class SecurityToken
   {
-    public int AccountId { get; set; }
-    public DateTime AuthenticationDateTime { get; set; }
-    public DateTime TokenExpirationDateTime { get; set; }
-    public string SessionId { get; set; }
-    public bool IsExpired { get { return DateTime.Now > TokenExpirationDateTime; } }
-    public bool IsValid { get; set; }
-    public string DebugString { get { return Get_DebugString(); } }
-    public string Message { get; set; }
+    public int AccountId {
+      get;
+      set;
+    }
+    public DateTime AuthenticationDateTime {
+      get;
+      set;
+    }
+    public DateTime TokenExpirationDateTime {
+      get;
+      set;
+    }
+    public string SessionId {
+      get;
+      set;
+    }
+    public bool IsExpired {
+      get {
+        return DateTime.Now > TokenExpirationDateTime;
+      }
+    }
+    public bool IsValid {
+      get;
+      set;
+    }
+    public string DebugString {
+      get {
+        return Get_DebugString();
+      }
+    }
+    public string Message {
+      get;
+      set;
+    }
 
-    private const string _chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"; 
+    private const string _chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
 
     public SecurityToken()
     {
@@ -39,26 +65,26 @@ namespace Org.GS.Security
 
     public string SerializeToken()
     {
-      XElement tokenRoot = new XElement("T"); 
+      XElement tokenRoot = new XElement("T");
       tokenRoot.Add(new XAttribute("A", this.AccountId.ToString()));
       tokenRoot.Add(new XAttribute("ADT", this.AuthenticationDateTime.ToCCYYMMDDHHMMSS()));
       tokenRoot.Add(new XAttribute("XDT", this.TokenExpirationDateTime.ToCCYYMMDDHHMMSS()));
-      tokenRoot.Add(new XAttribute("SID", this.SessionId.Trim())); 
+      tokenRoot.Add(new XAttribute("SID", this.SessionId.Trim()));
 
       string xml = tokenRoot.ToString();
       Encryptor encryptor = new Encryptor();
-      string tokenized = encryptor.EncryptString(xml);             
+      string tokenized = encryptor.EncryptString(xml);
 
       return tokenized;
     }
 
     public string SerializeToXml()
     {
-      XElement tokenRoot = new XElement("T"); 
+      XElement tokenRoot = new XElement("T");
       tokenRoot.Add(new XAttribute("A", this.AccountId.ToString()));
       tokenRoot.Add(new XAttribute("ADT", this.AuthenticationDateTime.ToCCYYMMDDHHMMSS()));
       tokenRoot.Add(new XAttribute("XDT", this.TokenExpirationDateTime.ToCCYYMMDDHHMMSS()));
-      tokenRoot.Add(new XAttribute("SID", this.SessionId.Trim())); 
+      tokenRoot.Add(new XAttribute("SID", this.SessionId.Trim()));
 
       string xml = tokenRoot.ToString();
 
@@ -83,7 +109,7 @@ namespace Org.GS.Security
 
     private string CreateSessionId()
     {
-      int length = 8; 
+      int length = 8;
       Random rand = new Random();
 
       string chars = String.Empty;
@@ -98,10 +124,10 @@ namespace Org.GS.Security
     private string Get_DebugString()
     {
       return this.AccountId.ToString() + "|" +
-        this.AuthenticationDateTime.ToString("yyyyMMddHHmmss") + "|" +
-        this.TokenExpirationDateTime.ToString("yyyyMMddHHmmss") + "|" +
-        this.SessionId + "|" +
-        this.IsExpired.ToString().Substring(0, 1); 
+             this.AuthenticationDateTime.ToString("yyyyMMddHHmmss") + "|" +
+             this.TokenExpirationDateTime.ToString("yyyyMMddHHmmss") + "|" +
+             this.SessionId + "|" +
+             this.IsExpired.ToString().Substring(0, 1);
     }
   }
 }

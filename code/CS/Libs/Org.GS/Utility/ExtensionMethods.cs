@@ -323,9 +323,9 @@ namespace Org.GS
       int formVerticalSize = g.GetCI("MainFormVerticalSize").ToInt32OrDefault(verticalSize);
 
       f.Size = new Size(Screen.PrimaryScreen.Bounds.Width * formHorizontalSize / 100,
-                           Screen.PrimaryScreen.Bounds.Height * formVerticalSize / 100);
+                        Screen.PrimaryScreen.Bounds.Height * formVerticalSize / 100);
       f.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - f.Width / 2,
-                                Screen.PrimaryScreen.Bounds.Height / 2 - f.Height / 2);
+                             Screen.PrimaryScreen.Bounds.Height / 2 - f.Height / 2);
     }
 
     //[DebuggerStepThrough]
@@ -357,7 +357,7 @@ namespace Org.GS
     public static void CenterFormOnScreen(this System.Windows.Forms.Form f)
     {
       f.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - f.Width / 2,
-                          Screen.PrimaryScreen.Bounds.Height / 2 - f.Height / 2);
+                             Screen.PrimaryScreen.Bounds.Height / 2 - f.Height / 2);
     }
 
     public static string GetUniqueFile(this string folderName)
@@ -380,7 +380,7 @@ namespace Org.GS
             return fullFilePath1;
           if (fullFilePath1.Contains(@"\~$"))
             return fullFilePath0;
-        }          
+        }
       }
 
       return Directory.GetFiles(folderName).First();
@@ -420,7 +420,7 @@ namespace Org.GS
         return String.Empty;
 
       return s.Substring(0, s.Length - count);
-    }    
+    }
 
     public static string[] TrimArrayTokens(this string[] array)
     {
@@ -485,8 +485,8 @@ namespace Org.GS
       if (e.InnerException != null)
       {
         sb.Append("InnerExceptionType: " + e.InnerException.GetType().ToString() + g.crlf +
-              "InnerExceptionMessage: " + e.InnerException.Message + g.crlf +
-              "InnerExceptionStackTrace:" + e.InnerException.StackTrace + g.crlf);
+                  "InnerExceptionMessage: " + e.InnerException.Message + g.crlf +
+                  "InnerExceptionStackTrace:" + e.InnerException.StackTrace + g.crlf);
       }
 
       return sb.ToString();
@@ -1018,7 +1018,7 @@ namespace Org.GS
 
       if (entityMap == null)
         throw new Exception("The EntityMap attribute is null on type '" + t.Name + "'.");
-      
+
       var dbTable = new DbTable();
       dbTable.TableName = entityMap.TableName.IsBlank() ? t.Name : entityMap.TableName;
 
@@ -1034,7 +1034,9 @@ namespace Org.GS
           var dbColumn = new DbColumn();
           dbColumn.Name = colEntityMap.ColumnName.IsBlank() ? pi.Name : colEntityMap.ColumnName;
           dbColumn.IsSequencer = colEntityMap.Sequencer;
-          dbColumn.DbType = new Database.DbType() { SqlDbType = pi.PropertyType.ToSqlDbType() };
+          dbColumn.DbType = new Database.DbType() {
+            SqlDbType = pi.PropertyType.ToSqlDbType()
+          };
           dbTable.DbColumnSet.Add(dbColumn.Name, dbColumn);
         }
       }
@@ -1050,19 +1052,29 @@ namespace Org.GS
     {
       switch (t.Name)
       {
-        case "Image": return SqlDbType.Image;
-        case "String": return SqlDbType.VarChar;
-        case "DateTime": return SqlDbType.Date;
-        case "TimeSpan": return SqlDbType.Time;
-        case "Int16": return SqlDbType.SmallInt;
-        case "Int32": return SqlDbType.Int;
-        case "Int64": return SqlDbType.BigInt;
-        case "Decimal": return SqlDbType.Real;
-        case "Boolean": return SqlDbType.Bit;
-        case "Char": return SqlDbType.Char;
+        case "Image":
+          return SqlDbType.Image;
+        case "String":
+          return SqlDbType.VarChar;
+        case "DateTime":
+          return SqlDbType.Date;
+        case "TimeSpan":
+          return SqlDbType.Time;
+        case "Int16":
+          return SqlDbType.SmallInt;
+        case "Int32":
+          return SqlDbType.Int;
+        case "Int64":
+          return SqlDbType.BigInt;
+        case "Decimal":
+          return SqlDbType.Real;
+        case "Boolean":
+          return SqlDbType.Bit;
+        case "Char":
+          return SqlDbType.Char;
       }
 
-      // may need to implement more types... 
+      // may need to implement more types...
       throw new Exception("Translation of data type '" + t.Name + "' to SqlDbType is not yet implemented.");
     }
 
@@ -1523,14 +1535,14 @@ namespace Org.GS
         bits[i] = bitArray[i] ? 1 : 0;
 
       string returnString =
-          bits[7].ToString() +
-          bits[6].ToString() +
-          bits[5].ToString() +
-          bits[4].ToString() +
-          bits[3].ToString() +
-          bits[2].ToString() +
-          bits[1].ToString() +
-          bits[0].ToString();
+        bits[7].ToString() +
+        bits[6].ToString() +
+        bits[5].ToString() +
+        bits[4].ToString() +
+        bits[3].ToString() +
+        bits[2].ToString() +
+        bits[1].ToString() +
+        bits[0].ToString();
 
       return returnString;
     }
@@ -1646,14 +1658,14 @@ namespace Org.GS
         return String.Empty;
 
       string noPunctValue = value.Replace(",", String.Empty)
-                                  .Replace(".", String.Empty)
-                                  .Replace(";", String.Empty)
-                                  .Replace(":", String.Empty)
-                                  .Replace("—", String.Empty)
-                                  .Replace("\"", String.Empty)
-                                  .Replace("“", String.Empty)
-                                  .Replace("”", String.Empty)
-                                  .Replace("‑", "-");
+                            .Replace(".", String.Empty)
+                            .Replace(";", String.Empty)
+                            .Replace(":", String.Empty)
+                            .Replace("—", String.Empty)
+                            .Replace("\"", String.Empty)
+                            .Replace("“", String.Empty)
+                            .Replace("”", String.Empty)
+                            .Replace("‑", "-");
 
       if (noPunctValue.IsNumeric())
         return String.Empty;
@@ -2092,7 +2104,7 @@ namespace Org.GS
       // between the "match tokens" and corresponding consecutive tokens in the "s " array.
 
       // EXAMPLE
-      // INDEX              0   1   2   3   4   5   6   7   8   9   
+      // INDEX              0   1   2   3   4   5   6   7   8   9
       // "s" array          A   B   C   A   B   C   D   E   F   G
       // matchToken array                       C   D
       // return value will be "5"
@@ -2216,7 +2228,7 @@ namespace Org.GS
     //  catch
     //  {
     //    return DateTime.MinValue;
-    //  }      
+    //  }
     //}
 
     public static TimeSpan? ToTimeSpan(this object value)
@@ -3621,12 +3633,12 @@ namespace Org.GS
 
     public static int TrimToInt32(this string value)
     {
-        var num = "";
-        foreach (Char c in value)
-            if (Char.IsNumber(c))
-                num += c;
+      var num = "";
+      foreach (Char c in value)
+        if (Char.IsNumber(c))
+          num += c;
 
-        return num.ToInt32();    
+      return num.ToInt32();
     }
 
     [DebuggerStepThrough]
@@ -3639,9 +3651,9 @@ namespace Org.GS
       if (value.Length < 2)
         return String.Empty;
 
-      return value.Substring(0, value.Length - 1); 
+      return value.Substring(0, value.Length - 1);
     }
-    
+
     [DebuggerStepThrough]
     public static int? ToNullableInt32(this object value)
     {
@@ -3649,7 +3661,7 @@ namespace Org.GS
         return (int?) null;
 
       if (value.GetType() == typeof(System.DBNull))
-        return (int?)null; 
+        return (int?)null;
 
       string stringValue = value.ToString().Trim();
 
@@ -3685,11 +3697,16 @@ namespace Org.GS
 
       switch (stringValue)
       {
-        case "1": return true;
-        case "y": return true;
-        case "true": return true;
-                case "yes": return true;
-                case "t": return true;
+        case "1":
+          return true;
+        case "y":
+          return true;
+        case "true":
+          return true;
+        case "yes":
+          return true;
+        case "t":
+          return true;
       }
 
       return false;
@@ -3703,16 +3720,26 @@ namespace Org.GS
 
       switch (value.ToLower().Trim())
       {
-        case "0": return true;
-        case "1": return true;
-        case "y": return true;
-        case "n": return true;
-        case "true": return true;
-        case "false": return true;
-        case "t": return true;
-        case "f": return true;
-        case "yes": return true;
-        case "no": return true;
+        case "0":
+          return true;
+        case "1":
+          return true;
+        case "y":
+          return true;
+        case "n":
+          return true;
+        case "true":
+          return true;
+        case "false":
+          return true;
+        case "t":
+          return true;
+        case "f":
+          return true;
+        case "yes":
+          return true;
+        case "no":
+          return true;
       }
 
       return false;
@@ -3751,7 +3778,7 @@ namespace Org.GS
       if (height > value.Height)
         height = value.Height;
 
-      return new Size(value.Width - width, value.Height - height); 
+      return new Size(value.Width - width, value.Height - height);
     }
 
     [DebuggerStepThrough]
@@ -3769,13 +3796,13 @@ namespace Org.GS
           height = value.Height * -1;
       }
 
-      return new Size(value.Width + width, value.Height + height); 
+      return new Size(value.Width + width, value.Height + height);
     }
 
     [DebuggerStepThrough]
     public static Point Move(this Point value, int x, int y)
     {
-      return new Point(value.X + x, value.Y + y); 
+      return new Point(value.X + x, value.Y + y);
     }
 
     [DebuggerStepThrough]
@@ -3871,7 +3898,7 @@ namespace Org.GS
       if (xml == null)
         return null;
 
-      string elementValue = xml.Value.Trim(); 
+      string elementValue = xml.Value.Trim();
 
       StringBuilder sb = new StringBuilder();
 
@@ -3894,7 +3921,7 @@ namespace Org.GS
 
       if (elementValue.IsNotBlank() && xml.Elements().Count() == 0)
       {
-        sb.Append(elementValue.Trim() + "<" + xml.Name.LocalName + "/>"); 
+        sb.Append(elementValue.Trim() + "<" + xml.Name.LocalName + "/>");
       }
 
       return sb.ToString();
@@ -3906,7 +3933,7 @@ namespace Org.GS
       if (s == null)
         return String.Empty;
 
-      return s.Replace('\n', ' ').Replace('\t', ' ').Replace('\n', ' '); 
+      return s.Replace('\n', ' ').Replace('\t', ' ').Replace('\n', ' ');
     }
 
     [DebuggerStepThrough]
@@ -4057,7 +4084,7 @@ namespace Org.GS
       }
 
       if (inQuotes)
-        return holdValue.CondenseText(); 
+        return holdValue.CondenseText();
 
       return sb.ToString();
     }
@@ -4196,7 +4223,7 @@ namespace Org.GS
     {
       value = value.Replace("\r\n", " ");
       value = value.Replace("\r", " ");
-      value = value.Replace("\n", " "); 
+      value = value.Replace("\n", " ");
       value = value.Trim().ToUpper();
 
       if (value.IsBlank())
@@ -4222,62 +4249,62 @@ namespace Org.GS
           sb.Append(value[i]);
           continue;
         }
-        if ((c > 191 && c < 199) || (c > 223 && c < 231))  // A-like 
+        if ((c > 191 && c < 199) || (c > 223 && c < 231))  // A-like
         {
           sb.Append("A");
           continue;
         }
-        if (c == 199 || c == 231)  // C-like  
+        if (c == 199 || c == 231)  // C-like
         {
           sb.Append("C");
           continue;
         }
-        if ((c > 199 && c < 204) || (c > 231 && c < 236))  // E-like 
+        if ((c > 199 && c < 204) || (c > 231 && c < 236))  // E-like
         {
           sb.Append("E");
           continue;
         }
-        if ((c > 203 && c < 208) || (c > 235 && c < 240))  // I-like 
+        if ((c > 203 && c < 208) || (c > 235 && c < 240))  // I-like
         {
           sb.Append("I");
           continue;
         }
-        if (c == 208 || c == 240)  // D-like 
+        if (c == 208 || c == 240)  // D-like
         {
           sb.Append("D");
           continue;
         }
-        if (c == 209 || c == 241)  // N-like 
+        if (c == 209 || c == 241)  // N-like
         {
           sb.Append("N");
           continue;
         }
-        if ((c > 209 && c < 215) || (c > 241 && c < 247))  // O-like 
+        if ((c > 209 && c < 215) || (c > 241 && c < 247))  // O-like
         {
           sb.Append("O");
           continue;
         }
-        if ((c > 216 && c < 221) || (c > 248 && c < 253))  // U-like 
+        if ((c > 216 && c < 221) || (c > 248 && c < 253))  // U-like
         {
           sb.Append("U");
           continue;
         }
-        if (c == 216 || c == 248)  // 0-like 
+        if (c == 216 || c == 248)  // 0-like
         {
           sb.Append("0");
           continue;
         }
-        if (c == 221 || c == 253 || c == 255)  // Y-like 
+        if (c == 221 || c == 253 || c == 255)  // Y-like
         {
           sb.Append("Y");
           continue;
         }
-        if (c == 223 || c == 254)  // B-like 
+        if (c == 223 || c == 254)  // B-like
         {
           sb.Append("B");
           continue;
         }
-        if (c == 215)  // X-like 
+        if (c == 215)  // X-like
         {
           sb.Append("X");
           continue;
@@ -4293,7 +4320,7 @@ namespace Org.GS
       int zeroAmidstLetters = value.LocateZeroAmistLetters();
       while(zeroAmidstLetters != -1)
       {
-        value = value.ReplaceAtPosition("O", zeroAmidstLetters); 
+        value = value.ReplaceAtPosition("O", zeroAmidstLetters);
         zeroAmidstLetters = value.LocateZeroAmistLetters();
       }
 
@@ -4309,7 +4336,7 @@ namespace Org.GS
           token = "OK";
         if (token == "0R")
           token = "OR";
-          
+
 
         if (token.Length > 1)
         {
@@ -4371,17 +4398,17 @@ namespace Org.GS
 
       return -1;
     }
-    
+
     [DebuggerStepThrough]
     public static Type ToType(this string value)
     {
       try
       {
         if (value == null || value.IsBlank())
-          return null; 
+          return null;
 
         value = value.Replace(" ", String.Empty);
-        
+
         if (value == "Dictionary<string,string>")
 
           return typeof(Dictionary<,>).MakeGenericType(typeof(System.String), typeof(System.String));
@@ -4393,7 +4420,7 @@ namespace Org.GS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attempting to convert the string value '" + value + "' to a Type.", ex); 
+        throw new Exception("An exception occurred attempting to convert the string value '" + value + "' to a Type.", ex);
       }
     }
 
@@ -4401,7 +4428,7 @@ namespace Org.GS
     public static int CharCount(this string value, char c)
     {
       if (value == null)
-        return 0; 
+        return 0;
 
       return value.Count(f => f == c);
     }
@@ -4426,9 +4453,9 @@ namespace Org.GS
     public static bool IsLeapYear(this DateTime value)
     {
       if (value.Year % 4 == 0 && value.Year % 100 != 0 || value.Year % 400 == 0)
-        return true;  
+        return true;
 
-      return false; 
+      return false;
     }
 
 
@@ -4654,7 +4681,7 @@ namespace Org.GS
         return 0;
 
       if (attributeName == null)
-        return 0; 
+        return 0;
 
       XNamespace ns = value.Name.NamespaceName;
 
@@ -4743,19 +4770,19 @@ namespace Org.GS
     [DebuggerStepThrough]
     public static Int32 GetInt32Attribute(this XElement value, string attributeName)
     {
-        if (value == null || attributeName == null)
-            return 0;
+      if (value == null || attributeName == null)
+        return 0;
 
-        XNamespace ns = value.Name.NamespaceName;
+      XNamespace ns = value.Name.NamespaceName;
 
-        if (value.Attribute(ns + attributeName) == null)
-            return 0;
+      if (value.Attribute(ns + attributeName) == null)
+        return 0;
 
-        string attributeValue = value.Attribute(ns + attributeName).Value.Trim();
-        if (attributeValue.IsNumeric())
-            return Int32.Parse(attributeValue);
+      string attributeValue = value.Attribute(ns + attributeName).Value.Trim();
+      if (attributeValue.IsNumeric())
+        return Int32.Parse(attributeValue);
 
-        throw new Exception("Required xml Int32 attribute '" + attributeName + "' has an illegal (non-integer) value '" + attributeValue + "'.");
+      throw new Exception("Required xml Int32 attribute '" + attributeName + "' has an illegal (non-integer) value '" + attributeValue + "'.");
     }
 
     [DebuggerStepThrough]
@@ -4903,12 +4930,12 @@ namespace Org.GS
 
       foreach (object enumValue in enumValues)
       {
-          if (enumValue.ToString().ToLower() == attributeValue.ToLower())
-              return Enum.Parse(type, enumValue.ToString());
+        if (enumValue.ToString().ToLower() == attributeValue.ToLower())
+          return Enum.Parse(type, enumValue.ToString());
       }
 
       if (defaultValue.IsBlank())
-          throw new Exception("The value for xml attribute '" + attributeName + "' is '" + attributeValue + "' which is not a valid value for the enumeration of type '" + type.Name + "'  and no default value is defined.");
+        throw new Exception("The value for xml attribute '" + attributeName + "' is '" + attributeValue + "' which is not a valid value for the enumeration of type '" + type.Name + "'  and no default value is defined.");
 
       return Enum.Parse(type, defaultValue);
     }
@@ -4977,7 +5004,7 @@ namespace Org.GS
           {
             defaultValue = enumValue.ToString();
             return Enum.Parse(type, enumValue.ToString());
-          }                    
+          }
         }
 
         throw new Exception("The value for xml attribute '" + attributeName + "' does not exist and there is no default value for the enumeration." + type.Name + "'.");
@@ -5015,7 +5042,7 @@ namespace Org.GS
 
       if (value.Attribute(ns + attributeName) == null)
       {
-        return specific; 
+        return specific;
       }
       else
       {
@@ -5158,7 +5185,7 @@ namespace Org.GS
       }
 
       if (additionalInfo.IsNotBlank())
-        additionalInfo += "***" + g.crlf; 
+        additionalInfo += "***" + g.crlf;
 
       while (moreExceptions)
       {
@@ -5168,7 +5195,7 @@ namespace Org.GS
         sb.Append("Level:" + level.ToString() + " Type=" + ex.GetType().ToString() + Environment.NewLine +
                   "Message: " + ex.Message + Environment.NewLine + additionalInfo +
                   "StackTrace:" + ex.StackTrace + Environment.NewLine);
-        
+
         if (ex.InnerException == null)
           moreExceptions = false;
         else
@@ -5285,15 +5312,15 @@ namespace Org.GS
       string trimmedValue = value.Trim();
 
       if (trimmedValue.Length == 0)
-          return String.Empty;
+        return String.Empty;
 
       if (trimmedValue.Length == 1)
-          return trimmedValue.ToUpper();
+        return trimmedValue.ToUpper();
 
       return trimmedValue.Substring(0, 1).ToUpper() + trimmedValue.Substring(1);
     }
 
-    
+
     public static string ToHex(this byte[] b)
     {
       // need to finish this sometime
@@ -5302,9 +5329,9 @@ namespace Org.GS
 
     public static string ToTextDump(this string value)
     {
-      string header = "        Special characters:  '" + ("\xA4").ToString() + "' is new line, '" + ("\xB6").ToString() + " is carriage return, " + ("\xB7").ToString() + 
-                      "' is a blank character." + g.crlf + 
-                      "        Total length = " + (value.IsBlank() ? "0" : value.Length.ToString("###,##0")) + g.crlf + 
+      string header = "        Special characters:  '" + ("\xA4").ToString() + "' is new line, '" + ("\xB6").ToString() + " is carriage return, " + ("\xB7").ToString() +
+                      "' is a blank character." + g.crlf +
+                      "        Total length = " + (value.IsBlank() ? "0" : value.Length.ToString("###,##0")) + g.crlf +
                       "        0----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----";
 
       if (value.IsBlank())
@@ -5325,29 +5352,29 @@ namespace Org.GS
         lineNbr++;
         if (remainingLength > 99)
         {
-          string fullLine = value.Substring(begPos, 100).Replace("\r", "\xB6").Replace("\n", "\xA4").Replace(" ", "\xB7"); 
+          string fullLine = value.Substring(begPos, 100).Replace("\r", "\xB6").Replace("\n", "\xA4").Replace(" ", "\xB7");
           lines.Add(lineNbr.ToString("000000") + "  " + fullLine);
           remainingLength -= 100;
           begPos += 100;
         }
         else
         {
-                    string partialLine = value.Substring(begPos, remainingLength).Replace("\r", "\xB6").Replace("\n", "\xA4").Replace(" ", "\xB7"); 
+          string partialLine = value.Substring(begPos, remainingLength).Replace("\r", "\xB6").Replace("\n", "\xA4").Replace(" ", "\xB7");
           lines.Add(lineNbr.ToString("000000") + "  " + partialLine);
           begPos += remainingLength;
-          remainingLength = 0; 
+          remainingLength = 0;
         }
       }
 
       foreach (var line in lines)
         sb.Append(line + g.crlf);
 
-      sb.Append(g.crlf); 
+      sb.Append(g.crlf);
 
       string report = sb.ToString();
       return report;
     }
-    
+
     public static string To100CharLines(this string value, string indent)
     {
       if (value.IsBlank())
@@ -5396,7 +5423,7 @@ namespace Org.GS
         return String.Empty;
 
       byte[] byteArray = System.Text.Encoding.ASCII.GetBytes(value);
-      return ToBinHexDump(byteArray); 
+      return ToBinHexDump(byteArray);
     }
 
     public static string ToHexDump(this byte[] a)
@@ -5449,7 +5476,7 @@ namespace Org.GS
           break;
         }
       }
-      
+
       sbReport.Append(g.crlf2 + "TOTAL LENGTH IN BYTES: " + a.Length.ToString("###,###,###,##0") + g.crlf);
 
       string report = sbReport.ToString();
@@ -5477,38 +5504,38 @@ namespace Org.GS
 
     public static string ToBinHexDump(this byte[] a)
     {
-      string aStr = System.Text.Encoding.Default.GetString(a); 
+      string aStr = System.Text.Encoding.Default.GetString(a);
       int remainder = a.Length % 8 > 0 ? 1 : 0;
       string[] chr = new string[Convert.ToInt32(a.Length / 8) + remainder];
 
       int charsRemaining = aStr.Length;
       int pos = 0;
-      int address = 0; 
-            
+      int address = 0;
+
       for (int i = 0; i < chr.Length; i++)
       {
-        int length = charsRemaining; 
+        int length = charsRemaining;
         if (length > 8)
           length = 8;
         chr[i] = aStr.Substring(pos, length).PadTo(8);
         pos += length;
-        charsRemaining -= length; 
+        charsRemaining -= length;
       }
 
       string reportHeader = "ADDR-X | ----1--- ----2--- ----3--- ----4---  ----5--- ----6--- ----7--- ----8--- | ----------HEX----------- | ADDR-D | --CHAR-- | --------------DEC---------------" + g.crlf;
-      StringBuilder sbReport = new StringBuilder(reportHeader); 
+      StringBuilder sbReport = new StringBuilder(reportHeader);
 
       string[] bin = new string[8];
       string[] hex = new string[8];
       string[] dec = new string[8];
       int bytesProcessed = 0;
       pos = 0;
-            
-      for (int i = 0; i < a.Length - 1; i++)   
+
+      for (int i = 0; i < a.Length - 1; i++)
       {
         bin[bytesProcessed] = a[i].GetBits();
         hex[bytesProcessed] = a[i].ToHex().ToLower();
-        dec[bytesProcessed] = ((int)a[i]).ToString("000"); 
+        dec[bytesProcessed] = ((int)a[i]).ToString("000");
 
         bytesProcessed++;
 
@@ -5523,12 +5550,12 @@ namespace Org.GS
           string addressDec = address.ToString("000000");
 
           sbReport.Append(addressHex + " | " + bin[0] + " " + bin[1] + " " + bin[2] + " " + bin[3] + "  " +
-                                        bin[4] + " " + bin[5] + " " + bin[6] + " " + bin[7] + " | " +
-                                        hex[0] + " " + hex[1] + " " + hex[2] + " " + hex[3] + "  " +
-                                        hex[4] + " " + hex[5] + " " + hex[6] + " " + hex[7] + " | " +
+                          bin[4] + " " + bin[5] + " " + bin[6] + " " + bin[7] + " | " +
+                          hex[0] + " " + hex[1] + " " + hex[2] + " " + hex[3] + "  " +
+                          hex[4] + " " + hex[5] + " " + hex[6] + " " + hex[7] + " | " +
                           addressDec + " | " + chr[Convert.ToInt32(i / 8)] + " | " +
-                                        dec[0] + " " + dec[1] + " " + dec[2] + " " + dec[3] + "  " +
-                                        dec[4] + " " + dec[5] + " " + dec[6] + " " + dec[7] + g.crlf);
+                          dec[0] + " " + dec[1] + " " + dec[2] + " " + dec[3] + "  " +
+                          dec[4] + " " + dec[5] + " " + dec[6] + " " + dec[7] + g.crlf);
 
           bytesProcessed = 0;
 
@@ -5537,43 +5564,43 @@ namespace Org.GS
         }
       }
 
-      bytesProcessed = 0; 
+      bytesProcessed = 0;
 
       if (pos < a.Length)
       {
-          bin = new string[8];
-          hex = new string[8];
-          dec = new string[8];
+        bin = new string[8];
+        hex = new string[8];
+        dec = new string[8];
 
-          for (int i = 0; i < 8; i++)
-          {
-              bin[i] = "        ";
-              hex[i] = "  "; 
-              dec[i] = "   "; 
-          }
+        for (int i = 0; i < 8; i++)
+        {
+          bin[i] = "        ";
+          hex[i] = "  ";
+          dec[i] = "   ";
+        }
 
-          for (int i = pos; i < a.Length; i++)
-          {
-              bin[bytesProcessed] = a[i].GetBits();
-              hex[bytesProcessed] = a[i].ToHex().ToLower();
-              dec[bytesProcessed] = ((int)a[i]).ToString("000"); 
-              bytesProcessed++; 
-          }
+        for (int i = pos; i < a.Length; i++)
+        {
+          bin[bytesProcessed] = a[i].GetBits();
+          hex[bytesProcessed] = a[i].ToHex().ToLower();
+          dec[bytesProcessed] = ((int)a[i]).ToString("000");
+          bytesProcessed++;
+        }
 
-          string addressHex = address.ToHex().PadWithLeadingZeros(6);
-          string addressDec = address.ToString("000000");
+        string addressHex = address.ToHex().PadWithLeadingZeros(6);
+        string addressDec = address.ToString("000000");
 
-          sbReport.Append(addressHex + " | " + bin[0] + " " + bin[1] + " " + bin[2] + " " + bin[3] + "  " +
-                                            bin[4] + " " + bin[5] + " " + bin[6] + " " + bin[7] + " | " +
-                                            hex[0] + " " + hex[1] + " " + hex[2] + " " + hex[3] + "  " +
-                                            hex[4] + " " + hex[5] + " " + hex[6] + " " + hex[7] + " | " +
-                              addressDec + " | " + chr[chr.Length - 1] + " | " +
-                                            dec[0] + " " + dec[1] + " " + dec[2] + " " + dec[3] + "  " +
-                                            dec[4] + " " + dec[5] + " " + dec[6] + " " + dec[7] + g.crlf);
+        sbReport.Append(addressHex + " | " + bin[0] + " " + bin[1] + " " + bin[2] + " " + bin[3] + "  " +
+                        bin[4] + " " + bin[5] + " " + bin[6] + " " + bin[7] + " | " +
+                        hex[0] + " " + hex[1] + " " + hex[2] + " " + hex[3] + "  " +
+                        hex[4] + " " + hex[5] + " " + hex[6] + " " + hex[7] + " | " +
+                        addressDec + " | " + chr[chr.Length - 1] + " | " +
+                        dec[0] + " " + dec[1] + " " + dec[2] + " " + dec[3] + "  " +
+                        dec[4] + " " + dec[5] + " " + dec[6] + " " + dec[7] + g.crlf);
 
       }
 
-      sbReport.Append(g.crlf + "TOTAL LENGTH IN BYTES: " + a.Length.ToString("###,###,###,##0") + g.crlf); 
+      sbReport.Append(g.crlf + "TOTAL LENGTH IN BYTES: " + a.Length.ToString("###,###,###,##0") + g.crlf);
 
       string report = sbReport.ToString();
 
@@ -5607,12 +5634,18 @@ namespace Org.GS
 
       switch (value)
       {
-        case 10: return "A";
-        case 11: return "B";
-        case 12: return "C";
-        case 13: return "D";
-        case 14: return "E";
-        case 15: return "F";
+        case 10:
+          return "A";
+        case 11:
+          return "B";
+        case 12:
+          return "C";
+        case 13:
+          return "D";
+        case 14:
+          return "E";
+        case 15:
+          return "F";
       }
 
       return "?";
@@ -5620,7 +5653,7 @@ namespace Org.GS
 
     public static string ToHex(this int n)
     {
-      return n.ToString("X"); 
+      return n.ToString("X");
     }
 
     public static string First50(this string s)
@@ -5666,18 +5699,18 @@ namespace Org.GS
 
       if (e == null)
         throw new Exception("The xml element is null - the attribute named '" + attributeName + "' with value '" +
-                          attributeValue + "' cannot be added to a null xml element.");
+                            attributeValue + "' cannot be added to a null xml element.");
 
       if (e.Attributes(attributeName).Count() > 0)
         throw new Exception("The attribute named '" + attributeName + "' already exists in the xml element '" + e.First50() + "'.");
 
-      e.Add(new XAttribute(attributeName.Trim(), attributeValue.Trim())); 
+      e.Add(new XAttribute(attributeName.Trim(), attributeValue.Trim()));
     }
 
     private static int HexToInteger(this string s)
     {
       if (!s.IsValidHexNumber())
-        return -1; 
+        return -1;
 
       s = s.Trim().ToLower();
 
@@ -5710,7 +5743,7 @@ namespace Org.GS
       s = s.Trim();
 
       if (!s.IsValidHexNumber())
-          return emptyByteArray;
+        return emptyByteArray;
 
       int lth = s.Length;
       int byteArrayLength = lth / 2;
@@ -5721,7 +5754,7 @@ namespace Org.GS
       {
         string hexCode = s.Substring(i, 2);
         int intValue = int.Parse(hexCode, System.Globalization.NumberStyles.HexNumber);
-        b[i/2] = (byte)intValue; 
+        b[i/2] = (byte)intValue;
       }
 
       return b;
@@ -5729,22 +5762,22 @@ namespace Org.GS
 
     public static string ToEfConnectionString(this Org.GS.Configuration.ConfigDbSpec spec)
     {
-      return "metadata=res://*/EntityFramework." + spec.DbName + ".csdl|" + 
-              "res://*/EntityFramework." + spec.DbName + ".ssdl|" + 
-              "res://*/EntityFramework." + spec.DbName + ".msl;" + 
-              "provider=System.Data.SqlClient;" + 
-              "provider connection string=\"Data Source=" + spec.DbServer + ";" +  
-              "Initial Catalog=" + spec.DbName + ";" + 
-              "Integrated Security=False;" + 
-              "User ID=" + spec.DbUserId + ";" + 
-              "Password=" + spec.DbPassword + "\"";
+      return "metadata=res://*/EntityFramework." + spec.DbName + ".csdl|" +
+             "res://*/EntityFramework." + spec.DbName + ".ssdl|" +
+             "res://*/EntityFramework." + spec.DbName + ".msl;" +
+             "provider=System.Data.SqlClient;" +
+             "provider connection string=\"Data Source=" + spec.DbServer + ";" +
+             "Initial Catalog=" + spec.DbName + ";" +
+             "Integrated Security=False;" +
+             "User ID=" + spec.DbUserId + ";" +
+             "Password=" + spec.DbPassword + "\"";
     }
 
     public static string ToFullTypeName(this Type type)
     {
       if (type == null)
         return "NULL";
-      
+
       Type theType = type;
       bool isGenericCollection = false;
       bool isNullableType = false;
@@ -5784,7 +5817,7 @@ namespace Org.GS
               nullableArgs += "," + nullableArgType.Name;
           }
 
-          return nullableType.Name + "(" + nullableArgs + ")"; 
+          return nullableType.Name + "(" + nullableArgs + ")";
         }
 
         if (isGenericCollection)
@@ -5799,7 +5832,7 @@ namespace Org.GS
               collectionArgs += "," + collectionArgType.Name;
           }
 
-          return collectionType.Name + "(" + collectionArgs + ")"; 
+          return collectionType.Name + "(" + collectionArgs + ")";
         }
 
         theType = theType.BaseType;
@@ -5809,7 +5842,7 @@ namespace Org.GS
 
       return type.Name;
     }
-    
+
     public static string ToMMSSFFF(this TimeSpan ts)
     {
       if (ts == null)
@@ -5851,7 +5884,7 @@ namespace Org.GS
       var dateWork = dt;
       while (dateWork.DayOfWeek != DayOfWeek.Sunday)
       {
-        dateWork = dateWork.AddDays(-1); 
+        dateWork = dateWork.AddDays(-1);
       }
       return new DateTime(dateWork.Year, dateWork.Month, dateWork.Day, 0, 0, 0);
     }
@@ -5906,11 +5939,11 @@ namespace Org.GS
             }
             else
               continue;
-          if(c != ' ')
-          {
-            workingString += c;
-            continue;
-          }
+        if(c != ' ')
+        {
+          workingString += c;
+          continue;
+        }
       }
 
       if(workingString.Length > 0)
@@ -5925,9 +5958,9 @@ namespace Org.GS
       var dateWork = dt;
       while (dateWork.DayOfWeek != DayOfWeek.Saturday)
       {
-        dateWork = dateWork.AddDays(1); 
+        dateWork = dateWork.AddDays(1);
       }
-      return new DateTime(dateWork.Year, dateWork.Month, dateWork.Day, 23, 59, 59, 999); 
+      return new DateTime(dateWork.Year, dateWork.Month, dateWork.Day, 23, 59, 59, 999);
     }
 
     public static DateTime ToBeginOfMonth(this DateTime dt)
@@ -5938,7 +5971,7 @@ namespace Org.GS
     public static DateTime ToEndOfMonth(this DateTime dt)
     {
       var dateWork = dt.ToBeginOfMonth();
-      return new DateTime(dt.Year, dt.Month, dt.LastDayOfMonth(), 23, 59, 59, 999); 
+      return new DateTime(dt.Year, dt.Month, dt.LastDayOfMonth(), 23, 59, 59, 999);
     }
 
     public static DateTime ToBeginOfQuarter(this DateTime dt)
@@ -5999,7 +6032,7 @@ namespace Org.GS
     {
       if (value == null || value == DBNull.Value)
         return (decimal?)null;
-      
+
       double doubleValue = Convert.ToDouble(value);
       decimal decimalValue = (decimal)doubleValue;
       if ((decimalValue > 0 && decimalValue < 0.00000001M ||
@@ -6127,11 +6160,11 @@ namespace Org.GS
       return o.GetType().IsDerivedFromGenericCollection();
     }
 
-    public static bool IsEquivalent(this XElement xml, XElement xmlComp) 
+    public static bool IsEquivalent(this XElement xml, XElement xmlComp)
     {
-      using (var xMapHelper = new XMapHelper()) 
+      using (var xMapHelper = new XMapHelper())
       {
-        XmlMapper.Load();    
+        XmlMapper.Load();
         var xmlReport = new XmlReport(xml);
 
         CompareElements(xml, xmlComp, xMapHelper, xmlReport, Direction.Forward, -1, -1);
@@ -6145,14 +6178,14 @@ namespace Org.GS
       }
     }
 
-    private static void CompareElements(XElement xmlBase, XElement xmlComp, XMapHelper xMapHelper, XmlReport rpt, Direction direction, int currentLine, int level) 
+    private static void CompareElements(XElement xmlBase, XElement xmlComp, XMapHelper xMapHelper, XmlReport rpt, Direction direction, int currentLine, int level)
     {
       if (rpt.ErrorCount > 10)
         return;
 
       level++;
 
-      int lineNumber = rpt.GetLineNumberOfElement(xmlBase, rpt, currentLine);      
+      int lineNumber = rpt.GetLineNumberOfElement(xmlBase, rpt, currentLine);
 
       // compare equivalence of attributes
       string className = xmlBase.Name.LocalName;
@@ -6169,7 +6202,7 @@ namespace Org.GS
 
         string defaultValue = propXMap.DefaultValue.Trim();
         bool defaultExists = defaultValue.IsNotBlank();
-        
+
         string attrName = propXMap.Name.IsBlank() ? pi.Name : propXMap.Name;
         string baseValue = String.Empty;
         string compValue = String.Empty;
@@ -6191,11 +6224,11 @@ namespace Org.GS
 
         baseValue.IsXMappedValueEquivalent(compValue, pi.PropertyType, rpt, direction, lineNumber, level);
       }
-      
+
       // compare equivalence of element textual value
       if (xmlBase.Value.Trim() != xmlComp.Value.Trim())
       {
-        rpt.AddErrorToLine(lineNumber, new XmlLineError(level, "The text value of the XElements are not equal.", direction)); 
+        rpt.AddErrorToLine(lineNumber, new XmlLineError(level, "The text value of the XElements are not equal.", direction));
       }
 
       // compare equivalence of child elements (resursion)
@@ -6208,7 +6241,7 @@ namespace Org.GS
       {
         var errorMessage = "The count of child elements in the base Xml is " + baseElements.Count.ToString() + " and the count " +
                            "of child elements in the compare Xml is " + compElements.Count.ToString() + ".";
-        rpt.AddErrorToLine(lineNumber, new XmlLineError(level, errorMessage, direction)); 
+        rpt.AddErrorToLine(lineNumber, new XmlLineError(level, errorMessage, direction));
       }
 
       foreach (var kvpBase in baseElements)
@@ -6271,14 +6304,14 @@ namespace Org.GS
     public static bool IsInt32Equivalent(this string baseXml, string compXml, XmlReport rpt, Direction direction, int lineNumber, int level)
     {
       bool isIntEquivalent = true;
-      
+
       int baseInt = 0;
       int compInt = 0;
       bool baseIs = false;
       bool compIs = false;
       decimal compDec = 0M;
       decimal baseDec = 0M;
-          
+
       if (baseXml.IsBlank() && compXml.IsBlank())
         return isIntEquivalent = true;
 
@@ -6297,7 +6330,7 @@ namespace Org.GS
         rpt.AddErrorToLine(lineNumber, new XmlLineError(level, errorMessage, direction));
         return isIntEquivalent = false;
       }
-      
+
       if (compIs = compXml.IsValidInteger())
       {
         compInt = compXml.ToInt32();
@@ -6311,21 +6344,21 @@ namespace Org.GS
       {
         string errorMessage = "The compare value '" + compXml + "' is not a valid integer or it  has a decimal place that is something other than zero.";
         rpt.AddErrorToLine(lineNumber, new XmlLineError(level, errorMessage, direction));
-        return isIntEquivalent = false; 
-      }   
+        return isIntEquivalent = false;
+      }
 
       if(!baseInt.Equals(compInt))
       {
         string errorMessage = "The base value '" + baseXml + "' does not equal the compare value '" + compXml + "'.";
         rpt.AddErrorToLine(lineNumber, new XmlLineError(level, errorMessage, direction));
-        return isIntEquivalent = false; 
+        return isIntEquivalent = false;
       }
 
       return isIntEquivalent;
     }
 
     public static bool IsBooleanEquivalent(this string baseXml, string compXml, XmlReport rpt, Direction direction, int lineNumber, int level)
-    {      
+    {
       if (baseXml.IsBlank() && compXml.IsBlank())
         return true;
 
@@ -6355,7 +6388,7 @@ namespace Org.GS
     public static bool IsDecimalEquivalent(this string baseXml, string compXml, XmlReport rpt, Direction direction, int lineNumber, int level)
     {
       bool isDecimalEquivalent = true;
-      
+
       if (baseXml.IsBlank() && compXml.IsBlank())
         return isDecimalEquivalent = true;
 
@@ -6390,7 +6423,7 @@ namespace Org.GS
     public static bool IsTimeSpanEquivalent(this string baseXml, string compXml, XmlReport rpt, Direction direction, int lineNumber, int level)
     {
       bool isTimeSpanEquivalent = true;
-      
+
       if (baseXml.IsBlank() && compXml.IsBlank())
         return isTimeSpanEquivalent =true;
 
@@ -6406,7 +6439,7 @@ namespace Org.GS
       if (!TimeSpan.TryParse(baseXml, out baseTimeSpan)||(!TimeSpan.TryParse(compXml, out compTimeSpan)))
       {
         string errorMessage = "The base time span value '" + baseTimeSpan + "' and/or the compare time span value '" +
-                               compTimeSpan + "' did not parse to a valid time span value.";
+                              compTimeSpan + "' did not parse to a valid time span value.";
         rpt.AddErrorToLine(lineNumber, new XmlLineError(level, errorMessage, direction));
         return isTimeSpanEquivalent = false;
       }
@@ -6424,7 +6457,7 @@ namespace Org.GS
     public static bool IsDateTimeEquivalent(this string baseXml, string compXml, XmlReport rpt, Direction direction, int lineNumber, int level)
     {
       bool isDateTimeEquivalent = true;
-      
+
       if (baseXml.IsBlank() && compXml.IsBlank())
         return isDateTimeEquivalent = true;
 
@@ -6439,8 +6472,8 @@ namespace Org.GS
 
       if (!DateTime.TryParse(baseXml, out baseDateTime)||(!DateTime.TryParse(compXml, out compDateTime)))
       {
-        string errorMessage = "The base date time value '" + baseDateTime.ToString() + "' and/or the compare date timevalue '" + 
-                               compDateTime.ToString() + "' did not parse to a valid date time value.";
+        string errorMessage = "The base date time value '" + baseDateTime.ToString() + "' and/or the compare date timevalue '" +
+                              compDateTime.ToString() + "' did not parse to a valid date time value.";
         rpt.AddErrorToLine(lineNumber, new XmlLineError(level, errorMessage, direction));
         return isDateTimeEquivalent = false;
       }
@@ -6473,7 +6506,7 @@ namespace Org.GS
       }
 
       if (piToRemove != null)
-        piSet.Remove(piToRemove);      
+        piSet.Remove(piToRemove);
     }
 
     [DebuggerStepThrough]
@@ -6493,7 +6526,7 @@ namespace Org.GS
       if (maxLength < 0)
         return firstLine;
 
-      return firstLine.TrimToMax(maxLength); 
+      return firstLine.TrimToMax(maxLength);
     }
 
     public static string ListToString(this List<string> list)
@@ -6510,7 +6543,7 @@ namespace Org.GS
         }
         else
         {
-          listString += "," + listItem.Trim(); 
+          listString += "," + listItem.Trim();
         }
       }
 
@@ -6521,7 +6554,7 @@ namespace Org.GS
     {
       if (type == null)
         return false;
-      
+
       if (type.FullName.Contains("System.Collections.Generic."))
         return true;
 
@@ -6597,11 +6630,16 @@ namespace Org.GS
 
       switch (detailSpecSwitch)
       {
-        case DetailSpecSwitch.ValueGreaterThan: return decValue > compareValue;
-        case DetailSpecSwitch.ValueGreaterThanOrEqualTo: return decValue >= compareValue;
-        case DetailSpecSwitch.ValueEquals: return decValue == compareValue;
-        case DetailSpecSwitch.ValueLessThan: return decValue < compareValue;
-        case DetailSpecSwitch.ValueLessThanOrEqualTo: return decValue <= compareValue;
+        case DetailSpecSwitch.ValueGreaterThan:
+          return decValue > compareValue;
+        case DetailSpecSwitch.ValueGreaterThanOrEqualTo:
+          return decValue >= compareValue;
+        case DetailSpecSwitch.ValueEquals:
+          return decValue == compareValue;
+        case DetailSpecSwitch.ValueLessThan:
+          return decValue < compareValue;
+        case DetailSpecSwitch.ValueLessThanOrEqualTo:
+          return decValue <= compareValue;
 
         default:
           throw new NotImplementedException("Comparison using DetailSpecificationSwitch value '" + detailSpecSwitch.ToString() + "' is not yet implemented.");
@@ -6616,7 +6654,7 @@ namespace Org.GS
       MethodInfo mi = o.GetType().GetMethod("AutoInit");
 
       if (mi != null)
-        mi.Invoke(o, null); 
+        mi.Invoke(o, null);
     }
 
     public static List<string> TrimItems(this List<string> list)
@@ -6683,10 +6721,10 @@ namespace Org.GS
       if (type.IsDerivedFromGenericCollection())
         return XObjectType.GenericCollectionBased;
 
-      XMap xMap = type.GetXMap();  
+      XMap xMap = type.GetXMap();
       if (xMap != null)
         return XObjectType.Complex;
-      
+
       return XObjectType.Simple;
     }
 
@@ -6712,7 +6750,7 @@ namespace Org.GS
     {
       return pi.TypeName() == "Object";
     }
-    
+
     public static XMap XMap(this PropertyInfo pi)
     {
       if (pi == null)
@@ -6838,8 +6876,8 @@ namespace Org.GS
             xmapPiList.Add (pi);
           else
           {
-          if (xMapProp.XType == xType)
-            xmapPiList.Add(pi);
+            if (xMapProp.XType == xType)
+              xmapPiList.Add(pi);
           }
         }
       }
@@ -6936,7 +6974,7 @@ namespace Org.GS
         return value;
 
       string s = value.Replace("'", "''");
-        return s;
+      return s;
     }
 
     public static object RunXPathQuery(this XElement xml, string q, bool returnException = false)
@@ -6944,10 +6982,10 @@ namespace Org.GS
       try
       {
         var extractRoot = new XElement("QueryResult");
-        string ns = xml.Name.NamespaceName; 
+        string ns = xml.Name.NamespaceName;
 
         if (xml == null)
-          return extractRoot;     
+          return extractRoot;
 
         using (var sr = new System.IO.StringReader(xml.ToString()))
         {
@@ -6999,7 +7037,7 @@ namespace Org.GS
       if (e == null)
         return null;
 
-      return XElement.Parse(e.OuterXml); 
+      return XElement.Parse(e.OuterXml);
     }
 
 

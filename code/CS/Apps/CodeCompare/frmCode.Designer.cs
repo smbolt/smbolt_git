@@ -34,35 +34,37 @@
       this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
       this.mnuMain.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1034, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(180, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmCode
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1034, 681);

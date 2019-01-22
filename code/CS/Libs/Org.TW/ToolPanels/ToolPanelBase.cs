@@ -13,20 +13,33 @@ namespace Org.TW.ToolPanels
 {
   public partial class ToolPanelBase : UserControl
   {
-    public string DerivedTagName { get; set; }
+    public string DerivedTagName {
+      get;
+      set;
+    }
     public event Action<ToolPanelNotifyEvent> NotifyHostEvent;
-    public Button DockButton { get { return this.btnDockFloat; } }
-		public Panel TopPanel { get { return this.pnlTopControl; } }
+    public Button DockButton {
+      get {
+        return this.btnDockFloat;
+      }
+    }
+    public Panel TopPanel {
+      get {
+        return this.pnlTopControl;
+      }
+    }
 
     public bool IsDockedInToolWindow
     {
-      get { return Get_IsDockedInToolWindow(); }
+      get {
+        return Get_IsDockedInToolWindow();
+      }
     }
 
-		public ToolPanelBase()
-		{
-			InitializeComponent();
-		}
+    public ToolPanelBase()
+    {
+      InitializeComponent();
+    }
 
     public ToolPanelBase(string derivedTagName = "NotSet")
     {
@@ -61,7 +74,7 @@ namespace Org.TW.ToolPanels
     public void UpdateDockButtonTagAndText()
     {
       this.btnDockFloat.Tag = "TW_" + (this.IsDockedInToolWindow ? "Dock" : "Float") + "_" + this.DerivedTagName;
-      this.btnDockFloat.Text = (this.IsDockedInToolWindow ? "Dock" : "Float"); 
+      this.btnDockFloat.Text = (this.IsDockedInToolWindow ? "Dock" : "Float");
     }
 
     private void ToolPanelBase_DockChanged(object sender, EventArgs e)

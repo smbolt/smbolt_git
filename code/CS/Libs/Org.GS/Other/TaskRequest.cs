@@ -17,41 +17,132 @@ namespace Org.GS
   [Serializable]
   public class TaskRequest
   {
-    public string TaskName { get; set; }
-    public string ProcessorName { get; set; }
-    public string ProcessorVersion { get; set; }
-    public string ProcessorNameAndVersion { get { return this.ProcessorName + "_" + this.ProcessorVersion; } }
-    public string CatalogName { get; set; }
-    public string CatalogEntry { get; set; }
-    public string AssemblyName { get; set; }
-    public string ObjectTypeName { get; set; }
-    public TaskRequestType TaskRequestType { get; set; }
+    public string TaskName {
+      get;
+      set;
+    }
+    public string ProcessorName {
+      get;
+      set;
+    }
+    public string ProcessorVersion {
+      get;
+      set;
+    }
+    public string ProcessorNameAndVersion {
+      get {
+        return this.ProcessorName + "_" + this.ProcessorVersion;
+      }
+    }
+    public string CatalogName {
+      get;
+      set;
+    }
+    public string CatalogEntry {
+      get;
+      set;
+    }
+    public string AssemblyName {
+      get;
+      set;
+    }
+    public string ObjectTypeName {
+      get;
+      set;
+    }
+    public TaskRequestType TaskRequestType {
+      get;
+      set;
+    }
 
-    public bool TrackHistory { get; set; }
-    public int? RunId { get; set; }
-    public int ScheduledTaskId { get; set; }
-    public int ProcessorTypeId { get; set; }
-    public ParmSet ParmSet { get; set; }
-    public DateTime ScheduledRunDateTime { get; set; }
-    public DateTime TimeDispatched { get; set; }
-    public DateTime TimeCompleted { get; set; }
-    public string TaskRequestId { get; set; }
-    public bool RunUntilTask { get; set; }
-    public int? RunUntilPeriodContextId { get; set; }
-    public int? RunUntilOffsetMinutes { get; set; }
-    public bool SuppressNotificationsOnSuccess { get; set; }
-    public bool AllowConcurrent { get; set; }
-    public bool IsDryRun { get; set; }
-    public bool IsActive { get; set; }
-    public object Object { get; set; }
-    public TimeSpan RemainingTimeTilSchedule { get { return Get_RemainingTimeTilSchedule(); } }
-    public string RemainingTimeTilScheduleFmt { get { return Get_RemainingTimeTilScheduleFmt(); } }
-    public string Report { get { return Get_Report(); } }
+    public bool TrackHistory {
+      get;
+      set;
+    }
+    public int? RunId {
+      get;
+      set;
+    }
+    public int ScheduledTaskId {
+      get;
+      set;
+    }
+    public int ProcessorTypeId {
+      get;
+      set;
+    }
+    public ParmSet ParmSet {
+      get;
+      set;
+    }
+    public DateTime ScheduledRunDateTime {
+      get;
+      set;
+    }
+    public DateTime TimeDispatched {
+      get;
+      set;
+    }
+    public DateTime TimeCompleted {
+      get;
+      set;
+    }
+    public string TaskRequestId {
+      get;
+      set;
+    }
+    public bool RunUntilTask {
+      get;
+      set;
+    }
+    public int? RunUntilPeriodContextId {
+      get;
+      set;
+    }
+    public int? RunUntilOffsetMinutes {
+      get;
+      set;
+    }
+    public bool SuppressNotificationsOnSuccess {
+      get;
+      set;
+    }
+    public bool AllowConcurrent {
+      get;
+      set;
+    }
+    public bool IsDryRun {
+      get;
+      set;
+    }
+    public bool IsActive {
+      get;
+      set;
+    }
+    public object Object {
+      get;
+      set;
+    }
+    public TimeSpan RemainingTimeTilSchedule {
+      get {
+        return Get_RemainingTimeTilSchedule();
+      }
+    }
+    public string RemainingTimeTilScheduleFmt {
+      get {
+        return Get_RemainingTimeTilScheduleFmt();
+      }
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public TaskRequest(int scheduledTaskId, string taskName, string processorName, string processorVersion, int processorTypeId,
-                      string assemblyName, string catalogName, string catalogEntry, string objectTypeName,
-                      TaskRequestType taskRequestType, ParmSet parmSet, DateTime scheduledRunDateTime, bool trackHistory, bool runUntilTask, 
-                      int? runUntilPeriodContextId, int? runUntilOffsetMinutes, bool suppressNotificationsOnSuccess)
+                       string assemblyName, string catalogName, string catalogEntry, string objectTypeName,
+                       TaskRequestType taskRequestType, ParmSet parmSet, DateTime scheduledRunDateTime, bool trackHistory, bool runUntilTask,
+                       int? runUntilPeriodContextId, int? runUntilOffsetMinutes, bool suppressNotificationsOnSuccess)
     {
       this.ScheduledTaskId = scheduledTaskId;
       this.TaskName = taskName;
@@ -80,8 +171,8 @@ namespace Org.GS
     }
 
     public TaskRequest(int scheduledTaskId, string taskName, string processorName, string processorVersion, int processorTypeId,
-                      TaskRequestType taskRequestType, ParmSet parmSet, DateTime scheduledRunDateTime, bool trackHistory, bool runUntilTask,
-                      int? runUntilPeriodContextId, int? runUntilOffsetMinutes, bool suppressNotificationsOnSuccess)
+                       TaskRequestType taskRequestType, ParmSet parmSet, DateTime scheduledRunDateTime, bool trackHistory, bool runUntilTask,
+                       int? runUntilPeriodContextId, int? runUntilOffsetMinutes, bool suppressNotificationsOnSuccess)
     {
       this.ScheduledTaskId = scheduledTaskId;
       this.TaskName = taskName;
@@ -127,7 +218,7 @@ namespace Org.GS
     private TimeSpan Get_RemainingTimeTilSchedule()
     {
       if (this.ScheduledRunDateTime < DateTime.Now)
-        return new TimeSpan(0); 
+        return new TimeSpan(0);
 
       return this.ScheduledRunDateTime - DateTime.Now;
     }

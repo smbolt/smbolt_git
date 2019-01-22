@@ -60,8 +60,8 @@ namespace FtpTest
       catch (Exception ex)
       {
         txtOut.Text = "An exception occurred during the initialization of the application object." + g.crlf2 +
-                        "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
-                        "Exception Report:" + g.crlf + ex.ToReport();
+                      "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
+                      "Exception Report:" + g.crlf + ex.ToReport();
         return;
       }
 

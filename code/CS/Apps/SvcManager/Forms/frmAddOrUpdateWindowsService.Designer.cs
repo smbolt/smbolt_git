@@ -40,9 +40,9 @@
       this.lblServiceType = new System.Windows.Forms.Label();
       this.lblServiceTypeValue = new System.Windows.Forms.Label();
       this.SuspendLayout();
-      // 
+      //
       // lblEnvironment
-      // 
+      //
       this.lblEnvironment.AutoSize = true;
       this.lblEnvironment.Location = new System.Drawing.Point(19, 18);
       this.lblEnvironment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -50,9 +50,9 @@
       this.lblEnvironment.Size = new System.Drawing.Size(69, 13);
       this.lblEnvironment.TabIndex = 0;
       this.lblEnvironment.Text = "Environment:";
-      // 
+      //
       // lblTaskServiceName
-      // 
+      //
       this.lblTaskServiceName.AutoSize = true;
       this.lblTaskServiceName.Location = new System.Drawing.Point(19, 98);
       this.lblTaskServiceName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -60,18 +60,18 @@
       this.lblTaskServiceName.Size = new System.Drawing.Size(121, 13);
       this.lblTaskServiceName.TabIndex = 0;
       this.lblTaskServiceName.Text = "Windows Service Name";
-      // 
+      //
       // txtTaskServiceName
-      // 
+      //
       this.txtTaskServiceName.Location = new System.Drawing.Point(21, 114);
       this.txtTaskServiceName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.txtTaskServiceName.Name = "txtTaskServiceName";
       this.txtTaskServiceName.Size = new System.Drawing.Size(259, 20);
       this.txtTaskServiceName.TabIndex = 2;
       this.txtTaskServiceName.TextChanged += new System.EventHandler(this.CriteriaChanged);
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Location = new System.Drawing.Point(85, 203);
       this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnCancel.Name = "btnCancel";
@@ -81,9 +81,9 @@
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnOK
-      // 
+      //
       this.btnOK.Location = new System.Drawing.Point(85, 168);
       this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnOK.Name = "btnOK";
@@ -93,9 +93,9 @@
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
       this.btnOK.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblEnvironmentValue
-      // 
+      //
       this.lblEnvironmentValue.AutoSize = true;
       this.lblEnvironmentValue.Location = new System.Drawing.Point(105, 18);
       this.lblEnvironmentValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -103,9 +103,9 @@
       this.lblEnvironmentValue.Size = new System.Drawing.Size(29, 13);
       this.lblEnvironmentValue.TabIndex = 0;
       this.lblEnvironmentValue.Text = "Prod";
-      // 
+      //
       // lblHost
-      // 
+      //
       this.lblHost.AutoSize = true;
       this.lblHost.Location = new System.Drawing.Point(19, 39);
       this.lblHost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -113,9 +113,9 @@
       this.lblHost.Size = new System.Drawing.Size(32, 13);
       this.lblHost.TabIndex = 0;
       this.lblHost.Text = "Host:";
-      // 
+      //
       // lblHostValue
-      // 
+      //
       this.lblHostValue.AutoSize = true;
       this.lblHostValue.Location = new System.Drawing.Point(105, 39);
       this.lblHostValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -123,9 +123,9 @@
       this.lblHostValue.Size = new System.Drawing.Size(68, 13);
       this.lblHostValue.TabIndex = 0;
       this.lblHostValue.Text = "HOSTNAME";
-      // 
+      //
       // lblServiceType
-      // 
+      //
       this.lblServiceType.AutoSize = true;
       this.lblServiceType.Location = new System.Drawing.Point(19, 61);
       this.lblServiceType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -133,9 +133,9 @@
       this.lblServiceType.Size = new System.Drawing.Size(73, 13);
       this.lblServiceType.TabIndex = 0;
       this.lblServiceType.Text = "Service Type:";
-      // 
+      //
       // lblServiceTypeValue
-      // 
+      //
       this.lblServiceTypeValue.AutoSize = true;
       this.lblServiceTypeValue.Location = new System.Drawing.Point(105, 61);
       this.lblServiceTypeValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -143,9 +143,9 @@
       this.lblServiceTypeValue.Size = new System.Drawing.Size(90, 13);
       this.lblServiceTypeValue.TabIndex = 0;
       this.lblServiceTypeValue.Text = "Windows Service";
-      // 
+      //
       // frmAddOrUpdateWindowsService
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(300, 247);

@@ -11,7 +11,10 @@ namespace Org.WSO.Transactions
   public class GetConfigListResponse : TransactionBase
   {
     [XMap]
-    public List<string> ConfigList { get; set; }
+    public List<string> ConfigList {
+      get;
+      set;
+    }
 
     public GetConfigListResponse()
     {

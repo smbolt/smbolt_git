@@ -95,7 +95,7 @@ namespace Org.MEFTest
         var taskInfo = _taskInfo[taskName];
         var parms = GetParms(taskInfo);
         var taskRequest = new TaskRequest(0, taskInfo.TaskName, taskInfo.TaskProcessorName, taskInfo.TaskProcessorVersion, 0, TaskRequestType.ScheduledTask,
-                                  parms, DateTime.Now, false, false, null, null, false);
+                                          parms, DateTime.Now, false, false, null, null, false);
 
 
         TaskResult taskResult = null;
@@ -221,7 +221,9 @@ namespace Org.MEFTest
     private void DisableCancelButton()
     {
       if (txtOut.InvokeRequired)
-        txtOut.Invoke((Action)((() => { btnCancelTask.Enabled = false; })));
+        txtOut.Invoke((Action)((() => {
+        btnCancelTask.Enabled = false;
+      })));
       else
         btnCancelTask.Enabled = false;
     }
@@ -502,7 +504,7 @@ namespace Org.MEFTest
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during initialization of the application object 'a'." + g.crlf2 +
-          ex.ToReport(), "MEFTest - MEF Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), "MEFTest - MEF Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
 
@@ -621,7 +623,7 @@ namespace Org.MEFTest
           txtOut.SelectionLength = 0;
           txtOut.ScrollToCaret();
         }
-        )));
+                                    )));
         Application.DoEvents();
       }
       else

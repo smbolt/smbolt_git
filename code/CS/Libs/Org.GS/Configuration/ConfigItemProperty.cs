@@ -7,8 +7,14 @@ namespace Org.GS.Configuration
 {
   public class ConfigItemProperty
   {
-    public string PropertyName { get; set; }
-    public Type PropertyType { get; set; }
+    public string PropertyName {
+      get;
+      set;
+    }
+    public Type PropertyType {
+      get;
+      set;
+    }
 
     public ConfigItemProperty()
     {

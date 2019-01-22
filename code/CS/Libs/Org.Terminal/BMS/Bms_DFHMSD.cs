@@ -9,26 +9,83 @@ namespace Org.Terminal.BMS
 {
   public class Bms_DFHMSD : Bms_BASE
   {
-    private List<string> _ctrl { get; set; }
+    private List<string> _ctrl {
+      get;
+      set;
+    }
 
-    public DFH_COLOR DFH_COLOR { get; private set; }
-    public DFH_CURSLOC DFH_CURSLOC { get; private set; }
-    public DFHMSD_DSECT DFHMSD_DSECT { get; private set; }
-    public DFH_EXTATT DFH_EXTATT { get; private set; }
-    public DFHMSD_FOLD DFHMSD_FOLD { get; private set; }
-    public DFH_HILIGHT DFH_HILIGHT { get; private set; }
-    public DFHMSD_LANG DFHMSD_LANG { get; private set; }
-    public DFHMSD_MODE DFHMSD_MODE { get; private set; }
-    public DFH_PS DFH_PS { get; private set; }
-    public DFHMSD_OUTLINE DFHMSD_OUTLINE { get; private set; }
-    public DFH_SOSI DFH_SOSI { get; private set; }
-    public DFHMSD_STORAGE DFHMSD_STORAGE { get; private set; }
-    public DFH_TERM DFH_TERM { get; private set; }
-    public DFH_TIOAPFX DFH_TIOAPFX { get; private set; }
-    public DFH_TRANSP DFH_TRANSP { get; private set; }
-    public DFHMSD_TRIGRAPH DFHMSD_TRIGRAPH { get; private set; }
-    public DFHMSD_TYPE DFHMSD_TYPE { get; private set; }
-    public DFH_VALIDN DFH_VALIDN { get; private set; }
+    public DFH_COLOR DFH_COLOR {
+      get;
+      private set;
+    }
+    public DFH_CURSLOC DFH_CURSLOC {
+      get;
+      private set;
+    }
+    public DFHMSD_DSECT DFHMSD_DSECT {
+      get;
+      private set;
+    }
+    public DFH_EXTATT DFH_EXTATT {
+      get;
+      private set;
+    }
+    public DFHMSD_FOLD DFHMSD_FOLD {
+      get;
+      private set;
+    }
+    public DFH_HILIGHT DFH_HILIGHT {
+      get;
+      private set;
+    }
+    public DFHMSD_LANG DFHMSD_LANG {
+      get;
+      private set;
+    }
+    public DFHMSD_MODE DFHMSD_MODE {
+      get;
+      private set;
+    }
+    public DFH_PS DFH_PS {
+      get;
+      private set;
+    }
+    public DFHMSD_OUTLINE DFHMSD_OUTLINE {
+      get;
+      private set;
+    }
+    public DFH_SOSI DFH_SOSI {
+      get;
+      private set;
+    }
+    public DFHMSD_STORAGE DFHMSD_STORAGE {
+      get;
+      private set;
+    }
+    public DFH_TERM DFH_TERM {
+      get;
+      private set;
+    }
+    public DFH_TIOAPFX DFH_TIOAPFX {
+      get;
+      private set;
+    }
+    public DFH_TRANSP DFH_TRANSP {
+      get;
+      private set;
+    }
+    public DFHMSD_TRIGRAPH DFHMSD_TRIGRAPH {
+      get;
+      private set;
+    }
+    public DFHMSD_TYPE DFHMSD_TYPE {
+      get;
+      private set;
+    }
+    public DFH_VALIDN DFH_VALIDN {
+      get;
+      private set;
+    }
 
     public Bms_DFHMSD(BmsStatement bmsStatement)
       : base(bmsStatement)
@@ -51,7 +108,7 @@ namespace Org.Terminal.BMS
 
             case "CTRL":
               this._ctrl = new List<string>();
-              this._ctrl.Add(p.Value.Trim()); 
+              this._ctrl.Add(p.Value.Trim());
               break;
 
             case "CURSLOC":

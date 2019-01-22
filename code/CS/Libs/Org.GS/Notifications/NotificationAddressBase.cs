@@ -8,8 +8,14 @@ namespace Org.GS.Notifications
 {
   public class NotificationAddressBase
   {
-    public NotificationAddressType NotificationAddressType { get; set; }
-    public string NotificationAddress { get; set; }
+    public NotificationAddressType NotificationAddressType {
+      get;
+      set;
+    }
+    public string NotificationAddress {
+      get;
+      set;
+    }
 
     public NotificationAddressBase()
     {

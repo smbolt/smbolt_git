@@ -9,7 +9,7 @@ using Org.GS;
 namespace Org.GS.Code
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element, CollectionElements="IncludedFile", UseKeyValue = true)] 
+  [XMap(XType = XType.Element, CollectionElements="IncludedFile", UseKeyValue = true)]
   public class IncludedFileSet : List<String>
   {
   }

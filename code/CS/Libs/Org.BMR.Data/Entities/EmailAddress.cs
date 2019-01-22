@@ -11,20 +11,29 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "EmailAddress")]
-    public partial class EmailAddress
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "EmailAddress")]
+  public partial class EmailAddress
+  {
+    public EmailAddress()
     {
-        public EmailAddress()
-        {
-            this.PersonEmailAddresses = new HashSet<PersonEmailAddress>();
-        }
-    
-        public int EmailAddressId { get; set; }
-        public string EmailAddressValue { get; set; }
-    
-        public virtual ICollection<PersonEmailAddress> PersonEmailAddresses { get; set; }
+      this.PersonEmailAddresses = new HashSet<PersonEmailAddress>();
     }
+
+    public int EmailAddressId {
+      get;
+      set;
+    }
+    public string EmailAddressValue {
+      get;
+      set;
+    }
+
+    public virtual ICollection<PersonEmailAddress> PersonEmailAddresses {
+      get;
+      set;
+    }
+  }
 }

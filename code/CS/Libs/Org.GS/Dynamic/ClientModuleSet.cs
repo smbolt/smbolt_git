@@ -9,7 +9,10 @@ namespace Org.GS.Dynamic
 {
   public class ClientModuleSet : Dictionary<string, ClientModule>
   {
-    public string MainModule { get; set; }
+    public string MainModule {
+      get;
+      set;
+    }
 
     public ClientModuleSet()
     {
@@ -35,7 +38,7 @@ namespace Org.GS.Dynamic
 
       this.MainModule = xElement.GetAttributeValue("MainModule");
 
-      IEnumerable<XElement> clientModules = xElement.Elements("ClientModule");  
+      IEnumerable<XElement> clientModules = xElement.Elements("ClientModule");
       foreach (XElement clientModule in clientModules)
       {
         ClientModule cm = new ClientModule();

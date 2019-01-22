@@ -65,19 +65,19 @@ namespace Org.GS.Notifications
             mailMessage.Body = emailMessage.NotificationMessageBody;
             mailMessage.IsBodyHtml = emailMessage.IsBodyHtml;
             System.Threading.Thread.Sleep(3000);
-            await smtpClient.SendMailAsync(mailMessage).ContinueWith(r => 
+            await smtpClient.SendMailAsync(mailMessage).ContinueWith(r =>
             {
               if (r != null)
               {
                 switch(r.Status)
                 {
                   case TaskStatus.RanToCompletion:
-                    taskResult.Data = "ADDRESSES:" + emailAddresses + " SUBJECT:" + mailMessage.Subject.PadTo(50).Trim(); 
-                    taskResult.Success("Email sent successfully."); 
+                    taskResult.Data = "ADDRESSES:" + emailAddresses + " SUBJECT:" + mailMessage.Subject.PadTo(50).Trim();
+                    taskResult.Success("Email sent successfully.");
                     break;
 
                   case TaskStatus.Faulted:
-                    taskResult.Data = "ADDRESSES:" + emailAddresses + " SUBJECT:" + mailMessage.Subject.PadTo(50).Trim(); 
+                    taskResult.Data = "ADDRESSES:" + emailAddresses + " SUBJECT:" + mailMessage.Subject.PadTo(50).Trim();
                     taskResult.Failed("Asynchronous send of email failed - task status is '" + r.Status.ToString() + "'.");
                     if (r.Exception != null)
                     {
@@ -86,7 +86,7 @@ namespace Org.GS.Notifications
                     break;
 
                   default:
-                    taskResult.Data = "ADDRESSES:" + emailAddresses + " SUBJECT:" + mailMessage.Subject.PadTo(50).Trim(); 
+                    taskResult.Data = "ADDRESSES:" + emailAddresses + " SUBJECT:" + mailMessage.Subject.PadTo(50).Trim();
                     taskResult.Failed("Asynchronous send of email failed - task status is '" + r.Status.ToString() + "'.");
                     break;
                 }

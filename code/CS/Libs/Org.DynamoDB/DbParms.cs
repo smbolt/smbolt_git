@@ -9,12 +9,28 @@ namespace Org.DynamoDB
 {
   public class DbParms
   {
-    public bool UseLocalInstance { get; set; }
-    public string Host { get; set; }
-    public int Port { get; set; }
-    public int TcpConnectWaitMilliseconds { get; set; }
+    public bool UseLocalInstance {
+      get;
+      set;
+    }
+    public string Host {
+      get;
+      set;
+    }
+    public int Port {
+      get;
+      set;
+    }
+    public int TcpConnectWaitMilliseconds {
+      get;
+      set;
+    }
 
-    public string SerivceURL { get { return Get_ServiceURL(); } }
+    public string SerivceURL {
+      get {
+        return Get_ServiceURL();
+      }
+    }
 
     public DbParms()
     {

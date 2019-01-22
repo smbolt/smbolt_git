@@ -25,7 +25,7 @@ namespace Org.Dx.Business
         string mapFileName = Path.GetFileName(fullMapPath);
         string mapPath = Path.GetDirectoryName(fullMapPath);
         var dxWb = GetWorkbook(request.FullMapPath, request.FileNamePrefix, mapPath, mapFileName);
-        
+
         dxWb.EnsureIntegrity();
 
         XElement wbXml = null;
@@ -148,7 +148,7 @@ namespace Org.Dx.Business
         using (var f = new ObjectFactory2())
         {
           extractSpecSet = f.Deserialize(mapXml) as ExtractSpecSet;
-          
+
           string mapPath = Path.GetDirectoryName(fullMapPath);
           if (extractSpecSet.ColumnIndexMapName.IsBlank())
             extractSpecSet.ColumnIndexMapName = "ColumnIndexMap";
@@ -169,7 +169,7 @@ namespace Org.Dx.Business
 
         if (extractSpecSet.Values.Count != 1)
           throw new Exception("There must be 1 ExtractSpecs in the ExtractSpecSet - found " + extractSpecSet.Values.Count.ToString() + ".");
-        
+
         extractSpecSet.PopulateReferences();
 
         ExtractionMap extractionMap = null;

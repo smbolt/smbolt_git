@@ -11,21 +11,39 @@ namespace Org.QB.QBXML
   public class CreditCardInfo
   {
     [XMap (XType = XType.Element)]
-    public string CreditCardNumber { get; set; }
+    public string CreditCardNumber {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public int ExpirationMonth { get; set; }
+    public int ExpirationMonth {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public int ExpirationYear { get; set; }
+    public int ExpirationYear {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string NameOnCard { get; set; }
+    public string NameOnCard {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string CreditCardAddress { get; set; }
+    public string CreditCardAddress {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string CreditCardPostalCode { get; set; }
+    public string CreditCardPostalCode {
+      get;
+      set;
+    }
   }
 }

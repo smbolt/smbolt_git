@@ -12,22 +12,33 @@ namespace Org.WSO
     private WsTransactionHeader _transactionHeader;
     public WsTransactionHeader TransactionHeader
     {
-      get { return _transactionHeader; }
-      set { _transactionHeader = value; }
+      get {
+        return _transactionHeader;
+      }
+      set {
+        _transactionHeader = value;
+      }
     }
 
-    public TransactionBase Transaction { get; set; }
+    public TransactionBase Transaction {
+      get;
+      set;
+    }
 
     private XElement _transactionBody;
     public XElement TransactionBody
     {
-      get { return _transactionBody; }
-      set { _transactionBody = value; }
+      get {
+        return _transactionBody;
+      }
+      set {
+        _transactionBody = value;
+      }
     }
 
     public WsTransaction()
     {
-      this.Transaction = null; 
+      this.Transaction = null;
       _transactionHeader = new WsTransactionHeader();
       _transactionBody = new XElement("Empty");
     }

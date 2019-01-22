@@ -8,8 +8,14 @@ namespace Org.TSK.Business.Models
 {
   public class TaskParameterSet
   {
-    public string ParameterSetName { get; set; }
-    public List<TaskParameter> TaskParameters { get; set; }
+    public string ParameterSetName {
+      get;
+      set;
+    }
+    public List<TaskParameter> TaskParameters {
+      get;
+      set;
+    }
 
     public TaskParameterSet()
     {

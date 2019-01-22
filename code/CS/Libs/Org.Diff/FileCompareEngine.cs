@@ -33,8 +33,8 @@ namespace Org.Diff
         string file2 = File.ReadAllText(parms.RightPath);
 
         IDiffBuilder diffBuilder = parms.FileCompareReportLayout == FileCompareReportLayout.Inline ?
-                                (IDiffBuilder) new InlineDiffBuilder(new Differ()) :
-                                (IDiffBuilder) new SideBySideDiffBuilder(new Differ());
+                                   (IDiffBuilder) new InlineDiffBuilder(new Differ()) :
+                                   (IDiffBuilder) new SideBySideDiffBuilder(new Differ());
 
         var diffModel = diffBuilder.BuildDiffModel(file1, file2, parms.CreateFileComparisionReport);
 

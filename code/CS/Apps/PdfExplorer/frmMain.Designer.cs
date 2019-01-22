@@ -68,36 +68,38 @@
       this.pnlBackground.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbPdfImage)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
       this.mnuMain.Size = new System.Drawing.Size(1324, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 22);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 777);
       this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -107,9 +109,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.txtObjectNumberBreak);
       this.pnlTop.Controls.Add(this.lblDebugBreak);
       this.pnlTop.Controls.Add(this.ckOnlyImages);
@@ -122,9 +124,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1324, 37);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // ckOnlyImages
-      // 
+      //
       this.ckOnlyImages.AutoSize = true;
       this.ckOnlyImages.Location = new System.Drawing.Point(441, 9);
       this.ckOnlyImages.Name = "ckOnlyImages";
@@ -134,9 +136,9 @@
       this.ckOnlyImages.Text = "Only Images";
       this.ckOnlyImages.UseVisualStyleBackColor = true;
       this.ckOnlyImages.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // ckOmitAnnotations
-      // 
+      //
       this.ckOmitAnnotations.AutoSize = true;
       this.ckOmitAnnotations.Location = new System.Drawing.Point(332, 9);
       this.ckOmitAnnotations.Name = "ckOmitAnnotations";
@@ -146,9 +148,9 @@
       this.ckOmitAnnotations.Text = "OmitAnnotations";
       this.ckOmitAnnotations.UseVisualStyleBackColor = true;
       this.ckOmitAnnotations.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // btnOpenDocument
-      // 
+      //
       this.btnOpenDocument.Location = new System.Drawing.Point(8, 5);
       this.btnOpenDocument.Margin = new System.Windows.Forms.Padding(2);
       this.btnOpenDocument.Name = "btnOpenDocument";
@@ -158,9 +160,9 @@
       this.btnOpenDocument.Text = "Open Document";
       this.btnOpenDocument.UseVisualStyleBackColor = true;
       this.btnOpenDocument.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSwitchView
-      // 
+      //
       this.btnSwitchView.Location = new System.Drawing.Point(234, 5);
       this.btnSwitchView.Margin = new System.Windows.Forms.Padding(2);
       this.btnSwitchView.Name = "btnSwitchView";
@@ -170,31 +172,31 @@
       this.btnSwitchView.Text = "Switch View";
       this.btnSwitchView.UseVisualStyleBackColor = true;
       this.btnSwitchView.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.Location = new System.Drawing.Point(1, 0);
       this.splitterMain.Margin = new System.Windows.Forms.Padding(2);
       this.splitterMain.Name = "splitterMain";
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.tvMain);
       this.splitterMain.Panel1.Controls.Add(this.pnlTvBottom);
       this.splitterMain.Panel1.Controls.Add(this.pnlTvTop);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.tabMain);
       this.splitterMain.Size = new System.Drawing.Size(1322, 716);
       this.splitterMain.SplitterDistance = 400;
       this.splitterMain.SplitterWidth = 2;
       this.splitterMain.TabIndex = 3;
-      // 
+      //
       // tvMain
-      // 
+      //
       this.tvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvMain.ContextMenuStrip = this.ctxMenuTreeView;
       this.tvMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -204,54 +206,55 @@
       this.tvMain.Size = new System.Drawing.Size(398, 654);
       this.tvMain.TabIndex = 2;
       this.tvMain.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvMain_AfterSelect);
-      // 
+      //
       // ctxMenuTreeView
-      // 
+      //
       this.ctxMenuTreeView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMenuTreeViewExpandAll,
-            this.ctxMenuTreeViewCollapseAll});
+        this.ctxMenuTreeViewExpandAll,
+        this.ctxMenuTreeViewCollapseAll
+      });
       this.ctxMenuTreeView.Name = "ctxMenuTreeView";
       this.ctxMenuTreeView.Size = new System.Drawing.Size(137, 48);
-      // 
+      //
       // ctxMenuTreeViewExpandAll
-      // 
+      //
       this.ctxMenuTreeViewExpandAll.Name = "ctxMenuTreeViewExpandAll";
       this.ctxMenuTreeViewExpandAll.Size = new System.Drawing.Size(136, 22);
       this.ctxMenuTreeViewExpandAll.Tag = "ExpandAll";
       this.ctxMenuTreeViewExpandAll.Text = "Expand All";
       this.ctxMenuTreeViewExpandAll.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuTreeViewCollapseAll
-      // 
+      //
       this.ctxMenuTreeViewCollapseAll.Name = "ctxMenuTreeViewCollapseAll";
       this.ctxMenuTreeViewCollapseAll.Size = new System.Drawing.Size(136, 22);
       this.ctxMenuTreeViewCollapseAll.Tag = "CollapseAll";
       this.ctxMenuTreeViewCollapseAll.Text = "Collapse All";
       this.ctxMenuTreeViewCollapseAll.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlTvBottom
-      // 
+      //
       this.pnlTvBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.pnlTvBottom.Location = new System.Drawing.Point(0, 684);
       this.pnlTvBottom.Margin = new System.Windows.Forms.Padding(2);
       this.pnlTvBottom.Name = "pnlTvBottom";
       this.pnlTvBottom.Size = new System.Drawing.Size(398, 30);
       this.pnlTvBottom.TabIndex = 1;
-      // 
+      //
       // pnlTvTop
-      // 
+      //
       this.pnlTvTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlTvTop.Location = new System.Drawing.Point(0, 0);
       this.pnlTvTop.Margin = new System.Windows.Forms.Padding(2);
       this.pnlTvTop.Name = "pnlTvTop";
       this.pnlTvTop.Size = new System.Drawing.Size(398, 30);
       this.pnlTvTop.TabIndex = 0;
-      // 
+      //
       // tabMain
-      // 
-      this.tabMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      //
+      this.tabMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                             | System.Windows.Forms.AnchorStyles.Left)
+                             | System.Windows.Forms.AnchorStyles.Right)));
       this.tabMain.Controls.Add(this.tabPagePdfImage);
       this.tabMain.Controls.Add(this.tabPagePdfStructure);
       this.tabMain.ItemSize = new System.Drawing.Size(1, 1);
@@ -261,9 +264,9 @@
       this.tabMain.SelectedIndex = 0;
       this.tabMain.Size = new System.Drawing.Size(924, 714);
       this.tabMain.TabIndex = 2;
-      // 
+      //
       // tabPagePdfImage
-      // 
+      //
       this.tabPagePdfImage.AutoScroll = true;
       this.tabPagePdfImage.BackColor = System.Drawing.SystemColors.AppWorkspace;
       this.tabPagePdfImage.Controls.Add(this.pbPdfImage);
@@ -275,9 +278,9 @@
       this.tabPagePdfImage.Padding = new System.Windows.Forms.Padding(2);
       this.tabPagePdfImage.Size = new System.Drawing.Size(916, 705);
       this.tabPagePdfImage.TabIndex = 0;
-      // 
+      //
       // tabPagePdfStructure
-      // 
+      //
       this.tabPagePdfStructure.Controls.Add(this.txtPdfStructure);
       this.tabPagePdfStructure.Location = new System.Drawing.Point(4, 5);
       this.tabPagePdfStructure.Margin = new System.Windows.Forms.Padding(2);
@@ -286,9 +289,9 @@
       this.tabPagePdfStructure.Size = new System.Drawing.Size(916, 705);
       this.tabPagePdfStructure.TabIndex = 1;
       this.tabPagePdfStructure.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtPdfStructure
-      // 
+      //
       this.txtPdfStructure.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtPdfStructure.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtPdfStructure.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,9 +303,9 @@
       this.txtPdfStructure.Size = new System.Drawing.Size(912, 703);
       this.txtPdfStructure.TabIndex = 0;
       this.txtPdfStructure.WordWrap = false;
-      // 
+      //
       // pnlBackground
-      // 
+      //
       this.pnlBackground.Controls.Add(this.splitterMain);
       this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlBackground.Location = new System.Drawing.Point(0, 61);
@@ -311,42 +314,42 @@
       this.pnlBackground.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
       this.pnlBackground.Size = new System.Drawing.Size(1324, 716);
       this.pnlBackground.TabIndex = 4;
-      // 
+      //
       // txtObjectNumberBreak
-      // 
+      //
       this.txtObjectNumberBreak.Location = new System.Drawing.Point(613, 8);
       this.txtObjectNumberBreak.Name = "txtObjectNumberBreak";
       this.txtObjectNumberBreak.Size = new System.Drawing.Size(72, 20);
       this.txtObjectNumberBreak.TabIndex = 2;
-      // 
+      //
       // lblDebugBreak
-      // 
+      //
       this.lblDebugBreak.AutoSize = true;
       this.lblDebugBreak.Location = new System.Drawing.Point(579, 11);
       this.lblDebugBreak.Name = "lblDebugBreak";
       this.lblDebugBreak.Size = new System.Drawing.Size(35, 13);
       this.lblDebugBreak.TabIndex = 3;
       this.lblDebugBreak.Text = "Break";
-      // 
+      //
       // pnlPdfImageShadow
-      // 
+      //
       this.pnlPdfImageShadow.BackColor = System.Drawing.Color.Black;
       this.pnlPdfImageShadow.Location = new System.Drawing.Point(10, 10);
       this.pnlPdfImageShadow.Name = "pnlPdfImageShadow";
       this.pnlPdfImageShadow.Size = new System.Drawing.Size(400, 400);
       this.pnlPdfImageShadow.TabIndex = 0;
-      // 
+      //
       // pbPdfImage
-      // 
+      //
       this.pbPdfImage.BackColor = System.Drawing.Color.White;
       this.pbPdfImage.Location = new System.Drawing.Point(8, 8);
       this.pbPdfImage.Name = "pbPdfImage";
       this.pbPdfImage.Size = new System.Drawing.Size(400, 400);
       this.pbPdfImage.TabIndex = 0;
       this.pbPdfImage.TabStop = false;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1324, 792);

@@ -58,7 +58,7 @@ namespace Org.GS
           return winService;
         }
         catch (Exception ex)
-        { 
+        {
           if (ex.Message.Contains(" was not found "))
             return null;
           else
@@ -159,7 +159,7 @@ namespace Org.GS
             winService.CanPauseAndContinue = serviceController.CanPauseAndContinue;
             winService.CanStop = serviceController.CanStop;
             taskResult.Object = winService;
-  
+
             if (serviceController.CanStop == false && serviceController.Status != ServiceControllerStatus.Stopped && serviceController.Status != ServiceControllerStatus.StopPending)
               return taskResult.Warning("Windows Service '" + winServiceName + "' cannot be stopped, or is already stopped.");
           }
@@ -229,7 +229,7 @@ namespace Org.GS
             winService.CanPauseAndContinue = serviceController.CanPauseAndContinue;
             winService.CanStop = serviceController.CanStop;
             taskResult.Object = winService;
-          
+
             if (serviceController.CanPauseAndContinue == false)
               return taskResult.Failed("Windows Service '" + winServiceName + "' cannot be paused.");
           }

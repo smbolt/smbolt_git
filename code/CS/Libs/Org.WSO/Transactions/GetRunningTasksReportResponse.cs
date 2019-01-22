@@ -12,8 +12,11 @@ namespace Org.WSO.Transactions
   public class GetRunningTasksReportResponse : TransactionBase
   {
     [XMap]
-    public string RunningTasksReport { get; set; }
-    
+    public string RunningTasksReport {
+      get;
+      set;
+    }
+
     public GetRunningTasksReportResponse()
     {
       this.RunningTasksReport = string.Empty;

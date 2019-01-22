@@ -11,20 +11,29 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "OrgType")]
-    public partial class OrgType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "OrgType")]
+  public partial class OrgType
+  {
+    public OrgType()
     {
-        public OrgType()
-        {
-            this.Organizations = new HashSet<Organization>();
-        }
-    
-        public int OrgTypeId { get; set; }
-        public string OrgTypeValue { get; set; }
-    
-        public virtual ICollection<Organization> Organizations { get; set; }
+      this.Organizations = new HashSet<Organization>();
     }
+
+    public int OrgTypeId {
+      get;
+      set;
+    }
+    public string OrgTypeValue {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Organization> Organizations {
+      get;
+      set;
+    }
+  }
 }

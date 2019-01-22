@@ -12,12 +12,24 @@ namespace Org.Notify
     private int optionsLength = 2;
 
     private bool _throwExceptions;
-    public bool ThrowExceptions { get { return _throwExceptions; } }
+    public bool ThrowExceptions {
+      get {
+        return _throwExceptions;
+      }
+    }
 
     private bool _logExceptions;
-    public bool LogExceptions { get { return _logExceptions; } }
+    public bool LogExceptions {
+      get {
+        return _logExceptions;
+      }
+    }
 
-    public string OptionsAsString { get { return Get_OptionsAsString(); } }
+    public string OptionsAsString {
+      get {
+        return Get_OptionsAsString();
+      }
+    }
 
     public NotificationsManagerOptions()
     {
@@ -40,7 +52,7 @@ namespace Org.Notify
     private string Get_OptionsAsString()
     {
       return (_throwExceptions ? "1" : "0") +
-        (_logExceptions ? "1" : "0");
+             (_logExceptions ? "1" : "0");
     }
 
   }

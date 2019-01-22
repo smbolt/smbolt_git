@@ -8,11 +8,26 @@ namespace Org.GS
 {
   public class TestObject
   {
-    public int ObjectId { get; set; }
-    public int RunDuration { get; set; }
-    public int Decrement { get; set; }
-    public int SecondsRemaining { get; set; }
-    public int ThreadId { get; set; }
+    public int ObjectId {
+      get;
+      set;
+    }
+    public int RunDuration {
+      get;
+      set;
+    }
+    public int Decrement {
+      get;
+      set;
+    }
+    public int SecondsRemaining {
+      get;
+      set;
+    }
+    public int ThreadId {
+      get;
+      set;
+    }
 
     public TestObject(int objectId, int runDuration, int decrement)
     {
@@ -20,7 +35,7 @@ namespace Org.GS
       this.RunDuration = runDuration;
       this.Decrement = decrement;
       this.SecondsRemaining = runDuration;
-      this.ThreadId = 0; 
+      this.ThreadId = 0;
     }
   }
 }

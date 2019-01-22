@@ -8,16 +8,28 @@ namespace Org.GS.Configuration
   [Serializable]
   public class ConfigObjectBase
   {
-    public string ConfigProgram { get; set; }
-    public string NamingPrefix { get; set; }
-    public virtual bool IsUpdated { get { return false; } }
+    public string ConfigProgram {
+      get;
+      set;
+    }
+    public string NamingPrefix {
+      get;
+      set;
+    }
+    public virtual bool IsUpdated {
+      get {
+        return false;
+      }
+    }
 
     public string ConfigGroup
     {
-      get { return this.NamingPrefix.Trim() + this.GetType().Name; }
+      get {
+        return this.NamingPrefix.Trim() + this.GetType().Name;
+      }
     }
 
-    public ConfigObjectBase() 
+    public ConfigObjectBase()
     {
       this.ConfigProgram = String.Empty;
       this.NamingPrefix = String.Empty;

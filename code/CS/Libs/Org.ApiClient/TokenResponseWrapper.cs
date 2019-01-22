@@ -8,16 +8,25 @@ using Org.GS;
 
 namespace Org.ApiClient
 {
-    public class TokenResponseWrapper
-    {
-        public string TokenRequestUrl { get; set; }
-        public TokenResponseStatus TokenResponseStatus { get; set; }
-        public TokenResponse TokenResponse { get; set; }
-
-        public TokenResponseWrapper()
-        {
-            this.TokenResponseStatus = TokenResponseStatus.TokenNotRequested;
-
-        }
+  public class TokenResponseWrapper
+  {
+    public string TokenRequestUrl {
+      get;
+      set;
     }
+    public TokenResponseStatus TokenResponseStatus {
+      get;
+      set;
+    }
+    public TokenResponse TokenResponse {
+      get;
+      set;
+    }
+
+    public TokenResponseWrapper()
+    {
+      this.TokenResponseStatus = TokenResponseStatus.TokenNotRequested;
+
+    }
+  }
 }

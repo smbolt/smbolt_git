@@ -9,6 +9,8 @@ namespace Org.MOD
   public class ModuleEventManager : MarshalByRefObject
   {
     public event EventHandler ModuleEvent;
-    public void FireEvent() { ModuleEvent(this, EventArgs.Empty); }
+    public void FireEvent() {
+      ModuleEvent(this, EventArgs.Empty);
+    }
   }
 }

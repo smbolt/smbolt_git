@@ -117,7 +117,7 @@ namespace Org.TerminalTest
 
           while (formLocation.X > totalScreenArea.Width - 500)
           {
-            formLocation = new Point(formLocation.X - 200, formLocation.Y); 
+            formLocation = new Point(formLocation.X - 200, formLocation.Y);
 
             if (formLocation.X < 200)
               break;

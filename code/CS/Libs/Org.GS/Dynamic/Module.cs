@@ -10,11 +10,27 @@ namespace Org.GS.Dynamic
 {
   public class Module
   {
-    public string ModuleName { get; set; }
-    public string ModuleTitle { get; set; }
-    public string ModuleVersion { get; set; }
-    public string ModuleTitleDisplay { get { return this.ModuleTitle + " - " + this.ModuleVersion; } }
-    public string ModulePath { get; set; }
+    public string ModuleName {
+      get;
+      set;
+    }
+    public string ModuleTitle {
+      get;
+      set;
+    }
+    public string ModuleVersion {
+      get;
+      set;
+    }
+    public string ModuleTitleDisplay {
+      get {
+        return this.ModuleTitle + " - " + this.ModuleVersion;
+      }
+    }
+    public string ModulePath {
+      get;
+      set;
+    }
 
     public string ModuleNameShort
     {
@@ -22,28 +38,36 @@ namespace Org.GS.Dynamic
       {
         if (this.ModuleName == null)
           return String.Empty;
-        return this.ModuleName.Replace(".Module", String.Empty); 
+        return this.ModuleName.Replace(".Module", String.Empty);
       }
     }
 
     public string ModuleFileName
     {
-      get { return this.GetModuleFileName(); }
+      get {
+        return this.GetModuleFileName();
+      }
     }
 
     public string ModuleKey
     {
-      get { return this.GetModuleKey(); }
+      get {
+        return this.GetModuleKey();
+      }
     }
 
     public bool IsPdbFilePresent
     {
-      get { return this.GetIsPdbFilePresent(); }
+      get {
+        return this.GetIsPdbFilePresent();
+      }
     }
 
     public string FullPath
     {
-      get { return this.GetFullPath(); }
+      get {
+        return this.GetFullPath();
+      }
     }
 
     public Module()

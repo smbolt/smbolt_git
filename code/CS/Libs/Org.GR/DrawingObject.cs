@@ -9,20 +9,29 @@ using Org.GS;
 
 namespace Org.GR
 {
-	public class DrawingObject
-	{
-		public Point Location { get; set; }
-		public Size Size { get; set; }
+  public class DrawingObject
+  {
+    public Point Location {
+      get;
+      set;
+    }
+    public Size Size {
+      get;
+      set;
+    }
 
-		public DrawingObjectSet DrawingObjectSet { get; set; }
+    public DrawingObjectSet DrawingObjectSet {
+      get;
+      set;
+    }
 
-		public DrawingObject()
-		{
-		}
+    public DrawingObject()
+    {
+    }
 
-		public virtual void DrawObject(Graphics gr, float scale, PointF origin)
-		{
-		}
+    public virtual void DrawObject(Graphics gr, float scale, PointF origin)
+    {
+    }
 
-	}
+  }
 }

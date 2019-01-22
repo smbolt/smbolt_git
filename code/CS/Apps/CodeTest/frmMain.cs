@@ -26,11 +26,11 @@ namespace Org.CodeTest
       string action = g.GetActionFromEvent(sender);
 
       switch (action)
-      {        
+      {
         case "Go":
           Go();
           break;
-        
+
         case "Exit":
           this.Close();
           break;
@@ -46,12 +46,12 @@ namespace Org.CodeTest
     {
       try
       {
-        a = new a();        
+        a = new a();
       }
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during initialization of the application object 'a'." + g.crlf2 +
-          ex.ToReport(), "Code Test - Program Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), "Code Test - Program Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
     }

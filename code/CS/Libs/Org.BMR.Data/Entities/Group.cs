@@ -11,24 +11,45 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Group")]
-    public partial class Group
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Group")]
+  public partial class Group
+  {
+    public Group()
     {
-        public Group()
-        {
-            this.GroupMemberships = new HashSet<GroupMembership>();
-        }
-    
-        public int GroupId { get; set; }
-        public int OrgId { get; set; }
-        public string GroupName { get; set; }
-        public int StatusId { get; set; }
-    
-        public virtual Status Status { get; set; }
-        public virtual ICollection<GroupMembership> GroupMemberships { get; set; }
-        public virtual Organization Organization { get; set; }
+      this.GroupMemberships = new HashSet<GroupMembership>();
     }
+
+    public int GroupId {
+      get;
+      set;
+    }
+    public int OrgId {
+      get;
+      set;
+    }
+    public string GroupName {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+
+    public virtual Status Status {
+      get;
+      set;
+    }
+    public virtual ICollection<GroupMembership> GroupMemberships {
+      get;
+      set;
+    }
+    public virtual Organization Organization {
+      get;
+      set;
+    }
+  }
 }

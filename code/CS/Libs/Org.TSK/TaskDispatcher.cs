@@ -25,7 +25,7 @@ namespace Org.TSK
     }
 
     public async override Task<TaskResult>DispatchTaskAsync(ITaskProcessor taskProcessor, TaskRequest taskRequest)
-    {           
+    {
       try
       {
         this.ContinueTask = true;

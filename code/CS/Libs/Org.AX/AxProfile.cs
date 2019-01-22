@@ -13,20 +13,43 @@ namespace Org.AX
   public class AxProfile : Dictionary<string, AxAction>
   {
     [XMap(XType = XType.Element, WrapperElement = "VariableSet", CollectionElements = "Variable", UseKeyValue = true)]
-    public VariableSet VariableSet { get; set; }
+    public VariableSet VariableSet {
+      get;
+      set;
+    }
 
     [XMap(IsKey = true)]
-    public string Name { get; set; }
-    public string NameLower { get { return (this.Name.IsNotBlank() ? this.Name.ToLower() : String.Empty); } }
+    public string Name {
+      get;
+      set;
+    }
+    public string NameLower {
+      get {
+        return (this.Name.IsNotBlank() ? this.Name.ToLower() : String.Empty);
+      }
+    }
 
     [XMap(DefaultValue = "Active")]
-    public ProfileStatus ProfileStatus { get; set; }
+    public ProfileStatus ProfileStatus {
+      get;
+      set;
+    }
 
-    public bool IsDryRun { get { return Get_IsDryRun(); } }
+    public bool IsDryRun {
+      get {
+        return Get_IsDryRun();
+      }
+    }
 
-    public DateTime RunDateTime { get; set; }
+    public DateTime RunDateTime {
+      get;
+      set;
+    }
 
-    public AxProfileSet AxProfileSet { get; set; }
+    public AxProfileSet AxProfileSet {
+      get;
+      set;
+    }
     private ParmSet _parms;
 
     public AxProfile()
@@ -35,7 +58,7 @@ namespace Org.AX
       this.ProfileStatus = ProfileStatus.NotSet;
       this.RunDateTime = DateTime.Now;
       this.VariableSet = new VariableSet();
-      _parms = new ParmSet();      
+      _parms = new ParmSet();
     }
 
     public AxProfile(string name)
@@ -101,7 +124,7 @@ namespace Org.AX
         throw new Exception("An exception has occurred while attempting to set the initial AxProfileParms from a string array", ex);
       }
     }
-    
+
     private void ResolveVariables()
     {
       try
@@ -123,7 +146,7 @@ namespace Org.AX
         throw new Exception("An exception occurred while attempting to resolve the variables in the AxProfileSet.", ex);
       }
     }
-    
+
 
     private string ReplaceVariables(string value, AxProfile profile)
     {
@@ -209,7 +232,7 @@ namespace Org.AX
 
       return value;
     }
-    
+
     private bool Get_IsDryRun()
     {
       if (_parms == null || _parms.Count == 0)

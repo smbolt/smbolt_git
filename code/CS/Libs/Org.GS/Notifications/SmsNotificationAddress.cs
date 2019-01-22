@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Org.GS.Notifications
 {
   public class SmsNotificationAddress : NotificationAddressBase
-  {    
+  {
     public SmsNotificationAddress()
     {
     }

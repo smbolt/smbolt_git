@@ -8,21 +8,21 @@ using Org.GS;
 
 namespace Org.DocGen.DocSpec
 {
-    [Meta(OxName = "rPr", ParentSet = "B", Abbr = "RPr")]
-    public class RunProperties : DocumentElement
+  [Meta(OxName = "rPr", ParentSet = "B", Abbr = "RPr")]
+  public class RunProperties : DocumentElement
+  {
+    public RunProperties() { }
+
+    public RunProperties(XElement xml, Doc doc, DocumentElement parent)
     {
-        public RunProperties() { }
+      base.Initialize(xml, doc, parent);
 
-        public RunProperties(XElement xml, Doc doc, DocumentElement parent)
-        {
-            base.Initialize(xml, doc, parent);
+      if (xml == null)
+        return;
 
-            if (xml == null)
-                return;
-
-            IEnumerable<XElement> set = xml.Elements();
-            foreach (XElement e in set)
-                this.ChildElements.Add(DeFactory.CreateDeObject(this.ParentSet, e.Name.LocalName, e, doc, this));
-        }
+      IEnumerable<XElement> set = xml.Elements();
+      foreach (XElement e in set)
+        this.ChildElements.Add(DeFactory.CreateDeObject(this.ParentSet, e.Name.LocalName, e, doc, this));
     }
+  }
 }

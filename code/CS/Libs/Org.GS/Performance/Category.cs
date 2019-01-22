@@ -10,13 +10,22 @@ namespace Org.GS.Performance
   public class Category
   {
     [XMap(IsKey=true)]
-    public string CategoryName { get; set; }
+    public string CategoryName {
+      get;
+      set;
+    }
 
     [XMap]
-    public PerformanceCounterCategoryType CategoryType { get; set; }
+    public PerformanceCounterCategoryType CategoryType {
+      get;
+      set;
+    }
 
     [XMap(XType=XType.Element, CollectionElements="Counter")]
-    public CounterSet CounterSet { get; set; }
+    public CounterSet CounterSet {
+      get;
+      set;
+    }
 
     public Category()
     {

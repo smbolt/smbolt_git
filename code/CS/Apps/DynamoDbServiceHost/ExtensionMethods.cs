@@ -98,7 +98,7 @@ namespace DynamoDbServiceHost
 
       string report = sb.ToString();
       return report;
-    } 
+    }
 
     [DebuggerStepThrough]
     public static bool IsBlank(this string s)

@@ -8,12 +8,30 @@ namespace Org.GS
 {
   public class SoftwareSegment
   {
-    public int SegmentNumber { get; set; }
-    public int TotalSegments { get; set; }
-    public int SegmentSize { get; set; }
-    public int TotalFileSize { get; set; }
-    public string SegmentData { get; set; }
-    public int ErrorCode { get; set; }
+    public int SegmentNumber {
+      get;
+      set;
+    }
+    public int TotalSegments {
+      get;
+      set;
+    }
+    public int SegmentSize {
+      get;
+      set;
+    }
+    public int TotalFileSize {
+      get;
+      set;
+    }
+    public string SegmentData {
+      get;
+      set;
+    }
+    public int ErrorCode {
+      get;
+      set;
+    }
 
     public SoftwareSegment()
     {

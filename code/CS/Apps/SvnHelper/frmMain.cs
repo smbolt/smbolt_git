@@ -24,7 +24,7 @@ namespace Org.SvnHelper
     private Size _normalizedSize = new Size(900, 600);
     private bool _hideSyncTab = false;
 
-    private SvnResults _svnResults; 
+    private SvnResults _svnResults;
 
     private Task svnUpdateTask;
     private Task svnCommitTask;
@@ -103,18 +103,18 @@ namespace Org.SvnHelper
         case "ClearLog":
           a.ClearLogFile();
           txtOut.Clear();
-          break; 
+          break;
 
         case "Hide":
           //txtOut.Text = _svnResults.GetResults();
           this.Visible = false;
-          break; 
+          break;
       }
     }
 
     private void Stop()
     {
-      _continueProcess = false; 
+      _continueProcess = false;
     }
 
     private void UpdateSvn()
@@ -128,7 +128,7 @@ namespace Org.SvnHelper
       var t = new TPL.Task(() => this.UpdateSvnTask());
       t.Start();
     }
-        
+
     private void UpdateSvnTask()
     {
       this.Invoke((Action)(((() => this.Cursor = Cursors.WaitCursor))));
@@ -138,7 +138,7 @@ namespace Org.SvnHelper
         bool processAllFolders = true;
         if (g.AppConfig.ContainsKey("ProcessAllFolders"))
           processAllFolders = g.AppConfig.GetBoolean("ProcessAllFolders");
-        
+
         int updateInterval = g.GetCI("UpdateInterval").ToInt32OrDefault(1000);
 
         if (!g.AppConfig.ContainsKey("ProjectPath"))
@@ -225,7 +225,7 @@ namespace Org.SvnHelper
       }
       catch (Exception ex)
       {
-        System.Threading.Thread.Sleep(100); 
+        System.Threading.Thread.Sleep(100);
         ProgressNotification("Exception occurred during SVN Update Process.");
         a.Log("Exception occurred during SVN Update Process." + g.crlf + ex.ToReport());
       }
@@ -255,7 +255,7 @@ namespace Org.SvnHelper
         bool processAllFolders = true;
         if (g.AppConfig.ContainsKey("ProcessAllFolders"))
           processAllFolders = g.AppConfig.GetBoolean("ProcessAllFolders");
-        
+
         int updateInterval = g.GetCI("UpdateInterval").ToInt32OrDefault(1000);
 
         if (!g.AppConfig.ContainsKey("ProjectPath"))
@@ -281,9 +281,9 @@ namespace Org.SvnHelper
           List<string> directoryPaths = Directory.GetDirectories(projectPath).ToList();
           foreach (string directoryPath in directoryPaths)
           {
-              string projectName = Path.GetFileName(directoryPath);
-              if (_svnControlList.Contains(projectName))
-                  projects.Add(Path.GetFileName(projectName));
+            string projectName = Path.GetFileName(directoryPath);
+            if (_svnControlList.Contains(projectName))
+              projects.Add(Path.GetFileName(projectName));
           }
         }
 
@@ -336,11 +336,11 @@ namespace Org.SvnHelper
 
         if (_continueProcess)
         {
-            System.Threading.Thread.Sleep(100); 
-            ProgressNotification("SvnCommit processing complete.");
-            a.Log("SvnCommit processing complete.");
+          System.Threading.Thread.Sleep(100);
+          ProgressNotification("SvnCommit processing complete.");
+          a.Log("SvnCommit processing complete.");
         }
-                
+
       }
       catch (Exception ex)
       {
@@ -354,7 +354,7 @@ namespace Org.SvnHelper
 
     private void SyncFiles(string syncCommand)
     {
-      
+
       _continueProcess = true;
       _svnResults = new SvnResults();
       notifyIconMain.BalloonTipText = "Running Sync: " + syncCommand;
@@ -366,15 +366,15 @@ namespace Org.SvnHelper
     }
 
     private void SyncFilesTask(string syncCommand)
-    {      
+    {
       this.Invoke((Action)(((() => this.Cursor = Cursors.WaitCursor))));
 
       try
-      {    
+      {
         int updateInterval = g.GetCI("UpdateInterval").ToInt32OrDefault(1000);
 
         StringBuilder sbResults = new StringBuilder();
-        
+
         int taskCount = 0;
         var syncTaskList = GetSyncTasks();
 
@@ -389,7 +389,7 @@ namespace Org.SvnHelper
             ProgressNotification(syncCommand + " processing interrupted.");
             a.Log(syncCommand + " processing interrupted.");
             break;
-          }          
+          }
 
           if (!_syncTaskConfigs.ContainsKey(syncTaskName))
           {
@@ -425,18 +425,18 @@ namespace Org.SvnHelper
 
           ProcessParms processParms = new ProcessParms();
           processParms.ExecutablePath = _bcExePath;
-          processParms.Args = new string[] {  
-              "/silent",
-              "@" + bcScriptsPath,
-              syncSpec.LeftFolder,
-              syncSpec.RightFolder, 
-              syncDirection,
-              syncSpec.Filter,
-              logFilePath
+          processParms.Args = new string[] {
+            "/silent",
+            "@" + bcScriptsPath,
+            syncSpec.LeftFolder,
+            syncSpec.RightFolder,
+            syncDirection,
+            syncSpec.Filter,
+            logFilePath
           };
 
           var processHelper = new ProcessHelper();
-          var taskResult = processHelper.RunExternalProcess(processParms); 
+          var taskResult = processHelper.RunExternalProcess(processParms);
           Application.DoEvents();
 
           if (taskResult.TaskResultStatus == TaskResultStatus.Success)
@@ -454,10 +454,10 @@ namespace Org.SvnHelper
 
         if (_continueProcess)
         {
-            System.Threading.Thread.Sleep(100); 
-            ProgressNotification(syncCommand + " processing complete.");
-            a.Log(syncCommand + " processing complete.");
-        }                
+          System.Threading.Thread.Sleep(100);
+          ProgressNotification(syncCommand + " processing complete.");
+          a.Log(syncCommand + " processing complete.");
+        }
       }
       catch (Exception ex)
       {
@@ -494,7 +494,7 @@ namespace Org.SvnHelper
 
       _hideSyncTab = g.AppConfig.GetBoolean("HideSyncTab");
 
-      _syncTaskConfigs = g.AppConfig.GetDictionary("SyncConfigs"); 
+      _syncTaskConfigs = g.AppConfig.GetDictionary("SyncConfigs");
 
       if (_hideSyncTab)
       {
@@ -535,20 +535,20 @@ namespace Org.SvnHelper
         string folderName = Path.GetFileName(folderToProcess);
         lstSvnSelect.Items.Add(folderName);
         if (_svnControlList.Contains(folderName))
-          lstSvnSelect.SetItemChecked(lstSvnSelect.Items.Count - 1, true); 
+          lstSvnSelect.SetItemChecked(lstSvnSelect.Items.Count - 1, true);
       }
     }
 
     private void LoadSyncList()
     {
       _syncTaskList = g.AppConfig.GetList("SyncControl");
-      
+
       lstSyncSelect.Items.Clear();
 
       foreach (string syncTask in _syncTaskList)
       {
         lstSyncSelect.Items.Add(syncTask);
-        lstSyncSelect.SetItemChecked(lstSyncSelect.Items.Count - 1, true); 
+        lstSyncSelect.SetItemChecked(lstSyncSelect.Items.Count - 1, true);
       }
     }
 
@@ -636,7 +636,7 @@ namespace Org.SvnHelper
 
       txtOut.Text = File.ReadAllText(logPath);
     }
-        
+
 
     private void SentNotifyIconMessage(string message)
     {
@@ -731,7 +731,7 @@ namespace Org.SvnHelper
 
       if (!syncSpec.IsValid())
       {
-        MessageBox.Show("Syncronization specifications (ConfigSyncSpec) named '" + syncConfigName + "ConfigSyncSpec' does not exist or is invalid.", 
+        MessageBox.Show("Syncronization specifications (ConfigSyncSpec) named '" + syncConfigName + "ConfigSyncSpec' does not exist or is invalid.",
                         "SvnHelper - Configuration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
@@ -745,7 +745,7 @@ namespace Org.SvnHelper
 
       syncSpec.Active = active;
 
-      g.AppConfig.UpdateCO<ConfigSyncSpec>(syncSpec);  
+      g.AppConfig.UpdateCO<ConfigSyncSpec>(syncSpec);
       g.AppConfig.Save();
     }
   }

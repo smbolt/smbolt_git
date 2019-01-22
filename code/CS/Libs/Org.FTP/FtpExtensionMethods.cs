@@ -20,7 +20,7 @@ namespace Org.FTP
         s = s.Replace("\r", String.Empty);
 
       if (s.Contains("\t"))
-        s = s.Replace("\t", " "); 
+        s = s.Replace("\t", " ");
 
       string[] lines = s.Split(Constants.NewLineDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
@@ -43,7 +43,7 @@ namespace Org.FTP
         }
       }
 
-      return set; 
+      return set;
     }
 
     public static FileSystemItem BuildFileFromNineTokenDirectoryListEntry(this string[] array)
@@ -98,7 +98,7 @@ namespace Org.FTP
         }
         catch (Exception ex)
         {
-          throw new Exception("An exception occurred while trying to create a valid time of day value from the token '" + array[7] + ".", ex); 
+          throw new Exception("An exception occurred while trying to create a valid time of day value from the token '" + array[7] + ".", ex);
         }
 
         string fileName = array[8];
@@ -117,7 +117,7 @@ namespace Org.FTP
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to create a FileSystemItem (type=file) from an array of tokens which contains " +
-                            "the values '" + array.StringArrayToString() + "'.", ex); 
+                            "the values '" + array.StringArrayToString() + "'.", ex);
       }
     }
   }

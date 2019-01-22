@@ -13,7 +13,10 @@ namespace Org.Dx.Business.TextProcessing
   public class DataMapSet : List<DataMap>
   {
     [XMap(IsRequired = true)]
-    public int UnitLevel { get; set; }
+    public int UnitLevel {
+      get;
+      set;
+    }
 
     public List<StatementFile> GetStatementFiles(Text text, RecogSpecSet recogSpecSet, string formatName)
     {

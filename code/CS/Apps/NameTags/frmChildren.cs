@@ -14,110 +14,110 @@ using Org.GS;
 
 namespace NameTags
 {
-	public partial class frmChildren : Form
-	{
-		private List<Models.Person> _children;
-		private ConfigDbSpec _configDbSpec;
+  public partial class frmChildren : Form
+  {
+    private List<Models.Person> _children;
+    private ConfigDbSpec _configDbSpec;
 
-		public frmChildren(ConfigDbSpec configDbSpec)
-		{
-			InitializeComponent();
+    public frmChildren(ConfigDbSpec configDbSpec)
+    {
+      InitializeComponent();
 
-			_configDbSpec = configDbSpec;
+      _configDbSpec = configDbSpec;
 
-			InitializeForm();
-		}
-
-
-		private void InitializeForm()
-		{
-			InitializeGrid();
-			_children = GetChildren();
-			LoadGrid();
-		}
-
-		private void LoadGrid()
-		{
-			gvChildren.Rows.Clear();
-
-			if (_children == null)
-				return;
-
-			foreach (var child in _children)
-			{
-				gvChildren.Rows.Add(new string[] {
-					child.LastName,
-					child.FirstName,
-					(child.SchoolGrade.HasValue ? child.SchoolGrade.Value.ToString() : String.Empty),
-					child.Birthday,
-					String.Empty
-				});
-			}
-		}
+      InitializeForm();
+    }
 
 
-		private void InitializeGrid()
-		{
-			gvChildren.Columns.Clear();
+    private void InitializeForm()
+    {
+      InitializeGrid();
+      _children = GetChildren();
+      LoadGrid();
+    }
 
-			DataGridViewColumn col = new DataGridViewTextBoxColumn();
-			col.Name = "LastName";
-			col.HeaderText = "Last Name";
-			col.Width = 120;
-			col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			gvChildren.Columns.Add(col);
+    private void LoadGrid()
+    {
+      gvChildren.Rows.Clear();
 
-			col = new DataGridViewTextBoxColumn();
-			col.Name = "FirstName";
-			col.HeaderText = "First Name";
-			col.Width = 120;
-			col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			gvChildren.Columns.Add(col);
+      if (_children == null)
+        return;
 
-			col = new DataGridViewTextBoxColumn();
-			col.Name = "Grade";
-			col.HeaderText = "Grade";
-			col.Width = 160;
-			col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			gvChildren.Columns.Add(col);
+      foreach (var child in _children)
+      {
+        gvChildren.Rows.Add(new string[] {
+          child.LastName,
+          child.FirstName,
+          (child.SchoolGrade.HasValue ? child.SchoolGrade.Value.ToString() : String.Empty),
+          child.Birthday,
+          String.Empty
+        });
+      }
+    }
 
-			col = new DataGridViewTextBoxColumn();
-			col.Name = "BirthDate";
-			col.HeaderText = "Birth Date";
-			col.Width = 300;
-			col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			gvChildren.Columns.Add(col);
 
-			col = new DataGridViewTextBoxColumn();
-			col.Name = "Comments";
-			col.HeaderText = "Comments";
-			col.Width = 360;
-			col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-			gvChildren.Columns.Add(col);
-		}
+    private void InitializeGrid()
+    {
+      gvChildren.Columns.Clear();
 
-		private List<Models.Person> GetChildren()
-		{
-			try
-			{
-				List<Models.Person> persons = null;
+      DataGridViewColumn col = new DataGridViewTextBoxColumn();
+      col.Name = "LastName";
+      col.HeaderText = "Last Name";
+      col.Width = 120;
+      col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+      gvChildren.Columns.Add(col);
 
-				using (var repo = new CHCMRepository(_configDbSpec))
-				{
-					persons = repo.GetPersons();
-				}
+      col = new DataGridViewTextBoxColumn();
+      col.Name = "FirstName";
+      col.HeaderText = "First Name";
+      col.Width = 120;
+      col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+      gvChildren.Columns.Add(col);
 
-				return persons;
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("An exception occurred while attempting to retrieve the list of children from the database." + g.crlf2 + ex.ToReport(),
-												"Children List - Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      col = new DataGridViewTextBoxColumn();
+      col.Name = "Grade";
+      col.HeaderText = "Grade";
+      col.Width = 160;
+      col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+      gvChildren.Columns.Add(col);
 
-				return null;
-			}
-		}
+      col = new DataGridViewTextBoxColumn();
+      col.Name = "BirthDate";
+      col.HeaderText = "Birth Date";
+      col.Width = 300;
+      col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+      gvChildren.Columns.Add(col);
 
-	}
+      col = new DataGridViewTextBoxColumn();
+      col.Name = "Comments";
+      col.HeaderText = "Comments";
+      col.Width = 360;
+      col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+      col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+      gvChildren.Columns.Add(col);
+    }
+
+    private List<Models.Person> GetChildren()
+    {
+      try
+      {
+        List<Models.Person> persons = null;
+
+        using (var repo = new CHCMRepository(_configDbSpec))
+        {
+          persons = repo.GetPersons();
+        }
+
+        return persons;
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show("An exception occurred while attempting to retrieve the list of children from the database." + g.crlf2 + ex.ToReport(),
+                        "Children List - Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        return null;
+      }
+    }
+
+  }
 }

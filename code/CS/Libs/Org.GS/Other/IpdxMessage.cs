@@ -14,11 +14,26 @@ namespace Org.GS
 
   public class IpdxMessage
   {
-    public string Sender { get; set; }
-    public string Recipient { get; set; }
-    public IpdxMessageType MessageType { get; set; }
-    public string Text { get; set; }
-    public IpdxCommandSet IpdxCommandSet { get; set; }
+    public string Sender {
+      get;
+      set;
+    }
+    public string Recipient {
+      get;
+      set;
+    }
+    public IpdxMessageType MessageType {
+      get;
+      set;
+    }
+    public string Text {
+      get;
+      set;
+    }
+    public IpdxCommandSet IpdxCommandSet {
+      get;
+      set;
+    }
 
     public IpdxMessage()
     {
@@ -28,22 +43,22 @@ namespace Org.GS
       this.Text = String.Empty;
       this.IpdxCommandSet = new IpdxCommandSet();
     }
-        
+
     public IpdxMessage(string recipient, string text)
     {
       this.Sender = String.Empty;
       this.Recipient = recipient;
       this.MessageType = IpdxMessageType.Text;
-      this.Text = text; 
+      this.Text = text;
       this.IpdxCommandSet = new IpdxCommandSet();
-    }  
-      
+    }
+
     public IpdxMessage(string recipient, IpdxMessageType messageType, string text)
     {
       this.Sender = String.Empty;
       this.Recipient = recipient;
       this.MessageType = messageType;
-      this.Text = text; 
+      this.Text = text;
       this.IpdxCommandSet = new IpdxCommandSet();
     }
   }

@@ -7,7 +7,10 @@ namespace Org.GS.Dynamic
 {
   public class ModuleSet : Dictionary<string, Module>
   {
-    public string MainModule { get; set; }
+    public string MainModule {
+      get;
+      set;
+    }
 
     public ModuleSet()
     {

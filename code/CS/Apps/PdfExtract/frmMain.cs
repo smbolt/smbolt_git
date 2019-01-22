@@ -44,7 +44,7 @@ namespace Org.PdfExtract
         case "ShowXml":
           DisplayXml();
           break;
-          
+
         case "Exit":
           this.Close();
           break;
@@ -56,7 +56,7 @@ namespace Org.PdfExtract
       this.Cursor = Cursors.WaitCursor;
       StringBuilder sb = new StringBuilder();
 
-      bool useLocationTextExtractionStrategy = cboTextExtractionStrategy.Text == "Location"; 
+      bool useLocationTextExtractionStrategy = cboTextExtractionStrategy.Text == "Location";
 
       List<string> filesToProcess = Directory.GetFiles(this._filePath, "*.pdf").ToList();
 
@@ -78,7 +78,7 @@ namespace Org.PdfExtract
           //sb.Append(text);
           var lines = text.Split(Constants.NewLineDelimiter, StringSplitOptions.RemoveEmptyEntries).ToList();
           foreach (var line in lines)
-            sb.Append(line + g.crlf); 
+            sb.Append(line + g.crlf);
         }
 
         string outText = sb.ToString();
@@ -89,7 +89,7 @@ namespace Org.PdfExtract
         MessageBox.Show("An exception occurrred attempting to process a PDF file." + g.crlf +
                         "Exception Message: " + ex.Message + g.crlf +
                         "Stack Trace: " + ex.StackTrace,
-                        "PdfExtract - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "PdfExtract - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
       this.Cursor = Cursors.Default;
@@ -206,7 +206,7 @@ namespace Org.PdfExtract
         MessageBox.Show("An exception occurrred attempting to process a PDF file." + g.crlf +
                         "Exception Message: " + ex.Message + g.crlf +
                         "Stack Trace: " + ex.StackTrace,
-                        "PdfExtract - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "PdfExtract - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
       this.Cursor = Cursors.Default;
@@ -270,13 +270,13 @@ namespace Org.PdfExtract
         _filePath = g.ImportsPath;
         _outputPath = g.ExportsPath;
 
-        cboTextExtractionStrategy.SelectedIndex = 0; 
+        cboTextExtractionStrategy.SelectedIndex = 0;
 
       }
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during program initialization." + g.crlf2 + ex.ToReport(),
-                        "PdfExtract - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "PdfExtract - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 

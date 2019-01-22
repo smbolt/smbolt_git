@@ -60,36 +60,38 @@
       this.tabPageOutput.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtOutput)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
       this.mnuMain.Size = new System.Drawing.Size(1211, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 748);
       this.lblStatus.Name = "lblStatus";
@@ -97,9 +99,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.lblScriptFilePath);
       this.pnlTop.Controls.Add(this.btnSaveScript);
       this.pnlTop.Controls.Add(this.btnRefreshTreeView);
@@ -110,18 +112,18 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1211, 79);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // lblScriptFilePath
-      // 
+      //
       this.lblScriptFilePath.AutoSize = true;
       this.lblScriptFilePath.Location = new System.Drawing.Point(136, 17);
       this.lblScriptFilePath.Name = "lblScriptFilePath";
       this.lblScriptFilePath.Size = new System.Drawing.Size(78, 13);
       this.lblScriptFilePath.TabIndex = 2;
       this.lblScriptFilePath.Text = "[script file path]";
-      // 
+      //
       // btnSaveScript
-      // 
+      //
       this.btnSaveScript.Location = new System.Drawing.Point(13, 41);
       this.btnSaveScript.Name = "btnSaveScript";
       this.btnSaveScript.Size = new System.Drawing.Size(117, 23);
@@ -130,9 +132,9 @@
       this.btnSaveScript.Text = "Save Script";
       this.btnSaveScript.UseVisualStyleBackColor = true;
       this.btnSaveScript.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnClearDisplay
-      // 
+      //
       this.btnClearDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnClearDisplay.Location = new System.Drawing.Point(1074, 12);
       this.btnClearDisplay.Name = "btnClearDisplay";
@@ -142,9 +144,9 @@
       this.btnClearDisplay.Text = "Clear Display";
       this.btnClearDisplay.UseVisualStyleBackColor = true;
       this.btnClearDisplay.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRun
-      // 
+      //
       this.btnRun.Location = new System.Drawing.Point(13, 12);
       this.btnRun.Name = "btnRun";
       this.btnRun.Size = new System.Drawing.Size(117, 23);
@@ -153,27 +155,27 @@
       this.btnRun.Text = "Run";
       this.btnRun.UseVisualStyleBackColor = true;
       this.btnRun.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.Location = new System.Drawing.Point(4, 103);
       this.splitterMain.Name = "splitterMain";
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.tvMain);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.tabMain);
       this.splitterMain.Size = new System.Drawing.Size(1211, 645);
       this.splitterMain.SplitterDistance = 252;
       this.splitterMain.TabIndex = 3;
-      // 
+      //
       // tvMain
-      // 
+      //
       this.tvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tvMain.HideSelection = false;
@@ -186,15 +188,15 @@
       this.tvMain.TabIndex = 0;
       this.tvMain.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvMain_AfterSelect);
       this.tvMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tvMain_MouseDown);
-      // 
+      //
       // imgListTreeView
-      // 
+      //
       this.imgListTreeView.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
       this.imgListTreeView.ImageSize = new System.Drawing.Size(16, 16);
       this.imgListTreeView.TransparentColor = System.Drawing.Color.Transparent;
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageScript);
       this.tabMain.Controls.Add(this.tabPageOutput);
       this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -205,9 +207,9 @@
       this.tabMain.Size = new System.Drawing.Size(953, 643);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 0;
-      // 
+      //
       // tabPageScript
-      // 
+      //
       this.tabPageScript.Controls.Add(this.txtScript);
       this.tabPageScript.Location = new System.Drawing.Point(4, 22);
       this.tabPageScript.Name = "tabPageScript";
@@ -215,9 +217,9 @@
       this.tabPageScript.TabIndex = 0;
       this.tabPageScript.Text = "Script";
       this.tabPageScript.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtScript
-      // 
+      //
       this.txtScript.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -228,7 +230,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtScript.AutoIndentCharsPatterns = "";
       this.txtScript.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtScript.BackBrush = null;
@@ -256,9 +259,9 @@
       this.txtScript.TabLength = 2;
       this.txtScript.Zoom = 100;
       this.txtScript.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.txtOut_TextChanged);
-      // 
+      //
       // tabPageOutput
-      // 
+      //
       this.tabPageOutput.Controls.Add(this.txtOutput);
       this.tabPageOutput.Location = new System.Drawing.Point(4, 22);
       this.tabPageOutput.Name = "tabPageOutput";
@@ -266,9 +269,9 @@
       this.tabPageOutput.TabIndex = 1;
       this.tabPageOutput.Text = "Output";
       this.tabPageOutput.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtOutput
-      // 
+      //
       this.txtOutput.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -279,7 +282,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtOutput.AutoIndentCharsPatterns = "";
       this.txtOutput.AutoScrollMinSize = new System.Drawing.Size(2, 13);
       this.txtOutput.BackBrush = null;
@@ -306,9 +310,9 @@
       this.txtOutput.TabIndex = 6;
       this.txtOutput.TabLength = 2;
       this.txtOutput.Zoom = 100;
-      // 
+      //
       // btnRefreshTreeView
-      // 
+      //
       this.btnRefreshTreeView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnRefreshTreeView.Location = new System.Drawing.Point(1074, 41);
       this.btnRefreshTreeView.Name = "btnRefreshTreeView";
@@ -318,9 +322,9 @@
       this.btnRefreshTreeView.Text = "Refresh TreeView";
       this.btnRefreshTreeView.UseVisualStyleBackColor = true;
       this.btnRefreshTreeView.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1219, 771);

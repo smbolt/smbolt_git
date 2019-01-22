@@ -9,12 +9,30 @@ namespace Org.GS.OrgScript.Compilation
 {
   public class Parser
   {
-    public string RawCode { get; private set; }
-    public CompilerConfig CompilerConfig { get; private set; }
-    public string[] CodeParts { get; private set; }
-    public string SyntaxNodeReport { get; private set; }
-    public List<SyntaxNodeSet> SyntaxNodeSets { get; private set; }
-    public ParserNextStep ParserNextStep { get; private set; }
+    public string RawCode {
+      get;
+      private set;
+    }
+    public CompilerConfig CompilerConfig {
+      get;
+      private set;
+    }
+    public string[] CodeParts {
+      get;
+      private set;
+    }
+    public string SyntaxNodeReport {
+      get;
+      private set;
+    }
+    public List<SyntaxNodeSet> SyntaxNodeSets {
+      get;
+      private set;
+    }
+    public ParserNextStep ParserNextStep {
+      get;
+      private set;
+    }
 
     public Parser(string rawCode, CompilerConfig compilerConfig)
     {
@@ -45,13 +63,13 @@ namespace Org.GS.OrgScript.Compilation
       try
       {
         var syntaxTree = new SyntaxTree();
-        
+
         if (this.RawCode.IsBlank())
           return syntaxTree;
 
         string[] codeParts = CreateCodeParts(this.RawCode, this.CompilerConfig.TargetRawLength);
         CompareCodePartsToRawText(this.RawCode, codeParts);
-        
+
 
         foreach (var codePart in codeParts.Where(cp => cp != null))
         {
@@ -77,7 +95,7 @@ namespace Org.GS.OrgScript.Compilation
         {
           this.SyntaxNodeReport = CreateSyntaxNodeReport(this.SyntaxNodeSets);
         }
-        
+
 
 
         return syntaxTree;

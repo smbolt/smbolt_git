@@ -21,7 +21,10 @@ namespace Org.TextUtility
     private string _ext;
     private string _folderPath;
 
-    public string NewFilePath { get; private set; }
+    public string NewFilePath {
+      get;
+      private set;
+    }
 
     public frmSaveAs(string originalFileName, string folderPath)
     {
@@ -83,7 +86,7 @@ namespace Org.TextUtility
       _existingFilesExist = cboExistingFiles.Items.Count > 1;
       ckOverwriteExisting.Enabled = _existingFilesExist;
 
-      ckOverwriteExisting.Checked = false;    
+      ckOverwriteExisting.Checked = false;
 
       btnSave.Enabled = false;
     }

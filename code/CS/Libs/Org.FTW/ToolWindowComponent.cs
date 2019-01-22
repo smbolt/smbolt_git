@@ -12,10 +12,25 @@ namespace Org.FTW
 {
   public class ToolWindowComponents
   {
-    public string Name { get; set; }
-    public frmToolWindowBase ToolWindow { get; set; }
-    public ToolPanelBase ToolPanel { get; set; }
-    public Panel DockedTarget { get; set; }
-    public Panel FloatedTarget { get; set; }
+    public string Name {
+      get;
+      set;
+    }
+    public frmToolWindowBase ToolWindow {
+      get;
+      set;
+    }
+    public ToolPanelBase ToolPanel {
+      get;
+      set;
+    }
+    public Panel DockedTarget {
+      get;
+      set;
+    }
+    public Panel FloatedTarget {
+      get;
+      set;
+    }
   }
 }

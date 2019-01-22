@@ -10,7 +10,10 @@ namespace Org.QB.QBXML
   public class QbXmlBase
   {
     [XMap (XType = XType.Attribute, Name = "requestID")]
-    public int? RequestId { get; set; }
+    public int? RequestId {
+      get;
+      set;
+    }
 
     public QbXmlBase()
     {

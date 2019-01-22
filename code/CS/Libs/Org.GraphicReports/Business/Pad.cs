@@ -8,19 +8,31 @@ using Org.GS;
 namespace Org.GraphicReports.Business
 {
   public class Pad
-	{
-		public int PadNumber { get; set; }
-		public string PadName { get; set; }
-		public WellSet WellSet { get; set; }
-		public Rig Rig { get; set; }
+  {
+    public int PadNumber {
+      get;
+      set;
+    }
+    public string PadName {
+      get;
+      set;
+    }
+    public WellSet WellSet {
+      get;
+      set;
+    }
+    public Rig Rig {
+      get;
+      set;
+    }
 
-		public Pad(Rig rig)
-		{
-			this.PadNumber = 0;
-			this.PadName = String.Empty;
-			this.WellSet = new WellSet();
-			this.Rig = rig;
-		}
+    public Pad(Rig rig)
+    {
+      this.PadNumber = 0;
+      this.PadName = String.Empty;
+      this.WellSet = new WellSet();
+      this.Rig = rig;
+    }
 
     public Pad GetForDateSpan(DateSpan dateSpan)
     {
@@ -38,7 +50,7 @@ namespace Org.GraphicReports.Business
             padForSpan.PadName = this.PadName;
           }
           if (!padForSpan.WellSet.ContainsKey(well.WellOrdinal))
-            padForSpan.WellSet.Add(well.WellOrdinal, well); 
+            padForSpan.WellSet.Add(well.WellOrdinal, well);
         }
 
       }
@@ -46,5 +58,5 @@ namespace Org.GraphicReports.Business
       return padForSpan;
     }
 
-	}
+  }
 }

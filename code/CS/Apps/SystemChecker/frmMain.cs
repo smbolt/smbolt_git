@@ -28,10 +28,10 @@ namespace SystemChecker
 
     private void btnCopyToClipboard_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(txtOut.Text); 
+      Clipboard.SetText(txtOut.Text);
 
       MessageBox.Show("The system information has been copied to the Windows Clipboard.", "System Checker",
-                      MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                      MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void RefreshSystemInfo()
@@ -46,7 +46,7 @@ namespace SystemChecker
         var systemInfo = new SystemInfo();
         sb.Append(systemInfo.SystemInfoString + Common.crlf2);
 
-        sb.Append("USER IS LOCAL ADMINISTRATOR : " + systemInfo.IsUserLocalAdmin.ToString().ToUpper() + Common.crlf2); 
+        sb.Append("USER IS LOCAL ADMINISTRATOR : " + systemInfo.IsUserLocalAdmin.ToString().ToUpper() + Common.crlf2);
 
         sb.Append("INSTALLED VERSIONS OF .NET FRAMEWORK" + Common.crlf);
         foreach (string framework in systemInfo.InstalledFrameworks)
@@ -73,7 +73,7 @@ namespace SystemChecker
     private void mnuOptionsRefresh_Click(object sender, EventArgs e)
     {
       RefreshSystemInfo();
-      MessageBox.Show("System information refreshed.", "System Checker", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+      MessageBox.Show("System information refreshed.", "System Checker", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
   }
 }

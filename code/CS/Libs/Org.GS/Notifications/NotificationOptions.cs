@@ -8,11 +8,26 @@ namespace Org.GS.Notifications
 {
   public class NotificationOptions
   {
-    public bool ThrowExceptions { get; set; }
-    public bool WaitForResults { get; set; }
-    public string Subject { get; set; }
-    public string Message { get; set; }
-    public int Code { get; set; }
+    public bool ThrowExceptions {
+      get;
+      set;
+    }
+    public bool WaitForResults {
+      get;
+      set;
+    }
+    public string Subject {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public int Code {
+      get;
+      set;
+    }
 
     public NotificationOptions()
     {

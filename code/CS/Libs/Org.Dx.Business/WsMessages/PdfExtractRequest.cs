@@ -7,26 +7,41 @@ using Org.GS;
 using Org.WSO;
 using Org.WSO.Transactions;
 
-namespace Org.Dx.Business 
+namespace Org.Dx.Business
 {
   [XMap(XType = XType.Element)]
   [WCFTrans(Version = "1.0.0.0")]
   public class PdfExtractRequest : TransactionBase
   {
     [XMap]
-    public FileExtractMode FileExtractMode { get; set; }
+    public FileExtractMode FileExtractMode {
+      get;
+      set;
+    }
 
     [XMap]
-    public string FullPath { get; set; }
+    public string FullPath {
+      get;
+      set;
+    }
 
     [XMap]
-    public string FileNamePrefix { get; set; }
+    public string FileNamePrefix {
+      get;
+      set;
+    }
 
     [XMap]
-    public string MapName { get; set; }
+    public string MapName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string FullMapPath { get; set; }
+    public string FullMapPath {
+      get;
+      set;
+    }
 
     public PdfExtractRequest()
     {

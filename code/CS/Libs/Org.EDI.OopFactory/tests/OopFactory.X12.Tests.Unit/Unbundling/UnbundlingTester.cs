@@ -11,25 +11,25 @@ using OopFactory.X12.Parsing.Model;
 
 namespace OopFactory.X12.Tests.Unit.Unbundling
 {
-    [TestClass]
-    public class UnbundlingTester
+  [TestClass]
+  public class UnbundlingTester
+  {
+    [TestMethod]
+    public void UnbundleItemsFrom856Test()
     {
-        [TestMethod]
-        public void UnbundleItemsFrom856Test()
-        {
-            X12Parser parser = new X12Parser();
-            Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("ORD._856.Example1.txt")).First();
+      X12Parser parser = new X12Parser();
+      Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("ORD._856.Example1.txt")).First();
 
-            var list = parser.UnbundleByLoop(interchange, "ITEM");
-            foreach (var item in list)
-            {
-                Trace.WriteLine("...");
-                Trace.WriteLine(item.SerializeToX12(true));
-            }
-        }
+      var list = parser.UnbundleByLoop(interchange, "ITEM");
+      foreach (var item in list)
+      {
+        Trace.WriteLine("...");
+        Trace.WriteLine(item.SerializeToX12(true));
+      }
+    }
 
-        #region Expected Values
-        private string expectedClaim1 = @"ISA*00*          *01*SECRET    *ZZ*SUBMITTERS.ID  *ZZ*RECEIVERS.ID   *030101*1253*^*00501*000000905*1*T*:~
+    #region Expected Values
+    private string expectedClaim1 = @"ISA*00*          *01*SECRET    *ZZ*SUBMITTERS.ID  *ZZ*RECEIVERS.ID   *030101*1253*^*00501*000000905*1*T*:~
   GS*HC*SENDER CODE*RECEIVER CODE*19991231*0802*1*X*005010X222~
     ST*837*0021*005010X222~
       BHT*0019*00*244579*20061015*1023*CH~
@@ -76,7 +76,7 @@ namespace OopFactory.X12.Tests.Unit.Unbundling
   GE*1*1~
 IEA*1*000000905~";
 
-        private string expectedClaim2 = @"ISA*00*          *01*SECRET    *ZZ*SUBMITTERS.ID  *ZZ*RECEIVERS.ID   *030101*1253*^*00501*000000905*1*T*:~
+    private string expectedClaim2 = @"ISA*00*          *01*SECRET    *ZZ*SUBMITTERS.ID  *ZZ*RECEIVERS.ID   *030101*1253*^*00501*000000905*1*T*:~
   GS*HC*SENDER CODE*RECEIVER CODE*19991231*0802*1*X*005010X222~
     ST*837*0021*005010X222~
       BHT*0019*00*244579*20061015*1023*CH~
@@ -134,7 +134,7 @@ IEA*1*000000905~";
   GE*1*1~
 IEA*1*000000905~";
 
-        private string expectedClaim3 = @"ISA*00*          *01*SECRET    *ZZ*SUBMITTERS.ID  *ZZ*RECEIVERS.ID   *030101*1253*^*00501*000000905*1*T*:~
+    private string expectedClaim3 = @"ISA*00*          *01*SECRET    *ZZ*SUBMITTERS.ID  *ZZ*RECEIVERS.ID   *030101*1253*^*00501*000000905*1*T*:~
   GS*HC*SENDER CODE*RECEIVER CODE*19991231*0802*1*X*005010X222~
     ST*837*0022*005010X222~
       BHT*0019*00*0123*20061015*1023*RP~
@@ -180,41 +180,41 @@ IEA*1*000000905~";
   GE*1*1~
 IEA*1*000000905~";
 
-        #endregion
+    #endregion
 
-        [TestMethod]
-        public void UnbundleClaimsFrom837Test()
-        {
-            X12Parser parser = new X12Parser();
-            Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._837P._5010.Example1_2_And_3_Combined.txt")).First();
+    [TestMethod]
+    public void UnbundleClaimsFrom837Test()
+    {
+      X12Parser parser = new X12Parser();
+      Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._837P._5010.Example1_2_And_3_Combined.txt")).First();
 
-            var list = parser.UnbundleByLoop(interchange, "2300");
-            Assert.AreEqual(3, list.Count);
-            foreach (var item in list)
-            {
-                Trace.WriteLine("...");
-                Trace.WriteLine(item.SerializeToX12(true));
-            }
+      var list = parser.UnbundleByLoop(interchange, "2300");
+      Assert.AreEqual(3, list.Count);
+      foreach (var item in list)
+      {
+        Trace.WriteLine("...");
+        Trace.WriteLine(item.SerializeToX12(true));
+      }
 
-            Assert.AreEqual(expectedClaim1, list[0].SerializeToX12(true));
-            Assert.AreEqual(expectedClaim2, list[1].SerializeToX12(true));
-            Assert.AreEqual(expectedClaim3, list[2].SerializeToX12(true));
-        }
+      Assert.AreEqual(expectedClaim1, list[0].SerializeToX12(true));
+      Assert.AreEqual(expectedClaim2, list[1].SerializeToX12(true));
+      Assert.AreEqual(expectedClaim3, list[2].SerializeToX12(true));
+    }
 
-        [TestMethod]
-        public void Unbundle835FromNthTest()
-        {
-            X12Parser parser = new X12Parser();
-            Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._835._4010.FromNth.835_DeIdent_02.dat")).First();
+    [TestMethod]
+    public void Unbundle835FromNthTest()
+    {
+      X12Parser parser = new X12Parser();
+      Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._835._4010.FromNth.835_DeIdent_02.dat")).First();
 
-            var list = parser.UnbundleByLoop(interchange, "2000");
-            Assert.AreEqual(6, list.Count);
-        }
+      var list = parser.UnbundleByLoop(interchange, "2000");
+      Assert.AreEqual(6, list.Count);
+    }
 
-        [TestMethod]
-        public void Unbundling835ByLoop2000()
-        {
-            string unbundledLoop2000 = @"ISA*00*          *00*          *ZZ*ASHTB          *ZZ*01017          *040315*1005*U*00401*004075123*0*P*:~
+    [TestMethod]
+    public void Unbundling835ByLoop2000()
+    {
+      string unbundledLoop2000 = @"ISA*00*          *00*          *ZZ*ASHTB          *ZZ*01017          *040315*1005*U*00401*004075123*0*P*:~
   GS*HP*ASHTB*01017*20040315*1005*1*X*004010X091A1~
     ST*835*07504123~
       BPR*H*5.75*C*NON************20040315~
@@ -316,19 +316,19 @@ IEA*1*000000905~";
   GE*1*1~
 IEA*1*004075123~";
 
-            X12Parser parser = new X12Parser();
-            Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._835._4010.Example1_GripElements.txt")).First();
+      X12Parser parser = new X12Parser();
+      Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._835._4010.Example1_GripElements.txt")).First();
 
-            var list = parser.UnbundleByLoop(interchange, "2000");
-            Assert.AreEqual(1, list.Count);
-            Assert.AreEqual(unbundledLoop2000, list[0].SerializeToX12(true));
-            Trace.WriteLine(list[0].SerializeToX12(true));
-        }
+      var list = parser.UnbundleByLoop(interchange, "2000");
+      Assert.AreEqual(1, list.Count);
+      Assert.AreEqual(unbundledLoop2000, list[0].SerializeToX12(true));
+      Trace.WriteLine(list[0].SerializeToX12(true));
+    }
 
-        [TestMethod]
-        public void Unbundling835ByLoop2100()
-        {
-            string thirdUnbundledClaim = @"ISA*00*          *00*          *ZZ*ASHTB          *ZZ*01017          *040315*1005*U*00401*004075123*0*P*:~
+    [TestMethod]
+    public void Unbundling835ByLoop2100()
+    {
+      string thirdUnbundledClaim = @"ISA*00*          *00*          *ZZ*ASHTB          *ZZ*01017          *040315*1005*U*00401*004075123*0*P*:~
   GS*HP*ASHTB*01017*20040315*1005*1*X*004010X091A1~
     ST*835*07504123~
       BPR*H*5.75*C*NON************20040315~
@@ -355,39 +355,39 @@ IEA*1*004075123~";
   GE*1*1~
 IEA*1*004075123~";
 
-            X12Parser parser = new X12Parser();
-            Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._835._4010.Example1_GripElements.txt")).First();
+      X12Parser parser = new X12Parser();
+      Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._835._4010.Example1_GripElements.txt")).First();
 
-            var list = parser.UnbundleByLoop(interchange, "2100");
-            Assert.AreEqual(9, list.Count);
-            Assert.AreEqual(thirdUnbundledClaim, list[2].SerializeToX12(true));
-            Trace.WriteLine(list[2].SerializeToX12(true));
-        }
+      var list = parser.UnbundleByLoop(interchange, "2100");
+      Assert.AreEqual(9, list.Count);
+      Assert.AreEqual(thirdUnbundledClaim, list[2].SerializeToX12(true));
+      Trace.WriteLine(list[2].SerializeToX12(true));
+    }
 
-        [TestMethod]
-        public void Unbundling835ByLoop2110()
-        {
-            X12Parser parser = new X12Parser();
-            Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._835._4010.Example1_GripElements.txt")).First();
+    [TestMethod]
+    public void Unbundling835ByLoop2110()
+    {
+      X12Parser parser = new X12Parser();
+      Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._835._4010.Example1_GripElements.txt")).First();
 
-            var list = parser.UnbundleByLoop(interchange, "2110");
-            Assert.AreEqual(9, list.Count);
-        }
+      var list = parser.UnbundleByLoop(interchange, "2110");
+      Assert.AreEqual(9, list.Count);
+    }
 
-        [TestMethod]
-        public void UnbundleClaimsIn837FromNthTest()
-        {
-            X12Parser parser = new X12Parser();
-            Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._837P._4010.FromNth.837_DeIdent_05.dat")).First();
+    [TestMethod]
+    public void UnbundleClaimsIn837FromNthTest()
+    {
+      X12Parser parser = new X12Parser();
+      Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._837P._4010.FromNth.837_DeIdent_05.dat")).First();
 
-            var list = parser.UnbundleByLoop(interchange, "2300");
-            Assert.AreEqual(186, list.Count);
-        }
+      var list = parser.UnbundleByLoop(interchange, "2300");
+      Assert.AreEqual(186, list.Count);
+    }
 
-        [TestMethod]
-        public void UnbundleClaimsIn837ByServiceLineTest()
-        {
-            string lastServiceLine = @"ISA*00*          *01*SECRET    *ZZ*SUBMITTERS.ID  *ZZ*RECEIVERS.ID   *930602*1253*^*00401*000000905*1*T*:~
+    [TestMethod]
+    public void UnbundleClaimsIn837ByServiceLineTest()
+    {
+      string lastServiceLine = @"ISA*00*          *01*SECRET    *ZZ*SUBMITTERS.ID  *ZZ*RECEIVERS.ID   *930602*1253*^*00401*000000905*1*T*:~
   GS*HC*SENDER CODE*RECEIVER CODE*1994033*0802*1*X*004010X098A1~
     ST*837*0021~
       BHT*0019*00*0123*19981015*1023*RP~
@@ -425,13 +425,13 @@ IEA*1*004075123~";
   GE*1*1~
 IEA*1*000000905~";
 
-            X12Parser parser = new X12Parser();
-            Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._837P._4010.Spec_4.1.1_PatientIsSubscriber.txt")).First();
+      X12Parser parser = new X12Parser();
+      Interchange interchange = parser.ParseMultiple(Extensions.GetEdi("INS._837P._4010.Spec_4.1.1_PatientIsSubscriber.txt")).First();
 
-            var list = parser.UnbundleByLoop(interchange, "2400");
+      var list = parser.UnbundleByLoop(interchange, "2400");
 
-            Assert.AreEqual(4, list.Count);
-            Assert.AreEqual(lastServiceLine, list[3].SerializeToX12(true));
-        }
+      Assert.AreEqual(4, list.Count);
+      Assert.AreEqual(lastServiceLine, list[3].SerializeToX12(true));
     }
+  }
 }

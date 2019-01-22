@@ -8,24 +8,24 @@ using System.Threading.Tasks;
 using Org.TP;
 using Org.GS;
 
-namespace Org.TSK 
+namespace Org.TSK
 {
-  public static class ExtensionMethods 
+  public static class ExtensionMethods
   {
-    
+
     public static List<string> GetRunnableTaskNames(this CompositionContainer container,
-                               IEnumerable<Lazy<ITaskProcessorFactory, ITaskProcessorMetadata>> taskProcessorFactories)
+        IEnumerable<Lazy<ITaskProcessorFactory, ITaskProcessorMetadata>> taskProcessorFactories)
     {
       List<string> runnableTaskNames = new List<string>();
 
       if (container == null)
-        return runnableTaskNames; 
-                  
+        return runnableTaskNames;
+
       foreach (Lazy<ITaskProcessorFactory, ITaskProcessorMetadata> taskProcessorFactory in taskProcessorFactories)
       {
         if (taskProcessorFactory.Metadata.Processors != null)
         {
-          string[] processors  = taskProcessorFactory.Metadata.Processors.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries); 
+          string[] processors  = taskProcessorFactory.Metadata.Processors.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
           foreach (var processor in processors)
           {
             if (!runnableTaskNames.Contains(processor))

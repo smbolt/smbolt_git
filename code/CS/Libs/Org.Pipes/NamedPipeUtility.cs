@@ -67,7 +67,7 @@ namespace Org.Pipes
           s = s.Substring(0, p).Trim();
           p = s.LastIndexOf(' ');
           if (p == -1)
-            continue; 
+            continue;
 
           tokens[1] = s.Substring(p + 1).Trim();
           tokens[0] = s.Substring(0, p).Trim();

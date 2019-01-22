@@ -1,33 +1,33 @@
 ﻿namespace Org.PdfExtractToolWindows
 {
-	partial class RichTextViewer
-	{
-		/// <summary> 
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+  partial class RichTextViewer
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
 
-		/// <summary> 
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
+    {
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-		#region Component Designer generated code
+    #region Component Designer generated code
 
-		/// <summary> 
-		/// Required method for Designer support - do not modify 
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RichTextViewer));
       this.txtData = new FastColoredTextBoxNS.FastColoredTextBox();
@@ -39,9 +39,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.txtData)).BeginInit();
       this.pnlRichTextViewerTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // txtData
-      // 
+      //
       this.txtData.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -52,7 +52,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtData.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtData.BackBrush = null;
       this.txtData.CharHeight = 13;
@@ -72,9 +73,9 @@
       this.txtData.TabIndex = 4;
       this.txtData.Tag = "";
       this.txtData.Zoom = 100;
-      // 
+      //
       // pnlRichTextViewerTop
-      // 
+      //
       this.pnlRichTextViewerTop.Controls.Add(this.ckUseDynamicFiltering);
       this.pnlRichTextViewerTop.Controls.Add(this.lblTextFilter);
       this.pnlRichTextViewerTop.Controls.Add(this.btnRunFilter);
@@ -84,17 +85,17 @@
       this.pnlRichTextViewerTop.Name = "pnlRichTextViewerTop";
       this.pnlRichTextViewerTop.Size = new System.Drawing.Size(647, 30);
       this.pnlRichTextViewerTop.TabIndex = 5;
-      // 
+      //
       // txtFilters
-      // 
+      //
       this.txtFilters.Location = new System.Drawing.Point(117, 2);
       this.txtFilters.Name = "txtFilters";
       this.txtFilters.Size = new System.Drawing.Size(310, 20);
       this.txtFilters.TabIndex = 0;
       this.txtFilters.TextChanged += new System.EventHandler(this.txtFilters_TextChanged);
-      // 
+      //
       // btnRunFilter
-      // 
+      //
       this.btnRunFilter.Location = new System.Drawing.Point(433, 1);
       this.btnRunFilter.Name = "btnRunFilter";
       this.btnRunFilter.Size = new System.Drawing.Size(76, 21);
@@ -103,18 +104,18 @@
       this.btnRunFilter.Text = "Run Filters";
       this.btnRunFilter.UseVisualStyleBackColor = true;
       this.btnRunFilter.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblTextFilter
-      // 
+      //
       this.lblTextFilter.AutoSize = true;
       this.lblTextFilter.Location = new System.Drawing.Point(22, 6);
       this.lblTextFilter.Name = "lblTextFilter";
       this.lblTextFilter.Size = new System.Drawing.Size(94, 13);
       this.lblTextFilter.TabIndex = 2;
       this.lblTextFilter.Text = "Text Match Filters:";
-      // 
+      //
       // ckUseDynamicFiltering
-      // 
+      //
       this.ckUseDynamicFiltering.AutoSize = true;
       this.ckUseDynamicFiltering.Location = new System.Drawing.Point(516, 4);
       this.ckUseDynamicFiltering.Name = "ckUseDynamicFiltering";
@@ -123,9 +124,9 @@
       this.ckUseDynamicFiltering.Text = "Use Dynamic Filtering";
       this.ckUseDynamicFiltering.UseVisualStyleBackColor = true;
       this.ckUseDynamicFiltering.CheckedChanged += new System.EventHandler(this.ckUseDynamicFiltering_CheckedChanged);
-      // 
+      //
       // RichTextViewer
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.txtData);
@@ -140,15 +141,15 @@
       this.pnlRichTextViewerTop.PerformLayout();
       this.ResumeLayout(false);
 
-		}
+    }
 
-		#endregion
+    #endregion
 
-		private FastColoredTextBoxNS.FastColoredTextBox txtData;
+    private FastColoredTextBoxNS.FastColoredTextBox txtData;
     private System.Windows.Forms.Panel pnlRichTextViewerTop;
     private System.Windows.Forms.Label lblTextFilter;
     private System.Windows.Forms.Button btnRunFilter;
     private System.Windows.Forms.TextBox txtFilters;
     private System.Windows.Forms.CheckBox ckUseDynamicFiltering;
-	}
+  }
 }

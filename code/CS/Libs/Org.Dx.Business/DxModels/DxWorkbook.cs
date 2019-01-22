@@ -10,23 +10,43 @@ using Org.GS;
 namespace Org.Dx.Business
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(CollectionElements = "DxWorksheet", XType = XType.Element)] 
+  [XMap(CollectionElements = "DxWorksheet", XType = XType.Element)]
   public class DxWorkbook : Dictionary<string, DxWorksheet>
   {
     [XMap]
-    public string FilePath { get; set; }
+    public string FilePath {
+      get;
+      set;
+    }
 
     [XMap]
-    public string MapPath { get; set; }
+    public string MapPath {
+      get;
+      set;
+    }
 
-    public DxMap DxMap { get; set; }
+    public DxMap DxMap {
+      get;
+      set;
+    }
 
     [XMap (DefaultValue = "False")]
-    public bool IsMapped { get; set; }
+    public bool IsMapped {
+      get;
+      set;
+    }
 
-    public DxRow FirstRowInWorkbook { get { return Get_FirstRowInWorkbook(); } }
-    
-    public string Report { get { return ToReport(); } }
+    public DxRow FirstRowInWorkbook {
+      get {
+        return Get_FirstRowInWorkbook();
+      }
+    }
+
+    public string Report {
+      get {
+        return ToReport();
+      }
+    }
 
     public DxWorkbook()
     {
@@ -125,7 +145,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to determine if the DxRegion named '" + region.Name + 
+        throw new Exception("An exception occurred while attempting to determine if the DxRegion named '" + region.Name +
                             "' should be " + "applied to the sheet named '" + sheet.WorksheetName + "'.", ex);
       }
     }
@@ -148,7 +168,7 @@ namespace Org.Dx.Business
 
       ws.EnsureParentage();
 
-      ((Dictionary<string, DxWorksheet>)this).Add(ws.WorksheetName, (DxWorksheet) ws); 
+      ((Dictionary<string, DxWorksheet>)this).Add(ws.WorksheetName, (DxWorksheet) ws);
     }
 
     public DxCell GetCell(DxMapItem item)
@@ -173,12 +193,12 @@ namespace Org.Dx.Business
     {
       while(this.Count - 1 < sheetIndex)
       {
-        string sheetName = this.Count.ToString(); 
+        string sheetName = this.Count.ToString();
         this.Add(sheetName, new DxWorksheet(this, sheetName));
       }
 
       var ws = this.ElementAt(sheetIndex).Value;
-      ws.AddCell(cell); 
+      ws.AddCell(cell);
     }
 
     public void AutoInit()
@@ -203,7 +223,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred in the EnsureIntegrity method of the DxWorkbook.", ex); 
+        throw new Exception("An exception occurred in the EnsureIntegrity method of the DxWorkbook.", ex);
       }
     }
 
@@ -217,9 +237,9 @@ namespace Org.Dx.Business
         }
       }
 
-      return null; 
+      return null;
     }
-    
+
     public string ToReport()
     {
       try
@@ -230,7 +250,7 @@ namespace Org.Dx.Business
                   "  Sheet Count : " + this.Count() + g.crlf2);
 
         foreach (var ws in this.Values)
-          sb.Append(ws.Report); 
+          sb.Append(ws.Report);
 
         return sb.ToString();
       }
@@ -282,7 +302,7 @@ namespace Org.Dx.Business
 
           if (thisWbLines.Length != compareWbLines.Length)
           {
-            return "The base DxWorkbook when serialized to XML has " + thisWbLines.Length.ToString() + " lines and the compare " + 
+            return "The base DxWorkbook when serialized to XML has " + thisWbLines.Length.ToString() + " lines and the compare " +
                    "workbook when serialized to XML has " + compareWbLines.Length.ToString() + " lines.";
           }
 

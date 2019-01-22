@@ -10,22 +10,67 @@ namespace Org.TSK.Business.Models
 {
   public class PeriodHistory
   {
-    public int ScheduledPeriodId { get; set; }
-    public int ScheduledTaskId { get; set; }
-    public string TaskName { get; set; }
-    public bool RunForPeriod { get; set; }
-    public DateTime StartDateTime { get; set; }
-    public DateTime EndDateTime { get; set; }
-    public DateTime? OverdueDateTime { get; set; }
-    public bool RunUntilTask { get; set; }
-    public int? RunUntilPeriodContextId { get; set; }
-    public int? RunUntilOffsetMinutes { get; set; }
-    public bool OverdueNotificationSent { get; set; }
-    public bool OverdueNoticeAcknowledged { get; set; }
-    public string AcknowledgedBy { get; set; }
-    public DateTime? AcknowledgedDate { get; set; }
+    public int ScheduledPeriodId {
+      get;
+      set;
+    }
+    public int ScheduledTaskId {
+      get;
+      set;
+    }
+    public string TaskName {
+      get;
+      set;
+    }
+    public bool RunForPeriod {
+      get;
+      set;
+    }
+    public DateTime StartDateTime {
+      get;
+      set;
+    }
+    public DateTime EndDateTime {
+      get;
+      set;
+    }
+    public DateTime? OverdueDateTime {
+      get;
+      set;
+    }
+    public bool RunUntilTask {
+      get;
+      set;
+    }
+    public int? RunUntilPeriodContextId {
+      get;
+      set;
+    }
+    public int? RunUntilOffsetMinutes {
+      get;
+      set;
+    }
+    public bool OverdueNotificationSent {
+      get;
+      set;
+    }
+    public bool OverdueNoticeAcknowledged {
+      get;
+      set;
+    }
+    public string AcknowledgedBy {
+      get;
+      set;
+    }
+    public DateTime? AcknowledgedDate {
+      get;
+      set;
+    }
 
-    public SortedList<DateTime, RunHistory> RunHistory { get; set; }
+    public SortedList<DateTime, RunHistory> RunHistory {
+      get;
+      set;
+    }
 
     public PeriodHistory()
     {

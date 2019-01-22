@@ -8,14 +8,32 @@ namespace Org.GS.Dynamic
 {
   public class WinFormProperties
   {
-    public bool IsFormTitleSpecified { get; set; }
-    public string FormTitle { get; set; }
+    public bool IsFormTitleSpecified {
+      get;
+      set;
+    }
+    public string FormTitle {
+      get;
+      set;
+    }
 
-    public bool IsFormIconSpecified { get; set; }
-    public Icon FormIcon { get; set; }
+    public bool IsFormIconSpecified {
+      get;
+      set;
+    }
+    public Icon FormIcon {
+      get;
+      set;
+    }
 
-    public bool IsInitialFormSizeSpecified { get; set; }
-    public Size InitialFormSize { get; set; }
+    public bool IsInitialFormSizeSpecified {
+      get;
+      set;
+    }
+    public Size InitialFormSize {
+      get;
+      set;
+    }
 
     public WinFormProperties()
     {

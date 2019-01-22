@@ -14,7 +14,7 @@ namespace Org.ChartViewer
   {
     private string _text;
     private string _csv;
-    private bool _showText = true; 
+    private bool _showText = true;
 
     public frmDataDisplay()
     {
@@ -29,7 +29,7 @@ namespace Org.ChartViewer
     public void SetText(string text, string csv)
     {
       _text = text;
-      _csv = csv; 
+      _csv = csv;
       UpdateDisplay();
     }
 
@@ -44,7 +44,7 @@ namespace Org.ChartViewer
       if (_showText)
         txtOut.Text = _text;
       else
-        txtOut.Text = _csv; 
+        txtOut.Text = _csv;
     }
   }
 }

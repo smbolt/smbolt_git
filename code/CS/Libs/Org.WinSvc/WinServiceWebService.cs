@@ -18,7 +18,11 @@ namespace Org.WinSvc
   public class WinServiceWebService : ServiceBase, ISimpleService
   {
     private static Func<WsMessage, ServiceBase, XElement> HostMessageProcessor;
-    public override int EntityId { get { return 305; } }
+    public override int EntityId {
+      get {
+        return 305;
+      }
+    }
 
     public WinServiceWebService()
     {

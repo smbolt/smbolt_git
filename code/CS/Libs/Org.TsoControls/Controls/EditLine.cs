@@ -10,28 +10,34 @@ using System.Windows.Forms;
 
 namespace Org.TsoControls.Controls
 {
-	public partial class EditLine : UserControl
-	{
-		public int LineNumber { get; private set; }
-		public bool InDocument { get; set; }
+  public partial class EditLine : UserControl
+  {
+    public int LineNumber {
+      get;
+      private set;
+    }
+    public bool InDocument {
+      get;
+      set;
+    }
 
-		public EditLine(int lineNumber, string setName)
-		{
-			InitializeComponent();
-			this.LineNumber = lineNumber;
+    public EditLine(int lineNumber, string setName)
+    {
+      InitializeComponent();
+      this.LineNumber = lineNumber;
 
-			this.InDocument = setName == "EditLines";
-		}
+      this.InDocument = setName == "EditLines";
+    }
 
-		public PanelControlBase GetControl(string name)
-		{
-			foreach (Control c in this.Controls)
-			{
-				if (c.Name == name)
-					return c as PanelControlBase;
-			}
+    public PanelControlBase GetControl(string name)
+    {
+      foreach (Control c in this.Controls)
+      {
+        if (c.Name == name)
+          return c as PanelControlBase;
+      }
 
-			return null;
-		}
-	}
+      return null;
+    }
+  }
 }

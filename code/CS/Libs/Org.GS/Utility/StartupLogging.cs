@@ -23,8 +23,12 @@ namespace Org.GS
     private static bool _startupComplete;
     public static bool StartupComplete
     {
-        get { return _startupComplete; }
-        set { _startupComplete = value; }
+      get {
+        return _startupComplete;
+      }
+      set {
+        _startupComplete = value;
+      }
     }
 
     public static void WriteStartupLog(string logRecord)
@@ -35,16 +39,16 @@ namespace Org.GS
 
       if (String.IsNullOrEmpty(StartupLogPath))
       {
-        StartupLogPath = @"C:\StartupLogging"; 
+        StartupLogPath = @"C:\StartupLogging";
       }
 
       if (String.IsNullOrEmpty(StartupLogPath))
-        return; 
+        return;
 
       try
       {
         if (!Directory.Exists(StartupLogPath))
-          Directory.CreateDirectory(StartupLogPath); 
+          Directory.CreateDirectory(StartupLogPath);
 
         if (_isFirstTimeIn)
           ClearOldLogFiles(StartupLogPath);
@@ -56,7 +60,7 @@ namespace Org.GS
         string message = ex.Message;
       }
     }
-    
+
     private static void WriteLogRecord(string logRecord)
     {
       if (_logFileName.Trim().Length == 0)
@@ -79,14 +83,14 @@ namespace Org.GS
       if (filesToDelete < 1)
         return ;
 
-      int filesDeleted = 0; 
+      int filesDeleted = 0;
 
       while (filesToDelete > filesDeleted)
       {
         string fileToDelete = files[filesDeleted];
         FileInfo fi = new FileInfo(fileToDelete);
         fi.Delete();
-        filesDeleted++; 
+        filesDeleted++;
       }
     }
   }

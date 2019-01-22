@@ -11,35 +11,53 @@ namespace NameTags
     private int _selectedCount;
     public int SelectedCount
     {
-      get { return _selectedCount; }
-      set { _selectedCount = value; }
+      get {
+        return _selectedCount;
+      }
+      set {
+        _selectedCount = value;
+      }
     }
 
     private int[] _selectedObjectKeys;
     public int[] SelectedObjectKeys
     {
-      get { return _selectedObjectKeys; }
-      set { _selectedObjectKeys = value; }
+      get {
+        return _selectedObjectKeys;
+      }
+      set {
+        _selectedObjectKeys = value;
+      }
     }
 
     private int[] _getObjectKeys;
     public int[] GetObjectKeys
     {
-      get { return _getObjectKeys; }
-      set { _getObjectKeys = value; }
+      get {
+        return _getObjectKeys;
+      }
+      set {
+        _getObjectKeys = value;
+      }
     }
 
     private bool _isDirty;
     public bool IsDirty
     {
-      get { return _isDirty; }
-      set { _isDirty = value; }
+      get {
+        return _isDirty;
+      }
+      set {
+        _isDirty = value;
+      }
     }
-        
+
     private string _selectedObjectKeysString;
     public string SelectedObjectKeysString
     {
-      get { return _selectedObjectKeysString; }
+      get {
+        return _selectedObjectKeysString;
+      }
     }
 
     private bool IsSelectionCountingSuppressed;
@@ -92,7 +110,7 @@ namespace NameTags
       {
         if (kvpDrawingObject.Value.Selected & kvpDrawingObject.Value.ObjType == Enums.ObjectType.TextObject)
         {
-            return kvpDrawingObject.Key;
+          return kvpDrawingObject.Key;
         }
       }
       return -1;
@@ -103,9 +121,9 @@ namespace NameTags
       foreach (KeyValuePair<int, DrawingObject> kvpDrawingObject in this)
       {
         if ((kvpDrawingObject.Value.Selected && (
-            kvpDrawingObject.Value.ObjType == Enums.ObjectType.TextObject ||
-            kvpDrawingObject.Value.ObjType == Enums.ObjectType.EllipseObject ||
-            kvpDrawingObject.Value.ObjType == Enums.ObjectType.RectangleObject)))
+               kvpDrawingObject.Value.ObjType == Enums.ObjectType.TextObject ||
+               kvpDrawingObject.Value.ObjType == Enums.ObjectType.EllipseObject ||
+               kvpDrawingObject.Value.ObjType == Enums.ObjectType.RectangleObject)))
         {
           return kvpDrawingObject.Key;
         }
@@ -131,7 +149,7 @@ namespace NameTags
 
       SetDirty();
     }
-            
+
     public void RemoveObjectAt(int index)
     {
       this.RemoveAt(index);
@@ -267,7 +285,7 @@ namespace NameTags
     public void SelectedObjectsChanged()
     {
       if(!IsSelectionCountingSuppressed)
-          UpdateSelectedArrayAndCount();
+        UpdateSelectedArrayAndCount();
 
       SetDirty();
     }
@@ -291,7 +309,7 @@ namespace NameTags
           _selectedCount++;
           int[] newselectedObjectKeysArray = new int[_selectedCount];
           for (int i = 0; i < _selectedObjectKeys.Length; i++)
-              newselectedObjectKeysArray[i] = _selectedObjectKeys[i];
+            newselectedObjectKeysArray[i] = _selectedObjectKeys[i];
           newselectedObjectKeysArray[_selectedCount - 1] = kvpDrawingObject.Key;
           _selectedObjectKeys = newselectedObjectKeysArray;
 
@@ -318,7 +336,7 @@ namespace NameTags
         {
           int[] newKeyArray = new int[keyArray.Length + 1];
           for (int i = 0; i < keyArray.Length; i++)
-              newKeyArray[i] = keyArray[i];
+            newKeyArray[i] = keyArray[i];
           newKeyArray[newKeyArray.Length - 1] = kvpDrawingObject.Key;
           keyArray = newKeyArray;
         }

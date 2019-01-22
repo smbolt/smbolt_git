@@ -8,21 +8,66 @@ namespace Org.GS
 {
   public class CdyneSmsParms
   {
-    public bool UseHardCodedParms { get; set; }
-    public string AlertID  { get; set; }
-    public string AlertCode { get; set; }
-    public string IPAddress { get; set; }
-    public string AppName { get; set; }
-    public string ClassName { get; set; }
-    public string MethodName { get; set; }
-    public string LocationCode { get; set; }
-    public string CustomerID { get; set; }
-    public string LicenseKey { get; set; }
-    public string Endpoint { get; set; }
-    public string PhoneNumber { get; set; }
-    public string Message { get; set; }
-    public LogSeverity Severity { get; set; }
-    public bool SuppressSmsSend { get; set; }
+    public bool UseHardCodedParms {
+      get;
+      set;
+    }
+    public string AlertID  {
+      get;
+      set;
+    }
+    public string AlertCode {
+      get;
+      set;
+    }
+    public string IPAddress {
+      get;
+      set;
+    }
+    public string AppName {
+      get;
+      set;
+    }
+    public string ClassName {
+      get;
+      set;
+    }
+    public string MethodName {
+      get;
+      set;
+    }
+    public string LocationCode {
+      get;
+      set;
+    }
+    public string CustomerID {
+      get;
+      set;
+    }
+    public string LicenseKey {
+      get;
+      set;
+    }
+    public string Endpoint {
+      get;
+      set;
+    }
+    public string PhoneNumber {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public LogSeverity Severity {
+      get;
+      set;
+    }
+    public bool SuppressSmsSend {
+      get;
+      set;
+    }
 
     public CdyneSmsParms()
     {

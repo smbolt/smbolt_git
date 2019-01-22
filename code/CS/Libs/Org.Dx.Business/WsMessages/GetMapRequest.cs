@@ -14,10 +14,16 @@ namespace Org.Dx.Business
   public class GetMapRequest : TransactionBase
   {
     [XMap]
-    public string MapName { get; set; }
+    public string MapName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ExtractTransName { get; set; }
+    public string ExtractTransName {
+      get;
+      set;
+    }
 
     public GetMapRequest()
     {

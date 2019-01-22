@@ -47,35 +47,37 @@
       this.mnuMain.SuspendLayout();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1258, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.cboReportFormat);
       this.pnlTop.Controls.Add(this.lblFile2);
       this.pnlTop.Controls.Add(this.txtFile2);
@@ -89,43 +91,43 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1258, 109);
       this.pnlTop.TabIndex = 1;
-      // 
+      //
       // lblFile2
-      // 
+      //
       this.lblFile2.AutoSize = true;
       this.lblFile2.Location = new System.Drawing.Point(11, 51);
       this.lblFile2.Name = "lblFile2";
       this.lblFile2.Size = new System.Drawing.Size(32, 13);
       this.lblFile2.TabIndex = 4;
       this.lblFile2.Text = "File 2";
-      // 
+      //
       // txtFile2
-      // 
+      //
       this.txtFile2.Location = new System.Drawing.Point(11, 66);
       this.txtFile2.Name = "txtFile2";
       this.txtFile2.Size = new System.Drawing.Size(881, 20);
       this.txtFile2.TabIndex = 3;
       this.txtFile2.TextChanged += new System.EventHandler(this.TextValueChanged);
-      // 
+      //
       // lblFile1
-      // 
+      //
       this.lblFile1.AutoSize = true;
       this.lblFile1.Location = new System.Drawing.Point(11, 8);
       this.lblFile1.Name = "lblFile1";
       this.lblFile1.Size = new System.Drawing.Size(32, 13);
       this.lblFile1.TabIndex = 2;
       this.lblFile1.Text = "File 1";
-      // 
+      //
       // txtFile1
-      // 
+      //
       this.txtFile1.Location = new System.Drawing.Point(11, 23);
       this.txtFile1.Name = "txtFile1";
       this.txtFile1.Size = new System.Drawing.Size(881, 20);
       this.txtFile1.TabIndex = 1;
       this.txtFile1.TextChanged += new System.EventHandler(this.TextValueChanged);
-      // 
+      //
       // btnBrowseFile2
-      // 
+      //
       this.btnBrowseFile2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnBrowseFile2.Location = new System.Drawing.Point(898, 65);
       this.btnBrowseFile2.Name = "btnBrowseFile2";
@@ -135,9 +137,9 @@
       this.btnBrowseFile2.Text = "...";
       this.btnBrowseFile2.UseVisualStyleBackColor = true;
       this.btnBrowseFile2.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnBrowseFile1
-      // 
+      //
       this.btnBrowseFile1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnBrowseFile1.Location = new System.Drawing.Point(898, 22);
       this.btnBrowseFile1.Name = "btnBrowseFile1";
@@ -147,9 +149,9 @@
       this.btnBrowseFile1.Text = "...";
       this.btnBrowseFile1.UseVisualStyleBackColor = true;
       this.btnBrowseFile1.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCompareFiles
-      // 
+      //
       this.btnCompareFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnCompareFiles.Location = new System.Drawing.Point(1090, 13);
       this.btnCompareFiles.Name = "btnCompareFiles";
@@ -159,9 +161,9 @@
       this.btnCompareFiles.Text = "Compare Files";
       this.btnCompareFiles.UseVisualStyleBackColor = true;
       this.btnCompareFiles.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 682);
       this.lblStatus.Name = "lblStatus";
@@ -169,9 +171,9 @@
       this.lblStatus.TabIndex = 2;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,28 +184,29 @@
       this.txtOut.Size = new System.Drawing.Size(1258, 549);
       this.txtOut.TabIndex = 10;
       this.txtOut.WordWrap = false;
-      // 
+      //
       // dlgOpenFile
-      // 
+      //
       this.dlgOpenFile.InitialDirectory = "C:\\";
       this.dlgOpenFile.Title = "Locate file for comparision";
-      // 
+      //
       // cboReportFormat
-      // 
+      //
       this.cboReportFormat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.cboReportFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboReportFormat.FormattingEnabled = true;
       this.cboReportFormat.Items.AddRange(new object[] {
-            "Inline report",
-            "Side by side report",
-            "No report"});
+        "Inline report",
+        "Side by side report",
+        "No report"
+      });
       this.cboReportFormat.Location = new System.Drawing.Point(1090, 44);
       this.cboReportFormat.Name = "cboReportFormat";
       this.cboReportFormat.Size = new System.Drawing.Size(152, 21);
       this.cboReportFormat.TabIndex = 6;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1266, 705);

@@ -16,13 +16,37 @@ namespace Org.ShareFileApiClient
 
   public class SFBase : IDisposable
   {
-    public static SFFolder RootFolder { get; set; }
-    public SFFolder ParentFolder { get; set; }
-    public string Name { get; set; }
-    public string Id { get; set; }
-    public int Depth { get { return Get_Depth(); } }
-    public string FullPath { get { return Get_FullPath(); } }
-    public virtual SFType SFType { get { return SFType.Base; } }
+    public static SFFolder RootFolder {
+      get;
+      set;
+    }
+    public SFFolder ParentFolder {
+      get;
+      set;
+    }
+    public string Name {
+      get;
+      set;
+    }
+    public string Id {
+      get;
+      set;
+    }
+    public int Depth {
+      get {
+        return Get_Depth();
+      }
+    }
+    public string FullPath {
+      get {
+        return Get_FullPath();
+      }
+    }
+    public virtual SFType SFType {
+      get {
+        return SFType.Base;
+      }
+    }
 
     public SFBase()
     {
@@ -38,7 +62,7 @@ namespace Org.ShareFileApiClient
       while (parent != null)
       {
         parent = parent.ParentFolder;
-        depth++; 
+        depth++;
       }
 
       return depth;

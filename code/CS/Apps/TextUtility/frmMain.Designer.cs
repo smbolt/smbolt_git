@@ -107,35 +107,37 @@
       this.tabPageWellGrid.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.gvWells)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1422, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 746);
       this.lblStatus.Name = "lblStatus";
@@ -144,9 +146,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.lblBaseData);
       this.pnlTop.Controls.Add(this.cboBaseData);
       this.pnlTop.Controls.Add(this.lblEnvironment);
@@ -156,53 +158,55 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1422, 94);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // lblBaseData
-      // 
+      //
       this.lblBaseData.AutoSize = true;
       this.lblBaseData.Location = new System.Drawing.Point(120, 8);
       this.lblBaseData.Name = "lblBaseData";
       this.lblBaseData.Size = new System.Drawing.Size(57, 13);
       this.lblBaseData.TabIndex = 2;
       this.lblBaseData.Text = "Base Data";
-      // 
+      //
       // cboBaseData
-      // 
+      //
       this.cboBaseData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboBaseData.FormattingEnabled = true;
       this.cboBaseData.Items.AddRange(new object[] {
-            "Prod",
-            "Test"});
+        "Prod",
+        "Test"
+      });
       this.cboBaseData.Location = new System.Drawing.Point(123, 24);
       this.cboBaseData.Name = "cboBaseData";
       this.cboBaseData.Size = new System.Drawing.Size(304, 21);
       this.cboBaseData.TabIndex = 1;
       this.cboBaseData.SelectedIndexChanged += new System.EventHandler(this.cboBaseData_SelectedIndexChanged);
-      // 
+      //
       // lblEnvironment
-      // 
+      //
       this.lblEnvironment.AutoSize = true;
       this.lblEnvironment.Location = new System.Drawing.Point(16, 8);
       this.lblEnvironment.Name = "lblEnvironment";
       this.lblEnvironment.Size = new System.Drawing.Size(66, 13);
       this.lblEnvironment.TabIndex = 2;
       this.lblEnvironment.Text = "Environment";
-      // 
+      //
       // cboEnvironment
-      // 
+      //
       this.cboEnvironment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboEnvironment.FormattingEnabled = true;
       this.cboEnvironment.Items.AddRange(new object[] {
-            "Prod",
-            "Test"});
+        "Prod",
+        "Test"
+      });
       this.cboEnvironment.Location = new System.Drawing.Point(19, 24);
       this.cboEnvironment.Name = "cboEnvironment";
       this.cboEnvironment.Size = new System.Drawing.Size(94, 21);
       this.cboEnvironment.TabIndex = 1;
       this.cboEnvironment.SelectedIndexChanged += new System.EventHandler(this.cboEnvironment_SelectedIndexChanged);
-      // 
+      //
       // btnLoadBaseText
-      // 
+      //
       this.btnLoadBaseText.Location = new System.Drawing.Point(70, 5);
       this.btnLoadBaseText.Name = "btnLoadBaseText";
       this.btnLoadBaseText.Size = new System.Drawing.Size(59, 23);
@@ -211,18 +215,18 @@
       this.btnLoadBaseText.Text = "Load";
       this.btnLoadBaseText.UseVisualStyleBackColor = true;
       this.btnLoadBaseText.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlMain
-      // 
+      //
       this.pnlMain.Controls.Add(this.tabMain);
       this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlMain.Location = new System.Drawing.Point(4, 118);
       this.pnlMain.Name = "pnlMain";
       this.pnlMain.Size = new System.Drawing.Size(1422, 628);
       this.pnlMain.TabIndex = 3;
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageTextLineCompare);
       this.tabMain.Controls.Add(this.tabPageWellGrid);
       this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -234,9 +238,9 @@
       this.tabMain.Size = new System.Drawing.Size(1422, 628);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 0;
-      // 
+      //
       // tabPageTextLineCompare
-      // 
+      //
       this.tabPageTextLineCompare.BackColor = System.Drawing.Color.Transparent;
       this.tabPageTextLineCompare.Controls.Add(this.splitterMain);
       this.tabPageTextLineCompare.Location = new System.Drawing.Point(4, 22);
@@ -245,48 +249,48 @@
       this.tabPageTextLineCompare.Size = new System.Drawing.Size(1414, 602);
       this.tabPageTextLineCompare.TabIndex = 0;
       this.tabPageTextLineCompare.Text = "Text Line Compare";
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.Location = new System.Drawing.Point(0, 0);
       this.splitterMain.Margin = new System.Windows.Forms.Padding(0);
       this.splitterMain.Name = "splitterMain";
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.splitterLeft);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.splitterRight);
       this.splitterMain.Size = new System.Drawing.Size(1414, 602);
       this.splitterMain.SplitterDistance = 737;
       this.splitterMain.SplitterWidth = 3;
       this.splitterMain.TabIndex = 0;
-      // 
+      //
       // splitterLeft
-      // 
+      //
       this.splitterLeft.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterLeft.Location = new System.Drawing.Point(0, 0);
       this.splitterLeft.Name = "splitterLeft";
       this.splitterLeft.Orientation = System.Windows.Forms.Orientation.Horizontal;
-      // 
+      //
       // splitterLeft.Panel1
-      // 
+      //
       this.splitterLeft.Panel1.Controls.Add(this.txtBaseText);
       this.splitterLeft.Panel1.Controls.Add(this.pnlBaseTextTop);
-      // 
+      //
       // splitterLeft.Panel2
-      // 
+      //
       this.splitterLeft.Panel2.Controls.Add(this.txtQuery);
       this.splitterLeft.Panel2.Controls.Add(this.panel2);
       this.splitterLeft.Size = new System.Drawing.Size(737, 602);
       this.splitterLeft.SplitterDistance = 250;
       this.splitterLeft.TabIndex = 0;
-      // 
+      //
       // txtBaseText
-      // 
+      //
       this.txtBaseText.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -297,7 +301,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtBaseText.AutoScrollMinSize = new System.Drawing.Size(25, 12);
       this.txtBaseText.BackBrush = null;
       this.txtBaseText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -318,9 +323,9 @@
       this.txtBaseText.TabIndex = 6;
       this.txtBaseText.Zoom = 100;
       this.txtBaseText.DoubleClick += new System.EventHandler(this.fctb_DoubleClick);
-      // 
+      //
       // pnlBaseTextTop
-      // 
+      //
       this.pnlBaseTextTop.Controls.Add(this.btnSaveBaseTextAs);
       this.pnlBaseTextTop.Controls.Add(this.btnSaveBaseText);
       this.pnlBaseTextTop.Controls.Add(this.lblBaseTextLines);
@@ -332,9 +337,9 @@
       this.pnlBaseTextTop.Name = "pnlBaseTextTop";
       this.pnlBaseTextTop.Size = new System.Drawing.Size(737, 32);
       this.pnlBaseTextTop.TabIndex = 7;
-      // 
+      //
       // btnSaveBaseTextAs
-      // 
+      //
       this.btnSaveBaseTextAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnSaveBaseTextAs.Location = new System.Drawing.Point(675, 5);
       this.btnSaveBaseTextAs.Name = "btnSaveBaseTextAs";
@@ -344,9 +349,9 @@
       this.btnSaveBaseTextAs.Text = "Save As";
       this.btnSaveBaseTextAs.UseVisualStyleBackColor = true;
       this.btnSaveBaseTextAs.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSaveBaseText
-      // 
+      //
       this.btnSaveBaseText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnSaveBaseText.Location = new System.Drawing.Point(613, 5);
       this.btnSaveBaseText.Name = "btnSaveBaseText";
@@ -356,18 +361,18 @@
       this.btnSaveBaseText.Text = "Save";
       this.btnSaveBaseText.UseVisualStyleBackColor = true;
       this.btnSaveBaseText.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblBaseTextLines
-      // 
+      //
       this.lblBaseTextLines.AutoSize = true;
       this.lblBaseTextLines.Location = new System.Drawing.Point(222, 11);
       this.lblBaseTextLines.Name = "lblBaseTextLines";
       this.lblBaseTextLines.Size = new System.Drawing.Size(37, 13);
       this.lblBaseTextLines.TabIndex = 1;
       this.lblBaseTextLines.Text = "0 lines";
-      // 
+      //
       // btnClearBaseText
-      // 
+      //
       this.btnClearBaseText.Location = new System.Drawing.Point(132, 5);
       this.btnClearBaseText.Name = "btnClearBaseText";
       this.btnClearBaseText.Size = new System.Drawing.Size(59, 23);
@@ -376,9 +381,9 @@
       this.btnClearBaseText.Text = "Clear";
       this.btnClearBaseText.UseVisualStyleBackColor = true;
       this.btnClearBaseText.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblBaseText
-      // 
+      //
       this.lblBaseText.Dock = System.Windows.Forms.DockStyle.Left;
       this.lblBaseText.Location = new System.Drawing.Point(0, 0);
       this.lblBaseText.Name = "lblBaseText";
@@ -387,9 +392,9 @@
       this.lblBaseText.TabIndex = 0;
       this.lblBaseText.Text = "Base Text";
       this.lblBaseText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // txtQuery
-      // 
+      //
       this.txtQuery.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -400,7 +405,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtQuery.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtQuery.BackBrush = null;
       this.txtQuery.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -421,9 +427,9 @@
       this.txtQuery.Zoom = 100;
       this.txtQuery.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.txtQuery_TextChanged);
       this.txtQuery.DoubleClick += new System.EventHandler(this.fctb_DoubleClick);
-      // 
+      //
       // panel2
-      // 
+      //
       this.panel2.Controls.Add(this.btnReloadQuery);
       this.panel2.Controls.Add(this.cboQuery);
       this.panel2.Controls.Add(this.btnSaveQueryAs);
@@ -435,9 +441,9 @@
       this.panel2.Name = "panel2";
       this.panel2.Size = new System.Drawing.Size(737, 32);
       this.panel2.TabIndex = 8;
-      // 
+      //
       // btnReloadQuery
-      // 
+      //
       this.btnReloadQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnReloadQuery.Location = new System.Drawing.Point(675, 4);
       this.btnReloadQuery.Name = "btnReloadQuery";
@@ -447,22 +453,23 @@
       this.btnReloadQuery.Text = "Load Query";
       this.btnReloadQuery.UseVisualStyleBackColor = true;
       this.btnReloadQuery.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // cboQuery
-      // 
+      //
       this.cboQuery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboQuery.FormattingEnabled = true;
       this.cboQuery.Items.AddRange(new object[] {
-            "Prod",
-            "Test"});
+        "Prod",
+        "Test"
+      });
       this.cboQuery.Location = new System.Drawing.Point(70, 5);
       this.cboQuery.Name = "cboQuery";
       this.cboQuery.Size = new System.Drawing.Size(257, 21);
       this.cboQuery.TabIndex = 2;
       this.cboQuery.SelectedIndexChanged += new System.EventHandler(this.cboQuery_SelectedIndexChanged);
-      // 
+      //
       // btnSaveQueryAs
-      // 
+      //
       this.btnSaveQueryAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnSaveQueryAs.Location = new System.Drawing.Point(613, 4);
       this.btnSaveQueryAs.Name = "btnSaveQueryAs";
@@ -472,9 +479,9 @@
       this.btnSaveQueryAs.Text = "Save As";
       this.btnSaveQueryAs.UseVisualStyleBackColor = true;
       this.btnSaveQueryAs.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSave
-      // 
+      //
       this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnSave.Location = new System.Drawing.Point(550, 4);
       this.btnSave.Name = "btnSave";
@@ -484,9 +491,9 @@
       this.btnSave.Text = "Save";
       this.btnSave.UseVisualStyleBackColor = true;
       this.btnSave.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRunQuery
-      // 
+      //
       this.btnRunQuery.Location = new System.Drawing.Point(333, 4);
       this.btnRunQuery.Name = "btnRunQuery";
       this.btnRunQuery.Size = new System.Drawing.Size(59, 23);
@@ -495,9 +502,9 @@
       this.btnRunQuery.Text = "Run Query";
       this.btnRunQuery.UseVisualStyleBackColor = true;
       this.btnRunQuery.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblQueryText
-      // 
+      //
       this.lblQueryText.Dock = System.Windows.Forms.DockStyle.Left;
       this.lblQueryText.Location = new System.Drawing.Point(0, 0);
       this.lblQueryText.Name = "lblQueryText";
@@ -506,28 +513,28 @@
       this.lblQueryText.TabIndex = 0;
       this.lblQueryText.Text = "Query";
       this.lblQueryText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // splitterRight
-      // 
+      //
       this.splitterRight.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterRight.Location = new System.Drawing.Point(0, 0);
       this.splitterRight.Name = "splitterRight";
       this.splitterRight.Orientation = System.Windows.Forms.Orientation.Horizontal;
-      // 
+      //
       // splitterRight.Panel1
-      // 
+      //
       this.splitterRight.Panel1.Controls.Add(this.txtCompareText);
       this.splitterRight.Panel1.Controls.Add(this.panel1);
-      // 
+      //
       // splitterRight.Panel2
-      // 
+      //
       this.splitterRight.Panel2.Controls.Add(this.pnlTextCompareResults);
       this.splitterRight.Size = new System.Drawing.Size(674, 602);
       this.splitterRight.SplitterDistance = 250;
       this.splitterRight.TabIndex = 1;
-      // 
+      //
       // txtCompareText
-      // 
+      //
       this.txtCompareText.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -538,7 +545,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtCompareText.AutoScrollMinSize = new System.Drawing.Size(25, 12);
       this.txtCompareText.BackBrush = null;
       this.txtCompareText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -559,9 +567,9 @@
       this.txtCompareText.TabIndex = 6;
       this.txtCompareText.Zoom = 100;
       this.txtCompareText.DoubleClick += new System.EventHandler(this.fctb_DoubleClick);
-      // 
+      //
       // panel1
-      // 
+      //
       this.panel1.Controls.Add(this.lblCompareTextLines);
       this.panel1.Controls.Add(this.btnClearCompareText);
       this.panel1.Controls.Add(this.btnCompareText);
@@ -571,18 +579,18 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(674, 32);
       this.panel1.TabIndex = 8;
-      // 
+      //
       // lblCompareTextLines
-      // 
+      //
       this.lblCompareTextLines.AutoSize = true;
       this.lblCompareTextLines.Location = new System.Drawing.Point(248, 11);
       this.lblCompareTextLines.Name = "lblCompareTextLines";
       this.lblCompareTextLines.Size = new System.Drawing.Size(37, 13);
       this.lblCompareTextLines.TabIndex = 1;
       this.lblCompareTextLines.Text = "0 lines";
-      // 
+      //
       // btnClearCompareText
-      // 
+      //
       this.btnClearCompareText.Location = new System.Drawing.Point(157, 5);
       this.btnClearCompareText.Name = "btnClearCompareText";
       this.btnClearCompareText.Size = new System.Drawing.Size(59, 23);
@@ -591,9 +599,9 @@
       this.btnClearCompareText.Text = "Clear";
       this.btnClearCompareText.UseVisualStyleBackColor = true;
       this.btnClearCompareText.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCompareText
-      // 
+      //
       this.btnCompareText.Location = new System.Drawing.Point(95, 5);
       this.btnCompareText.Name = "btnCompareText";
       this.btnCompareText.Size = new System.Drawing.Size(59, 23);
@@ -602,9 +610,9 @@
       this.btnCompareText.Text = "Compare";
       this.btnCompareText.UseVisualStyleBackColor = true;
       this.btnCompareText.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblCompareText
-      // 
+      //
       this.lblCompareText.Dock = System.Windows.Forms.DockStyle.Left;
       this.lblCompareText.Location = new System.Drawing.Point(0, 0);
       this.lblCompareText.Name = "lblCompareText";
@@ -613,9 +621,9 @@
       this.lblCompareText.TabIndex = 0;
       this.lblCompareText.Text = "Compare Text";
       this.lblCompareText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTextCompareResults
-      // 
+      //
       this.pnlTextCompareResults.Controls.Add(this.txtCompareResults);
       this.pnlTextCompareResults.Controls.Add(this.panel3);
       this.pnlTextCompareResults.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -623,9 +631,9 @@
       this.pnlTextCompareResults.Name = "pnlTextCompareResults";
       this.pnlTextCompareResults.Size = new System.Drawing.Size(674, 348);
       this.pnlTextCompareResults.TabIndex = 8;
-      // 
+      //
       // txtCompareResults
-      // 
+      //
       this.txtCompareResults.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -636,7 +644,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtCompareResults.AutoScrollMinSize = new System.Drawing.Size(25, 12);
       this.txtCompareResults.BackBrush = null;
       this.txtCompareResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -657,9 +666,9 @@
       this.txtCompareResults.TabIndex = 10;
       this.txtCompareResults.Zoom = 100;
       this.txtCompareResults.DoubleClick += new System.EventHandler(this.fctb_DoubleClick);
-      // 
+      //
       // panel3
-      // 
+      //
       this.panel3.Controls.Add(this.rbShowMatches);
       this.panel3.Controls.Add(this.rbShowRight);
       this.panel3.Controls.Add(this.rbShowLeft);
@@ -670,9 +679,9 @@
       this.panel3.Name = "panel3";
       this.panel3.Size = new System.Drawing.Size(674, 32);
       this.panel3.TabIndex = 9;
-      // 
+      //
       // rbShowMatches
-      // 
+      //
       this.rbShowMatches.AutoSize = true;
       this.rbShowMatches.Location = new System.Drawing.Point(414, 8);
       this.rbShowMatches.Name = "rbShowMatches";
@@ -681,9 +690,9 @@
       this.rbShowMatches.Text = "Show Matches";
       this.rbShowMatches.UseVisualStyleBackColor = true;
       this.rbShowMatches.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
-      // 
+      //
       // rbShowRight
-      // 
+      //
       this.rbShowRight.AutoSize = true;
       this.rbShowRight.Location = new System.Drawing.Point(328, 8);
       this.rbShowRight.Name = "rbShowRight";
@@ -692,9 +701,9 @@
       this.rbShowRight.Text = "Show Right";
       this.rbShowRight.UseVisualStyleBackColor = true;
       this.rbShowRight.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
-      // 
+      //
       // rbShowLeft
-      // 
+      //
       this.rbShowLeft.AutoSize = true;
       this.rbShowLeft.Location = new System.Drawing.Point(249, 8);
       this.rbShowLeft.Name = "rbShowLeft";
@@ -703,9 +712,9 @@
       this.rbShowLeft.Text = "Show Left";
       this.rbShowLeft.UseVisualStyleBackColor = true;
       this.rbShowLeft.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
-      // 
+      //
       // rbShowAll
-      // 
+      //
       this.rbShowAll.AutoSize = true;
       this.rbShowAll.Checked = true;
       this.rbShowAll.Location = new System.Drawing.Point(177, 8);
@@ -716,9 +725,9 @@
       this.rbShowAll.Text = "Show All";
       this.rbShowAll.UseVisualStyleBackColor = true;
       this.rbShowAll.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
-      // 
+      //
       // lblCompareResults
-      // 
+      //
       this.lblCompareResults.Dock = System.Windows.Forms.DockStyle.Left;
       this.lblCompareResults.Location = new System.Drawing.Point(0, 0);
       this.lblCompareResults.Name = "lblCompareResults";
@@ -727,9 +736,9 @@
       this.lblCompareResults.TabIndex = 0;
       this.lblCompareResults.Text = "Compare Results";
       this.lblCompareResults.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // tabPageWellGrid
-      // 
+      //
       this.tabPageWellGrid.Controls.Add(this.gvWells);
       this.tabPageWellGrid.Controls.Add(this.pnlWellGridTop);
       this.tabPageWellGrid.Location = new System.Drawing.Point(4, 22);
@@ -738,9 +747,9 @@
       this.tabPageWellGrid.TabIndex = 1;
       this.tabPageWellGrid.Text = "Well Grid";
       this.tabPageWellGrid.UseVisualStyleBackColor = true;
-      // 
+      //
       // gvWells
-      // 
+      //
       this.gvWells.AllowUserToAddRows = false;
       this.gvWells.AllowUserToDeleteRows = false;
       this.gvWells.AllowUserToResizeRows = false;
@@ -759,17 +768,17 @@
       this.gvWells.Size = new System.Drawing.Size(1414, 502);
       this.gvWells.TabIndex = 7;
       this.gvWells.Tag = "EditScheduledTask";
-      // 
+      //
       // pnlWellGridTop
-      // 
+      //
       this.pnlWellGridTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlWellGridTop.Location = new System.Drawing.Point(0, 0);
       this.pnlWellGridTop.Name = "pnlWellGridTop";
       this.pnlWellGridTop.Size = new System.Drawing.Size(1414, 100);
       this.pnlWellGridTop.TabIndex = 8;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1430, 769);

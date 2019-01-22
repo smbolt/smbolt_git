@@ -14,15 +14,30 @@ namespace Org.Software.Tasks.Transactions
   public class CheckForUpdatesResponse : TransactionBase
   {
     [XMap]
-    public bool UpgradeAvailable { get; set; }
+    public bool UpgradeAvailable {
+      get;
+      set;
+    }
     [XMap]
-    public bool UpgradeRequired { get; set; }
+    public bool UpgradeRequired {
+      get;
+      set;
+    }
     [XMap]
-    public string CurrentVersion { get; set; }
+    public string CurrentVersion {
+      get;
+      set;
+    }
     [XMap]
-    public string UpgradeVersion { get; set; }
+    public string UpgradeVersion {
+      get;
+      set;
+    }
     [XMap]
-    public string PlatformString { get; set; }
+    public string PlatformString {
+      get;
+      set;
+    }
 
     public CheckForUpdatesResponse()
     {

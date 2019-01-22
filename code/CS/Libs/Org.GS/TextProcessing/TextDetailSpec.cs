@@ -8,21 +8,67 @@ namespace Org.GS
 {
   public class TextDetailSpec
   {
-    public DetailSpecSwitch DetailSpecSwitch { get; private set; }
-    public string DetailSpecData { get; private set; }
-    public string StringValue { get; private set; }
-    public string LowStringValue { get; private set; }
-    public string HighStringValue { get; private set; }
-    public decimal? NumericValue { get; private set; }
-    public decimal? LowNumericValue { get; private set; }
-    public decimal? HighNumericValue { get; private set; }
-    public DateTime? DateValue { get; private set; }
-    public DateTime? LowDateValue { get; private set; }
-    public DateTime? HighDateValue { get; private set; }
-    public List<decimal> NumericValueList { get; private set; }
-    public List<string> StringValueList { get; private set; }
-    public int Index { get; private set; }
-    public object CompareValue { get { return Get_CompareValue(); } }
+    public DetailSpecSwitch DetailSpecSwitch {
+      get;
+      private set;
+    }
+    public string DetailSpecData {
+      get;
+      private set;
+    }
+    public string StringValue {
+      get;
+      private set;
+    }
+    public string LowStringValue {
+      get;
+      private set;
+    }
+    public string HighStringValue {
+      get;
+      private set;
+    }
+    public decimal? NumericValue {
+      get;
+      private set;
+    }
+    public decimal? LowNumericValue {
+      get;
+      private set;
+    }
+    public decimal? HighNumericValue {
+      get;
+      private set;
+    }
+    public DateTime? DateValue {
+      get;
+      private set;
+    }
+    public DateTime? LowDateValue {
+      get;
+      private set;
+    }
+    public DateTime? HighDateValue {
+      get;
+      private set;
+    }
+    public List<decimal> NumericValueList {
+      get;
+      private set;
+    }
+    public List<string> StringValueList {
+      get;
+      private set;
+    }
+    public int Index {
+      get;
+      private set;
+    }
+    public object CompareValue {
+      get {
+        return Get_CompareValue();
+      }
+    }
 
     private TextNodeSpec _tns;
     private string _rawSpecifier;
@@ -229,10 +275,14 @@ namespace Org.GS
     {
       switch (compareValue)
       {
-        case "$AMP": return "&";
-        case "$COLON": return ":";
-        case "$COMMA": return ",";
-        case "$DASH": return "-";
+        case "$AMP":
+          return "&";
+        case "$COLON":
+          return ":";
+        case "$COMMA":
+          return ",";
+        case "$DASH":
+          return "-";
       }
 
       return compareValue;
@@ -249,7 +299,7 @@ namespace Org.GS
       if (ds == DetailSpecSwitch.Value)
       {
         _tns.IsValueProvider = true;
-        return; 
+        return;
       }
 
       if (!_tns.SuppressCondenseAndTrim)
@@ -326,7 +376,7 @@ namespace Org.GS
 
                 default:
                   throw new Exception("The value '" + dd + "' does not represent a valid single comparision value. The number of comparision values found " +
-                    "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
+                                      "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
               }
               this.StringValue = dd;
               break;
@@ -343,7 +393,7 @@ namespace Org.GS
 
                 default:
                   throw new Exception("The value '" + dd + "' does not represent a valid single comparision value. The number of comparision values found " +
-                    "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
+                                      "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
               }
               break;
 
@@ -362,7 +412,7 @@ namespace Org.GS
 
                 default:
                   throw new Exception("The value '" + dd + "' does not represent a valid single comparision value. The number of comparision values found " +
-                    "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
+                                      "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
               }
               break;
 
@@ -378,7 +428,7 @@ namespace Org.GS
 
                 default:
                   throw new Exception("The value '" + dd + "' does not represent a valid single comparision value. The number of comparision values found " +
-                    "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
+                                      "is " + range.Length.ToString() + " - only one comparision value is allowed for detail specification switch " + ds.ToString() + ".");
               }
               break;
 
@@ -389,7 +439,7 @@ namespace Org.GS
           break;
 
         case DetailSpecSwitch.DayOfMonth:
-          
+
           if (this.DetailSpecData.IsInteger())
           {
             int day = this.DetailSpecData.ToInt32();
@@ -446,7 +496,7 @@ namespace Org.GS
         case DataTypeSpec.String:
           switch (this.DetailSpecSwitch)
           {
-            case DetailSpecSwitch.ValueGreaterThan: 
+            case DetailSpecSwitch.ValueGreaterThan:
             case DetailSpecSwitch.ValueGreaterThanOrEqualTo:
               return _tns.LowStringValue;
 
@@ -494,6 +544,6 @@ namespace Org.GS
           throw new Exception("The DataTypeSpec '" + _tns.DataTypeSpec.ToString() + "' is not yet implemented.");
       }
     }
-    
+
   }
 }

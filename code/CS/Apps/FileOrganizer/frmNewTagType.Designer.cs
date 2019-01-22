@@ -29,9 +29,9 @@
       this.btnOK = new System.Windows.Forms.Button();
       this.btnCancel = new System.Windows.Forms.Button();
       this.SuspendLayout();
-      // 
+      //
       // lblTagType
-      // 
+      //
       this.lblTagType.AutoSize = true;
       this.lblTagType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblTagType.Location = new System.Drawing.Point(62, 58);
@@ -40,9 +40,9 @@
       this.lblTagType.Size = new System.Drawing.Size(78, 13);
       this.lblTagType.TabIndex = 1;
       this.lblTagType.Text = "New Tag Type";
-      // 
+      //
       // txtTagType
-      // 
+      //
       this.txtTagType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtTagType.Location = new System.Drawing.Point(68, 95);
       this.txtTagType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -50,9 +50,9 @@
       this.txtTagType.Size = new System.Drawing.Size(577, 20);
       this.txtTagType.TabIndex = 2;
       this.txtTagType.TextChanged += new System.EventHandler(this.txtTagType_TextChanged);
-      // 
+      //
       // btnOK
-      // 
+      //
       this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnOK.Location = new System.Drawing.Point(68, 175);
       this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -63,9 +63,9 @@
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
       this.btnOK.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnCancel.Location = new System.Drawing.Point(425, 175);
       this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -76,9 +76,9 @@
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmNewTagType
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(723, 297);

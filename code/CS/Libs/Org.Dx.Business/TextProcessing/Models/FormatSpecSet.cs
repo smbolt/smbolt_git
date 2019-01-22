@@ -10,7 +10,7 @@ using Org.GS;
 namespace Org.Dx.Business.TextProcessing
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(CollectionElements = "FormatSpec", XType = XType.Element)] 
+  [XMap(CollectionElements = "FormatSpec", XType = XType.Element)]
   public class FormatSpecSet : Dictionary<string, FormatSpec>
   {
     private object RecognizeFormat_LockObject = new object();

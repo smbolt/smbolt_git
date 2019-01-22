@@ -9,11 +9,26 @@ namespace Org.BMR.ApiModels
 {
   public class ResponseModel : ApiModelBase
   {
-    public int EntityId { get; set; }
-    public string EntityName { get; set; }
-    public ResponseAction ResponseAction { get; set; }
-    public string Code { get; set; }
-    public string Message { get; set; }
+    public int EntityId {
+      get;
+      set;
+    }
+    public string EntityName {
+      get;
+      set;
+    }
+    public ResponseAction ResponseAction {
+      get;
+      set;
+    }
+    public string Code {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
 
     public ResponseModel()
     {

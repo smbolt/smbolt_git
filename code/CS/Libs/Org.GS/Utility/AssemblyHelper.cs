@@ -10,7 +10,9 @@ namespace Org.GS
   {
     public static bool IsInVisualStudioDesigner
     {
-      get { return Get_IsInVisualStudioDesigner(); }
+      get {
+        return Get_IsInVisualStudioDesigner();
+      }
     }
 
     public static Assembly GetWebRootAssembly()
@@ -41,7 +43,7 @@ namespace Org.GS
     {
       List<Assembly> assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
 
-      Assembly orgGsAssembly = null; 
+      Assembly orgGsAssembly = null;
       Assembly defaultAssembly = null;
       Assembly orgModuleAssembly = null;
 
@@ -126,14 +128,14 @@ namespace Org.GS
     public static List<Assembly> GetAssembliesInAppDomain()
     {
       List<Assembly> assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
-      
+
       return assemblies;
     }
 
     private static bool Get_IsInVisualStudioDesigner()
     {
       List<Assembly> assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
-      int visualStudioDllCount = 0; 
+      int visualStudioDllCount = 0;
 
       foreach (Assembly assembly in assemblies)
       {
@@ -172,7 +174,7 @@ namespace Org.GS
       StringBuilder sb = new StringBuilder();
       string appDomainName = AppDomain.CurrentDomain.FriendlyName;
 
-      sb.Append("AppDomain:        " + appDomainName + g.crlf2); 
+      sb.Append("AppDomain:        " + appDomainName + g.crlf2);
 
       foreach (Assembly assembly in selectedAssemblies)
       {
@@ -182,11 +184,11 @@ namespace Org.GS
         string location = assembly.Location;
         string image = assembly.ImageRuntimeVersion;
 
-        string results =  "Manifest Module:  " + manifestModule + g.crlf + 
-                          "Full Name:        " + fullName + g.crlf + 
-                          "Code Base:        " + codeBase + g.crlf + 
-                          "Location:         " + location + g.crlf + 
-                          "Image:            " + image + g.crlf2; 
+        string results =  "Manifest Module:  " + manifestModule + g.crlf +
+                          "Full Name:        " + fullName + g.crlf +
+                          "Code Base:        " + codeBase + g.crlf +
+                          "Location:         " + location + g.crlf +
+                          "Image:            " + image + g.crlf2;
         sb.Append(results);
       }
 

@@ -17,7 +17,7 @@ namespace Org.CLScrape.Tasks
       TaskResult taskResult = base.InitializeTaskResult();
 
       var sb = new StringBuilder();
-      
+
       try
       {
         base.Notify(base.ProcessorName + " starting on thread " + Thread.CurrentThread.ManagedThreadId.ToString() + ".");
@@ -30,11 +30,11 @@ namespace Org.CLScrape.Tasks
 
         //var articleNode = stateListDoc.DocumentNode.SelectSingleNode("//body/article");
         //if (articleNode == null)
-        //  throw new Exception("Main article node not found in state list page."); 
+        //  throw new Exception("Main article node not found in state list page.");
 
         //var bodyNode = articleNode.SelectSingleNode("./section[@class='body']");
         //if (bodyNode == null)
-        //  throw new Exception("Body node not found in state list page."); 
+        //  throw new Exception("Body node not found in state list page.");
 
         //HtmlNode usCountryNode = null;
         //var countryNodes = bodyNode.SelectNodes("./h1");
@@ -89,7 +89,7 @@ namespace Org.CLScrape.Tasks
         //    {
         //      stateStarted = true;
         //      stateName = usElement.InnerText.Trim();
-        //      sb.Append(stateName + g.crlf); 
+        //      sb.Append(stateName + g.crlf);
         //    }
         //    else
         //    {
@@ -99,10 +99,10 @@ namespace Org.CLScrape.Tasks
 
         //  if (usElement.Name == "h4")
         //  {
-        //    sb.Append(g.crlf); 
+        //    sb.Append(g.crlf);
         //    stateName = usElement.InnerText.Trim();
         //    if (stateName.ToLower() != "territories")
-        //      sb.Append(stateName + g.crlf); 
+        //      sb.Append(stateName + g.crlf);
         //  }
 
         //  // list of cities for the state
@@ -121,7 +121,7 @@ namespace Org.CLScrape.Tasks
 
         //        string cityNameUpper = cityName.ToUpper();
         //        if (!cityUrls.ContainsKey(cityNameUpper))
-        //          cityUrls.Add(cityNameUpper, cityUrl); 
+        //          cityUrls.Add(cityNameUpper, cityUrl);
         //      }
         //    }
         //  }
@@ -136,7 +136,7 @@ namespace Org.CLScrape.Tasks
         //  var listings = cityGigsDoc2.DocumentNode.SelectNodes("//li[@class='result-row']");
         //  foreach (var listing in listings)
         //  {
-        //    DateTime postTime = new DateTime(2000,1, 1); 
+        //    DateTime postTime = new DateTime(2000,1, 1);
         //    string postUrl = String.Empty;
         //    long postId = 0;
 
@@ -145,7 +145,7 @@ namespace Org.CLScrape.Tasks
         //    if (dtAttr != null)
         //    {
         //      string dateTime = dtAttr.Value;
-        //      DateTime.TryParse(dateTime, out postTime); 
+        //      DateTime.TryParse(dateTime, out postTime);
         //    }
 
         //    var pElement = listing.SelectSingleNode("./p");

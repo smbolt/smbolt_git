@@ -21,15 +21,22 @@ using Org.Dx.Business;
 using Gulfport.Common.Tasks;
 using Bus = Gulfport.Stmt.Business;
 
-namespace Gulfport.NonOp.Tasks 
+namespace Gulfport.NonOp.Tasks
 {
   [Export(typeof(ITaskProcessor))]
   [ExportMetadata("Name", "NonOpProductionDataImport")]
   [ExportMetadata("Version", "1.0.0.0")]
   public class NonOpProductionDataImport : StatementTaskProcessor
   {
-    public override int EntityId { get { return 513; } }
-    public int _operatorId { get; set; }
+    public override int EntityId {
+      get {
+        return 513;
+      }
+    }
+    public int _operatorId {
+      get;
+      set;
+    }
     private Logger _logger;
 
     public override async Task<TaskResult> ProcessTaskAsync(Func<bool> checkContinue)
@@ -37,12 +44,12 @@ namespace Gulfport.NonOp.Tasks
       TaskResult taskResult = base.InitializeTaskResult();
       CheckContinue = checkContinue;
       _logger = new Logger();
-      _logger.ModuleId = g.AppInfo.ModuleCode;  
+      _logger.ModuleId = g.AppInfo.ModuleCode;
 
       try
       {
         return await Task.Run<TaskResult>(() =>
-        {          
+        {
           this.Initialize();
           taskResult.IsDryRun = IsDryRun;
 
@@ -93,7 +100,7 @@ namespace Gulfport.NonOp.Tasks
           }
 
           return taskResult.Success(successMessage);
-        }); 
+        });
       }
       catch (Exception ex)
       {
@@ -132,7 +139,7 @@ namespace Gulfport.NonOp.Tasks
         nonOpStatementFile.CreateDateTime = nonOpStatementFile.ExtractDateTime;
         nonOpStatementFile.CreatedBy = g.SystemInfo.DomainAndUser;
 
-        Type dbObjectType = typeof(NonOpProductionDetail); 
+        Type dbObjectType = typeof(NonOpProductionDetail);
         List<PropertyInfo> piSet = dbObjectType.GetIsDbColumnProperties();
 
         foreach (var wsKvp in wb)
@@ -141,15 +148,15 @@ namespace Gulfport.NonOp.Tasks
           var ws = wsKvp.Value;
           ws.PopulateDxCellsArray();
 
-          foreach(var row in ws.Values)          
+          foreach(var row in ws.Values)
           {
             row.PopulateNamedCellsArray();
             var nonOpProductionDetail = new NonOpProductionDetail();
-            
+
             foreach (var pi in piSet)
             {
-              propertyName = pi.Name; 
-              pi.SetValue(nonOpProductionDetail, row.CellValue(pi.Name, pi.PropertyType)); 
+              propertyName = pi.Name;
+              pi.SetValue(nonOpProductionDetail, row.CellValue(pi.Name, pi.PropertyType));
             }
 
             nonOpStatementFile.Statements.Add(nonOpProductionDetail);

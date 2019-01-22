@@ -21,31 +21,67 @@ namespace Org.Software.Tasks.Transactions
   [XMap(XType = XType.Element)]
   [WCFTrans(Version = "1.0.0.0")]
   public class DownloadSoftwareRequest : TransactionBase
-  {    
+  {
     [XMap]
-    public int OrgId { get; set; }
+    public int OrgId {
+      get;
+      set;
+    }
     [XMap]
-    public string DomainName { get; set; }
+    public string DomainName {
+      get;
+      set;
+    }
     [XMap]
-    public string MachineName { get; set; }
+    public string MachineName {
+      get;
+      set;
+    }
     [XMap]
-    public string UserName { get; set; }
+    public string UserName {
+      get;
+      set;
+    }
     [XMap]
-    public int ModuleCode { get; set; }
+    public int ModuleCode {
+      get;
+      set;
+    }
     [XMap]
-    public string ModuleName { get; set; }
+    public string ModuleName {
+      get;
+      set;
+    }
     [XMap]
-    public string CurrentVersion { get; set; }
+    public string CurrentVersion {
+      get;
+      set;
+    }
     [XMap]
-    public string CurrentPlatformString { get; set; }
+    public string CurrentPlatformString {
+      get;
+      set;
+    }
     [XMap]
-    public string UpgradeVersion { get; set; }
+    public string UpgradeVersion {
+      get;
+      set;
+    }
     [XMap]
-    public string UpgradePlatformString { get; set; }
+    public string UpgradePlatformString {
+      get;
+      set;
+    }
     [XMap]
-    public RequestType RequestType { get; set; }
+    public RequestType RequestType {
+      get;
+      set;
+    }
     [XMap]
-    public int SegmentNumber { get; set; }
+    public int SegmentNumber {
+      get;
+      set;
+    }
 
     public DownloadSoftwareRequest()
     {
@@ -53,7 +89,7 @@ namespace Org.Software.Tasks.Transactions
       this.DomainName = String.Empty;
       this.MachineName = String.Empty;
       this.UserName = String.Empty;
-      this.ModuleCode = 0; 
+      this.ModuleCode = 0;
       this.ModuleName = String.Empty;
       this.CurrentVersion = String.Empty;
       this.CurrentPlatformString = String.Empty;

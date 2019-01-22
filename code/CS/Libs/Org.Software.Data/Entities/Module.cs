@@ -12,20 +12,29 @@ using Org.GS;
 
 namespace Org.Software.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Org_Software", "", "Module")]
-    public partial class Module
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Org_Software", "", "Module")]
+  public partial class Module
+  {
+    public Module()
     {
-        public Module()
-        {
-            this.AppLogs = new HashSet<AppLog>();
-        }
-    
-        public int ModuleCode { get; set; }
-        public string ModuleName { get; set; }
-    
-        public virtual ICollection<AppLog> AppLogs { get; set; }
+      this.AppLogs = new HashSet<AppLog>();
     }
+
+    public int ModuleCode {
+      get;
+      set;
+    }
+    public string ModuleName {
+      get;
+      set;
+    }
+
+    public virtual ICollection<AppLog> AppLogs {
+      get;
+      set;
+    }
+  }
 }

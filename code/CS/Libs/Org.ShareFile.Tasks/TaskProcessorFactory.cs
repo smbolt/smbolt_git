@@ -13,7 +13,7 @@ namespace Org.ShareFile.Tasks
   [ExportMetadata("Version", "1.0.0.0")]
   [ExportMetadata("Processors",
                   "ShareFileUtility_1.0.0.0 "
-                  )]
+                 )]
 
   public class TaskProcessorFactory : ITaskProcessorFactory, IDisposable
   {

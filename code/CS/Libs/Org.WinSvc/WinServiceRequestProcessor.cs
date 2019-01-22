@@ -16,7 +16,11 @@ namespace Org.WinSvc
   {
     private static Func<TransactionBase, TaskResult> HostTransactionProcessor;
 
-    public override int EntityId { get { return 399; } }
+    public override int EntityId {
+      get {
+        return 399;
+      }
+    }
     public static bool _isMapped = false;
 
     public WebServiceRequestProcessor()

@@ -11,15 +11,27 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "C__MigrationHistory")]
-    public partial class C__MigrationHistory
-    {
-        public string MigrationId { get; set; }
-        public string ContextKey { get; set; }
-        public byte[] Model { get; set; }
-        public string ProductVersion { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "C__MigrationHistory")]
+  public partial class C__MigrationHistory
+  {
+    public string MigrationId {
+      get;
+      set;
     }
+    public string ContextKey {
+      get;
+      set;
+    }
+    public byte[] Model {
+      get;
+      set;
+    }
+    public string ProductVersion {
+      get;
+      set;
+    }
+  }
 }

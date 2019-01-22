@@ -11,19 +11,40 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "GroupMembership")]
-    public partial class GroupMembership
-    {
-        public int UserGroupMembershipId { get; set; }
-        public int GroupId { get; set; }
-        public int AccountId { get; set; }
-        public int StatusId { get; set; }
-    
-        public virtual Group Group { get; set; }
-        public virtual Status Status { get; set; }
-        public virtual Account Account { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "GroupMembership")]
+  public partial class GroupMembership
+  {
+    public int UserGroupMembershipId {
+      get;
+      set;
     }
+    public int GroupId {
+      get;
+      set;
+    }
+    public int AccountId {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+
+    public virtual Group Group {
+      get;
+      set;
+    }
+    public virtual Status Status {
+      get;
+      set;
+    }
+    public virtual Account Account {
+      get;
+      set;
+    }
+  }
 }

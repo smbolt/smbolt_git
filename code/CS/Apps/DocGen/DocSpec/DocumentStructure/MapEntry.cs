@@ -8,22 +8,22 @@ using Org.GS;
 
 namespace Org.DocGen.DocSpec
 {
-    [Meta(OxName = "aMapEntry", Abbr = "MapEntry")]
-    public class MapEntry : DocumentElement
+  [Meta(OxName = "aMapEntry", Abbr = "MapEntry")]
+  public class MapEntry : DocumentElement
+  {
+    public MapEntry() { }
+
+    public MapEntry(XElement xml, Doc doc, DocumentElement parent)
     {
-        public MapEntry() { }
+      base.Initialize(xml, doc, parent);
 
-        public MapEntry(XElement xml, Doc doc, DocumentElement parent)
-        {
-            base.Initialize(xml, doc, parent);
-            
-            if (xml == null)
-                return;
+      if (xml == null)
+        return;
 
-            this.Tag = xml.GetRequiredAttributeValue("tag");
+      this.Tag = xml.GetRequiredAttributeValue("tag");
 
-            this.LoadChildren(xml, doc, this);
-        }
-
+      this.LoadChildren(xml, doc, this);
     }
+
+  }
 }

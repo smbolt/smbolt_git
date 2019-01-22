@@ -13,25 +13,46 @@ namespace Org.GS.Configuration
   public class SmtpProfile
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Host { get; set; }
+    public string Host {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Port { get; set; }
+    public string Port {
+      get;
+      set;
+    }
 
     [XMap]
-    public string User { get; set; }
+    public string User {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Password { get; set; }
+    public string Password {
+      get;
+      set;
+    }
 
     [XMap]
-    public bool PickUpFromIIS { get; set; }
+    public bool PickUpFromIIS {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ReplyToAddress { get; set; }
+    public string ReplyToAddress {
+      get;
+      set;
+    }
 
     public SmtpProfile()
     {

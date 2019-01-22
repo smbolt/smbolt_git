@@ -9,11 +9,27 @@ namespace Org.GS.Analysis
   public class Analytic
   {
     private static bool _isInitialized = Initialize();
-    public static Dictionary<int, string> IdentifierDictionary { get; set; }
-    public static Dictionary<int, string> ColumnNames { get; set; }
-    public Dictionary<int, int> Identifiers { get; set; }
-    public int[] DataArray { get; set; }
-    public string ArrayString { get { return Get_ArrayString(); } }
+    public static Dictionary<int, string> IdentifierDictionary {
+      get;
+      set;
+    }
+    public static Dictionary<int, string> ColumnNames {
+      get;
+      set;
+    }
+    public Dictionary<int, int> Identifiers {
+      get;
+      set;
+    }
+    public int[] DataArray {
+      get;
+      set;
+    }
+    public string ArrayString {
+      get {
+        return Get_ArrayString();
+      }
+    }
 
     public Analytic(int length)
     {

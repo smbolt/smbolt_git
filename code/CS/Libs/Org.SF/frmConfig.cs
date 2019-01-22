@@ -29,7 +29,7 @@ namespace Org.SF
 
     private void InitializeForm()
     {
-      fctxtMain.Text = File.ReadAllText(_filePath); 
+      fctxtMain.Text = File.ReadAllText(_filePath);
     }
 
     public string GetText()
@@ -43,12 +43,12 @@ namespace Org.SF
     }
 
     private void fctxtMain_CustomAction(object sender, FastColoredTextBoxNS.CustomActionEventArgs e)
-    {      
+    {
       switch(e.Action)
       {
         case FastColoredTextBoxNS.FCTBAction.CustomAction1:
           if (this.ConfigFormAction != null)
-            this.ConfigFormAction("SaveAndDisplay"); 
+            this.ConfigFormAction("SaveAndDisplay");
           break;
       }
     }
@@ -56,7 +56,7 @@ namespace Org.SF
     private void btnSaveAndRefresh_Click(object sender, EventArgs e)
     {
       if (this.ConfigFormAction != null)
-        this.ConfigFormAction("SaveAndDisplay"); 
+        this.ConfigFormAction("SaveAndDisplay");
     }
   }
 }

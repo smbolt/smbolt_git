@@ -12,15 +12,23 @@ namespace Org.GS
     private string _errorCode;
     public string ErrorCode
     {
-      get { return _errorCode; }
-      set { _errorCode = value; }
+      get {
+        return _errorCode;
+      }
+      set {
+        _errorCode = value;
+      }
     }
 
     private string _exceptionDetail;
     public string ExceptionDetail
     {
-      get { return _exceptionDetail; }
-      set { _exceptionDetail = value; }
+      get {
+        return _exceptionDetail;
+      }
+      set {
+        _exceptionDetail = value;
+      }
     }
 
     public CodedException(string message)
@@ -55,7 +63,7 @@ namespace Org.GS
     }
 
     public override void GetObjectData(SerializationInfo info,
-      StreamingContext context)
+                                       StreamingContext context)
     {
       base.GetObjectData(info, context);
 

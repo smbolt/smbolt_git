@@ -10,11 +10,14 @@ using Org.GS;
 namespace Org.Dx.Business.TextProcessing
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(CollectionElements = "ExtractSpec", XType = XType.Element)] 
+  [XMap(CollectionElements = "ExtractSpec", XType = XType.Element)]
   public class ExtractSpecSet : Dictionary<string, ExtractSpec>
   {
     [XMap]
-    public string ColumnIndexMapName { get; set; }
+    public string ColumnIndexMapName {
+      get;
+      set;
+    }
 
     public ExtractSpecSet()
     {

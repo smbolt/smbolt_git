@@ -11,7 +11,10 @@ namespace Org.WSO.Transactions
   public class GetCentralConfigRequest : TransactionBase
   {
     [XMap]
-    public string AppName { get; set; }
+    public string AppName {
+      get;
+      set;
+    }
 
     public GetCentralConfigRequest()
     {

@@ -9,7 +9,7 @@ namespace Org.QB.QBXML
 {
   public class QBXMLMsgsRs : List<QbXmlBase>
   {
-    
+
 
 
   }

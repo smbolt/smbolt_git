@@ -10,19 +10,47 @@ namespace Org.Dx.Business
   public class NodeQuery
   {
     private string _rawQuery;
-    public string Switches { get; set; }
+    public string Switches {
+      get;
+      set;
+    }
 
-    public QueryExecutionStatus QueryExecutionStatus { get { return Get_QueryExecutionStatus(); } }
-    public int HeadAnchorPoint { get; private set; }
-    public int MaxAlignedSpecificQueryIndex { get { return Get_MaxAlignedSpecificQueryIndex(); } }
-    public int MaxAlignedCellIndex { get { return Get_MaxAlignedCellIndex(); } }
+    public QueryExecutionStatus QueryExecutionStatus {
+      get {
+        return Get_QueryExecutionStatus();
+      }
+    }
+    public int HeadAnchorPoint {
+      get;
+      private set;
+    }
+    public int MaxAlignedSpecificQueryIndex {
+      get {
+        return Get_MaxAlignedSpecificQueryIndex();
+      }
+    }
+    public int MaxAlignedCellIndex {
+      get {
+        return Get_MaxAlignedCellIndex();
+      }
+    }
 
     private DxMapItem _dxMapItem;
-    public DxMapItem DxMapItem { get { return _dxMapItem; } }
+    public DxMapItem DxMapItem {
+      get {
+        return _dxMapItem;
+      }
+    }
     public SortedList<int, NodeQueryElement> NodeQueryElements;
-    private SortedList<int, DxCell> Cells { get; set; }
-    public NodeQueryFrame NodeQueryFrame { get; private set; }
-        
+    private SortedList<int, DxCell> Cells {
+      get;
+      set;
+    }
+    public NodeQueryFrame NodeQueryFrame {
+      get;
+      private set;
+    }
+
     public int Count
     {
       get
@@ -33,8 +61,16 @@ namespace Org.Dx.Business
       }
     }
 
-    public string Report { get { return Get_Report(); } }
-    public string Report2 { get { return Get_Report2(); } }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
+    public string Report2 {
+      get {
+        return Get_Report2();
+      }
+    }
 
     public NodeQuery(DxMapItem dxMapItem, string rawQuery, SortedList<int, DxCell> cells)
     {
@@ -73,14 +109,14 @@ namespace Org.Dx.Business
         Validate();
 
         InitializeExecution();
-        this.NodeQueryFrame = new NodeQueryFrame(this.Cells.ToNodeSet(), this.NodeQueryElements); 
+        this.NodeQueryFrame = new NodeQueryFrame(this.Cells.ToNodeSet(), this.NodeQueryElements);
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred in the NodeQuery constructor with raw query of '" + rawQuery + "'.", ex); 
+        throw new Exception("An exception occurred in the NodeQuery constructor with raw query of '" + rawQuery + "'.", ex);
       }
     }
-    
+
     public void InitializeExecution()
     {
       foreach (var kvp in this.NodeQueryElements)
@@ -129,7 +165,7 @@ namespace Org.Dx.Business
           InitializeQueryBody(this.HeadAnchorPoint);
 
           // Starting with the second query element, attempt to align the query with the cells
-          
+
           for (int q = 1; q < this.NodeQueryElements.Count; q++)
           {
             string report3 = this.Report;
@@ -317,7 +353,7 @@ namespace Org.Dx.Business
             return kvp.Key;
           }
         }
-        
+
         return -1;
       }
       catch (Exception ex)
@@ -328,7 +364,7 @@ namespace Org.Dx.Business
 
     private void InitializeQueryBody(int headAnchorPoint)
     {
-      // This method updates the matched "headQueryElement" (first queryElement in the query) with the 
+      // This method updates the matched "headQueryElement" (first queryElement in the query) with the
       // index of the cell it was matched against (the headAnchorPoint) and updates its status to "Matched".
       // Then the rest of the query elements (the "body") are updated with subsequent/ascending cell indices
       // to "provisionally align" the query elements with the cells after the headAnchorPoint.  The provisional
@@ -372,7 +408,7 @@ namespace Org.Dx.Business
         if (begSwitch > -1)
         {
           this.Switches = _rawQuery.Substring(begSwitch);
-          _rawQuery = _rawQuery.Substring(0, endParen + 1); 
+          _rawQuery = _rawQuery.Substring(0, endParen + 1);
         }
 
         if (!_rawQuery.EndsWith(")"))
@@ -402,7 +438,7 @@ namespace Org.Dx.Business
           var nextChar = _rawQuery[beg];
           if (nextChar != '(')
             throw new Exception("Only an open parenthesis may follow the a close parenthesis which is not the final character in the NodeQuery, found '" +
-                                 nextChar.ToString() + "' in position " + beg.ToString() + ", full text of NodeQuery is '" + _rawQuery + "'.");
+                                nextChar.ToString() + "' in position " + beg.ToString() + ", full text of NodeQuery is '" + _rawQuery + "'.");
         }
       }
       catch (Exception ex)
@@ -431,7 +467,7 @@ namespace Org.Dx.Business
     {
       if (this.Cells == null || this.Cells.Count == 0 || this.NodeQueryElements == null || this.NodeQueryElements.Count == 0)
         return "Query not ready to report.";
-      
+
       var sb = new StringBuilder();
       sb.Append("NodeQuery Dump" + g.crlf);
       sb.Append("Status: " + this.QueryExecutionStatus.ToString() + g.crlf2);
@@ -485,7 +521,7 @@ namespace Org.Dx.Business
               sb.Append(" F");
               break;
           }
-            
+
           sb.Append(" " + nodeQueryElement.Ex.ToString("000") + " " + nodeQueryElement.SetSeqIndicator + " ");
           sb.Append((nodeQueryElement.Ax > -1 ? nodeQueryElement.Ax.ToString("000") : "   ") + " ");
 
@@ -508,7 +544,7 @@ namespace Org.Dx.Business
           else
           {
             sb.Append(nodeQueryElement.IsFlexTokens ? "F" : "S");
-            sb.Append(" " + nodeQueryElement.LowTokenCount.ToString() + "-" + nodeQueryElement.HighTokenCount.ToString() + " "); 
+            sb.Append(" " + nodeQueryElement.LowTokenCount.ToString() + "-" + nodeQueryElement.HighTokenCount.ToString() + " ");
             sb.Append(nodeQueryElement.QueryString);
           }
         }
@@ -516,7 +552,7 @@ namespace Org.Dx.Business
         sb.Append(g.crlf);
       }
 
-      string report = sb.ToString();      
+      string report = sb.ToString();
 
       return report;
     }
@@ -597,7 +633,7 @@ namespace Org.Dx.Business
 
       int maxAlignedCellIndex = this.MaxAlignedCellIndex;
       int currCellInterval = currCellIndex - maxAlignedCellIndex;
-      
+
       int minAllowedInterval = 0;
       int maxAllowedInterval = 0;
       int maxAlignedSpecificQueryIndex = this.MaxAlignedSpecificQueryIndex;

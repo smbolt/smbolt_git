@@ -11,6 +11,9 @@ namespace Org.QB.QBXML
   public class AdditionalNotesList
   {
     [XMap (XType = XType.Element)]
-    public List<string> Note { get; set; }    
+    public List<string> Note {
+      get;
+      set;
+    }
   }
 }

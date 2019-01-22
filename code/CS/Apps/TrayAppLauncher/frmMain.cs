@@ -70,7 +70,7 @@ namespace Org.TrayAppLauncher
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An exception occurred while initializating the application object 'a'." + g.crlf2 + ex.ToReport(), 
+        MessageBox.Show("An exception occurred while initializating the application object 'a'." + g.crlf2 + ex.ToReport(),
                         "DxWorkbookTester - Application Object Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
@@ -102,13 +102,13 @@ namespace Org.TrayAppLauncher
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while initializating the application." + g.crlf2 + ex.ToReport(),
-                         "DxWorkbookTester - Application Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "DxWorkbookTester - Application Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
     private void frmMain_Shown(object sender, EventArgs e)
     {
-        this.Visible = false;
+      this.Visible = false;
     }
   }
 }

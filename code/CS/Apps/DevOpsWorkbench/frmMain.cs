@@ -30,7 +30,7 @@ namespace DevOpsWorkbench
     private Logger _logger;
 
     private string _outputText;
-    
+
     public frmMain()
     {
       InitializeComponent();
@@ -74,7 +74,7 @@ namespace DevOpsWorkbench
         return;
       }
 
-      
+
       _scriptText = File.ReadAllText(_scriptFullPath);
       txtScript.Text = _scriptText;
       _scriptFileLoaded = true;
@@ -115,7 +115,7 @@ namespace DevOpsWorkbench
                         "DevOpsWorkbench - Error Saving Script", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
-    
+
     private async void RunStream()
     {
       System.Threading.Tasks.Task displayTask = null;
@@ -234,15 +234,15 @@ namespace DevOpsWorkbench
         {
           using (var psEngine = new Org.PS.PsEngine())
           {
-              psEngine.PsOutputGenerated += this.PsEngine_PSOutputGenerated;
-              psEngine.PsDebugOutputGenerated += this.PsEngine_PSOutputGenerated;
-              psEngine.PsWarningOutputGenerated += this.PsEngine_PSOutputGenerated;
-              psEngine.PsErrorOutputGenerated += this.PsEngine_PSOutputGenerated;
-              psEngine.PsVerboseOutputGenerated += this.PsEngine_PSOutputGenerated;
-              psEngine.PsInvocationStateChanged += PsEngine_PSInvocationStateChanged;
-              return psEngine.RunScriptAsync(scriptPath);
+            psEngine.PsOutputGenerated += this.PsEngine_PSOutputGenerated;
+            psEngine.PsDebugOutputGenerated += this.PsEngine_PSOutputGenerated;
+            psEngine.PsWarningOutputGenerated += this.PsEngine_PSOutputGenerated;
+            psEngine.PsErrorOutputGenerated += this.PsEngine_PSOutputGenerated;
+            psEngine.PsVerboseOutputGenerated += this.PsEngine_PSOutputGenerated;
+            psEngine.PsInvocationStateChanged += PsEngine_PSInvocationStateChanged;
+            return psEngine.RunScriptAsync(scriptPath);
           }
-        });        
+        });
       }
       catch (Exception ex)
       {
@@ -253,7 +253,7 @@ namespace DevOpsWorkbench
         return exTaskResult;
       }
     }
-    
+
     private List<string> GetStreamScripts()
     {
       var streamScripts = new List<string>();
@@ -433,7 +433,7 @@ namespace DevOpsWorkbench
         _scriptsPath = g.CI("ScriptsPath");
 
         RefreshTreeView();
-        
+
         btnRun.Enabled = false;
       }
       catch (Exception ex)
@@ -464,7 +464,7 @@ namespace DevOpsWorkbench
         throw new Exception("An exception occurred while attempting to build a file list from the path '" + _scriptsPath + "'.", ex);
       }
     }
-    
+
     private bool CheckForScriptChanges()
     {
       if (!_scriptFileLoaded)
@@ -549,7 +549,7 @@ namespace DevOpsWorkbench
           if (e.Control)
           {
             if (tabMain.SelectedTab == tabPageScript)
-            {              
+            {
               RunStream();
             }
           }

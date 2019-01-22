@@ -16,14 +16,38 @@ namespace Org.DxDocs
 
   public class DocSpec
   {
-    public string DocName { get; set; }
-    public DxDocType DxDocType { get; set; }
-    public string UserName { get; set; }
-    public DocParmSet DocParmSet { get; set; }
-    public string DocRelativePath { get; set; }
-    public string DocAbsolutePath { get; set; }
-    public string LogoImageRelativePath { get; set; }
-    public string LogoImageAbsolutePath { get; set; }
+    public string DocName {
+      get;
+      set;
+    }
+    public DxDocType DxDocType {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public DocParmSet DocParmSet {
+      get;
+      set;
+    }
+    public string DocRelativePath {
+      get;
+      set;
+    }
+    public string DocAbsolutePath {
+      get;
+      set;
+    }
+    public string LogoImageRelativePath {
+      get;
+      set;
+    }
+    public string LogoImageAbsolutePath {
+      get;
+      set;
+    }
 
     public DocSpec()
     {

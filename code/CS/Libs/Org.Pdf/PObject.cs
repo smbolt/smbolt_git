@@ -11,37 +11,140 @@ namespace Org.Pdf
 {
   public class PObject
   {
-    public string Name { get; protected set; }
-    public int PObjectNumber { get; private set; }
+    public string Name {
+      get;
+      protected set;
+    }
+    public int PObjectNumber {
+      get;
+      private set;
+    }
     private bool _isPage;
-    public string Path { get { return Get_Path(); } }
-    public int Level { get { return Get_Level(); } }
-    public bool IsPage { get { return _isPage; } }
+    public string Path {
+      get {
+        return Get_Path();
+      }
+    }
+    public int Level {
+      get {
+        return Get_Level();
+      }
+    }
+    public bool IsPage {
+      get {
+        return _isPage;
+      }
+    }
     private Page _page;
-    public Page Page { get { return Get_Page(); } }
-    public Document Document { get; private set; }
-    public PdfObject iPdfObject { get; set; }
-    public bool HasIndirectReference { get { return this.IndirectReference != null; } }
-    public string IndirectReferenceDisplay { get { return this.IndirectReference != null ? "{" + this.IndirectReference.ToString() + "}" : String.Empty; } }
-    public PdfIndirectReference IndirectReference { get; private set; }
-    public PdfObject iPdfIndirectObject { get; private set; }
-    public PObjectType PObjectType { get { return this.Get_PObjectType(); } }
-    public bool IsImage { get { return Get_IsImage(); } }
-    public bool ContainsAnImage { get { return Get_ContainsAnImage(this); } }
-    public bool IsDecendentOfImage { get { return Get_IsDescendentOfImage(this); } }
-    public double? NumberValue { get { return Get_NumberValue(); } }
-    public string StringValue { get { return Get_StringValue(); } }
-    public string NameValue { get { return Get_NameValue(); } }
-    public bool? BooleanValue { get { return Get_BooleanValue(); } }
-    public PObjectSet ChildObjects { get; private set; }
-    public PObjectSet DictionaryValue { get { return Get_DictionaryValue(); } }
-    public PObjectSet ArrayValue { get { return Get_ArrayValue(); } }
-    public int Count { get { return Get_Count(); } }
-    public PObject Parent { get; private set; }
-    public string DisplayText { get { return Get_DisplayText(); } }
-    public byte[] Bytes { get; protected set; }
+    public Page Page {
+      get {
+        return Get_Page();
+      }
+    }
+    public Document Document {
+      get;
+      private set;
+    }
+    public PdfObject iPdfObject {
+      get;
+      set;
+    }
+    public bool HasIndirectReference {
+      get {
+        return this.IndirectReference != null;
+      }
+    }
+    public string IndirectReferenceDisplay {
+      get {
+        return this.IndirectReference != null ? "{" + this.IndirectReference.ToString() + "}" : String.Empty;
+      }
+    }
+    public PdfIndirectReference IndirectReference {
+      get;
+      private set;
+    }
+    public PdfObject iPdfIndirectObject {
+      get;
+      private set;
+    }
+    public PObjectType PObjectType {
+      get {
+        return this.Get_PObjectType();
+      }
+    }
+    public bool IsImage {
+      get {
+        return Get_IsImage();
+      }
+    }
+    public bool ContainsAnImage {
+      get {
+        return Get_ContainsAnImage(this);
+      }
+    }
+    public bool IsDecendentOfImage {
+      get {
+        return Get_IsDescendentOfImage(this);
+      }
+    }
+    public double? NumberValue {
+      get {
+        return Get_NumberValue();
+      }
+    }
+    public string StringValue {
+      get {
+        return Get_StringValue();
+      }
+    }
+    public string NameValue {
+      get {
+        return Get_NameValue();
+      }
+    }
+    public bool? BooleanValue {
+      get {
+        return Get_BooleanValue();
+      }
+    }
+    public PObjectSet ChildObjects {
+      get;
+      private set;
+    }
+    public PObjectSet DictionaryValue {
+      get {
+        return Get_DictionaryValue();
+      }
+    }
+    public PObjectSet ArrayValue {
+      get {
+        return Get_ArrayValue();
+      }
+    }
+    public int Count {
+      get {
+        return Get_Count();
+      }
+    }
+    public PObject Parent {
+      get;
+      private set;
+    }
+    public string DisplayText {
+      get {
+        return Get_DisplayText();
+      }
+    }
+    public byte[] Bytes {
+      get;
+      protected set;
+    }
     private PdfImage _pdfImage;
-    public PdfImage PdfImage { get { return Get_PdfImage(); } }
+    public PdfImage PdfImage {
+      get {
+        return Get_PdfImage();
+      }
+    }
 
     public PObject(Document document, string name, PdfObject pdfObject, PObject parent = null, bool isPage = false)
     {
@@ -77,7 +180,7 @@ namespace Org.Pdf
       {
         if (this.iPdfObject == null)
           return;
-        
+
         switch (this.PObjectType)
         {
           case PObjectType.PdfArray:
@@ -90,7 +193,7 @@ namespace Org.Pdf
 
               if (this.ChildObjects.ContainsKey(arrayEntryObjectName))
                 throw new Exception("The object named '" + this.Name + "' (PdfArray) already contains a child object named '" + arrayEntryObjectName +
-                  "'. Object path is " + this.Path + ".");
+                                    "'. Object path is " + this.Path + ".");
 
               this.ChildObjects.Add(arrayEntryObjectName, arrayEntryPObject);
             }
@@ -117,7 +220,7 @@ namespace Org.Pdf
 
               if (this.ChildObjects.ContainsKey(keyName))
                 throw new Exception("The object named '" + this.Name + "' (PdfDictionary) already contains a child object named '" + keyName +
-                  "'. Object path is " + this.Path + ".");
+                                    "'. Object path is " + this.Path + ".");
 
               this.ChildObjects.Add(keyName, dictEntryObject);
             }
@@ -139,7 +242,7 @@ namespace Org.Pdf
               }
             }
 
-            break;            
+            break;
 
           case PObjectType.PdfBoolean:
           case PObjectType.PdfNumber:
@@ -364,7 +467,7 @@ namespace Org.Pdf
           return true;
       }
 
-      return false; 
+      return false;
     }
 
     private bool Get_ContainsAnImage(PObject o)
@@ -423,8 +526,8 @@ namespace Org.Pdf
           pageText = "[No text on page]";
 
         sb.Append("Page Name   : " + page.Name + g.crlf +
-                               "Page Number : " + page.PageNumber.ToString() + g.crlf2 +
-                               "Page Text   : " + g.crlf + pageText);
+                  "Page Number : " + page.PageNumber.ToString() + g.crlf2 +
+                  "Page Text   : " + g.crlf + pageText);
 
         return sb.ToString();
       }
@@ -455,7 +558,7 @@ namespace Org.Pdf
         case PObjectType.PdfArray:
           PdfArray pdfArray = (PdfArray)this.iPdfObject;
           sb.Append("PdfArray         Name : " + this.Name + g.crlf2);
-          sb.Append("Entries          Count: " + this.Count.ToString() + g.crlf2); 
+          sb.Append("Entries          Count: " + this.Count.ToString() + g.crlf2);
 
           for (int i = 0; i < this.Count; i++)
           {

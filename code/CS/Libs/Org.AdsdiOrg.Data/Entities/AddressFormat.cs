@@ -11,21 +11,33 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "AddressFormat")]
-    public partial class AddressFormat
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "AddressFormat")]
+  public partial class AddressFormat
+  {
+    public AddressFormat()
     {
-        public AddressFormat()
-        {
-            this.Addresses = new HashSet<Address>();
-        }
-    
-        public int AddressFormatId { get; set; }
-        public string AddressFormatName { get; set; }
-        public string AddressFormatSpec { get; set; }
-    
-        public virtual ICollection<Address> Addresses { get; set; }
+      this.Addresses = new HashSet<Address>();
     }
+
+    public int AddressFormatId {
+      get;
+      set;
+    }
+    public string AddressFormatName {
+      get;
+      set;
+    }
+    public string AddressFormatSpec {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Address> Addresses {
+      get;
+      set;
+    }
+  }
 }

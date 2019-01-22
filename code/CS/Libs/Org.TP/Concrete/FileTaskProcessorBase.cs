@@ -8,22 +8,58 @@ using Org.GS;
 using Org.TP;
 using System.Xml.Linq;
 
-namespace Org.TP.Concrete 
+namespace Org.TP.Concrete
 {
   public class FileTaskProcessorBase : TaskProcessorBase
   {
-    public string InputFilePath { get; set; }
-    public string InputFullFilePath { get; set; }
-    public string ErrorFilePath { get; set; }
-    public FileExtractMode FileExtractMode { get; set; }
-    public List<string> WorksheetsToInclude { get; set; }
-    public string ProcessedFilePath { get; set; }
-    public string ExtractTransactionName { get; set; }
-    public string MapName { get; set; }
-    public bool FileSystemAccessOccurred { get; set; }
-    public int ExcelExtractWcfTimeoutSeconds { get; set; }
-    public string FileNamePrefix { get; set; }
-    public bool ReturnDxWorkbookInTaskResult { get; set; }
+    public string InputFilePath {
+      get;
+      set;
+    }
+    public string InputFullFilePath {
+      get;
+      set;
+    }
+    public string ErrorFilePath {
+      get;
+      set;
+    }
+    public FileExtractMode FileExtractMode {
+      get;
+      set;
+    }
+    public List<string> WorksheetsToInclude {
+      get;
+      set;
+    }
+    public string ProcessedFilePath {
+      get;
+      set;
+    }
+    public string ExtractTransactionName {
+      get;
+      set;
+    }
+    public string MapName {
+      get;
+      set;
+    }
+    public bool FileSystemAccessOccurred {
+      get;
+      set;
+    }
+    public int ExcelExtractWcfTimeoutSeconds {
+      get;
+      set;
+    }
+    public string FileNamePrefix {
+      get;
+      set;
+    }
+    public bool ReturnDxWorkbookInTaskResult {
+      get;
+      set;
+    }
 
     public FileTaskProcessorBase()
     {
@@ -110,7 +146,7 @@ namespace Org.TP.Concrete
       if (base.ParmExists("WorksheetsToInclude"))
       {
         var wsDict = base.GetParmValue("WorksheetsToInclude") as Dictionary<string, string>;
-        WorksheetsToInclude = wsDict.ToList(DictionaryPart.Value, true); 
+        WorksheetsToInclude = wsDict.ToList(DictionaryPart.Value, true);
       }
 
       if (base.ParmExists("ReturnDxWorkbookInTaskResult"))
@@ -164,14 +200,14 @@ namespace Org.TP.Concrete
       List<string> filesToProcess = Directory.GetFiles(this.InputFilePath).ToList();
 
       if (filesToProcess.Count == 0)
-        return 0; 
+        return 0;
 
       if (filesToProcess.Count == 1)
         this.InputFullFilePath = filesToProcess.First();
-      
+
       return filesToProcess.Count;
     }
-    
+
     protected void MoveInputFileToProcessed()
     {
       if (this.IsDryRun)
@@ -190,7 +226,7 @@ namespace Org.TP.Concrete
         while (File.Exists(processedFileFullPath))
         {
           string ext = Path.GetExtension(this.InputFullFilePath);
-          string fileName = Path.GetFileNameWithoutExtension(this.InputFullFilePath) + "(" + (++seq).ToString() + ")" + ext;         
+          string fileName = Path.GetFileNameWithoutExtension(this.InputFullFilePath) + "(" + (++seq).ToString() + ")" + ext;
           datedProcessedFileName = this.FileNamePrefix + fileName;
           processedFileFullPath = this.ProcessedFilePath + @"\" + datedProcessedFileName;
         }
@@ -199,7 +235,7 @@ namespace Org.TP.Concrete
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attempting to move the input file to the processed folder.", ex); 
+        throw new Exception("An exception occurred attempting to move the input file to the processed folder.", ex);
       }
     }
 

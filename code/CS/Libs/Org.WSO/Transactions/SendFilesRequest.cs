@@ -13,7 +13,10 @@ namespace Org.WSO.Transactions
   public class SendFilesRequest : TransactionBase
   {
     [XMap(XType = XType.Element, CollectionElements = "FileObject")]
-    public List<FileObject> FileObjects { get; set; }
+    public List<FileObject> FileObjects {
+      get;
+      set;
+    }
 
     public SendFilesRequest()
     {

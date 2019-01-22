@@ -10,18 +10,45 @@ using Org.GS;
 namespace Org.GraphicReports.Business
 {
   public class Well
-	{
-		private static Font _wellNameFont = new Font("Calibri", 9.0F);
+  {
+    private static Font _wellNameFont = new Font("Calibri", 9.0F);
 
-		public int WellNumber { get; set; }
-		public int WellOrdinal { get; set; }
-		public string WellName { get; set; }
-		public DateTime? SpudDate { get; set; }
-		public DateTime? CompletionDate { get; set; }
-		public DateTime? AFEDate { get; set; }
-		public int UnitNumber { get; set; }
-		public string UnitName { get; set; }
-		public bool IsUsed { get; set; }
+    public int WellNumber {
+      get;
+      set;
+    }
+    public int WellOrdinal {
+      get;
+      set;
+    }
+    public string WellName {
+      get;
+      set;
+    }
+    public DateTime? SpudDate {
+      get;
+      set;
+    }
+    public DateTime? CompletionDate {
+      get;
+      set;
+    }
+    public DateTime? AFEDate {
+      get;
+      set;
+    }
+    public int UnitNumber {
+      get;
+      set;
+    }
+    public string UnitName {
+      get;
+      set;
+    }
+    public bool IsUsed {
+      get;
+      set;
+    }
 
     public static Font _smallFont;
     public static Font _largeFont;
@@ -34,33 +61,33 @@ namespace Org.GraphicReports.Business
     public static Brush _brushYellow;
     public static Pen _pen1;
 
-		private Pad _pad;
-		private Rig _rig;
-		private RigSet _rigSet;
-		private Calendar _calendar;
-		private int _dayWidth;
-		private float _rigColumnWidth;
-		private float _rigRowHeight;
+    private Pad _pad;
+    private Rig _rig;
+    private RigSet _rigSet;
+    private Calendar _calendar;
+    private int _dayWidth;
+    private float _rigColumnWidth;
+    private float _rigRowHeight;
 
-		public Well(Pad pad)
-		{
-			_pad = pad;
-			_rig = _pad.Rig;
-			_rigSet = _rig.RigSet;
-			_calendar = _rigSet.Calendar;
-			_dayWidth = _calendar.DayWidth;
-			_rigColumnWidth = _rigSet.RigColumnWidth;
-			_rigRowHeight = _rigSet.RigRowHeight;
+    public Well(Pad pad)
+    {
+      _pad = pad;
+      _rig = _pad.Rig;
+      _rigSet = _rig.RigSet;
+      _calendar = _rigSet.Calendar;
+      _dayWidth = _calendar.DayWidth;
+      _rigColumnWidth = _rigSet.RigColumnWidth;
+      _rigRowHeight = _rigSet.RigRowHeight;
 
-			this.WellNumber = 0;
-			this.WellOrdinal = 0;
-			this.WellName = String.Empty;
-			this.SpudDate = null;
-			this.CompletionDate = null;
-			this.AFEDate = null;
-			this.UnitNumber = 0;
-			this.UnitName = String.Empty;
-			this.IsUsed = false;
+      this.WellNumber = 0;
+      this.WellOrdinal = 0;
+      this.WellName = String.Empty;
+      this.SpudDate = null;
+      this.CompletionDate = null;
+      this.AFEDate = null;
+      this.UnitNumber = 0;
+      this.UnitName = String.Empty;
+      this.IsUsed = false;
 
       if (_smallFont == null)
         _smallFont = new Font("Calibri", 8.0F);
@@ -69,29 +96,29 @@ namespace Org.GraphicReports.Business
         _largeFont = new Font("Calibri", 11.0F);
 
       if (_brushGreen == null)
-        _brushGreen = new SolidBrush(_colorGreen); 
+        _brushGreen = new SolidBrush(_colorGreen);
 
       if (_brushRed == null)
-        _brushRed = new SolidBrush(_colorRed); 
+        _brushRed = new SolidBrush(_colorRed);
 
       if (_brushYellow == null)
-        _brushYellow = new SolidBrush(_colorYellow); 
+        _brushYellow = new SolidBrush(_colorYellow);
 
       if (_pen1 == null)
         _pen1 = new Pen(_color2, 1.0F);
-		}
+    }
 
-		public void Draw(Graphics gx, Point origin, int rightLimit)
-		{
-			int x = origin.X;
-			int y = origin.Y;
+    public void Draw(Graphics gx, Point origin, int rightLimit)
+    {
+      int x = origin.X;
+      int y = origin.Y;
 
-			int skipDays = (this.SpudDate - _calendar.StartDate).Value.Days;
-			x += skipDays * _dayWidth;
-			int wellWidthDays = (this.CompletionDate - this.SpudDate).Value.Days;
-			int wellWidth = wellWidthDays * _dayWidth;
+      int skipDays = (this.SpudDate - _calendar.StartDate).Value.Days;
+      x += skipDays * _dayWidth;
+      int wellWidthDays = (this.CompletionDate - this.SpudDate).Value.Days;
+      int wellWidth = wellWidthDays * _dayWidth;
       int firstSecondWellRowWidth = wellWidth / 3;
-      int thirdWellRowWidth = wellWidth - (firstSecondWellRowWidth * 2); 
+      int thirdWellRowWidth = wellWidth - (firstSecondWellRowWidth * 2);
       int wellNumberHeight = ((int)_rigRowHeight / 3) - 3;
       int padNumberHeight = (int)_rigRowHeight - (wellNumberHeight * 2);
 
@@ -133,7 +160,7 @@ namespace Org.GraphicReports.Business
       gx.FillRectangle(Brushes.White, rectBottom1);
       gx.DrawRectangle(Pens.Black, rectBottom1);
       gx.DrawString(ss5.StringToDraw, _smallFont, _brushRed, ss5.DrawingPoint);
-      
+
       var rectBottom2 = new Rectangle(x + firstSecondWellRowWidth, y + wellNumberHeight + padNumberHeight, firstSecondWellRowWidth, wellNumberHeight);
       string bottomText2 = "CellBottom2";
       var ss6 = new StringSizer(gx, new Point(rectBottom2.X, rectBottom2.Y), rectBottom2, _smallFont, bottomText2.Trim());
@@ -147,6 +174,6 @@ namespace Org.GraphicReports.Business
       gx.FillRectangle(Brushes.White, rectBottom3);
       gx.DrawRectangle(Pens.Black, rectBottom3);
       gx.DrawString(ss7.StringToDraw, _smallFont, _brushRed, ss7.DrawingPoint);
-		}
-	}
+    }
+  }
 }

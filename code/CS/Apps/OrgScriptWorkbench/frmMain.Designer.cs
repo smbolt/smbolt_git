@@ -75,9 +75,9 @@
       this.tabPageConsole.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtConsole)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // txtCode1
-      // 
+      //
       this.txtCode1.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -88,7 +88,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtCode1.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\n";
       this.txtCode1.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtCode1.BackBrush = null;
@@ -115,35 +116,37 @@
       this.txtCode1.TabLength = 2;
       this.txtCode1.Zoom = 100;
       this.txtCode1.TextChanged += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.txtCode1_TextChanged);
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1068, 24);
       this.mnuMain.TabIndex = 1;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnStepForward);
       this.pnlTop.Controls.Add(this.btnDebugCompile);
       this.pnlTop.Controls.Add(this.btnRun);
@@ -155,9 +158,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1068, 70);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // btnDebugCompile
-      // 
+      //
       this.btnDebugCompile.Location = new System.Drawing.Point(239, 8);
       this.btnDebugCompile.Name = "btnDebugCompile";
       this.btnDebugCompile.Size = new System.Drawing.Size(103, 23);
@@ -166,9 +169,9 @@
       this.btnDebugCompile.Text = "Debug Compile";
       this.btnDebugCompile.UseVisualStyleBackColor = true;
       this.btnDebugCompile.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRun
-      // 
+      //
       this.btnRun.Location = new System.Drawing.Point(457, 8);
       this.btnRun.Name = "btnRun";
       this.btnRun.Size = new System.Drawing.Size(103, 23);
@@ -177,9 +180,9 @@
       this.btnRun.Text = "Run";
       this.btnRun.UseVisualStyleBackColor = true;
       this.btnRun.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnExecute
-      // 
+      //
       this.btnExecute.Location = new System.Drawing.Point(348, 8);
       this.btnExecute.Name = "btnExecute";
       this.btnExecute.Size = new System.Drawing.Size(103, 23);
@@ -188,9 +191,9 @@
       this.btnExecute.Text = "Execute";
       this.btnExecute.UseVisualStyleBackColor = true;
       this.btnExecute.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSave
-      // 
+      //
       this.btnSave.Location = new System.Drawing.Point(21, 8);
       this.btnSave.Name = "btnSave";
       this.btnSave.Size = new System.Drawing.Size(103, 23);
@@ -199,9 +202,9 @@
       this.btnSave.Text = "Save";
       this.btnSave.UseVisualStyleBackColor = true;
       this.btnSave.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCompile
-      // 
+      //
       this.btnCompile.Location = new System.Drawing.Point(130, 8);
       this.btnCompile.Name = "btnCompile";
       this.btnCompile.Size = new System.Drawing.Size(103, 23);
@@ -210,9 +213,9 @@
       this.btnCompile.Text = "Compile";
       this.btnCompile.UseVisualStyleBackColor = true;
       this.btnCompile.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 723);
       this.lblStatus.Name = "lblStatus";
@@ -221,12 +224,12 @@
       this.lblStatus.TabIndex = 3;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // tabMain
-      // 
-      this.tabMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      //
+      this.tabMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                             | System.Windows.Forms.AnchorStyles.Left)
+                             | System.Windows.Forms.AnchorStyles.Right)));
       this.tabMain.Controls.Add(this.tabPage1);
       this.tabMain.ItemSize = new System.Drawing.Size(1, 1);
       this.tabMain.Location = new System.Drawing.Point(-5, -5);
@@ -235,9 +238,9 @@
       this.tabMain.SelectedIndex = 0;
       this.tabMain.Size = new System.Drawing.Size(755, 441);
       this.tabMain.TabIndex = 4;
-      // 
+      //
       // tabPage1
-      // 
+      //
       this.tabPage1.Controls.Add(this.txtCode1);
       this.tabPage1.Location = new System.Drawing.Point(4, 5);
       this.tabPage1.Name = "tabPage1";
@@ -245,30 +248,30 @@
       this.tabPage1.Size = new System.Drawing.Size(747, 432);
       this.tabPage1.TabIndex = 0;
       this.tabPage1.UseVisualStyleBackColor = true;
-      // 
+      //
       // splitMain
-      // 
+      //
       this.splitMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitMain.Location = new System.Drawing.Point(4, 94);
       this.splitMain.Name = "splitMain";
-      // 
+      //
       // splitMain.Panel1
-      // 
+      //
       this.splitMain.Panel1.Controls.Add(this.lbFiles);
       this.splitMain.Panel1.Controls.Add(this.pnlLeftBottom);
       this.splitMain.Panel1.Controls.Add(this.lblFiles);
-      // 
+      //
       // splitMain.Panel2
-      // 
+      //
       this.splitMain.Panel2.Controls.Add(this.splitSolution);
       this.splitMain.Panel2.Controls.Add(this.label1);
       this.splitMain.Size = new System.Drawing.Size(1068, 629);
       this.splitMain.SplitterDistance = 178;
       this.splitMain.TabIndex = 5;
-      // 
+      //
       // lbFiles
-      // 
+      //
       this.lbFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.lbFiles.Dock = System.Windows.Forms.DockStyle.Fill;
       this.lbFiles.FormattingEnabled = true;
@@ -276,17 +279,17 @@
       this.lbFiles.Name = "lbFiles";
       this.lbFiles.Size = new System.Drawing.Size(176, 344);
       this.lbFiles.TabIndex = 2;
-      // 
+      //
       // pnlLeftBottom
-      // 
+      //
       this.pnlLeftBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.pnlLeftBottom.Location = new System.Drawing.Point(0, 367);
       this.pnlLeftBottom.Name = "pnlLeftBottom";
       this.pnlLeftBottom.Size = new System.Drawing.Size(176, 260);
       this.pnlLeftBottom.TabIndex = 1;
-      // 
+      //
       // lblFiles
-      // 
+      //
       this.lblFiles.Dock = System.Windows.Forms.DockStyle.Top;
       this.lblFiles.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblFiles.Location = new System.Drawing.Point(0, 0);
@@ -296,40 +299,40 @@
       this.lblFiles.TabIndex = 0;
       this.lblFiles.Text = "Files";
       this.lblFiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // splitSolution
-      // 
+      //
       this.splitSolution.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitSolution.Location = new System.Drawing.Point(0, 23);
       this.splitSolution.Name = "splitSolution";
-      // 
+      //
       // splitSolution.Panel1
-      // 
+      //
       this.splitSolution.Panel1.Controls.Add(this.splitCode);
       this.splitSolution.Size = new System.Drawing.Size(884, 604);
       this.splitSolution.SplitterDistance = 751;
       this.splitSolution.TabIndex = 8;
-      // 
+      //
       // splitCode
-      // 
+      //
       this.splitCode.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitCode.Location = new System.Drawing.Point(0, 0);
       this.splitCode.Name = "splitCode";
       this.splitCode.Orientation = System.Windows.Forms.Orientation.Horizontal;
-      // 
+      //
       // splitCode.Panel1
-      // 
+      //
       this.splitCode.Panel1.Controls.Add(this.tabMain);
-      // 
+      //
       // splitCode.Panel2
-      // 
+      //
       this.splitCode.Panel2.Controls.Add(this.tabDrawer);
       this.splitCode.Size = new System.Drawing.Size(751, 604);
       this.splitCode.SplitterDistance = 432;
       this.splitCode.TabIndex = 7;
-      // 
+      //
       // tabDrawer
-      // 
+      //
       this.tabDrawer.Controls.Add(this.tabPageConsole);
       this.tabDrawer.Controls.Add(this.tabPageScope);
       this.tabDrawer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -341,9 +344,9 @@
       this.tabDrawer.Size = new System.Drawing.Size(751, 168);
       this.tabDrawer.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabDrawer.TabIndex = 0;
-      // 
+      //
       // tabPageConsole
-      // 
+      //
       this.tabPageConsole.Controls.Add(this.txtConsole);
       this.tabPageConsole.Location = new System.Drawing.Point(4, 20);
       this.tabPageConsole.Name = "tabPageConsole";
@@ -352,9 +355,9 @@
       this.tabPageConsole.TabIndex = 0;
       this.tabPageConsole.Text = "Console";
       this.tabPageConsole.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtConsole
-      // 
+      //
       this.txtConsole.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -365,7 +368,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtConsole.AutoScrollMinSize = new System.Drawing.Size(2, 12);
       this.txtConsole.BackBrush = null;
       this.txtConsole.CharHeight = 12;
@@ -384,9 +388,9 @@
       this.txtConsole.Size = new System.Drawing.Size(737, 138);
       this.txtConsole.TabIndex = 1;
       this.txtConsole.Zoom = 100;
-      // 
+      //
       // tabPageScope
-      // 
+      //
       this.tabPageScope.Location = new System.Drawing.Point(4, 20);
       this.tabPageScope.Name = "tabPageScope";
       this.tabPageScope.Padding = new System.Windows.Forms.Padding(3);
@@ -394,9 +398,9 @@
       this.tabPageScope.TabIndex = 1;
       this.tabPageScope.Text = "Scope Map";
       this.tabPageScope.UseVisualStyleBackColor = true;
-      // 
+      //
       // label1
-      // 
+      //
       this.label1.Dock = System.Windows.Forms.DockStyle.Top;
       this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label1.Location = new System.Drawing.Point(0, 0);
@@ -406,9 +410,9 @@
       this.label1.TabIndex = 5;
       this.label1.Text = "script.js";
       this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // btnStepForward
-      // 
+      //
       this.btnStepForward.Location = new System.Drawing.Point(239, 37);
       this.btnStepForward.Name = "btnStepForward";
       this.btnStepForward.Size = new System.Drawing.Size(103, 23);
@@ -417,9 +421,9 @@
       this.btnStepForward.Text = "Step Forward";
       this.btnStepForward.UseVisualStyleBackColor = true;
       this.btnStepForward.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1076, 749);

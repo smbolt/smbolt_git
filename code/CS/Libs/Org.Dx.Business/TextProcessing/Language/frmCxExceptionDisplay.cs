@@ -12,17 +12,17 @@ using Org.GS;
 
 namespace Org.Dx.Business.TextProcessing
 {
-	public partial class frmCxExceptionDisplay : Form
-	{
-		public frmCxExceptionDisplay(CxException cx)
-		{
-			InitializeComponent();
-			txtOut.Text = cx.ToReport();
-		}
+  public partial class frmCxExceptionDisplay : Form
+  {
+    public frmCxExceptionDisplay(CxException cx)
+    {
+      InitializeComponent();
+      txtOut.Text = cx.ToReport();
+    }
 
-		private void btnClose_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
-	}
+    private void btnClose_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
+  }
 }

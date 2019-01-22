@@ -10,7 +10,10 @@ namespace Org.DB
 {
   public class CacheManager
   {
-    public Dictionary<string, CacheEntry> CacheEntries { get; set; }
+    public Dictionary<string, CacheEntry> CacheEntries {
+      get;
+      set;
+    }
 
     public CacheManager()
     {
@@ -25,7 +28,7 @@ namespace Org.DB
         {
           var cacheEntry = BuildCacheEntry(modelName, modelKey, repositoryBase);
           if (cacheEntry == null)
-            throw new Exception("Failed to build cache entry for model '" + modelName + "' with key '" + modelKey + "'."); 
+            throw new Exception("Failed to build cache entry for model '" + modelName + "' with key '" + modelKey + "'.");
           this.CacheEntries.Add(modelName, cacheEntry);
         }
 
@@ -33,7 +36,7 @@ namespace Org.DB
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to return the cache entry for model name '" + modelName + ".", ex); 
+        throw new Exception("An exception occurred while attempting to return the cache entry for model name '" + modelName + ".", ex);
       }
     }
 
@@ -41,39 +44,39 @@ namespace Org.DB
     {
       try
       {
-        IList<ModelBase> modelList = repositoryBase.GetList(modelName, modelKey); 
+        IList<ModelBase> modelList = repositoryBase.GetList(modelName, modelKey);
         if (modelList.Count() > 0)
         {
-          Type modelType = modelList[0].GetType(); 
-          PropertyInfo keyPi = modelType.GetProperty(modelKey); 
+          Type modelType = modelList[0].GetType();
+          PropertyInfo keyPi = modelType.GetProperty(modelKey);
           if (keyPi == null)
-            throw new Exception("Could not locate the key property '" + modelKey + "' from model type '" + modelType.FullName + "'."); 
-        
+            throw new Exception("Could not locate the key property '" + modelKey + "' from model type '" + modelType.FullName + "'.");
+
           var cacheEntry = new CacheEntry();
-          cacheEntry.ModelName = modelName; 
+          cacheEntry.ModelName = modelName;
 
           foreach(var model in modelList)
           {
-            object keyObject = keyPi.GetValue(model); 
+            object keyObject = keyPi.GetValue(model);
             if (keyObject == null)
-              throw new Exception("The value of the key for the model of type + '" + modelType.FullName + "' is null - cache for this model cannot be built."); 
+              throw new Exception("The value of the key for the model of type + '" + modelType.FullName + "' is null - cache for this model cannot be built.");
 
             string keyString = keyObject.ToString().Trim();
             if (cacheEntry.ModelSet.ContainsKey(keyString))
-              throw new Exception("A duplicate key value '" + keyString + "' has been found in the set of models for type '" + 
-                                   modelType.FullName + "' - cache for this model cannot be built.");
-            cacheEntry.ModelSet.Add(keyString, model); 
+              throw new Exception("A duplicate key value '" + keyString + "' has been found in the set of models for type '" +
+                                  modelType.FullName + "' - cache for this model cannot be built.");
+            cacheEntry.ModelSet.Add(keyString, model);
           }
 
-          cacheEntry.CreatedAt = DateTime.Now; 
-          return cacheEntry; 
+          cacheEntry.CreatedAt = DateTime.Now;
+          return cacheEntry;
         }
-        
-        return null; 
+
+        return null;
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to build the cache entry for model name '" + modelName + "' with key value '" + modelKey + "'.", ex); 
+        throw new Exception("An exception occurred attempting to build the cache entry for model name '" + modelName + "' with key value '" + modelKey + "'.", ex);
       }
     }
   }

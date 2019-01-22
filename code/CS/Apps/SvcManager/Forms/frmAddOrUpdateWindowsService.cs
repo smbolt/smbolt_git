@@ -97,7 +97,7 @@ namespace Org.SvcManager
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred while attempting to add the service to the database." + g.crlf2 + ex.ToReport(),
-                        "Add Service - Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Add Service - Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -113,7 +113,7 @@ namespace Org.SvcManager
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to get a list of services for host '" + _serviceHost.Name + "' in the " +
-                            _serviceEnvironment.Name + " environment.", ex); 
+                            _serviceEnvironment.Name + " environment.", ex);
       }
     }
 
@@ -131,7 +131,7 @@ namespace Org.SvcManager
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during the initialization of the form." + g.crlf2 + ex.ToReport(),
-                        "Add Service - Form Initialization Error Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Add Service - Form Initialization Error Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 

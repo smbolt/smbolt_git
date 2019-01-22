@@ -11,19 +11,34 @@ namespace Org.GS.UI
   public class WindowLocation
   {
     [XMap(DefaultValue = "False")]
-    public bool IsVisible { get; set; }
+    public bool IsVisible {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool IsDocked { get; set; }
+    public bool IsDocked {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Literal")]
-    public SizeMode SizeMode { get; set; }
+    public SizeMode SizeMode {
+      get;
+      set;
+    }
 
     [XMap]
-    public Point Location { get; set; }
+    public Point Location {
+      get;
+      set;
+    }
 
     [XMap]
-    public SizeF Size { get; set; }
+    public SizeF Size {
+      get;
+      set;
+    }
 
     public WindowLocation()
     {

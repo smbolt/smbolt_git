@@ -12,29 +12,90 @@ namespace Org.Dx.Business
     private string _rawValue;
     private string _originalValue;
 
-    public QueryExecutionStatus QueryExecutionStatus { get; set; }
-    public MatchType MatchType { get; private set; }
-    public int LastMatchAttemptIndex { get; set; }
-    public int Ax { get; set; } // Alignment index, the index of the node the query element is aligned against
-    public int Ex { get; set; } // Element index, the position of the this object in the NodeQuery
-    public int PriorMatchedIndex { get { return Get_PriorMatchedIndex(); } }
+    public QueryExecutionStatus QueryExecutionStatus {
+      get;
+      set;
+    }
+    public MatchType MatchType {
+      get;
+      private set;
+    }
+    public int LastMatchAttemptIndex {
+      get;
+      set;
+    }
+    public int Ax {
+      get;  // Alignment index, the index of the node the query element is aligned against
+      set;
+    }
+    public int Ex {
+      get;  // Element index, the position of the this object in the NodeQuery
+      set;
+    }
+    public int PriorMatchedIndex {
+      get {
+        return Get_PriorMatchedIndex();
+      }
+    }
 
-    public string QueryString { get; private set; } 
-    public bool IsFlexTokens { get; private set; }
-    public int LowTokenCount { get; private set; }
-    public int HighTokenCount { get; private set; }
-    public bool MatchFirstInSet { get; private set; }
-    public bool MatchFirstInSequence { get; private set; }
-    public bool MatchLastInSet { get; private set; }
-    public bool MatchLastInSequence { get; private set; }
-    public string SetSeqIndicator { get { return Get_SetSeqIndicator(); } }
-    public bool IsMatchedTarget { get { return Get_IsMatchedTarget(); } }
-    public string Report { get { return Get_Report(); } }
+    public string QueryString {
+      get;
+      private set;
+    }
+    public bool IsFlexTokens {
+      get;
+      private set;
+    }
+    public int LowTokenCount {
+      get;
+      private set;
+    }
+    public int HighTokenCount {
+      get;
+      private set;
+    }
+    public bool MatchFirstInSet {
+      get;
+      private set;
+    }
+    public bool MatchFirstInSequence {
+      get;
+      private set;
+    }
+    public bool MatchLastInSet {
+      get;
+      private set;
+    }
+    public bool MatchLastInSequence {
+      get;
+      private set;
+    }
+    public string SetSeqIndicator {
+      get {
+        return Get_SetSeqIndicator();
+      }
+    }
+    public bool IsMatchedTarget {
+      get {
+        return Get_IsMatchedTarget();
+      }
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
-    public bool IsTarget { get; private set; }
+    public bool IsTarget {
+      get;
+      private set;
+    }
 
-    public NodeQuery NodeQuery { get; private set; }
-    
+    public NodeQuery NodeQuery {
+      get;
+      private set;
+    }
+
     public NodeQueryElement(NodeQuery nodeQuery, int elementIndex, string rawValue)
     {
       try
@@ -96,7 +157,7 @@ namespace Org.Dx.Business
         {
           if (slashPos != 1)
             throw new Exception("The raw query value is not valid.  If the query includes a slash, it must be in the second position (index = 1) " +
-                       "immediately following the period or asterisk. DxMapItem is '" + this.NodeQuery.DxMapItem.Report + "'.");
+                                "immediately following the period or asterisk. DxMapItem is '" + this.NodeQuery.DxMapItem.Report + "'.");
 
           string detailSwitch = _rawValue.Substring(slashPos + 1);
 
@@ -112,7 +173,7 @@ namespace Org.Dx.Business
 
             if (tokens[0].IsNotInteger() || tokens[1].IsNotInteger())
               throw new Exception("The raw query value is not valid.  When the detail switch includes a hyphen, it must be used to separate two integer values " +
-                                "indicating the low and high values of the number of cells. DxMapItem is '" + this.NodeQuery.DxMapItem.Report + "'.");
+                                  "indicating the low and high values of the number of cells. DxMapItem is '" + this.NodeQuery.DxMapItem.Report + "'.");
 
             this.LowTokenCount = tokens[0].ToInt32();
             this.HighTokenCount = tokens[1].ToInt32();
@@ -179,7 +240,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred in the NodeQueryElement constructor with raw data '" + rawValue + "'.", ex); 
+        throw new Exception("An exception occurred in the NodeQueryElement constructor with raw data '" + rawValue + "'.", ex);
       }
     }
 

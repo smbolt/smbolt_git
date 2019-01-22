@@ -11,60 +11,168 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Account")]
-    public partial class Account
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Account")]
+  public partial class Account
+  {
+    public Account()
     {
-        public Account()
-        {
-            this.GroupMemberships = new HashSet<GroupMembership>();
-            this.AccountLoginTokens = new HashSet<AccountLoginToken>();
-            this.Orders = new HashSet<Order>();
-            this.People = new HashSet<Person>();
-            this.Referrals = new HashSet<Referral>();
-            this.Resumes = new HashSet<Resume>();
-            this.AppLogs = new HashSet<AppLog>();
-            this.AppLogs1 = new HashSet<AppLog>();
-        }
-    
-        public int AccountId { get; set; }
-        public int AccountTypeId { get; set; }
-        public string AccountName { get; set; }
-        public int OrgId { get; set; }
-        public string PasswordHash { get; set; }
-        public int AccountStatusId { get; set; }
-        public int SecurityQuestionId { get; set; }
-        public string SecurityAnswer { get; set; }
-        public string AccountEmailAddress { get; set; }
-        public int AccountPIN { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public Nullable<System.DateTime> LockoutEndDateUtc { get; set; }
-        public int AccessFailedCount { get; set; }
-        public System.DateTime CreatedDateTime { get; set; }
-        public int CreatedAccountId { get; set; }
-        public Nullable<System.DateTime> ModifiedDateTime { get; set; }
-        public Nullable<int> ModifiedAccountId { get; set; }
-        public string ProcessName { get; set; }
-        public string SubProcessName { get; set; }
-        public Nullable<int> SubProcessStep { get; set; }
-        public Nullable<int> ProcessEntityId { get; set; }
-    
-        public virtual Account Account1 { get; set; }
-        public virtual Account Account2 { get; set; }
-        public virtual AccountStatu AccountStatu { get; set; }
-        public virtual AccountType AccountType { get; set; }
-        public virtual Organization Organization { get; set; }
-        public virtual SecurityQuestion SecurityQuestion { get; set; }
-        public virtual ICollection<GroupMembership> GroupMemberships { get; set; }
-        public virtual ICollection<AccountLoginToken> AccountLoginTokens { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<Person> People { get; set; }
-        public virtual ICollection<Referral> Referrals { get; set; }
-        public virtual ICollection<Resume> Resumes { get; set; }
-        public virtual ICollection<AppLog> AppLogs { get; set; }
-        public virtual ICollection<AppLog> AppLogs1 { get; set; }
+      this.GroupMemberships = new HashSet<GroupMembership>();
+      this.AccountLoginTokens = new HashSet<AccountLoginToken>();
+      this.Orders = new HashSet<Order>();
+      this.People = new HashSet<Person>();
+      this.Referrals = new HashSet<Referral>();
+      this.Resumes = new HashSet<Resume>();
+      this.AppLogs = new HashSet<AppLog>();
+      this.AppLogs1 = new HashSet<AppLog>();
     }
+
+    public int AccountId {
+      get;
+      set;
+    }
+    public int AccountTypeId {
+      get;
+      set;
+    }
+    public string AccountName {
+      get;
+      set;
+    }
+    public int OrgId {
+      get;
+      set;
+    }
+    public string PasswordHash {
+      get;
+      set;
+    }
+    public int AccountStatusId {
+      get;
+      set;
+    }
+    public int SecurityQuestionId {
+      get;
+      set;
+    }
+    public string SecurityAnswer {
+      get;
+      set;
+    }
+    public string AccountEmailAddress {
+      get;
+      set;
+    }
+    public int AccountPIN {
+      get;
+      set;
+    }
+    public string FirstName {
+      get;
+      set;
+    }
+    public string LastName {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> LockoutEndDateUtc {
+      get;
+      set;
+    }
+    public int AccessFailedCount {
+      get;
+      set;
+    }
+    public System.DateTime CreatedDateTime {
+      get;
+      set;
+    }
+    public int CreatedAccountId {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> ModifiedDateTime {
+      get;
+      set;
+    }
+    public Nullable<int> ModifiedAccountId {
+      get;
+      set;
+    }
+    public string ProcessName {
+      get;
+      set;
+    }
+    public string SubProcessName {
+      get;
+      set;
+    }
+    public Nullable<int> SubProcessStep {
+      get;
+      set;
+    }
+    public Nullable<int> ProcessEntityId {
+      get;
+      set;
+    }
+
+    public virtual Account Account1 {
+      get;
+      set;
+    }
+    public virtual Account Account2 {
+      get;
+      set;
+    }
+    public virtual AccountStatu AccountStatu {
+      get;
+      set;
+    }
+    public virtual AccountType AccountType {
+      get;
+      set;
+    }
+    public virtual Organization Organization {
+      get;
+      set;
+    }
+    public virtual SecurityQuestion SecurityQuestion {
+      get;
+      set;
+    }
+    public virtual ICollection<GroupMembership> GroupMemberships {
+      get;
+      set;
+    }
+    public virtual ICollection<AccountLoginToken> AccountLoginTokens {
+      get;
+      set;
+    }
+    public virtual ICollection<Order> Orders {
+      get;
+      set;
+    }
+    public virtual ICollection<Person> People {
+      get;
+      set;
+    }
+    public virtual ICollection<Referral> Referrals {
+      get;
+      set;
+    }
+    public virtual ICollection<Resume> Resumes {
+      get;
+      set;
+    }
+    public virtual ICollection<AppLog> AppLogs {
+      get;
+      set;
+    }
+    public virtual ICollection<AppLog> AppLogs1 {
+      get;
+      set;
+    }
+  }
 }

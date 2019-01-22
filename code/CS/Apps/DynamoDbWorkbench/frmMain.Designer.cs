@@ -56,35 +56,37 @@
       this.tabPage2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtMain)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1118, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(180, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 771);
       this.lblStatus.Name = "lblStatus";
@@ -92,9 +94,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnTestConnection);
       this.pnlTop.Controls.Add(this.btnGo);
       this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -102,9 +104,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1118, 44);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // btnGo
-      // 
+      //
       this.btnGo.Location = new System.Drawing.Point(13, 10);
       this.btnGo.Name = "btnGo";
       this.btnGo.Size = new System.Drawing.Size(109, 23);
@@ -113,66 +115,66 @@
       this.btnGo.Text = "Go";
       this.btnGo.UseVisualStyleBackColor = true;
       this.btnGo.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlMain
-      // 
+      //
       this.pnlMain.Controls.Add(this.splitterMain);
       this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlMain.Location = new System.Drawing.Point(4, 68);
       this.pnlMain.Name = "pnlMain";
       this.pnlMain.Size = new System.Drawing.Size(1118, 703);
       this.pnlMain.TabIndex = 3;
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.Location = new System.Drawing.Point(0, 0);
       this.splitterMain.Name = "splitterMain";
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.tvMain);
       this.splitterMain.Panel1.Controls.Add(this.pnlLeftTop);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.pnlRightTop);
       this.splitterMain.Panel2.Controls.Add(this.tabMain);
       this.splitterMain.Size = new System.Drawing.Size(1118, 703);
       this.splitterMain.SplitterDistance = 212;
       this.splitterMain.TabIndex = 0;
-      // 
+      //
       // tvMain
-      // 
+      //
       this.tvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tvMain.Location = new System.Drawing.Point(0, 65);
       this.tvMain.Name = "tvMain";
       this.tvMain.Size = new System.Drawing.Size(210, 636);
       this.tvMain.TabIndex = 0;
-      // 
+      //
       // pnlLeftTop
-      // 
+      //
       this.pnlLeftTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlLeftTop.Location = new System.Drawing.Point(0, 0);
       this.pnlLeftTop.Name = "pnlLeftTop";
       this.pnlLeftTop.Size = new System.Drawing.Size(210, 65);
       this.pnlLeftTop.TabIndex = 0;
-      // 
+      //
       // pnlRightTop
-      // 
+      //
       this.pnlRightTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlRightTop.Location = new System.Drawing.Point(0, 0);
       this.pnlRightTop.Name = "pnlRightTop";
       this.pnlRightTop.Size = new System.Drawing.Size(900, 65);
       this.pnlRightTop.TabIndex = 1;
-      // 
+      //
       // tabMain
-      // 
-      this.tabMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      //
+      this.tabMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                             | System.Windows.Forms.AnchorStyles.Left)
+                             | System.Windows.Forms.AnchorStyles.Right)));
       this.tabMain.Controls.Add(this.tabPage2);
       this.tabMain.ItemSize = new System.Drawing.Size(1, 1);
       this.tabMain.Location = new System.Drawing.Point(-2, 59);
@@ -180,9 +182,9 @@
       this.tabMain.SelectedIndex = 0;
       this.tabMain.Size = new System.Drawing.Size(903, 642);
       this.tabMain.TabIndex = 2;
-      // 
+      //
       // tabPage2
-      // 
+      //
       this.tabPage2.Controls.Add(this.txtMain);
       this.tabPage2.Location = new System.Drawing.Point(4, 5);
       this.tabPage2.Name = "tabPage2";
@@ -190,9 +192,9 @@
       this.tabPage2.Size = new System.Drawing.Size(895, 633);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtMain
-      // 
+      //
       this.txtMain.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -203,7 +205,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtMain.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\n";
       this.txtMain.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtMain.BackBrush = null;
@@ -229,9 +232,9 @@
       this.txtMain.TabIndex = 1;
       this.txtMain.TabLength = 2;
       this.txtMain.Zoom = 100;
-      // 
+      //
       // btnTestConnection
-      // 
+      //
       this.btnTestConnection.Location = new System.Drawing.Point(222, 10);
       this.btnTestConnection.Name = "btnTestConnection";
       this.btnTestConnection.Size = new System.Drawing.Size(109, 23);
@@ -240,9 +243,9 @@
       this.btnTestConnection.Text = "Test Connection";
       this.btnTestConnection.UseVisualStyleBackColor = true;
       this.btnTestConnection.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1126, 794);

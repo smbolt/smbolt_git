@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Reflection; 
+using System.Reflection;
 using Org.GS;
 
 namespace Org.GS.Configuration
@@ -18,7 +18,7 @@ namespace Org.GS.Configuration
     {
       _rowObject = o;
       _gv = gv;
-      _columnValues = new string[_gv.Count]; 
+      _columnValues = new string[_gv.Count];
       PlaceValuesInColumns();
     }
 
@@ -41,7 +41,7 @@ namespace Org.GS.Configuration
           if (pv != null)
             colValue = pv.ToString().Trim();
         }
-        _columnValues[colIndex++] = colValue; 
+        _columnValues[colIndex++] = colValue;
       }
     }
   }

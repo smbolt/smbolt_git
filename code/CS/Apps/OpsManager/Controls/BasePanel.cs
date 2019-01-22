@@ -13,12 +13,30 @@ namespace Org.OpsManager.Controls
 {
   public partial class BasePanel : UserControl
   {
-    public NotifyType NotifyType { get; set; }
-    public ChangeType ChangeType { get; set; }
-    public NodeType NodeType { get; set; }
-    public bool IsDirty { get; set; }
-    public int? ParentId { get; set; }
-    public ConfigDbSpec ConfigDbSpec { get; set; }
+    public NotifyType NotifyType {
+      get;
+      set;
+    }
+    public ChangeType ChangeType {
+      get;
+      set;
+    }
+    public NodeType NodeType {
+      get;
+      set;
+    }
+    public bool IsDirty {
+      get;
+      set;
+    }
+    public int? ParentId {
+      get;
+      set;
+    }
+    public ConfigDbSpec ConfigDbSpec {
+      get;
+      set;
+    }
 
     public event Action<NotifyChangeResult> NotifyUpdate;
     public event Action<NotifyChangeResult> NotifyInsert;

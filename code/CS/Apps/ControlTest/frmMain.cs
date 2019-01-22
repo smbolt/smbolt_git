@@ -28,7 +28,7 @@ namespace Org.ControlTest
     private bool _suppressCboChangeEvent = false;
     private frmConfig fConfig;
     private bool _fConfigIsClosed = false;
-    private bool _firstShowing = true; 
+    private bool _firstShowing = true;
     private string _mode = String.Empty;
     private string _dataStoreName = "Org_Software";
 
@@ -37,7 +37,7 @@ namespace Org.ControlTest
       InitializeComponent();
       InitializeForm();
     }
-    
+
 
     private void Action(object sender, EventArgs e)
     {
@@ -85,12 +85,12 @@ namespace Org.ControlTest
 
         if (panelToShow.IsBlank())
         {
-          MessageBox.Show("Choose a panel from the drop down.", "ControlTest - Error", 
-                          MessageBoxButtons.OK, MessageBoxIcon.Error); 
+          MessageBox.Show("Choose a panel from the drop down.", "ControlTest - Error",
+                          MessageBoxButtons.OK, MessageBoxIcon.Error);
           this.Cursor = Cursors.Default;
           return;
         }
-        
+
         _selectedPanel = panelToShow;
 
         if (ckReloadControlSpec.Checked)
@@ -98,7 +98,7 @@ namespace Org.ControlTest
           _suppressCboChangeEvent = true;
           ReloadControlSpecFile();
           SetPanelSelection(_selectedPanel);
-          _suppressCboChangeEvent = false; 
+          _suppressCboChangeEvent = false;
         }
 
         pnlDisplay.Controls.Clear();
@@ -110,16 +110,16 @@ namespace Org.ControlTest
         pnlDisplay.Controls.Add(pnlGrid);
         pnlGrid.SetFocus();
 
-        fctxtMap.Text = pnlGrid.GetControlMap(pnlGrid.Name); 
+        fctxtMap.Text = pnlGrid.GetControlMap(pnlGrid.Name);
         //tabMain.SelectedTab = tabPageDisplay;
 
-        this.Cursor = Cursors.Default; 
+        this.Cursor = Cursors.Default;
       }
       catch(Exception ex)
       {
-        MessageBox.Show("An exception occurred attempting to create the StatePanel." + g.crlf2 + 
-                        "Exception:" + g.crlf2 + ex.ToReport(), "ControlTest - Error", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Error); 
+        MessageBox.Show("An exception occurred attempting to create the StatePanel." + g.crlf2 +
+                        "Exception:" + g.crlf2 + ex.ToReport(), "ControlTest - Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
         this.Cursor = Cursors.Default;
         return;
       }
@@ -144,12 +144,18 @@ namespace Org.ControlTest
     {
       switch(panelName)
       {
-        case "StatePanel": return new Size(700, 500); 
-        case "CityPanel": return new Size(645, 500);
-        case "DriverPanel": return new Size(724, 600);
-        case "CompanyPanel": return new Size(724, 600);
-        case "ProductPanel": return new Size(780, 600);
-        case "NavMain": return new Size(180, 600);
+        case "StatePanel":
+          return new Size(700, 500);
+        case "CityPanel":
+          return new Size(645, 500);
+        case "DriverPanel":
+          return new Size(724, 600);
+        case "CompanyPanel":
+          return new Size(724, 600);
+        case "ProductPanel":
+          return new Size(780, 600);
+        case "NavMain":
+          return new Size(180, 600);
       }
 
       return new Size(700, 500);
@@ -160,8 +166,8 @@ namespace Org.ControlTest
     {
       try
       {
-        a = new a();    
-        
+        a = new a();
+
         int formVerticalSize = 90;
         int formHorizontalSize = 90;
 
@@ -175,20 +181,20 @@ namespace Org.ControlTest
                              Screen.PrimaryScreen.Bounds.Height * formVerticalSize / 100);
         this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Width / 2,
                                   Screen.PrimaryScreen.Bounds.Height / 2 - this.Height / 2);
-  
+
         _mode = g.CI("Mode");
-        
-        string controlSpecPath = g.ResourcePath + @"\Controls.xml"; 
+
+        string controlSpecPath = g.ResourcePath + @"\Controls.xml";
         if (!File.Exists(controlSpecPath))
           throw new Exception("Controls.xml does not exist at '" + controlSpecPath + "' - cannot load control definitions.");
 
 
-        string configText = File.ReadAllText(controlSpecPath); 
-        XElement configTextXml = XElement.Parse(configText); 
+        string configText = File.ReadAllText(controlSpecPath);
+        XElement configTextXml = XElement.Parse(configText);
         string configTextFormattedXml = configTextXml.ToString();
         File.WriteAllText(controlSpecPath, configTextFormattedXml);
-        configText = File.ReadAllText(controlSpecPath); 
-        
+        configText = File.ReadAllText(controlSpecPath);
+
         fConfig = new frmConfig(controlSpecPath);
         fConfig.FormClosed += fConfig_FormClosed;
         fConfig.ConfigFormAction += fConfig_ConfigFormAction;
@@ -210,7 +216,7 @@ namespace Org.ControlTest
       }
       catch(Exception ex)
       {
-        MessageBox.Show("An exception occurred while initializing the application." + g.crlf2 + "Exception:" + g.crlf2 + ex.ToReport(), 
+        MessageBox.Show("An exception occurred while initializing the application." + g.crlf2 + "Exception:" + g.crlf2 + ex.ToReport(),
                         "Control Test - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
@@ -222,7 +228,7 @@ namespace Org.ControlTest
 
       var modelList = g.GetList("Models");
       foreach (var model in modelList)
-        cboModels.Items.Add(model); 
+        cboModels.Items.Add(model);
 
     }
 
@@ -242,23 +248,23 @@ namespace Org.ControlTest
     }
 
     private void ReloadControlSpecFile()
-    {      
+    {
       string controlSpec = fConfig.GetText();
 
       try
       {
-        XElement controlSpecXml = XElement.Parse(controlSpec); 
+        XElement controlSpecXml = XElement.Parse(controlSpec);
 
-        string controlSpecPath = g.ResourcePath + @"\Controls.xml"; 
-        File.WriteAllText(controlSpecPath, controlSpec); 
+        string controlSpecPath = g.ResourcePath + @"\Controls.xml";
+        File.WriteAllText(controlSpecPath, controlSpec);
         var controls = GetControlsFromSpec(controlSpec);
         Load_cboPanel(controls);
       }
       catch(Exception ex)
       {
-        MessageBox.Show("The control specification on the Configuration tab is not valid xml."  + g.crlf2 + "Exception:" + ex.ToReport(), 
-            "ControlTest - Configuration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return; 
+        MessageBox.Show("The control specification on the Configuration tab is not valid xml."  + g.crlf2 + "Exception:" + ex.ToReport(),
+                        "ControlTest - Configuration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
       }
     }
 
@@ -267,24 +273,24 @@ namespace Org.ControlTest
       List<string> controls = new List<string>();
 
       XElement controlSpecXml = XElement.Parse(controlSpec);
-      IEnumerable<XElement> controlsXml = controlSpecXml.Elements("UIControl"); 
+      IEnumerable<XElement> controlsXml = controlSpecXml.Elements("UIControl");
       foreach(var control in controlsXml)
       {
         controls.Add(control.Attribute("Name").Value);
       }
 
-      return controls; 
+      return controls;
     }
 
     private void Load_cboPanel(List<string> controls)
     {
       cboPanel.Items.Clear();
       foreach(var control in controls)
-        cboPanel.Items.Add(control); 
+        cboPanel.Items.Add(control);
     }
 
     private void SetPanelSelection(string panelSelection)
-    {        
+    {
       if (panelSelection.IsNotBlank())
       {
         for(int i = 0; i < cboPanel.Items.Count; i++)
@@ -326,7 +332,7 @@ namespace Org.ControlTest
           if (!_fConfigIsClosed)
             fConfig.Close();
           fConfig.Dispose();
-          fConfig = null; 
+          fConfig = null;
         }
       }
     }
@@ -356,7 +362,7 @@ namespace Org.ControlTest
 
       var repository = new TruckingRespository("TruckingEntities" + Environment.MachineName, _dataStoreName);
       var cities = repository.Cities;
-      
+
       foreach (var city in cities)
       {
         sb.Append("City Name: " + city.CityName + g.crlf);
@@ -381,14 +387,14 @@ namespace Org.ControlTest
 
     private void LoadTables()
     {
-      ConfigDbSpec dbSpec = g.GetDbSpec("LoeForecasting" + Environment.MachineName); 
+      ConfigDbSpec dbSpec = g.GetDbSpec("LoeForecasting" + Environment.MachineName);
 
       DbHelper.Initialize();
       SqlConnection conn = new SqlConnection(dbSpec.ConnectionString);
       conn.Open();
 
       DbContext db = new DbContext(dbSpec.ConnectionString);
-      
+
       List<string> tables = new List<string>();
       foreach (DbTable t in DbHelper.DbTableSet.Values)
       {
@@ -397,12 +403,12 @@ namespace Org.ControlTest
       }
 
       cboTables.Items.Clear();
-      cboTables.Items.Add("All Tables"); 
+      cboTables.Items.Add("All Tables");
 
       cboTables.Items.AddRange(tables.ToArray());
 
       conn.Close();
-      conn = null; 
+      conn = null;
     }
 
     private void BuildClass()

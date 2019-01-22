@@ -11,22 +11,34 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Module")]
-    public partial class Module
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Module")]
+  public partial class Module
+  {
+    public Module()
     {
-        public Module()
-        {
-            this.ConfigItems = new HashSet<ConfigItem>();
-            this.AppLogs = new HashSet<AppLog>();
-        }
-    
-        public int ModuleCode { get; set; }
-        public string ModuleName { get; set; }
-    
-        public virtual ICollection<ConfigItem> ConfigItems { get; set; }
-        public virtual ICollection<AppLog> AppLogs { get; set; }
+      this.ConfigItems = new HashSet<ConfigItem>();
+      this.AppLogs = new HashSet<AppLog>();
     }
+
+    public int ModuleCode {
+      get;
+      set;
+    }
+    public string ModuleName {
+      get;
+      set;
+    }
+
+    public virtual ICollection<ConfigItem> ConfigItems {
+      get;
+      set;
+    }
+    public virtual ICollection<AppLog> AppLogs {
+      get;
+      set;
+    }
+  }
 }

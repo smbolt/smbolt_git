@@ -12,11 +12,16 @@ namespace Org.TW.ToolPanels
 {
   public partial class TreeViewPanel : ToolPanelBase
   {
-    public bool IsLoading { get; set; }
+    public bool IsLoading {
+      get;
+      set;
+    }
 
     public TreeView TreeView
     {
-      get { return this.tvDoc; }
+      get {
+        return this.tvDoc;
+      }
     }
 
     public TreeViewPanel()
@@ -45,7 +50,7 @@ namespace Org.TW.ToolPanels
 
       string tag = e.Node.Tag.ToString();
 
-      base.NotifyHost(this, ToolPanelHostCommand.UpdateToolWindow, null); 
+      base.NotifyHost(this, ToolPanelHostCommand.UpdateToolWindow, null);
     }
   }
 }

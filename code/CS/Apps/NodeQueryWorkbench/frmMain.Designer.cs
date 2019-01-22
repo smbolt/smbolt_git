@@ -66,36 +66,38 @@
       this.splitterBottom.Panel2.SuspendLayout();
       this.splitterBottom.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
       this.mnuMain.Size = new System.Drawing.Size(1251, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.lblSelectQuery);
       this.pnlTop.Controls.Add(this.cboQueryFiles);
       this.pnlTop.Controls.Add(this.lblSelectData);
@@ -107,18 +109,18 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1251, 99);
       this.pnlTop.TabIndex = 10;
-      // 
+      //
       // lblSelectQuery
-      // 
+      //
       this.lblSelectQuery.AutoSize = true;
       this.lblSelectQuery.Location = new System.Drawing.Point(15, 51);
       this.lblSelectQuery.Name = "lblSelectQuery";
       this.lblSelectQuery.Size = new System.Drawing.Size(68, 13);
       this.lblSelectQuery.TabIndex = 2;
       this.lblSelectQuery.Text = "Select Query";
-      // 
+      //
       // cboQueryFiles
-      // 
+      //
       this.cboQueryFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboQueryFiles.FormattingEnabled = true;
       this.cboQueryFiles.Location = new System.Drawing.Point(84, 48);
@@ -126,18 +128,18 @@
       this.cboQueryFiles.Size = new System.Drawing.Size(262, 21);
       this.cboQueryFiles.TabIndex = 13;
       this.cboQueryFiles.SelectedIndexChanged += new System.EventHandler(this.cboQueryFiles_SelectedIndexChanged);
-      // 
+      //
       // lblSelectData
-      // 
+      //
       this.lblSelectData.AutoSize = true;
       this.lblSelectData.Location = new System.Drawing.Point(15, 19);
       this.lblSelectData.Name = "lblSelectData";
       this.lblSelectData.Size = new System.Drawing.Size(63, 13);
       this.lblSelectData.TabIndex = 2;
       this.lblSelectData.Text = "Select Data";
-      // 
+      //
       // cboDataFiles
-      // 
+      //
       this.cboDataFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboDataFiles.FormattingEnabled = true;
       this.cboDataFiles.Location = new System.Drawing.Point(84, 16);
@@ -145,9 +147,9 @@
       this.cboDataFiles.Size = new System.Drawing.Size(262, 21);
       this.cboDataFiles.TabIndex = 11;
       this.cboDataFiles.SelectedIndexChanged += new System.EventHandler(this.cboDataFiles_SelectedIndexChanged);
-      // 
+      //
       // btnStep
-      // 
+      //
       this.btnStep.Location = new System.Drawing.Point(356, 47);
       this.btnStep.Name = "btnStep";
       this.btnStep.Size = new System.Drawing.Size(96, 23);
@@ -156,9 +158,9 @@
       this.btnStep.Text = "Step";
       this.btnStep.UseVisualStyleBackColor = true;
       this.btnStep.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRun
-      // 
+      //
       this.btnRun.Location = new System.Drawing.Point(356, 15);
       this.btnRun.Name = "btnRun";
       this.btnRun.Size = new System.Drawing.Size(96, 23);
@@ -167,9 +169,9 @@
       this.btnRun.Text = "Run";
       this.btnRun.UseVisualStyleBackColor = true;
       this.btnRun.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 691);
       this.lblStatus.Name = "lblStatus";
@@ -177,9 +179,9 @@
       this.lblStatus.TabIndex = 2;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // txtRawData
-      // 
+      //
       this.txtRawData.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtRawData.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtRawData.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,48 +191,48 @@
       this.txtRawData.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtRawData.Size = new System.Drawing.Size(624, 258);
       this.txtRawData.TabIndex = 20;
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.Location = new System.Drawing.Point(4, 123);
       this.splitterMain.Name = "splitterMain";
       this.splitterMain.Orientation = System.Windows.Forms.Orientation.Horizontal;
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.splitterTop);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.splitterBottom);
       this.splitterMain.Size = new System.Drawing.Size(1251, 568);
       this.splitterMain.SplitterDistance = 283;
       this.splitterMain.SplitterWidth = 3;
       this.splitterMain.TabIndex = 4;
-      // 
+      //
       // splitterTop
-      // 
+      //
       this.splitterTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitterTop.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterTop.Location = new System.Drawing.Point(0, 0);
       this.splitterTop.Name = "splitterTop";
-      // 
+      //
       // splitterTop.Panel1
-      // 
+      //
       this.splitterTop.Panel1.Controls.Add(this.txtRawData);
       this.splitterTop.Panel1.Controls.Add(this.lblRawData);
-      // 
+      //
       // splitterTop.Panel2
-      // 
+      //
       this.splitterTop.Panel2.Controls.Add(this.txtDataStructure);
       this.splitterTop.Panel2.Controls.Add(this.lblDataStructure);
       this.splitterTop.Size = new System.Drawing.Size(1251, 283);
       this.splitterTop.SplitterDistance = 626;
       this.splitterTop.TabIndex = 5;
-      // 
+      //
       // lblRawData
-      // 
+      //
       this.lblRawData.Dock = System.Windows.Forms.DockStyle.Top;
       this.lblRawData.Location = new System.Drawing.Point(0, 0);
       this.lblRawData.Name = "lblRawData";
@@ -238,9 +240,9 @@
       this.lblRawData.TabIndex = 4;
       this.lblRawData.Text = "Raw Data";
       this.lblRawData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // txtDataStructure
-      // 
+      //
       this.txtDataStructure.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtDataStructure.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtDataStructure.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -250,9 +252,9 @@
       this.txtDataStructure.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtDataStructure.Size = new System.Drawing.Size(619, 258);
       this.txtDataStructure.TabIndex = 22;
-      // 
+      //
       // lblDataStructure
-      // 
+      //
       this.lblDataStructure.Dock = System.Windows.Forms.DockStyle.Top;
       this.lblDataStructure.Location = new System.Drawing.Point(0, 0);
       this.lblDataStructure.Name = "lblDataStructure";
@@ -260,29 +262,29 @@
       this.lblDataStructure.TabIndex = 5;
       this.lblDataStructure.Text = "Data Structure";
       this.lblDataStructure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // splitterBottom
-      // 
+      //
       this.splitterBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitterBottom.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterBottom.Location = new System.Drawing.Point(0, 0);
       this.splitterBottom.Name = "splitterBottom";
-      // 
+      //
       // splitterBottom.Panel1
-      // 
+      //
       this.splitterBottom.Panel1.Controls.Add(this.txtQuery);
       this.splitterBottom.Panel1.Controls.Add(this.lblQuery);
-      // 
+      //
       // splitterBottom.Panel2
-      // 
+      //
       this.splitterBottom.Panel2.Controls.Add(this.txtQueryResults);
       this.splitterBottom.Panel2.Controls.Add(this.labelQueryResults);
       this.splitterBottom.Size = new System.Drawing.Size(1251, 282);
       this.splitterBottom.SplitterDistance = 626;
       this.splitterBottom.TabIndex = 7;
-      // 
+      //
       // txtQuery
-      // 
+      //
       this.txtQuery.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtQuery.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtQuery.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -292,9 +294,9 @@
       this.txtQuery.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtQuery.Size = new System.Drawing.Size(624, 257);
       this.txtQuery.TabIndex = 21;
-      // 
+      //
       // lblQuery
-      // 
+      //
       this.lblQuery.Dock = System.Windows.Forms.DockStyle.Top;
       this.lblQuery.Location = new System.Drawing.Point(0, 0);
       this.lblQuery.Name = "lblQuery";
@@ -302,9 +304,9 @@
       this.lblQuery.TabIndex = 5;
       this.lblQuery.Text = "Query";
       this.lblQuery.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // txtQueryResults
-      // 
+      //
       this.txtQueryResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtQueryResults.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtQueryResults.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -314,9 +316,9 @@
       this.txtQueryResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtQueryResults.Size = new System.Drawing.Size(619, 257);
       this.txtQueryResults.TabIndex = 23;
-      // 
+      //
       // labelQueryResults
-      // 
+      //
       this.labelQueryResults.Dock = System.Windows.Forms.DockStyle.Top;
       this.labelQueryResults.Location = new System.Drawing.Point(0, 0);
       this.labelQueryResults.Name = "labelQueryResults";
@@ -324,9 +326,9 @@
       this.labelQueryResults.TabIndex = 6;
       this.labelQueryResults.Text = "Query Results";
       this.labelQueryResults.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1259, 714);

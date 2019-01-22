@@ -17,7 +17,7 @@ namespace Org.MigrTest
   public partial class frmMain : Form
   {
     private a a;
-    
+
     public frmMain()
     {
       InitializeComponent();
@@ -47,11 +47,11 @@ namespace Org.MigrTest
       try
       {
 
-        string mpxPath = txtProfilePath.Text + @"\" + cboProfileFile.Text; 
+        string mpxPath = txtProfilePath.Text + @"\" + cboProfileFile.Text;
         string mpxData = File.ReadAllText(mpxPath);
         XElement mpxXml = XElement.Parse(mpxData);
 
-        string profileName = cboProfileFile.Text; 
+        string profileName = cboProfileFile.Text;
 
         using (var f = new ObjectFactory2())
         {
@@ -100,7 +100,7 @@ namespace Org.MigrTest
         if (Directory.Exists(txtProfilePath.Text))
         {
           cboProfileFile.LoadItems(Directory.GetFiles(txtProfilePath.Text, "*.mpx").ToFileNameList());
-          cboProfileFile.SelectItem(g.CI("SelectedProfile")); 
+          cboProfileFile.SelectItem(g.CI("SelectedProfile"));
         }
 
       }

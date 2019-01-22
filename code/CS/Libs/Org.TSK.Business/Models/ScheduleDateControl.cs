@@ -11,18 +11,45 @@ namespace Org.TSK.Business.Models
 {
   public class ScheduleDateControl
   {
-    private TaskScheduleElement _taskScheduleElement; 
+    private TaskScheduleElement _taskScheduleElement;
 
-    public DateTime BaseDate { get; private set; }
-    public StartDateOptions StartDateOptions { get; private set; }
-    public EndDateOptions EndDateOptions { get; private set; }
+    public DateTime BaseDate {
+      get;
+      private set;
+    }
+    public StartDateOptions StartDateOptions {
+      get;
+      private set;
+    }
+    public EndDateOptions EndDateOptions {
+      get;
+      private set;
+    }
 
-    public DateTime StartDateTime { get; private set; }
-    public DateTime StartDate { get; private set; }
-    public TimeSpan StartTime { get; private set; }
-    public DateTime EndDateTime { get; private set; }
-    public DateTime EndDate { get; private set; }
-    public TimeSpan EndTime { get; private set; }
+    public DateTime StartDateTime {
+      get;
+      private set;
+    }
+    public DateTime StartDate {
+      get;
+      private set;
+    }
+    public TimeSpan StartTime {
+      get;
+      private set;
+    }
+    public DateTime EndDateTime {
+      get;
+      private set;
+    }
+    public DateTime EndDate {
+      get;
+      private set;
+    }
+    public TimeSpan EndTime {
+      get;
+      private set;
+    }
 
     private DateTime? _startDate;
     private TimeSpan? _startTime;
@@ -38,7 +65,7 @@ namespace Org.TSK.Business.Models
       _startTime = _taskScheduleElement.StartTime;
       _endDate = _taskScheduleElement.EndDate;
       _endTime = _taskScheduleElement.EndTime;
-      _intervalType = g.ToEnum<IntervalType>(_taskScheduleElement.IntervalType, IntervalType.DailyInterval); 
+      _intervalType = g.ToEnum<IntervalType>(_taskScheduleElement.IntervalType, IntervalType.DailyInterval);
 
       AdjustBaseDate();
 
@@ -60,7 +87,7 @@ namespace Org.TSK.Business.Models
       if (!startDate.HasValue)
         startDate = DateTime.Now.Date();
 
-      this.BaseDate = startDate.Value.Add(_startTime.Value); 
+      this.BaseDate = startDate.Value.Add(_startTime.Value);
     }
 
     public List<DateTime> GetScheduleOnFrequency(DateTime intervalStart, DateTime intervalEnd, TimeIntervalSet exclusionIntervals, bool runUntilOverride, bool skipBaseDateTime)
@@ -76,7 +103,7 @@ namespace Org.TSK.Business.Models
       List<DateTime> runTimes = new List<DateTime>();
 
       DateTime startDt = skipBaseDateTime ? this.BaseDate.AddSeconds(frequency) :
-                                            this.BaseDate;
+                         this.BaseDate;
       if (this.StartDateOptions == StartDateOptions.UseStartDateTime)
       {
         if (this.StartDateTime != DateTime.MinValue)
@@ -85,7 +112,7 @@ namespace Org.TSK.Business.Models
 
       while (startDt < intervalStart)
         startDt = startDt.AddSeconds(frequency);
-          
+
       if (startDt < _taskScheduleElement.RunThroughDateTime)
         startDt = _taskScheduleElement.RunThroughDateTime;
 
@@ -172,13 +199,27 @@ namespace Org.TSK.Business.Models
       RunDay runDay = new RunDay(dt);
       switch (runDay.DayOfWeekInt)
       {
-        case 0: if (e.OnSunday) dayIncluded = true; break;
-        case 1: if (e.OnMonday) dayIncluded = true; break;
-        case 2: if (e.OnTuesday) dayIncluded = true; break;
-        case 3: if (e.OnWednesday) dayIncluded = true; break;
-        case 4: if (e.OnThursday) dayIncluded = true; break;
-        case 5: if (e.OnFriday) dayIncluded = true; break;
-        case 6: if (e.OnSaturday) dayIncluded = true; break;
+        case 0:
+          if (e.OnSunday) dayIncluded = true;
+          break;
+        case 1:
+          if (e.OnMonday) dayIncluded = true;
+          break;
+        case 2:
+          if (e.OnTuesday) dayIncluded = true;
+          break;
+        case 3:
+          if (e.OnWednesday) dayIncluded = true;
+          break;
+        case 4:
+          if (e.OnThursday) dayIncluded = true;
+          break;
+        case 5:
+          if (e.OnFriday) dayIncluded = true;
+          break;
+        case 6:
+          if (e.OnSaturday) dayIncluded = true;
+          break;
       }
 
       if ((runDay.IsEven && e.OnEvenDays) || (runDay.IsOdd && e.OnOddDays))
@@ -186,7 +227,7 @@ namespace Org.TSK.Business.Models
 
       if (!dayIncluded)
         return false;
-      
+
       // Need to consider that the RunDay might be the "Third" weekday and we cannot exclude it just because e.First is true, e.Third might also be true
       // That is when e.First is true and RunDay.First is false, we cant exclude it because e.Third (first or third) might be try and RunDay.Third being true
       // would qualify the RunDate.
@@ -199,7 +240,7 @@ namespace Org.TSK.Business.Models
       this.StartDateTime = DateTime.MinValue;
       this.StartTime = new TimeSpan(0, 0, 0);
       this.EndDateTime = DateTime.MaxValue;
-      this.EndTime = new TimeSpan(0, 23, 59, 59, 999); 
+      this.EndTime = new TimeSpan(0, 23, 59, 59, 999);
 
       DateTime startDate = DateTime.MinValue;
       TimeSpan startTime = new TimeSpan(0, 0, 0);
@@ -208,7 +249,7 @@ namespace Org.TSK.Business.Models
         startDate = new DateTime(_startDate.Value.Year, _startDate.Value.Month, _startDate.Value.Day);
 
       if (_startTime.HasValue)
-        startTime = new TimeSpan(_startTime.Value.Hours, _startTime.Value.Minutes, 0); 
+        startTime = new TimeSpan(_startTime.Value.Hours, _startTime.Value.Minutes, 0);
 
       DateTime endDate = DateTime.MaxValue;
       TimeSpan endTime = new TimeSpan(0, 23, 59, 59, 999);
@@ -217,7 +258,7 @@ namespace Org.TSK.Business.Models
         endDate = new DateTime(_endDate.Value.Year, _endDate.Value.Month, _endDate.Value.Day);
 
       if (_endTime.HasValue)
-        endTime = new TimeSpan(0, _endTime.Value.Hours, _endTime.Value.Minutes, 59, 999);            
+        endTime = new TimeSpan(0, _endTime.Value.Hours, _endTime.Value.Minutes, 59, 999);
 
       if (_startDate.HasValue)
       {
@@ -263,7 +304,7 @@ namespace Org.TSK.Business.Models
       }
 
       this.StartDate = new DateTime(this.StartDateTime.Year, this.StartDateTime.Month, this.StartDateTime.Day);
-      this.EndDate = new DateTime(this.EndDateTime.Year, this.EndDateTime.Month, this.EndDateTime.Day); 
+      this.EndDate = new DateTime(this.EndDateTime.Year, this.EndDateTime.Month, this.EndDateTime.Day);
     }
   }
 }

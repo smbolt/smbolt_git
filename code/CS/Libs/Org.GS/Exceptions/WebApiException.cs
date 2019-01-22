@@ -9,7 +9,10 @@ namespace Org.GS
   [Serializable]
   public class WebApiException : Exception
   {
-    public int Code { get; set; }
+    public int Code {
+      get;
+      set;
+    }
 
     public WebApiException(int code, string message)
       : base(message)
@@ -27,7 +30,7 @@ namespace Org.GS
     }
 
     public override void GetObjectData(SerializationInfo info,
-      StreamingContext context)
+                                       StreamingContext context)
     {
       base.GetObjectData(info, context);
 

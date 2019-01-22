@@ -18,7 +18,11 @@ namespace Org.TSK
   public class TaskEngineWebService : ServiceBase, ISimpleService
   {
     private static Func<WsMessage, ServiceBase, XElement> HostMessageProcessor;
-    public override int EntityId { get { return 305; } }
+    public override int EntityId {
+      get {
+        return 305;
+      }
+    }
 
     public TaskEngineWebService()
     {
@@ -35,7 +39,7 @@ namespace Org.TSK
         PreTransactionProcessing(messageString);
 
         if (HostMessageProcessor == null)
-          throw new Exception("The TaskEngine is not listening for web service messages."); 
+          throw new Exception("The TaskEngine is not listening for web service messages.");
 
         var result = HostMessageProcessor(ReceivedMessage, this);
         responseMessage = PostTransactionProcessing(result);

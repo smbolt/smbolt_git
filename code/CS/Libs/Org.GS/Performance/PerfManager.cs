@@ -8,8 +8,15 @@ namespace Org.GS
 {
   public class PerfManager
   {
-    public SortedList<string, PerfEntry> PerfEntries { get; private set; }
-    public string Report { get { return Get_Report(); } }
+    public SortedList<string, PerfEntry> PerfEntries {
+      get;
+      private set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public PerfManager()
     {

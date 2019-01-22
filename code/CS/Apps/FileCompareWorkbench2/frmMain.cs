@@ -94,7 +94,7 @@ namespace FileCompareWorkbench2
                             fileCompareResult.Exception.ToReport();
               break;
           }
-        }        
+        }
 
         this.Cursor = Cursors.Default;
       }
@@ -141,8 +141,8 @@ namespace FileCompareWorkbench2
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An exception occurrerd while attempting to initialize the application object 'a'." + g.crlf2 + 
-                        ex.ToReport(), "FileCompareWorkbench2 - Application Object Initialization Error", 
+        MessageBox.Show("An exception occurrerd while attempting to initialize the application object 'a'." + g.crlf2 +
+                        ex.ToReport(), "FileCompareWorkbench2 - Application Object Initialization Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
@@ -162,7 +162,7 @@ namespace FileCompareWorkbench2
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An exception occurred during program initialization." + g.crlf2 + ex.ToReport(), 
+        MessageBox.Show("An exception occurred during program initialization." + g.crlf2 + ex.ToReport(),
                         "FileCompareWorkbench2 - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }

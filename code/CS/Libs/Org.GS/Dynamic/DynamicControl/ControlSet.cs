@@ -12,10 +12,15 @@ namespace Org.GS.Dynamic
   [XMap(XType=XType.Element, CollectionElements="Control")]
   public class ControlSet : List<Control>
   {
-    public Control Parent { get; set; }
+    public Control Parent {
+      get;
+      set;
+    }
     public bool IsRoot
     {
-      get { return this.Get_IsRoot(); }
+      get {
+        return this.Get_IsRoot();
+      }
     }
 
     private Type _parentType;
@@ -37,7 +42,7 @@ namespace Org.GS.Dynamic
         if (c.ControlType == ControlType.MainMenu)
           return c;
       }
-            
+
       return null;
     }
 

@@ -10,10 +10,16 @@ namespace Org.GS
   public class Task
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "Task", WrapperElement = "TaskSet")]
-    public TaskSet TaskSet { get; set; }
+    public TaskSet TaskSet {
+      get;
+      set;
+    }
 
     public Task()
     {

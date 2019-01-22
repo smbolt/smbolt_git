@@ -34,9 +34,9 @@
       this.lblStatus = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // button1
-      // 
+      //
       this.button1.Location = new System.Drawing.Point(12, 12);
       this.button1.Name = "button1";
       this.button1.Size = new System.Drawing.Size(75, 23);
@@ -44,18 +44,18 @@
       this.button1.Text = "button1";
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
-      // 
+      //
       // panel1
-      // 
+      //
       this.panel1.Controls.Add(this.button1);
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(1427, 51);
       this.panel1.TabIndex = 1;
-      // 
+      //
       // textBox1
-      // 
+      //
       this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.textBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBox1.Location = new System.Drawing.Point(0, 51);
@@ -64,9 +64,9 @@
       this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.textBox1.Size = new System.Drawing.Size(1427, 728);
       this.textBox1.TabIndex = 2;
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 779);
       this.lblStatus.Name = "lblStatus";
@@ -74,9 +74,9 @@
       this.lblStatus.Size = new System.Drawing.Size(1427, 23);
       this.lblStatus.TabIndex = 3;
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // Form1
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1427, 802);

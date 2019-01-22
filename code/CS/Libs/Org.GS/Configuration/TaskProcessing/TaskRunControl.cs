@@ -13,13 +13,22 @@ namespace Org.GS.Configuration
   public class TaskRunControl
   {
     [XMap(IsRequired = true)]
-    public int MaxRunTimeSeconds { get; set; }
+    public int MaxRunTimeSeconds {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public int MaxExecutions { get; set; }
+    public int MaxExecutions {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public bool AllowConcurrent { get; set; }
+    public bool AllowConcurrent {
+      get;
+      set;
+    }
 
     public TaskRunControl()
     {

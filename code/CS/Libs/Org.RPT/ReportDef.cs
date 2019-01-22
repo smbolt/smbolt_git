@@ -12,41 +12,86 @@ namespace Org.RPT
   public class ReportDef : ReportObject
   {
     [XMap(XType = XType.Element, CollectionElements = "ReportObject", WrapperElement = "ReportObjectSet")]
-    public ReportObjectSet ReportObjectSet { get; set; }
+    public ReportObjectSet ReportObjectSet {
+      get;
+      set;
+    }
 
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "850")]
-    public float PageWidth { get; set; }
+    public float PageWidth {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "1100")]
-    public float PageHeight { get; set; }
+    public float PageHeight {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "500")]
-    public float TopMargin { get; set; }
+    public float TopMargin {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "500")]
-    public float BottomMargin { get; set; }
+    public float BottomMargin {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "500")]
-    public float LeftMargin { get; set; }
+    public float LeftMargin {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "500")]
-    public float RightMargin { get; set; }
+    public float RightMargin {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
 
-    public bool DiagMode { get; set; }
+    public bool DiagMode {
+      get;
+      set;
+    }
 
-    public float NextY { get; set; }
-    public int NumberOfPages { get; set; }
+    public float NextY {
+      get;
+      set;
+    }
+    public int NumberOfPages {
+      get;
+      set;
+    }
 
-    public ReportObjectSet PerPage { get; set; }
-    public ReportObjectSet PrintSet { get; set; }
+    public ReportObjectSet PerPage {
+      get;
+      set;
+    }
+    public ReportObjectSet PrintSet {
+      get;
+      set;
+    }
 
-    public StringBuilder Trace { get; set; }
-    public Font DiagFont { get; set; }
+    public StringBuilder Trace {
+      get;
+      set;
+    }
+    public Font DiagFont {
+      get;
+      set;
+    }
 
     public ReportDef()
     {
@@ -64,7 +109,7 @@ namespace Org.RPT
       this.Trace = new StringBuilder();
       this.PerPage = new ReportObjectSet();
       this.PrintSet = new ReportObjectSet();
-      this.DiagFont = new Font("Lucida Console", 7.0F); 
+      this.DiagFont = new Font("Lucida Console", 7.0F);
     }
 
     public void LayoutReport(Graphics gr, ReportData _reportData, float scale)
@@ -128,8 +173,8 @@ namespace Org.RPT
       string fullPath = g.LogPath + @"\ReportTrace.txt";
       if (Directory.Exists(Path.GetDirectoryName(g.LogPath)))
       {
-          string trace = this.Trace.ToString();
-          File.WriteAllText(fullPath, trace);
+        string trace = this.Trace.ToString();
+        File.WriteAllText(fullPath, trace);
       }
     }
   }

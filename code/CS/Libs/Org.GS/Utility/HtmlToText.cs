@@ -148,7 +148,7 @@ namespace Org.GS
         if (Peek() == '/')
           MoveAhead();
         while (!EndOfText && !Char.IsWhiteSpace(Peek()) &&
-          Peek() != '/' && Peek() != '>')
+               Peek() != '/' && Peek() != '>')
           MoveAhead();
         tag = _html.Substring(start, _pos - start).ToLower();
 
@@ -194,7 +194,9 @@ namespace Org.GS
     // the string
     protected bool EndOfText
     {
-      get { return (_pos >= _html.Length); }
+      get {
+        return (_pos >= _html.Length);
+      }
     }
 
     // Safely returns the character at the current position
@@ -286,7 +288,7 @@ namespace Org.GS
             // Clear line buffer if changing to
             // preformatted mode
             if (_currLine.Length > 0)
-                FlushCurrLine();
+              FlushCurrLine();
             _emptyLines = 0;
           }
 
@@ -342,7 +344,7 @@ namespace Org.GS
             // Write single space character
             int len = _currLine.Length;
             if (len == 0 || !Char.IsWhiteSpace(_currLine[len - 1]))
-                _currLine.Append(' ');
+              _currLine.Append(' ');
           }
           else
           {

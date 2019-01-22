@@ -12,74 +12,109 @@ namespace Org.Terminal.Screen
   public class FieldSpec
   {
     private string _name;
-    [XMap] public string Name 
+    [XMap] public string Name
     {
-      get { return Get_Name(); }
-      set { _name = value; }
+      get {
+        return Get_Name();
+      }
+      set {
+        _name = value;
+      }
     }
 
     private int _origLine;
-    [XMap] public int OrigLine 
-    { 
-      get { return Get_OrigLine(); }
-      set { _origLine = value; }
+    [XMap] public int OrigLine
+    {
+      get {
+        return Get_OrigLine();
+      }
+      set {
+        _origLine = value;
+      }
     }
 
-    public int CurrLine { get; set; }
+    public int CurrLine {
+      get;
+      set;
+    }
 
     private int _origCol;
-    [XMap] public int OrigCol 
+    [XMap] public int OrigCol
     {
-      get { return Get_OrigCol(); }
-      set { _origCol = value; }
+      get {
+        return Get_OrigCol();
+      }
+      set {
+        _origCol = value;
+      }
     }
 
-    public int CurrCol { get; set; }
+    public int CurrCol {
+      get;
+      set;
+    }
 
     private int _origLth;
-    [XMap] public int OrigLth 
+    [XMap] public int OrigLth
     {
-      get { return Get_OrigLth(); }
-      set { _origLth = value; }
+      get {
+        return Get_OrigLth();
+      }
+      set {
+        _origLth = value;
+      }
     }
 
-    public int CurrLth { get; set; }
+    public int CurrLth {
+      get;
+      set;
+    }
 
     private int? _maxSize;
     public int? MaxSize
     {
-      get { return _maxSize; }
-      set { _maxSize = value; }
+      get {
+        return _maxSize;
+      }
+      set {
+        _maxSize = value;
+      }
     }
 
     private string _init;
-    [XMap] public string Init 
+    [XMap] public string Init
     {
-      get { return Get_Init(); }
-      set 
-      { 
+      get {
+        return Get_Init();
+      }
+      set
+      {
         _init = value;
         _origValue = value;
-        this.CurrValue = value; 
+        this.CurrValue = value;
       }
     }
 
     private bool _useInit;
-    [XMap] public bool UseInit 
+    [XMap] public bool UseInit
     {
-      get { return Get_UseInit(); }
-      set 
-      { 
+      get {
+        return Get_UseInit();
+      }
+      set
+      {
         _useInit = value;
       }
     }
 
     private string _fill;
-    [XMap] public string Fill 
+    [XMap] public string Fill
     {
-      get { return Get_Fill(); }
-      set 
-      { 
+      get {
+        return Get_Fill();
+      }
+      set
+      {
         _fill = value;
         if (_fill.Length > 0 && _origLth > 0)
         {
@@ -90,11 +125,13 @@ namespace Org.Terminal.Screen
     }
 
     private bool _useFill;
-    [XMap] public bool UseFill 
+    [XMap] public bool UseFill
     {
-      get { return Get_UseFill(); }
-      set 
-      { 
+      get {
+        return Get_UseFill();
+      }
+      set
+      {
         _useFill = value;
       }
     }
@@ -102,20 +139,30 @@ namespace Org.Terminal.Screen
     private string _origValue;
     public string OrigValue
     {
-      get { return _origValue; }
+      get {
+        return _origValue;
+      }
     }
 
     private bool _isProtected;
     public bool IsProtected
     {
-      get { return Get_IsProtected(); } 
+      get {
+        return Get_IsProtected();
+      }
     }
 
-    public string CurrValue { get; set; }    
+    public string CurrValue {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Attrs { get; set; }
-    /*  The Attrs property contains a set of positional single-character values 
+    public string Attrs {
+      get;
+      set;
+    }
+    /*  The Attrs property contains a set of positional single-character values
      *  Position 0 (PROT,UNPROT)
      *     "U" - Unprotected (default)
      *     "P" - Protected
@@ -134,34 +181,77 @@ namespace Org.Terminal.Screen
      *     "T" - Turquois
      */
 
-    public bool AttrbNum { get { return Get_AttrbNum(); } }
-    public bool AttrbBright { get { return Get_AttrbBright(); } }
-    public bool AttrbDark { get { return Get_AttrbDark(); } }
-    public bool AttrbDet { get { return Get_AttrbDet(); } }
-    public bool AttrbIC { get { return Get_AttrbIC(); } }
-    public bool AttrbFSET { get { return Get_AttrbFSET(); } }
-    public FieldColor Color { get { return Get_Color(); } }
+    public bool AttrbNum {
+      get {
+        return Get_AttrbNum();
+      }
+    }
+    public bool AttrbBright {
+      get {
+        return Get_AttrbBright();
+      }
+    }
+    public bool AttrbDark {
+      get {
+        return Get_AttrbDark();
+      }
+    }
+    public bool AttrbDet {
+      get {
+        return Get_AttrbDet();
+      }
+    }
+    public bool AttrbIC {
+      get {
+        return Get_AttrbIC();
+      }
+    }
+    public bool AttrbFSET {
+      get {
+        return Get_AttrbFSET();
+      }
+    }
+    public FieldColor Color {
+      get {
+        return Get_Color();
+      }
+    }
 
     private HFlex _hFlex;
-    public HFlex HFlex 
+    public HFlex HFlex
     {
-      get { return Get_HFlex(); }
-      set { _hFlex = value; }
+      get {
+        return Get_HFlex();
+      }
+      set {
+        _hFlex = value;
+      }
     }
 
     private VFlex _vFlex;
-    public VFlex VFlex 
+    public VFlex VFlex
     {
-      get { return Get_VFlex(); }
-      set { _vFlex = value; }
+      get {
+        return Get_VFlex();
+      }
+      set {
+        _vFlex = value;
+      }
     }
 
-    public bool TabStop { get { return Get_TabStop(); } }
+    public bool TabStop {
+      get {
+        return Get_TabStop();
+      }
+    }
 
-    public FieldSpecSet FieldSpecSet { get; set; }
+    public FieldSpecSet FieldSpecSet {
+      get;
+      set;
+    }
 
     private Bms_DFHMDF _bms_DFHMDF;
-    public Bms_DFHMDF Bms_DFHMDF 
+    public Bms_DFHMDF Bms_DFHMDF
     {
       get
       {
@@ -180,9 +270,9 @@ namespace Org.Terminal.Screen
       this.OrigLine = 0;
       this.CurrLine = 0;
       this.OrigCol = 0;
-      this.CurrCol = 0; 
+      this.CurrCol = 0;
       this.OrigLth = 0;
-      this.CurrLth = 0; 
+      this.CurrLth = 0;
       this.MaxSize = null;
       this.Init = String.Empty;
       this.Fill = String.Empty;
@@ -263,7 +353,7 @@ namespace Org.Terminal.Screen
           _origValue = fillValue;
           this.CurrValue = fillValue;
         }
-        _fill = fillValue; 
+        _fill = fillValue;
         return fillValue;
       }
       else
@@ -286,9 +376,12 @@ namespace Org.Terminal.Screen
       {
         switch (this.Bms_DFHMDF.DFHMDF_HFLEX)
         {
-          case DFHMDF_HFLEX.STRETCH: return HFlex.Stretch;
-          case DFHMDF_HFLEX.FLOATRIGHT: return HFlex.FloatRight;
-          default: return HFlex.None;
+          case DFHMDF_HFLEX.STRETCH:
+            return HFlex.Stretch;
+          case DFHMDF_HFLEX.FLOATRIGHT:
+            return HFlex.FloatRight;
+          default:
+            return HFlex.None;
         }
       }
       else
@@ -303,8 +396,10 @@ namespace Org.Terminal.Screen
       {
         switch (this.Bms_DFHMDF.DFHMDF_VFLEX)
         {
-          case DFHMDF_VFLEX.OCCURS: return VFlex.Occurs;
-          default: return VFlex.None;
+          case DFHMDF_VFLEX.OCCURS:
+            return VFlex.Occurs;
+          default:
+            return VFlex.None;
         }
       }
       else
@@ -417,15 +512,24 @@ namespace Org.Terminal.Screen
       {
         switch (this.Bms_DFHMDF.DFH_COLOR)
         {
-          case DFH_COLOR.DEFAULT: return FieldColor.DEFAULT;
-          case DFH_COLOR.NEUTRAL: return FieldColor.NEUTRAL;
-          case DFH_COLOR.BLUE: return FieldColor.BLUE;
-          case DFH_COLOR.GREEN: return FieldColor.GREEN;
-          case DFH_COLOR.RED: return FieldColor.RED;
-          case DFH_COLOR.PINK: return FieldColor.PINK;
-          case DFH_COLOR.YELLOW: return FieldColor.YELLOW;
-          case DFH_COLOR.TURQUOISE: return FieldColor.TURQUOISE;
-          default: return FieldColor.DEFAULT;
+          case DFH_COLOR.DEFAULT:
+            return FieldColor.DEFAULT;
+          case DFH_COLOR.NEUTRAL:
+            return FieldColor.NEUTRAL;
+          case DFH_COLOR.BLUE:
+            return FieldColor.BLUE;
+          case DFH_COLOR.GREEN:
+            return FieldColor.GREEN;
+          case DFH_COLOR.RED:
+            return FieldColor.RED;
+          case DFH_COLOR.PINK:
+            return FieldColor.PINK;
+          case DFH_COLOR.YELLOW:
+            return FieldColor.YELLOW;
+          case DFH_COLOR.TURQUOISE:
+            return FieldColor.TURQUOISE;
+          default:
+            return FieldColor.DEFAULT;
         }
       }
       else
@@ -435,15 +539,24 @@ namespace Org.Terminal.Screen
 
         switch (this.Attrs.ToUpper()[2])
         {
-          case 'D': return FieldColor.DEFAULT;
-          case 'N': return FieldColor.NEUTRAL;
-          case 'B': return FieldColor.BLUE;
-          case 'G': return FieldColor.GREEN;
-          case 'R': return FieldColor.RED;
-          case 'P': return FieldColor.PINK;
-          case 'Y': return FieldColor.YELLOW;
-          case 'T': return FieldColor.TURQUOISE;
-          default: return FieldColor.DEFAULT;
+          case 'D':
+            return FieldColor.DEFAULT;
+          case 'N':
+            return FieldColor.NEUTRAL;
+          case 'B':
+            return FieldColor.BLUE;
+          case 'G':
+            return FieldColor.GREEN;
+          case 'R':
+            return FieldColor.RED;
+          case 'P':
+            return FieldColor.PINK;
+          case 'Y':
+            return FieldColor.YELLOW;
+          case 'T':
+            return FieldColor.TURQUOISE;
+          default:
+            return FieldColor.DEFAULT;
         }
       }
     }
@@ -477,7 +590,7 @@ namespace Org.Terminal.Screen
     {
       var clone = new FieldSpec();
       clone.FieldSpecSet = this.FieldSpecSet;
-      clone.Bms_DFHMDF = this.Bms_DFHMDF.CloneForVFLEX(lineNumber); 
+      clone.Bms_DFHMDF = this.Bms_DFHMDF.CloneForVFLEX(lineNumber);
       return clone;
     }
 

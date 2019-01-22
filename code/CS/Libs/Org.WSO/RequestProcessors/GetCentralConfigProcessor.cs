@@ -68,7 +68,7 @@ namespace Org.WSO.RequestProcessors
       HostingEnvironment.Cache["CentralConfig"] = centralConfiguration;
 
       base.ServiceBase.Logger.Log("Population of CentralConfig successful from Org '" + base.TransactionEngine.MessageHeader.OrgId.ToString() + "' from Application:"
-          + base.TransactionEngine.MessageHeader.AppName + " Version:" + base.TransactionEngine.MessageHeader.AppVersion + "'.", 0); 
+                                  + base.TransactionEngine.MessageHeader.AppName + " Version:" + base.TransactionEngine.MessageHeader.AppVersion + "'.", 0);
     }
 
   }

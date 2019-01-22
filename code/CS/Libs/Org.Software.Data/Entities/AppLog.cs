@@ -12,29 +12,65 @@ using Org.GS;
 
 namespace Org.Software.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Org_Software", "", "AppLog")]
-    public partial class AppLog
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Org_Software", "", "AppLog")]
+  public partial class AppLog
+  {
+    public AppLog()
     {
-        public AppLog()
-        {
-            this.AppLogDetails = new HashSet<AppLogDetail>();
-        }
-    
-        public long LogId { get; set; }
-        public System.DateTime LogDateTime { get; set; }
-        public string SeverityCode { get; set; }
-        public string Message { get; set; }
-        public int ModuleCode { get; set; }
-        public int EventCode { get; set; }
-        public Nullable<int> OrgId { get; set; }
-    
-        public virtual AppLogSeverity AppLogSeverity { get; set; }
-        public virtual AppLogEvent AppLogEvent { get; set; }
-        public virtual Module Module { get; set; }
-        public virtual Organization Organization { get; set; }
-        public virtual ICollection<AppLogDetail> AppLogDetails { get; set; }
+      this.AppLogDetails = new HashSet<AppLogDetail>();
     }
+
+    public long LogId {
+      get;
+      set;
+    }
+    public System.DateTime LogDateTime {
+      get;
+      set;
+    }
+    public string SeverityCode {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public int ModuleCode {
+      get;
+      set;
+    }
+    public int EventCode {
+      get;
+      set;
+    }
+    public Nullable<int> OrgId {
+      get;
+      set;
+    }
+
+    public virtual AppLogSeverity AppLogSeverity {
+      get;
+      set;
+    }
+    public virtual AppLogEvent AppLogEvent {
+      get;
+      set;
+    }
+    public virtual Module Module {
+      get;
+      set;
+    }
+    public virtual Organization Organization {
+      get;
+      set;
+    }
+    public virtual ICollection<AppLogDetail> AppLogDetails {
+      get;
+      set;
+    }
+  }
 }

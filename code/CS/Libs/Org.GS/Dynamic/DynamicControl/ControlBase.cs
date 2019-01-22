@@ -17,34 +17,58 @@ namespace Org.GS.Dynamic
   public class ControlBase
   {
     [XMap(IsRequired = true)]
-    public ControlType ControlType { get; set ;}
+    public ControlType ControlType {
+      get;
+      set ;
+    }
 
     private string _name;
     [XMap(IsRequired = true)]
-    public string Name 
-    { 
-      get { return this._name; }
-      set { _name = value; }
+    public string Name
+    {
+      get {
+        return this._name;
+      }
+      set {
+        _name = value;
+      }
     }
 
     [XMap(DefaultValue = "-1")]
-    public int AmpPos { get; set; }
+    public int AmpPos {
+      get;
+      set;
+    }
 
     public string Text
     {
-      get { return this._name; }
+      get {
+        return this._name;
+      }
     }
 
     [XMap(DefaultValue = "False")]
-    public bool MapEvent { get; set; }
+    public bool MapEvent {
+      get;
+      set;
+    }
 
-    public Control Parent { get; set; }
+    public Control Parent {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Tag { get; set; }
+    public string Tag {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "Control", WrapperElement="ControlSet")]
-    public ControlSet ControlSet { get; set; }
+    public ControlSet ControlSet {
+      get;
+      set;
+    }
 
     public ControlBase()
     {
@@ -59,7 +83,7 @@ namespace Org.GS.Dynamic
 
     public string GetControlName()
     {
-      string controlName = this.Name; 
+      string controlName = this.Name;
 
       ControlBase item = this;
 

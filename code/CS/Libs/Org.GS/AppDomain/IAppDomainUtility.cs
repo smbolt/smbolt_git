@@ -9,7 +9,9 @@ namespace Org.GS.AppDomainManagement
 {
   public interface IAppDomainUtility
   {
-    string AppDomainFriendlyName { get; }
+    string AppDomainFriendlyName {
+      get;
+    }
 
     string GetAssemblyReport();
     Assembly GetRootAssembly();

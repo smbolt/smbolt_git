@@ -71,8 +71,8 @@ namespace Org.JsonTest
       txtRaw.Text = json;
     }
 
-		private void DeserializeObject()
-		{
+    private void DeserializeObject()
+    {
       try
       {
         string rawText = txtRaw.Text;
@@ -87,14 +87,14 @@ namespace Org.JsonTest
         MessageBox.Show("An exception occurred while attempting to deserialize the JSON text into an object." + g.crlf2 + ex.ToReport(),
                         "JSON Test - Deserialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
-		}
+    }
 
-		public void LoadAppConfig()
-		{
+    public void LoadAppConfig()
+    {
       this.Cursor = Cursors.WaitCursor;
 
-			try
-			{
+      try
+      {
 
         //var dbSpec = j.GetDbSpec("Logging");
         //var dbSpec2 = j.GetDbSpec("Logging");
@@ -102,14 +102,14 @@ namespace Org.JsonTest
         //var ftpSpec = j.GetFtpSpec("Default");
 
         this.Cursor = Cursors.Default;
-			}
-			catch (Exception ex)
-			{
+      }
+      catch (Exception ex)
+      {
         this.Cursor = Cursors.Default;
-				MessageBox.Show("An error occurred while attempting to load the AppConfig object." + g.crlf2 + ex.ToReport(), "JsonTest - Error",
-												MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
+        MessageBox.Show("An error occurred while attempting to load the AppConfig object." + g.crlf2 + ex.ToReport(), "JsonTest - Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
+    }
 
 
     //private void BuildMessage()
@@ -133,7 +133,7 @@ namespace Org.JsonTest
     //  h.AppVersion = "1.1.0.0";
     //  h.OrgId = 5;
     //  h.UserName = "TestUserName";
-    //  h.Password = "TestPassword";      
+    //  h.Password = "TestPassword";
     //}
 
     private void SerializeObject()
@@ -203,7 +203,7 @@ namespace Org.JsonTest
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during program initialization while creating the 'a' application object." + g.crlf2 + ex.ToReport(),
-                         "JSON Test - Application Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "JSON Test - Application Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
       try
@@ -217,7 +217,7 @@ namespace Org.JsonTest
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during program initialization." + g.crlf2 + ex.ToReport(),
-                         "JSON Test - Application Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "JSON Test - Application Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
   }

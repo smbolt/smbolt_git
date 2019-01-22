@@ -4,12 +4,12 @@ using System.Web.Routing;
 
 namespace BasicAuthentication
 {
-    public class MvcApplication : HttpApplication
+  public class MvcApplication : HttpApplication
+  {
+    protected void Application_Start()
     {
-        protected void Application_Start()
-        {
-            AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-        }
+      AreaRegistration.RegisterAllAreas();
+      RouteConfig.RegisterRoutes(RouteTable.Routes);
     }
+  }
 }

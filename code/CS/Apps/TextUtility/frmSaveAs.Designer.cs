@@ -37,26 +37,26 @@
       this.btnSave = new System.Windows.Forms.Button();
       this.btnCancel = new System.Windows.Forms.Button();
       this.SuspendLayout();
-      // 
+      //
       // lblNewFileName
-      // 
+      //
       this.lblNewFileName.AutoSize = true;
       this.lblNewFileName.Location = new System.Drawing.Point(13, 16);
       this.lblNewFileName.Name = "lblNewFileName";
       this.lblNewFileName.Size = new System.Drawing.Size(107, 13);
       this.lblNewFileName.TabIndex = 0;
       this.lblNewFileName.Text = "Enter New File Name";
-      // 
+      //
       // txtNewFileName
-      // 
+      //
       this.txtNewFileName.Location = new System.Drawing.Point(16, 33);
       this.txtNewFileName.Name = "txtNewFileName";
       this.txtNewFileName.Size = new System.Drawing.Size(249, 20);
       this.txtNewFileName.TabIndex = 1;
       this.txtNewFileName.TextChanged += new System.EventHandler(this.txtNewFileName_TextChanged);
-      // 
+      //
       // cboExistingFiles
-      // 
+      //
       this.cboExistingFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboExistingFiles.FormattingEnabled = true;
       this.cboExistingFiles.Location = new System.Drawing.Point(16, 110);
@@ -64,18 +64,18 @@
       this.cboExistingFiles.Size = new System.Drawing.Size(249, 21);
       this.cboExistingFiles.TabIndex = 3;
       this.cboExistingFiles.SelectedIndexChanged += new System.EventHandler(this.cboExistingFiles_SelectedIndexChanged);
-      // 
+      //
       // lblExistingFiles
-      // 
+      //
       this.lblExistingFiles.AutoSize = true;
       this.lblExistingFiles.Location = new System.Drawing.Point(13, 94);
       this.lblExistingFiles.Name = "lblExistingFiles";
       this.lblExistingFiles.Size = new System.Drawing.Size(149, 13);
       this.lblExistingFiles.TabIndex = 0;
       this.lblExistingFiles.Text = "Select existing file to overwrite";
-      // 
+      //
       // ckOverwriteExisting
-      // 
+      //
       this.ckOverwriteExisting.AutoSize = true;
       this.ckOverwriteExisting.Location = new System.Drawing.Point(17, 71);
       this.ckOverwriteExisting.Name = "ckOverwriteExisting";
@@ -84,9 +84,9 @@
       this.ckOverwriteExisting.Text = "Overwrite existing file";
       this.ckOverwriteExisting.UseVisualStyleBackColor = true;
       this.ckOverwriteExisting.CheckedChanged += new System.EventHandler(this.ckOverwriteExisting_CheckedChanged);
-      // 
+      //
       // btnSave
-      // 
+      //
       this.btnSave.Location = new System.Drawing.Point(16, 155);
       this.btnSave.Name = "btnSave";
       this.btnSave.Size = new System.Drawing.Size(113, 23);
@@ -94,9 +94,9 @@
       this.btnSave.Tag = "Save";
       this.btnSave.Text = "Save";
       this.btnSave.UseVisualStyleBackColor = true;
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Location = new System.Drawing.Point(152, 155);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new System.Drawing.Size(113, 23);
@@ -104,9 +104,9 @@
       this.btnCancel.Tag = "Cancel";
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
-      // 
+      //
       // frmSaveAs
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(282, 193);

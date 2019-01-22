@@ -14,9 +14,18 @@ namespace Org.GS
 
   public class DateSpan
   {
-    public DateTime StartDateTime { get; private set; }
-    public DateTime EndDateTime { get; private set; }
-    public DateSpanType DateSpanType { get; private set; }
+    public DateTime StartDateTime {
+      get;
+      private set;
+    }
+    public DateTime EndDateTime {
+      get;
+      private set;
+    }
+    public DateSpanType DateSpanType {
+      get;
+      private set;
+    }
 
     public DateSpan(DateTime startDate, DateTime endDate)
     {

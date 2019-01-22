@@ -14,7 +14,9 @@ namespace Org.TW.ToolPanels
   {
     public PictureBox PictureBox
     {
-      get { return this.pbMain; }
+      get {
+        return this.pbMain;
+      }
     }
 
     public ImagePanel()

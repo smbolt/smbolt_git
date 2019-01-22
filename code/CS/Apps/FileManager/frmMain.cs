@@ -14,7 +14,7 @@ using Org.ZIP;
 namespace Org.FileManager
 {
   public partial class frmMain : Form
-    
+
   {
     private a a;
 
@@ -73,15 +73,15 @@ namespace Org.FileManager
         seq++;
         targetPath = g.CI("ArchiveTargetFolder") + @"\" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + "-" + seq.ToString("000") + ".zip";
       }
-      
+
       _targetPath = targetPath;
 
       archiver.CreateArchive(sourceDirectory, targetPath);
 
       txtOut.Text = "Running CreateArchive.";
     }
-    
-    
+
+
     private void ExtractArchive()
     {
       try
@@ -99,33 +99,33 @@ namespace Org.FileManager
       catch (Exception ex)
       {
         MessageBox.Show("An error occurred during archive processing." + g.crlf2 +
-                        "Exception Message follows:" + g.crlf2 + ex.ToReport(), 
-                        "File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Exception Message follows:" + g.crlf2 + ex.ToReport(),
+                        "File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
     }
 
     private void SegmentFile()
-    {      
-      string segmentationSourcePath = lblSegmentationSourceValue.Text; 
-      List<string> segmentationFiles = Directory.GetFiles(segmentationSourcePath).ToList(); 
-      
+    {
+      string segmentationSourcePath = lblSegmentationSourceValue.Text;
+      List<string> segmentationFiles = Directory.GetFiles(segmentationSourcePath).ToList();
+
       if (segmentationFiles.Count > 1)
       {
-        MessageBox.Show("Multiple files exist in the segmentation source path." + g.crlf2 + 
-                        "Place single file for segmentation in path '" + segmentationSourcePath + "' and try again.", 
-                        "File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-        txtOut.Text = "Multiple files exist in segmentation source path '" + segmentationSourcePath + "'."; 
-        return; 
+        MessageBox.Show("Multiple files exist in the segmentation source path." + g.crlf2 +
+                        "Place single file for segmentation in path '" + segmentationSourcePath + "' and try again.",
+                        "File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        txtOut.Text = "Multiple files exist in segmentation source path '" + segmentationSourcePath + "'.";
+        return;
       }
 
       if (segmentationFiles.Count == 0)
       {
-        MessageBox.Show("No files exist in the segmentation source path." + g.crlf2 + 
-                        "Place single file for segmentation in path '" + segmentationSourcePath + "' and try again.", 
-                        "File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-        txtOut.Text = "No files exist in segmentation source path '" + segmentationSourcePath + "'."; 
-        return; 
+        MessageBox.Show("No files exist in the segmentation source path." + g.crlf2 +
+                        "Place single file for segmentation in path '" + segmentationSourcePath + "' and try again.",
+                        "File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        txtOut.Text = "No files exist in segmentation source path '" + segmentationSourcePath + "'.";
+        return;
       }
 
 
@@ -135,7 +135,7 @@ namespace Org.FileManager
 
       FileSystemUtility fsu = new FileSystemUtility();
 
-      fsu.SegmentizeFile(segmentationFileFullPath, segmentSize); 
+      fsu.SegmentizeFile(segmentationFileFullPath, segmentSize);
 
       txtOut.Text = "Running SegmentFile.";
     }
@@ -172,7 +172,7 @@ namespace Org.FileManager
       // delete any previously existing files in the directory
       List<string> existingFiles = Directory.GetFiles(lblSegmentationSourceValue.Text).ToList();
       foreach (string existingFile in existingFiles)
-        File.Delete(existingFile); 
+        File.Delete(existingFile);
 
       // build a "dummy string" and put it in the file
       StringBuilder sb = new StringBuilder();
@@ -181,11 +181,11 @@ namespace Org.FileManager
 
       while (sb.Length < fileSize)
       {
-        sb.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz"); 
+        sb.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz");
       }
 
-      sb.Append(g.crlf); 
-      File.WriteAllText(segmentationFileFullPath, sb.ToString());       
+      sb.Append(g.crlf);
+      File.WriteAllText(segmentationFileFullPath, sb.ToString());
 
       txtOut.Text = "Running CreateDummySegmentationData.";
     }
@@ -200,12 +200,12 @@ namespace Org.FileManager
       }
       catch(Exception ex)
       {
-        MessageBox.Show("An exception occurred during initialization." + g.crlf2 + ex.ToReport(), "File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+        MessageBox.Show("An exception occurred during initialization." + g.crlf2 + ex.ToReport(), "File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
 
       cboFileSize.SelectedIndex = 0;
-      cboSegmentSize.SelectedIndex = 0; 
+      cboSegmentSize.SelectedIndex = 0;
 
 
       int formHorizontalSize = g.GetCI("MainFormHorizontalSize").ToInt32OrDefault(90);

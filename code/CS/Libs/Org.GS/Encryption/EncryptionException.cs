@@ -16,7 +16,7 @@ namespace Org.GS
     }
 
     public override void GetObjectData(SerializationInfo info,
-      StreamingContext context)
+                                       StreamingContext context)
     {
       base.GetObjectData(info, context);
     }

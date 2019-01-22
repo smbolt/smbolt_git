@@ -8,15 +8,33 @@ namespace Org.GS.Math
 {
   public class Equation
   {
-    public string Formula { get; set; }
-    public string[] RawDataItems { get; set; }
-    public Dictionary<string, string> Variables { get; set; }
-    public List<string> Options { get; set; }
+    public string Formula {
+      get;
+      set;
+    }
+    public string[] RawDataItems {
+      get;
+      set;
+    }
+    public Dictionary<string, string> Variables {
+      get;
+      set;
+    }
+    public List<string> Options {
+      get;
+      set;
+    }
 
-    public EquationResultType EquationResultType { get; set; }
+    public EquationResultType EquationResultType {
+      get;
+      set;
+    }
     private int decimalPlaces;
 
-    private Expression Expression { get; set; }
+    private Expression Expression {
+      get;
+      set;
+    }
 
     private string _errorMessage;
 
@@ -31,7 +49,7 @@ namespace Org.GS.Math
       this.Options = new List<string>();
       this.EquationResultType = EquationResultType.Integer;
       this.decimalPlaces = 0;
-      this._errorMessage = String.Empty;            
+      this._errorMessage = String.Empty;
     }
 
     public string ComputeValue()
@@ -68,7 +86,7 @@ namespace Org.GS.Math
       }
       catch (Exception ex)
       {
-            return ex.Message;
+        return ex.Message;
       }
     }
 

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Org.TsoControls.Panels
 {
-	public partial class PanelBase : UserControl
-	{
-		public PanelBase()
-		{
-			InitializeComponent();
-		}
-	}
+  public partial class PanelBase : UserControl
+  {
+    public PanelBase()
+    {
+      InitializeComponent();
+    }
+  }
 }

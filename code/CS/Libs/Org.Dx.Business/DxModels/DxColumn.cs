@@ -20,9 +20,21 @@ namespace Org.Dx.Business
       }
     }
 
-    public string Report { get { return Get_Report(); } }
-    public string ColumnValues { get { return Get_ColumnValues(); } }
-    public bool HasContent { get { return Get_HasContent(); } }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
+    public string ColumnValues {
+      get {
+        return Get_ColumnValues();
+      }
+    }
+    public bool HasContent {
+      get {
+        return Get_HasContent();
+      }
+    }
 
     public DxColumn()
     {
@@ -151,7 +163,7 @@ namespace Org.Dx.Business
     {
       bool allMatch = true;
       bool anyMatch = false;
-      
+
       foreach (var cellSearchCriteria in indexLocator.CellSearchCriteriaSet)
       {
         bool match = false;

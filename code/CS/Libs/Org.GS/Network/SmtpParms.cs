@@ -15,16 +15,46 @@ namespace Org.GS
 
   public class SmtpParms
   {
-    public string SmtpServer { get; set; }
-    public int SmtpPort { get; set; }
-    public bool UseSmtpCredentials { get; set; }
-    public string SmtpUserID { get; set; }
-    public string SmtpPassword { get; set; }
-    public bool SmtpEnableSSL { get; set; }
-    public bool PickUpFromIIS { get; set; }
-    public bool SuppressEmailSend { get; set; }
-    public string EmailFromAddress { get; set; }
-    public EmailSendStatus EmailSendStatus { get; set; }
+    public string SmtpServer {
+      get;
+      set;
+    }
+    public int SmtpPort {
+      get;
+      set;
+    }
+    public bool UseSmtpCredentials {
+      get;
+      set;
+    }
+    public string SmtpUserID {
+      get;
+      set;
+    }
+    public string SmtpPassword {
+      get;
+      set;
+    }
+    public bool SmtpEnableSSL {
+      get;
+      set;
+    }
+    public bool PickUpFromIIS {
+      get;
+      set;
+    }
+    public bool SuppressEmailSend {
+      get;
+      set;
+    }
+    public string EmailFromAddress {
+      get;
+      set;
+    }
+    public EmailSendStatus EmailSendStatus {
+      get;
+      set;
+    }
 
     public SmtpParms()
     {

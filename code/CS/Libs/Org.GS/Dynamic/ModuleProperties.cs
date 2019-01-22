@@ -7,11 +7,26 @@ namespace Org.GS.Dynamic
 {
   public class ModuleProperties
   {
-    public bool ShowModuleExplorer { get; set; }
-    public bool UseSplashScreen { get; set; }
-    public string ModuleName { get; set; }
-    public string ModuleVersion { get; set; }
-    public string MainFormTitle { get; set; }
+    public bool ShowModuleExplorer {
+      get;
+      set;
+    }
+    public bool UseSplashScreen {
+      get;
+      set;
+    }
+    public string ModuleName {
+      get;
+      set;
+    }
+    public string ModuleVersion {
+      get;
+      set;
+    }
+    public string MainFormTitle {
+      get;
+      set;
+    }
 
     public ModuleProperties()
     {

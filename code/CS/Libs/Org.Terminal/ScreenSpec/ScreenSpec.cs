@@ -11,22 +11,40 @@ namespace Org.Terminal.Screen
   public class ScreenSpec
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap]
-    public int Rows { get; set; }
+    public int Rows {
+      get;
+      set;
+    }
 
     [XMap]
-    public int Columns { get; set; }
+    public int Columns {
+      get;
+      set;
+    }
 
     [XMap]
-    public bool FixedWidth { get; set; }
+    public bool FixedWidth {
+      get;
+      set;
+    }
 
     [XMap]
-    public bool FixedHeight { get; set; }
+    public bool FixedHeight {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "FieldSpec", WrapperElement = "FieldSpecSet")]
-    public FieldSpecSet FieldSpecSet { get; set; }
+    public FieldSpecSet FieldSpecSet {
+      get;
+      set;
+    }
 
     public ScreenSpec()
     {

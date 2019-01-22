@@ -14,22 +14,40 @@ namespace Org.Dx.Business.TextProcessing
   public class ExtractSpec : Dictionary<string, Tsd>
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "PDF")]
-    public FileType FileType { get; set; }
+    public FileType FileType {
+      get;
+      set;
+    }
 
     [XMap]
-    public string RecogSpecName { get; set; }
+    public string RecogSpecName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Desc { get; set; }
+    public string Desc {
+      get;
+      set;
+    }
 
     [XMap]
-    public string GlobalRoutines { get; set; }
+    public string GlobalRoutines {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ExtractOptions { get; set; }
+    public string ExtractOptions {
+      get;
+      set;
+    }
     public OptionsList LevelExtractOptions
     {
       get
@@ -39,24 +57,53 @@ namespace Org.Dx.Business.TextProcessing
         return _optionsList;
       }
     }
-    private OptionsList _optionsList { get; set; }
+    private OptionsList _optionsList {
+      get;
+      set;
+    }
 
     private List<string> _globalRoutineList = new List<string>();
-    public List<string> GlobalRoutineList { get { return _globalRoutineList; } }
+    public List<string> GlobalRoutineList {
+      get {
+        return _globalRoutineList;
+      }
+    }
 
     [XMap(XType = XType.Element)]
-    public ExtractionMap ExtractionMap { get; set; }
+    public ExtractionMap ExtractionMap {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "True")]
-    public bool RunExtract { get; set; }
+    public bool RunExtract {
+      get;
+      set;
+    }
 
     private bool _linesNumbered = false;
-    public bool LinesNumbered { get { return _linesNumbered; } }
+    public bool LinesNumbered {
+      get {
+        return _linesNumbered;
+      }
+    }
 
-    public ExtractSpecSet ExtractSpecSet { get; set; }
-    public string FullFilePath { get; set; }
-    public static int LineNumber { get; set; }
-    public static int BreakOnLine { get; set; }
+    public ExtractSpecSet ExtractSpecSet {
+      get;
+      set;
+    }
+    public string FullFilePath {
+      get;
+      set;
+    }
+    public static int LineNumber {
+      get;
+      set;
+    }
+    public static int BreakOnLine {
+      get;
+      set;
+    }
 
     public ExtractSpec()
     {

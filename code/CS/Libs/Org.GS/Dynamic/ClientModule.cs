@@ -11,8 +11,14 @@ namespace Org.GS.Dynamic
 {
   public class ClientModule
   {
-    public string ModuleName { get; set; }
-    public string CurrentVersion { get; set; }
+    public string ModuleName {
+      get;
+      set;
+    }
+    public string CurrentVersion {
+      get;
+      set;
+    }
     public List<string> Versions;
 
     public ClientModule()

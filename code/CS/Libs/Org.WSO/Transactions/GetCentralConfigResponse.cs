@@ -12,10 +12,16 @@ namespace Org.WSO.Transactions
   public class GetCentralConfigResponse : TransactionBase
   {
     [XMap(XType = XType.Element)]
-    public XElement GlobalConfigs { get; set; }
+    public XElement GlobalConfigs {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public XElement AppSpecificConfigs { get; set; }
+    public XElement AppSpecificConfigs {
+      get;
+      set;
+    }
 
     public GetCentralConfigResponse()
     {

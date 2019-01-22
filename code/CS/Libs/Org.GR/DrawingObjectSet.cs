@@ -8,10 +8,10 @@ using Org.GS;
 
 namespace Org.GR
 {
-	public class DrawingObjectSet : SortedList<int, DrawingObject>
-	{
-		public DrawingObjectSet()
-		{
-		}
-	}
+  public class DrawingObjectSet : SortedList<int, DrawingObject>
+  {
+    public DrawingObjectSet()
+    {
+    }
+  }
 }

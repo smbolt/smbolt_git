@@ -12,21 +12,21 @@ using Org.GS;
 
 namespace Org.PdfExtractToolWindows
 {
-	public partial class RichTextViewer : ToolPanelBase
-	{
+  public partial class RichTextViewer : ToolPanelBase
+  {
     private string _originalText;
     private bool _initialShowing = true;
 
-		public string Text
-		{
-			get
-			{
-				return this.txtData.Text;
-			}
-			set
-			{
+    public string Text
+    {
+      get
+      {
+        return this.txtData.Text;
+      }
+      set
+      {
         _originalText = value;
-				this.txtData.Text = value;
+        this.txtData.Text = value;
         if (_initialShowing)
         {
           _initialShowing = false;
@@ -35,17 +35,21 @@ namespace Org.PdfExtractToolWindows
         {
           RunFilters();
         }
-			}
-		}
+      }
+    }
 
-		public Panel TopPanel { get { return base.TopPanel; } }
+    public Panel TopPanel {
+      get {
+        return base.TopPanel;
+      }
+    }
 
-		public RichTextViewer()
-			: base("RichTextViewer")
-		{
-			InitializeComponent();
+    public RichTextViewer()
+      : base("RichTextViewer")
+    {
+      InitializeComponent();
       ckUseDynamicFiltering.Checked = true;
-		}
+    }
 
 
     private void Action(object sender, EventArgs e)
@@ -113,5 +117,5 @@ namespace Org.PdfExtractToolWindows
     {
       btnRunFilter.Enabled = !ckUseDynamicFiltering.Checked;
     }
-	}
+  }
 }

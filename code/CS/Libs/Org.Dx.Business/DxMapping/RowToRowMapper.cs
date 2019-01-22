@@ -23,7 +23,7 @@ namespace Org.Dx.Business
         int destRowIndex = 0;
 
         foreach (var srcRow in base.SourceWorksheet.Rows.Values)
-        { 
+        {
           if (!base.DxMap.DxFilterSet.MatchesRow(srcRow))
             continue;
 
@@ -64,7 +64,7 @@ namespace Org.Dx.Business
             dstCell.ColumnIndex = -1;
 
             dstCell.DxMapItem = mapItem;
-          
+
             if (mapItem.CreatesVariable)
             {
               string variableName = mapItem.Dest;

@@ -13,7 +13,11 @@ namespace Org.FTP.Tasks
 {
   public class FtpTaskProcessor : TaskProcessorBase
   {
-    public override int EntityId { get { return 999; } }
+    public override int EntityId {
+      get {
+        return 999;
+      }
+    }
     private Logger _logger;
     private ConfigFtpSpec _configFtpSpec;
 
@@ -22,7 +26,7 @@ namespace Org.FTP.Tasks
       TaskResult taskResult = base.InitializeTaskResult();
       CheckContinue = checkContinue;
       _logger = new Logger();
-      _logger.ModuleId = g.AppInfo.ModuleCode; 
+      _logger.ModuleId = g.AppInfo.ModuleCode;
 
       try
       {
@@ -77,7 +81,7 @@ namespace Org.FTP.Tasks
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while executing the FTP Command Set.", ex); 
+        throw new Exception("An exception occurred while executing the FTP Command Set.", ex);
       }
     }
 

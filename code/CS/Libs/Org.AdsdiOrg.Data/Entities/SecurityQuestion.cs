@@ -11,23 +11,41 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "SecurityQuestion")]
-    public partial class SecurityQuestion
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "SecurityQuestion")]
+  public partial class SecurityQuestion
+  {
+    public SecurityQuestion()
     {
-        public SecurityQuestion()
-        {
-            this.Accounts = new HashSet<Account>();
-        }
-    
-        public int SecurityQuestionId { get; set; }
-        public string SecurityQuestionText { get; set; }
-        public int StatusId { get; set; }
-        public Nullable<int> Sequencer { get; set; }
-    
-        public virtual ICollection<Account> Accounts { get; set; }
-        public virtual Status Status { get; set; }
+      this.Accounts = new HashSet<Account>();
     }
+
+    public int SecurityQuestionId {
+      get;
+      set;
+    }
+    public string SecurityQuestionText {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+    public Nullable<int> Sequencer {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Account> Accounts {
+      get;
+      set;
+    }
+    public virtual Status Status {
+      get;
+      set;
+    }
+  }
 }

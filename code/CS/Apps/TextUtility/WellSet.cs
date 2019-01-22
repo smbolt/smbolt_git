@@ -9,7 +9,11 @@ namespace Org.TextUtility
 {
   public class WellSet : List<Well>
   {
-    public string WellNameReport { get { return Get_WellNameReport(); } }
+    public string WellNameReport {
+      get {
+        return Get_WellNameReport();
+      }
+    }
 
     private string Get_WellNameReport()
     {

@@ -36,49 +36,94 @@ namespace Org.Dx.Business
       }
     }
 
-    public List<DxCell> CellList { get { return Get_CellList(); } }
+    public List<DxCell> CellList {
+      get {
+        return Get_CellList();
+      }
+    }
 
     private DxColumnSet _dxColumnSet;
-    public DxColumnSet DxColumnSet { get { return _dxColumnSet != null ? _dxColumnSet : Get_DxColumnSet(); } }
-    
+    public DxColumnSet DxColumnSet {
+      get {
+        return _dxColumnSet != null ? _dxColumnSet : Get_DxColumnSet();
+      }
+    }
+
     private int? _lastUsedRowIndex;
     public int LastUsedRowIndex
     {
-      get { return Get_LastUsedRowIndex(); }
-      set { _lastUsedRowIndex = value; }
+      get {
+        return Get_LastUsedRowIndex();
+      }
+      set {
+        _lastUsedRowIndex = value;
+      }
     }
-    
+
     private int? _lastUsedColumnIndex;
     public int LastUsedColumnIndex
     {
-      get { return Get_LastUsedColumnIndex(); }
-      set { _lastUsedColumnIndex = value; }
+      get {
+        return Get_LastUsedColumnIndex();
+      }
+      set {
+        _lastUsedColumnIndex = value;
+      }
     }
 
     private int? _rowCount;
     public int RowCount
     {
-      get { return Get_RowCount(); }
-      set { _rowCount = value; }
+      get {
+        return Get_RowCount();
+      }
+      set {
+        _rowCount = value;
+      }
     }
 
     private int? _columnCount;
     public int ColumnCount
     {
-      get { return Get_ColumnCount(); }
-      set { _columnCount = value; }
+      get {
+        return Get_ColumnCount();
+      }
+      set {
+        _columnCount = value;
+      }
     }
-    
-    public virtual bool IsHidden { get; set; }
 
-    public string WorksheetName { get; set; }
-    public int SheetIndex { get { return Get_SheetIndex(); } }
+    public virtual bool IsHidden {
+      get;
+      set;
+    }
 
-    public string Report { get { return Get_Report(); } }
+    public string WorksheetName {
+      get;
+      set;
+    }
+    public int SheetIndex {
+      get {
+        return Get_SheetIndex();
+      }
+    }
 
-    public DxWorkbook DxWorkbook { get; set; }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
-    public string CellIndexReport { get { return Get_CellIndexReport(); } }
+    public DxWorkbook DxWorkbook {
+      get;
+      set;
+    }
+
+    public string CellIndexReport {
+      get {
+        return Get_CellIndexReport();
+      }
+    }
 
     public DxRowSet()
     {
@@ -218,7 +263,7 @@ namespace Org.Dx.Business
         if (dxRow.RowIndex > lastUsedRowIndex)
           lastUsedRowIndex = dxRow.RowIndex;
       }
-      
+
       _lastUsedRowIndex = lastUsedRowIndex;
       _lastUsedColumnIndex = lastUsedColumnIndex;
 
@@ -365,8 +410,7 @@ namespace Org.Dx.Business
           if (text == value)
             row = r;
 
-          else
-            if (text.ToLower() == value.ToLower())
+          else if (text.ToLower() == value.ToLower())
             row = r;
         }
       }
@@ -605,7 +649,7 @@ namespace Org.Dx.Business
       {
         var row = new DxRow(this);
 
-      if (rowIndex < 0 || rowIndex > _lastUsedRowIndex)
+        if (rowIndex < 0 || rowIndex > _lastUsedRowIndex)
           return row;
 
         if (startColumn < 0)
@@ -738,7 +782,7 @@ namespace Org.Dx.Business
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to add a cell to the DxRowSet at row " + cell.RowIndex.ToString() +
-          " column " + cell.ColumnIndex.ToString() + ".", ex);
+                            " column " + cell.ColumnIndex.ToString() + ".", ex);
       }
     }
 
@@ -1260,7 +1304,7 @@ namespace Org.Dx.Business
         StringBuilder sbTopGrid = new StringBuilder();
         StringBuilder sbBottomGrid = new StringBuilder();
         StringBuilder sbData = new StringBuilder();
-        
+
         if (r == 0)
         {
           sbHeader.Append("   ROW   ");
@@ -1334,9 +1378,9 @@ namespace Org.Dx.Business
       try
       {
         region.SetRegionRectangle(this);
-        
+
         this.Trim(region.TopIndex, region.BottomIndex);
-        
+
         foreach (var row in this.Rows.Values)
         {
           row.Trim(region.LeftIndex, region.RightIndex);
@@ -1388,7 +1432,7 @@ namespace Org.Dx.Business
                             "from DxRowSet named '" + this.WorksheetName + "' which has indices from 0 to " + (this.Rows.Count - 1).ToString() + ".", ex);
       }
     }
-    
+
     public void EnsureIntegrity()
     {
       try

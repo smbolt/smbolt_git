@@ -13,17 +13,29 @@ namespace Org.GS.Configuration
   public class ProgramFunctionControl
   {
     [XMap(MyParent = true)]
-    public ProgramConfig ProgramConfig { get; set; }
+    public ProgramConfig ProgramConfig {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ConfigItemSource { get; set; }
+    public string ConfigItemSource {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "ProgramFunction", WrapperElement = "ProgramFunctionSet")]
-    public ProgramFunctionSet ProgramFunctionSet { get; set; }
+    public ProgramFunctionSet ProgramFunctionSet {
+      get;
+      set;
+    }
 
 
     [XMap(XType = XType.Element, CollectionElements = "ProgramRole", WrapperElement = "ProgramRoleSet")]
-    public ProgramRoleSet ProgramRoleSet { get; set; }
+    public ProgramRoleSet ProgramRoleSet {
+      get;
+      set;
+    }
 
     public ProgramFunctionControl()
     {
@@ -40,7 +52,7 @@ namespace Org.GS.Configuration
       foreach (string s in ints)
       {
         if (s.IsNumeric())
-            integerList.Add(Int32.Parse(s));
+          integerList.Add(Int32.Parse(s));
       }
 
       return integerList;
@@ -53,9 +65,9 @@ namespace Org.GS.Configuration
       foreach (int i in integerList)
       {
         if (delimitedIntegers.Length > 0)
-            delimitedIntegers += "," + i.ToString().Trim();
+          delimitedIntegers += "," + i.ToString().Trim();
         else
-            delimitedIntegers += i.ToString().Trim();
+          delimitedIntegers += i.ToString().Trim();
       }
 
       return delimitedIntegers;
@@ -79,8 +91,8 @@ namespace Org.GS.Configuration
           foreach (int inheritedFunction in inheritedFunctions)
           {
             if (!functionNumbersAllowed.Contains(inheritedFunction))
-              functionNumbersAllowed.Add(inheritedFunction); 
-          }          
+              functionNumbersAllowed.Add(inheritedFunction);
+          }
         }
       }
 
@@ -143,14 +155,14 @@ namespace Org.GS.Configuration
         {
           if (!this.ProgramFunctionSet.ContainsKey(functionNumber))
             sb.Append("Role number '" + role.RoleNumber.ToString() + "' role name '" + role.OrgRoleName + "' " +
-                      "references function number '" + functionNumber.ToString() + "' which does not exist." + g.crlf); 
+                      "references function number '" + functionNumber.ToString() + "' which does not exist." + g.crlf);
         }
 
         foreach (int roleNumber in role.InheritedRolesList)
         {
           if (!this.ProgramRoleSet.ContainsKey(roleNumber))
             sb.Append("Role number '" + role.RoleNumber.ToString() + "' role name '" + role.OrgRoleName + "' " +
-                      "references inherited role number '" + roleNumber.ToString() + "' which does not exist." + g.crlf); 
+                      "references inherited role number '" + roleNumber.ToString() + "' which does not exist." + g.crlf);
         }
       }
 

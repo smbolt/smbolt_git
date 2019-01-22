@@ -8,9 +8,18 @@ namespace Org.BMR.ApiModels
 {
   public class ResumeNameModel : ApiModelBase
   {
-    public int ResumeId { get; set; }
-    public string ResumeName { get; set; }
-    public bool PersonIsInitial { get; set; }
+    public int ResumeId {
+      get;
+      set;
+    }
+    public string ResumeName {
+      get;
+      set;
+    }
+    public bool PersonIsInitial {
+      get;
+      set;
+    }
 
     public ResumeNameModel()
     {

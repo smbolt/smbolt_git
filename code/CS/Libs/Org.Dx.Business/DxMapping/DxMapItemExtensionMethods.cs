@@ -9,7 +9,7 @@ using Org.GS;
 namespace Org.Dx.Business
 {
   public static class DxMapItemExtensionMethods
-  {   
+  {
     public static bool IncludeBasedOnCondition(this DxMapItem mapItem)
     {
       try
@@ -28,7 +28,7 @@ namespace Org.Dx.Business
           cond = cond.Substring(1);
 
         string[] tokens = cond.GetRelationalExpression().TrimArrayTokens();
-        
+
         for (int i = 0; i < tokens.Length; i++)
         {
           tokens[i] = tokens[i].Trim();
@@ -69,14 +69,27 @@ namespace Org.Dx.Business
 
             switch (relOp)
             {
-              case "=": booleanResult = leftValue.CompareTo(rightValue) == 0; break;
-              case "!=": booleanResult = leftValue.CompareTo(rightValue) != 0; break;
-              case ">=": booleanResult = leftValue.CompareTo(rightValue) > -1; break;
-              case "<=": booleanResult = leftValue.CompareTo(rightValue) < 1; break;
-              case ">": booleanResult = leftValue.CompareTo(rightValue) > 0; break;
-              case "<": booleanResult = leftValue.CompareTo(rightValue) < 0; break;
-              default: throw new Exception("Unexpected relational operator encountered '" + relOp + "' when processing " +
-                                           "DxMapItem '" + mapItem.Report + "'.");
+              case "=":
+                booleanResult = leftValue.CompareTo(rightValue) == 0;
+                break;
+              case "!=":
+                booleanResult = leftValue.CompareTo(rightValue) != 0;
+                break;
+              case ">=":
+                booleanResult = leftValue.CompareTo(rightValue) > -1;
+                break;
+              case "<=":
+                booleanResult = leftValue.CompareTo(rightValue) < 1;
+                break;
+              case ">":
+                booleanResult = leftValue.CompareTo(rightValue) > 0;
+                break;
+              case "<":
+                booleanResult = leftValue.CompareTo(rightValue) < 0;
+                break;
+              default:
+                throw new Exception("Unexpected relational operator encountered '" + relOp + "' when processing " +
+                                    "DxMapItem '" + mapItem.Report + "'.");
             }
 
             if (isNegated)
@@ -114,7 +127,7 @@ namespace Org.Dx.Business
           cond = cond.Substring(1);
 
         string[] tokens = cond.GetRelationalExpression().TrimArrayTokens();
-        
+
         for (int i = 0; i < tokens.Length; i++)
         {
           tokens[i] = tokens[i].Trim();
@@ -168,14 +181,27 @@ namespace Org.Dx.Business
 
             switch (relOp)
             {
-              case "=": booleanResult = leftValue.CompareTo(rightValue) == 0; break;
-              case "!=": booleanResult = leftValue.CompareTo(rightValue) != 0; break;
-              case ">=": booleanResult = leftValue.CompareTo(rightValue) > -1; break;
-              case "<=": booleanResult = leftValue.CompareTo(rightValue) < 1; break;
-              case ">": booleanResult = leftValue.CompareTo(rightValue) > 0; break;
-              case "<": booleanResult = leftValue.CompareTo(rightValue) < 0; break;
-              default: throw new Exception("Unexpected relational operator encountered '" + relOp + "' when processing " +
-                                           "DxMapItem '" + mapItem.Report + "'.");
+              case "=":
+                booleanResult = leftValue.CompareTo(rightValue) == 0;
+                break;
+              case "!=":
+                booleanResult = leftValue.CompareTo(rightValue) != 0;
+                break;
+              case ">=":
+                booleanResult = leftValue.CompareTo(rightValue) > -1;
+                break;
+              case "<=":
+                booleanResult = leftValue.CompareTo(rightValue) < 1;
+                break;
+              case ">":
+                booleanResult = leftValue.CompareTo(rightValue) > 0;
+                break;
+              case "<":
+                booleanResult = leftValue.CompareTo(rightValue) < 0;
+                break;
+              default:
+                throw new Exception("Unexpected relational operator encountered '" + relOp + "' when processing " +
+                                    "DxMapItem '" + mapItem.Report + "'.");
             }
 
             if (isNegated)

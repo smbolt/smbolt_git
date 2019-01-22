@@ -14,7 +14,10 @@ namespace Org.Software.Tasks.Transactions
   public class GetFrameworkVersionsResponse : TransactionBase
   {
     [XMap(XType = XType.Element, CollectionElements = "FxVersion")]
-    public FxVersionSet FxVersionSet { get; set; }
+    public FxVersionSet FxVersionSet {
+      get;
+      set;
+    }
 
     public GetFrameworkVersionsResponse()
     {

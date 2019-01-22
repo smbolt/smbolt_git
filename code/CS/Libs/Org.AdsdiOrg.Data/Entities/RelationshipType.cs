@@ -11,22 +11,34 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "RelationshipType")]
-    public partial class RelationshipType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "RelationshipType")]
+  public partial class RelationshipType
+  {
+    public RelationshipType()
     {
-        public RelationshipType()
-        {
-            this.RelatedOrgs = new HashSet<RelatedOrg>();
-            this.RelatedPersons = new HashSet<RelatedPerson>();
-        }
-    
-        public string RelationshipTypeCode { get; set; }
-        public string RelationshipTypeDesc { get; set; }
-    
-        public virtual ICollection<RelatedOrg> RelatedOrgs { get; set; }
-        public virtual ICollection<RelatedPerson> RelatedPersons { get; set; }
+      this.RelatedOrgs = new HashSet<RelatedOrg>();
+      this.RelatedPersons = new HashSet<RelatedPerson>();
     }
+
+    public string RelationshipTypeCode {
+      get;
+      set;
+    }
+    public string RelationshipTypeDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<RelatedOrg> RelatedOrgs {
+      get;
+      set;
+    }
+    public virtual ICollection<RelatedPerson> RelatedPersons {
+      get;
+      set;
+    }
+  }
 }

@@ -9,10 +9,16 @@ using Org.GS;
 
 namespace Org.GraphicReports.Business
 {
-	public class RigSet : Dictionary<string, Rig>
-	{
-    public Font PadNameFont { get; set; }
-    public Calendar Calendar { get; set; }
+  public class RigSet : Dictionary<string, Rig>
+  {
+    public Font PadNameFont {
+      get;
+      set;
+    }
+    public Calendar Calendar {
+      get;
+      set;
+    }
     private ReportParms _reportParms;
     private ReportDiagnostics _diag;
     private float _x;
@@ -27,14 +33,30 @@ namespace Org.GraphicReports.Business
     private float _cw;
 
     private float _rigColumnWidth = 90.0F;
-		public float RigColumnWidth { get { return _rigColumnWidth; } }
+    public float RigColumnWidth {
+      get {
+        return _rigColumnWidth;
+      }
+    }
     private float _rigRowHeight = 69.0F;
-		public float RigRowHeight { get { return _rigRowHeight; } }
-    public float ClientHeight { get { return _ch; } }
-    public float ClientWidth { get { return _cw; } }
+    public float RigRowHeight {
+      get {
+        return _rigRowHeight;
+      }
+    }
+    public float ClientHeight {
+      get {
+        return _ch;
+      }
+    }
+    public float ClientWidth {
+      get {
+        return _cw;
+      }
+    }
 
-		public RigSet(ReportParms reportParms)
-		{
+    public RigSet(ReportParms reportParms)
+    {
       _reportParms = reportParms;
       _diag = _reportParms.ReportDiagnostics;
       _w = _reportParms.ActualPageSize.Width;
@@ -49,7 +71,7 @@ namespace Org.GraphicReports.Business
       this.Calendar = new Calendar(reportParms.DateSpan);
 
       this.PadNameFont = new Font("Calibri", 10.0F);
-		}
+    }
 
     public void DrawReport(Graphics gx)
     {
@@ -62,7 +84,7 @@ namespace Org.GraphicReports.Business
 
       if (_diag.DiagnosticsActive)
       {
-        DrawReportDiagnostics(gx); 
+        DrawReportDiagnostics(gx);
       }
 
       _x = _l;
@@ -73,7 +95,7 @@ namespace Org.GraphicReports.Business
         _y = (float) DrawCalendar(gx, new Point((int)_l, (int)_t));
       }
 
-			float _calendarLeft = _x + _rigColumnWidth; 
+      float _calendarLeft = _x + _rigColumnWidth;
 
       foreach (var rig in this.Values)
       {
@@ -121,7 +143,7 @@ namespace Org.GraphicReports.Business
 
       //gx.FillRectangle(blueBrush, new Rectangle(175, 125, 350, 28));
       //gx.DrawRectangle(Pens.Black, new Rectangle(175, 125, 350, 28));
-      //gx.DrawString("March 2016", new Font("Calibri", 8.0F, FontStyle.Bold), Brushes.Black, new PointF(310, 132)); 
+      //gx.DrawString("March 2016", new Font("Calibri", 8.0F, FontStyle.Bold), Brushes.Black, new PointF(310, 132));
 
     }
 
@@ -135,7 +157,7 @@ namespace Org.GraphicReports.Business
 
     private int DrawCalendar(Graphics gx, Point pt)
     {
-      return this.Calendar.Draw(gx, pt, new Size((int)_cw, (int)_ch)); 
+      return this.Calendar.Draw(gx, pt, new Size((int)_cw, (int)_ch));
     }
 
     public RigSet GetForDateSpan(DateSpan dateSpan)
@@ -156,35 +178,35 @@ namespace Org.GraphicReports.Business
       catch (Exception ex)
       {
         throw new Exception("An exception occurred attempting to create the DrawingObjectSet from the RigSet for the time span '" +
-                            dateSpan.StartDateTime.ToString("MM/dd/yyyy") + "' to '" + dateSpan.EndDateTime.ToString("MM/dd/yyyy") + "'.", ex); 
+                            dateSpan.StartDateTime.ToString("MM/dd/yyyy") + "' to '" + dateSpan.EndDateTime.ToString("MM/dd/yyyy") + "'.", ex);
       }
     }
 
-		public string GetReport()
-		{
-			StringBuilder sb = new StringBuilder();
+    public string GetReport()
+    {
+      StringBuilder sb = new StringBuilder();
 
-			foreach (var rig in this.Values)
-			{
-				sb.Append("Rig: " + rig.Name + g.crlf);
-				foreach (var pad in rig.PadSet.Values)
-				{
-					sb.Append("  Pad: " + pad.PadNumber.ToString().PadTo(8) + pad.PadName + g.crlf);
-					foreach (var well in pad.WellSet.Values)
-					{
-						sb.Append("    Well " + well.WellOrdinal.ToString() + "  " +
-																		well.WellNumber.ToString().PadTo(8) +
-																		well.WellName.PadTo(30) + "  " +
-																		well.SpudDate.Value.ToString("yyyy-MM-dd") + "  " +
-																		well.CompletionDate.Value.ToString("yyyy-MM-dd") + "  " +
-																		well.UnitNumber.ToString().PadTo(8) +
-																		well.UnitName + g.crlf);
+      foreach (var rig in this.Values)
+      {
+        sb.Append("Rig: " + rig.Name + g.crlf);
+        foreach (var pad in rig.PadSet.Values)
+        {
+          sb.Append("  Pad: " + pad.PadNumber.ToString().PadTo(8) + pad.PadName + g.crlf);
+          foreach (var well in pad.WellSet.Values)
+          {
+            sb.Append("    Well " + well.WellOrdinal.ToString() + "  " +
+                      well.WellNumber.ToString().PadTo(8) +
+                      well.WellName.PadTo(30) + "  " +
+                      well.SpudDate.Value.ToString("yyyy-MM-dd") + "  " +
+                      well.CompletionDate.Value.ToString("yyyy-MM-dd") + "  " +
+                      well.UnitNumber.ToString().PadTo(8) +
+                      well.UnitName + g.crlf);
 
-					}
-				}
-			}
+          }
+        }
+      }
 
-			return sb.ToString();
-		}
-	}
+      return sb.ToString();
+    }
+  }
 }

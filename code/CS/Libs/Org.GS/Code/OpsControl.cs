@@ -6,7 +6,7 @@ using System.IO;
 using System.Reflection;
 using Org.GS;
 
-namespace Org.GS.Code 
+namespace Org.GS.Code
 {
   public enum OpsControlFunction
   {
@@ -16,29 +16,50 @@ namespace Org.GS.Code
   }
 
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
-  public class OpsControl 
+  [XMap(XType = XType.Element)]
+  public class OpsControl
   {
     [XMap(IsKey=true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="NotSet")]
-    public OpsControlFunction OpsControlFunction { get; set; }
+    public OpsControlFunction OpsControlFunction {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Host { get; set; }
+    public string Host {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ServiceName { get; set; }
+    public string ServiceName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string RunBefore { get; set; }
+    public string RunBefore {
+      get;
+      set;
+    }
 
     [XMap]
-    public string RunAfter { get; set; }
+    public string RunAfter {
+      get;
+      set;
+    }
 
     public OpsControl()
     {

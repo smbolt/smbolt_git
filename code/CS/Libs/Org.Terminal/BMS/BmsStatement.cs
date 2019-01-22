@@ -9,36 +9,78 @@ namespace Org.Terminal.BMS
 {
   public class BmsStatement
   {
-    public BmsStatementType BmsStatementType { get; set; }
-    public Bms_BASE Bms_BASE { get; set; }
-    public BmsLineSet BmsLineSet { get; set; }
-    public string BmsStatementText { get { return Get_BmsStatementText(); } }
-    public string BmsStatementOrigText { get { return Get_BmsStatementOrigText(); } }
-    public string FirstToken { get; set; }
-    public string SecondToken { get; set; }
-    public string FieldName { get; set; }
-    public List<Parenthetical> Parentheticals { get; set; }
-    public Dictionary<string, string> Parameters { get; set; }
-    public string RemainingText { get; private set; }
-    public BmsMapErrorSet BmsMapErrorSet { get; set; }
-    public int ErrorCode { get { return Get_ErrorCode(); } } 
+    public BmsStatementType BmsStatementType {
+      get;
+      set;
+    }
+    public Bms_BASE Bms_BASE {
+      get;
+      set;
+    }
+    public BmsLineSet BmsLineSet {
+      get;
+      set;
+    }
+    public string BmsStatementText {
+      get {
+        return Get_BmsStatementText();
+      }
+    }
+    public string BmsStatementOrigText {
+      get {
+        return Get_BmsStatementOrigText();
+      }
+    }
+    public string FirstToken {
+      get;
+      set;
+    }
+    public string SecondToken {
+      get;
+      set;
+    }
+    public string FieldName {
+      get;
+      set;
+    }
+    public List<Parenthetical> Parentheticals {
+      get;
+      set;
+    }
+    public Dictionary<string, string> Parameters {
+      get;
+      set;
+    }
+    public string RemainingText {
+      get;
+      private set;
+    }
+    public BmsMapErrorSet BmsMapErrorSet {
+      get;
+      set;
+    }
+    public int ErrorCode {
+      get {
+        return Get_ErrorCode();
+      }
+    }
 
 
     public BmsStatement()
     {
       this.BmsStatementType = BmsStatementType.Uncompiled;
-      this.Bms_BASE = null; 
+      this.Bms_BASE = null;
       this.BmsLineSet = new BmsLineSet();
       this.FirstToken = String.Empty;
       this.SecondToken = String.Empty;
       this.FieldName = String.Empty;
       this.Parentheticals = new List<Parenthetical>();
       this.Parameters = new Dictionary<string, string>();
-      this.BmsMapErrorSet = new BmsMapErrorSet(); 
+      this.BmsMapErrorSet = new BmsMapErrorSet();
     }
 
 
-    /*  
+    /*
      * See this site for details of the allowed parameters
      * https://www.ibm.com/support/knowledgecenter/en/SSGMCP_5.1.0/com.ibm.cics.ts.applicationprogramming.doc/topics/dfhp4_bmsmacros.html
     */
@@ -122,7 +164,7 @@ namespace Org.Terminal.BMS
               if (end > 0)
               {
                 string unit = t.Substring(beg, end - beg + 1);
-                string parms = unit.Substring(name.Length).Replace(")", String.Empty); 
+                string parms = unit.Substring(name.Length).Replace(")", String.Empty);
                 name = name.Replace("=(", String.Empty);
                 this.Parentheticals.Add(new Parenthetical(name, parms));
                 string begText = t.Substring(0, beg);
@@ -147,7 +189,7 @@ namespace Org.Terminal.BMS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to extract parenthetical values from the statement '" + this.BmsStatementText + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to extract parenthetical values from the statement '" + this.BmsStatementText + "'.", ex);
       }
     }
 
@@ -208,14 +250,14 @@ namespace Org.Terminal.BMS
             }
           }
 
-          workText = new String(chars); 
+          workText = new String(chars);
         }
 
         string[] stmtPhrases = workText.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
         for (int i = 0; i < stmtPhrases.Length; i++)
         {
-          stmtPhrases[i] = stmtPhrases[i].Replace(spaceRepl, ' ').Replace(commaRepl, ','); 
+          stmtPhrases[i] = stmtPhrases[i].Replace(spaceRepl, ' ').Replace(commaRepl, ',');
         }
 
         var phrasesToRemove = new List<int>();
@@ -249,12 +291,12 @@ namespace Org.Terminal.BMS
         }
 
         workText = workText.Replace(spaceRepl, ' ')
-                           .Replace(equalsRepl, '=') 
-                           .Replace(commaRepl, ','); 
+                   .Replace(equalsRepl, '=')
+                   .Replace(commaRepl, ',');
 
         foreach (var idx in phrasesToRemove)
         {
-          string phraseToRemove = stmtPhrases[idx].Replace(equalsRepl, '='); 
+          string phraseToRemove = stmtPhrases[idx].Replace(equalsRepl, '=');
 
           if (!workText.Contains(phraseToRemove))
             throw new Exception("Cannot locate phrase '" + phraseToRemove + "' in the statement so that it can be removed. The phase has been extracted as a " +
@@ -265,7 +307,7 @@ namespace Org.Terminal.BMS
           if (workText.Contains(phraseToRemove + ","))
             workText = workText.Replace(phraseToRemove + ",", String.Empty);
           if (workText.Contains(phraseToRemove))
-            workText = workText.Replace(phraseToRemove, String.Empty); 
+            workText = workText.Replace(phraseToRemove, String.Empty);
         }
 
         while (workText.Contains(",,"))
@@ -274,11 +316,11 @@ namespace Org.Terminal.BMS
         while (workText.Contains("  "))
           workText = workText.Replace("  ", " ");
 
-        this.RemainingText = workText.Trim(); 
+        this.RemainingText = workText.Trim();
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to extract parameters from the BMS statement '" + this.BmsStatementText + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to extract parameters from the BMS statement '" + this.BmsStatementText + "'.", ex);
       }
     }
 
@@ -286,7 +328,7 @@ namespace Org.Terminal.BMS
     {
       if (this.BmsLineSet == null || this.BmsLineSet.Count == 0)
         return String.Empty;
-      
+
       var sb = new StringBuilder();
 
       foreach(var bmsLine in this.BmsLineSet.Values)
@@ -294,7 +336,7 @@ namespace Org.Terminal.BMS
         string lineText = bmsLine.LineText;
         if (lineText.Length > 71)
         {
-          lineText = lineText.Substring(0, 72); 
+          lineText = lineText.Substring(0, 72);
           if (lineText[71].ToString().IsNotBlank())
           {
             lineText = lineText.Substring(0, 71).Trim();
@@ -332,13 +374,13 @@ namespace Org.Terminal.BMS
 
         }
 
-        text = new String(chars); 
+        text = new String(chars);
       }
 
       while (text.Contains("  "))
         text = text.Replace("  ", " ");
 
-      text = text.Replace(spaceRepl, ' '); 
+      text = text.Replace(spaceRepl, ' ');
 
       return text;
     }
@@ -353,7 +395,7 @@ namespace Org.Terminal.BMS
       foreach (var bmsLine in this.BmsLineSet.Values)
       {
         if (sb.Length > 0)
-          sb.Append(g.crlf); 
+          sb.Append(g.crlf);
         sb.Append(bmsLine.LineText);
       }
 
@@ -376,7 +418,7 @@ namespace Org.Terminal.BMS
 
       foreach (var kvpLine in this.BmsLineSet)
       {
-        clone.BmsLineSet.Add(kvpLine.Key, kvpLine.Value.CloneForVFLEX(lineNumber)); 
+        clone.BmsLineSet.Add(kvpLine.Key, kvpLine.Value.CloneForVFLEX(lineNumber));
       }
 
       clone.ExtractParentheticals();
@@ -393,12 +435,12 @@ namespace Org.Terminal.BMS
           if (lineParm.IsInteger())
           {
             clone.Parentheticals[i].Parms[0] = (lineParm.ToInt32() + increment).ToString();
-          }            
+          }
           break;
         }
       }
 
-      clone.Compile_DFHMDF(); 
+      clone.Compile_DFHMDF();
 
       return clone;
     }

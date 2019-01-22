@@ -6,126 +6,126 @@ using OopFactory.X12.Attributes;
 
 namespace OopFactory.X12.Parsing.Model.Typed
 {
-    public enum DTPFormatQualifier
-    {
-        [EDIFieldValue("CC")]
-        CC,
+  public enum DTPFormatQualifier
+  {
+    [EDIFieldValue("CC")]
+    CC,
 
-        [EDIFieldValue("CD")]
-        MMYYYY,
+    [EDIFieldValue("CD")]
+    MMYYYY,
 
-        [EDIFieldValue("CM")]
-        CCYYMM,
+    [EDIFieldValue("CM")]
+    CCYYMM,
 
-        [EDIFieldValue("CQ")]
-        CCYYQ,
+    [EDIFieldValue("CQ")]
+    CCYYQ,
 
-        [EDIFieldValue("CY")]
-        CCYY,
+    [EDIFieldValue("CY")]
+    CCYY,
 
-        [EDIFieldValue("D6")]
-        YYMMDD,
-        
-        [EDIFieldValue("D8")]
-        CCYYMMDD,
+    [EDIFieldValue("D6")]
+    YYMMDD,
 
-        [EDIFieldValue("DA")]
-        DD_DD,
+    [EDIFieldValue("D8")]
+    CCYYMMDD,
 
-        [EDIFieldValue("DB")]
-        MMDDCCYY,
+    [EDIFieldValue("DA")]
+    DD_DD,
 
-        [EDIFieldValue("DD")]
-        DD,
+    [EDIFieldValue("DB")]
+    MMDDCCYY,
 
-        /// <summary>
-        /// Last Digit of Year and Julian Date Expressed in Format YDDD
-        /// </summary>
-        [EDIFieldValue("EH")]
-        YDDD,
+    [EDIFieldValue("DD")]
+    DD,
 
-        [EDIFieldValue("KA")]
-        YYMMMDD,
+    /// <summary>
+    /// Last Digit of Year and Julian Date Expressed in Format YDDD
+    /// </summary>
+    [EDIFieldValue("EH")]
+    YDDD,
 
-        [EDIFieldValue("MD")]
-        MMDD,
+    [EDIFieldValue("KA")]
+    YYMMMDD,
 
-        [EDIFieldValue("MM")]
-        MM,
+    [EDIFieldValue("MD")]
+    MMDD,
 
-        [EDIFieldValue("RD")]
-        MMDDCCYY_MMDDCCYY,
+    [EDIFieldValue("MM")]
+    MM,
 
-        /// <summary>
-        /// Julian Date Expressed in Format DDD
-        /// </summary>
-        [EDIFieldValue("TC")]
-        DDD,
+    [EDIFieldValue("RD")]
+    MMDDCCYY_MMDDCCYY,
 
-        [EDIFieldValue("TM")]
-        HHMM,
+    /// <summary>
+    /// Julian Date Expressed in Format DDD
+    /// </summary>
+    [EDIFieldValue("TC")]
+    DDD,
 
-        [EDIFieldValue("TQ")]
-        MMYY,
+    [EDIFieldValue("TM")]
+    HHMM,
 
-        [EDIFieldValue("TR")]
-        DDMMYYHHMM,
+    [EDIFieldValue("TQ")]
+    MMYY,
 
-        [EDIFieldValue("TS")]
-        HHMMSS,
+    [EDIFieldValue("TR")]
+    DDMMYYHHMM,
 
-        [EDIFieldValue("TT")]
-        MMDDYY,
+    [EDIFieldValue("TS")]
+    HHMMSS,
 
-        [EDIFieldValue("TU")]
-        YYDDD,
+    [EDIFieldValue("TT")]
+    MMDDYY,
 
-        [EDIFieldValue("UN")]
-        Unstructured,
+    [EDIFieldValue("TU")]
+    YYDDD,
 
-        [EDIFieldValue("YM")]
-        YYMM,
+    [EDIFieldValue("UN")]
+    Unstructured,
 
-        [EDIFieldValue("YY")]
-        YY,
+    [EDIFieldValue("YM")]
+    YYMM,
 
-        [EDIFieldValue("DTS")]
-        CCYYMMDDHHMMSS_CCYYMMDDHHMMSS,
+    [EDIFieldValue("YY")]
+    YY,
 
-        [EDIFieldValue("RD2")]
-        YY_YY,
+    [EDIFieldValue("DTS")]
+    CCYYMMDDHHMMSS_CCYYMMDDHHMMSS,
 
-        [EDIFieldValue("RD4")]
-        CCYY_CCYY,
+    [EDIFieldValue("RD2")]
+    YY_YY,
 
-        [EDIFieldValue("RD5")]
-        CCYYMM_CCYYMM,
+    [EDIFieldValue("RD4")]
+    CCYY_CCYY,
 
-        [EDIFieldValue("RD6")]
-        YYMMDD_YYMMDD,
+    [EDIFieldValue("RD5")]
+    CCYYMM_CCYYMM,
 
-        [EDIFieldValue("RD8")]
-        CCYYMMDD_CCYYMMDD,
+    [EDIFieldValue("RD6")]
+    YYMMDD_YYMMDD,
 
-        [EDIFieldValue("RDM")]
-        YYMMDD_MMDD,
+    [EDIFieldValue("RD8")]
+    CCYYMMDD_CCYYMMDD,
 
-        [EDIFieldValue("RDT")]
-        CCYYMMDDHHMM_CCYYMMDDHHMM,
+    [EDIFieldValue("RDM")]
+    YYMMDD_MMDD,
 
-        [EDIFieldValue("RMD")]
-        MMDD_MMDD,
+    [EDIFieldValue("RDT")]
+    CCYYMMDDHHMM_CCYYMMDDHHMM,
 
-        [EDIFieldValue("RMY")]
-        YYMM_YYMM,
+    [EDIFieldValue("RMD")]
+    MMDD_MMDD,
 
-        [EDIFieldValue("RTM")]
-        HHMM_HHMM,
+    [EDIFieldValue("RMY")]
+    YYMM_YYMM,
 
-        [EDIFieldValue("RTS")]
-        CCYYMMDDHHMMSS,
+    [EDIFieldValue("RTM")]
+    HHMM_HHMM,
 
-        [EDIFieldValue("YMM")]
-        CCYYMMM_MMM
-    }
+    [EDIFieldValue("RTS")]
+    CCYYMMDDHHMMSS,
+
+    [EDIFieldValue("YMM")]
+    CCYYMMM_MMM
+  }
 }

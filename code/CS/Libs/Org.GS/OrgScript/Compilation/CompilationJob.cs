@@ -9,11 +9,27 @@ namespace Org.GS.OrgScript.Compilation
   // This class represents a compilation job.
   public class CompilationJob
   {
-    public string RawCode { get; private set; }
-    public CompilerConfig CompilerConfig { get; private set; }
-    public Compiler Compiler { get; private set; }
-    public SyntaxTree SyntaxTree { get; private set; }
-    public string Report { get { return Get_Report(); } }
+    public string RawCode {
+      get;
+      private set;
+    }
+    public CompilerConfig CompilerConfig {
+      get;
+      private set;
+    }
+    public Compiler Compiler {
+      get;
+      private set;
+    }
+    public SyntaxTree SyntaxTree {
+      get;
+      private set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
 
     public CompilationJob(string rawCode, CompilerConfig compilerConfig = null)
@@ -25,7 +41,7 @@ namespace Org.GS.OrgScript.Compilation
 
       this.Compiler = new Compiler(rawCode, compilerConfig);
       this.SyntaxTree = new SyntaxTree();
-      
+
     }
 
     public void StepForward()

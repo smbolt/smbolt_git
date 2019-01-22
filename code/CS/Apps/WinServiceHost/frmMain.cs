@@ -31,8 +31,14 @@ namespace Org.WinServiceHost
     private Logger _logger = new Logger();
     private WinServiceParms _winServiceParms;
     private TaskEngineParms _taskEngineParms;
-    protected Assembly Assembly { get; set; }
-    protected ResourceManager ResourceManager { get; set; }
+    protected Assembly Assembly {
+      get;
+      set;
+    }
+    protected ResourceManager ResourceManager {
+      get;
+      set;
+    }
     private Image SplashImage;
 
     private string _appConfigPath = String.Empty;
@@ -62,19 +68,19 @@ namespace Org.WinServiceHost
         case "StartService":
           StartService();
           break;
-            
+
         case "PauseService":
           PauseService();
           break;
-            
+
         case "ResumeService":
           ResumeService();
           break;
-            
+
         case "StopService":
           StopService();
           break;
-            
+
         case "DumpTrace":
           txtReport.Text += g.crlf + g.Trace + g.crlf;
           break;
@@ -96,24 +102,24 @@ namespace Org.WinServiceHost
           break;
 
         case "RefreshTaskList":
-            RefreshTaskList();
-            break;
+          RefreshTaskList();
+          break;
 
         case "ToggleShowControls":
-            ToggleShowControls();
-            break;
+          ToggleShowControls();
+          break;
 
         case "TestLogWrite":
-            TestLogWrite();
-            break;
+          TestLogWrite();
+          break;
 
         case "TestNotifications":
-            TestNotifications();
-            break;
+          TestNotifications();
+          break;
 
         case "CloseForm":
-            CloseForm();
-            break;
+          CloseForm();
+          break;
       }
     }
 
@@ -141,7 +147,7 @@ namespace Org.WinServiceHost
       if (_windowsServiceEngine.IsBlank())
       {
         throw new Exception("The configuration item (CI) named 'WindowsServiceEngine' must be included in the AppConfig.xml file " +
-                            "and must specify a valid Windows Service Engine type."); 
+                            "and must specify a valid Windows Service Engine type.");
       }
 
       if (g.CI("UseEnvironmentForm").ToBoolean())
@@ -167,19 +173,19 @@ namespace Org.WinServiceHost
       var splashImage = this.ResourceManager.GetObject("SplashImage");
       this.SplashImage = (Bitmap)this.ResourceManager.GetObject("SplashImage");
 
-     _logger.Log(g.AppInfo.AppName + " Host is starting up on computer '" + domainAndComputer + "'.", 3046, 300);
+      _logger.Log(g.AppInfo.AppName + " Host is starting up on computer '" + domainAndComputer + "'.", 3046, 300);
       mnuToggleShowControls.Text = "Hide Controls";
-      
+
       var tasksToRun = GetTasksToRun();
 
       cboTasks.LoadItems(tasksToRun, true);
-      string taskToRun = g.CI("TaskToRun"); 
+      string taskToRun = g.CI("TaskToRun");
       if (taskToRun.IsNotBlank())
         cboTasks.SelectItem(taskToRun);
 
       ckIsDryRun.Checked = g.CI("IsDryRun").ToBoolean();
 
-      txtTaskParmOverrides.Text = g.CI("TaskOverrideParms"); 
+      txtTaskParmOverrides.Text = g.CI("TaskOverrideParms");
 
       frmSplash fSplash = new frmSplash(g.AppInfo.AppName, this.SplashImage, "1.0", "Copyright string");
       fSplash.VersionInfo = "Version " + g.AppInfo.AppVersion;
@@ -204,7 +210,7 @@ namespace Org.WinServiceHost
       _taskEngineParms.TaskLoadIntervalSeconds = g.CI("TaskLoadIntervalSeconds").ToInt32OrDefault(1200);
       _taskEngineParms.TasksDbSpecPrefix = g.CI("TasksDbSpecPrefix").OrDefault("Tasks");
       _taskEngineParms.TaskProfile = g.CI("TaskProfile").OrDefault("Normal");
-      _taskEngineParms.WSHTaskProfile = g.CI("WSHTaskProfile").OrDefault("FastTest"); 
+      _taskEngineParms.WSHTaskProfile = g.CI("WSHTaskProfile").OrDefault("FastTest");
       _taskEngineParms.MEFModulesPath = g.CI("MEFModulesPath");
       _taskEngineParms.LimitMEFImports = g.CI("LimitMEFImports").ToBoolean();
       _taskEngineParms.MEFLimitListName = g.CI("MEFLimitListName");
@@ -220,17 +226,17 @@ namespace Org.WinServiceHost
       _winServiceParms = new WinServiceParms();
       _winServiceParms.WindowsServiceName = g.CI("WindowsServiceName");
       _winServiceParms.EntityId = g.CI("EntityId").ToInt32OrDefault(0);
-      _winServiceParms.SleepInterval = g.CI("SleepInterval").ToInt32OrDefault(1000); 
+      _winServiceParms.SleepInterval = g.CI("SleepInterval").ToInt32OrDefault(1000);
       _winServiceParms.IsRunningAsWindowsService = false; // defaults to true in constructor, needs to be false from WinServiceHost
       _winServiceParms.ConfigLogSpecPrefix = g.CI("ConfigLogSpecPrefix").OrDefault("Default");
-      _winServiceParms.ConfigNotifySpecPrefix = g.CI("ConfigNotifySpecPrefix").OrDefault("Default"); 
+      _winServiceParms.ConfigNotifySpecPrefix = g.CI("ConfigNotifySpecPrefix").OrDefault("Default");
       _winServiceParms.MaxWaitIntervalMilliseconds = g.CI("MaxWaitIntervalMilliseconds").ToInt32OrDefault(1000);
       _winServiceParms.InDiagnosticsMode = g.CI("InDiagnosticsMode").ToBoolean();
       _winServiceParms.SuppressNonErrorOutput = g.CI("SuppressNonErrorOutput").ToBoolean();
       _winServiceParms.SuppressTaskReload = g.CI("SuppressTaskReload").ToBoolean();
       _winServiceParms.RunWebService = g.CI("RunWebService").ToBoolean();
       _winServiceParms.UseAlerter = g.CI("UseAlerter").ToBoolean();
-      _winServiceParms.AlerterPath = g.CI("AlerterPath"); 
+      _winServiceParms.AlerterPath = g.CI("AlerterPath");
 
       string domainAndPC = g.SystemInfo.DomainAndComputer;
 
@@ -245,7 +251,7 @@ namespace Org.WinServiceHost
       _logger.Log(g.AppInfo.AppName + " Host start-up is complete.", 3046, 300);
 
       var dbSpec = g.GetDbSpec("Tasks");
-      lblProductionWarning.Visible = dbSpec.DbServer.ToUpper().Contains("OKC1EDW0001"); 
+      lblProductionWarning.Visible = dbSpec.DbServer.ToUpper().Contains("OKC1EDW0001");
     }
 
     private List<string> GetTasksToRun()
@@ -298,7 +304,7 @@ namespace Org.WinServiceHost
       {
         this.splitterMain.Panel1Collapsed = true;
         mnuToggleShowControls.Text = "Show Controls";
-      }        
+      }
     }
 
     private void DisplayTasks()
@@ -324,18 +330,18 @@ namespace Org.WinServiceHost
 
       WriteToDisplay(tcsString);
     }
-    
+
     private void StartService()
     {
-      bool manualStart = cboTasks.Enabled && cboTasks.Text.IsNotBlank(); 
+      bool manualStart = cboTasks.Enabled && cboTasks.Text.IsNotBlank();
 
       var configDbSpec = g.GetDbSpec("Tasks");
       if (configDbSpec.DbServer == "OKC1EDW0001")
       {
         if (MessageBox.Show("WinServiceHost is configured to run in the production environment." + g.crlf2 +
-                        "If this is not your intention, please click 'Cancel' and update the application configurations appropriately.",
-                        "WinServiceHost - Confirm Run in the Production Enviornment", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
-          return; 
+                            "If this is not your intention, please click 'Cancel' and update the application configurations appropriately.",
+                            "WinServiceHost - Confirm Run in the Production Enviornment", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+          return;
       }
 
       try
@@ -344,7 +350,7 @@ namespace Org.WinServiceHost
 
         if (_svcEngine != null)
           if (_svcEngine.WinServiceState == WinServiceState.Running)
-              return;
+            return;
 
         _svcEngine = GetServiceEngine();
         _svcEngine.NotifyHost += taskEngine_NotifyHost;
@@ -377,8 +383,8 @@ namespace Org.WinServiceHost
 
         SetControls("START");
         string message = "***********************************************************************************************" + g.crlf +
-                          "** WinService Host has been Started at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
-                          "***********************************************************************************************" + g.crlf;
+                         "** WinService Host has been Started at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
+                         "***********************************************************************************************" + g.crlf;
         this.WriteToDisplay(message, false);
 
         this.Cursor = Cursors.Default;
@@ -387,7 +393,7 @@ namespace Org.WinServiceHost
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An error occurred starting the WinService Host program - see message below." + g.crlf2 + ex.ToReport(),
-            "WinService Host - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "WinService Host - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         _svcEngine = null;
       }
     }
@@ -419,18 +425,18 @@ namespace Org.WinServiceHost
         case "Not Used - Leave in place":
           return null;
 
-        #if TaskEngine
+#if TaskEngine
         case "TaskEngine":
           return new TaskEngine(_winServiceParms, _taskEngineParms);
-        #endif
+#endif
 
-        #if PerfEngine
+#if PerfEngine
         case "PerfEngine":
           return new PerfEngine(_winServiceParms);
-        #endif
+#endif
       }
 
-      throw new Exception("The configuration value for CI 'WindowsServiceEngine' is not valid: '" + _windowsServiceEngine + "'."); 
+      throw new Exception("The configuration value for CI 'WindowsServiceEngine' is not valid: '" + _windowsServiceEngine + "'.");
     }
 
     private void taskEngine_NotifyHost(IpdxMessage message)
@@ -477,16 +483,16 @@ namespace Org.WinServiceHost
     {
       SetControls("START");
       string message = "***********************************************************************************************" + g.crlf +
-                          "** WinService Host has been Started at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
-                          "***********************************************************************************************" + g.crlf;
+                       "** WinService Host has been Started at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
+                       "***********************************************************************************************" + g.crlf;
       this.WriteToDisplay(message, false);
     }
 
     private void SetStoppedUI()
     {
       string message = "***********************************************************************************************" + g.crlf +
-                        "** WinService Host has been Stopped at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
-                        "***********************************************************************************************" + g.crlf;
+                       "** WinService Host has been Stopped at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
+                       "***********************************************************************************************" + g.crlf;
       this.WriteToDisplay(message, false);
 
       SetControls("STOP");
@@ -496,8 +502,8 @@ namespace Org.WinServiceHost
     private void SetPausedUI()
     {
       string message = "***********************************************************************************************" + g.crlf +
-                        "** WinService Host has been Paused at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
-                        "***********************************************************************************************" + g.crlf;
+                       "** WinService Host has been Paused at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
+                       "***********************************************************************************************" + g.crlf;
       this.WriteToDisplay(message, false);
 
       SetControls("PAUSE");
@@ -507,8 +513,8 @@ namespace Org.WinServiceHost
     private void SetResumedUI()
     {
       string message = "***********************************************************************************************" + g.crlf +
-                        "** WinService Host has been Resumed at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
-                        "***********************************************************************************************" + g.crlf;
+                       "** WinService Host has been Resumed at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
+                       "***********************************************************************************************" + g.crlf;
       this.WriteToDisplay(message, false);
 
       SetControls("RESUME");
@@ -532,18 +538,18 @@ namespace Org.WinServiceHost
       string exceptionReport = String.Empty;
       if (taskResult.Exception != null)
       {
-        exceptionReport = "Exception: " + taskResult.Exception.Message + g.crlf + taskResult.Exception.StackTrace + g.crlf; 
+        exceptionReport = "Exception: " + taskResult.Exception.Message + g.crlf + taskResult.Exception.StackTrace + g.crlf;
       }
 
       string result = taskResult.TaskName.PadTo(16) + " "
-              + taskResult.TaskResultStatus.ToString().PadTo(15) + "  TH:"
-              + taskResult.ThreadId.ToString("000000") + " TSK:"
-              + taskResult.TaskId.ToString("00000") + " "
-              + taskResult.BeginDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") + " "
-              + taskResult.EndDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") + " "
-              + taskResult.DurationString + g.crlf
-              + g.BlankString(24) + taskResult.Message + g.crlf
-              + exceptionReport + g.crlf;
+                      + taskResult.TaskResultStatus.ToString().PadTo(15) + "  TH:"
+                      + taskResult.ThreadId.ToString("000000") + " TSK:"
+                      + taskResult.TaskId.ToString("00000") + " "
+                      + taskResult.BeginDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") + " "
+                      + taskResult.EndDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") + " "
+                      + taskResult.DurationString + g.crlf
+                      + g.BlankString(24) + taskResult.Message + g.crlf
+                      + exceptionReport + g.crlf;
 
       _logger.Log(result);
       WriteToDisplay(result);
@@ -561,8 +567,8 @@ namespace Org.WinServiceHost
       _svcEngine.Pause(true);
 
       string message = "***********************************************************************************************" + g.crlf +
-                        "** WinService Host has been Paused at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
-                        "***********************************************************************************************" + g.crlf;
+                       "** WinService Host has been Paused at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
+                       "***********************************************************************************************" + g.crlf;
       this.WriteToDisplay(message, false);
 
       SetControls("PAUSE");
@@ -575,8 +581,8 @@ namespace Org.WinServiceHost
       _svcEngine.Resume(true);
 
       string message = "***********************************************************************************************" + g.crlf +
-                        "** WinService Host has been Resumed at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
-                        "***********************************************************************************************" + g.crlf;
+                       "** WinService Host has been Resumed at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
+                       "***********************************************************************************************" + g.crlf;
       this.WriteToDisplay(message, false);
 
       SetControls("RESUME");
@@ -597,8 +603,8 @@ namespace Org.WinServiceHost
       UnsuspendTasks();
 
       string message = "***********************************************************************************************" + g.crlf +
-                        "** WinService Host has been Stopped at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
-                        "***********************************************************************************************" + g.crlf;
+                       "** WinService Host has been Stopped at " + DateTime.Now.ToString("yyyy-MM-dd HH:mm.ss.fff") + g.crlf +
+                       "***********************************************************************************************" + g.crlf;
       this.WriteToDisplay(message, false);
 
       SetControls("STOP");
@@ -747,7 +753,7 @@ namespace Org.WinServiceHost
         txtReport.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + " " + message + g.crlf;
         txtReport.SelectionStart = txtReport.Text.Length;
         txtReport.SelectionLength = 0;
-        txtReport.ScrollToCaret(); 
+        txtReport.ScrollToCaret();
       }
 
       Application.DoEvents();
@@ -781,7 +787,7 @@ namespace Org.WinServiceHost
 
     private void CloseForm()
     {
-      // make sure we clear the queues... or at least let transactions complete... 
+      // make sure we clear the queues... or at least let transactions complete...
       this.Close();
     }
 
@@ -811,7 +817,7 @@ namespace Org.WinServiceHost
 
     private void ShowServiceAlert()
     {
-      WinServiceHelper.ServiceAlert("Test service alert message."); 
+      WinServiceHelper.ServiceAlert("Test service alert message.");
     }
 
     private void TestLogWrite()
@@ -821,11 +827,11 @@ namespace Org.WinServiceHost
         StringBuilder sb = new StringBuilder();
         sb.Append("LOG PATH: " + g.LogPath + g.crlf);
         sb.Append("AppConfig: " + g.crlf + g.AppConfig.CurrentImage + g.crlf);
-        WriteToDisplay(sb.ToString()); 
+        WriteToDisplay(sb.ToString());
 
 
         WriteToDisplay("Trying to write log record.");
-        StartupLogging.WriteStartupLog("In TestWriteLog"); 
+        StartupLogging.WriteStartupLog("In TestWriteLog");
         using (var logger = new Logger())
         {
           logger.Log("Testing the log writing function.");
@@ -846,7 +852,7 @@ namespace Org.WinServiceHost
         using (var nm = new NotificationsManager("0"))
         {
           var notifyConfigSet = g.AppConfig.GetNotifyConfigSet();
-          
+
           var notification = new Notification();
           notification.Subject = "Test Notification Subject";
           notification.Body = "This is a test notification.";
@@ -854,7 +860,7 @@ namespace Org.WinServiceHost
           notification.TaskResult = new TaskResult("TheTask", "Test Message", true);
           notification.EventName = "$TASKNAME$_Success";
           notification.TaskName = "TheTask";
-          
+
           ConfigSmtpSpec configSmtpSpec = g.GetSmtpSpec("Default");
           SmtpParms smtpParms = new SmtpParms(configSmtpSpec);
 
@@ -872,7 +878,7 @@ namespace Org.WinServiceHost
         WriteToDisplay(ex.ToReport());
       }
     }
-    
-    
+
+
   }
 }

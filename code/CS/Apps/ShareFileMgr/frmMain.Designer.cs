@@ -44,35 +44,37 @@
       this.pnlTop.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtOut)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1248, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 701);
       this.lblStatus.Name = "lblStatus";
@@ -81,9 +83,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.ckIsDryRun);
       this.pnlTop.Controls.Add(this.btnListFolderRecursive);
       this.pnlTop.Controls.Add(this.btnListFolderContents);
@@ -93,9 +95,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1248, 71);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // btnListFolderRecursive
-      // 
+      //
       this.btnListFolderRecursive.Location = new System.Drawing.Point(147, 40);
       this.btnListFolderRecursive.Name = "btnListFolderRecursive";
       this.btnListFolderRecursive.Size = new System.Drawing.Size(128, 23);
@@ -104,9 +106,9 @@
       this.btnListFolderRecursive.Text = "List Folder Recursive";
       this.btnListFolderRecursive.UseVisualStyleBackColor = true;
       this.btnListFolderRecursive.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnListFolderContents
-      // 
+      //
       this.btnListFolderContents.Location = new System.Drawing.Point(147, 11);
       this.btnListFolderContents.Name = "btnListFolderContents";
       this.btnListFolderContents.Size = new System.Drawing.Size(128, 23);
@@ -115,9 +117,9 @@
       this.btnListFolderContents.Text = "List Folder Contents";
       this.btnListFolderContents.UseVisualStyleBackColor = true;
       this.btnListFolderContents.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnConnect
-      // 
+      //
       this.btnConnect.Location = new System.Drawing.Point(13, 11);
       this.btnConnect.Name = "btnConnect";
       this.btnConnect.Size = new System.Drawing.Size(128, 23);
@@ -126,9 +128,9 @@
       this.btnConnect.Text = "Connect";
       this.btnConnect.UseVisualStyleBackColor = true;
       this.btnConnect.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -139,7 +141,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtOut.AutoScrollMinSize = new System.Drawing.Size(27, 14);
       this.txtOut.BackBrush = null;
       this.txtOut.CharHeight = 14;
@@ -156,9 +159,9 @@
       this.txtOut.Size = new System.Drawing.Size(1248, 606);
       this.txtOut.TabIndex = 3;
       this.txtOut.Zoom = 100;
-      // 
+      //
       // ckIsDryRun
-      // 
+      //
       this.ckIsDryRun.AutoSize = true;
       this.ckIsDryRun.Location = new System.Drawing.Point(349, 15);
       this.ckIsDryRun.Name = "ckIsDryRun";
@@ -166,9 +169,9 @@
       this.ckIsDryRun.TabIndex = 1;
       this.ckIsDryRun.Text = "Dry Run";
       this.ckIsDryRun.UseVisualStyleBackColor = true;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1248, 724);

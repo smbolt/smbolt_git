@@ -13,25 +13,46 @@ namespace Org.GS.Configuration
   public class TaskScheduleElement
   {
     [XMap(IsRequired = true, DefaultValue = "True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap(Name = "ExecutionType", IsRequired = true)]
-    public TaskExecutionType TaskExecutionType { get; set; }
+    public TaskExecutionType TaskExecutionType {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public decimal? FrequencySeconds { get; set; }
+    public decimal? FrequencySeconds {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool IsClockAligned { get; set; }
+    public bool IsClockAligned {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, Name = "TaskDateTime")]
-    public TaskDateTime TaskDateTime { get; set; }
+    public TaskDateTime TaskDateTime {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, Name = "TaskCalendar")]
-    public TaskCalendar TaskCalendar { get; set; }
+    public TaskCalendar TaskCalendar {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, Name = "TaskRunControl")]
-    public TaskRunControl RunControl { get; set; }
+    public TaskRunControl RunControl {
+      get;
+      set;
+    }
 
     public TaskScheduleElement()
     {

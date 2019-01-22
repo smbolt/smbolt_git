@@ -10,7 +10,10 @@ namespace Org.GS.Licensing
 {
   public class LicenseHelper
   {
-    public static LicenseControl LicenseControl { get; set; }
+    public static LicenseControl LicenseControl {
+      get;
+      set;
+    }
 
     private static char[] delim = new char[] { ' ' };
 
@@ -29,13 +32,13 @@ namespace Org.GS.Licensing
       cs.ComputerName = Environment.MachineName.Trim().ToUpper();
 
       string[] commands = new string[] {
-          @"BASEBOARD_SERIALNUMBER          wmic baseboard get serialnumber /value ", 
-          @"CPU_PROCESSORID                 wmic cpu get processorid /value",
-          @"DISKDRIVE_SERIALNUMBER          wmic diskdrive get serialnumber /value",
-          @"SYSTEMENCLOSURE_SERIALNUMBER    wmic systemenclosure get serialnumber /value",
-          @"COMPUTERSYSTEM_MAKE             wmic computersystem get manufacturer /value",
-          @"COMPUTERSYSTEM_MODEL            wmic computersystem get model /value",
-          @"COMPUTERSYSTEM_TYPE             wmic computersystem get systemtype /value"
+        @"BASEBOARD_SERIALNUMBER          wmic baseboard get serialnumber /value ",
+        @"CPU_PROCESSORID                 wmic cpu get processorid /value",
+        @"DISKDRIVE_SERIALNUMBER          wmic diskdrive get serialnumber /value",
+        @"SYSTEMENCLOSURE_SERIALNUMBER    wmic systemenclosure get serialnumber /value",
+        @"COMPUTERSYSTEM_MAKE             wmic computersystem get manufacturer /value",
+        @"COMPUTERSYSTEM_MODEL            wmic computersystem get model /value",
+        @"COMPUTERSYSTEM_TYPE             wmic computersystem get systemtype /value"
       };
 
       foreach(string command in commands)
@@ -129,7 +132,7 @@ namespace Org.GS.Licensing
       {
         char c = s[i];
         if (Char.IsLetterOrDigit(c) || c == '=')
-          sb.Append(c);                    
+          sb.Append(c);
       }
       string value = sb.ToString();
       return value.Trim().ToUpper();
@@ -143,7 +146,7 @@ namespace Org.GS.Licensing
       int matchCount = 0;
 
       if (baseSignature.ComputerName == currentSignature.ComputerName)
-          matchCount++;
+        matchCount++;
       else
       {
         TaskResult computerNameMatchResult = new TaskResult();
@@ -227,10 +230,10 @@ namespace Org.GS.Licensing
     //    return "SubOrgID must be numeric - value received is '" + sld.SubOrgID + "'.";
 
     //  if (sld.LicenseDate == DateTime.MinValue)
-    //    return "LicenseDate must contain a valid date - value received is 'MinValue'"; 
+    //    return "LicenseDate must contain a valid date - value received is 'MinValue'";
 
     //  if (sld.LicenseDate == DateTime.MaxValue)
-    //    return "LicenseDate must contain a valid date - value received is 'MaxValue'"; 
+    //    return "LicenseDate must contain a valid date - value received is 'MaxValue'";
 
     //  if (sld.Scheme != 0)
     //    return "Scheme must be set to 0.";

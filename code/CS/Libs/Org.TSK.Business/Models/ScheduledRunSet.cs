@@ -17,7 +17,7 @@ namespace Org.TSK.Business.Models
       _scheduledTask = scheduledTask;
       _taskSchedule = taskSchedule;
     }
-        
+
     public string GetReport()
     {
       StringBuilder sb = new StringBuilder();
@@ -31,13 +31,13 @@ namespace Org.TSK.Business.Models
       foreach(var entry in this)
       {
         count++;
-        string scheduleElementNumber = entry.Value.TaskScheduleElement.TaskScheduleElementId.ToString("0000"); 
+        string scheduleElementNumber = entry.Value.TaskScheduleElement.TaskScheduleElementId.ToString("0000");
 
         sb.Append(count.ToString("0000") + "        " +
-            entry.Value.ScheduledRunDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") + "       " +
-            entry.Value.TaskScheduleElement.TaskScheduleElementId.ToString("000") + " / " +
-            scheduleElementNumber + "                   " +
-            entry.Value.ScheduledRunStatus.ToString() + g.crlf); 
+                  entry.Value.ScheduledRunDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") + "       " +
+                  entry.Value.TaskScheduleElement.TaskScheduleElementId.ToString("000") + " / " +
+                  scheduleElementNumber + "                   " +
+                  entry.Value.ScheduledRunStatus.ToString() + g.crlf);
       }
 
       string report = sb.ToString();

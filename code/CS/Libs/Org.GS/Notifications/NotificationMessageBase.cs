@@ -8,10 +8,22 @@ namespace Org.GS.Notifications
 {
   public class NotificationMessageBase
   {
-    public NotificationMessageType NotificationMessageType { get; set; }
-    public List<NotificationAddressBase> NotificationAddresses { get; set; }
-    public string NotificationMessageSubject { get; set; }
-    public string NotificationMessageBody { get; set; }
+    public NotificationMessageType NotificationMessageType {
+      get;
+      set;
+    }
+    public List<NotificationAddressBase> NotificationAddresses {
+      get;
+      set;
+    }
+    public string NotificationMessageSubject {
+      get;
+      set;
+    }
+    public string NotificationMessageBody {
+      get;
+      set;
+    }
 
     public NotificationMessageBase()
     {

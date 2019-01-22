@@ -13,7 +13,10 @@ namespace Org.WinServiceHost
 {
   public partial class frmEnvironment : Form
   {
-    public string SelectedEnvironment { get; private set; }
+    public string SelectedEnvironment {
+      get;
+      private set;
+    }
 
     public frmEnvironment()
     {
@@ -38,7 +41,7 @@ namespace Org.WinServiceHost
           this.DialogResult = DialogResult.Cancel;
           this.Close();
           break;
-          
+
       }
     }
 

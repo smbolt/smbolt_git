@@ -18,7 +18,7 @@ namespace VSTSExplorer
     private string _personalAccessToken;
     private VSTSClient _vstsClient;
     private string _selectedVstsClientUri;
-    
+
     public frmMain()
     {
       InitializeComponent();

@@ -8,7 +8,13 @@ namespace Org.QB.QBXML
 {
   public class TotalBalanceFilter
   {
-    public Operator Operator { get; set; }
-    public decimal Amount { get; set; }
+    public Operator Operator {
+      get;
+      set;
+    }
+    public decimal Amount {
+      get;
+      set;
+    }
   }
 }

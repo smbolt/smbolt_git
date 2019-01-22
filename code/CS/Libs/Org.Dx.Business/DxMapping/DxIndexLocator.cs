@@ -18,7 +18,7 @@ namespace Org.Dx.Business
           throw new Exception("The DxIndexLocator class requires a valid IndexType (RowIndex or ColumnIndex), the parameter received is IndexType.NotUsed.");
 
         this.IndexType = indexType;
-        base.CellSearchCriteriaSet = new CellSearchCriteriaSet(); 
+        base.CellSearchCriteriaSet = new CellSearchCriteriaSet();
 
         base.ParseSpec();
       }
@@ -37,7 +37,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attempting to match the row '" + row.VerticalReport.Replace(g.crlf, "  ") + 
+        throw new Exception("An exception occurred attempting to match the row '" + row.VerticalReport.Replace(g.crlf, "  ") +
                             "' using the DxIndexLocator object '" + this.Report + ".", ex);
       }
     }
@@ -50,7 +50,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attempting to match the column '" + col.Report.Replace(g.crlf, "  ") + 
+        throw new Exception("An exception occurred attempting to match the column '" + col.Report.Replace(g.crlf, "  ") +
                             "' using the DxIndexLocator object '" + this.Report + ".", ex);
       }
     }

@@ -12,38 +12,128 @@ namespace Org.GS.Configuration
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
   public class ConfigLogSpec : ConfigObjectBase
   {
-    [OrgConfigItem] public LogMethod LogMethod { get; set; }
-    [OrgConfigItem] public string LogDbSpecPrefix { get; set; }
-    [OrgConfigItem] public string LogPath { get; set; }
-    [OrgConfigItem] public LogFileFrequency LogFileFrequency { get; set; }
-    [OrgConfigItem] public LogFileSizeManagementMethod LogFileSizeManagementMethod { get; set; }
-    [OrgConfigItem] public LogFileSizeManagementAgent LogFileSizeManagementAgent { get; set; }
-    [OrgConfigItem] public int LogFileAgeMaxDays { get; set; }
-    [OrgConfigItem] public int LogFileSizeMax { get; set; }
-    [OrgConfigItem] public int LogFileSizeTrim { get; set; }
-    [OrgConfigItem] public bool DiagnosticLogging { get; set; }
+    [OrgConfigItem] public LogMethod LogMethod {
+      get;
+      set;
+    }
+    [OrgConfigItem] public string LogDbSpecPrefix {
+      get;
+      set;
+    }
+    [OrgConfigItem] public string LogPath {
+      get;
+      set;
+    }
+    [OrgConfigItem] public LogFileFrequency LogFileFrequency {
+      get;
+      set;
+    }
+    [OrgConfigItem] public LogFileSizeManagementMethod LogFileSizeManagementMethod {
+      get;
+      set;
+    }
+    [OrgConfigItem] public LogFileSizeManagementAgent LogFileSizeManagementAgent {
+      get;
+      set;
+    }
+    [OrgConfigItem] public int LogFileAgeMaxDays {
+      get;
+      set;
+    }
+    [OrgConfigItem] public int LogFileSizeMax {
+      get;
+      set;
+    }
+    [OrgConfigItem] public int LogFileSizeTrim {
+      get;
+      set;
+    }
+    [OrgConfigItem] public bool DiagnosticLogging {
+      get;
+      set;
+    }
 
-    public LogMethod OriginalLogMethod { get; set; }
-    public string OriginalLogDbSpecPrefix { get; set; }
-    public string OriginalLogPath { get; set; }
-    public LogFileFrequency OriginalLogFileFrequency { get; set; }
-    public LogFileSizeManagementMethod OriginalLogFileSizeManagementMethod { get; set; }
-    public LogFileSizeManagementAgent OriginalLogFileSizeManagementAgent { get; set; }
-    public int OriginalLogFileAgeMaxDays { get; set; }
-    public int OriginalLogFileSizeMax { get; set; }
-    public int OriginalLogFileSizeTrim { get; set; }
-    public bool OriginalDiagnosticLogging { get; set; }
+    public LogMethod OriginalLogMethod {
+      get;
+      set;
+    }
+    public string OriginalLogDbSpecPrefix {
+      get;
+      set;
+    }
+    public string OriginalLogPath {
+      get;
+      set;
+    }
+    public LogFileFrequency OriginalLogFileFrequency {
+      get;
+      set;
+    }
+    public LogFileSizeManagementMethod OriginalLogFileSizeManagementMethod {
+      get;
+      set;
+    }
+    public LogFileSizeManagementAgent OriginalLogFileSizeManagementAgent {
+      get;
+      set;
+    }
+    public int OriginalLogFileAgeMaxDays {
+      get;
+      set;
+    }
+    public int OriginalLogFileSizeMax {
+      get;
+      set;
+    }
+    public int OriginalLogFileSizeTrim {
+      get;
+      set;
+    }
+    public bool OriginalDiagnosticLogging {
+      get;
+      set;
+    }
 
-    public LogMethod VerifiedLogMethod { get; set; }
-    public string VerifiedLogDbSpecPrefix { get; set; }
-    public string VerifiedLogPath { get; set; }
-    public LogFileFrequency VerifiedLogFileFrequency { get; set; }
-    public LogFileSizeManagementMethod VerifiedLogFileSizeManagementMethod { get; set; }
-    public LogFileSizeManagementAgent VerifiedLogFileSizeManagementAgent { get; set; }
-    public int VerifiedLogFileAgeMaxDays { get; set; }
-    public int VerifiedLogFileSizeMax { get; set; }
-    public int VerifiedLogFileSizeTrim { get; set; }
-    public bool VerifiedDiagnosticLogging { get; set; }        
+    public LogMethod VerifiedLogMethod {
+      get;
+      set;
+    }
+    public string VerifiedLogDbSpecPrefix {
+      get;
+      set;
+    }
+    public string VerifiedLogPath {
+      get;
+      set;
+    }
+    public LogFileFrequency VerifiedLogFileFrequency {
+      get;
+      set;
+    }
+    public LogFileSizeManagementMethod VerifiedLogFileSizeManagementMethod {
+      get;
+      set;
+    }
+    public LogFileSizeManagementAgent VerifiedLogFileSizeManagementAgent {
+      get;
+      set;
+    }
+    public int VerifiedLogFileAgeMaxDays {
+      get;
+      set;
+    }
+    public int VerifiedLogFileSizeMax {
+      get;
+      set;
+    }
+    public int VerifiedLogFileSizeTrim {
+      get;
+      set;
+    }
+    public bool VerifiedDiagnosticLogging {
+      get;
+      set;
+    }
 
     public ConfigLogSpec(string namingPrefix)
       :base (namingPrefix)
@@ -67,10 +157,10 @@ namespace Org.GS.Configuration
       this.LogFileAgeMaxDays = 20;
       this.LogFileSizeMax = 2000000;
       this.LogFileSizeTrim = 750000;
-      this.DiagnosticLogging = false; 
+      this.DiagnosticLogging = false;
 
       SetVerifiedProperties();
-      SetOriginalProperties(); 
+      SetOriginalProperties();
     }
 
     public bool CanAdvance()

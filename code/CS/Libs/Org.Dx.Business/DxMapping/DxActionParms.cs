@@ -9,10 +9,22 @@ namespace Org.Dx.Business
 {
   public class DxActionParms
   {
-    public DxActionType DxActionType { get; set; }
-    public string ParmString { get; private set; }
-    public string FilterName { get; private set; }
-    public List<string> RegionNames { get; private set; }
+    public DxActionType DxActionType {
+      get;
+      set;
+    }
+    public string ParmString {
+      get;
+      private set;
+    }
+    public string FilterName {
+      get;
+      private set;
+    }
+    public List<string> RegionNames {
+      get;
+      private set;
+    }
 
     public DxActionParms(DxActionType dxActionType, string parmString)
     {
@@ -37,12 +49,12 @@ namespace Org.Dx.Business
             break;
 
           case DxActionType.DataMappingAction:
-              break;
+            break;
         }
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to parse the DxAction ParmString '" + 
+        throw new Exception("An exception occurred while attempting to parse the DxAction ParmString '" +
                             this.ParmString + "' for DxActionType '" + this.DxActionType.ToString() + "'.", ex);
       }
     }

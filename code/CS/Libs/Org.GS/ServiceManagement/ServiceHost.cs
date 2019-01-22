@@ -13,34 +13,58 @@ namespace Org.GS.ServiceManagement
   [XMap(XType = XType.Element)]
   public class ServiceHost : ServiceObject
   {
-    public int HostID { get; set; }
+    public int HostID {
+      get;
+      set;
+    }
 
     [XMap (IsRequired = true, IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     private string _ipAddress;
     [XMap]
     public string IPAddress
     {
-      get { return Get_IPAddress(); } 
-      set { _ipAddress = value; }
+      get {
+        return Get_IPAddress();
+      }
+      set {
+        _ipAddress = value;
+      }
     }
 
     private string _ipV4Address;
     [XMap]
     public string IPV4Address
     {
-      get { return Get_IPV4Address(); }
-      set { _ipV4Address = value; } 
+      get {
+        return Get_IPV4Address();
+      }
+      set {
+        _ipV4Address = value;
+      }
     }
 
     [XMap (XType=XType.Element, CollectionElements = "ServiceSpec", WrapperElement = "ServiceSpecSet")]
-    public ServiceSpecSet ServiceSpecSet { get; set; }
+    public ServiceSpecSet ServiceSpecSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, MyParent = true, Name = "ParentServiceHostSet")]
-    public ServiceHostSet ParentServiceHostSet { get; set; }
+    public ServiceHostSet ParentServiceHostSet {
+      get;
+      set;
+    }
 
-    public ServiceEnvironment ServiceEnvironment { get { return Get_ServiceEnvironment(); } }
+    public ServiceEnvironment ServiceEnvironment {
+      get {
+        return Get_ServiceEnvironment();
+      }
+    }
 
     public ServiceHost()
     {
@@ -63,7 +87,7 @@ namespace Org.GS.ServiceManagement
                             "cannot be located.");
 
       if (this.ParentServiceHostSet.ParentServiceEnvironment == null)
-        throw new Exception("The ParentServiceHostEnvironment property of the ParentServiceHostSet property of this ServiceHost object (name '" + this.Name + 
+        throw new Exception("The ParentServiceHostEnvironment property of the ParentServiceHostSet property of this ServiceHost object (name '" + this.Name +
                             "') is null.  The ServiceEnvironment object cannot be located.");
 
       return this.ParentServiceHostSet.ParentServiceEnvironment;

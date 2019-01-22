@@ -9,8 +9,14 @@ namespace Org.GS
 {
   public class XWrapper
   {
-    public int Key { get; set; }
-    public XElement XElement { get; set; }
+    public int Key {
+      get;
+      set;
+    }
+    public XElement XElement {
+      get;
+      set;
+    }
 
     public XWrapper(int key, XElement e)
     {

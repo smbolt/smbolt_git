@@ -17,10 +17,18 @@ namespace Org.WebApi
   public class WebContext
   {
     private RequestMessage _requestMessage;
-    public RequestMessage RequestMessage { get { return _requestMessage; } }
+    public RequestMessage RequestMessage {
+      get {
+        return _requestMessage;
+      }
+    }
 
     private ClientHash _clientHash;
-    public ClientHash ClientHash { get { return _clientHash; } }
+    public ClientHash ClientHash {
+      get {
+        return _clientHash;
+      }
+    }
 
     private HttpRequestMessage _httpRequestMessage;
     private RequestContext _requestContext;
@@ -28,41 +36,72 @@ namespace Org.WebApi
     private HttpControllerContext _httpControllerContext;
     public HttpControllerContext HttpControllerContext
     {
-      get { return _httpControllerContext; }
-      private set { _httpControllerContext = value; }
+      get {
+        return _httpControllerContext;
+      }
+      private set {
+        _httpControllerContext = value;
+      }
     }
 
-    public HttpContextWrapper HttpContext 
-    { 
-      get { return Get_HttpContext(); }
+    public HttpContextWrapper HttpContext
+    {
+      get {
+        return Get_HttpContext();
+      }
     }
 
     public HttpServerUtilityWrapper Server
     {
-      get { return Get_Server(); }
+      get {
+        return Get_Server();
+      }
     }
 
     public HttpRequestMessage Request
     {
-      get { return Get_Request(); }
+      get {
+        return Get_Request();
+      }
     }
 
     public HttpRequestContext RequestContext
     {
-      get { return Get_RequestContext(); }
+      get {
+        return Get_RequestContext();
+      }
     }
 
-    public WindowsPrincipal WindowsPrincipal { get { return Get_WindowsPrincipal(); } }
-    public WebClientSecurity WebClientSecurity { get; set; }
-    public string ServerName { get { return Get_ServerName(); } }
-    public string Method { get { return Get_Method(); } }
-    public Uri Uri { get { return Get_Uri(); } }
-    
+    public WindowsPrincipal WindowsPrincipal {
+      get {
+        return Get_WindowsPrincipal();
+      }
+    }
+    public WebClientSecurity WebClientSecurity {
+      get;
+      set;
+    }
+    public string ServerName {
+      get {
+        return Get_ServerName();
+      }
+    }
+    public string Method {
+      get {
+        return Get_Method();
+      }
+    }
+    public Uri Uri {
+      get {
+        return Get_Uri();
+      }
+    }
+
     //constructor
     public WebContext(HttpControllerContext controllerContext, System.Net.Http.HttpRequestMessage httpRequestMessage)
     {
       this.WebClientSecurity = new WebClientSecurity();
-      _requestMessage = new RequestMessage(httpRequestMessage); 
+      _requestMessage = new RequestMessage(httpRequestMessage);
       _httpControllerContext = controllerContext;
       _clientHash = GetClientHash();
     }
@@ -97,9 +136,9 @@ namespace Org.WebApi
     private HttpServerUtilityWrapper Get_Server()
     {
       if (this.HttpContext == null)
-        return null; 
+        return null;
 
-      return (System.Web.HttpServerUtilityWrapper)((System.Web.HttpContextWrapper)this.HttpContext).Server;   
+      return (System.Web.HttpServerUtilityWrapper)((System.Web.HttpContextWrapper)this.HttpContext).Server;
     }
 
     private HttpRequestMessage Get_Request()
@@ -139,7 +178,7 @@ namespace Org.WebApi
       var requestContext = this.Request.Properties["MS_RequestContext"];
       if (requestContext == null)
         return null;
-      return (HttpRequestContext) requestContext; 
+      return (HttpRequestContext) requestContext;
     }
 
     private WindowsPrincipal Get_WindowsPrincipal()
@@ -154,7 +193,7 @@ namespace Org.WebApi
     {
       if (this.Server == null)
         return String.Empty;
-      return this.Server.MachineName; 
+      return this.Server.MachineName;
     }
 
     private string Get_Method()
@@ -162,7 +201,7 @@ namespace Org.WebApi
       if (this.Request == null)
         return String.Empty;
 
-      return this.Request.Method.ToString();    
+      return this.Request.Method.ToString();
     }
 
     private Uri Get_Uri()

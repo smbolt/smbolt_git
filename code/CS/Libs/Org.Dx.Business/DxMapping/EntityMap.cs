@@ -11,6 +11,9 @@ namespace Org.Dx.Business
   public class EntityMap : Dictionary<string, ColumnMap>
   {
     [XMap (IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
   }
 }

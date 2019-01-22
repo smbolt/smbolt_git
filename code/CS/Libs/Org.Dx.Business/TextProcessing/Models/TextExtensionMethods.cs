@@ -63,7 +63,7 @@ namespace Org.Dx.Business.TextProcessing
         throw new CxException(169, t, cmdx);
       }
     }
-    
+
     public static void SetVariableFromXmlElementValue(this Text t, Cmdx cmdx)
     {
       try
@@ -106,7 +106,7 @@ namespace Org.Dx.Business.TextProcessing
       try
       {
         if (cmdx.IsRequired && (searchStartPos < 0 || searchStartPos > t.RawText.Length - 1))
-          throw new CxException(155, new object[] { t, cmdx, searchStartPos }); 
+          throw new CxException(155, new object[] { t, cmdx, searchStartPos });
 
         int returnValue = -1;
 
@@ -114,7 +114,7 @@ namespace Org.Dx.Business.TextProcessing
         {
           returnValue = t.PriorEndPosition;
           if (cmdx.IsRequired && returnValue == -1)
-            throw new CxException(156,  t, cmdx, searchStartPos ); 
+            throw new CxException(156,  t, cmdx, searchStartPos );
           return t.PriorEndPosition;
         }
 
@@ -136,7 +136,7 @@ namespace Org.Dx.Business.TextProcessing
           if (endOfLine > -1)
             return endOfLine;
           else
-            return t.RawText.Length; 
+            return t.RawText.Length;
         }
 
         if (cmdx.TextToFind.ToLower().Trim() == "[bol]")
@@ -150,7 +150,7 @@ namespace Org.Dx.Business.TextProcessing
           if (begOfLine > -1)
             return begOfLine;
           else
-            return t.RawText.Length; 
+            return t.RawText.Length;
         }
 
         if (cmdx.TextToFind.IsBlank())
@@ -220,7 +220,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return returnValue;
       }
-      catch (CxException) { throw; } 
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(61, new object[] { t, cmdx, searchStartPos, ex });
@@ -264,13 +266,13 @@ namespace Org.Dx.Business.TextProcessing
         if (findPos == -1 && cdx.IsReportUnit)
         {
           if (cdx.OriginalCmdx.OrEnd)
-            return cdx.RawText.LastIndex(); 
+            return cdx.RawText.LastIndex();
 
           return -1;
         }
 
         if (findPos == -1 && cdx.OriginalCmdx.OrEnd)
-          return cdx.RawText.Length - 1; 
+          return cdx.RawText.Length - 1;
 
         if (cdx.IsRequired && findPos == -1)
           throw new CxException(95, cdx);
@@ -280,7 +282,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return findPos;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(62, new object[] { cdx, ex });
@@ -303,7 +307,7 @@ namespace Org.Dx.Business.TextProcessing
         {
           string findToken = findTokenRaw.Trim();
           if (findToken.Contains("[") && findToken.Contains("]"))
-          //if (findToken.StartsWith("[") && findToken.EndsWith("]")) - remove this later if it doesn't cause issues
+            //if (findToken.StartsWith("[") && findToken.EndsWith("]")) - remove this later if it doesn't cause issues
           {
             cdx.TextToFind = findToken;
             string textFound = cdx.FindString();
@@ -321,7 +325,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return true;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(62, new object[] { cdx, ex });
@@ -355,9 +361,11 @@ namespace Org.Dx.Business.TextProcessing
         else
           t.RawText = t.RawText.Substring(0, pos);
 
-        t.CurrPos = 0; 
+        t.CurrPos = 0;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(181, t, cmdx, ex);
@@ -374,8 +382,8 @@ namespace Org.Dx.Business.TextProcessing
           return;
         }
 
-        string workText = t.RawText; 
-        string rawText = t.RawText.ToLower();    
+        string workText = t.RawText;
+        string rawText = t.RawText.ToLower();
         string textToReplace = cmdx.TextToReplace;
         if (textToReplace.In("[eol],[bol]"))
           textToReplace = "\n";
@@ -429,7 +437,7 @@ namespace Org.Dx.Business.TextProcessing
           string frontPart = workText.Substring(0, beg);
           string endPart = workText.Substring(end);
           string newString = frontPart + replacementText + endPart;
-          replCount++; 
+          replCount++;
 
           if (cmdx.Trim)
             newString = newString.Trim();
@@ -446,7 +454,9 @@ namespace Org.Dx.Business.TextProcessing
         if (!cmdx.RunAsStructureCommand)
           t.CurrPos = 0;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(164, t, cmdx, ex);
@@ -462,9 +472,11 @@ namespace Org.Dx.Business.TextProcessing
     {
       try
       {
-        t.RemoveStoredTokens(cmdx.TokensToRemove); 
+        t.RemoveStoredTokens(cmdx.TokensToRemove);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(83, new object[] { cmdx, ex });
@@ -537,10 +549,12 @@ namespace Org.Dx.Business.TextProcessing
 
         return token.FormatValue(cmdx);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(121, t, cmdx, ex); 
+        throw new CxException(121, t, cmdx, ex);
       }
     }
 
@@ -549,7 +563,7 @@ namespace Org.Dx.Business.TextProcessing
       try
       {
         string dataName = cmdx.DataName;
-        string dataType = cmdx.DataType; 
+        string dataType = cmdx.DataType;
         string token = String.Empty;
         int currPos = t.CurrPos;
 
@@ -577,7 +591,7 @@ namespace Org.Dx.Business.TextProcessing
                 beg = ptr - 1;
                 if (beg < 1)
                   return String.Empty;
-                
+
                 while (t.RawText[beg] == ' ' || t.RawText[beg] == '\n')
                 {
                   beg--;
@@ -585,7 +599,7 @@ namespace Org.Dx.Business.TextProcessing
                     return String.Empty;
                 }
                 ptr = beg;
-              } 
+              }
             }
 
             ptr--;
@@ -594,7 +608,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return token.FormatValue(cmdx);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(102, new object[] { cmdx, ex });
@@ -609,7 +625,7 @@ namespace Org.Dx.Business.TextProcessing
         {
           if (cmdx.IsRequired)
           {
-            throw new CxException(95, new object[] { t, cmdx }); 
+            throw new CxException(95, new object[] { t, cmdx });
           }
           return String.Empty;
         }
@@ -618,11 +634,11 @@ namespace Org.Dx.Business.TextProcessing
         string[] tokenTypes = cmdx.TokenTypes;
 
         if (tokenTypes.Length != numberOfTokens)
-          throw new CxException(106, new object[] { t, cmdx }); 
+          throw new CxException(106, new object[] { t, cmdx });
 
         string[] tokens = new string[numberOfTokens];
-        LocatedToken[] locatedTokens = new LocatedToken[numberOfTokens]; 
-        int tokenIndex = -1; 
+        LocatedToken[] locatedTokens = new LocatedToken[numberOfTokens];
+        int tokenIndex = -1;
         int pos = t.CurrPos;
 
         bool continueSearch = true;
@@ -709,7 +725,7 @@ namespace Org.Dx.Business.TextProcessing
                   tokens[i] = null;
                   locatedTokens[i] = null;
                   orderedTokens[i] = null;
-                  orderedLocatedTokens[i] = null; 
+                  orderedLocatedTokens[i] = null;
                 }
               }
               else
@@ -722,11 +738,13 @@ namespace Org.Dx.Business.TextProcessing
           {
             pos = token.TokenBeginPosition;
           }
-        }                
+        }
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(105, new object[] { cmdx, ex });
@@ -835,7 +853,7 @@ namespace Org.Dx.Business.TextProcessing
                   t.CurrPos = currPos;
                   return token.FormatValue(cmdx);
                 }
-              }     
+              }
               break;
 
           }
@@ -883,7 +901,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return token.FormatValue(cmdx);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(23, new object[] { cmdx, ex });
@@ -915,18 +935,18 @@ namespace Org.Dx.Business.TextProcessing
                 throw new CxException(74, new object[] { t });
 
               token += t.RawText.Substring(searchPos + 1, end - (searchPos + 1));
-              lastEndPos = end; 
+              lastEndPos = end;
               numberOfTokens--;
               searchPos = end;
               if (numberOfTokens > 0)
-                token += " "; 
+                token += " ";
             }
           }
 
           if (cmdx.PositionAtEnd)
             t.CurrPos = lastEndPos;
           else
-            t.CurrPos = begPos;         
+            t.CurrPos = begPos;
         }
 
         if (token.IsBlank())
@@ -945,7 +965,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return token.FormatValue(cmdx);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(71, new object[] { cmdx, ex });
@@ -1010,7 +1032,7 @@ namespace Org.Dx.Business.TextProcessing
               if (storeValueAsVariable && tokenToReturn.IsNotBlank())
                 t.SetLocalVariable(varName, tokenToReturn);
 
-              return tokenToReturn.FormatValue(cmdx); 
+              return tokenToReturn.FormatValue(cmdx);
             }
 
             var cdx = new CmdxData();
@@ -1076,7 +1098,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return token.FormatValue(cmdx);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(66, new object[] { cmdx, ex });
@@ -1090,7 +1114,7 @@ namespace Org.Dx.Business.TextProcessing
 
       if (splitTokens.Length == 1)
         return s.SplitByStringToken(splitTokens[0], returnSplitTokenFound);
-      
+
       foreach (var st in splitTokens)
       {
         if (s.Contains(st))
@@ -1136,7 +1160,7 @@ namespace Org.Dx.Business.TextProcessing
 
         Direction direction = cmdx.Direction;
         int unitCount = cmdx.UnitCount;
-        int unitsRemainingToMove = unitCount; 
+        int unitsRemainingToMove = unitCount;
         var textUnit = cmdx.TextUnit;
         var positionAt = cmdx.PositionAt;
 
@@ -1151,13 +1175,13 @@ namespace Org.Dx.Business.TextProcessing
           if (cmdx.Parms[0] == "end")
           {
             t.CurrPos = t.LastIndex;
-            return; 
+            return;
           }
         }
 
         if (direction == Direction.Next)
         {
-          // throw exception if "already" positioned at the end of text, in all other cases, 
+          // throw exception if "already" positioned at the end of text, in all other cases,
           // return the end of text, if the next desired target can't be found.
           if (currPos > t.TextLength - 1)
             throw new CxException(120, t, cmdx);
@@ -1171,11 +1195,11 @@ namespace Org.Dx.Business.TextProcessing
                 if (currPos > t.TextLength - 2)
                 {
                   t.CurrPos = t.TextLength - 1;
-                  return; 
+                  return;
                 }
 
                 currPos++;
-                unitsRemainingToMove--; 
+                unitsRemainingToMove--;
               }
 
               t.CurrPos = currPos;
@@ -1206,7 +1230,7 @@ namespace Org.Dx.Business.TextProcessing
                     return;
                   }
                 }
-                
+
                 // at this point, we should be positioned on a blank or new line
                 // move forward to next non-blank or non-new-line character and
                 // count this as one token moved forward.
@@ -1217,7 +1241,7 @@ namespace Org.Dx.Business.TextProcessing
                   {
                     t.CurrPos = t.TextLength - 1;
                     return;
-                  }                  
+                  }
                 }
 
                 unitsRemainingToMove--;
@@ -1320,7 +1344,7 @@ namespace Org.Dx.Business.TextProcessing
                   {
                     t.CurrPos = t.TextLength - 1;
                     return;
-                  }  
+                  }
                 }
 
                 // move forward to the first non-blank character on the new line
@@ -1331,7 +1355,7 @@ namespace Org.Dx.Business.TextProcessing
                   {
                     t.CurrPos = t.TextLength - 1;
                     return;
-                  }  
+                  }
                 }
 
                 unitsRemainingToMove--;
@@ -1393,10 +1417,10 @@ namespace Org.Dx.Business.TextProcessing
         }
         else
         {
-          // throw exception if "already" positioned at the start of text, in all other cases, 
+          // throw exception if "already" positioned at the start of text, in all other cases,
           // return the start of text, if the next desired target can't be found.
           if (currPos < 1)
-            throw new CxException(119, t, cmdx); 
+            throw new CxException(119, t, cmdx);
 
           switch (textUnit)
           {
@@ -1411,7 +1435,7 @@ namespace Org.Dx.Business.TextProcessing
                 }
 
                 currPos--;
-                unitsRemainingToMove--; 
+                unitsRemainingToMove--;
               }
 
               t.CurrPos = currPos;
@@ -1443,7 +1467,7 @@ namespace Org.Dx.Business.TextProcessing
                     return;
                   }
                 }
-                
+
                 unitsRemainingToMove--;
               }
 
@@ -1460,7 +1484,7 @@ namespace Org.Dx.Business.TextProcessing
                     if (currPos > t.TextLength - 2)
                     {
                       t.CurrPos = t.TextLength - 1;
-                      return; 
+                      return;
                     }
                   }
                   break;
@@ -1580,7 +1604,7 @@ namespace Org.Dx.Business.TextProcessing
                   break;
 
 
-                // IT DOESN'T MAKE SENSE TO POSITION AT THE END OF THE LINE OR AFTER THE END OF THE LINE
+                  // IT DOESN'T MAKE SENSE TO POSITION AT THE END OF THE LINE OR AFTER THE END OF THE LINE
               }
 
               t.CurrPos = currPos;
@@ -1588,10 +1612,12 @@ namespace Org.Dx.Business.TextProcessing
           }
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(110, t, cmdx, ex); 
+        throw new CxException(110, t, cmdx, ex);
       }
     }
 
@@ -1605,7 +1631,7 @@ namespace Org.Dx.Business.TextProcessing
 
         string varValue = GetVariable(t, varName, isRequired);
         if (varValue.IsNotBlank())
-          variableName = varValue; 
+          variableName = varValue;
       }
 
       if (t.LocalVariables != null && t.LocalVariables.ContainsKey(variableName))
@@ -1621,7 +1647,7 @@ namespace Org.Dx.Business.TextProcessing
     }
 
     public static string GetDynamicVariable(this Text t, string variableName)
-    {    
+    {
       int currPos = t.CurrPos;
 
       if (t.LocalVariables != null && t.LocalVariables.ContainsKey(variableName))
@@ -1635,7 +1661,7 @@ namespace Org.Dx.Business.TextProcessing
         case "_curr_line_tokens":
           return t.CurrentLineTokenCount().ToString();
       }
-      
+
       throw new CxException(108, t, variableName);
     }
 
@@ -1652,7 +1678,7 @@ namespace Org.Dx.Business.TextProcessing
       if (t.RawText.Length <= ptr + 1)
         return 0;
 
-      int endOfLine = t.RawText.IndexOf(Constants.NewLineCharacter, ptr + 1); 
+      int endOfLine = t.RawText.IndexOf(Constants.NewLineCharacter, ptr + 1);
 
       int lengthOfLine = endOfLine - ptr - 1;
 
@@ -1664,7 +1690,7 @@ namespace Org.Dx.Business.TextProcessing
 
       string line = t.RawText.Substring(ptr + 1, lengthOfLine);
 
-      string[] tokens = line.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries); 
+      string[] tokens = line.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
       return tokens.Length;
     }
@@ -1738,10 +1764,12 @@ namespace Org.Dx.Business.TextProcessing
 
         return extractedLine;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(89, new object[] { t , ex}); 
+        throw new CxException(89, new object[] { t, ex});
       }
     }
 
@@ -1760,7 +1788,7 @@ namespace Org.Dx.Business.TextProcessing
           string[] zapStrings = zap.Split(Constants.PipeDelimiter, StringSplitOptions.RemoveEmptyEntries);
           foreach (string zapString in zapStrings)
           {
-            line = line.Replace(zapString, String.Empty); 
+            line = line.Replace(zapString, String.Empty);
           }
         }
 
@@ -1801,11 +1829,11 @@ namespace Org.Dx.Business.TextProcessing
                 }
               }
 
-              line = workLine.CompressBlanksTo(1); 
+              line = workLine.CompressBlanksTo(1);
               break;
 
             default:
-              throw new CxException(37, new object[] { cmdx }); 
+              throw new CxException(37, new object[] { cmdx });
           }
         }
 
@@ -1827,13 +1855,15 @@ namespace Org.Dx.Business.TextProcessing
           }
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(40, new object[] { t, cmdx, ex }); 
+        throw new CxException(40, new object[] { t, cmdx, ex });
       }
     }
-    
+
     public static string ExtractStoredToken(this Text t, Cmdx cmdx)
     {
       try
@@ -1899,10 +1929,12 @@ namespace Org.Dx.Business.TextProcessing
 
         return token.FormatValue(cmdx);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(30, new object[] { t, cmdx, ex }); 
+        throw new CxException(30, new object[] { t, cmdx, ex });
       }
     }
 
@@ -1948,7 +1980,7 @@ namespace Org.Dx.Business.TextProcessing
 
         while (tokensRemainingToExtract > 0)
         {
-          tokensToRemove.Add(tokenToExtract); 
+          tokensToRemove.Add(tokenToExtract);
           tokens += t.Tokens[tokenToExtract];
           tokensRemainingToExtract--;
           tokenToExtract++;
@@ -1971,7 +2003,7 @@ namespace Org.Dx.Business.TextProcessing
           }
         }
 
-        int newArrayIndex = 0; 
+        int newArrayIndex = 0;
         if (cmdx.RemoveStoredToken)
         {
           var newTokensArray = new string[t.Tokens.Length - tokensToRemove.Count];
@@ -1988,10 +2020,12 @@ namespace Org.Dx.Business.TextProcessing
 
         return tokens.FormatValue(cmdx);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(30, new object[] { t, cmdx, ex }); 
+        throw new CxException(30, new object[] { t, cmdx, ex });
       }
     }
 
@@ -1999,7 +2033,7 @@ namespace Org.Dx.Business.TextProcessing
     {
       try
       {
-        string code = cmdx.Code;        
+        string code = cmdx.Code;
         bool isRequired = cmdx.IsRequired;
 
         if (t.Tokens == null || t.Tokens.Length == 0)
@@ -2070,15 +2104,17 @@ namespace Org.Dx.Business.TextProcessing
           {
             if (i > indexOfFoundToken - 1)
             {
-              newTokenArray[j++] = t.Tokens[i]; 
+              newTokenArray[j++] = t.Tokens[i];
             }
           }
           t.Tokens = newTokenArray;
         }
 
-        return returnValue.FormatValue(cmdx); 
+        return returnValue.FormatValue(cmdx);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(30, new object[] { t, cmdx, ex });
@@ -2128,7 +2164,7 @@ namespace Org.Dx.Business.TextProcessing
     {
       try
       {
-        string helperFunction = cmdx.HelperFunction; 
+        string helperFunction = cmdx.HelperFunction;
 
         string math = cmdx.Math;
         if (math.IsNotBlank()  & !cmdx.MathIsDone)
@@ -2194,7 +2230,7 @@ namespace Org.Dx.Business.TextProcessing
             }
           }
 
-          cmdx.MathIsDone = true; 
+          cmdx.MathIsDone = true;
         }
 
         string token = s.Trim();
@@ -2272,8 +2308,10 @@ namespace Org.Dx.Business.TextProcessing
 
             switch (dataFormat)
             {
-              case "ccyymmdd": return dt.ToCCYYMMDD();
-              case "mm/dd/yyyy": return dt.ToString("MM/dd/yyyy"); 
+              case "ccyymmdd":
+                return dt.ToCCYYMMDD();
+              case "mm/dd/yyyy":
+                return dt.ToString("MM/dd/yyyy");
             }
             break;
 
@@ -2305,8 +2343,10 @@ namespace Org.Dx.Business.TextProcessing
 
             switch (dataFormat)
             {
-              case "ccyymmdd": return dt.ToCCYYMMDD();
-              case "mm/dd/yyyy": return dt.ToString("MM/dd/yyyy"); 
+              case "ccyymmdd":
+                return dt.ToCCYYMMDD();
+              case "mm/dd/yyyy":
+                return dt.ToString("MM/dd/yyyy");
             }
             break;
 
@@ -2314,8 +2354,10 @@ namespace Org.Dx.Business.TextProcessing
             dt = token.ToDateTime();
             switch (dataFormat)
             {
-              case "h24:mm:ss": return dt.ToString("HH:MM:ss");
-              case "h12:mm:ss": return dt.ToString("hh:MM:ss");
+              case "h24:mm:ss":
+                return dt.ToString("HH:MM:ss");
+              case "h12:mm:ss":
+                return dt.ToString("hh:MM:ss");
 
             }
             break;
@@ -2323,10 +2365,12 @@ namespace Org.Dx.Business.TextProcessing
 
         throw new CxException(42, new object[] { cmdx, s });
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(41, new object[] { cmdx, s, ex }); 
+        throw new CxException(41, new object[] { cmdx, s, ex });
       }
     }
 
@@ -2336,7 +2380,9 @@ namespace Org.Dx.Business.TextProcessing
       {
         return s.FormatValue(cmdx);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(128, cmdx, s, ex);
@@ -2366,7 +2412,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return tokens;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(43, new object[] { s, ex });
@@ -2396,13 +2444,13 @@ namespace Org.Dx.Business.TextProcessing
         {
           if (parms[0] == "`bol" && parms[parms.Length - 1] == "`eol")
             throw new Exception("Cannot specify that values to be located include both beginning of line '[bol]' and end of line '[eol]' elements.  The " +
-                                "text to find is '" + cdx.TextToFind + "'."); 
+                                "text to find is '" + cdx.TextToFind + "'.");
 
 
           // the values to locate must start at the beginning or end of a line
           string[] lines = t.Split(Constants.NewLineDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
-          bool startOfLine = parms[0] == "`bol"; 
+          bool startOfLine = parms[0] == "`bol";
           bool endOfLine = parms[parms.Length - 1] == "`eol";
 
           if (startOfLine)
@@ -2410,7 +2458,7 @@ namespace Org.Dx.Business.TextProcessing
 
           if (endOfLine)
             parms = parms.StripLastElement();
-          
+
           searchPosition = 0;
           int lineCount = 0;
 
@@ -2441,12 +2489,12 @@ namespace Org.Dx.Business.TextProcessing
                 if (endOfLine)
                   return foundText += "\n";
                 else
-                  return "\n" + foundText; 
+                  return "\n" + foundText;
               }
             }
 
             searchPosition += line.Length + 1;
-            lineCount++; 
+            lineCount++;
           }
         }
         else
@@ -2464,7 +2512,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(44, new object[] { cdx, ex });
@@ -2493,7 +2543,7 @@ namespace Org.Dx.Business.TextProcessing
         string pattern = cmdx.Pattern;
         string range = cmdx.Range;
         int holdCurrPos = t.CurrPos;
-        bool? booleanValue = null; 
+        bool? booleanValue = null;
 
         switch (subCommandVerb)
         {
@@ -2520,7 +2570,7 @@ namespace Org.Dx.Business.TextProcessing
 
               if (joinedTokens.IsNotBlank())
                 t.SetVariableValue(variableName, joinedTokens, variableType);
-                
+
               return;
             }
 
@@ -2530,7 +2580,7 @@ namespace Org.Dx.Business.TextProcessing
               if (t.Tokens != null || t.Tokens.Length == 0)
               {
                 if (isRequired)
-                return;
+                  return;
               }
               tokenIndex = t.Tokens.Length - 1;
             }
@@ -2608,15 +2658,15 @@ namespace Org.Dx.Business.TextProcessing
 
           case "getvariable": // obsolete, replace with var[$varname]
             throw new CxException(45, new object[] { t, cmdx });
-            //string varName = cmdx.Parms[2].Trim();
-            //variableValue = t.GetVariable(varName, true);
-            //if (variableValue.IsNotBlank())
-            //{
-            //  if (cmdx.HelperFunction.IsNotBlank())
-            //    variableValue = cmdx.RunHelperFunction(variableValue); 
-            //  t.SetVariableValue(variableName, variableValue, variableType);
-            //}
-            //break;
+          //string varName = cmdx.Parms[2].Trim();
+          //variableValue = t.GetVariable(varName, true);
+          //if (variableValue.IsNotBlank())
+          //{
+          //  if (cmdx.HelperFunction.IsNotBlank())
+          //    variableValue = cmdx.RunHelperFunction(variableValue);
+          //  t.SetVariableValue(variableName, variableValue, variableType);
+          //}
+          //break;
 
           case "var":
             string varParm = cmdx.FullSubCommand;
@@ -2632,7 +2682,7 @@ namespace Org.Dx.Business.TextProcessing
 
           case "find":
             bool boolValue = IsTextFound(cmdx.ToCmdxData(t.RawText, startPos));
-            t.SetVariableValue(variableName, boolValue.ToString(), variableType); 
+            t.SetVariableValue(variableName, boolValue.ToString(), variableType);
             break;
 
           case "lit":
@@ -2650,7 +2700,7 @@ namespace Org.Dx.Business.TextProcessing
             if (relPos == -1)
               throw new CxException(168, new object[] { t, cmdx });
             char relOp = expression[relPos];
-            string[] operands = expression.Split(new char[] { relOp }, StringSplitOptions.RemoveEmptyEntries); 
+            string[] operands = expression.Split(new char[] { relOp }, StringSplitOptions.RemoveEmptyEntries);
             if (operands.Length != 2)
               throw new CxException(169, new object[] { t, cmdx });
             string leftOperand = operands[0].ToLower().Trim();
@@ -2659,14 +2709,14 @@ namespace Org.Dx.Business.TextProcessing
             switch (leftOperand)
             {
               case "tokencount":
-                value = t.Tokens != null ? t.Tokens.Length.ToString() : "0"; 
+                value = t.Tokens != null ? t.Tokens.Length.ToString() : "0";
                 if (!rightOperand.IsDecimal(false))
                   throw new CxException(171, new object[] { t, cmdx });
                 if (!value.IsDecimal(false))
                   throw new CxException(172, new object[] { t, cmdx });
                 decimal rightDec = rightOperand.ToDecimal();
                 decimal valueDec = value.ToDecimal();
-                booleanValue = null; 
+                booleanValue = null;
 
                 switch (relOp)
                 {
@@ -2684,7 +2734,7 @@ namespace Org.Dx.Business.TextProcessing
                     break;
                 }
 
-                t.SetVariableValue(variableName, booleanValue.ToString(), variableType); 
+                t.SetVariableValue(variableName, booleanValue.ToString(), variableType);
                 break;
 
               case "extractvalue":
@@ -2694,7 +2744,7 @@ namespace Org.Dx.Business.TextProcessing
                 switch (relOp)
                 {
                   case '<':
-                    booleanValue = String.Compare(value, rightOperand) < 0; 
+                    booleanValue = String.Compare(value, rightOperand) < 0;
                     break;
 
                   case '=':
@@ -2702,7 +2752,7 @@ namespace Org.Dx.Business.TextProcessing
                     break;
 
                   case '>':
-                    booleanValue = String.Compare(value, rightOperand) > 0; 
+                    booleanValue = String.Compare(value, rightOperand) > 0;
                     break;
 
                   case '!':
@@ -2710,7 +2760,7 @@ namespace Org.Dx.Business.TextProcessing
                     break;
                 }
 
-                t.SetVariableValue(variableName, booleanValue.ToString(), variableType); 
+                t.SetVariableValue(variableName, booleanValue.ToString(), variableType);
                 break;
 
               default:
@@ -2723,7 +2773,9 @@ namespace Org.Dx.Business.TextProcessing
             throw new CxException(45, new object[] { t, cmdx });
         }
       }
-      catch (CxException) { throw; } 
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(46, new object[] { t, cmdx, ex });
@@ -2753,22 +2805,35 @@ namespace Org.Dx.Business.TextProcessing
 
       switch (type.ToLower())
       {
-        case "str": return value.IsString();
-        case "dec": return value.IsDecimal(true);
-        case "decn": return value.IsDecimal(false);
-        case "pct": return value.IsDecimal(false);
-        case "int": return value.IsInteger();
-        case "date": return value.IsValidShortDate();
-        case "time": return value.IsValidTime();
-        case "mm/yyyy": return value.IsValidMMSlashYYYY();
-        case "mmmm": return value.IsFullySpelledMonth();
-        case "mmm": return value.IsAbbreviatedMonth();
-        case "yyyy": return value.IsReasonableYYYY();
-        case "yy": return value.IsYY();
-        case "dd": return value.IsValidDD();
+        case "str":
+          return value.IsString();
+        case "dec":
+          return value.IsDecimal(true);
+        case "decn":
+          return value.IsDecimal(false);
+        case "pct":
+          return value.IsDecimal(false);
+        case "int":
+          return value.IsInteger();
+        case "date":
+          return value.IsValidShortDate();
+        case "time":
+          return value.IsValidTime();
+        case "mm/yyyy":
+          return value.IsValidMMSlashYYYY();
+        case "mmmm":
+          return value.IsFullySpelledMonth();
+        case "mmm":
+          return value.IsAbbreviatedMonth();
+        case "yyyy":
+          return value.IsReasonableYYYY();
+        case "yy":
+          return value.IsYY();
+        case "dd":
+          return value.IsValidDD();
       }
 
-      throw new CxException(47, new object[] { value, type } ); 
+      throw new CxException(47, new object[] { value, type } );
     }
 
     public static void AssertValidDataType(this string dataType)
@@ -2857,7 +2922,7 @@ namespace Org.Dx.Business.TextProcessing
           return true;
 
         aPtr = aMatchIndex + 1;
-        pPtr++; 
+        pPtr++;
       }
 
       return true;
@@ -2887,7 +2952,7 @@ namespace Org.Dx.Business.TextProcessing
       CmdxData cmdxData = null;
       ExtractSpec extractSpec = null;
 
-      var sb2 = new StringBuilder(); 
+      var sb2 = new StringBuilder();
 
       var otherValues = new List<string>();
       var messages = new List<string>();
@@ -2899,11 +2964,11 @@ namespace Org.Dx.Business.TextProcessing
           string typeName = parm.GetType().Name;
           switch (typeName)
           {
-            case "ExtractSpec": 
-              extractSpec = (ExtractSpec)parm; 
+            case "ExtractSpec":
+              extractSpec = (ExtractSpec)parm;
               break;
 
-            case "Text": 
+            case "Text":
               t = (Text)parm;
               if (t.Cmdx != null)
                 cmdx = t.Cmdx;
@@ -2920,15 +2985,15 @@ namespace Org.Dx.Business.TextProcessing
               } while (textObject != null);
               break;
 
-            case "Cmdx": 
-              cmdx = (Cmdx)parm; 
+            case "Cmdx":
+              cmdx = (Cmdx)parm;
               break;
 
-            case "Exception": 
-              ex = (Exception)parm; 
+            case "Exception":
+              ex = (Exception)parm;
               break;
 
-            case "CmdxData": 
+            case "CmdxData":
               cmdxData = (CmdxData)parm;
               if (cmdxData.OriginalCmdx != null)
               {
@@ -2938,23 +3003,23 @@ namespace Org.Dx.Business.TextProcessing
                   t = cmdx.Text;
                   if (t.Root != null && t.Root.ExtractSpec != null)
                   {
-                    extractSpec = t.Root.ExtractSpec; 
+                    extractSpec = t.Root.ExtractSpec;
                   }
                 }
               }
 
               break;
 
-            case "CxException": 
-              cxp = (CxException)parm; 
+            case "CxException":
+              cxp = (CxException)parm;
               break;
 
-            case "String": 
-              otherValues.Add((string)parm); 
+            case "String":
+              otherValues.Add((string)parm);
               break;
 
-            case "Int32": 
-              otherValues.Add(parm.ToInt32().ToString()); 
+            case "Int32":
+              otherValues.Add(parm.ToInt32().ToString());
               break;
 
             default:
@@ -2975,9 +3040,9 @@ namespace Org.Dx.Business.TextProcessing
               }
 
               if (sb2.Length > 0)
-                sb2.Append(g.crlf); 
+                sb2.Append(g.crlf);
 
-              sb2.Append("Unhandled parm of type '" + typeName + "' encountered - value is '" + parm.ToString() + "'."); 
+              sb2.Append("Unhandled parm of type '" + typeName + "' encountered - value is '" + parm.ToString() + "'.");
               break;
           }
         }
@@ -3046,12 +3111,12 @@ namespace Org.Dx.Business.TextProcessing
 
     public static List<Text> RunSpecialRoutine(this Text t, string specialRoutineName)
     {
-      throw new CxException(126, t, specialRoutineName); 
+      throw new CxException(126, t, specialRoutineName);
 
       //try
       //{
       //  if (specialRoutineName == null)
-      //    throw new Exception("The Tsd SpecialRoutine name is null."); 
+      //    throw new Exception("The Tsd SpecialRoutine name is null.");
 
       //  var textSet = new List<Text>();
 
@@ -3061,8 +3126,8 @@ namespace Org.Dx.Business.TextProcessing
       //      return t.RunEnableGasGrid1();
 
       //    default:
-      //      throw new Exception("Tsd SpecialRoutine named '" + specialRoutineName + "' is not implemented."); 
-      //  }  
+      //      throw new Exception("Tsd SpecialRoutine named '" + specialRoutineName + "' is not implemented.");
+      //  }
       //}
       //catch (CxException) { throw; }
       //catch (Exception ex)
@@ -3081,16 +3146,18 @@ namespace Org.Dx.Business.TextProcessing
           throw new Exception("The Tsd SpecialRoutine 'RunEnableGasGrid1' failed due to the RawText property of the Text object being null or blank.");
 
         string[] tokens = t.RawText.Split(Constants.BlankOrNewLine, StringSplitOptions.RemoveEmptyEntries);
-        string[] filteredTokens = tokens.Filter("date,decn"); 
+        string[] filteredTokens = tokens.Filter("date,decn");
 
 
 
-        return textList; 
+        return textList;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(125, t, ex); 
+        throw new CxException(125, t, ex);
       }
     }
 
@@ -3122,14 +3189,14 @@ namespace Org.Dx.Business.TextProcessing
       var textObject = t;
       do
       {
-        textStack.Add(t); 
+        textStack.Add(t);
         t = t.Parent;
       } while (t != null);
 
       int ptr = textStack.Count - 1;
 
       if (textObject.FullPath.IsNotBlank())
-        sb.Append("Text Full Path: " + textObject.FullPath + g.crlf2); 
+        sb.Append("Text Full Path: " + textObject.FullPath + g.crlf2);
 
       string globalVariables = String.Empty;
       if (Text.GlobalVariables != null && Text.GlobalVariables.Count > 0)
@@ -3137,7 +3204,7 @@ namespace Org.Dx.Business.TextProcessing
         for (int k = 0; k < Text.GlobalVariables.Count; k++)
         {
           var variable = Text.GlobalVariables.ElementAt(k);
-          globalVariables += "      Variable Name: " + variable.Key.Trim() + "  Value:" + variable.Value + g.crlf; 
+          globalVariables += "      Variable Name: " + variable.Key.Trim() + "  Value:" + variable.Value + g.crlf;
         }
       }
 
@@ -3146,8 +3213,8 @@ namespace Org.Dx.Business.TextProcessing
       else
         sb.Append("Global Variables (static)" + g.crlf + "      None" + g.crlf2);
 
-      
-      sb.Append("Text Stack" + g.crlf); 
+
+      sb.Append("Text Stack" + g.crlf);
       for (int i = ptr; i > -1; i--)
       {
         var textItem = textStack.ElementAt(i);
@@ -3157,7 +3224,7 @@ namespace Org.Dx.Business.TextProcessing
         {
           for (int j = 0; j < textItem.Tokens.Length; j++)
           {
-            storedTokens = storedTokens + "      Token " + j.ToString("00") + " : " + textItem.Tokens[j] + g.crlf; 
+            storedTokens = storedTokens + "      Token " + j.ToString("00") + " : " + textItem.Tokens[j] + g.crlf;
           }
         }
 
@@ -3167,7 +3234,7 @@ namespace Org.Dx.Business.TextProcessing
           for (int j = 0; j < textItem.LocalVariables.Count; j++)
           {
             var variable = textItem.LocalVariables.ElementAt(j);
-            localVariables += "      Local Variable Name: " + variable.Key.Trim() + "  Value:" + variable.Value + g.crlf; 
+            localVariables += "      Local Variable Name: " + variable.Key.Trim() + "  Value:" + variable.Value + g.crlf;
           }
         }
 
@@ -3177,7 +3244,7 @@ namespace Org.Dx.Business.TextProcessing
                   "      CurrPos: " + textItem.CurrPos.ToString() + g.crlf +
                   "      Path:    " + textItem.FullPath + g.crlf +
                   (storedTokens.IsNotBlank() ? storedTokens : "      Tokens:  None" + g.crlf) +
-                  (localVariables.IsNotBlank() ? localVariables : "      Variables: None" + g.crlf) + 
+                  (localVariables.IsNotBlank() ? localVariables : "      Variables: None" + g.crlf) +
                   "      First50: " + textItem.First50.Replace("\n", "\xA4").Replace("\r", "\xA4") + g.crlf +
                   "      Zoom:    " + textItem.AreaOfCurrPos.Replace(g.crlf, g.crlf + "               ") + g.crlf2);
       }
@@ -3201,12 +3268,12 @@ namespace Org.Dx.Business.TextProcessing
           if (c.Parent != null && c.Parent.Condition.IsNotBlank())
             condition = "cond=" + c.Parent.Condition + " [from Tsd]";
           if (c.Condition.IsNotBlank())
-            condition = c.Condition + (condition.IsNotBlank() ? " OVERRIDES " + condition : String.Empty); 
+            condition = c.Condition + (condition.IsNotBlank() ? " OVERRIDES " + condition : String.Empty);
 
           sb.Append("Cmdx Object" + g.crlf);
           sb.Append("  LineNumber:        " + c.LineNumber.ToString() + g.crlf +
                     "  Code:              " + c.Code + g.crlf +
-                    "  Condition:         " + c.Condition + g.crlf + 
+                    "  Condition:         " + c.Condition + g.crlf +
                     "  Verb:              " + c.Verb.ToString() + g.crlf +
                     "  ParmString:        " + c.ParmString + g.crlf +
                     "  DataName:          " + c.DataName + g.crlf +
@@ -3224,7 +3291,7 @@ namespace Org.Dx.Business.TextProcessing
                     "  UsePriorEnd:       " + c.UsePriorEnd.ToString() + g.crlf +
                     "  SpecialRoutine:    " + c.SpecialRoutine + g.crlf +
                     g.crlf2
-                    );
+                   );
         }
         catch (Exception ex)
         {
@@ -3236,7 +3303,7 @@ namespace Org.Dx.Business.TextProcessing
       }
       catch (Exception ex)
       {
-        return "Exception occurred during exception reporting: " + g.crlf + ex.ToReport() + g.crlf2; 
+        return "Exception occurred during exception reporting: " + g.crlf + ex.ToReport() + g.crlf2;
       }
     }
 
@@ -3255,13 +3322,13 @@ namespace Org.Dx.Business.TextProcessing
       else
         sb.Append("RAW TEXT:" + g.crlf + cdx.RawText);
 
-      sb.Append(g.crlf2); 
+      sb.Append(g.crlf2);
 
       string report = sb.ToString();
       return report;
     }
 
-    
+
 
   }
 

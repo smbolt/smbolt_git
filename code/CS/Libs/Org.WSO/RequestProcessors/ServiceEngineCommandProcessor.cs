@@ -109,15 +109,15 @@ namespace Org.WSO
     {
       if (commandStatus != TransactionStatus.Success)
         _summaryStatus = TransactionStatus.Failed;
-    }    
+    }
 
     private TaskResult FlushAppDomains()
     {
       if (this.ServiceBase == null)
         return new TaskResult("FlushAppDomains", "The ServiceBase reference of the ServiceEngineCommandProcessor is null.",
-                               TaskResultStatus.Failed);
+                              TaskResultStatus.Failed);
 
       return this.ServiceBase.FlushAppDomains();
-    }    
+    }
   }
 }

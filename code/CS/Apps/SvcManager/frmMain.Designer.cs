@@ -67,88 +67,91 @@
       this.ctxMenuTreeView.SuspendLayout();
       this.pnlWinSvc.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile,
-            this.mnuMaintenance});
+        this.mnuFile,
+        this.mnuMaintenance
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1065, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuMaintenance
-      // 
+      //
       this.mnuMaintenance.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuMaintenanceManageTaskServices,
-            this.mnuMaintenanceSetTestServiceTypes,
-            this.mnuMaintenanceSetProdServiceTypes,
-            this.mnuMaintenanceRefreshTreeView,
-            this.mnuMaintenanceRunMigr});
+        this.mnuMaintenanceManageTaskServices,
+        this.mnuMaintenanceSetTestServiceTypes,
+        this.mnuMaintenanceSetProdServiceTypes,
+        this.mnuMaintenanceRefreshTreeView,
+        this.mnuMaintenanceRunMigr
+      });
       this.mnuMaintenance.Name = "mnuMaintenance";
       this.mnuMaintenance.Size = new System.Drawing.Size(88, 20);
       this.mnuMaintenance.Text = "&Maintenance";
-      // 
+      //
       // mnuMaintenanceManageTaskServices
-      // 
+      //
       this.mnuMaintenanceManageTaskServices.Name = "mnuMaintenanceManageTaskServices";
       this.mnuMaintenanceManageTaskServices.Size = new System.Drawing.Size(191, 22);
       this.mnuMaintenanceManageTaskServices.Tag = "ManageTaskServices";
       this.mnuMaintenanceManageTaskServices.Text = "Manage Task &Services";
       this.mnuMaintenanceManageTaskServices.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuMaintenanceSetTestServiceTypes
-      // 
+      //
       this.mnuMaintenanceSetTestServiceTypes.Name = "mnuMaintenanceSetTestServiceTypes";
       this.mnuMaintenanceSetTestServiceTypes.Size = new System.Drawing.Size(191, 22);
       this.mnuMaintenanceSetTestServiceTypes.Tag = "SetTestServiceTypes";
       this.mnuMaintenanceSetTestServiceTypes.Text = "Set Test Service Types";
       this.mnuMaintenanceSetTestServiceTypes.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuMaintenanceSetProdServiceTypes
-      // 
+      //
       this.mnuMaintenanceSetProdServiceTypes.Name = "mnuMaintenanceSetProdServiceTypes";
       this.mnuMaintenanceSetProdServiceTypes.Size = new System.Drawing.Size(191, 22);
       this.mnuMaintenanceSetProdServiceTypes.Tag = "SetProdServiceTypes";
       this.mnuMaintenanceSetProdServiceTypes.Text = "Set Prod Service Types";
       this.mnuMaintenanceSetProdServiceTypes.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuMaintenanceRefreshTreeView
-      // 
+      //
       this.mnuMaintenanceRefreshTreeView.Name = "mnuMaintenanceRefreshTreeView";
       this.mnuMaintenanceRefreshTreeView.Size = new System.Drawing.Size(191, 22);
       this.mnuMaintenanceRefreshTreeView.Tag = "RefreshTreeView";
       this.mnuMaintenanceRefreshTreeView.Text = "Refresh TreeView";
       this.mnuMaintenanceRefreshTreeView.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuMaintenanceRunMigr
-      // 
+      //
       this.mnuMaintenanceRunMigr.Name = "mnuMaintenanceRunMigr";
       this.mnuMaintenanceRunMigr.Size = new System.Drawing.Size(191, 22);
       this.mnuMaintenanceRunMigr.Tag = "RunMigr";
       this.mnuMaintenanceRunMigr.Text = "Run migr";
       this.mnuMaintenanceRunMigr.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 656);
       this.lblStatus.Name = "lblStatus";
@@ -157,18 +160,18 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnXml);
       this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlTop.Location = new System.Drawing.Point(0, 24);
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1065, 42);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // pnlMain
-      // 
+      //
       this.pnlMain.Controls.Add(this.splitMain);
       this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlMain.Location = new System.Drawing.Point(0, 66);
@@ -176,32 +179,32 @@
       this.pnlMain.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.pnlMain.Size = new System.Drawing.Size(1065, 590);
       this.pnlMain.TabIndex = 3;
-      // 
+      //
       // splitMain
-      // 
+      //
       this.splitMain.BackColor = System.Drawing.Color.White;
       this.splitMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitMain.Location = new System.Drawing.Point(4, 0);
       this.splitMain.Name = "splitMain";
-      // 
+      //
       // splitMain.Panel1
-      // 
+      //
       this.splitMain.Panel1.Controls.Add(this.tvMain);
       this.splitMain.Panel1.Controls.Add(this.pnlTvBottom);
       this.splitMain.Panel1.Controls.Add(this.pnlTvTop);
-      // 
+      //
       // splitMain.Panel2
-      // 
+      //
       this.splitMain.Panel2.Controls.Add(this.pnlWinSvc);
       this.splitMain.Panel2.Padding = new System.Windows.Forms.Padding(4);
       this.splitMain.Size = new System.Drawing.Size(1057, 590);
       this.splitMain.SplitterDistance = 257;
       this.splitMain.SplitterWidth = 3;
       this.splitMain.TabIndex = 0;
-      // 
+      //
       // tvMain
-      // 
+      //
       this.tvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvMain.ContextMenuStrip = this.ctxMenuTreeView;
       this.tvMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -213,92 +216,93 @@
       this.tvMain.Size = new System.Drawing.Size(255, 512);
       this.tvMain.TabIndex = 3;
       this.tvMain.Click += new System.EventHandler(this.tvMain_Click);
-      // 
+      //
       // ctxMenuTreeView
-      // 
+      //
       this.ctxMenuTreeView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMnuTreeViewManageTaskAssignments,
-            this.ctxMnuTreeViewManageHosts,
-            this.ctxMnuTreeViewAddWindowsService,
-            this.ctxMnuTreeViewAddWCFWebService,
-            this.ctxMnuTreeViewDeleteWCFWebService,
-            this.ctxMnuTreeViewAddWebSite});
+        this.ctxMnuTreeViewManageTaskAssignments,
+        this.ctxMnuTreeViewManageHosts,
+        this.ctxMnuTreeViewAddWindowsService,
+        this.ctxMnuTreeViewAddWCFWebService,
+        this.ctxMnuTreeViewDeleteWCFWebService,
+        this.ctxMnuTreeViewAddWebSite
+      });
       this.ctxMenuTreeView.Name = "ctxMenuTreeView";
       this.ctxMenuTreeView.Size = new System.Drawing.Size(215, 136);
       this.ctxMenuTreeView.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenuTreeView_Opening);
-      // 
+      //
       // ctxMnuTreeViewManageTaskAssignments
-      // 
+      //
       this.ctxMnuTreeViewManageTaskAssignments.Name = "ctxMnuTreeViewManageTaskAssignments";
       this.ctxMnuTreeViewManageTaskAssignments.Size = new System.Drawing.Size(214, 22);
       this.ctxMnuTreeViewManageTaskAssignments.Tag = "ManageTaskAssignments";
       this.ctxMnuTreeViewManageTaskAssignments.Text = "Manage Task &Assignments";
       this.ctxMnuTreeViewManageTaskAssignments.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMnuTreeViewManageHosts
-      // 
+      //
       this.ctxMnuTreeViewManageHosts.Name = "ctxMnuTreeViewManageHosts";
       this.ctxMnuTreeViewManageHosts.Size = new System.Drawing.Size(214, 22);
       this.ctxMnuTreeViewManageHosts.Tag = "ManageHosts";
       this.ctxMnuTreeViewManageHosts.Text = "Manage &Hosts";
       this.ctxMnuTreeViewManageHosts.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMnuTreeViewAddWindowsService
-      // 
+      //
       this.ctxMnuTreeViewAddWindowsService.Name = "ctxMnuTreeViewAddWindowsService";
       this.ctxMnuTreeViewAddWindowsService.Size = new System.Drawing.Size(214, 22);
       this.ctxMnuTreeViewAddWindowsService.Tag = "AddWindowsService";
       this.ctxMnuTreeViewAddWindowsService.Text = "Add Windows Service";
       this.ctxMnuTreeViewAddWindowsService.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMnuTreeViewAddWCFWebService
-      // 
+      //
       this.ctxMnuTreeViewAddWCFWebService.Name = "ctxMnuTreeViewAddWCFWebService";
       this.ctxMnuTreeViewAddWCFWebService.Size = new System.Drawing.Size(214, 22);
       this.ctxMnuTreeViewAddWCFWebService.Tag = "AddWCFWebService";
       this.ctxMnuTreeViewAddWCFWebService.Text = "Add WCF Web Service";
       this.ctxMnuTreeViewAddWCFWebService.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMnuTreeViewDeleteWCFWebService
-      // 
+      //
       this.ctxMnuTreeViewDeleteWCFWebService.Name = "ctxMnuTreeViewDeleteWCFWebService";
       this.ctxMnuTreeViewDeleteWCFWebService.Size = new System.Drawing.Size(214, 22);
       this.ctxMnuTreeViewDeleteWCFWebService.Tag = "DeleteWCFWebService";
       this.ctxMnuTreeViewDeleteWCFWebService.Text = "Delete WCF Web Service";
       this.ctxMnuTreeViewDeleteWCFWebService.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMnuTreeViewAddWebSite
-      // 
+      //
       this.ctxMnuTreeViewAddWebSite.Name = "ctxMnuTreeViewAddWebSite";
       this.ctxMnuTreeViewAddWebSite.Size = new System.Drawing.Size(214, 22);
       this.ctxMnuTreeViewAddWebSite.Tag = "AddWebSite";
       this.ctxMnuTreeViewAddWebSite.Text = "Add Web Site";
       this.ctxMnuTreeViewAddWebSite.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // imgListTreeView
-      // 
+      //
       this.imgListTreeView.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
       this.imgListTreeView.ImageSize = new System.Drawing.Size(16, 16);
       this.imgListTreeView.TransparentColor = System.Drawing.Color.Transparent;
-      // 
+      //
       // pnlTvBottom
-      // 
+      //
       this.pnlTvBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.pnlTvBottom.Location = new System.Drawing.Point(0, 550);
       this.pnlTvBottom.Name = "pnlTvBottom";
       this.pnlTvBottom.Size = new System.Drawing.Size(255, 38);
       this.pnlTvBottom.TabIndex = 2;
-      // 
+      //
       // pnlTvTop
-      // 
+      //
       this.pnlTvTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlTvTop.Location = new System.Drawing.Point(0, 0);
       this.pnlTvTop.Name = "pnlTvTop";
       this.pnlTvTop.Size = new System.Drawing.Size(255, 38);
       this.pnlTvTop.TabIndex = 1;
-      // 
+      //
       // pnlWinSvc
-      // 
+      //
       this.pnlWinSvc.BackColor = System.Drawing.SystemColors.Control;
       this.pnlWinSvc.Controls.Add(this.txtOut);
       this.pnlWinSvc.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -306,9 +310,9 @@
       this.pnlWinSvc.Name = "pnlWinSvc";
       this.pnlWinSvc.Size = new System.Drawing.Size(787, 580);
       this.pnlWinSvc.TabIndex = 0;
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Top;
       this.txtOut.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtOut.Location = new System.Drawing.Point(0, 0);
@@ -317,9 +321,9 @@
       this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtOut.Size = new System.Drawing.Size(787, 549);
       this.txtOut.TabIndex = 0;
-      // 
+      //
       // btnXml
-      // 
+      //
       this.btnXml.Location = new System.Drawing.Point(507, 9);
       this.btnXml.Name = "btnXml";
       this.btnXml.Size = new System.Drawing.Size(75, 23);
@@ -328,9 +332,9 @@
       this.btnXml.Text = "Xml";
       this.btnXml.UseVisualStyleBackColor = true;
       this.btnXml.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1065, 679);

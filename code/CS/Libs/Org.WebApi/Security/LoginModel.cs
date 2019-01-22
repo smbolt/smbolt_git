@@ -8,10 +8,22 @@ namespace Org.WebApi.Security
 {
   public class LoginModel
   {
-    public int ID { get; set; }
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public string Stamp { get; set; }
+    public int ID {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public string Password {
+      get;
+      set;
+    }
+    public string Stamp {
+      get;
+      set;
+    }
 
     public LoginModel()
     {

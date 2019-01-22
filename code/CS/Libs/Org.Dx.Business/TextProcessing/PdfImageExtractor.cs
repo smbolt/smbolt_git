@@ -30,7 +30,7 @@ namespace Org.Dx.Business.TextProcessing
                             " of PDF file '" + filename + "'.", ex);
       }
     }
-    
+
     public static Dictionary<string, System.Drawing.Image> ExtractImages(PdfReader reader)
     {
       int pageNumber = 0;
@@ -50,7 +50,7 @@ namespace Org.Dx.Business.TextProcessing
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to retrieve images from page " + pageNumber.ToString() + 
+        throw new Exception("An exception occurred while attempting to retrieve images from page " + pageNumber.ToString() +
                             " of  the PDF file '.", ex);
       }
     }

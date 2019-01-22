@@ -56,7 +56,7 @@ namespace Org.GS.Configuration
           return new ConfigNotifySpec(namingPrefix);
 
         case "ConfigFtpSpec":
-          return new ConfigFtpSpec(namingPrefix); 
+          return new ConfigFtpSpec(namingPrefix);
       }
 
       throw new Exception("ConfigObjectFactory cannot create an object of type '" + objectType.Name + "'.");

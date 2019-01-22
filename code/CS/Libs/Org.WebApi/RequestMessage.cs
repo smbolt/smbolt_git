@@ -12,8 +12,16 @@ namespace Org.WebApi
     private HttpRequestMessage _httpRequestMessage;
     private Dictionary<string, string> _items;
 
-    public string ClientIpAddress { get { return Get_ClientIpAddress(); } }
-    public string AuthorizationToken { get { return Get_AuthorizationToken(); } }
+    public string ClientIpAddress {
+      get {
+        return Get_ClientIpAddress();
+      }
+    }
+    public string AuthorizationToken {
+      get {
+        return Get_AuthorizationToken();
+      }
+    }
 
     public RequestMessage(HttpRequestMessage httpRequestMessage)
     {

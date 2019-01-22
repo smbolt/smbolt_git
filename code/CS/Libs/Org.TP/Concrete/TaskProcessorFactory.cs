@@ -18,8 +18,8 @@ namespace Org.TP.TaskProcessors
   [ExportMetadata("Version", "1.0.0.0")]
   [ExportMetadata("Processors",
                   "Dummy_1.0.0.0 " +
-                  "Diagnostics_1.0.0.0 " 
-                  )]
+                  "Diagnostics_1.0.0.0 "
+                 )]
   public class TaskProcessorFactory : ITaskProcessorFactory, IDisposable
   {
     public TaskProcessorFactory()

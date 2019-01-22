@@ -8,9 +8,19 @@ namespace Org.GS
 {
   public class ProcessTimer
   {
-    public DateTime? StartDateTime { get; private set; }
-    public DateTime? EndDateTime { get; private set; }
-    public decimal? Seconds { get { return Get_Seconds(); } }
+    public DateTime? StartDateTime {
+      get;
+      private set;
+    }
+    public DateTime? EndDateTime {
+      get;
+      private set;
+    }
+    public decimal? Seconds {
+      get {
+        return Get_Seconds();
+      }
+    }
 
     public ProcessTimer()
     {
@@ -32,7 +42,7 @@ namespace Org.GS
       if (!this.StartDateTime.HasValue)
         return null;
 
-      return Convert.ToDecimal((DateTime.Now - this.StartDateTime.Value).TotalMilliseconds / 1000); 
+      return Convert.ToDecimal((DateTime.Now - this.StartDateTime.Value).TotalMilliseconds / 1000);
     }
 
     private decimal? Get_Seconds()
@@ -40,7 +50,7 @@ namespace Org.GS
       if (!this.StartDateTime.HasValue || !this.EndDateTime.HasValue)
         return (decimal?) null;
 
-      return Convert.ToDecimal((this.EndDateTime.Value - this.StartDateTime.Value).TotalMilliseconds / 1000); 
+      return Convert.ToDecimal((this.EndDateTime.Value - this.StartDateTime.Value).TotalMilliseconds / 1000);
     }
   }
 }

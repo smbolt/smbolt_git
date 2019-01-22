@@ -11,24 +11,45 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "TaskScheduleExecutionType")]
-    public partial class TaskScheduleExecutionType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "TaskScheduleExecutionType")]
+  public partial class TaskScheduleExecutionType
+  {
+    public TaskScheduleExecutionType()
     {
-        public TaskScheduleExecutionType()
-        {
-            this.TaskScheduleElements = new HashSet<TaskScheduleElement>();
-        }
-    
-        public int TaskScheduleExecutionTypeId { get; set; }
-        public string ExecutionType { get; set; }
-        public int CreatedBy { get; set; }
-        public System.DateTime CreatedDate { get; set; }
-        public int ModifiedBy { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
-    
-        public virtual ICollection<TaskScheduleElement> TaskScheduleElements { get; set; }
+      this.TaskScheduleElements = new HashSet<TaskScheduleElement>();
     }
+
+    public int TaskScheduleExecutionTypeId {
+      get;
+      set;
+    }
+    public string ExecutionType {
+      get;
+      set;
+    }
+    public int CreatedBy {
+      get;
+      set;
+    }
+    public System.DateTime CreatedDate {
+      get;
+      set;
+    }
+    public int ModifiedBy {
+      get;
+      set;
+    }
+    public System.DateTime ModifiedDate {
+      get;
+      set;
+    }
+
+    public virtual ICollection<TaskScheduleElement> TaskScheduleElements {
+      get;
+      set;
+    }
+  }
 }

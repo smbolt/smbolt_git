@@ -8,12 +8,30 @@ namespace Org.Diff
 {
   public class FileCompareParms
   {
-    public string LeftPath { get; set; }
-    public string RightPath { get; set; }
-    public bool IgnoreWhiteSpace { get; set; }
-    public bool IgnoreTextCase { get; set; }
-    public bool CreateFileComparisionReport { get; set; }
-    public FileCompareReportLayout FileCompareReportLayout { get; set; }
+    public string LeftPath {
+      get;
+      set;
+    }
+    public string RightPath {
+      get;
+      set;
+    }
+    public bool IgnoreWhiteSpace {
+      get;
+      set;
+    }
+    public bool IgnoreTextCase {
+      get;
+      set;
+    }
+    public bool CreateFileComparisionReport {
+      get;
+      set;
+    }
+    public FileCompareReportLayout FileCompareReportLayout {
+      get;
+      set;
+    }
 
     public FileCompareParms()
     {

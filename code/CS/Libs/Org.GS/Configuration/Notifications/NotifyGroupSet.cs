@@ -23,8 +23,8 @@ namespace Org.GS.Configuration
           {
             if (person.IsActive && person.IsEmailActive && person.EmailAddress.Trim().Length > 0)
             {
-                if (!emailAddresses.Contains(person.EmailAddress.Trim()))
-                    emailAddresses.Add(person.EmailAddress.Trim());
+              if (!emailAddresses.Contains(person.EmailAddress.Trim()))
+                emailAddresses.Add(person.EmailAddress.Trim());
             }
           }
         }
@@ -45,8 +45,8 @@ namespace Org.GS.Configuration
           {
             if (person.IsActive && person.IsSmsActive && person.SmsNumber.Trim().Length > 0)
             {
-                if (!smsNumbers.Contains(person.SmsNumber.Trim()))
-                  smsNumbers.Add(person.SmsNumber.Trim());
+              if (!smsNumbers.Contains(person.SmsNumber.Trim()))
+                smsNumbers.Add(person.SmsNumber.Trim());
             }
           }
         }

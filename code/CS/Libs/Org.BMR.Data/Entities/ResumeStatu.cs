@@ -11,20 +11,29 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "ResumeStatu")]
-    public partial class ResumeStatu
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "ResumeStatu")]
+  public partial class ResumeStatu
+  {
+    public ResumeStatu()
     {
-        public ResumeStatu()
-        {
-            this.Resumes = new HashSet<Resume>();
-        }
-    
-        public int ResumeStatusId { get; set; }
-        public string ResumeStatusDesc { get; set; }
-    
-        public virtual ICollection<Resume> Resumes { get; set; }
+      this.Resumes = new HashSet<Resume>();
     }
+
+    public int ResumeStatusId {
+      get;
+      set;
+    }
+    public string ResumeStatusDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Resume> Resumes {
+      get;
+      set;
+    }
+  }
 }

@@ -8,39 +8,57 @@ using Org.GS;
 
 namespace Org.VideoSeating.Business
 {
-	[XMap(XType=XType.Element, CollectionElements="SeatSpot", WrapperElement = "SeatSpotSet")]
-	public class SeatSpotSet : Dictionary<string, SeatSpot>
-	{
-		public Rectangle TopArea { get; set; }
-		public Rectangle RightArea { get; set; }
-		public Rectangle BottomArea { get; set; }
-		public Rectangle LeftArea { get; set; }
-		public Rectangle Aisle { get; set; }
-		public Training Training { get; set; }
+  [XMap(XType=XType.Element, CollectionElements="SeatSpot", WrapperElement = "SeatSpotSet")]
+  public class SeatSpotSet : Dictionary<string, SeatSpot>
+  {
+    public Rectangle TopArea {
+      get;
+      set;
+    }
+    public Rectangle RightArea {
+      get;
+      set;
+    }
+    public Rectangle BottomArea {
+      get;
+      set;
+    }
+    public Rectangle LeftArea {
+      get;
+      set;
+    }
+    public Rectangle Aisle {
+      get;
+      set;
+    }
+    public Training Training {
+      get;
+      set;
+    }
 
-		public bool NonSeatAreaContains(Point pt)
-		{
-			if (this.TopArea != null)
-				if (this.TopArea.Contains(pt))
-					return true;
+    public bool NonSeatAreaContains(Point pt)
+    {
+      if (this.TopArea != null)
+        if (this.TopArea.Contains(pt))
+          return true;
 
-			if (this.RightArea != null)
-				if (this.RightArea.Contains(pt))
-					return true;
+      if (this.RightArea != null)
+        if (this.RightArea.Contains(pt))
+          return true;
 
-			if (this.BottomArea != null)
-				if (this.BottomArea.Contains(pt))
-					return true;
+      if (this.BottomArea != null)
+        if (this.BottomArea.Contains(pt))
+          return true;
 
-			if (this.LeftArea != null)
-				if (this.LeftArea.Contains(pt))
-					return true;
+      if (this.LeftArea != null)
+        if (this.LeftArea.Contains(pt))
+          return true;
 
-			if (this.Aisle != null)
-				if (this.Aisle.Contains(pt))
-					return true;
+      if (this.Aisle != null)
+        if (this.Aisle.Contains(pt))
+          return true;
 
-			return false;
-		}
-	}
+      return false;
+    }
+  }
 }

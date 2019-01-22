@@ -10,22 +10,34 @@ namespace Org.GS
     private bool _isUsed;
     public bool IsUsed
     {
-      get { return _isUsed; }
-      set { _isUsed = value; }
+      get {
+        return _isUsed;
+      }
+      set {
+        _isUsed = value;
+      }
     }
 
     private DateTime _dateTime;
     public DateTime DateTime
     {
-      get { return _dateTime; }
-      set { _dateTime = value; }
+      get {
+        return _dateTime;
+      }
+      set {
+        _dateTime = value;
+      }
     }
 
     private TimeZoneInfo _timeZoneInfo;
     public TimeZoneInfo TimeZoneInfo
     {
-      get { return _timeZoneInfo; }
-      set { _timeZoneInfo = value; }
+      get {
+        return _timeZoneInfo;
+      }
+      set {
+        _timeZoneInfo = value;
+      }
     }
 
     public WsDateTime()

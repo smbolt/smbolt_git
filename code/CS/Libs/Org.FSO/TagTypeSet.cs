@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Org.FSO 
+namespace Org.FSO
 {
   public class TagTypeSet : SortedList<int, TagType>
   {

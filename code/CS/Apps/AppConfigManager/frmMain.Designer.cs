@@ -75,34 +75,36 @@
       ((System.ComponentModel.ISupportInitialize)(this.txtCompareFile)).BeginInit();
       this.gbDebug.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1304, 24);
       this.mnuMain.TabIndex = 0;
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 777);
       this.lblStatus.Name = "lblStatus";
@@ -111,9 +113,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.gbDebug);
       this.pnlTop.Controls.Add(this.btnLoadCompareFile);
       this.pnlTop.Controls.Add(this.btnLoadOriginalFile);
@@ -127,29 +129,30 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1304, 115);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // cboBreakProcess
-      // 
+      //
       this.cboBreakProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboBreakProcess.FormattingEnabled = true;
       this.cboBreakProcess.Items.AddRange(new object[] {
-            "Serialization",
-            "Deserialization",
-            "Both"});
+        "Serialization",
+        "Deserialization",
+        "Both"
+      });
       this.cboBreakProcess.Location = new System.Drawing.Point(252, 43);
       this.cboBreakProcess.Name = "cboBreakProcess";
       this.cboBreakProcess.Size = new System.Drawing.Size(96, 21);
       this.cboBreakProcess.TabIndex = 3;
-      // 
+      //
       // txtBreakOnThisElement
-      // 
+      //
       this.txtBreakOnThisElement.Location = new System.Drawing.Point(15, 44);
       this.txtBreakOnThisElement.Name = "txtBreakOnThisElement";
       this.txtBreakOnThisElement.Size = new System.Drawing.Size(231, 20);
       this.txtBreakOnThisElement.TabIndex = 1;
-      // 
+      //
       // ckStopAtMemoryLogCount
-      // 
+      //
       this.ckStopAtMemoryLogCount.AutoSize = true;
       this.ckStopAtMemoryLogCount.Location = new System.Drawing.Point(15, 72);
       this.ckStopAtMemoryLogCount.Name = "ckStopAtMemoryLogCount";
@@ -158,17 +161,17 @@
       this.ckStopAtMemoryLogCount.Text = "Stop at Memory Log Count";
       this.ckStopAtMemoryLogCount.UseVisualStyleBackColor = true;
       this.ckStopAtMemoryLogCount.CheckedChanged += new System.EventHandler(this.ckStopAtMemoryLogCount_CheckedChanged);
-      // 
+      //
       // txtMemoryLogCount
-      // 
+      //
       this.txtMemoryLogCount.Location = new System.Drawing.Point(173, 70);
       this.txtMemoryLogCount.Name = "txtMemoryLogCount";
       this.txtMemoryLogCount.Size = new System.Drawing.Size(73, 20);
       this.txtMemoryLogCount.TabIndex = 1;
       this.txtMemoryLogCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      // 
+      //
       // btnLoadOriginalFile
-      // 
+      //
       this.btnLoadOriginalFile.Location = new System.Drawing.Point(12, 9);
       this.btnLoadOriginalFile.Name = "btnLoadOriginalFile";
       this.btnLoadOriginalFile.Size = new System.Drawing.Size(156, 23);
@@ -177,9 +180,9 @@
       this.btnLoadOriginalFile.Text = "Load Original File";
       this.btnLoadOriginalFile.UseVisualStyleBackColor = true;
       this.btnLoadOriginalFile.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnTestLoad
-      // 
+      //
       this.btnTestLoad.Location = new System.Drawing.Point(12, 73);
       this.btnTestLoad.Name = "btnTestLoad";
       this.btnTestLoad.Size = new System.Drawing.Size(156, 23);
@@ -188,9 +191,9 @@
       this.btnTestLoad.Text = "Load Orig as AppConfig";
       this.btnTestLoad.UseVisualStyleBackColor = true;
       this.btnTestLoad.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSaveConfig
-      // 
+      //
       this.btnSaveConfig.Location = new System.Drawing.Point(174, 9);
       this.btnSaveConfig.Name = "btnSaveConfig";
       this.btnSaveConfig.Size = new System.Drawing.Size(156, 23);
@@ -199,9 +202,9 @@
       this.btnSaveConfig.Text = "Save Original File";
       this.btnSaveConfig.UseVisualStyleBackColor = true;
       this.btnSaveConfig.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSimpleCompare
-      // 
+      //
       this.btnSimpleCompare.Location = new System.Drawing.Point(336, 9);
       this.btnSimpleCompare.Name = "btnSimpleCompare";
       this.btnSimpleCompare.Size = new System.Drawing.Size(156, 23);
@@ -210,24 +213,24 @@
       this.btnSimpleCompare.Text = "Simple Compare";
       this.btnSimpleCompare.UseVisualStyleBackColor = true;
       this.btnSimpleCompare.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // splitContainer1
-      // 
+      //
       this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitContainer1.Location = new System.Drawing.Point(0, 139);
       this.splitContainer1.Name = "splitContainer1";
       this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
       this.splitContainer1.Panel1Collapsed = true;
-      // 
+      //
       // splitContainer1.Panel2
-      // 
+      //
       this.splitContainer1.Panel2.Controls.Add(this.tabMain);
       this.splitContainer1.Size = new System.Drawing.Size(1304, 638);
       this.splitContainer1.SplitterDistance = 58;
       this.splitContainer1.TabIndex = 3;
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageOriginalFile);
       this.tabMain.Controls.Add(this.tabPageCompareFile);
       this.tabMain.Controls.Add(this.tabPageCompareReport);
@@ -240,9 +243,9 @@
       this.tabMain.Size = new System.Drawing.Size(1304, 638);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 0;
-      // 
+      //
       // tabPageCompareReport
-      // 
+      //
       this.tabPageCompareReport.Controls.Add(this.browserCompare);
       this.tabPageCompareReport.Location = new System.Drawing.Point(4, 22);
       this.tabPageCompareReport.Name = "tabPageCompareReport";
@@ -251,9 +254,9 @@
       this.tabPageCompareReport.TabIndex = 0;
       this.tabPageCompareReport.Text = "Comparison Report";
       this.tabPageCompareReport.UseVisualStyleBackColor = true;
-      // 
+      //
       // browserCompare
-      // 
+      //
       this.browserCompare.Dock = System.Windows.Forms.DockStyle.Fill;
       this.browserCompare.Location = new System.Drawing.Point(3, 3);
       this.browserCompare.Margin = new System.Windows.Forms.Padding(2);
@@ -261,9 +264,9 @@
       this.browserCompare.Name = "browserCompare";
       this.browserCompare.Size = new System.Drawing.Size(1290, 649);
       this.browserCompare.TabIndex = 1;
-      // 
+      //
       // tabPageOriginalFile
-      // 
+      //
       this.tabPageOriginalFile.Controls.Add(this.txtOriginalFile);
       this.tabPageOriginalFile.Location = new System.Drawing.Point(4, 22);
       this.tabPageOriginalFile.Name = "tabPageOriginalFile";
@@ -271,9 +274,9 @@
       this.tabPageOriginalFile.TabIndex = 1;
       this.tabPageOriginalFile.Text = "Original File";
       this.tabPageOriginalFile.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtOriginalFile
-      // 
+      //
       this.txtOriginalFile.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -284,7 +287,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtOriginalFile.AutoIndentCharsPatterns = "";
       this.txtOriginalFile.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtOriginalFile.BackBrush = null;
@@ -310,9 +314,9 @@
       this.txtOriginalFile.TabIndex = 4;
       this.txtOriginalFile.TabLength = 2;
       this.txtOriginalFile.Zoom = 100;
-      // 
+      //
       // tabPageOutput
-      // 
+      //
       this.tabPageOutput.Controls.Add(this.txtOutput);
       this.tabPageOutput.Location = new System.Drawing.Point(4, 22);
       this.tabPageOutput.Name = "tabPageOutput";
@@ -320,9 +324,9 @@
       this.tabPageOutput.TabIndex = 2;
       this.tabPageOutput.Text = "Output";
       this.tabPageOutput.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtOutput
-      // 
+      //
       this.txtOutput.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -333,7 +337,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtOutput.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtOutput.BackBrush = null;
       this.txtOutput.CharHeight = 13;
@@ -351,9 +356,9 @@
       this.txtOutput.Size = new System.Drawing.Size(1296, 612);
       this.txtOutput.TabIndex = 3;
       this.txtOutput.Zoom = 100;
-      // 
+      //
       // tabPageCompareFile
-      // 
+      //
       this.tabPageCompareFile.Controls.Add(this.txtCompareFile);
       this.tabPageCompareFile.Location = new System.Drawing.Point(4, 22);
       this.tabPageCompareFile.Name = "tabPageCompareFile";
@@ -361,9 +366,9 @@
       this.tabPageCompareFile.TabIndex = 3;
       this.tabPageCompareFile.Text = "Compare File";
       this.tabPageCompareFile.UseVisualStyleBackColor = true;
-      // 
+      //
       // btnSaveCompare
-      // 
+      //
       this.btnSaveCompare.Location = new System.Drawing.Point(174, 36);
       this.btnSaveCompare.Name = "btnSaveCompare";
       this.btnSaveCompare.Size = new System.Drawing.Size(156, 23);
@@ -372,9 +377,9 @@
       this.btnSaveCompare.Text = "Save Compare File";
       this.btnSaveCompare.UseVisualStyleBackColor = true;
       this.btnSaveCompare.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtCompareFile
-      // 
+      //
       this.txtCompareFile.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -385,7 +390,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtCompareFile.AutoIndentCharsPatterns = "";
       this.txtCompareFile.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtCompareFile.BackBrush = null;
@@ -411,9 +417,9 @@
       this.txtCompareFile.TabIndex = 5;
       this.txtCompareFile.TabLength = 2;
       this.txtCompareFile.Zoom = 100;
-      // 
+      //
       // btnSerializeAndCompare
-      // 
+      //
       this.btnSerializeAndCompare.Location = new System.Drawing.Point(336, 36);
       this.btnSerializeAndCompare.Name = "btnSerializeAndCompare";
       this.btnSerializeAndCompare.Size = new System.Drawing.Size(156, 23);
@@ -422,9 +428,9 @@
       this.btnSerializeAndCompare.Text = "Serialize and Compare";
       this.btnSerializeAndCompare.UseVisualStyleBackColor = true;
       this.btnSerializeAndCompare.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnLoadCompareFile
-      // 
+      //
       this.btnLoadCompareFile.Location = new System.Drawing.Point(12, 36);
       this.btnLoadCompareFile.Name = "btnLoadCompareFile";
       this.btnLoadCompareFile.Size = new System.Drawing.Size(156, 23);
@@ -433,9 +439,9 @@
       this.btnLoadCompareFile.Text = "Load Compare File";
       this.btnLoadCompareFile.UseVisualStyleBackColor = true;
       this.btnLoadCompareFile.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnDebugSerialization
-      // 
+      //
       this.btnDebugSerialization.Location = new System.Drawing.Point(380, 35);
       this.btnDebugSerialization.Name = "btnDebugSerialization";
       this.btnDebugSerialization.Size = new System.Drawing.Size(130, 36);
@@ -444,9 +450,9 @@
       this.btnDebugSerialization.Text = "Debug Serialization";
       this.btnDebugSerialization.UseVisualStyleBackColor = true;
       this.btnDebugSerialization.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // gbDebug
-      // 
+      //
       this.gbDebug.Controls.Add(this.lblDebugChoice);
       this.gbDebug.Controls.Add(this.lblStopAtNode);
       this.gbDebug.Controls.Add(this.ckStopAtMemoryLogCount);
@@ -460,27 +466,27 @@
       this.gbDebug.TabIndex = 4;
       this.gbDebug.TabStop = false;
       this.gbDebug.Text = "ObjectFactory Serialization and Deserialization Debugging";
-      // 
+      //
       // lblStopAtNode
-      // 
+      //
       this.lblStopAtNode.AutoSize = true;
       this.lblStopAtNode.Location = new System.Drawing.Point(12, 28);
       this.lblStopAtNode.Name = "lblStopAtNode";
       this.lblStopAtNode.Size = new System.Drawing.Size(171, 13);
       this.lblStopAtNode.TabIndex = 4;
       this.lblStopAtNode.Text = "Element Name or Element.Attribute";
-      // 
+      //
       // lblDebugChoice
-      // 
+      //
       this.lblDebugChoice.AutoSize = true;
       this.lblDebugChoice.Location = new System.Drawing.Point(249, 28);
       this.lblDebugChoice.Name = "lblDebugChoice";
       this.lblDebugChoice.Size = new System.Drawing.Size(113, 13);
       this.lblDebugChoice.TabIndex = 4;
       this.lblDebugChoice.Text = "Select Debug Process";
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1304, 800);

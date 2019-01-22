@@ -49,7 +49,7 @@ namespace Org.PdfExplorer
           break;
 
         case "FilterObjects":
-          LoadTreeView(_doc); 
+          LoadTreeView(_doc);
           break;
 
         case "Exit":
@@ -217,15 +217,15 @@ namespace Org.PdfExplorer
     private void frmMain_ResizeEnd(object sender, EventArgs e)
     {
       tabMain.Location = new Point(-8, -8);
-      tabMain.Size = new Size(splitterMain.Panel2.ClientRectangle.Width + 12, 
-                              splitterMain.Panel2.ClientRectangle.Height + 12); 
+      tabMain.Size = new Size(splitterMain.Panel2.ClientRectangle.Width + 12,
+                              splitterMain.Panel2.ClientRectangle.Height + 12);
     }
 
     private void ResizeAdjustments()
     {
       tabMain.Location = new Point(-8, -8);
       tabMain.Size = new Size(splitterMain.Panel2.ClientRectangle.Width + 12,
-                              splitterMain.Panel2.ClientRectangle.Height + 12); 
+                              splitterMain.Panel2.ClientRectangle.Height + 12);
     }
 
     private void frmMain_Shown(object sender, EventArgs e)
@@ -235,7 +235,7 @@ namespace Org.PdfExplorer
 
       ResizeAdjustments();
 
-      _firstShowing = false; 
+      _firstShowing = false;
     }
 
     private void tvMain_AfterSelect(object sender, TreeViewEventArgs e)
@@ -251,7 +251,7 @@ namespace Org.PdfExplorer
       {
         txtPdfStructure.Text = "PDF Document";
         return;
-      }      
+      }
 
       var pdfObject = treeNode.Tag as PObject;
 

@@ -31,7 +31,7 @@ namespace Org.Ops.Tasks
     private string _entitiesToExclude = String.Empty;
 
     private int _retentionDaysOverdueTaskNotify = 90;
-    
+
     public override async Task<TaskResult> ProcessTaskAsync(Func<bool> checkContinue)
     {
       TaskResult taskResult = base.InitializeTaskResult();
@@ -50,7 +50,7 @@ namespace Org.Ops.Tasks
             taskResult.NoWorkDone = true;
 
           return taskResult.Success(_taskMessage);
-        });     
+        });
 
         return taskResult;
       }
@@ -105,7 +105,7 @@ namespace Org.Ops.Tasks
         using (var repo = new LoggingRepository(loggingDbSpec))
         {
           int deletedRows = repo.DeleteOldLogRecords(_retentionDaysAUDT, _retentionDaysDIAG, _retentionDaysINFO, _retentionDaysMAJR, _retentionDaysMINR, _retentionDaysSEVR, _retentionDaysTRAC,
-                                   _retentionDaysWARN, _modulesToExclude, _eventsToExclude, _entitiesToExclude, IsDryRun);
+                            _retentionDaysWARN, _modulesToExclude, _eventsToExclude, _entitiesToExclude, IsDryRun);
           _taskMessage = deletedRows + " log records were deleted.";
         }
       }

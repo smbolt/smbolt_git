@@ -11,7 +11,11 @@ namespace Org.GS.Database
   public class RequestProcessorBase : IDisposable
   {
     private SqlConnection _conn;
-    public SqlConnection Connection { get { return Get_Connection(); } }
+    public SqlConnection Connection {
+      get {
+        return Get_Connection();
+      }
+    }
     private ConfigDbSpec _configDbSpec;
 
     public RequestProcessorBase(ConfigDbSpec configDbSpec)

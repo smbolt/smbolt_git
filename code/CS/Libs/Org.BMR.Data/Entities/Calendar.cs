@@ -11,16 +11,31 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Calendar")]
-    public partial class Calendar
-    {
-        public int CalendarId { get; set; }
-        public int CalendarYear { get; set; }
-        public System.DateTime CalendarDate { get; set; }
-        public int DateTypeID { get; set; }
-        public string DateType { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Calendar")]
+  public partial class Calendar
+  {
+    public int CalendarId {
+      get;
+      set;
     }
+    public int CalendarYear {
+      get;
+      set;
+    }
+    public System.DateTime CalendarDate {
+      get;
+      set;
+    }
+    public int DateTypeID {
+      get;
+      set;
+    }
+    public string DateType {
+      get;
+      set;
+    }
+  }
 }

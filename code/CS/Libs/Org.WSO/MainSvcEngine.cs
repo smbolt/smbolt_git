@@ -17,7 +17,7 @@ namespace Org.WSO
     {
       _serviceBase = serviceBase;
     }
-    
+
     public override XElement ProcessTransaction(WsMessage message)
     {
       try
@@ -35,8 +35,8 @@ namespace Org.WSO
           case ComponentLoadMode.CentralCatalog:
             var catalogEntry = _serviceBase.GetCatalogEntry(TransactionHeader.TransactionName);
             string catalogName = _serviceBase.CatalogName;
-            requestProcessorFactory = _serviceBase.GetRequestProcessorFactoryFromAppDomain(catalogEntry.AssemblyName, 
-                                                   TransactionHeader.ProcessorNameAndVersion, catalogName, "STD", catalogEntry.ObjectTypeName);
+            requestProcessorFactory = _serviceBase.GetRequestProcessorFactoryFromAppDomain(catalogEntry.AssemblyName,
+                                      TransactionHeader.ProcessorNameAndVersion, catalogName, "STD", catalogEntry.ObjectTypeName);
             break;
 
           case ComponentLoadMode.NotSet:
@@ -44,15 +44,15 @@ namespace Org.WSO
         }
 
         if (requestProcessorFactory == null)
-          throw new Exception("RequestProcessorFactory for transaction '" + TransactionHeader.ProcessorNameAndVersion + "' not found."); 
+          throw new Exception("RequestProcessorFactory for transaction '" + TransactionHeader.ProcessorNameAndVersion + "' not found.");
 
         using (var requestProcessor = requestProcessorFactory.CreateRequestProcessor(TransactionHeader.ProcessorNameAndVersion))
         {
           if (requestProcessor == null)
-            throw new Exception("RequestProcessor not created by RequestProcessorFactory (" + requestProcessorFactory.Name + ") " + 
-                                "for transaction '" + TransactionHeader.TransactionName + "' version '" + TransactionHeader.TransactionVersion + "'."); 
+            throw new Exception("RequestProcessor not created by RequestProcessorFactory (" + requestProcessorFactory.Name + ") " +
+                                "for transaction '" + TransactionHeader.TransactionName + "' version '" + TransactionHeader.TransactionVersion + "'.");
 
-          requestProcessor.SetBaseAndEngine(_serviceBase, this); 
+          requestProcessor.SetBaseAndEngine(_serviceBase, this);
           var transactionResult = requestProcessor.ProcessRequest();
           return transactionResult;
         }
@@ -60,7 +60,7 @@ namespace Org.WSO
       catch(Exception ex)
       {
         string messageXml = Message != null ? Message.GetXml().ToString() : "Message is null";
-        throw new Exception("An exception occurred during the ProcessTransaction method." + messageXml, ex); 
+        throw new Exception("An exception occurred during the ProcessTransaction method." + messageXml, ex);
       }
     }
 

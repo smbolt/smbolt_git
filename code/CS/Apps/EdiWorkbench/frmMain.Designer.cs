@@ -1,33 +1,33 @@
 ﻿namespace Org.EdiWorkbench
 {
-    partial class frmMain
+  partial class frmMain
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
       this.mnuMain = new System.Windows.Forms.MenuStrip();
       this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,36 +78,38 @@
       this.tabPageEdiXml_B.SuspendLayout();
       this.tabPageBusXml_B.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
       this.mnuMain.Size = new System.Drawing.Size(922, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 603);
       this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -117,9 +119,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.cboBusXmlAFiles);
       this.pnlTop.Controls.Add(this.cboFocus);
       this.pnlTop.Controls.Add(this.cboFileToProcess);
@@ -138,9 +140,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(922, 58);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // cboBusXmlAFiles
-      // 
+      //
       this.cboBusXmlAFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboBusXmlAFiles.FormattingEnabled = true;
       this.cboBusXmlAFiles.Location = new System.Drawing.Point(430, 8);
@@ -150,14 +152,15 @@
       this.cboBusXmlAFiles.TabIndex = 1;
       this.cboBusXmlAFiles.Tag = "BusXmlCboChange";
       this.cboBusXmlAFiles.SelectedIndexChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // cboFocus
-      // 
+      //
       this.cboFocus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboFocus.FormattingEnabled = true;
       this.cboFocus.Items.AddRange(new object[] {
-            "EdiInput",
-            "BusXmlA"});
+        "EdiInput",
+        "BusXmlA"
+      });
       this.cboFocus.Location = new System.Drawing.Point(586, 7);
       this.cboFocus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.cboFocus.Name = "cboFocus";
@@ -165,9 +168,9 @@
       this.cboFocus.TabIndex = 1;
       this.cboFocus.Tag = "FocusChange";
       this.cboFocus.SelectedIndexChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // cboFileToProcess
-      // 
+      //
       this.cboFileToProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboFileToProcess.FormattingEnabled = true;
       this.cboFileToProcess.Location = new System.Drawing.Point(35, 7);
@@ -177,9 +180,9 @@
       this.cboFileToProcess.TabIndex = 1;
       this.cboFileToProcess.Tag = "EdiFileCboChange";
       this.cboFileToProcess.SelectedIndexChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // label1
-      // 
+      //
       this.label1.AutoSize = true;
       this.label1.Location = new System.Drawing.Point(550, 11);
       this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -187,9 +190,9 @@
       this.label1.Size = new System.Drawing.Size(36, 13);
       this.label1.TabIndex = 2;
       this.label1.Text = "Focus";
-      // 
+      //
       // btnReloadEdiXslt
-      // 
+      //
       this.btnReloadEdiXslt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnReloadEdiXslt.Location = new System.Drawing.Point(813, 32);
       this.btnReloadEdiXslt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -200,9 +203,9 @@
       this.btnReloadEdiXslt.Text = "Reload Edi Xslt";
       this.btnReloadEdiXslt.UseVisualStyleBackColor = true;
       this.btnReloadEdiXslt.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblFileToProcess
-      // 
+      //
       this.lblFileToProcess.AutoSize = true;
       this.lblFileToProcess.Location = new System.Drawing.Point(8, 11);
       this.lblFileToProcess.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -210,9 +213,9 @@
       this.lblFileToProcess.Size = new System.Drawing.Size(28, 13);
       this.lblFileToProcess.TabIndex = 2;
       this.lblFileToProcess.Text = "Files";
-      // 
+      //
       // btnConvertEdiToFormattedEdi
-      // 
+      //
       this.btnConvertEdiToFormattedEdi.Location = new System.Drawing.Point(134, 32);
       this.btnConvertEdiToFormattedEdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnConvertEdiToFormattedEdi.Name = "btnConvertEdiToFormattedEdi";
@@ -222,9 +225,9 @@
       this.btnConvertEdiToFormattedEdi.Text = "Format EDI";
       this.btnConvertEdiToFormattedEdi.UseVisualStyleBackColor = true;
       this.btnConvertEdiToFormattedEdi.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSaveToEdiXslt
-      // 
+      //
       this.btnSaveToEdiXslt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnSaveToEdiXslt.Location = new System.Drawing.Point(813, 7);
       this.btnSaveToEdiXslt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -235,9 +238,9 @@
       this.btnSaveToEdiXslt.Text = "Save To EDI Xslt";
       this.btnSaveToEdiXslt.UseVisualStyleBackColor = true;
       this.btnSaveToEdiXslt.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnTransformToEdiXml
-      // 
+      //
       this.btnTransformToEdiXml.Location = new System.Drawing.Point(430, 32);
       this.btnTransformToEdiXml.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnTransformToEdiXml.Name = "btnTransformToEdiXml";
@@ -247,9 +250,9 @@
       this.btnTransformToEdiXml.Text = "Xform=>EdiXmlB";
       this.btnTransformToEdiXml.UseVisualStyleBackColor = true;
       this.btnTransformToEdiXml.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnConvertEdiToOopBus
-      // 
+      //
       this.btnConvertEdiToOopBus.Location = new System.Drawing.Point(332, 32);
       this.btnConvertEdiToOopBus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnConvertEdiToOopBus.Name = "btnConvertEdiToOopBus";
@@ -259,9 +262,9 @@
       this.btnConvertEdiToOopBus.Text = "Xform=>BusXmlA";
       this.btnConvertEdiToOopBus.UseVisualStyleBackColor = true;
       this.btnConvertEdiToOopBus.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnConvertEdiToOopEdi
-      // 
+      //
       this.btnConvertEdiToOopEdi.Location = new System.Drawing.Point(232, 32);
       this.btnConvertEdiToOopEdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnConvertEdiToOopEdi.Name = "btnConvertEdiToOopEdi";
@@ -271,9 +274,9 @@
       this.btnConvertEdiToOopEdi.Text = "Parse=>EdiXmlA";
       this.btnConvertEdiToOopEdi.UseVisualStyleBackColor = true;
       this.btnConvertEdiToOopEdi.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnLoadEdi
-      // 
+      //
       this.btnLoadEdi.Location = new System.Drawing.Point(34, 32);
       this.btnLoadEdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnLoadEdi.Name = "btnLoadEdi";
@@ -283,9 +286,9 @@
       this.btnLoadEdi.Text = "Load Raw EDI";
       this.btnLoadEdi.UseVisualStyleBackColor = true;
       this.btnLoadEdi.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageRawEdi);
       this.tabMain.Controls.Add(this.tabPageFmtEdi);
       this.tabMain.Controls.Add(this.tabPageEdiXml_A);
@@ -303,9 +306,9 @@
       this.tabMain.Size = new System.Drawing.Size(922, 521);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 4;
-      // 
+      //
       // tabPageRawEdi
-      // 
+      //
       this.tabPageRawEdi.Controls.Add(this.rtxtRawEdi);
       this.tabPageRawEdi.Location = new System.Drawing.Point(4, 25);
       this.tabPageRawEdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -315,9 +318,9 @@
       this.tabPageRawEdi.TabIndex = 0;
       this.tabPageRawEdi.Text = "Raw EDI";
       this.tabPageRawEdi.UseVisualStyleBackColor = true;
-      // 
+      //
       // rtxtRawEdi
-      // 
+      //
       this.rtxtRawEdi.Dock = System.Windows.Forms.DockStyle.Fill;
       this.rtxtRawEdi.Font = new System.Drawing.Font("Lucida Console", 8F);
       this.rtxtRawEdi.Location = new System.Drawing.Point(2, 2);
@@ -328,9 +331,9 @@
       this.rtxtRawEdi.Tag = "ToEdiXmlXsltChanged";
       this.rtxtRawEdi.Text = "";
       this.rtxtRawEdi.WordWrap = false;
-      // 
+      //
       // tabPageFmtEdi
-      // 
+      //
       this.tabPageFmtEdi.Controls.Add(this.rtxtFmtEdi);
       this.tabPageFmtEdi.Location = new System.Drawing.Point(4, 25);
       this.tabPageFmtEdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -339,9 +342,9 @@
       this.tabPageFmtEdi.TabIndex = 3;
       this.tabPageFmtEdi.Text = "Fmt EDI";
       this.tabPageFmtEdi.UseVisualStyleBackColor = true;
-      // 
+      //
       // rtxtFmtEdi
-      // 
+      //
       this.rtxtFmtEdi.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.rtxtFmtEdi.Dock = System.Windows.Forms.DockStyle.Fill;
       this.rtxtFmtEdi.Font = new System.Drawing.Font("Lucida Console", 8F);
@@ -353,9 +356,9 @@
       this.rtxtFmtEdi.Tag = "ToEdiXmlXsltChanged";
       this.rtxtFmtEdi.Text = "";
       this.rtxtFmtEdi.WordWrap = false;
-      // 
+      //
       // tabPageEdiXml_A
-      // 
+      //
       this.tabPageEdiXml_A.Controls.Add(this.rtxtEdiXml_A);
       this.tabPageEdiXml_A.Location = new System.Drawing.Point(4, 25);
       this.tabPageEdiXml_A.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -365,9 +368,9 @@
       this.tabPageEdiXml_A.TabIndex = 1;
       this.tabPageEdiXml_A.Text = "EDI Xml (A)";
       this.tabPageEdiXml_A.UseVisualStyleBackColor = true;
-      // 
+      //
       // rtxtEdiXml_A
-      // 
+      //
       this.rtxtEdiXml_A.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.rtxtEdiXml_A.Dock = System.Windows.Forms.DockStyle.Fill;
       this.rtxtEdiXml_A.Font = new System.Drawing.Font("Lucida Console", 8F);
@@ -379,9 +382,9 @@
       this.rtxtEdiXml_A.Tag = "ToEdiXmlXsltChanged";
       this.rtxtEdiXml_A.Text = "";
       this.rtxtEdiXml_A.WordWrap = false;
-      // 
+      //
       // tabPageXsltToBusXml
-      // 
+      //
       this.tabPageXsltToBusXml.Controls.Add(this.rtxtToBusXslt);
       this.tabPageXsltToBusXml.Location = new System.Drawing.Point(4, 25);
       this.tabPageXsltToBusXml.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -390,9 +393,9 @@
       this.tabPageXsltToBusXml.TabIndex = 4;
       this.tabPageXsltToBusXml.Text = "Bus Xslt";
       this.tabPageXsltToBusXml.UseVisualStyleBackColor = true;
-      // 
+      //
       // rtxtToBusXslt
-      // 
+      //
       this.rtxtToBusXslt.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.rtxtToBusXslt.Dock = System.Windows.Forms.DockStyle.Fill;
       this.rtxtToBusXslt.Font = new System.Drawing.Font("Lucida Console", 8F);
@@ -404,9 +407,9 @@
       this.rtxtToBusXslt.Tag = "ToEdiXmlXsltChanged";
       this.rtxtToBusXslt.Text = "";
       this.rtxtToBusXslt.WordWrap = false;
-      // 
+      //
       // tabPageBusXml_A
-      // 
+      //
       this.tabPageBusXml_A.Controls.Add(this.rtxtBusXml_A);
       this.tabPageBusXml_A.Location = new System.Drawing.Point(4, 25);
       this.tabPageBusXml_A.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -415,9 +418,9 @@
       this.tabPageBusXml_A.TabIndex = 2;
       this.tabPageBusXml_A.Text = "Bus Xml (A)";
       this.tabPageBusXml_A.UseVisualStyleBackColor = true;
-      // 
+      //
       // rtxtBusXml_A
-      // 
+      //
       this.rtxtBusXml_A.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.rtxtBusXml_A.Dock = System.Windows.Forms.DockStyle.Fill;
       this.rtxtBusXml_A.Font = new System.Drawing.Font("Lucida Console", 8F);
@@ -429,9 +432,9 @@
       this.rtxtBusXml_A.Tag = "ToEdiXmlXsltChanged";
       this.rtxtBusXml_A.Text = "";
       this.rtxtBusXml_A.WordWrap = false;
-      // 
+      //
       // tabPageXsltToEdiXml
-      // 
+      //
       this.tabPageXsltToEdiXml.Controls.Add(this.rtxtToEdiXslt);
       this.tabPageXsltToEdiXml.Location = new System.Drawing.Point(4, 25);
       this.tabPageXsltToEdiXml.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -440,9 +443,9 @@
       this.tabPageXsltToEdiXml.TabIndex = 5;
       this.tabPageXsltToEdiXml.Text = "Edi Xslt";
       this.tabPageXsltToEdiXml.UseVisualStyleBackColor = true;
-      // 
+      //
       // rtxtToEdiXslt
-      // 
+      //
       this.rtxtToEdiXslt.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.rtxtToEdiXslt.Dock = System.Windows.Forms.DockStyle.Fill;
       this.rtxtToEdiXslt.Font = new System.Drawing.Font("Lucida Console", 8F);
@@ -455,9 +458,9 @@
       this.rtxtToEdiXslt.Text = "";
       this.rtxtToEdiXslt.WordWrap = false;
       this.rtxtToEdiXslt.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // tabPageEdiXml_B
-      // 
+      //
       this.tabPageEdiXml_B.Controls.Add(this.rtxtEdiXml_B);
       this.tabPageEdiXml_B.Location = new System.Drawing.Point(4, 25);
       this.tabPageEdiXml_B.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -466,9 +469,9 @@
       this.tabPageEdiXml_B.TabIndex = 7;
       this.tabPageEdiXml_B.Text = "EDI Xml (B)";
       this.tabPageEdiXml_B.UseVisualStyleBackColor = true;
-      // 
+      //
       // rtxtEdiXml_B
-      // 
+      //
       this.rtxtEdiXml_B.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.rtxtEdiXml_B.Dock = System.Windows.Forms.DockStyle.Fill;
       this.rtxtEdiXml_B.Font = new System.Drawing.Font("Lucida Console", 8F);
@@ -480,9 +483,9 @@
       this.rtxtEdiXml_B.Tag = "ToEdiXmlXsltChanged";
       this.rtxtEdiXml_B.Text = "";
       this.rtxtEdiXml_B.WordWrap = false;
-      // 
+      //
       // tabPageBusXml_B
-      // 
+      //
       this.tabPageBusXml_B.Controls.Add(this.rtxtBusXml_B);
       this.tabPageBusXml_B.Location = new System.Drawing.Point(4, 25);
       this.tabPageBusXml_B.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -491,9 +494,9 @@
       this.tabPageBusXml_B.TabIndex = 6;
       this.tabPageBusXml_B.Text = "Bus Xml (B)";
       this.tabPageBusXml_B.UseVisualStyleBackColor = true;
-      // 
+      //
       // rtxtBusXml_B
-      // 
+      //
       this.rtxtBusXml_B.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.rtxtBusXml_B.Dock = System.Windows.Forms.DockStyle.Fill;
       this.rtxtBusXml_B.Font = new System.Drawing.Font("Lucida Console", 8F);
@@ -505,9 +508,9 @@
       this.rtxtBusXml_B.Tag = "ToEdiXmlXsltChanged";
       this.rtxtBusXml_B.Text = "";
       this.rtxtBusXml_B.WordWrap = false;
-      // 
+      //
       // lblEdiXsltModified
-      // 
+      //
       this.lblEdiXsltModified.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.lblEdiXsltModified.BackColor = System.Drawing.Color.Transparent;
       this.lblEdiXsltModified.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -519,9 +522,9 @@
       this.lblEdiXsltModified.TabIndex = 3;
       this.lblEdiXsltModified.Text = "XSLT MODIFIED";
       this.lblEdiXsltModified.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      // 
+      //
       // lblMessage
-      // 
+      //
       this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblMessage.ForeColor = System.Drawing.Color.Red;
       this.lblMessage.Location = new System.Drawing.Point(230, 2);
@@ -531,9 +534,9 @@
       this.lblMessage.TabIndex = 3;
       this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.lblMessage.DoubleClick += new System.EventHandler(this.lblMessage_DoubleClick);
-      // 
+      //
       // ckUseDisplayForm
-      // 
+      //
       this.ckUseDisplayForm.AutoSize = true;
       this.ckUseDisplayForm.Location = new System.Drawing.Point(586, 3);
       this.ckUseDisplayForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -543,9 +546,9 @@
       this.ckUseDisplayForm.Text = "Use Display Form";
       this.ckUseDisplayForm.UseVisualStyleBackColor = true;
       this.ckUseDisplayForm.CheckedChanged += new System.EventHandler(this.ckUseDisplayForm_CheckedChanged);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(922, 622);
@@ -582,47 +585,47 @@
       this.ResumeLayout(false);
       this.PerformLayout();
 
-        }
-
-        #endregion
-
-        private System.Windows.Forms.MenuStrip mnuMain;
-        private System.Windows.Forms.ToolStripMenuItem mnuFile;
-        private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Button btnLoadEdi;
-        private System.Windows.Forms.TabControl tabMain;
-        private System.Windows.Forms.TabPage tabPageRawEdi;
-        private System.Windows.Forms.TabPage tabPageEdiXml_A;
-        private System.Windows.Forms.TabPage tabPageBusXml_A;
-        private System.Windows.Forms.Button btnConvertEdiToOopEdi;
-        private System.Windows.Forms.TabPage tabPageFmtEdi;
-        private System.Windows.Forms.Button btnConvertEdiToFormattedEdi;
-        private System.Windows.Forms.Button btnConvertEdiToOopBus;
-        private System.Windows.Forms.TabPage tabPageXsltToBusXml;
-        private System.Windows.Forms.TabPage tabPageXsltToEdiXml;
-        private System.Windows.Forms.TabPage tabPageBusXml_B;
-        private System.Windows.Forms.TabPage tabPageEdiXml_B;
-        private System.Windows.Forms.Label lblFileToProcess;
-        private System.Windows.Forms.ComboBox cboFileToProcess;
-        private System.Windows.Forms.Label lblEdiXsltModified;
-        private System.Windows.Forms.Button btnTransformToEdiXml;
-        private System.Windows.Forms.RichTextBox rtxtToEdiXslt;
-        private System.Windows.Forms.RichTextBox rtxtRawEdi;
-        private System.Windows.Forms.RichTextBox rtxtFmtEdi;
-        private System.Windows.Forms.RichTextBox rtxtEdiXml_A;
-        private System.Windows.Forms.RichTextBox rtxtToBusXslt;
-        private System.Windows.Forms.RichTextBox rtxtBusXml_A;
-        private System.Windows.Forms.RichTextBox rtxtEdiXml_B;
-        private System.Windows.Forms.RichTextBox rtxtBusXml_B;
-        private System.Windows.Forms.Button btnSaveToEdiXslt;
-        private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.Button btnReloadEdiXslt;
-        private System.Windows.Forms.CheckBox ckUseDisplayForm;
-        private System.Windows.Forms.ComboBox cboBusXmlAFiles;
-        private System.Windows.Forms.ComboBox cboFocus;
-        private System.Windows.Forms.Label label1;
     }
+
+    #endregion
+
+    private System.Windows.Forms.MenuStrip mnuMain;
+    private System.Windows.Forms.ToolStripMenuItem mnuFile;
+    private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
+    private System.Windows.Forms.Label lblStatus;
+    private System.Windows.Forms.Panel pnlTop;
+    private System.Windows.Forms.Button btnLoadEdi;
+    private System.Windows.Forms.TabControl tabMain;
+    private System.Windows.Forms.TabPage tabPageRawEdi;
+    private System.Windows.Forms.TabPage tabPageEdiXml_A;
+    private System.Windows.Forms.TabPage tabPageBusXml_A;
+    private System.Windows.Forms.Button btnConvertEdiToOopEdi;
+    private System.Windows.Forms.TabPage tabPageFmtEdi;
+    private System.Windows.Forms.Button btnConvertEdiToFormattedEdi;
+    private System.Windows.Forms.Button btnConvertEdiToOopBus;
+    private System.Windows.Forms.TabPage tabPageXsltToBusXml;
+    private System.Windows.Forms.TabPage tabPageXsltToEdiXml;
+    private System.Windows.Forms.TabPage tabPageBusXml_B;
+    private System.Windows.Forms.TabPage tabPageEdiXml_B;
+    private System.Windows.Forms.Label lblFileToProcess;
+    private System.Windows.Forms.ComboBox cboFileToProcess;
+    private System.Windows.Forms.Label lblEdiXsltModified;
+    private System.Windows.Forms.Button btnTransformToEdiXml;
+    private System.Windows.Forms.RichTextBox rtxtToEdiXslt;
+    private System.Windows.Forms.RichTextBox rtxtRawEdi;
+    private System.Windows.Forms.RichTextBox rtxtFmtEdi;
+    private System.Windows.Forms.RichTextBox rtxtEdiXml_A;
+    private System.Windows.Forms.RichTextBox rtxtToBusXslt;
+    private System.Windows.Forms.RichTextBox rtxtBusXml_A;
+    private System.Windows.Forms.RichTextBox rtxtEdiXml_B;
+    private System.Windows.Forms.RichTextBox rtxtBusXml_B;
+    private System.Windows.Forms.Button btnSaveToEdiXslt;
+    private System.Windows.Forms.Label lblMessage;
+    private System.Windows.Forms.Button btnReloadEdiXslt;
+    private System.Windows.Forms.CheckBox ckUseDisplayForm;
+    private System.Windows.Forms.ComboBox cboBusXmlAFiles;
+    private System.Windows.Forms.ComboBox cboFocus;
+    private System.Windows.Forms.Label label1;
+  }
 }
 

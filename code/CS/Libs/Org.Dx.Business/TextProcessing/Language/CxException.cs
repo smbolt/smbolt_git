@@ -13,12 +13,24 @@ namespace Org.Dx.Business.TextProcessing
     public static Dictionary<int, string> _cxMessages;
 
     public int _code;
-		public int Code { get { return _code; } }
+    public int Code {
+      get {
+        return _code;
+      }
+    }
     private string _cxMessage;
     private string _message;
     private object[] _exParms;
-		public object[] ExParms { get { return _exParms == null ? new object[0] : _exParms; } }
-    public string Report { get { return Get_Report();  } }
+    public object[] ExParms {
+      get {
+        return _exParms == null ? new object[0] : _exParms;
+      }
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     private Cmd _cmd;
     private Cmdx _cmdx;
@@ -27,7 +39,9 @@ namespace Org.Dx.Business.TextProcessing
     {
       get
       {
-        { return GetCxMessage(_code); }
+        {
+          return GetCxMessage(_code);
+        }
       }
     }
 
@@ -42,7 +56,7 @@ namespace Org.Dx.Business.TextProcessing
     {
       EnsureMessagesLoaded();
       _code = code;
-      _cxMessage = GetCxMessage(_code); 
+      _cxMessage = GetCxMessage(_code);
     }
 
     public CxException(int code, object p1 = null, object p2 = null, object p3 = null)
@@ -84,7 +98,7 @@ namespace Org.Dx.Business.TextProcessing
         _exParms[objectPtr] = p3;
       }
     }
-  
+
 
     public CxException(int code, object[] exParms = null)
       : base()
@@ -114,7 +128,7 @@ namespace Org.Dx.Business.TextProcessing
       foreach (var kvp in CxCode.CxCodesAndMessages)
       {
         if (!_cxMessages.ContainsKey(kvp.Key))
-          _cxMessages.Add(kvp.Key, kvp.Value); 
+          _cxMessages.Add(kvp.Key, kvp.Value);
       }
     }
 

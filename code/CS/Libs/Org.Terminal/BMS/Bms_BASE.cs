@@ -9,7 +9,11 @@ namespace Org.Terminal.BMS
   public class Bms_BASE
   {
     protected BmsStatement BmsStatement;
-    public BmsStatementType BmsStatementType { get { return Get_StatementType(); } }
+    public BmsStatementType BmsStatementType {
+      get {
+        return Get_StatementType();
+      }
+    }
 
     public Bms_BASE(BmsStatement bmsStatement)
     {

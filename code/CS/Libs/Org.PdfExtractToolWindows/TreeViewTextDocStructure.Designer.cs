@@ -2,12 +2,12 @@
 {
   partial class TreeViewTextDocStructure
   {
-    /// <summary> 
+    /// <summary>
     /// Required designer variable.
     /// </summary>
     private System.ComponentModel.IContainer components = null;
 
-    /// <summary> 
+    /// <summary>
     /// Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -23,8 +23,8 @@
 
     #region Component Designer generated code
 
-    /// <summary> 
-    /// Required method for Designer support - do not modify 
+    /// <summary>
+    /// Required method for Designer support - do not modify
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent()
@@ -41,45 +41,45 @@
       this.splitterMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtDoc)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // pnlBottom
-      // 
+      //
       this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.pnlBottom.Location = new System.Drawing.Point(0, 499);
       this.pnlBottom.Name = "pnlBottom";
       this.pnlBottom.Size = new System.Drawing.Size(797, 33);
       this.pnlBottom.TabIndex = 1;
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
       this.splitterMain.Location = new System.Drawing.Point(0, 0);
       this.splitterMain.Name = "splitterMain";
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.tvDocStructure);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.txtDoc);
       this.splitterMain.Size = new System.Drawing.Size(797, 499);
       this.splitterMain.SplitterDistance = 220;
       this.splitterMain.SplitterWidth = 3;
       this.splitterMain.TabIndex = 2;
-      // 
+      //
       // tvDocStructure
-      // 
+      //
       this.tvDocStructure.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvDocStructure.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tvDocStructure.Location = new System.Drawing.Point(0, 0);
       this.tvDocStructure.Name = "tvDocStructure";
       this.tvDocStructure.Size = new System.Drawing.Size(220, 499);
       this.tvDocStructure.TabIndex = 0;
-      // 
+      //
       // txtDoc
-      // 
+      //
       this.txtDoc.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -90,7 +90,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtDoc.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtDoc.BackBrush = null;
       this.txtDoc.CharHeight = 13;
@@ -108,9 +109,9 @@
       this.txtDoc.Size = new System.Drawing.Size(574, 499);
       this.txtDoc.TabIndex = 0;
       this.txtDoc.Zoom = 100;
-      // 
+      //
       // TreeViewTextDocStructure
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.splitterMain);

@@ -15,16 +15,22 @@ namespace Org.WSO
 
     public ServiceBase ServiceBase
     {
-      get { return _serviceBase; }
-      set { _serviceBase = value; }
+      get {
+        return _serviceBase;
+      }
+      set {
+        _serviceBase = value;
+      }
     }
-    
+
     private ServiceState _serviceState;
-    public ServiceState ServiceState 
+    public ServiceState ServiceState
     {
-      get { return _serviceState; }
+      get {
+        return _serviceState;
+      }
     }
-    
+
     public static ServiceContext GetCurrent(ServiceBase serviceBase)
     {
       _serviceBase = serviceBase;
@@ -48,12 +54,12 @@ namespace Org.WSO
       _serviceState = new ServiceState(_serviceBase);
     }
 
-    public void Attach(ServiceHostBase owner) 
+    public void Attach(ServiceHostBase owner)
     {
       _serviceHostBase = owner;
     }
 
-    public void Detach(ServiceHostBase owner) 
+    public void Detach(ServiceHostBase owner)
     {
     }
 

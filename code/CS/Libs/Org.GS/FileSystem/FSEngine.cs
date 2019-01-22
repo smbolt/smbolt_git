@@ -10,8 +10,14 @@ namespace Org.GS
 {
   public class FSEngine : IDisposable
   {
-    public bool IsDryRun { get; private set; }
-    public bool CreateReport { get; set; }
+    public bool IsDryRun {
+      get;
+      private set;
+    }
+    public bool CreateReport {
+      get;
+      set;
+    }
 
     public FSEngine(bool isDryRun = false)
     {
@@ -23,9 +29,9 @@ namespace Org.GS
       try
       {
         if (fmc == null)
-          fmc = new FileMatchCriteria("*"); 
+          fmc = new FileMatchCriteria("*");
 
-        var taskResult = new TaskResult("DeleteFilesInFolder"); 
+        var taskResult = new TaskResult("DeleteFilesInFolder");
 
         List<string> targetFilesFullPaths = Directory.GetFiles(folderName).ToList();
         var deletedFiles = new FileSystemItemSet();
@@ -93,7 +99,7 @@ namespace Org.GS
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to copy files from '" + src + "' to '" + tgt + "' using FileMatchCriteria '" +
-                             fmc.Report + "'.", ex);
+                            fmc.Report + "'.", ex);
       }
     }
 
@@ -141,7 +147,7 @@ namespace Org.GS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attemptint to run FSActionSet.", ex); 
+        throw new Exception("An exception occurred attemptint to run FSActionSet.", ex);
       }
     }
 
@@ -150,7 +156,7 @@ namespace Org.GS
       var fsu = new FileSystemUtility();
 
       var taskResult = new TaskResult();
-      taskResult.TaskName = "ActionGroup:" + fsActionGroup.Name; 
+      taskResult.TaskName = "ActionGroup:" + fsActionGroup.Name;
 
       try
       {
@@ -164,12 +170,12 @@ namespace Org.GS
 
           if (!Directory.Exists(src))
             throw new Exception("Directory '" + src + "' does not exist and thus cannot be the source for file system action (FSAction) '" + fullActionName + "'.");
-          
+
           if (action.DestFolderRequired && !Directory.Exists(dst))
-            Directory.CreateDirectory(dst); 
+            Directory.CreateDirectory(dst);
 
           if (action.DestFolderRequired && action.ClearDirectory)
-            fsu.ClearDirectoryOfFiles(dst, action.ClearPattern.IsNotBlank() ? action.ClearPattern : "*.*"); 
+            fsu.ClearDirectoryOfFiles(dst, action.ClearPattern.IsNotBlank() ? action.ClearPattern : "*.*");
 
           foreach (var item in action.Values)
           {
@@ -188,7 +194,7 @@ namespace Org.GS
                 break;
 
               default:
-                throw new Exception("FileSystemCommand '" + action.FileSystemCommand.ToString() + "' is not implemented yet."); 
+                throw new Exception("FileSystemCommand '" + action.FileSystemCommand.ToString() + "' is not implemented yet.");
             }
           }
         }
@@ -197,7 +203,7 @@ namespace Org.GS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attemptint to run FSActionGroup named '" + fsActionGroup.Name + "'.", ex); 
+        throw new Exception("An exception occurred attemptint to run FSActionGroup named '" + fsActionGroup.Name + "'.", ex);
       }
     }
 

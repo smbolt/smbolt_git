@@ -9,37 +9,70 @@ namespace Org.QB.QBXML
 {
   public class QueryRqBase : QbXmlBase
   {
-    public QueryMeta QueryMeta { get; set; }
+    public QueryMeta QueryMeta {
+      get;
+      set;
+    }
 
     [XMap (XType = XType.Element, Name = "ListID")]
-    public ListIdList ListIdList { get; set; }
+    public ListIdList ListIdList {
+      get;
+      set;
+    }
 
     [XMap (XType = XType.Element, Name = "FullName")]
-    public FullNameList FullNameList { get; set; }
+    public FullNameList FullNameList {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public int? MaxReturned { get; set; }
+    public int? MaxReturned {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public ActiveStatus? ActiveStatus { get; set; }
+    public ActiveStatus? ActiveStatus {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public DateTime? FromModifiedDate { get; set; }
+    public DateTime? FromModifiedDate {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public DateTime? ToModifiedDate { get; set; }
+    public DateTime? ToModifiedDate {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public NameFilter NameFilter { get; set; }
+    public NameFilter NameFilter {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public NameRangeFilter NameRangeFilter { get; set; }
+    public NameRangeFilter NameRangeFilter {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, Name = "IncludeRetElement")]
-    public IncludeRetElementList IncludeRetElementList { get; set; }
+    public IncludeRetElementList IncludeRetElementList {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, Name = "OwnerID")]
-    public OwnerIdList OwnerIdList { get; set; }
+    public OwnerIdList OwnerIdList {
+      get;
+      set;
+    }
 
     public QueryRqBase()
     {

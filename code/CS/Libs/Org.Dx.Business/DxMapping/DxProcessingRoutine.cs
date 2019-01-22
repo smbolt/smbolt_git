@@ -7,29 +7,47 @@ using System.Threading.Tasks;
 using Org.Dx.Business.TextProcessing;
 using Org.GS;
 
-namespace Org.Dx.Business 
+namespace Org.Dx.Business
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
   [XMap(XType = XType.Element, WrapperElement = "DxProcessingRoutineSet")]
   public class DxProcessingRoutine
   {
     [XMap(IsKey = true, IsRequired = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap]
-    public string NewSheetIdentifier { get; set; }
+    public string NewSheetIdentifier {
+      get;
+      set;
+    }
 
     [XMap]
-    public int ColumnIdentifier { get; set; }
+    public int ColumnIdentifier {
+      get;
+      set;
+    }
 
     [XMap]
-    public string IncludeSheetFilter { get; set; }
+    public string IncludeSheetFilter {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "")]
-    public string SplitSheetName { get; set; }
+    public string SplitSheetName {
+      get;
+      set;
+    }
 
     [XMap]
-    public bool DiscardFirst { get; set; }
+    public bool DiscardFirst {
+      get;
+      set;
+    }
 
     public DxWorkbook RunRoutine(DxWorkbook srcWb, DxMapSet mapSet)
     {
@@ -74,7 +92,7 @@ namespace Org.Dx.Business
                   newSrcWs.Rows.Add(rowCounter,row.Value);
                   rowCounter++;
                   continue;
-                } 
+                }
                 else
                 {
                   newSrcWb.Add(newSrcWs.WorksheetName, newSrcWs);

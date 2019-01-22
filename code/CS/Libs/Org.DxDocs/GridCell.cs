@@ -10,12 +10,25 @@ namespace Org.DxDocs
 {
   public class GridCell
   {
-    public Cell Cell { get; set; }
-    public int Row { get; private set; }
-    public int Col { get; private set; }
+    public Cell Cell {
+      get;
+      set;
+    }
+    public int Row {
+      get;
+      private set;
+    }
+    public int Col {
+      get;
+      private set;
+    }
 
     private object _value;
-    public string Value { get { return Get_Value(); } }
+    public string Value {
+      get {
+        return Get_Value();
+      }
+    }
 
     public GridCell(int row, int col, object value)
     {

@@ -11,19 +11,51 @@ namespace Org.Pdf
   public class PdfImage
   {
     private byte[] _bytes;
-    public string Name { get; private set; }
-    public int Height { get; private set; }
-    public int Width { get; private set; }
-    public Size Size { get { return Get_Size(); } }
-    public int Length { get; private set; }
-    public int BitsPerComponent { get; private set; }
-    public PdfColorSpace PdfColorSpace { get; private set; }
-    public PdfImageFilter PdfImageFilter { get; private set; }
-    public PdfImageDecodeParms PdfImageDecodeParms { get; private set; }
+    public string Name {
+      get;
+      private set;
+    }
+    public int Height {
+      get;
+      private set;
+    }
+    public int Width {
+      get;
+      private set;
+    }
+    public Size Size {
+      get {
+        return Get_Size();
+      }
+    }
+    public int Length {
+      get;
+      private set;
+    }
+    public int BitsPerComponent {
+      get;
+      private set;
+    }
+    public PdfColorSpace PdfColorSpace {
+      get;
+      private set;
+    }
+    public PdfImageFilter PdfImageFilter {
+      get;
+      private set;
+    }
+    public PdfImageDecodeParms PdfImageDecodeParms {
+      get;
+      private set;
+    }
     private Image _image;
-    public Image Image { get { return Get_Image(); } }
+    public Image Image {
+      get {
+        return Get_Image();
+      }
+    }
 
-    public PdfImage(byte[] bytes, string name, int height, int width, int length, int bitsPerComponent, PdfColorSpace pdfColorSpace, 
+    public PdfImage(byte[] bytes, string name, int height, int width, int length, int bitsPerComponent, PdfColorSpace pdfColorSpace,
                     PdfImageFilter pdfImageFilter, PdfImageDecodeParms pdfImageDecodeParms, bool generateImage = true)
     {
       try
@@ -53,7 +85,7 @@ namespace Org.Pdf
     {
       try
       {
-         
+
 
         return new Bitmap(1, 1) as Image;
       }
@@ -68,7 +100,7 @@ namespace Org.Pdf
       if (_image != null)
         return _image.Size;
 
-      return new Size(this.Width, this.Height); 
+      return new Size(this.Width, this.Height);
     }
 
     private Image Get_Image()

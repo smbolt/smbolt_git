@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace Org.SF
 {
-	public partial class frmTextDisplay : Form
-	{
-		public frmTextDisplay()
-		{
-			InitializeComponent();
-			InitializeForm();
-		}
+  public partial class frmTextDisplay : Form
+  {
+    public frmTextDisplay()
+    {
+      InitializeComponent();
+      InitializeForm();
+    }
 
-		private void InitializeForm()
-		{
-			txtOut.Text = String.Empty;
-		}
+    private void InitializeForm()
+    {
+      txtOut.Text = String.Empty;
+    }
 
-		public void SetText(string text)
-		{
-			txtOut.Text = text;
-		}
-	}
+    public void SetText(string text)
+    {
+      txtOut.Text = text;
+    }
+  }
 }

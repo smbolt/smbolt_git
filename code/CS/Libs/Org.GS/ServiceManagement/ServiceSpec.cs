@@ -13,41 +13,82 @@ namespace Org.GS.ServiceManagement
   [XMap(XType = XType.Element)]
   public class ServiceSpec : ServiceObject
   {
-    public int TaskServiceID { get; set; }
-    public int ServiceHostID { get; set; }
-    public int? ParentServiceID { get; set; }
+    public int TaskServiceID {
+      get;
+      set;
+    }
+    public int ServiceHostID {
+      get;
+      set;
+    }
+    public int? ParentServiceID {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsKey = true)]
-    public string Name { get; set; }
-    
+    public string Name {
+      get;
+      set;
+    }
+
     [XMap(IsRequired = true)]
-    public ServiceType ServiceType { get; set; }
+    public ServiceType ServiceType {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "BasicHttp")]
-    public WebServiceBinding WebServiceBinding { get; set; }
+    public WebServiceBinding WebServiceBinding {
+      get;
+      set;
+    }
 
     [XMap]
-    public string WsHost { get; set; }
+    public string WsHost {
+      get;
+      set;
+    }
 
     [XMap]
-    public string WsPort { get; set; }
+    public string WsPort {
+      get;
+      set;
+    }
 
     [XMap]
-    public string WsServiceName { get; set; }
+    public string WsServiceName {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, MyParent = true, Name="ParentServiceSpecSet")]
-    public ServiceSpecSet ParentServiceSpecSet { get; set; }
+    public ServiceSpecSet ParentServiceSpecSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "ServiceSpec", WrapperElement = "ServiceSpecSet")]
-    public ServiceSpecSet ServiceSpecSet { get; set; }
+    public ServiceSpecSet ServiceSpecSet {
+      get;
+      set;
+    }
 
-    public ServiceHost ServiceHost { get { return Get_ServiceHost(); } }
-    public ServiceEnvironment ServiceEnvironment { get { return Get_ServiceEnvironment(); } }
+    public ServiceHost ServiceHost {
+      get {
+        return Get_ServiceHost();
+      }
+    }
+    public ServiceEnvironment ServiceEnvironment {
+      get {
+        return Get_ServiceEnvironment();
+      }
+    }
 
     public ServiceSpec()
     {
       this.TaskServiceID = 0;
-      this.ServiceHostID = 0; 
+      this.ServiceHostID = 0;
       this.ParentServiceID = null;
       base.ServiceObjectType = ServiceObjectType.ServiceSpec;
       this.Name = String.Empty;

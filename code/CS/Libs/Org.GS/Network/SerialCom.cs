@@ -13,35 +13,43 @@ namespace Org.GS.Network
 {
   public class SerialCom : IDisposable
   {
-    public Action<SerialComEventArgs> SerialComNotification; 
+    public Action<SerialComEventArgs> SerialComNotification;
 
-    private SerialPortParms _serialPortParms; 
+    private SerialPortParms _serialPortParms;
     private SerialPort _serialPort;
     private ManagementEventWatcher _deviceWatcher;
     private Dictionary<string, SerialPort> _serialPorts;
 
-    private SerialComInfoSet _serialComInfoSet; 
+    private SerialComInfoSet _serialComInfoSet;
 
-    public bool PortIsOpen { get { return Get_PortIsOpen(); } }
+    public bool PortIsOpen {
+      get {
+        return Get_PortIsOpen();
+      }
+    }
 
     public bool InDiagnosticsMode
     {
-      get 
+      get
       {
         if (_serialPortParms == null)
           return false;
-        return _serialPortParms.InDiagnosticsMode; 
+        return _serialPortParms.InDiagnosticsMode;
       }
-      set 
-      { 
+      set
+      {
         if (_serialPortParms != null)
-          _serialPortParms.InDiagnosticsMode = value; 
+          _serialPortParms.InDiagnosticsMode = value;
       }
     }
 
     private StringBuilder _diagnosticsReport;
 
-    public string DiagnosticsReport { get { return _diagnosticsReport.ToString(); } }
+    public string DiagnosticsReport {
+      get {
+        return _diagnosticsReport.ToString();
+      }
+    }
 
     public SerialCom()
     {
@@ -70,18 +78,18 @@ namespace Org.GS.Network
 
         SerialComEventArgs eventArgs = new SerialComEventArgs();
         eventArgs.SerialComEventType = SerialComEventType.PortStatusNotification;
-        eventArgs.SerialComPortStatus = _serialPort.IsOpen ? SerialComPortStatus.Opened : SerialComPortStatus.Closed; 
+        eventArgs.SerialComPortStatus = _serialPort.IsOpen ? SerialComPortStatus.Opened : SerialComPortStatus.Closed;
         eventArgs.Message = "COM port '" + _serialPortParms.PortName + "' was successfully opened using Baud Rate=" + _serialPortParms.BaudRate.ToString() +
-          " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() + ".";
-        SendNotification(eventArgs); 
+                            " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() + ".";
+        SendNotification(eventArgs);
       }
       catch (Exception ex)
       {
         throw new Exception("An 'Exception' occurred attempting to open the COM Port '" + _serialPortParms.PortName + "' using Baud Rate=" + _serialPortParms.BaudRate.ToString() +
-          " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() +
-          "." + g.crlf + "See InnerException for details.", ex);
+                            " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() +
+                            "." + g.crlf + "See InnerException for details.", ex);
       }
-            
+
       UpdatePinState();
       //chkDTR.Checked = _serialPort.DtrEnable;
       //chkRTS.Checked = _serialPort.RtsEnable;
@@ -90,7 +98,7 @@ namespace Org.GS.Network
       {
         //txtSendData.Focus();
 
-        //if (chkClearOnOpen.Checked) 
+        //if (chkClearOnOpen.Checked)
         //    ClearTerminal();
       }
     }
@@ -99,7 +107,7 @@ namespace Org.GS.Network
     {
       if (_serialPortParms == null)
       {
-        throw new Exception("SerialPortParms is null."); 
+        throw new Exception("SerialPortParms is null.");
       }
 
       try
@@ -122,15 +130,15 @@ namespace Org.GS.Network
         eventArgs.Message = "Text data was successfully sent on COM port '" + _serialPortParms.PortName + "'.";
 
         if (_serialPortParms.InDiagnosticsMode)
-          _diagnosticsReport.Append(g.crlf2 + eventArgs.Message + g.crlf); 
+          _diagnosticsReport.Append(g.crlf2 + eventArgs.Message + g.crlf);
 
-        SendNotification(eventArgs); 
+        SendNotification(eventArgs);
       }
       catch (Exception ex)
       {
         throw new Exception("An 'Exception' occurred attempting to send text data to COM Port '" + _serialPortParms.PortName + "' using Baud Rate=" + _serialPortParms.BaudRate.ToString() +
-          " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() +
-          "." + g.crlf + "See InnerException for details.", ex);
+                            " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() +
+                            "." + g.crlf + "See InnerException for details.", ex);
       }
     }
 
@@ -146,9 +154,9 @@ namespace Org.GS.Network
         if (_serialPortParms.InDiagnosticsMode)
         {
           _diagnosticsReport = new StringBuilder();
-          _diagnosticsReport.Append(g.crlf + "*** DATA SENT ***" + g.crlf2); 
+          _diagnosticsReport.Append(g.crlf + "*** DATA SENT ***" + g.crlf2);
           string dump = dataToSend.ToBinHexDump();
-          _diagnosticsReport.Append(dump); 
+          _diagnosticsReport.Append(dump);
         }
 
         _serialPort.Write(dataToSend, 0, dataToSend.Length);
@@ -160,15 +168,15 @@ namespace Org.GS.Network
         eventArgs.Message = "Binary data was successfully sent on COM port '" + _serialPortParms.PortName + "'.";
 
         if (_serialPortParms.InDiagnosticsMode)
-          _diagnosticsReport.Append(g.crlf2 + eventArgs.Message + g.crlf); 
+          _diagnosticsReport.Append(g.crlf2 + eventArgs.Message + g.crlf);
 
-        SendNotification(eventArgs); 
+        SendNotification(eventArgs);
       }
       catch (Exception ex)
       {
         throw new Exception("An 'Exception' occurred attempting to send binary data to COM Port '" + _serialPortParms.PortName + "' using Baud Rate=" + _serialPortParms.BaudRate.ToString() +
-          " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() +
-          "." + g.crlf + "See InnerException for details.", ex);
+                            " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() +
+                            "." + g.crlf + "See InnerException for details.", ex);
       }
     }
 
@@ -201,20 +209,20 @@ namespace Org.GS.Network
         if (portClosed)
           eventArgs.Message = "COM port '" + portName + "' was successfully closed.";
         else
-          eventArgs.Message = "COM port '" + portName + "' was already closed."; 
-        SendNotification(eventArgs); 
+          eventArgs.Message = "COM port '" + portName + "' was already closed.";
+        SendNotification(eventArgs);
       }
       catch (Exception ex)
       {
         throw new Exception("An 'Exception' occurred attempting to close COM Port '" + _serialPortParms.PortName + "' using Baud Rate=" + _serialPortParms.BaudRate.ToString() +
-          " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() +
-          "." + g.crlf + "See InnerException for details.", ex);
+                            " DataBits=" + _serialPortParms.DataBits.ToString() + " StopBits=" + _serialPortParms.StopBits.ToString() + " Parity=" + _serialPortParms.Parity.ToString() +
+                            "." + g.crlf + "See InnerException for details.", ex);
       }
     }
 
     private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
     {
-      if (!_serialPort.IsOpen) 
+      if (!_serialPort.IsOpen)
         return;
 
       _diagnosticsReport = new StringBuilder();
@@ -226,21 +234,21 @@ namespace Org.GS.Network
 
       DateTime beginDt = DateTime.Now;
       bool completeMessageReceived = false;
-      long millisecondLimit = 500; 
+      long millisecondLimit = 500;
       long totalMilliseconds = 0;
-      int readCount = 0; 
+      int readCount = 0;
 
       switch (_serialPortParms.DataMode)
       {
         case DataMode.Text:
-          StringBuilder sb = new StringBuilder(); 
+          StringBuilder sb = new StringBuilder();
 
           while(!completeMessageReceived)
           {
             sb.Append(_serialPort.ReadExisting());
-            readCount++; 
+            readCount++;
             string textData = sb.ToString();
-            System.Threading.Thread.Sleep(5); 
+            System.Threading.Thread.Sleep(5);
 
             if (textData.Contains(_serialPort.NewLine))
               completeMessageReceived = true;
@@ -254,34 +262,34 @@ namespace Org.GS.Network
 
           eventArgs.TextData = sb.ToString();
           eventArgs.Message = "Text data received from scanner '" + eventArgs.TextData.Trim() +
-                              "' in " + totalMilliseconds.ToString() + " milliseconds and " + readCount.ToString() + " buffer reads.";  
+                              "' in " + totalMilliseconds.ToString() + " milliseconds and " + readCount.ToString() + " buffer reads.";
           _diagnosticsReport.Append(g.crlf + "*** DATA RECEIVED ***" + g.crlf2);
           byte[] bytesSent = Encoding.ASCII.GetBytes(eventArgs.TextData);
           string dump = bytesSent.ToBinHexDump();
           _diagnosticsReport.Append(dump);
           break;
 
-          default:
-            int bufferSize = _serialPort.BytesToRead;
-            eventArgs.BinaryData = new byte[bufferSize];
-            _serialPort.Read(eventArgs.BinaryData, 0, bufferSize);
-            _diagnosticsReport.Append(g.crlf + "*** DATA RECEIVED ***" + g.crlf2);
-            byte[] bytes = eventArgs.BinaryData;
-            _diagnosticsReport.Append(bytes.ToBinHexDump());
-            break;
+        default:
+          int bufferSize = _serialPort.BytesToRead;
+          eventArgs.BinaryData = new byte[bufferSize];
+          _serialPort.Read(eventArgs.BinaryData, 0, bufferSize);
+          _diagnosticsReport.Append(g.crlf + "*** DATA RECEIVED ***" + g.crlf2);
+          byte[] bytes = eventArgs.BinaryData;
+          _diagnosticsReport.Append(bytes.ToBinHexDump());
+          break;
       }
 
-      SendNotification(eventArgs); 
+      SendNotification(eventArgs);
     }
 
     public void SetDataMode(DataMode dataMode)
     {
       if (_serialPortParms == null)
-        return; 
+        return;
 
-      _serialPortParms.DataMode = dataMode; 
+      _serialPortParms.DataMode = dataMode;
     }
-        
+
     private void serialPort_PinChanged(object sender, SerialPinChangedEventArgs e)
     {
       UpdatePinState();
@@ -312,7 +320,7 @@ namespace Org.GS.Network
       if (this.SerialComNotification == null)
         return;
 
-      this.SerialComNotification(e); 
+      this.SerialComNotification(e);
     }
 
     public void StartListeningForComPortChanges()
@@ -330,7 +338,7 @@ namespace Org.GS.Network
 
       _deviceWatcher.Stop();
       _deviceWatcher.Dispose();
-      _deviceWatcher = null; 
+      _deviceWatcher = null;
     }
 
     private void _deviceWatcher_EventArrived(object sender, EventArrivedEventArgs e)
@@ -384,10 +392,10 @@ namespace Org.GS.Network
       }
       else
       {
-          eventArgs.Message = "COM device changes detected (1).";
+        eventArgs.Message = "COM device changes detected (1).";
       }
 
-      this.SerialComNotification(eventArgs); 
+      this.SerialComNotification(eventArgs);
     }
 
     private bool Get_PortIsOpen()
@@ -461,7 +469,7 @@ namespace Org.GS.Network
                 string comDeviceName = m.Value;
                 if (!pnpComDevices.ContainsKey(comDeviceName))
                 {
-                    pnpComDevices.Add(comDeviceName, device);
+                  pnpComDevices.Add(comDeviceName, device);
                 }
               }
             }
@@ -623,7 +631,7 @@ namespace Org.GS.Network
 
                   case "dwProvSubType":
                     serialComInfo.dwProvSubType = propValue.ToUInt32();
-                      break;
+                    break;
 
                   case "dwReserved1":
                     serialComInfo.dwReserved1 = propValue.ToUInt32();
@@ -656,7 +664,7 @@ namespace Org.GS.Network
 
                   case "wSettableData":
                     serialComInfo.wSettableData = propValue.ToUInt16();
-                      break;
+                    break;
 
                   case "wSettableStopParity":
                     serialComInfo.wSettableStopParity = propValue.ToUInt16();
@@ -737,7 +745,7 @@ namespace Org.GS.Network
             sortedSerialComInfoSet.Add(sci.PortName, sci);
         }
 
-        // add in the PnPEntity WMI information if found                
+        // add in the PnPEntity WMI information if found
         if (pnpComDevices.Count > 0)
         {
           foreach (KeyValuePair<string, ManagementObject> kvpPnp in pnpComDevices)

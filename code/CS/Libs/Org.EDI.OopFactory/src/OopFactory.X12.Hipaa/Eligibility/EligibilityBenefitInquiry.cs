@@ -5,8 +5,8 @@ using System.Text;
 
 namespace OopFactory.X12.Hipaa.Eligibility
 {
-    public class EligibilityBenefitInquiry : EligibilityBenefitBase
-    {
-        // TODO
-    }
+  public class EligibilityBenefitInquiry : EligibilityBenefitBase
+  {
+    // TODO
+  }
 }

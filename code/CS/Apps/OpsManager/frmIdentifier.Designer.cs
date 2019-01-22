@@ -36,9 +36,9 @@
       this.lblDescription = new System.Windows.Forms.Label();
       this.lblIdentifierID = new System.Windows.Forms.Label();
       this.SuspendLayout();
-      // 
+      //
       // btnSave
-      // 
+      //
       this.btnSave.Enabled = false;
       this.btnSave.Location = new System.Drawing.Point(15, 94);
       this.btnSave.Name = "btnSave";
@@ -48,9 +48,9 @@
       this.btnSave.Text = "Save";
       this.btnSave.UseVisualStyleBackColor = true;
       this.btnSave.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Location = new System.Drawing.Point(131, 94);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new System.Drawing.Size(110, 25);
@@ -59,9 +59,9 @@
       this.btnCancel.Text = "Close";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtDescription
-      // 
+      //
       this.txtDescription.Location = new System.Drawing.Point(131, 31);
       this.txtDescription.Multiline = true;
       this.txtDescription.Name = "txtDescription";
@@ -69,9 +69,9 @@
       this.txtDescription.TabIndex = 1;
       this.txtDescription.Tag = "DirtyCheck";
       this.txtDescription.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // txtIdentifierId
-      // 
+      //
       this.txtIdentifierId.Location = new System.Drawing.Point(15, 31);
       this.txtIdentifierId.Name = "txtIdentifierId";
       this.txtIdentifierId.Size = new System.Drawing.Size(110, 20);
@@ -80,27 +80,27 @@
       this.txtIdentifierId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       this.txtIdentifierId.TextChanged += new System.EventHandler(this.Action);
       this.txtIdentifierId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IntegerOnly_KeyPress);
-      // 
+      //
       // lblDescription
-      // 
+      //
       this.lblDescription.AutoSize = true;
       this.lblDescription.Location = new System.Drawing.Point(128, 15);
       this.lblDescription.Name = "lblDescription";
       this.lblDescription.Size = new System.Drawing.Size(63, 13);
       this.lblDescription.TabIndex = 4;
       this.lblDescription.Text = "Description:";
-      // 
+      //
       // lblIdentifierID
-      // 
+      //
       this.lblIdentifierID.AutoSize = true;
       this.lblIdentifierID.Location = new System.Drawing.Point(15, 15);
       this.lblIdentifierID.Name = "lblIdentifierID";
       this.lblIdentifierID.Size = new System.Drawing.Size(64, 13);
       this.lblIdentifierID.TabIndex = 5;
       this.lblIdentifierID.Text = "Identifier ID:";
-      // 
+      //
       // frmIdentifier
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(607, 129);

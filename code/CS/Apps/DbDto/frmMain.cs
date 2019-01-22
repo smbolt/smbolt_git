@@ -19,7 +19,7 @@ namespace Org.DbDto
   public partial class frmMain : Form
   {
     private a a;
-    private List<GDB.Well> _wells; 
+    private List<GDB.Well> _wells;
 
     public frmMain()
     {
@@ -66,14 +66,14 @@ namespace Org.DbDto
         }
 
         TimeSpan ts = DateTime.Now - dtBegin;
-        txtOut.Text = "Total milliseconds : " + ts.TotalMilliseconds.ToString() + "  Well count: " + wells.Count().ToString() + 
-              g.crlf2 + sb.ToString();
+        txtOut.Text = "Total milliseconds : " + ts.TotalMilliseconds.ToString() + "  Well count: " + wells.Count().ToString() +
+                      g.crlf2 + sb.ToString();
       }
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during retrieval of wells." + g.crlf2 + ex.ToReport(),
                         "DbDto - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return; 
+        return;
       }
     }
 
@@ -82,13 +82,13 @@ namespace Org.DbDto
       try
       {
         a = new a();
-        g.ConnectionStringName = g.CI("ConnectionStringName"); 
+        g.ConnectionStringName = g.CI("ConnectionStringName");
       }
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during program initialization." + g.crlf2 + ex.ToReport(),
                         "DbDto - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return; 
+        return;
       }
     }
   }

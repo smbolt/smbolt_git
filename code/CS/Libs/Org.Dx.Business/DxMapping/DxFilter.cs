@@ -5,52 +5,97 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Org.GS;
- 
 
-namespace Org.Dx.Business 
+
+namespace Org.Dx.Business
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
   [XMap(XType = XType.Element)]
-  public class DxFilter 
+  public class DxFilter
   {
     [XMap(DefaultValue = "Default")]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "NotSet")]
-    public FilterType FilterType { get; set; }
+    public FilterType FilterType {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "NotSet")]
-    public FilterMethod FilterMethod { get; set; }
+    public FilterMethod FilterMethod {
+      get;
+      set;
+    }
 
     [XMap]
-    public string RowFilterCellValues { get; set; }
+    public string RowFilterCellValues {
+      get;
+      set;
+    }
 
     [XMap]
-    public string SheetFilterSheetNames { get; set; }
+    public string SheetFilterSheetNames {
+      get;
+      set;
+    }
 
     [XMap]
-    public string SheetFilterCellValues { get; set; }
+    public string SheetFilterCellValues {
+      get;
+      set;
+    }
 
     [XMap]
-    public string FilterCriteria { get; set; }
+    public string FilterCriteria {
+      get;
+      set;
+    }
 
     [XMap]
-    public string BaseColSpec { get; set; }
+    public string BaseColSpec {
+      get;
+      set;
+    }
 
     [XMap]
-    public string BaseRowSpec { get; set; }
+    public string BaseRowSpec {
+      get;
+      set;
+    }
 
-    public int? BaseColIndex { get; set; }
-    public int? BaseRowIndex { get; set; }
+    public int? BaseColIndex {
+      get;
+      set;
+    }
+    public int? BaseRowIndex {
+      get;
+      set;
+    }
 
     private string[] _types;
-    public string[] Types { get { return _types; } }
+    public string[] Types {
+      get {
+        return _types;
+      }
+    }
 
     private string[] _sheetNameArray;
-    public string[] SheetNameArray { get { return _sheetNameArray; } }
+    public string[] SheetNameArray {
+      get {
+        return _sheetNameArray;
+      }
+    }
 
     private string[] _sheetFormatArray;
-    public string[] SheetFormatArray { get { return _sheetFormatArray; } }
+    public string[] SheetFormatArray {
+      get {
+        return _sheetFormatArray;
+      }
+    }
 
     public DxFilter()
     {
@@ -70,7 +115,7 @@ namespace Org.Dx.Business
       if (this.SheetFilterSheetNames.IsNotBlank())
         _sheetNameArray = this.SheetFilterSheetNames.Split(Constants.CommaDelimiter, StringSplitOptions.RemoveEmptyEntries);
       else
-        _sheetNameArray = new string[0]; 
+        _sheetNameArray = new string[0];
 
       if (this.SheetFilterCellValues.IsNotBlank())
         _sheetFormatArray = this.SheetFilterCellValues.Split(Constants.PipeDelimiter, StringSplitOptions.RemoveEmptyEntries);
@@ -78,7 +123,7 @@ namespace Org.Dx.Business
         _sheetFormatArray = this.RowFilterCellValues.Split(Constants.PipeDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
     }
-    
+
     public bool MatchesWorksheet(DxRowSet dxRowSet)
     {
       try
@@ -106,7 +151,7 @@ namespace Org.Dx.Business
         // For tracking whether any cellSearchCriteria don't match
         bool allMatch = true;
         bool anyMatch = false;
-        
+
         // Loop through all the cell matching criteria.
         foreach (var cellSearchCriteria in cellLocator.CellSearchCriteriaSet)
         {
@@ -114,9 +159,9 @@ namespace Org.Dx.Business
           // These are the cells we're trying to match against.
           var cells = dxRowSet.GetCells(cellSearchCriteria.RowIndexSpec, cellSearchCriteria.ColIndexSpec);
 
-          // When looping through the cells (there may be one, or whole rows, whole columns, etc. whatever is specified in the 
+          // When looping through the cells (there may be one, or whole rows, whole columns, etc. whatever is specified in the
           // cellSearchCriteria object), we get a good match when any of the cells meets the criteria specified.  A true result,
-          // stored in the 'match' variable, indicates that "this specific cellSearchCriteria object" is satisfied.  Don't confuse 
+          // stored in the 'match' variable, indicates that "this specific cellSearchCriteria object" is satisfied.  Don't confuse
           // this any-match-will-do paradigm with the higher-level "cross-cellSearchCriteria AND/OR logic processing".
           bool match = false;
           foreach (var cell in cells)
@@ -126,13 +171,13 @@ namespace Org.Dx.Business
             if (match)
               break;
           }
-          
+
           // "Short Circuit" - If this criterion failed to match and we are using "AND" logic (requiring that all criteria match)
           // then there's no need to look further - we just return false.
           if (!match && cellLocator.CellSearchCriteriaSet.UsesAndLogic)
             return false;
 
-          // "Short Circuit" - If we have a match and we're using "OR logic" at the high-level, 
+          // "Short Circuit" - If we have a match and we're using "OR logic" at the high-level,
           // then we've satisfied the high-level matching condition and simply return true;
           if (match && cellLocator.CellSearchCriteriaSet.UsesOrLogic)
             return true;
@@ -148,7 +193,7 @@ namespace Org.Dx.Business
         {
           return allMatch;
         }
-        
+
         // If we get here, we're looking for "any matches";
         return anyMatch;
       }

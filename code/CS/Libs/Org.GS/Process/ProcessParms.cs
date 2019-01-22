@@ -7,8 +7,14 @@ namespace Org.GS
 {
   public class ProcessParms
   {
-    public string ExecutablePath { get; set; }
-    public string[] Args { get; set; }
+    public string ExecutablePath {
+      get;
+      set;
+    }
+    public string[] Args {
+      get;
+      set;
+    }
 
     public ProcessParms()
     {

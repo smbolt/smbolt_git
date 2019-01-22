@@ -84,7 +84,7 @@ namespace Org.AuthTokenViewer
       if (token.Length > 2)
       {
         if (token.StartsWith("\"") && token.EndsWith("\""))
-          token = token.Substring(1, token.Length - 2); 
+          token = token.Substring(1, token.Length - 2);
       }
 
       ProcessAuthToken(token);

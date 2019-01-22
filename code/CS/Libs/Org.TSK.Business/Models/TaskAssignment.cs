@@ -9,14 +9,38 @@ namespace Org.TSK.Business.Models
 {
   public class TaskAssignment
   {
-    public int TaskServiceAssignmentID { get; set; }
-    public int TaskServiceID { get; set; }
-    public string TaskServiceName { get; set; }
-    public int ServiceHostID { get; set; }
-    public string HostName { get; set; }
-    public int ScheduledTaskID { get; set; }
-    public string TaskName { get; set; }
-    public bool IsActive { get; set; }
+    public int TaskServiceAssignmentID {
+      get;
+      set;
+    }
+    public int TaskServiceID {
+      get;
+      set;
+    }
+    public string TaskServiceName {
+      get;
+      set;
+    }
+    public int ServiceHostID {
+      get;
+      set;
+    }
+    public string HostName {
+      get;
+      set;
+    }
+    public int ScheduledTaskID {
+      get;
+      set;
+    }
+    public string TaskName {
+      get;
+      set;
+    }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     public TaskAssignment()
     {

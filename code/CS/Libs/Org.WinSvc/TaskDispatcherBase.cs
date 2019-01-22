@@ -11,7 +11,10 @@ namespace Org.WinSvc
   public class TaskDispatcherBase : ITaskDispatcher
   {
     public event Action<NotifyMessage> NotifyMessage;
-    public bool ContinueTask { get; set; }
+    public bool ContinueTask {
+      get;
+      set;
+    }
 
     public TaskDispatcherBase()
     {
@@ -20,7 +23,7 @@ namespace Org.WinSvc
 
     public async virtual Task<TaskResult> DispatchTaskAsync(ITaskProcessor taskProcessor, TaskRequest taskRequest)
     {
-      throw new Exception("The 'DispatchTaskAsync' must be overridden in derived classes."); 
+      throw new Exception("The 'DispatchTaskAsync' must be overridden in derived classes.");
     }
 
     public void NotifyMessageMethod(NotifyMessage notifyMessage)
@@ -31,7 +34,7 @@ namespace Org.WinSvc
 
     public bool CheckContinue()
     {
-      return ContinueTask; 
+      return ContinueTask;
     }
   }
 }

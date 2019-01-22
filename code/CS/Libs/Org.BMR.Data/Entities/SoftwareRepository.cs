@@ -11,22 +11,37 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "SoftwareRepository")]
-    public partial class SoftwareRepository
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "SoftwareRepository")]
+  public partial class SoftwareRepository
+  {
+    public SoftwareRepository()
     {
-        public SoftwareRepository()
-        {
-            this.SoftwareVersions = new HashSet<SoftwareVersion>();
-        }
-    
-        public int RepositoryId { get; set; }
-        public int StatusId { get; set; }
-        public string RepositoryRoot { get; set; }
-    
-        public virtual Status Status { get; set; }
-        public virtual ICollection<SoftwareVersion> SoftwareVersions { get; set; }
+      this.SoftwareVersions = new HashSet<SoftwareVersion>();
     }
+
+    public int RepositoryId {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+    public string RepositoryRoot {
+      get;
+      set;
+    }
+
+    public virtual Status Status {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwareVersion> SoftwareVersions {
+      get;
+      set;
+    }
+  }
 }

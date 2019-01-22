@@ -13,31 +13,31 @@ namespace Org.Cfg
   public static class ExtensionMethods
   {
 
-		public static COSet JsonToCOSet(this string json)
-		{
-			try
-			{
-				if (json == null)
-					return null;
+    public static COSet JsonToCOSet(this string json)
+    {
+      try
+      {
+        if (json == null)
+          return null;
 
-				JArray array = (JArray)JsonConvert.DeserializeObject(json);
+        JArray array = (JArray)JsonConvert.DeserializeObject(json);
 
-				var o = array.ToObject<object>();
+        var o = array.ToObject<object>();
 
-				if (o == null)
-					return null;
+        if (o == null)
+          return null;
 
-				var coSet = new COSet();
+        var coSet = new COSet();
 
-				dynamic dynSet = (dynamic)o;
+        dynamic dynSet = (dynamic)o;
 
-				if (dynSet.Count == null)
-					throw new Exception("All configuration objects must be contained within Json Arrays.");
+        if (dynSet.Count == null)
+          throw new Exception("All configuration objects must be contained within Json Arrays.");
 
-				foreach (var dynItem in dynSet)
-				{
+        foreach (var dynItem in dynSet)
+        {
           string ciType = null;
-          string ciName = null; 
+          string ciName = null;
 
           if (dynItem.CIType == null && dynItem.CIName == null)
           {
@@ -49,36 +49,36 @@ namespace Org.Cfg
           }
           else
           {
-					  ciType = dynItem.CIType;
-					  ciName = dynItem.CIName;
+            ciType = dynItem.CIType;
+            ciName = dynItem.CIName;
           }
 
-					if (ciType.IsBlank() || ciName.IsBlank())
-						throw new Exception("All configuration objects must have values supplied in both CIType and CIName properties. " +
-																"An object was encountered with CIType=" + (ciType == null ? "null" : ciType) + " and " +
-																"CIName=" + (ciName == null ? "null" : ciName) + ".");
+          if (ciType.IsBlank() || ciName.IsBlank())
+            throw new Exception("All configuration objects must have values supplied in both CIType and CIName properties. " +
+                                "An object was encountered with CIType=" + (ciType == null ? "null" : ciType) + " and " +
+                                "CIName=" + (ciName == null ? "null" : ciName) + ".");
 
-					string compoundName = ciType + "." + ciName;
-					if (ciType != "CI" && coSet.ContainsKey(compoundName))
-						throw new Exception("A duplicate compound name (CIType.CIName) has been encountered when loading the json-based configurations. " +
-																"The duplicate compound name is '" + compoundName + "'.");
+          string compoundName = ciType + "." + ciName;
+          if (ciType != "CI" && coSet.ContainsKey(compoundName))
+            throw new Exception("A duplicate compound name (CIType.CIName) has been encountered when loading the json-based configurations. " +
+                                "The duplicate compound name is '" + compoundName + "'.");
 
-					switch (ciType)
-					{
+          switch (ciType)
+          {
             case "CI":
               coSet.Add(coSet.Count.ToString("0000"), new CI(dynItem.K.ToString(), dynItem.V.ToString()));
               break;
 
-						case "ConfigDbSpec":
-							var configDbSpec = ((object)dynItem).ToConfigDbSpec();
-							if (configDbSpec != null)
-								coSet.Add(compoundName, configDbSpec);
-							break;
+            case "ConfigDbSpec":
+              var configDbSpec = ((object)dynItem).ToConfigDbSpec();
+              if (configDbSpec != null)
+                coSet.Add(compoundName, configDbSpec);
+              break;
 
-						case "ConfigSmtpSpec":
-							var configSmtpSpec = ((object)dynItem).ToConfigSmtpSpec();
-							if (configSmtpSpec != null)
-								coSet.Add(compoundName, configSmtpSpec);
+            case "ConfigSmtpSpec":
+              var configSmtpSpec = ((object)dynItem).ToConfigSmtpSpec();
+              if (configSmtpSpec != null)
+                coSet.Add(compoundName, configSmtpSpec);
               break;
 
             case "ConfigFtpSpec":
@@ -88,17 +88,17 @@ namespace Org.Cfg
               break;
 
 
-					}
-				}
+          }
+        }
 
-				return coSet;
-			}
-			catch (Exception ex)
-			{
-				throw new Exception("An exception occurred while attempting to create a COSet object from a json string. " +
-														"The json string is '" + g.crlf + json.PadTo(200).Trim() + "'.", ex); 
-			}
-		}
+        return coSet;
+      }
+      catch (Exception ex)
+      {
+        throw new Exception("An exception occurred while attempting to create a COSet object from a json string. " +
+                            "The json string is '" + g.crlf + json.PadTo(200).Trim() + "'.", ex);
+      }
+    }
 
 
     public static object JsonDeserialize(this string json)
@@ -141,47 +141,47 @@ namespace Org.Cfg
 
     }
 
-		public static ConfigDbSpec ToConfigDbSpec(this object o)
-		{
-			if (o == null)
-				return null;
+    public static ConfigDbSpec ToConfigDbSpec(this object o)
+    {
+      if (o == null)
+        return null;
 
-			dynamic d = (dynamic)o;
+      dynamic d = (dynamic)o;
 
-			var spec = new ConfigDbSpec();
-			spec.CIName = d.CIName == null ? String.Empty : d.CIName;
-			spec.DbServer = d.DbServer == null ? String.Empty : d.DbServer;
-			spec.DbDsn = d.DbDsn == null ? String.Empty : d.DbDsn;
-			spec.DbName = d.DbName == null ? String.Empty : d.DbName;
-			spec.DbUserId = d.DbUserId == null ? String.Empty : d.DbUserId;
-			spec.DbPassword = d.DbPassword == null ? String.Empty : d.DbPassword;
-			spec.DbPasswordEncoded = d.DbPasswordEncoded == null ? false : d.DbPasswordEncoded;
-			spec.DbType = g.ToEnum<DatabaseType>(d.DbType, DatabaseType.NotSet);
-			spec.DbUseWindowsAuth = d.DbUseWindowsAuth == null ? false : d.DbUseWindowsAuth;
-			spec.DbEfProvider = d.DbEfProvider == null ? String.Empty : d.DbEfProvider;
-			spec.DbEfMetadata = d.DbEfMetadata == null ? String.Empty : d.DbEfMetadata;
-			return spec;
-		}
+      var spec = new ConfigDbSpec();
+      spec.CIName = d.CIName == null ? String.Empty : d.CIName;
+      spec.DbServer = d.DbServer == null ? String.Empty : d.DbServer;
+      spec.DbDsn = d.DbDsn == null ? String.Empty : d.DbDsn;
+      spec.DbName = d.DbName == null ? String.Empty : d.DbName;
+      spec.DbUserId = d.DbUserId == null ? String.Empty : d.DbUserId;
+      spec.DbPassword = d.DbPassword == null ? String.Empty : d.DbPassword;
+      spec.DbPasswordEncoded = d.DbPasswordEncoded == null ? false : d.DbPasswordEncoded;
+      spec.DbType = g.ToEnum<DatabaseType>(d.DbType, DatabaseType.NotSet);
+      spec.DbUseWindowsAuth = d.DbUseWindowsAuth == null ? false : d.DbUseWindowsAuth;
+      spec.DbEfProvider = d.DbEfProvider == null ? String.Empty : d.DbEfProvider;
+      spec.DbEfMetadata = d.DbEfMetadata == null ? String.Empty : d.DbEfMetadata;
+      return spec;
+    }
 
-		public static ConfigSmtpSpec ToConfigSmtpSpec(this object o)
-		{
-			if (o == null)
-				return null;
+    public static ConfigSmtpSpec ToConfigSmtpSpec(this object o)
+    {
+      if (o == null)
+        return null;
 
-			dynamic d = (dynamic)o;
+      dynamic d = (dynamic)o;
 
-			var spec = new ConfigSmtpSpec();
-			spec.CIName = d.CIName == null ? String.Empty : d.CIName;
-			spec.SmtpServer = d.SmtpServer == null ? String.Empty : d.SmtpServer;
-			spec.SmtpPort = d.SmtpPort == null ? String.Empty : d.SmtpPort;
-			spec.SmtpUserId = d.SmtpUserId == null ? String.Empty : d.SmtpUserId;
-			spec.SmtpPassword = d.SmtpPassword == null ? String.Empty : d.SmtpPassword;
-			spec.EnableSSL = d.EnableSSL == null ? false : d.EnableSSL;
-			spec.PickUpFromIIS = d.PickUpFromIIS == null ? false : d.PickUpFromIIS;
-			spec.AllowAnonymous = d.AllowAnonymous == null ? false : d.AllowAnonymous;
-			spec.EmailFromAddress = d.EmailFromAddress == null ? String.Empty : d.EmailFromAddress;
-			return spec;
-		}
+      var spec = new ConfigSmtpSpec();
+      spec.CIName = d.CIName == null ? String.Empty : d.CIName;
+      spec.SmtpServer = d.SmtpServer == null ? String.Empty : d.SmtpServer;
+      spec.SmtpPort = d.SmtpPort == null ? String.Empty : d.SmtpPort;
+      spec.SmtpUserId = d.SmtpUserId == null ? String.Empty : d.SmtpUserId;
+      spec.SmtpPassword = d.SmtpPassword == null ? String.Empty : d.SmtpPassword;
+      spec.EnableSSL = d.EnableSSL == null ? false : d.EnableSSL;
+      spec.PickUpFromIIS = d.PickUpFromIIS == null ? false : d.PickUpFromIIS;
+      spec.AllowAnonymous = d.AllowAnonymous == null ? false : d.AllowAnonymous;
+      spec.EmailFromAddress = d.EmailFromAddress == null ? String.Empty : d.EmailFromAddress;
+      return spec;
+    }
 
     public static ConfigFtpSpec ToConfigFtpSpec(this object o)
     {
@@ -202,16 +202,16 @@ namespace Org.Cfg
       return spec;
     }
 
-		public static string ToCISetFormat(this string json)
-		{
-			string ciSetFormat = json.Replace("{", g.crlf + "  { ")
-															 .Replace("]", g.crlf + "]")
-															 .Replace(":\"", ": \"")
-															 .Replace(",\"", ", \"")
-															 .Replace("\"}", "\" }");
+    public static string ToCISetFormat(this string json)
+    {
+      string ciSetFormat = json.Replace("{", g.crlf + "  { ")
+                           .Replace("]", g.crlf + "]")
+                           .Replace(":\"", ": \"")
+                           .Replace(",\"", ", \"")
+                           .Replace("\"}", "\" }");
 
-			return ciSetFormat;															 
-		}
+      return ciSetFormat;
+    }
 
   }
 }

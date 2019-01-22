@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Org.VideoSeating.Business
 {
-	public class SeatSet : SortedList<int, Seat>
-	{
-	}
+  public class SeatSet : SortedList<int, Seat>
+  {
+  }
 }

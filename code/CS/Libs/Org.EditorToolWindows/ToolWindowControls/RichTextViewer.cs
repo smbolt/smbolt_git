@@ -38,7 +38,11 @@ namespace Org.EditorToolWindows
       }
     }
 
-    public Panel TopPanel { get { return base.TopPanel; } }
+    public Panel TopPanel {
+      get {
+        return base.TopPanel;
+      }
+    }
 
     public RichTextViewer()
       : base("RichTextViewer")

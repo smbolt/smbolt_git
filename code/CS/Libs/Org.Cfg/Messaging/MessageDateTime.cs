@@ -8,9 +8,18 @@ namespace Org.Cfg.Messaging
 {
   public class MessageDateTime
   {
-    public bool IsUsed { get; set; }
-    public DateTime? DateTime { get; set; }
-    public TimeZoneInfo TimeZoneInfo { get; set; }
+    public bool IsUsed {
+      get;
+      set;
+    }
+    public DateTime? DateTime {
+      get;
+      set;
+    }
+    public TimeZoneInfo TimeZoneInfo {
+      get;
+      set;
+    }
 
     public MessageDateTime()
     {

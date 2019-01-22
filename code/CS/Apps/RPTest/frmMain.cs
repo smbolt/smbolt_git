@@ -25,12 +25,12 @@ namespace Org.RPTest
     // items for managing MEF request processors
     [ImportMany(typeof(IRequestProcessorFactory))]
     public IEnumerable<Lazy<IRequestProcessorFactory, IRequestProcessorMetadata>> requestProcessorFactories;
-    public Dictionary<string, IRequestProcessorFactory> LoadedRequestProcessorFactories; 
+    public Dictionary<string, IRequestProcessorFactory> LoadedRequestProcessorFactories;
 
     // items for managing MEF message factories
     [ImportMany(typeof(IMessageFactory))]
     public IEnumerable<Lazy<IMessageFactory, IMessageFactoryMetadata>> messageFactories;
-    public Dictionary<string, IMessageFactory> LoadedMessageFactories; 
+    public Dictionary<string, IMessageFactory> LoadedMessageFactories;
 
     public frmMain()
     {
@@ -61,7 +61,7 @@ namespace Org.RPTest
 
       txtOut.Text = String.Empty;
       Application.DoEvents();
-      System.Threading.Thread.Sleep(100); 
+      System.Threading.Thread.Sleep(100);
 
       try
       {
@@ -80,9 +80,9 @@ namespace Org.RPTest
         var requestMessage = messageFactory.CreateRequestMessage(wsParms);
         var responseTransBody = EmulateWebService(requestMessage);
 
-        txtOut.Text = "REQUEST MESSAGE" + g.crlf + 
-                      requestMessage.TransactionBody.ToString() + g.crlf2 + 
-                      "RESPONSE MESSAGE" + g.crlf + 
+        txtOut.Text = "REQUEST MESSAGE" + g.crlf +
+                      requestMessage.TransactionBody.ToString() + g.crlf2 +
+                      "RESPONSE MESSAGE" + g.crlf +
                       responseTransBody.ToString();
 
 
@@ -92,8 +92,8 @@ namespace Org.RPTest
       {
         MessageBox.Show("An exception occurred during web service request processing." + g.crlf2 + ex.ToReport(), "Request Processor Test - Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-      this.Cursor = Cursors.Default;
-    }
+        this.Cursor = Cursors.Default;
+      }
     }
 
     private XElement EmulateWebService(WsMessage requestMessage)
@@ -101,7 +101,7 @@ namespace Org.RPTest
       XElement transBody = requestMessage.TransactionBody;
       string transAndVersion = requestMessage.TransactionHeader.ProcessorNameAndVersion;
 
-      var requestProcessorFactory = GetRequestProcessorFactory(transAndVersion); 
+      var requestProcessorFactory = GetRequestProcessorFactory(transAndVersion);
 
       if (requestProcessorFactory == null)
         throw new Exception("RequestProcessorFactory could not be created for transaction '" + transAndVersion + "'.");
@@ -117,7 +117,7 @@ namespace Org.RPTest
       }
     }
 
-    
+
     public IMessageFactory GetMessageFactory(WsParms wsParms)
     {
       string transactionVersion = wsParms.TransactionName + "_" + wsParms.TransactionVersion;
@@ -194,7 +194,7 @@ namespace Org.RPTest
         a = new a();
 
         var requestProcessors = g.AppConfig.GetList("RequestProcessors");
-        requestProcessors.Insert(0, String.Empty); 
+        requestProcessors.Insert(0, String.Empty);
         cboRequestProcessors.Items.Clear();
         cboRequestProcessors.DataSource = requestProcessors;
 
@@ -229,7 +229,7 @@ namespace Org.RPTest
     }
 
     private void ComposeMEFContainer()
-    {      
+    {
       this.LoadedRequestProcessorFactories = new Dictionary<string,IRequestProcessorFactory>();
       using (var catalog = new AggregateCatalog())
       {

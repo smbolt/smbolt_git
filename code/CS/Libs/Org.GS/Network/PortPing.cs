@@ -30,13 +30,13 @@ namespace Org.GS.Network
 
         tcpClient.Close();
         tcpClient = null;
-        return new TaskResult("PortPing", "Connection to " + ipAddress + ", port " + port.ToString() + " was successful.", TaskResultStatus.Success); 
+        return new TaskResult("PortPing", "Connection to " + ipAddress + ", port " + port.ToString() + " was successful.", TaskResultStatus.Success);
       }
       catch (Exception ex)
       {
-        return new TaskResult("PortPing", 
-            "Connection to " + ipAddress + ", port " + port.ToString() + " failed. " + g.crlf2 + "Exception Message: " 
-            + g.crlf + ex.Message, TaskResultStatus.Failed); 
+        return new TaskResult("PortPing",
+                              "Connection to " + ipAddress + ", port " + port.ToString() + " failed. " + g.crlf2 + "Exception Message: "
+                              + g.crlf + ex.Message, TaskResultStatus.Failed);
       }
     }
   }

@@ -9,13 +9,34 @@ namespace Org.GS
   [Serializable]
   public class Parm
   {
-    public int ParameterId { get; set; }
-    public int? ScheduledTaskId { get; set; }
-    public string ParameterSetName { get; set; }
-    public string ParameterName { get; set; }
-    public object ParameterValue { get; set; }
-    public Type ParameterType { get; set; }
-    public bool RemoveThisParm { get; set; }
+    public int ParameterId {
+      get;
+      set;
+    }
+    public int? ScheduledTaskId {
+      get;
+      set;
+    }
+    public string ParameterSetName {
+      get;
+      set;
+    }
+    public string ParameterName {
+      get;
+      set;
+    }
+    public object ParameterValue {
+      get;
+      set;
+    }
+    public Type ParameterType {
+      get;
+      set;
+    }
+    public bool RemoveThisParm {
+      get;
+      set;
+    }
 
     public Parm()
     {
@@ -25,7 +46,7 @@ namespace Org.GS
       this.ParameterName = String.Empty;
       this.ParameterValue = String.Empty;
       this.ParameterType = typeof(System.String);
-      this.RemoveThisParm = false; 
+      this.RemoveThisParm = false;
     }
 
     public Parm(string parmName, string parmValue)
@@ -36,7 +57,7 @@ namespace Org.GS
       this.ParameterName = parmName;
       this.ParameterValue = parmValue;
       this.ParameterType = typeof(System.String);
-      this.RemoveThisParm = false; 
+      this.RemoveThisParm = false;
     }
 
     public Parm(string parmName, object parmValue)
@@ -47,7 +68,7 @@ namespace Org.GS
       this.ParameterName = parmName;
       this.ParameterValue = parmValue;
       this.ParameterType = parmValue.GetType();
-      this.RemoveThisParm = false; 
+      this.RemoveThisParm = false;
     }
 
     public Parm Clone()

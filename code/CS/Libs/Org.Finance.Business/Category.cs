@@ -8,11 +8,28 @@ namespace Org.Finance.Business
 {
   public class Category
   {
-    public int Id { get; set; }
-    public string IdFormat { get { return Get_IdFormat(); } }
-    public string CategoryDisplay { get { return Get_CategoryDisplay(); } }
-    public string Name { get; set; }
-    public bool IsTaxRelated { get; set; }
+    public int Id {
+      get;
+      set;
+    }
+    public string IdFormat {
+      get {
+        return Get_IdFormat();
+      }
+    }
+    public string CategoryDisplay {
+      get {
+        return Get_CategoryDisplay();
+      }
+    }
+    public string Name {
+      get;
+      set;
+    }
+    public bool IsTaxRelated {
+      get;
+      set;
+    }
 
     public Category()
     {

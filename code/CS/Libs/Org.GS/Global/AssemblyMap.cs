@@ -4,16 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Org.GS 
+namespace Org.GS
 {
-  public class AssemblyMap 
+  public class AssemblyMap
   {
-    public string AssemblyName { get; set; }
-    public string CodeBase { get; set; }
-    public string ImageRuntimeVersion { get; set; }
-    public object ManifestModule { get; set; }
-    public string FullName { get; set; }
-    public object CustomAttributes { get; set; }
+    public string AssemblyName {
+      get;
+      set;
+    }
+    public string CodeBase {
+      get;
+      set;
+    }
+    public string ImageRuntimeVersion {
+      get;
+      set;
+    }
+    public object ManifestModule {
+      get;
+      set;
+    }
+    public string FullName {
+      get;
+      set;
+    }
+    public object CustomAttributes {
+      get;
+      set;
+    }
 
     public AssemblyMap()
     {

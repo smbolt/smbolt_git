@@ -9,11 +9,27 @@ namespace Org.GS
   [Serializable]
   public class ProgressMessage
   {
-    public string ActivityName { get; set; }
-    public int CompletedItems { get; set; }
-    public int TotalItems { get; set; }
-    public string MessageText { get; set; }
-    public string ActvityProgress { get { return Get_ActivityProgress(); } }
+    public string ActivityName {
+      get;
+      set;
+    }
+    public int CompletedItems {
+      get;
+      set;
+    }
+    public int TotalItems {
+      get;
+      set;
+    }
+    public string MessageText {
+      get;
+      set;
+    }
+    public string ActvityProgress {
+      get {
+        return Get_ActivityProgress();
+      }
+    }
 
     public ProgressMessage()
     {
@@ -61,7 +77,7 @@ namespace Org.GS
         return String.Empty;
 
       float pct = this.CompletedItems / this.TotalItems * 100;
-      return " (" + pct.ToString("##0.00") + "%)"; 
+      return " (" + pct.ToString("##0.00") + "%)";
     }
   }
 }

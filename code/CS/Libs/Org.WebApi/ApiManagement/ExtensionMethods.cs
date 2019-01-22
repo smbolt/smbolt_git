@@ -30,27 +30,27 @@ namespace Org.WebApi.ApiManagement
           apiResult.Data = taskResult.Data;
           apiResult.PagingControl.IsPaging = taskResult.IsPaging;
           apiResult.PagingControl.TotalEntityCount = taskResult.TotalEntityCount;
-          apiResult.PagingControl.SubsetEntityCount = taskResult.SubsetEntityCount; 
+          apiResult.PagingControl.SubsetEntityCount = taskResult.SubsetEntityCount;
           apiResult.UserId = 2; //taskResult.UserId;
-          return new OkNegotiatedContentResult<ApiResult>(apiResult, controller); 
-          
+          return new OkNegotiatedContentResult<ApiResult>(apiResult, controller);
+
         case TaskResultStatus.NotFound:
           apiResult.Message = taskResult.Message;
           apiResult.LongMessage = taskResult.FullErrorDetail;
-          return new OkNegotiatedContentResult<ApiResult>(apiResult, controller); 
+          return new OkNegotiatedContentResult<ApiResult>(apiResult, controller);
 
         case TaskResultStatus.AlreadyExists:
           apiResult.Message = taskResult.Message;
           apiResult.LongMessage = taskResult.FullErrorDetail;
           apiResult.ResponseData = taskResult.Field;
-          return new OkNegotiatedContentResult<ApiResult>(apiResult, controller); 
-          
+          return new OkNegotiatedContentResult<ApiResult>(apiResult, controller);
+
         case TaskResultStatus.Failed:
           apiResult.Message = taskResult.Message;
           apiResult.LongMessage = taskResult.FullErrorDetail;
-          return new OkNegotiatedContentResult<ApiResult>(apiResult, controller); 
+          return new OkNegotiatedContentResult<ApiResult>(apiResult, controller);
 
-        default:          
+        default:
           apiResult.Message = taskResult.Message;;
           if (taskResult.Exception != null)
           {
@@ -61,19 +61,19 @@ namespace Org.WebApi.ApiManagement
             if (taskResult.FullErrorDetail.IsNotBlank())
               apiResult.LongMessage = taskResult.FullErrorDetail;
           }
-          apiResult.ResponseData = null; 
+          apiResult.ResponseData = null;
           HttpResponseMessage responseMessage = new HttpResponseMessage(HttpStatusCode.InternalServerError);
           responseMessage.Content = new ObjectContent<ApiResult>(apiResult, GlobalConfiguration.Configuration.Formatters.JsonFormatter);
-          var response = GetResponseMessageFromController(controller, responseMessage); 
+          var response = GetResponseMessageFromController(controller, responseMessage);
           if (response != null)
             return response;
-          throw new Exception("GetResponseMessageFromController using controller type '" + controller.GetType().Name + "' returned null. It is possible that " + 
-                              "a new controller needs to be implemented in the method."); 
+          throw new Exception("GetResponseMessageFromController using controller type '" + controller.GetType().Name + "' returned null. It is possible that " +
+                              "a new controller needs to be implemented in the method.");
       }
     }
 
     public static IHttpActionResult ToExceptionApiResult(this ControllerBase controller, string message, string code, Exception ex)
-    {      
+    {
       var apiResult = new ApiResult();
       apiResult.ApiStatus = ApiStatus.Error.ToString();
       apiResult.Message = message;
@@ -81,16 +81,16 @@ namespace Org.WebApi.ApiManagement
       apiResult.ResponseData = ex.ToApiExceptionReport();
       HttpResponseMessage responseMessage = new HttpResponseMessage(HttpStatusCode.InternalServerError);
       responseMessage.Content = new ObjectContent<ApiResult>(apiResult, GlobalConfiguration.Configuration.Formatters.JsonFormatter);
-      var response = GetResponseMessageFromController(controller, responseMessage); 
+      var response = GetResponseMessageFromController(controller, responseMessage);
       if (response != null)
         return response;
-      throw new Exception("GetResponseMessageFromController using controller type '" + controller.GetType().Name + "' returned null. It is possible that " + 
-                          "a new controller needs to be implemented in the method."); 
+      throw new Exception("GetResponseMessageFromController using controller type '" + controller.GetType().Name + "' returned null. It is possible that " +
+                          "a new controller needs to be implemented in the method.");
     }
-        
+
     public static string GetValue(this IEnumerable<KeyValuePair<string, string>> qs, string key)
     {
-      return qs.SingleOrDefault(x => x.Key == key).Value; 
+      return qs.SingleOrDefault(x => x.Key == key).Value;
     }
 
     public static string ToApiExceptionReport(this Exception value)
@@ -109,7 +109,7 @@ namespace Org.WebApi.ApiManagement
 
         if (ex.GetType().ToString() == "System.Web.Http.HttpResponseException")
         {
-          sb.Append("HTTP_ERROR: " + ((System.Web.Http.HttpResponseException)ex).Response.ToString() + g.crlf);         
+          sb.Append("HTTP_ERROR: " + ((System.Web.Http.HttpResponseException)ex).Response.ToString() + g.crlf);
         }
 
         if (ex.InnerException == null)

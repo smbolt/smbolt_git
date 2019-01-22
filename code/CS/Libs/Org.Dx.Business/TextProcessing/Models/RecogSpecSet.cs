@@ -10,7 +10,7 @@ using Org.GS;
 namespace Org.Dx.Business.TextProcessing
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element, CollectionElements = "RecogSpec", WrapperElement = "RecogSpecSet")] 
+  [XMap(XType = XType.Element, CollectionElements = "RecogSpec", WrapperElement = "RecogSpecSet")]
   public class RecogSpecSet : Dictionary<string, RecogSpec>
   {
 

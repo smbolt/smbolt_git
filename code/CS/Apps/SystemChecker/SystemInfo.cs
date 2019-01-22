@@ -19,7 +19,7 @@ namespace SystemChecker
 
     [DllImport("kernel32", CharSet = CharSet.Auto, SetLastError = true)]
     static extern IntPtr GetProcAddress(IntPtr hModule,
-        [MarshalAs(UnmanagedType.LPStr)]string procName);
+                                        [MarshalAs(UnmanagedType.LPStr)]string procName);
 
     [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
@@ -29,54 +29,125 @@ namespace SystemChecker
     static extern bool GetTokenInformation(IntPtr tokenHandle, TokenInformationClass tokenInformationClass, IntPtr tokenInformation, int tokenInformationLength, out int returnLength);
 
     private int _processId = -1;
-    public int ProcessId { get { return _processId; } }
+    public int ProcessId {
+      get {
+        return _processId;
+      }
+    }
 
     private string _domainName = String.Empty;
-    public string DomainName { get { return _domainName; } }
+    public string DomainName {
+      get {
+        return _domainName;
+      }
+    }
 
     private string _computerName = String.Empty;
-    public string ComputerName { get { return _computerName; } }
+    public string ComputerName {
+      get {
+        return _computerName;
+      }
+    }
 
     private string _userName = String.Empty;
-    public string UserName { get { return _userName; } }
+    public string UserName {
+      get {
+        return _userName;
+      }
+    }
 
     private string _windowsVersion = String.Empty;
-    public string WindowsVersion { get { return _windowsVersion; } }
+    public string WindowsVersion {
+      get {
+        return _windowsVersion;
+      }
+    }
 
     private string _windowsBuild = String.Empty;
-    public string WindowsBuild { get { return _windowsBuild; } }
+    public string WindowsBuild {
+      get {
+        return _windowsBuild;
+      }
+    }
 
     private string _systemRoot = String.Empty;
-    public string SystemRoot { get { return _systemRoot; } }
+    public string SystemRoot {
+      get {
+        return _systemRoot;
+      }
+    }
 
     private bool _isUserLocalAdmin = false;
-    public bool IsUserLocalAdmin { get { return _isUserLocalAdmin; } }
+    public bool IsUserLocalAdmin {
+      get {
+        return _isUserLocalAdmin;
+      }
+    }
 
     private bool _isNT = false;
-    public bool IsNT { get { return _isNT; } }
+    public bool IsNT {
+      get {
+        return _isNT;
+      }
+    }
 
     private bool _isCE = false;
-    public bool IsCE { get { return _isCE; } }
+    public bool IsCE {
+      get {
+        return _isCE;
+      }
+    }
 
     private bool _isWin9X = false;
-    public bool IsWin9X { get { return _isWin9X; } }
+    public bool IsWin9X {
+      get {
+        return _isWin9X;
+      }
+    }
 
     private bool _is64Bit = false;
-    public bool Is64Bit { get { return _is64Bit; } }
-    public bool Is32Bit { get { return !_is64Bit; } }
+    public bool Is64Bit {
+      get {
+        return _is64Bit;
+      }
+    }
+    public bool Is32Bit {
+      get {
+        return !_is64Bit;
+      }
+    }
 
     private string _highestFramework = String.Empty;
-    public string HighestFramework { get { return _highestFramework; } }
+    public string HighestFramework {
+      get {
+        return _highestFramework;
+      }
+    }
 
     private List<string> _installedFrameworks = new List<string>();
-    public List<string> InstalledFrameworks { get { return _installedFrameworks; } }
+    public List<string> InstalledFrameworks {
+      get {
+        return _installedFrameworks;
+      }
+    }
 
     private bool _exceptionOccurred = false;
-    public bool ExceptionOccurred { get { return _exceptionOccurred; } }
+    public bool ExceptionOccurred {
+      get {
+        return _exceptionOccurred;
+      }
+    }
 
-    public Exception Exception { get; private set; }
+    public Exception Exception {
+      get;
+      private set;
+    }
 
-    public string SystemInfoString { get { return Get_SystemInfoString(); } }
+    public string SystemInfoString {
+      get {
+        return Get_SystemInfoString();
+      }
+    }
 
 
     public SystemInfo()
@@ -201,7 +272,7 @@ namespace SystemChecker
         }
 
         _windowsBuild = Environment.OSVersion.Version.Major.ToString() + "." + Environment.OSVersion.Version.Minor.ToString() +
-                " - Build " + Environment.OSVersion.Version.Build.ToString();
+                        " - Build " + Environment.OSVersion.Version.Build.ToString();
 
         _is64Bit = Is64BitOperatingSystem();
 
@@ -224,14 +295,14 @@ namespace SystemChecker
         return "Exception occurred";
 
       string systemInfo = "SYSTEM INFORMATION" + Common.crlf +
-          "  Windows Version : " + _windowsVersion + Common.crlf +
-          "  Windows Build   : " + _windowsBuild + Common.crlf +
-          "  OS Type         : " + (_is64Bit ? "64 bit" : "32 bit") + Common.crlf +
-          "  SystemRoot      : " + _systemRoot + Common.crlf +
-          "  Computer Name   : " + _computerName + Common.crlf +
-          "  Domain          : " + _domainName + Common.crlf +
-          "  User Name       : " + _userName + Common.crlf +
-          "  Process ID      : " + _processId.ToString();
+                          "  Windows Version : " + _windowsVersion + Common.crlf +
+                          "  Windows Build   : " + _windowsBuild + Common.crlf +
+                          "  OS Type         : " + (_is64Bit ? "64 bit" : "32 bit") + Common.crlf +
+                          "  SystemRoot      : " + _systemRoot + Common.crlf +
+                          "  Computer Name   : " + _computerName + Common.crlf +
+                          "  Domain          : " + _domainName + Common.crlf +
+                          "  User Name       : " + _userName + Common.crlf +
+                          "  Process ID      : " + _processId.ToString();
 
       return systemInfo;
 
@@ -245,22 +316,22 @@ namespace SystemChecker
       }
       else  // 32-bit programs run on both 32-bit and 64-bit Windows
       {
-        // Detect whether the current process is a 32-bit process 
+        // Detect whether the current process is a 32-bit process
         // running on a 64-bit system.
         bool flag;
         return ((DoesWin32MethodExist("kernel32.dll", "IsWow64Process") &&
-            IsWow64Process(GetCurrentProcess(), out flag)) && flag);
+                 IsWow64Process(GetCurrentProcess(), out flag)) && flag);
       }
     }
 
     /// <summary>
-    /// The function determins whether a method exists in the export 
+    /// The function determins whether a method exists in the export
     /// table of a certain module.
     /// </summary>
     /// <param name="moduleName">The name of the module</param>
     /// <param name="methodName">The name of the method</param>
     /// <returns>
-    /// The function returns true if the method specified by methodName 
+    /// The function returns true if the method specified by methodName
     /// exists in the export table of the module specified by moduleName.
     /// </returns>
     private bool DoesWin32MethodExist(string moduleName, string methodName)
@@ -275,23 +346,23 @@ namespace SystemChecker
 
 
     /// <summary>
-    /// The function determines whether the operating system of the 
-    /// current machine of any remote machine is a 64-bit operating 
+    /// The function determines whether the operating system of the
+    /// current machine of any remote machine is a 64-bit operating
     /// system through Windows Management Instrumentation (WMI).
     /// </summary>
     /// <param name="machineName">
-    /// The full computer name or IP address of the target machine. "." 
+    /// The full computer name or IP address of the target machine. "."
     /// or null means the local machine.
     /// </param>
     /// <param name="domain">
-    /// NTLM domain name. If the parameter is null, NTLM authentication 
+    /// NTLM domain name. If the parameter is null, NTLM authentication
     /// will be used and the NTLM domain of the current user will be used.
     /// </param>
     /// <param name="userName">
-    /// The user name to be used for the connection operation. If the 
-    /// user name is from a domain other than the current domain, the 
-    /// string may contain the domain name and user name, separated by a 
-    /// backslash: string 'username' = "DomainName\\UserName". If the 
+    /// The user name to be used for the connection operation. If the
+    /// user name is from a domain other than the current domain, the
+    /// string may contain the domain name and user name, separated by a
+    /// backslash: string 'username' = "DomainName\\UserName". If the
     /// parameter is null, the connection will use the currently logged-
     /// on user
     /// </param>
@@ -299,29 +370,29 @@ namespace SystemChecker
     /// The password for the specified user.
     /// </param>
     /// <returns>
-    /// The function returns true if the operating system is 64-bit; 
+    /// The function returns true if the operating system is 64-bit;
     /// otherwise, it returns false.
     /// </returns>
     /// <exception cref="System.Management.ManagementException">
-    /// The ManagementException exception is generally thrown with the  
+    /// The ManagementException exception is generally thrown with the
     /// error code: System.Management.ManagementStatus.InvalidParameter.
-    /// You need to check whether the parameters for ConnectionOptions 
+    /// You need to check whether the parameters for ConnectionOptions
     /// (e.g. user name, password, domain) are set correctly.
     /// </exception>
     /// <exception cref="System.Runtime.InteropServices.COMException">
-    /// A common error accompanied with the COMException is "The RPC 
-    /// server is unavailable. (Exception from HRESULT: 0x800706BA)". 
-    /// This is usually caused by the firewall on the target machine that 
+    /// A common error accompanied with the COMException is "The RPC
+    /// server is unavailable. (Exception from HRESULT: 0x800706BA)".
+    /// This is usually caused by the firewall on the target machine that
     /// blocks the WMI connection or some network problem.
     /// </exception>
     public bool Is64BitOperatingSystem(string machineName,
-        string domain, string userName, string password)
+                                       string domain, string userName, string password)
     {
       ConnectionOptions options = null;
       if (!string.IsNullOrEmpty(userName))
       {
-        // Build a ConnectionOptions object for the remote connection 
-        // if you plan to connect to the remote with a different user 
+        // Build a ConnectionOptions object for the remote connection
+        // if you plan to connect to the remote with a different user
         // name and password than the one you are currently using.
         options = new ConnectionOptions();
         options.Username = userName;
@@ -336,16 +407,16 @@ namespace SystemChecker
           "\\root\\cimv2", options);
       scope.Connect();
 
-      // Query Win32_Processor.AddressWidth which dicates the current 
-      // operating mode of the processor (on a 32-bit OS, it would be 
+      // Query Win32_Processor.AddressWidth which dicates the current
+      // operating mode of the processor (on a 32-bit OS, it would be
       // "32"; on a 64-bit OS, it would be "64").
-      // Note: Win32_Processor.DataWidth indicates the capability of 
+      // Note: Win32_Processor.DataWidth indicates the capability of
       // the processor. On a 64-bit processor, it is "64".
       // Note: Win32_OperatingSystem.OSArchitecture tells the bitness
-      // of OS too. On a 32-bit OS, it would be "32-bit". However, it 
+      // of OS too. On a 32-bit OS, it would be "32-bit". However, it
       // is only available on Windows Vista and newer OS.
       ObjectQuery query = new ObjectQuery(
-          "SELECT AddressWidth FROM Win32_Processor");
+        "SELECT AddressWidth FROM Win32_Processor");
 
       // Perform the query and get the result.
       ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
@@ -385,9 +456,8 @@ namespace SystemChecker
 
             if (install.IsBlank())
               framework = versionKeyName + " " + name;
-            else
-              if (sp.IsNotBlank() && install == "1")
-                framework = versionKeyName + " " + name + " " + sp;
+            else if (sp.IsNotBlank() && install == "1")
+              framework = versionKeyName + " " + name + " " + sp;
 
             if (name.IsNotBlank())
             {

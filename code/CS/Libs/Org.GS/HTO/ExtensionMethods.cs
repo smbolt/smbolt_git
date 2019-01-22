@@ -19,9 +19,12 @@ namespace Org.GS
 
         switch (jt.Type)
         {
-          case JTokenType.Array: return ((JArray)jt).ToHto(parent);
-          case JTokenType.Object: return ((JObject)jt).ToHto(parent);
-          case JTokenType.Property: return ((JProperty)jt).ToHto(parent);
+          case JTokenType.Array:
+            return ((JArray)jt).ToHto(parent);
+          case JTokenType.Object:
+            return ((JObject)jt).ToHto(parent);
+          case JTokenType.Property:
+            return ((JProperty)jt).ToHto(parent);
         }
 
         var hto = new Hto();

@@ -16,14 +16,11 @@ namespace Org.DxDocs
 
       if (cell.Value.IsDateTime)
         dxCell.RawValue = cell.Value.DateTimeValue;
-      else
-        if (cell.Value.IsNumeric)
+      else if (cell.Value.IsNumeric)
         dxCell.RawValue = cell.Value.NumericValue;
-      else
-          if (cell.Value.IsBoolean)
+      else if (cell.Value.IsBoolean)
         dxCell.RawValue = cell.Value.BooleanValue;
-      else
-            if (cell.Value.IsEmpty)
+      else if (cell.Value.IsEmpty)
         dxCell.RawValue = null;
       else
         dxCell.RawValue = cell.Value.TextValue;

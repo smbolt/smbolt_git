@@ -70,7 +70,7 @@ namespace Org.GS.Configuration
       for (int i = 1; i < 1000; i++)
       {
         if (!numberUsed[i])
-            return i.ToString("000");
+          return i.ToString("000");
       }
 
       throw new Exception("All user id numbers from 1 to 999 are used.  Only 999 users are allowed.");
@@ -124,7 +124,7 @@ namespace Org.GS.Configuration
       foreach (ConfigUser u in this.Values)
       {
         if (u.FirstName.Trim().ToLower() == firstName.Trim().ToLower()
-          && u.LastName.Trim().ToLower() == lastName.Trim().ToLower())
+            && u.LastName.Trim().ToLower() == lastName.Trim().ToLower())
           return true;
       }
 

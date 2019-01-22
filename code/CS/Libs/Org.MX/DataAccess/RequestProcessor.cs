@@ -71,7 +71,7 @@ namespace Org.MX.DataAccess
               throw new Exception("No sequencer column was located for entity '" + entity.GetType().Name + "'.");
 
             if (metricObjectSet.ContainsKey(sequencer.ToInt32()))
-              throw new Exception("The MetricObjectSet collection for type '" + entity.GetType().Name + "' already contains " + 
+              throw new Exception("The MetricObjectSet collection for type '" + entity.GetType().Name + "' already contains " +
                                   "the sequencer '" + sequencer.ToInt32().ToString() + "'.");
 
             metricObjectSet.Add(sequencer.ToInt32(), (T)entity);

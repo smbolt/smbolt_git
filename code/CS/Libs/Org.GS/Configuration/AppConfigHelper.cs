@@ -20,8 +20,8 @@ namespace Org.GS
       switch (configFileType)
       {
         case ConfigFileType.AppConfig:
-            fullPath = centralConfigPath + @"\APPCFG\PROFILES";
-            break;
+          fullPath = centralConfigPath + @"\APPCFG\PROFILES";
+          break;
       }
 
       string[] profileNames = Directory.GetDirectories(fullPath);
@@ -87,7 +87,7 @@ namespace Org.GS
             string xml = encryptor.DecryptString(File.ReadAllText(cachedCentralConfigFile));
             centralAppConfigXml = XElement.Parse(xml);
             throw new Exception(g.AppInfo.AppName + " was unable to reach the central configuration web service at '" + configWsSpec.WebServiceEndpoint + "'." +
-              g.crlf2 + "Cached central configuration elements will be loaded.");
+                                g.crlf2 + "Cached central configuration elements will be loaded.");
           }
         }
       }
@@ -205,7 +205,7 @@ namespace Org.GS
 
           //string endpoint = configWsSpec.WebServiceEndpoint;
 
-          //WsMessage requestMessage = WsMessageFactory.BuildGetConfigFileRequestMessage(MessagingParticipant.Sender, GetConfigFileCommand.GetConfigFile, 
+          //WsMessage requestMessage = WsMessageFactory.BuildGetConfigFileRequestMessage(MessagingParticipant.Sender, GetConfigFileCommand.GetConfigFile,
           //        ConfigFileType.AppConfig, centralAppConfigProfile, "CentralConfig.xmlx");
           //requestMessage.MessageHeader.AppName = g.AppInfo.AppName;
           //requestMessage.MessageHeader.Version = g.AppInfo.AppVersion;

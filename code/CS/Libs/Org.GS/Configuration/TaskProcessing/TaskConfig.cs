@@ -12,51 +12,99 @@ namespace Org.GS.Configuration
   public class TaskConfig
   {
     [XMap(Name="IsActive", DefaultValue = "True", IsExplicit = true)]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap(Name="Name", IsKey = true, IsRequired = true)]
-    public string TaskName { get; set; }
+    public string TaskName {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public string ProcessorName { get; set; }
+    public string ProcessorName {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public string ProcessorVersion { get; set; }
+    public string ProcessorVersion {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public int ProcessorTypeId { get; set; }
+    public int ProcessorTypeId {
+      get;
+      set;
+    }
 
     [XMap]
-    public string AssemblyName { get; set; }
+    public string AssemblyName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string CatalogName { get; set; }
+    public string CatalogName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string CatalogEntry { get; set; }
+    public string CatalogEntry {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ObjectTypeName { get; set; }
+    public string ObjectTypeName {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool IsLongRunning { get; set; }
+    public bool IsLongRunning {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool RunUnitTask { get; set; }
+    public bool RunUnitTask {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool TrackHistory { get; set; }
+    public bool TrackHistory {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "True")]
-    public bool AllowConcurrent { get; set; }
+    public bool AllowConcurrent {
+      get;
+      set;
+    }
 
     [XMap(Name = "TaskSchedule", CollectionElements = "TaskScheduleElement", WrapperElement = "TaskSchedule")]
-    public TaskSchedule TaskSchedule { get; set; }
+    public TaskSchedule TaskSchedule {
+      get;
+      set;
+    }
 
     [XMap(CollectionElements = "TaskParm", WrapperElement = "TaskParmSet")]
-    public TaskParmSet TaskParmSet { get; set; }
+    public TaskParmSet TaskParmSet {
+      get;
+      set;
+    }
 
-    public bool IsConfiguredAsActive { get; set; }
+    public bool IsConfiguredAsActive {
+      get;
+      set;
+    }
 
     public TaskConfig()
     {
@@ -74,7 +122,7 @@ namespace Org.GS.Configuration
       this.RunUnitTask = false;
       this.TrackHistory = false;
       this.TaskParmSet = new TaskParmSet();
-      this.TaskSchedule = new TaskSchedule();      
+      this.TaskSchedule = new TaskSchedule();
     }
   }
 }

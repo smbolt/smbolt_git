@@ -11,12 +11,24 @@ namespace Org.Pipes
 {
   public class NamedPipeServer
   {
-    public string NamedPipeServerName { get; private set; }
-    public string NamedPipeName { get; private set; }
-    public NamedPipeServerStatus Status { get; private set; }
+    public string NamedPipeServerName {
+      get;
+      private set;
+    }
+    public string NamedPipeName {
+      get;
+      private set;
+    }
+    public NamedPipeServerStatus Status {
+      get;
+      private set;
+    }
 
     private NamedPipeServerStream _serverStream;
-    public int MaxInstances { get; private set; }    
+    public int MaxInstances {
+      get;
+      private set;
+    }
 
     public NamedPipeServer(string namedPipeServerName, string namedPipeName, int maxInstances = -1)
     {
@@ -41,7 +53,7 @@ namespace Org.Pipes
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to begin listening on the named pipe named '" + this.NamedPipeName + "' " + 
+        throw new Exception("An exception occurred while attempting to begin listening on the named pipe named '" + this.NamedPipeName + "' " +
                             "in NamedPipeServer named '" + this.NamedPipeServerName + "'.", ex);
       }
     }

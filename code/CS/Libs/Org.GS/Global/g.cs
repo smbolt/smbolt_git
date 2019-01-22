@@ -26,22 +26,45 @@ namespace Org.GS
     private static string _appDataPath = null;
     public static string Ruler;
     private static Cache _cache;
-    public static Cache Cache { get { return _cache; } }
-    public static SystemInfo SystemInfo; 
+    public static Cache Cache {
+      get {
+        return _cache;
+      }
+    }
+    public static SystemInfo SystemInfo;
     public static object UtilityLockObject = new object();
     public static Vault Vault;
-    public static List<string> Tags { get; set; }
+    public static List<string> Tags {
+      get;
+      set;
+    }
     public static bool IsVaultLoadedFromFile = false;
     public static DiagnosticsManager DiagnosticsManager = new DiagnosticsManager();
     public static PerfManager Perf;
     public static AppInfo AppInfo;
-    public static string AppName { get { return (AppInfo?.AppName).ObjectToTrimmedString(); } }
+    public static string AppName {
+      get {
+        return (AppInfo?.AppName).ObjectToTrimmedString();
+      }
+    }
     public static string ConnectionStringName = String.Empty;
     public static LogRecordSet LogRecordSet;
-    public static bool UseLocalAppData { get; set; }
-    public static bool IsXmlMapperInitialized { get; set; }
-    public static ConfigSmtpSpec DefaultConfigSmtpSpec { get; set; }
-    public static ConfigDbSpec DefaultConfigDbSpec { get; set; }
+    public static bool UseLocalAppData {
+      get;
+      set;
+    }
+    public static bool IsXmlMapperInitialized {
+      get;
+      set;
+    }
+    public static ConfigSmtpSpec DefaultConfigSmtpSpec {
+      get;
+      set;
+    }
+    public static ConfigDbSpec DefaultConfigDbSpec {
+      get;
+      set;
+    }
     public static ObjectMap ObjectMap;
     public static AppConfig AppConfig;
     public static AppConfig ModuleConfig;
@@ -51,9 +74,17 @@ namespace Org.GS
     public static Assembly ModuleAssembly = null;
     public static int? ModuleId;
     public static bool LeaseTimeSet = false;
-    public static RuntimeEnvironment RuntimeEnvironment { get { return Get_RuntimeEnvironment(); } }
+    public static RuntimeEnvironment RuntimeEnvironment {
+      get {
+        return Get_RuntimeEnvironment();
+      }
+    }
     private static string _branchName = String.Empty;
-    public static string BranchName { get { return Get_BranchName(); } }
+    public static string BranchName {
+      get {
+        return Get_BranchName();
+      }
+    }
     public static bool SuppressLogging = false;
     public static bool InOrgAdminMode = false;
     public static bool InClientAdminMode = false;
@@ -73,24 +104,78 @@ namespace Org.GS
     public static int EarliestReasonableYear = 1950;
     public static int LatestReasonableYear = 2199;
 
-    public static string ExecutablePath { get; set; }
-    public static string AlternateAppConfigPath { get; set; }
-    public static string ModulePath { get; set; }
-    public static string AbsoluteExecutablePath { get; set; }
-    public static string ProgramDataPath { get; set; }
-    public static string AppConfigPath { get; set; }
-    public static string CentralConfigPath { get; set; }
-    public static string LocalConfigPath { get; set; }
-    public static string LogPath { get; set; }
-    public static string ResourcePath { get; set; }
-    public static string ReportsPath { get; set; }
-    public static string ImportsPath { get; set; }
-    public static string ExportsPath { get; set; }
-    public static string ErrorsPath { get; set; }
-    public static string MEFCatalog { get; set; }
-    public static string DocPath { get; set; }
-    public static string HelpPath { get; set; }
-    public static string PerformancePath { get; set; }
+    public static string ExecutablePath {
+      get;
+      set;
+    }
+    public static string AlternateAppConfigPath {
+      get;
+      set;
+    }
+    public static string ModulePath {
+      get;
+      set;
+    }
+    public static string AbsoluteExecutablePath {
+      get;
+      set;
+    }
+    public static string ProgramDataPath {
+      get;
+      set;
+    }
+    public static string AppConfigPath {
+      get;
+      set;
+    }
+    public static string CentralConfigPath {
+      get;
+      set;
+    }
+    public static string LocalConfigPath {
+      get;
+      set;
+    }
+    public static string LogPath {
+      get;
+      set;
+    }
+    public static string ResourcePath {
+      get;
+      set;
+    }
+    public static string ReportsPath {
+      get;
+      set;
+    }
+    public static string ImportsPath {
+      get;
+      set;
+    }
+    public static string ExportsPath {
+      get;
+      set;
+    }
+    public static string ErrorsPath {
+      get;
+      set;
+    }
+    public static string MEFCatalog {
+      get;
+      set;
+    }
+    public static string DocPath {
+      get;
+      set;
+    }
+    public static string HelpPath {
+      get;
+      set;
+    }
+    public static string PerformancePath {
+      get;
+      set;
+    }
     public static string CS1;
     public static string crlf = Environment.NewLine;
     public static string nl = g.crlf;
@@ -103,10 +188,10 @@ namespace Org.GS
     public static string PadZero = null;
     public static string Trace = String.Empty;
     public static string Report = String.Empty;
-    public static FxVersionSet FxVersionSet; 
+    public static FxVersionSet FxVersionSet;
     public static int MemoryLogLimit = 250000;
     public static int MemoryLogTruncateSize = 200000;
-    public static int MemoryLogCount = 0; 
+    public static int MemoryLogCount = 0;
     public static Color ThemeExtraLightColor = Color.White;
     public static Color ThemeLightColor = Color.White;
     public static Color ThemeMidLightColor = Color.White;
@@ -125,9 +210,11 @@ namespace Org.GS
     private static StringBuilder _memoryLog = new StringBuilder();
     public static string MemoryLog
     {
-      get { return _memoryLog.ToString(); }
+      get {
+        return _memoryLog.ToString();
+      }
     }
-  
+
     public static bool DriveInitialization()
     {
       return true;
@@ -135,22 +222,28 @@ namespace Org.GS
 
     public static DiagnosticsMode DiagnosticsMode
     {
-      get { return DiagnosticsManager.DiagnosticsMode; } 
+      get {
+        return DiagnosticsManager.DiagnosticsMode;
+      }
     }
 
     public static bool DebugOrVerbose
     {
-      get { return DiagnosticsManager.DiagnosticsMode > 0; }
+      get {
+        return DiagnosticsManager.DiagnosticsMode > 0;
+      }
     }
 
     public static bool Verbose
     {
-      get { return DiagnosticsManager.DiagnosticsMode == DiagnosticsMode.Verbose; }
+      get {
+        return DiagnosticsManager.DiagnosticsMode == DiagnosticsMode.Verbose;
+      }
     }
 
     public static string AppDataPath
     {
-      get 
+      get
       {
         if (_appDataPath != null)
           return _appDataPath;
@@ -190,7 +283,9 @@ namespace Org.GS
 
     public static bool IsWebBasedApplication
     {
-      get { return Get_IsWebBasedApplication(); }
+      get {
+        return Get_IsWebBasedApplication();
+      }
     }
 
     public static bool Initialize()
@@ -265,16 +360,16 @@ namespace Org.GS
 
         return true;
       }
-      catch(Exception ex) 
+      catch(Exception ex)
       {
-        throw new Exception("An exception occurred initializing the 'g' (global) object.", ex); 
+        throw new Exception("An exception occurred initializing the 'g' (global) object.", ex);
       }
     }
 
     public static string GetRuler()
     {
       return "0----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----" +
-             "0----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----" + 
+             "0----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----" +
              "0----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----";
     }
 
@@ -292,14 +387,14 @@ namespace Org.GS
           if (text.StartsWith("^"))
           {
             leadingNewLine = g.crlf;
-            text = text.Substring(1); 
+            text = text.Substring(1);
           }
 
-          MemoryLogCount++; 
+          MemoryLogCount++;
 
           string logRecord = leadingNewLine + DateTime.Now.ToString("yyyyMMdd-HHmmss.fff") + " " +
                              "TH:" + System.Threading.Thread.CurrentThread.ManagedThreadId.ToString("00000") + " " + MemoryLogCount.ToString("00000") + " "
-                             + text + g.crlf; 
+                             + text + g.crlf;
 
           _memoryLog.Append(logRecord);
 
@@ -320,7 +415,7 @@ namespace Org.GS
               _memoryLog.Append(truncatedLog.Substring(charsToTrim));
           }
         }
-        catch{}
+        catch {}
         finally
         {
           Monitor.Exit(LogToMemory_LockObject);
@@ -376,42 +471,44 @@ namespace Org.GS
           break;
       }
 
-        if (programTypeFolder.IsBlank())
-          return String.Empty;
+      if (programTypeFolder.IsBlank())
+        return String.Empty;
 
-        string appDataPath = String.Empty;
+      string appDataPath = String.Empty;
 
-        switch (appType)
-        {
-          case ApplicationType.WebSite:
-          case ApplicationType.WcfService:
-            appDataPath = ProgramDataPath;
-            break;
+      switch (appType)
+      {
+        case ApplicationType.WebSite:
+        case ApplicationType.WcfService:
+          appDataPath = ProgramDataPath;
+          break;
 
-          case ApplicationType.WinApp:
-          case ApplicationType.WpfApp:
-          case ApplicationType.WinService:
-          case ApplicationType.WebApi:
-          case ApplicationType.WinConsole:
-          case ApplicationType.WinAppModule:
-          case ApplicationType.WpfAppModule:
-            if (g.UseLocalAppData)
-              appDataPath = ProgramDataPath + @"\AppData";
-            else
-              appDataPath = ProgramDataPath + @"\" + g.AppInfo.Vendor + @"\" + programTypeFolder + @"\" + g.AppInfo.AppName + @"\AppData";
-            break;
+        case ApplicationType.WinApp:
+        case ApplicationType.WpfApp:
+        case ApplicationType.WinService:
+        case ApplicationType.WebApi:
+        case ApplicationType.WinConsole:
+        case ApplicationType.WinAppModule:
+        case ApplicationType.WpfAppModule:
+          if (g.UseLocalAppData)
+            appDataPath = ProgramDataPath + @"\AppData";
+          else
+            appDataPath = ProgramDataPath + @"\" + g.AppInfo.Vendor + @"\" + programTypeFolder + @"\" + g.AppInfo.AppName + @"\AppData";
+          break;
 
-          default:
-            throw new Exception("Cannot determine g.AppDataPath because the application type '" + g.AppInfo.OrgApplicationType.ToString() + "' is invalid."); 
-        }
+        default:
+          throw new Exception("Cannot determine g.AppDataPath because the application type '" + g.AppInfo.OrgApplicationType.ToString() + "' is invalid.");
+      }
 
 
-        return appDataPath; 
+      return appDataPath;
     }
 
     public static string EnvPrefix
     {
-      get { return GetEnvPrefix(); }
+      get {
+        return GetEnvPrefix();
+      }
     }
 
     [DebuggerStepThrough]
@@ -532,7 +629,7 @@ namespace Org.GS
       if (stringValue.Length == 0)
         return (bool?)null;
 
-      return GetBooleanValue(o); 
+      return GetBooleanValue(o);
     }
 
     [DebuggerStepThrough]
@@ -540,7 +637,7 @@ namespace Org.GS
     {
       if (o == null)
         return false;
-            
+
       string stringValue = o.ToString();
       bool returnValue = false;
 
@@ -569,7 +666,7 @@ namespace Org.GS
     {
       if (o == null)
         return 0;
-            
+
       string stringValue = o.ToString();
       int returnValue = 0;
 
@@ -597,7 +694,7 @@ namespace Org.GS
     {
       if (o == null)
         return 0;
-            
+
       string stringValue = o.ToString();
       Int64 returnValue = 0;
 
@@ -617,7 +714,7 @@ namespace Org.GS
       if (stringValue.Length == 0)
         return (float?)null;
 
-      return GetFloatValue(o); 
+      return GetFloatValue(o);
     }
 
     [DebuggerStepThrough]
@@ -646,7 +743,7 @@ namespace Org.GS
       if (stringValue.Length == 0)
         return (decimal?)null;
 
-      return GetDecimalValue(o); 
+      return GetDecimalValue(o);
     }
 
     [DebuggerStepThrough]
@@ -675,7 +772,7 @@ namespace Org.GS
       if (stringValue.Length == 0)
         return (Single?)null;
 
-      return GetSingleValue(o); 
+      return GetSingleValue(o);
     }
 
     [DebuggerStepThrough]
@@ -683,7 +780,7 @@ namespace Org.GS
     {
       if (o == null)
         return 0;
-            
+
       string stringValue = o.ToString();
       Single returnValue = 0;
 
@@ -697,8 +794,8 @@ namespace Org.GS
     public static Point GetPointValue(object o)
     {
       if (o == null)
-        return new Point(0, 0); 
-            
+        return new Point(0, 0);
+
       string stringValue = o.ToString();
       Point returnValue = new Point(0, 0);
 
@@ -725,10 +822,10 @@ namespace Org.GS
     public static PointF GetPointFValue(object o)
     {
       if (o == null)
-        return new PointF(0.0F, 0.0F); 
-            
+        return new PointF(0.0F, 0.0F);
+
       string stringValue = o.ToString();
-      PointF returnValue = new PointF(0.0F, 0.0F); 
+      PointF returnValue = new PointF(0.0F, 0.0F);
 
       if (o.GetType().Name == "String")
       {
@@ -753,8 +850,8 @@ namespace Org.GS
     public static Size GetSizeValue(object o)
     {
       if (o == null)
-        return new Size(0, 0); 
-            
+        return new Size(0, 0);
+
       string stringValue = o.ToString();
       Size returnValue = new Size(0, 0);
 
@@ -781,10 +878,10 @@ namespace Org.GS
     public static SizeF GetSizeFValue(object o)
     {
       if (o == null)
-        return new SizeF(0.0F, 0.0F); 
-            
+        return new SizeF(0.0F, 0.0F);
+
       string stringValue = o.ToString();
-      SizeF returnValue = new SizeF(0.0F, 0.0F); 
+      SizeF returnValue = new SizeF(0.0F, 0.0F);
 
       if (o.GetType().Name == "String")
       {
@@ -829,15 +926,15 @@ namespace Org.GS
     {
       if (o == null)
         return Color.White;
-            
+
       string stringValue = o.ToString();
 
-      Color color = Color.FromName(stringValue); 
+      Color color = Color.FromName(stringValue);
 
       if (stringValue.StartsWith("SystemColors."))
         color = GetSystemColorFromName(stringValue);
       else
-        color = Color.FromName(stringValue); 
+        color = Color.FromName(stringValue);
 
       return color;
     }
@@ -846,39 +943,72 @@ namespace Org.GS
     {
       switch(name)
       {
-        case "SystemColors.ActiveBorder" : return SystemColors.ActiveBorder;
-        case "SystemColors.ActiveCaption" : return SystemColors.ActiveCaption;
-        case "SystemColors.ActiveCaptionText" : return SystemColors.ActiveCaptionText;
-        case "SystemColors.AppWorkspace" : return SystemColors.AppWorkspace;
-        case "SystemColors.ButtonFace" : return SystemColors.ButtonFace;
-        case "SystemColors.ButtonHighlight" : return SystemColors.ButtonHighlight;
-        case "SystemColors.ButtonShadow" : return SystemColors.ButtonShadow;
-        case "SystemColors.Control" : return SystemColors.Control;
-        case "SystemColors.ControlDark" : return SystemColors.ControlDark;
-        case "SystemColors.ControlDarkDark" : return SystemColors.ControlDarkDark;
-        case "SystemColors.ControlLight" : return SystemColors.ControlLight;
-        case "SystemColors.ControlLightLight" : return SystemColors.ControlLightLight;
-        case "SystemColors.ControlText" : return SystemColors.ControlText;
-        case "SystemColors.Desktop" : return SystemColors.Desktop;
-        case "SystemColors.GradientActiveCaption" : return SystemColors.GradientActiveCaption;
-        case "SystemColors.GradientInactiveCaption" : return SystemColors.GradientInactiveCaption;
-        case "SystemColors.GrayText" : return SystemColors.GrayText;
-        case "SystemColors.Highlight" : return SystemColors.Highlight;
-        case "SystemColors.HighlightText" : return SystemColors.HighlightText;
-        case "SystemColors.HotTrack" : return SystemColors.HotTrack;
-        case "SystemColors.InactiveBorder" : return SystemColors.InactiveBorder;
-        case "SystemColors.InactiveCaption" : return SystemColors.InactiveCaption;
-        case "SystemColors.InactiveCaptionText" : return SystemColors.InactiveCaptionText;
-        case "SystemColors.Info" : return SystemColors.Info;
-        case "SystemColors.InfoText" : return SystemColors.InfoText;
-        case "SystemColors.Menu" : return SystemColors.Menu;
-        case "SystemColors.MenuBar" : return SystemColors.MenuBar;
-        case "SystemColors.MenuHighlight" : return SystemColors.MenuHighlight;
-        case "SystemColors.MenuText" : return SystemColors.MenuText;
-        case "SystemColors.ScrollBar" : return SystemColors.ScrollBar;
-        case "SystemColors.Window" : return SystemColors.Window;
-        case "SystemColors.WindowFrame" : return SystemColors.WindowFrame;
-        case "SystemColors.WindowText" : return SystemColors.WindowText;
+        case "SystemColors.ActiveBorder" :
+          return SystemColors.ActiveBorder;
+        case "SystemColors.ActiveCaption" :
+          return SystemColors.ActiveCaption;
+        case "SystemColors.ActiveCaptionText" :
+          return SystemColors.ActiveCaptionText;
+        case "SystemColors.AppWorkspace" :
+          return SystemColors.AppWorkspace;
+        case "SystemColors.ButtonFace" :
+          return SystemColors.ButtonFace;
+        case "SystemColors.ButtonHighlight" :
+          return SystemColors.ButtonHighlight;
+        case "SystemColors.ButtonShadow" :
+          return SystemColors.ButtonShadow;
+        case "SystemColors.Control" :
+          return SystemColors.Control;
+        case "SystemColors.ControlDark" :
+          return SystemColors.ControlDark;
+        case "SystemColors.ControlDarkDark" :
+          return SystemColors.ControlDarkDark;
+        case "SystemColors.ControlLight" :
+          return SystemColors.ControlLight;
+        case "SystemColors.ControlLightLight" :
+          return SystemColors.ControlLightLight;
+        case "SystemColors.ControlText" :
+          return SystemColors.ControlText;
+        case "SystemColors.Desktop" :
+          return SystemColors.Desktop;
+        case "SystemColors.GradientActiveCaption" :
+          return SystemColors.GradientActiveCaption;
+        case "SystemColors.GradientInactiveCaption" :
+          return SystemColors.GradientInactiveCaption;
+        case "SystemColors.GrayText" :
+          return SystemColors.GrayText;
+        case "SystemColors.Highlight" :
+          return SystemColors.Highlight;
+        case "SystemColors.HighlightText" :
+          return SystemColors.HighlightText;
+        case "SystemColors.HotTrack" :
+          return SystemColors.HotTrack;
+        case "SystemColors.InactiveBorder" :
+          return SystemColors.InactiveBorder;
+        case "SystemColors.InactiveCaption" :
+          return SystemColors.InactiveCaption;
+        case "SystemColors.InactiveCaptionText" :
+          return SystemColors.InactiveCaptionText;
+        case "SystemColors.Info" :
+          return SystemColors.Info;
+        case "SystemColors.InfoText" :
+          return SystemColors.InfoText;
+        case "SystemColors.Menu" :
+          return SystemColors.Menu;
+        case "SystemColors.MenuBar" :
+          return SystemColors.MenuBar;
+        case "SystemColors.MenuHighlight" :
+          return SystemColors.MenuHighlight;
+        case "SystemColors.MenuText" :
+          return SystemColors.MenuText;
+        case "SystemColors.ScrollBar" :
+          return SystemColors.ScrollBar;
+        case "SystemColors.Window" :
+          return SystemColors.Window;
+        case "SystemColors.WindowFrame" :
+          return SystemColors.WindowFrame;
+        case "SystemColors.WindowText" :
+          return SystemColors.WindowText;
       }
 
       return Color.White;
@@ -901,14 +1031,14 @@ namespace Org.GS
     {
       if (o == null)
         return DateTime.MinValue;
-            
+
       string stringValue = o.ToString();
       DateTime returnValue = DateTime.MinValue;
 
       if (format.IsBlank())
       {
         if (DateTime.TryParse(stringValue, out returnValue))
-          return returnValue; 
+          return returnValue;
       }
       else
       {
@@ -940,13 +1070,13 @@ namespace Org.GS
     {
       if (o == null)
         return DateTime.MinValue;
-            
+
       string stringValue = o.ToString();
       DateTime returnValue = DateTime.MinValue;
 
       if (DateTime.TryParse(stringValue, out returnValue))
-        return returnValue; 
-     
+        return returnValue;
+
       return returnValue;
     }
 
@@ -955,20 +1085,20 @@ namespace Org.GS
     {
       if (format.IsBlank())
       {
-        return dt.ToString(); 
+        return dt.ToString();
       }
       else
       {
         if (format.StartsWith("["))
         {
           if (format.CountOfChar('*') != 1)
-            throw new Exception("Illegal date format specified (3) '" + format + "' must contain exactly one asterisk."); 
+            throw new Exception("Illegal date format specified (3) '" + format + "' must contain exactly one asterisk.");
           int endPos = format.IndexOf(']');
           if (endPos == -1)
-            throw new Exception("Illegal date format specified (1) '" + format + "'."); 
+            throw new Exception("Illegal date format specified (1) '" + format + "'.");
           string literalSuppliedValue = format.Substring(1, endPos - 1);
           if (format.Length < endPos + 1)
-            throw new Exception("Illegal date format specified (2) '" + format + "'."); 
+            throw new Exception("Illegal date format specified (2) '" + format + "'.");
           format = format.Substring(endPos + 1);
           if (literalSuppliedValue.CountOfChar('*') != 1)
             throw new Exception("Illegal date format specified (3) '" + format + "' must contain exactly one asterisk.");
@@ -1104,7 +1234,7 @@ namespace Org.GS
       string numericCharacters = String.Empty;
       foreach (Char c in value)
         if (Char.IsNumber(c))
-            numericCharacters += c;
+          numericCharacters += c;
 
       if (numericCharacters.Length > 0)
         returnValue = Int32.Parse(numericCharacters);
@@ -1144,7 +1274,7 @@ namespace Org.GS
     [DebuggerStepThrough]
     public static bool CIExists(string ciName)
     {
-      return AppConfig.ContainsKey(ciName); 
+      return AppConfig.ContainsKey(ciName);
     }
 
     [DebuggerStepThrough]
@@ -1271,9 +1401,9 @@ namespace Org.GS
     public static string FillTo(this string value, int totalLength, char fillChar)
     {
       if (value == null)
-        return String.Empty.FillTo(totalLength, fillChar); 
+        return String.Empty.FillTo(totalLength, fillChar);
 
-      string fill = new String(fillChar, totalLength); 
+      string fill = new String(fillChar, totalLength);
 
       string returnValue = (value.Trim() + fill).Substring(0, totalLength);
 
@@ -1286,10 +1416,10 @@ namespace Org.GS
       if (value == null)
         return g.BlankString(totalLength);
 
-      value = value.Replace(g.crlf, String.Empty); 
+      value = value.Replace(g.crlf, String.Empty);
 
       if (value.Length > totalLength)
-        return value.Substring(0, totalLength); 
+        return value.Substring(0, totalLength);
 
       // establish PadWork if it has not yet been established
       if (PadWork == null)
@@ -1320,7 +1450,7 @@ namespace Org.GS
 
       if (value != null)
         workValue = value.Replace(g.crlf, String.Empty).Trim();
-      
+
       int padLength = totalLength - workValue.Length;
 
       if (padLength < 1)
@@ -1352,8 +1482,8 @@ namespace Org.GS
       if (totalLength > 200)
         totalLength = 200;
 
-      string leftPadded = value.PadLeft(leftPad); 
-      string returnValue = (leftPadded + PadWork).Substring(0, totalLength); 
+      string leftPadded = value.PadLeft(leftPad);
+      string returnValue = (leftPadded + PadWork).Substring(0, totalLength);
 
       return returnValue;
     }
@@ -1364,7 +1494,7 @@ namespace Org.GS
       if (value == null)
         return new string[0];
 
-      return value.Trim().Split(delimiter, StringSplitOptions.RemoveEmptyEntries); 
+      return value.Trim().Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
     }
 
     [DebuggerStepThrough]
@@ -1373,13 +1503,13 @@ namespace Org.GS
       if (value == null)
         return new int[0];
 
-      string[] stringArray = value.Trim().Split(delimiter, StringSplitOptions.RemoveEmptyEntries); 
+      string[] stringArray = value.Trim().Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
       int[] intArray = new int[stringArray.Length];
 
       for (int i = 0; i < stringArray.Length; i++)
         intArray[i] = stringArray[i].ToInt32();
 
-      return intArray; 
+      return intArray;
     }
 
     [DebuggerStepThrough]
@@ -1400,7 +1530,7 @@ namespace Org.GS
     public static string PadToJustifyRight(this string value, int totalLength)
     {
       string newValue = value.PadTo(totalLength);
-      return newValue.JustifyRight();     
+      return newValue.JustifyRight();
     }
 
     [DebuggerStepThrough]
@@ -1409,7 +1539,7 @@ namespace Org.GS
       int originalLength = value.Length;
       int trimmedLength = value.Trim().Length;
       int leadingBlanks = originalLength - trimmedLength;
-      return g.BlankString(leadingBlanks) + value.Trim();            
+      return g.BlankString(leadingBlanks) + value.Trim();
     }
 
     [DebuggerStepThrough]
@@ -1447,7 +1577,7 @@ namespace Org.GS
 
       int findStrPos = value.IndexOf(findString);
       if (findStrPos == -1)
-        return value; 
+        return value;
 
       string frontPart = value.Substring(0, findStrPos);
 
@@ -1467,7 +1597,7 @@ namespace Org.GS
 
       int findStrPos = value.IndexOf(findString);
       if (findStrPos == -1)
-        return value; 
+        return value;
 
       string frontPart = value.Substring(0, findStrPos);
 
@@ -1506,12 +1636,12 @@ namespace Org.GS
     public static string TrimToMax(this string value, int maxLength)
     {
       if (value == null)
-          return "NULL STRING";
+        return "NULL STRING";
 
       value = value.Trim();
 
       if (value.Length <= maxLength)
-          return value;
+        return value;
 
       return value.Substring(0, maxLength);
     }
@@ -1558,7 +1688,7 @@ namespace Org.GS
       foreach (Char c in s.Trim())
       {
         if (Char.IsLower(c))
-            return true;
+          return true;
       }
 
       return false;
@@ -1570,7 +1700,7 @@ namespace Org.GS
       foreach (Char c in s.Trim())
       {
         if (Char.IsUpper(c))
-            return true;
+          return true;
       }
 
       return false;
@@ -1582,7 +1712,7 @@ namespace Org.GS
       foreach (Char c in s.Trim())
       {
         if (Char.IsDigit(c))
-            return true;
+          return true;
       }
 
       return false;
@@ -1659,30 +1789,54 @@ namespace Org.GS
       {
         switch (value[0])
         {
-          case 'a': h1 = 10; break;
-          case 'b': h1 = 11; break;
-          case 'c': h1 = 12; break;
-          case 'd': h1 = 13; break;
-          case 'e': h1 = 14; break;
-          case 'f': h1 = 15; break;
+          case 'a':
+            h1 = 10;
+            break;
+          case 'b':
+            h1 = 11;
+            break;
+          case 'c':
+            h1 = 12;
+            break;
+          case 'd':
+            h1 = 13;
+            break;
+          case 'e':
+            h1 = 14;
+            break;
+          case 'f':
+            h1 = 15;
+            break;
           default:
             if (value[0].ToString().IsNumeric())
-                h1 = Int32.Parse(value[0].ToString());
+              h1 = Int32.Parse(value[0].ToString());
             break;
 
         }
 
         switch (value[1])
         {
-          case 'a': h0 = 10; break;
-          case 'b': h0 = 11; break;
-          case 'c': h0 = 12; break;
-          case 'd': h0 = 13; break;
-          case 'e': h0 = 14; break;
-          case 'f': h0 = 15; break;
+          case 'a':
+            h0 = 10;
+            break;
+          case 'b':
+            h0 = 11;
+            break;
+          case 'c':
+            h0 = 12;
+            break;
+          case 'd':
+            h0 = 13;
+            break;
+          case 'e':
+            h0 = 14;
+            break;
+          case 'f':
+            h0 = 15;
+            break;
           default:
             if (value[1].ToString().IsNumeric())
-                h0 = Int32.Parse(value[0].ToString());
+              h0 = Int32.Parse(value[0].ToString());
             break;
 
         }
@@ -1717,7 +1871,7 @@ namespace Org.GS
       {
         if (d[8] == '-' && d[15] == '.')
         {
-          d = d.Replace("-", String.Empty).Replace(".", String.Empty); 
+          d = d.Replace("-", String.Empty).Replace(".", String.Empty);
         }
         else
           return DateTime.MinValue;
@@ -1731,12 +1885,10 @@ namespace Org.GS
         includesTime = true;
         includesMilliseconds = true;
       }
-      else
-        if (d.Length == 14)
-          includesTime = true;
-        else
-          if (d.Length != 8)
-            return DateTime.MinValue;
+      else if (d.Length == 14)
+        includesTime = true;
+      else if (d.Length != 8)
+        return DateTime.MinValue;
 
       int year = Int32.Parse(d.Substring(0, 4));
       int month = Int32.Parse(d.Substring(4, 2));
@@ -1925,7 +2077,7 @@ namespace Org.GS
       }
 
       if (startupDirectory.EndsWith(@"bin\x86\Debug") || startupDirectory.EndsWith(@"bin\x86\Release") ||
-        startupDirectory.EndsWith(@"bin\x64\Debug") || startupDirectory.EndsWith(@"bin\x64\Release"))
+          startupDirectory.EndsWith(@"bin\x64\Debug") || startupDirectory.EndsWith(@"bin\x64\Release"))
       {
         pathParts = startupDirectory.Split(@"\".ToCharArray()).ToList();
         pathParts.RemoveRange(pathParts.Count - 3, 3);
@@ -1966,7 +2118,7 @@ namespace Org.GS
         case "String":
           string statusString = s.ToString();
           if (statusString.IsNotNumeric())
-              return Status.NotSet;
+            return Status.NotSet;
           statusID = Convert.ToInt32(statusString.Trim());
           break;
 
@@ -1983,11 +2135,11 @@ namespace Org.GS
 
       return status;
     }
-    
+
 
     public static ConfigItemPropertySet GetConfigItemPropertySet(Type t)
     {
-      // Build a collection of property names and types that have the 
+      // Build a collection of property names and types that have the
       // custom attribute "[OrgConfigItem] on them.
 
       ConfigItemPropertySet configItemPropertySet = new ConfigItemPropertySet();
@@ -2002,17 +2154,17 @@ namespace Org.GS
           cip.PropertyType = pi.PropertyType;
 
           if (!configItemPropertySet.ContainsKey(cip.PropertyName))
-              configItemPropertySet.Add(cip.PropertyName, cip);
+            configItemPropertySet.Add(cip.PropertyName, cip);
         }
       }
 
       return configItemPropertySet;
     }
-    
+
     public static void SetConfigObjectPropertyValue(ConfigObjectBase co, PropertyInfo pi, string propertyType, string propertyValue)
     {
       if (pi == null)
-          return;
+        return;
 
       switch (propertyType)
       {
@@ -2083,8 +2235,8 @@ namespace Org.GS
       }
 
       return String.Empty;
-    }    
-    
+    }
+
     [DebuggerStepThrough]
     public static TEnum ToEnum<TEnum>(this object enumValue, TEnum defaultValue)
     {
@@ -2116,7 +2268,7 @@ namespace Org.GS
     public static string GetExceptionString(Exception ex)
     {
       if (Lock_GetExceptionString == null)
-          Lock_GetExceptionString = new object();
+        Lock_GetExceptionString = new object();
 
       lock (Lock_GetExceptionString)
       {
@@ -2208,7 +2360,7 @@ namespace Org.GS
         throw new Exception("g.AppInfo is null - cannot determine application type.");
 
       if (g.AppInfo.OrgApplicationType == ApplicationType.WcfService || g.AppInfo.OrgApplicationType == ApplicationType.WebSite ||
-        g.AppInfo.OrgApplicationType == ApplicationType.WebApi)
+          g.AppInfo.OrgApplicationType == ApplicationType.WebApi)
         return true;
 
       return false;
@@ -2246,7 +2398,7 @@ namespace Org.GS
 
       return String.Empty;
     }
-    
+
     public static TaskResult ProcessNotifications(SmtpParms smtpParms, string processName, string eventName, NotificationOptions options)
     {
       var notificationTaskResult = new TaskResult();
@@ -2284,7 +2436,7 @@ namespace Org.GS
           notificationTaskResult.Message = "No notify event for event name '" + eventName + "' is configured and active in the event set for process '" + processName + "'.";
           return notificationTaskResult;
         }
-        
+
         var notification = new Notification();
         notification.Subject = notifyEvent.DefaultSubject;
         if (options.Subject.IsNotBlank())
@@ -2312,7 +2464,7 @@ namespace Org.GS
     {
       var sb = new StringBuilder();
       sb.Append("ASCII Extended Characters" + g.crlf +
-                "DEC        HEX        CHR" + g.crlf + 
+                "DEC        HEX        CHR" + g.crlf +
                 "-------------------------" + g.crlf);
       sb.Append(@"000         00        \0   " + g.crlf);
 
@@ -2330,7 +2482,7 @@ namespace Org.GS
           continue;
         }
 
-        sb.Append(i.ToString("000") + "         " + (i.ToHex()).PadWithLeadingZeros(2) + "         " + ((char)i).ToString() + g.crlf); 
+        sb.Append(i.ToString("000") + "         " + (i.ToHex()).PadWithLeadingZeros(2) + "         " + ((char)i).ToString() + g.crlf);
       }
 
       string asciiExtended = sb.ToString();

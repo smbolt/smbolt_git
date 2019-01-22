@@ -29,7 +29,7 @@ namespace Org.GS
         prox.Name = pi.Name;
         prox.Type = pi.PropertyType;
         prox.Value = pi.GetValue(o);
-        this.Add(prox.Name, prox); 
+        this.Add(prox.Name, prox);
       }
     }
   }

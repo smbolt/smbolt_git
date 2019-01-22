@@ -20,7 +20,7 @@ using Org.GS.Configuration;
 namespace Org.Software.Tasks.Concrete
 {
   public class DownloadSoftwareProcessor : RequestProcessorBase, IRequestProcessor
-  { 
+  {
     private static bool _isMapped = false;
     private ConfigDbSpec _configDbSpec;
 
@@ -28,7 +28,7 @@ namespace Org.Software.Tasks.Concrete
     {
       if (!_isMapped)
       {
-        XmlMapper.AddAssembly(Assembly.GetExecutingAssembly()); 
+        XmlMapper.AddAssembly(Assembly.GetExecutingAssembly());
         _isMapped = true;
       }
     }
@@ -36,17 +36,17 @@ namespace Org.Software.Tasks.Concrete
     public override XElement ProcessRequest()
     {
       base.Initialize(MethodBase.GetCurrentMethod());
-      XmlMapper.AddAssembly(Assembly.GetExecutingAssembly()); 
-      base.TransactionEngine.MessageHeader.AddPerfInfoEntry("Start of ProcessRequest");       
+      XmlMapper.AddAssembly(Assembly.GetExecutingAssembly());
+      base.TransactionEngine.MessageHeader.AddPerfInfoEntry("Start of ProcessRequest");
       var f = new ObjectFactory2();
       DownloadSoftwareRequest request = f.Deserialize(base.TransactionEngine.TransactionBody) as DownloadSoftwareRequest;
       DownloadSoftwareResponse response = new DownloadSoftwareResponse();
-      XElement transactionBody = null; 
-      
+      XElement transactionBody = null;
+
       try
       {
         string dbSpecPrefix = g.CI("SoftwareDbSpecPrefix");
-        _configDbSpec = g.GetDbSpec(dbSpecPrefix); 
+        _configDbSpec = g.GetDbSpec(dbSpecPrefix);
 
         using (var repository = new SoftwareDataRepository(_configDbSpec))
         {
@@ -56,8 +56,8 @@ namespace Org.Software.Tasks.Concrete
           {
             response.TransactionStatus = TransactionStatus.Failed;
             response.Message = "Module not found.";
-            base.WriteErrorLog("0000", "000"); 
-            transactionBody = f.Serialize(response); 
+            base.WriteErrorLog("0000", "000");
+            transactionBody = f.Serialize(response);
             base.TransactionEngine.MessageHeader.AddPerfInfoEntry("End of ProcessRequest");
             return transactionBody;
           }
@@ -66,46 +66,46 @@ namespace Org.Software.Tasks.Concrete
           {
             response.TransactionStatus = TransactionStatus.Failed;
             response.Message = "Module is not in active status.";
-            base.WriteErrorLog("0000", "000"); 
+            base.WriteErrorLog("0000", "000");
             transactionBody = f.Serialize(response);
             base.TransactionEngine.MessageHeader.AddPerfInfoEntry("End of ProcessRequest");
-            return transactionBody; 
+            return transactionBody;
           }
 
           if (moduleVersionForPlatform.VersionStatus != 1)
           {
             response.TransactionStatus = TransactionStatus.Failed;
             response.Message = "Module version is not in active status.";
-            base.WriteErrorLog("0000", "000"); 
+            base.WriteErrorLog("0000", "000");
             transactionBody = f.Serialize(response);
             base.TransactionEngine.MessageHeader.AddPerfInfoEntry("End of ProcessRequest");
-            return transactionBody; 
+            return transactionBody;
           }
 
           if (moduleVersionForPlatform.PlatformStatus != 1)
           {
             response.TransactionStatus = TransactionStatus.Failed;
             response.Message = "Module platform is not in active status.";
-            base.WriteErrorLog("0000", "000"); 
+            base.WriteErrorLog("0000", "000");
             transactionBody = f.Serialize(response);
             base.TransactionEngine.MessageHeader.AddPerfInfoEntry("End of ProcessRequest");
-            return transactionBody; 
+            return transactionBody;
           }
 
           if (moduleVersionForPlatform.RepositoryStatus != 1)
           {
             response.TransactionStatus = TransactionStatus.Failed;
             response.Message = "Module repository is not in active status.";
-            base.WriteErrorLog("0000", "000"); 
+            base.WriteErrorLog("0000", "000");
             transactionBody = f.Serialize(response);
             base.TransactionEngine.MessageHeader.AddPerfInfoEntry("End of ProcessRequest");
-            return transactionBody; 
+            return transactionBody;
           }
 
-          string segmentPath = GetRepositoryFullPath(moduleVersionForPlatform); 
+          string segmentPath = GetRepositoryFullPath(moduleVersionForPlatform);
 
-          response.UpgradeVersion = moduleVersionForPlatform.VersionValue; 
-          response.UpgradePlatformString = moduleVersionForPlatform.PlatformString;          
+          response.UpgradeVersion = moduleVersionForPlatform.VersionValue;
+          response.UpgradePlatformString = moduleVersionForPlatform.PlatformString;
 
           SoftwareSegment softwareSegment = GetSoftwareSegment(segmentPath, request.SegmentNumber);
           response.SegmentNumber = softwareSegment.SegmentNumber;
@@ -126,12 +126,12 @@ namespace Org.Software.Tasks.Concrete
               if (softwareSegment.ErrorCode == 1)
               {
                 response.TransactionStatus = TransactionStatus.Failed;
-                response.Message = "Segment file '" + request.SegmentNumber.ToString() + 
+                response.Message = "Segment file '" + request.SegmentNumber.ToString() +
                                    " could not be located.";
                 base.WriteErrorLog("0000", "000");
                 transactionBody = f.Serialize(response);
                 base.TransactionEngine.MessageHeader.AddPerfInfoEntry("End of ProcessRequest");
-                return transactionBody; 
+                return transactionBody;
               }
 
               response.ResponseType = ResponseType.SegmentReturned;
@@ -162,7 +162,7 @@ namespace Org.Software.Tasks.Concrete
         errorResponse.Message = "An exception occurred processing the DownloadSoftware web service request.";
         errorResponse.Exception = ex;
         transactionBody = f.Serialize(errorResponse);
-        base.TransactionEngine.MessageHeader.AddPerfInfoEntry("End of ProcessRequest"); 
+        base.TransactionEngine.MessageHeader.AddPerfInfoEntry("End of ProcessRequest");
         return transactionBody;
       }
     }
@@ -170,7 +170,7 @@ namespace Org.Software.Tasks.Concrete
     private SoftwareSegment GetSoftwareSegment(string segmentPath, int segmentNumber)
     {
       var seg = new SoftwareSegment();
-      seg.SegmentNumber = segmentNumber; 
+      seg.SegmentNumber = segmentNumber;
 
       List<string> segmentFiles = Directory.GetFiles(segmentPath + @"\segments", "*.seg").ToList();
       seg.TotalSegments = segmentFiles.Count;
@@ -185,17 +185,17 @@ namespace Org.Software.Tasks.Concrete
       seg.TotalFileSize = totalFileSize;
 
       if (segmentNumber == 0)
-        return seg; 
+        return seg;
 
       string segmentSearch = "(seg-" + segmentNumber.ToString("000") + "-of-" +
-                                       seg.TotalSegments.ToString("000") + ")";
+                             seg.TotalSegments.ToString("000") + ")";
 
       string segmentFileName = segmentFiles.Where(x => x.Contains(segmentSearch)).FirstOrDefault();
 
       if (segmentFileName.IsBlank())
       {
         seg.ErrorCode = 1;
-        return seg; 
+        return seg;
       }
 
       seg.SegmentData = File.ReadAllText(segmentFileName);
@@ -212,12 +212,12 @@ namespace Org.Software.Tasks.Concrete
              moduleVersion.ModuleName + @"\" +
              versionTokens[0].ToString() + "." + versionTokens[1].ToString() + "." +
              versionTokens[2].ToString() + "." + versionTokens[3].ToString() + @"\" +
-             moduleVersion.PlatformString; 
+             moduleVersion.PlatformString;
     }
 
     ~DownloadSoftwareProcessor()
     {
-      Dispose(false); 
-    }    
+      Dispose(false);
+    }
   }
 }

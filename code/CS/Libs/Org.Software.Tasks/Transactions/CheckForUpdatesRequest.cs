@@ -14,22 +14,50 @@ namespace Org.Software.Tasks.Transactions
   public class CheckForUpdatesRequest : TransactionBase
   {
     [XMap]
-    public int OrgId { get; set; }
+    public int OrgId {
+      get;
+      set;
+    }
     [XMap]
-    public string DomainName { get; set; }
+    public string DomainName {
+      get;
+      set;
+    }
     [XMap]
-    public string MachineName { get; set; }
+    public string MachineName {
+      get;
+      set;
+    }
     [XMap]
-    public string UserName { get; set; }
+    public string UserName {
+      get;
+      set;
+    }
     [XMap]
-    public int ModuleCode { get; set; }
+    public int ModuleCode {
+      get;
+      set;
+    }
     [XMap]
-    public string ModuleName { get; set; }
+    public string ModuleName {
+      get;
+      set;
+    }
     [XMap]
-    public string CurrentVersion { get; set; }
-    public string CurrentVersionExpanded { get { return Get_CurrentVersionExpanded(); } }
+    public string CurrentVersion {
+      get;
+      set;
+    }
+    public string CurrentVersionExpanded {
+      get {
+        return Get_CurrentVersionExpanded();
+      }
+    }
     [XMap]
-    public string CurrentPlatformString { get; set; }
+    public string CurrentPlatformString {
+      get;
+      set;
+    }
 
     public CheckForUpdatesRequest()
     {
@@ -37,7 +65,7 @@ namespace Org.Software.Tasks.Transactions
       this.DomainName = String.Empty;
       this.MachineName = String.Empty;
       this.UserName = String.Empty;
-      this.ModuleCode = 0; 
+      this.ModuleCode = 0;
       this.ModuleName = String.Empty;
       this.CurrentVersion = String.Empty;
       this.CurrentPlatformString = String.Empty;
@@ -49,15 +77,15 @@ namespace Org.Software.Tasks.Transactions
       if (ver.IsBlank())
         return String.Empty;
 
-      int[] versionTokens = ver.ToTokenArrayInt32(Constants.DotDelimiter); 
+      int[] versionTokens = ver.ToTokenArrayInt32(Constants.DotDelimiter);
 
       string currentVersionExpanded = String.Empty;
       foreach(int versionToken in versionTokens)
       {
         if (currentVersionExpanded.IsBlank())
-          currentVersionExpanded += versionToken.ToString("000000"); 
+          currentVersionExpanded += versionToken.ToString("000000");
         else
-          currentVersionExpanded += "." + versionToken.ToString("000000"); 
+          currentVersionExpanded += "." + versionToken.ToString("000000");
       }
 
       return currentVersionExpanded;

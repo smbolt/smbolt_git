@@ -9,34 +9,103 @@ namespace Org.Terminal.BMS
 {
   public class Bms_DFHMDI : Bms_BASE
   {
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
-    public DFHMDI_LINE DFHMDI_LINE { get; private set; }
-    public int Line { get; set; }
+    public DFHMDI_LINE DFHMDI_LINE {
+      get;
+      private set;
+    }
+    public int Line {
+      get;
+      set;
+    }
 
-    public DFHMDI_COLUMN DFHMDI_COLUMN { get; private set; }
-    public int Column { get; set; }
+    public DFHMDI_COLUMN DFHMDI_COLUMN {
+      get;
+      private set;
+    }
+    public int Column {
+      get;
+      set;
+    }
 
-    public int SizeWidth { get; private set; }
-    public int SizeHeight { get; private set; }
+    public int SizeWidth {
+      get;
+      private set;
+    }
+    public int SizeHeight {
+      get;
+      private set;
+    }
 
-    private List<string> _ctrl { get; set; } 
+    private List<string> _ctrl {
+      get;
+      set;
+    }
 
-    public DFH_COLOR DFH_COLOR { get; private set; }
-    public DFH_CURSLOC DFH_CURSLOC { get; private set; }
-    public DFHMDI_DATA DFHMDI_DATA { get; private set; }
-    public DFH_EXTATT DFH_EXTATT { get; private set; }
-    public DFHMDI_HEADER DFHMDI_HEADER { get; private set; }
-    public DFH_HILIGHT DFH_HILIGHT { get; private set; }
-    public DFHMDI_JUSTIFY DFHMDI_JUSTIFY { get; private set; }
-    public DFHMDI_OBFMT DFHMDI_OBFMT { get; private set; }
-    public DFH_PS DFH_PS { get; private set; }
-    public DFH_TERM DFH_TERM { get; private set; }
-    public DFH_TIOAPFX DFH_TIOAPFX { get; private set; }
-    public DFHMDI_TRAILER DFHMDI_TRAILER { get; private set; }
-    public DFH_SOSI DFH_SOSI { get; private set; }
-    public DFH_TRANSP DFH_TRANSP { get; private set; }
-    public DFH_VALIDN DFH_VALIDN { get; private set; }
+    public DFH_COLOR DFH_COLOR {
+      get;
+      private set;
+    }
+    public DFH_CURSLOC DFH_CURSLOC {
+      get;
+      private set;
+    }
+    public DFHMDI_DATA DFHMDI_DATA {
+      get;
+      private set;
+    }
+    public DFH_EXTATT DFH_EXTATT {
+      get;
+      private set;
+    }
+    public DFHMDI_HEADER DFHMDI_HEADER {
+      get;
+      private set;
+    }
+    public DFH_HILIGHT DFH_HILIGHT {
+      get;
+      private set;
+    }
+    public DFHMDI_JUSTIFY DFHMDI_JUSTIFY {
+      get;
+      private set;
+    }
+    public DFHMDI_OBFMT DFHMDI_OBFMT {
+      get;
+      private set;
+    }
+    public DFH_PS DFH_PS {
+      get;
+      private set;
+    }
+    public DFH_TERM DFH_TERM {
+      get;
+      private set;
+    }
+    public DFH_TIOAPFX DFH_TIOAPFX {
+      get;
+      private set;
+    }
+    public DFHMDI_TRAILER DFHMDI_TRAILER {
+      get;
+      private set;
+    }
+    public DFH_SOSI DFH_SOSI {
+      get;
+      private set;
+    }
+    public DFH_TRANSP DFH_TRANSP {
+      get;
+      private set;
+    }
+    public DFH_VALIDN DFH_VALIDN {
+      get;
+      private set;
+    }
 
     public Bms_DFHMDI(BmsStatement bmsStatement)
       : base(bmsStatement)
@@ -59,12 +128,12 @@ namespace Org.Terminal.BMS
         string[] remainingTokens = base.BmsStatement.RemainingText.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
         if (remainingTokens.Length == 2)
         {
-          this.Name = remainingTokens[0].ToUpper(); 
+          this.Name = remainingTokens[0].ToUpper();
         }
         else
         {
           this.Name = "MAP1";
-          // only name and macro should exist, if not there's an error 
+          // only name and macro should exist, if not there's an error
           // add error
           // let parameter and parentheticals go ahead and compile
           // can report on additional errors
@@ -77,7 +146,7 @@ namespace Org.Terminal.BMS
             case "COLOR":
               break;
 
-            case "COLUMN":              
+            case "COLUMN":
               string colValue = p.Value.Trim().ToUpper();
               switch (colValue)
               {
@@ -244,7 +313,7 @@ namespace Org.Terminal.BMS
               if (p.Parms == null || p.Parms.Count == 0)
               {
                 // add error message and continue;
-             
+
               }
 
               if (p.Parms.Count != 2)
@@ -286,7 +355,7 @@ namespace Org.Terminal.BMS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to populate the Bms_DFHMDI object from the macro value '" + base.BmsStatement.BmsStatementText + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to populate the Bms_DFHMDI object from the macro value '" + base.BmsStatement.BmsStatementText + "'.", ex);
       }
     }
   }

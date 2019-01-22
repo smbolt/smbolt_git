@@ -8,19 +8,58 @@ namespace Org.WinSvc
 {
   public class EngineMonitorParms
   {
-    public bool EngineMonitorActive { get; set; }
-    public int EngineMonitorIntervalSeconds { get; set; }
-    public bool EngineMonitorAttemptRestart { get; set; }
-    public bool EngineMonitorNotifyOnRestartAttempts { get; set; }
-    public int EngineMonitorNotifyLimit { get; set; }
-    public int EngineMonitorNotifyCount { get; set; }
-    public int EngineMonitorResetNotifyLimitHours { get; set; }
-    public bool EngineMonitorRunDependenciesChecks { get; set; }
-    public int EngineMonitorDependencyCheckLimit { get; set; }
-    public int EngineMonitorDependencyCheckCount { get; set; }
-    public int EngineMonitorDependencyRetryIntervalSeconds { get; set; }
-    public DateTime? LastMainLoopRestart { get; set; }
-    public bool LogNormalMonitoringActivity { get; set; }
+    public bool EngineMonitorActive {
+      get;
+      set;
+    }
+    public int EngineMonitorIntervalSeconds {
+      get;
+      set;
+    }
+    public bool EngineMonitorAttemptRestart {
+      get;
+      set;
+    }
+    public bool EngineMonitorNotifyOnRestartAttempts {
+      get;
+      set;
+    }
+    public int EngineMonitorNotifyLimit {
+      get;
+      set;
+    }
+    public int EngineMonitorNotifyCount {
+      get;
+      set;
+    }
+    public int EngineMonitorResetNotifyLimitHours {
+      get;
+      set;
+    }
+    public bool EngineMonitorRunDependenciesChecks {
+      get;
+      set;
+    }
+    public int EngineMonitorDependencyCheckLimit {
+      get;
+      set;
+    }
+    public int EngineMonitorDependencyCheckCount {
+      get;
+      set;
+    }
+    public int EngineMonitorDependencyRetryIntervalSeconds {
+      get;
+      set;
+    }
+    public DateTime? LastMainLoopRestart {
+      get;
+      set;
+    }
+    public bool LogNormalMonitoringActivity {
+      get;
+      set;
+    }
 
     public EngineMonitorParms()
     {

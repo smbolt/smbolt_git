@@ -12,7 +12,10 @@ namespace Org.WSO.Transactions
   public class GetWebSiteListResponse : TransactionBase
   {
     [XMap(XType = XType.Element, CollectionElements = "WebSite", WrapperElement = "WebSiteList")]
-    public WebSiteSet WebSiteSet { get; set; }
+    public WebSiteSet WebSiteSet {
+      get;
+      set;
+    }
 
     public GetWebSiteListResponse()
     {

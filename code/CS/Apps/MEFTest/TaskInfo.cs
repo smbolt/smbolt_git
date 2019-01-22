@@ -9,14 +9,39 @@ namespace Org.MEFTest
 {
   public class TaskInfo
   {
-    public string TaskName { get; set; }
-    public string TaskProcessorName { get; set; }
-    public string TaskProcessorVersion { get; set; }
-    public string TaskProcessorNameAndVersion { get { return this.TaskProcessorName + "_" + this.TaskProcessorVersion; } }
-    public string TaskNodeFolder { get; set; }
-    public string StatementType { get; set; }
-    public string InputDbPrefix { get; set; }
-    public string OutputDbPrefix { get; set; }
+    public string TaskName {
+      get;
+      set;
+    }
+    public string TaskProcessorName {
+      get;
+      set;
+    }
+    public string TaskProcessorVersion {
+      get;
+      set;
+    }
+    public string TaskProcessorNameAndVersion {
+      get {
+        return this.TaskProcessorName + "_" + this.TaskProcessorVersion;
+      }
+    }
+    public string TaskNodeFolder {
+      get;
+      set;
+    }
+    public string StatementType {
+      get;
+      set;
+    }
+    public string InputDbPrefix {
+      get;
+      set;
+    }
+    public string OutputDbPrefix {
+      get;
+      set;
+    }
 
     public TaskInfo(string taskName, string values)
     {

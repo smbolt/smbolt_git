@@ -8,29 +8,55 @@ namespace Org.UI
 {
   public class PanelField
   {
-    public string Tag { get; set; }
-    public object GridValue { get; set; }
-    public bool IsDbNullable { get; set; }
-    public bool IsPrimaryKey { get; set; }
-    public bool IsRequired { get; set; }
-    public object FormValue { get; set; }
-    public bool IsDirty { get { return Get_IsDirty(); } }
-    public bool IsComplete { get { return Get_IsComplete(); } }
+    public string Tag {
+      get;
+      set;
+    }
+    public object GridValue {
+      get;
+      set;
+    }
+    public bool IsDbNullable {
+      get;
+      set;
+    }
+    public bool IsPrimaryKey {
+      get;
+      set;
+    }
+    public bool IsRequired {
+      get;
+      set;
+    }
+    public object FormValue {
+      get;
+      set;
+    }
+    public bool IsDirty {
+      get {
+        return Get_IsDirty();
+      }
+    }
+    public bool IsComplete {
+      get {
+        return Get_IsComplete();
+      }
+    }
 
     public PanelField()
     {
       this.Tag = String.Empty;
-      this.GridValue = null; 
+      this.GridValue = null;
       this.IsDbNullable = false;
-      this.IsPrimaryKey = false; 
+      this.IsPrimaryKey = false;
       this.IsRequired = false;
-      this.FormValue = null; 
+      this.FormValue = null;
     }
 
     private bool Get_IsDirty()
     {
       if (this.GridValue == null)
-        return this.FormValue != null; 
+        return this.FormValue != null;
 
       string gridValue = this.GridValue == null ? String.Empty : this.GridValue.ToString().Trim();
       string formValue = this.FormValue == null ? String.Empty : this.FormValue.ToString().Trim();
@@ -46,7 +72,7 @@ namespace Org.UI
       if (this.FormValue == null)
         return false;
 
-      return this.FormValue.ToString().Trim().Length > 0; 
+      return this.FormValue.ToString().Trim().Length > 0;
     }
   }
 }

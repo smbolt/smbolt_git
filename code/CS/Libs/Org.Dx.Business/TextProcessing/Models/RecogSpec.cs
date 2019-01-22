@@ -9,26 +9,44 @@ using Org.GS;
 namespace Org.Dx.Business.TextProcessing
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
+  [XMap(XType = XType.Element)]
   public class RecogSpec
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "True")]
-    public string Desc { get; set; }
+    public string Desc {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Vendor { get; set; }
+    public string Vendor {
+      get;
+      set;
+    }
 
     [XMap(Name = "Type")]
-    public FormatSpecType FormatSpecType { get; set; }
+    public FormatSpecType FormatSpecType {
+      get;
+      set;
+    }
 
     [XMap]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "RecogLine", WrapperElement = "RecogLineSet")]
-    public RecogLineSet RecogLineSet { get; set; }
+    public RecogLineSet RecogLineSet {
+      get;
+      set;
+    }
 
     public RecogSpec()
     {
@@ -52,7 +70,7 @@ namespace Org.Dx.Business.TextProcessing
       // 4.  May want to consider specific offsets from a given location, requiring a particular character or word
       // 5.  May want to consider data patterns
       // 6.  May want to consider "queries" based on entity identification (probably for extaction purposes)
-      //  
+      //
 
 
       foreach (var recogLine in this.RecogLineSet)

@@ -11,7 +11,10 @@ namespace Org.GS.Configuration
   public class GridViewSet : Dictionary<string, GridView>
   {
     [XMap]
-    public string DefaultViewName { get; set; }
+    public string DefaultViewName {
+      get;
+      set;
+    }
 
     public GridViewSet()
     {

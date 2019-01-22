@@ -13,28 +13,52 @@ namespace Org.WSO.Transactions
   public class WsCommand
   {
     [XMap(IsRequired = true)]
-    public WsCommandName WsCommandName { get; set; }
+    public WsCommandName WsCommandName {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "NotSet")]
-    public TaskResultStatus TaskResultStatus { get; set; }
+    public TaskResultStatus TaskResultStatus {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "")]
-    public string Message { get; set; }
+    public string Message {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public ObjectWrapper ObjectWrapper { get; set; }
+    public ObjectWrapper ObjectWrapper {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public float DurationSeconds { get; set; }
+    public float DurationSeconds {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "Parm", WrapperElement = "Parms", KeyName = "K")]
-    public Dictionary<string, string> Parms { get; set; }
+    public Dictionary<string, string> Parms {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public int BeforeWaitMilliseconds { get; set; }
+    public int BeforeWaitMilliseconds {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public int AfterWaitMilliseconds { get; set; }
+    public int AfterWaitMilliseconds {
+      get;
+      set;
+    }
 
     public WsCommand(WsCommandName commandName)
     {

@@ -10,7 +10,10 @@ namespace Org.QB.QBXML
   [XMap(XType = XType.Element)]
   public class AccountQueryRq : QueryRqBase
   {
-    public CurrencyFilter CurrencyFilter { get; set; }
+    public CurrencyFilter CurrencyFilter {
+      get;
+      set;
+    }
 
   }
 }

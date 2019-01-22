@@ -15,10 +15,21 @@ namespace Org.GS.AppDomainManagement
 {
   public class AppDomainSupervisor : IDisposable
   {
-    public AppDomainInfo RootAppDomain { get; private set; }
-    public List<string> AppDomainNames { get { return Get_AppDomainNames(); } }
+    public AppDomainInfo RootAppDomain {
+      get;
+      private set;
+    }
+    public List<string> AppDomainNames {
+      get {
+        return Get_AppDomainNames();
+      }
+    }
     public AppDomainObjectRegistry _objectRegistry;
-    public string Report { get { return Get_Report(); } }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public AppDomainSupervisor()
     {
@@ -30,7 +41,7 @@ namespace Org.GS.AppDomainManagement
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred in the constuctor of AppDomainManager.", ex); 
+        throw new Exception("An exception occurred in the constuctor of AppDomainManager.", ex);
       }
     }
 
@@ -46,8 +57,8 @@ namespace Org.GS.AppDomainManagement
         AppDomain appDomain = this.GetAppDomain(adod.AppDomainFriendlyName);
 
         if (appDomain == null)
-          appDomain = CreateAppDomain(adod);  
-        
+          appDomain = CreateAppDomain(adod);
+
         if (_objectRegistry.RegisteredObjects.ContainsKey(objectRegistryKey))
         {
           if (_objectRegistry.RegisteredObjects[objectRegistryKey] == null)
@@ -59,7 +70,7 @@ namespace Org.GS.AppDomainManagement
           {
             theObject.TestExistence();
             return theObject;
-        }
+          }
           catch (Exception ex)
           {
             if (ex.Message.Contains("has been disconnected"))
@@ -67,7 +78,7 @@ namespace Org.GS.AppDomainManagement
 
             throw new Exception("An exception occurred while attempting to retrieve an object of type '" + adod.ObjectTypeName +
                                 " from the AppDomain named '" + adod.AppDomainFriendlyName + "'.");
-          }          
+          }
         }
 
         theObject = appDomain.CreateInstanceAndUnwrap(adod.ObjectAssemblyName, adod.ObjectTypeName) as MarshalBase;
@@ -81,7 +92,7 @@ namespace Org.GS.AppDomainManagement
                             adod.ToReport() + ".", ex);
       }
     }
-    
+
     public AppDomain GetAppDomain(string friendlyName)
     {
       try
@@ -99,18 +110,18 @@ namespace Org.GS.AppDomainManagement
         throw new Exception("An exception occurred while trying to retrieve the AppDomain named '" + friendlyName + "'.", ex);
       }
     }
-    
+
     public AppDomain CreateAppDomain(AppDomainObjectDescriptor appDomainObjectDescriptor)
     {
       try
       {
         var currentAppDomainNameList = this.Get_AppDomainNames();
         _objectRegistry.ValidateAppDomainObjectDescriptor(appDomainObjectDescriptor, currentAppDomainNameList);
-        
+
         string parentAppDomainFriendlyName = AppDomain.CurrentDomain.FriendlyName;
         AppDomain appDomain = AppDomain.CreateDomain(appDomainObjectDescriptor.AppDomainFriendlyName, null, appDomainObjectDescriptor.AppDomainSetup);
         appDomain.SetData("ParentAppDomainAppType", g.AppInfo.OrgApplicationType);
-        appDomain.SetData("ParentAppDomainConfigName", g.AppInfo.ConfigName); 
+        appDomain.SetData("ParentAppDomainConfigName", g.AppInfo.ConfigName);
         var theObject = appDomain.CreateInstanceAndUnwrap(appDomainObjectDescriptor.ObjectAssemblyName, appDomainObjectDescriptor.ObjectTypeName);
 
         if (theObject == null)
@@ -127,7 +138,7 @@ namespace Org.GS.AppDomainManagement
         appDomain.SetData("ParentAppDomainFriendlyName", parentAppDomainFriendlyName);
         appDomain.SetData("AppDomainObjectDescriptor", appDomainObjectDescriptor);
 
-        string assemblyReport = appDomainUtility.GetAssemblyReport(); 
+        string assemblyReport = appDomainUtility.GetAssemblyReport();
 
         this.Refresh();
         return appDomain;
@@ -135,7 +146,7 @@ namespace Org.GS.AppDomainManagement
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to create a new AppDomain named '" +
-                            appDomainObjectDescriptor.AppDomainFriendlyName + "'.", ex); 
+                            appDomainObjectDescriptor.AppDomainFriendlyName + "'.", ex);
       }
     }
 
@@ -178,7 +189,7 @@ namespace Org.GS.AppDomainManagement
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to refresh the AppDomainManager.", ex); 
+        throw new Exception("An exception occurred while attempting to refresh the AppDomainManager.", ex);
       }
     }
 
@@ -284,14 +295,14 @@ namespace Org.GS.AppDomainManagement
 
         foreach (var appDomainInfo in this.RootAppDomain.AppDomainInfoSet.Values)
         {
-          appDomainNames.Add(appDomainInfo.AppDomain.FriendlyName); 
+          appDomainNames.Add(appDomainInfo.AppDomain.FriendlyName);
         }
 
         return appDomainNames;
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to retrieve a list of AppDomain names.", ex); 
+        throw new Exception("An exception occurred while attempting to retrieve a list of AppDomain names.", ex);
       }
     }
 
@@ -331,7 +342,7 @@ namespace Org.GS.AppDomainManagement
         throw new Exception("An exception occurred while attempting to create the AppDomainSupervisor.Report.", ex);
       }
     }
-    
+
     public void Dispose()
     {
     }

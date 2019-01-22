@@ -7,13 +7,34 @@ namespace Org.GS.Network
 {
   public class EmailMessage
   {
-    public List<string> ToAddresses { get; set; }
-    public List<string> CcAddresses { get; set; }
-    public List<string> BccAddresses { get; set; }
-    public string FromAddress { get; set; }
-    public string Subject { get; set; }
-    public string Body { get; set; }
-    public bool IsBodyHtml { get; set; }
+    public List<string> ToAddresses {
+      get;
+      set;
+    }
+    public List<string> CcAddresses {
+      get;
+      set;
+    }
+    public List<string> BccAddresses {
+      get;
+      set;
+    }
+    public string FromAddress {
+      get;
+      set;
+    }
+    public string Subject {
+      get;
+      set;
+    }
+    public string Body {
+      get;
+      set;
+    }
+    public bool IsBodyHtml {
+      get;
+      set;
+    }
 
 
     public EmailMessage()
@@ -46,7 +67,7 @@ namespace Org.GS.Network
     {
       foreach(var kvp in emailParms)
       {
-        this.Body = this.Body.Replace(kvp.Key, kvp.Value); 
+        this.Body = this.Body.Replace(kvp.Key, kvp.Value);
       }
     }
   }

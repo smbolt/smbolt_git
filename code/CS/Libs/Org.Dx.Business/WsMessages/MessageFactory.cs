@@ -20,7 +20,7 @@ namespace Org.Dx.Business
                   "PdfExtract_1.0.0.0 " +
                   "FileCompare_1.0.0.0 " +
                   "MappedFileRegressionTester"
-                  )]
+                 )]
   public class MessageFactory : MessageFactoryBase, IMessageFactory
   {
     public MessageFactory() { }
@@ -76,7 +76,7 @@ namespace Org.Dx.Business
       var fullPathParm = wsParms.ParmSet.Where(p => p.ParameterName == "FullPath").FirstOrDefault();
       if (fullPathParm != null)
         trans.FullPath = fullPathParm.ParameterValue.ToString();
-      
+
       var mapNameParm = wsParms.ParmSet.Where(p => p.ParameterName == "MapName").FirstOrDefault();
       if (mapNameParm != null)
         trans.MapName = mapNameParm.ParameterValue.ToString();
@@ -111,7 +111,7 @@ namespace Org.Dx.Business
       if (fullPathParm != null)
         trans.FullPath = fullPathParm.ParameterValue.ToString();
 
-      
+
       var mapNameParm = wsParms.ParmSet.Where(p => p.ParameterName == "MapName").FirstOrDefault();
       if (mapNameParm != null)
         trans.MapName = mapNameParm.ParameterValue.ToString();
@@ -152,7 +152,7 @@ namespace Org.Dx.Business
 
       var scriptFileParm = wsParms.ParmSet.Where(p => p.ParameterName == "ScriptFilePath").FirstOrDefault();
       if (scriptFileParm != null)
-      trans.ScriptFilePath = scriptFileParm.ParameterValue.ToString();
+        trans.ScriptFilePath = scriptFileParm.ParameterValue.ToString();
 
       var reportFileParm = wsParms.ParmSet.Where(p => p.ParameterName == "CompareFilePath").FirstOrDefault();
       if (reportFileParm != null)

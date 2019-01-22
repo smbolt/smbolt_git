@@ -12,23 +12,51 @@ namespace Org.GS
 {
   public class Encryptor
   {
-    public string Key { get; set; }
-    public string KeyId { get; set; }
-    private byte[] KeyIdBytes; 
+    public string Key {
+      get;
+      set;
+    }
+    public string KeyId {
+      get;
+      set;
+    }
+    private byte[] KeyIdBytes;
 
     private bool _isInitialized = false;
     public bool IsInitialized
     {
-      get { return _isInitialized; }
-      set { _isInitialized = value; }
+      get {
+        return _isInitialized;
+      }
+      set {
+        _isInitialized = value;
+      }
     }
 
-    public byte[] InitializationVector { get; set; }
-    public byte[] SaltValue { get; set; }
-    public byte[] PassPhrase { get; set; }
-    public string HashAlgorithm { get; set; }
-    public int PasswordIterations { get; set; }
-    public int KeySize { get; set; }
+    public byte[] InitializationVector {
+      get;
+      set;
+    }
+    public byte[] SaltValue {
+      get;
+      set;
+    }
+    public byte[] PassPhrase {
+      get;
+      set;
+    }
+    public string HashAlgorithm {
+      get;
+      set;
+    }
+    public int PasswordIterations {
+      get;
+      set;
+    }
+    public int KeySize {
+      get;
+      set;
+    }
 
     public Encryptor()
     {
@@ -37,7 +65,7 @@ namespace Org.GS
       string rawKey = String.Empty;
       this.KeyId = TokenMaker.RemoveIdFromKey(key, out rawKey);
       this.KeyIdBytes = this.GetKeyIdBytes();
-      this.Initialize_EncryptionKeys(rawKey);            
+      this.Initialize_EncryptionKeys(rawKey);
     }
 
     public Encryptor(string keyId)
@@ -53,7 +81,7 @@ namespace Org.GS
       string rawKey = String.Empty;
       this.KeyId = TokenMaker.RemoveIdFromKey(key, out rawKey);
       this.KeyIdBytes = this.GetKeyIdBytes();
-      this.Initialize_EncryptionKeys(rawKey);  
+      this.Initialize_EncryptionKeys(rawKey);
     }
 
     private object EncryptString_LockObject = new object();
@@ -246,7 +274,7 @@ namespace Org.GS
     public string GetKey()
     {
       if (g.Vault == null)
-        g.Vault = new Vault(); 
+        g.Vault = new Vault();
 
       return g.Vault.VaultItems.Values[0];
     }

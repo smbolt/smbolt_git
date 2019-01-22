@@ -12,8 +12,8 @@ namespace Org.QBX.Tasks
   [ExportMetadata("Name", "QBXTaskProcessors")]
   [ExportMetadata("Version", "1.0.0.0")]
   [ExportMetadata("Processors",
-                  "QBXTransLoad_1.0.0.0 " 
-                  )]
+                  "QBXTransLoad_1.0.0.0 "
+                 )]
 
   public class TaskProcessorFactory : ITaskProcessorFactory, IDisposable
   {

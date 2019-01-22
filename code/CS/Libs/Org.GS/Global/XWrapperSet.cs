@@ -9,7 +9,11 @@ namespace Org.GS
 {
   public class XWrapperSet : SortedList<int, XWrapper>
   {
-    public string ElementList { get { return Get_ElementList(); } }
+    public string ElementList {
+      get {
+        return Get_ElementList();
+      }
+    }
 
     public XWrapperSet(XElement e)
     {
@@ -22,7 +26,7 @@ namespace Org.GS
 
       foreach (var childElement in e.Elements())
       {
-        this.Add(this.Count, new XWrapper(this.Count, childElement)); 
+        this.Add(this.Count, new XWrapper(this.Count, childElement));
       }
     }
 

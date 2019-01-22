@@ -28,26 +28,48 @@ namespace Org.GS.Code
   }
 
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
+  [XMap(XType = XType.Element)]
   public class Profile
   {
     [XMap(XType = XType.Element, WrapperElement = "VariableSet", CollectionElements = "Variable", UseKeyValue = true)]
-    public VariableSet VariableSet { get; set; }
+    public VariableSet VariableSet {
+      get;
+      set;
+    }
 
     [XMap(IsKey=true)]
-    public string Name { get; set; }
-    public string NameLower { get { return (this.Name.IsNotBlank() ? this.Name.ToLower() : String.Empty); } }
+    public string Name {
+      get;
+      set;
+    }
+    public string NameLower {
+      get {
+        return (this.Name.IsNotBlank() ? this.Name.ToLower() : String.Empty);
+      }
+    }
 
     [XMap(XType=XType.Element, WrapperElement="MappingControlSet", CollectionElements="MappingControl")]
-    public MappingControlSet MappingControlSet { get; set; }
+    public MappingControlSet MappingControlSet {
+      get;
+      set;
+    }
 
     [XMap(XType=XType.Element, WrapperElement="OpsControlSet", CollectionElements="OpsControl")]
-    public OpsControlSet OpsControlSet { get; set; }
+    public OpsControlSet OpsControlSet {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="Active")]
-    public ProfileStatus ProfileStatus { get; set; }
+    public ProfileStatus ProfileStatus {
+      get;
+      set;
+    }
 
-    public DateTime RunDateTime { get; set; }
+    public DateTime RunDateTime {
+      get;
+      set;
+    }
 
     public Profile()
     {
@@ -58,7 +80,7 @@ namespace Org.GS.Code
       this.VariableSet = new VariableSet();
       this.RunDateTime = DateTime.Now;
     }
-        
+
     public Profile(string name)
     {
       this.Name = name;

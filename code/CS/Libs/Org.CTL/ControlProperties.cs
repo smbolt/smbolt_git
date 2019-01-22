@@ -5,17 +5,26 @@ using System.Text;
 
 namespace Org.CTL
 {
-    public class ControlProperties
-    {
-        public string Name { get; set; }
-        public string Text { get; set; }
-        public string Tag { get; set; }
-
-        public ControlProperties()
-        {
-            this.Name = String.Empty;
-            this.Text = String.Empty;
-            this.Tag = String.Empty;
-        }
+  public class ControlProperties
+  {
+    public string Name {
+      get;
+      set;
     }
+    public string Text {
+      get;
+      set;
+    }
+    public string Tag {
+      get;
+      set;
+    }
+
+    public ControlProperties()
+    {
+      this.Name = String.Empty;
+      this.Text = String.Empty;
+      this.Tag = String.Empty;
+    }
+  }
 }

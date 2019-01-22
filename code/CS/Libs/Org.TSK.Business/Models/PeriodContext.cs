@@ -8,10 +8,20 @@ using Org.GS.Configuration;
 
 namespace Org.TSK.Business.Models
 {
-	public class PeriodContext
-	{
-		public int PeriodContextId { get; set; }
-		public string Period { get; set; }
-		public PeriodContexts PeriodContexts { get { return g.ToEnum<PeriodContexts>(this.PeriodContextId, PeriodContexts.NotSet); } }
-	}
+  public class PeriodContext
+  {
+    public int PeriodContextId {
+      get;
+      set;
+    }
+    public string Period {
+      get;
+      set;
+    }
+    public PeriodContexts PeriodContexts {
+      get {
+        return g.ToEnum<PeriodContexts>(this.PeriodContextId, PeriodContexts.NotSet);
+      }
+    }
+  }
 }

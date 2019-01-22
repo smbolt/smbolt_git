@@ -34,8 +34,8 @@ namespace Org.Diff.DiffBuilder
       if (createDiffReport)
         PrepareResultsAndReport(model);
       else
-        PrepareResults(model);    
-      
+        PrepareResults(model);
+
       return model;
     }
 
@@ -107,10 +107,14 @@ namespace Org.Diff.DiffBuilder
     {
       switch (changeType)
       {
-        case ChangeType.Deleted: return "[-] ";
-        case ChangeType.Inserted: return "[+] ";
-        case ChangeType.Imaginary: return "[~] ";
-        case ChangeType.Modified: return "[M] ";
+        case ChangeType.Deleted:
+          return "[-] ";
+        case ChangeType.Inserted:
+          return "[+] ";
+        case ChangeType.Imaginary:
+          return "[~] ";
+        case ChangeType.Modified:
+          return "[M] ";
       }
 
       return "    ";

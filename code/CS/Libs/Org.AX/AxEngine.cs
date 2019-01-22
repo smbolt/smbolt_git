@@ -9,7 +9,10 @@ namespace Org.AX
 {
   public class AxEngine : IDisposable
   {
-    public bool IsDryRun { get; set; }
+    public bool IsDryRun {
+      get;
+      set;
+    }
 
     public TaskResult RunAxProfile(AxProfile profile)
     {

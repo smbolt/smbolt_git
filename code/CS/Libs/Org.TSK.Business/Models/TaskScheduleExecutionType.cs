@@ -8,10 +8,20 @@ using Org.GS.Configuration;
 
 namespace Org.TSK.Business.Models
 {
-	public class TaskScheduleExecutionType
-	{
-		public int TaskScheduleExecutionTypeId { get; set; }
-		public string TaskExecutionTypeDesc { get; set; }
-		public TaskExecutionType TaskExecutionType { get { return g.ToEnum<TaskExecutionType>(this.TaskScheduleExecutionTypeId, TaskExecutionType.NotSet); } }
-	}
+  public class TaskScheduleExecutionType
+  {
+    public int TaskScheduleExecutionTypeId {
+      get;
+      set;
+    }
+    public string TaskExecutionTypeDesc {
+      get;
+      set;
+    }
+    public TaskExecutionType TaskExecutionType {
+      get {
+        return g.ToEnum<TaskExecutionType>(this.TaskScheduleExecutionTypeId, TaskExecutionType.NotSet);
+      }
+    }
+  }
 }

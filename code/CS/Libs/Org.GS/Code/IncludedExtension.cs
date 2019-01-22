@@ -8,14 +8,20 @@ using Org.GS;
 namespace Org.GS.Code
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
+  [XMap(XType = XType.Element)]
   public class IncludedExtension
   {
     [XMap]
-    public string Extension { get; set; }
+    public string Extension {
+      get;
+      set;
+    }
 
     [XMap(XType=XType.Element, WrapperElement="ExtensionExclusionSet", CollectionElements="ExtensionExclusion")]
-    public ExtensionExclusionSet ExtensionExclusionSet { get; set; }
+    public ExtensionExclusionSet ExtensionExclusionSet {
+      get;
+      set;
+    }
 
     public IncludedExtension()
     {

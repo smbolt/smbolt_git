@@ -17,7 +17,7 @@ namespace DynamoDbService
       ServiceBase[] ServicesToRun;
       ServicesToRun = new ServiceBase[]
       {
-         new DynamoDbService.WinService()
+        new DynamoDbService.WinService()
       };
       ServiceBase.Run(ServicesToRun);
     }

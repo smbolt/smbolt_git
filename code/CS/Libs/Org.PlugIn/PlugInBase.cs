@@ -13,12 +13,19 @@ namespace Org.PlugIn2
   {
     public event Action<NotifyMessage> NotifyMessage;
     public event Action<ProgressMessage> ProgressUpdate;
-    public virtual int EntityId { get { throw new Exception("EntityId property must be implemented in derived type."); } }
-    public TaskRequest TaskRequest { get; set; }
+    public virtual int EntityId {
+      get {
+        throw new Exception("EntityId property must be implemented in derived type.");
+      }
+    }
+    public TaskRequest TaskRequest {
+      get;
+      set;
+    }
 
     public virtual TaskResult ProcessTask()
     {
-      throw new Exception("The ProcessTask method must be overridden in derived classes."); 
+      throw new Exception("The ProcessTask method must be overridden in derived classes.");
     }
 
     public string Identify()

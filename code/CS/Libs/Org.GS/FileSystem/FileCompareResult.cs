@@ -8,8 +8,14 @@ namespace Org.GS
 {
   public class FileCompareResult
   {
-    public bool FilesMatch { get; set; }
-    public string ComparisionReportPath { get; set; }
+    public bool FilesMatch {
+      get;
+      set;
+    }
+    public string ComparisionReportPath {
+      get;
+      set;
+    }
 
     public FileCompareResult()
     {

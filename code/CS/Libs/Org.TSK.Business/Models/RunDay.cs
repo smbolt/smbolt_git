@@ -12,13 +12,37 @@ namespace Org.TSK.Business.Models
     private DateTime _runDate;
     private Dictionary<int, int> _dateDays;
 
-    public int DayOfWeekInt { get { return (int) _runDate.DayOfWeek; } }
-    public DayOfWeek DayOfWeek { get { return _runDate.DayOfWeek; } }
-    public int WeekOrdinal { get; private set; }
-    public bool IsWorkDay { get { return Get_IsWorkDay(); } }
-    public bool IsEven { get; private set;  }
-    public bool IsOdd { get; private set; }
-    public bool IsLast { get; private set; }
+    public int DayOfWeekInt {
+      get {
+        return (int) _runDate.DayOfWeek;
+      }
+    }
+    public DayOfWeek DayOfWeek {
+      get {
+        return _runDate.DayOfWeek;
+      }
+    }
+    public int WeekOrdinal {
+      get;
+      private set;
+    }
+    public bool IsWorkDay {
+      get {
+        return Get_IsWorkDay();
+      }
+    }
+    public bool IsEven {
+      get;
+      private set;
+    }
+    public bool IsOdd {
+      get;
+      private set;
+    }
+    public bool IsLast {
+      get;
+      private set;
+    }
 
     public RunDay(DateTime runDate)
     {

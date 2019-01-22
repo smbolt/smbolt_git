@@ -133,7 +133,7 @@ namespace NodeQueryWorkbench
         return;
       }
     }
-    
+
     private void InitializeForm()
     {
       try
@@ -178,7 +178,7 @@ namespace NodeQueryWorkbench
         cboDataFiles.Items.Add(fileName);
         _dataFiles.Add(fileName, dataFile);
       }
-           
+
 
       _queryFiles = new Dictionary<string, string>();
       cboQueryFiles.Items.Clear();

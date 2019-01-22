@@ -13,10 +13,22 @@ namespace Org.Diff.DiffBuilder.Model
 
   public class DiffPiece
   {
-    public ChangeType Type { get; set; }
-    public int? Position { get; set; }
-    public string Text { get; set; }
-    public List<DiffPiece> SubPieces { get; set; } = new List<DiffPiece>();
+    public ChangeType Type {
+      get;
+      set;
+    }
+    public int? Position {
+      get;
+      set;
+    }
+    public string Text {
+      get;
+      set;
+    }
+    public List<DiffPiece> SubPieces {
+      get;
+      set;
+    } = new List<DiffPiece>();
 
     public DiffPiece(string text, ChangeType type, int? position = null)
     {
@@ -26,7 +38,7 @@ namespace Org.Diff.DiffBuilder.Model
     }
 
     public DiffPiece()
-        : this(null, ChangeType.Imaginary)
+      : this(null, ChangeType.Imaginary)
     {
     }
   }

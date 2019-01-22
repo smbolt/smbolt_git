@@ -12,10 +12,16 @@ namespace Org.GS.Configuration
   public class ConfigGroup
   {
     [XMap(IsKey = true)]
-    public string GroupID { get; set; }
+    public string GroupID {
+      get;
+      set;
+    }
 
     [XMap]
-    public string GroupName { get; set; }
+    public string GroupName {
+      get;
+      set;
+    }
 
     public ConfigGroup()
     {

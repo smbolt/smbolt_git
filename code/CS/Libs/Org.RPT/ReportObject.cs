@@ -14,57 +14,127 @@ namespace Org.RPT
   public class ReportObject
   {
     [XMap(IsKey = true, DefaultValue = "ReportObject")]
-		public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "ReportText")]
-    public ReportObjectType ReportObjectType { get; set; }
+    public ReportObjectType ReportObjectType {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool PerPage { get; set; }
+    public bool PerPage {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public ReportText ReportText { get; set; }
+    public ReportText ReportText {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public ReportObjectSize ReportObjectSize { get; set; }
+    public ReportObjectSize ReportObjectSize {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public ReportObjectLocation ReportObjectLocation { get; set; }
+    public ReportObjectLocation ReportObjectLocation {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "")]
-		public string FillColor { get; set; }
+    public string FillColor {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "")]
-    public string BorderColor { get; set; }
+    public string BorderColor {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public float BorderWidth { get; set; }
+    public float BorderWidth {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, WrapperElement = "ReportColumns", CollectionElements = "ReportColumn")]
-    public ReportColumns ReportColumns { get; set; }
+    public ReportColumns ReportColumns {
+      get;
+      set;
+    }
 
-    public Dictionary<string, int> ColumnReferences { get; set; }
+    public Dictionary<string, int> ColumnReferences {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "ReportObject",  WrapperElement="ReportObjectSet", SequenceDuplicates = true, KeyName = "Name")]
-    public ReportObjectSet ReportObjectSet { get; set; }
-        
+    public ReportObjectSet ReportObjectSet {
+      get;
+      set;
+    }
+
     [XMap(DefaultValue = "")]
-		public string ImagePath { get; set; }
+    public string ImagePath {
+      get;
+      set;
+    }
 
-    public Image Image { get; set; }
+    public Image Image {
+      get;
+      set;
+    }
 
-    public ReportObject Parent { get; set; }
-    public ReportDef RDef { get; set; }
-    public PointF ActualLocation { get; set; }
-    public SizeF ActualSize { get; set; }
-    public int Level { get; set; }
-    public float LeftEdge { get; set; }
-    public float CurrX { get; set; }
-    public float CurrY { get; set; }
-    public ReportObject ParentReportObject { get { return this.Get_ParentReportObject(); } }
+    public ReportObject Parent {
+      get;
+      set;
+    }
+    public ReportDef RDef {
+      get;
+      set;
+    }
+    public PointF ActualLocation {
+      get;
+      set;
+    }
+    public SizeF ActualSize {
+      get;
+      set;
+    }
+    public int Level {
+      get;
+      set;
+    }
+    public float LeftEdge {
+      get;
+      set;
+    }
+    public float CurrX {
+      get;
+      set;
+    }
+    public float CurrY {
+      get;
+      set;
+    }
+    public ReportObject ParentReportObject {
+      get {
+        return this.Get_ParentReportObject();
+      }
+    }
 
     public ReportObject()
-		{
+    {
       this.Name = String.Empty;
       this.ReportObjectType = ReportObjectType.ReportText;
       this.PerPage = false;
@@ -87,10 +157,10 @@ namespace Org.RPT
       this.LeftEdge = 0.0F;
       this.CurrX = 0.0F;
       this.CurrY = 0.0F;
-		}
+    }
 
-		public void LayoutObject(Graphics gr, float scale)
-		{
+    public void LayoutObject(Graphics gr, float scale)
+    {
       ReportObjectType roType = this.ReportObjectType;
       string roName = this.Name;
 
@@ -153,8 +223,8 @@ namespace Org.RPT
         holdText = this.ReportText.Text;
       }
 
-			float textLeft = 0F;
-			SizeF szText = new SizeF(0.0F, 0.0F);
+      float textLeft = 0F;
+      SizeF szText = new SizeF(0.0F, 0.0F);
 
       try
       {
@@ -163,13 +233,13 @@ namespace Org.RPT
           case ReportObjectType.Rectangle:
             this.ActualLocation = new PointF(left, top);
             this.ActualSize = new SizeF(width, height);
-            this.CurrY = top; 
+            this.CurrY = top;
             this.Parent.CurrY += height;
             break;
 
           case ReportObjectType.ReportText:
             this.ActualLocation = new PointF(left, top);
-            this.ActualSize = new SizeF(width, height); 
+            this.ActualSize = new SizeF(width, height);
             string text = this.ReportText.Text;
 
             if (text.Length > 0)
@@ -186,7 +256,7 @@ namespace Org.RPT
                   {
                     szText = gr.MeasureString(text, f, Convert.ToInt32(availableWidth));
                     this.ActualLocation = new PointF(textRect.X, textRect.Y);
-                    this.ActualSize = new SizeF(textRect.Width, textRect.Height); 
+                    this.ActualSize = new SizeF(textRect.Width, textRect.Height);
 
                     if (this.ParentReportObject != null)
                     {
@@ -221,14 +291,14 @@ namespace Org.RPT
             }
             break;
 
-            case ReportObjectType.PageBorder:
-              left = this.RDef.LeftMargin;
-              top = this.RDef.TopMargin;
-              width = this.RDef.PageWidth - (this.RDef.LeftMargin + this.RDef.RightMargin);
-              height = this.RDef.PageHeight - (this.RDef.TopMargin + this.RDef.BottomMargin); 
-              this.ActualLocation = new PointF(left, top);
-              this.ActualSize = new SizeF(width, height);
-              break;
+          case ReportObjectType.PageBorder:
+            left = this.RDef.LeftMargin;
+            top = this.RDef.TopMargin;
+            width = this.RDef.PageWidth - (this.RDef.LeftMargin + this.RDef.RightMargin);
+            height = this.RDef.PageHeight - (this.RDef.TopMargin + this.RDef.BottomMargin);
+            this.ActualLocation = new PointF(left, top);
+            this.ActualSize = new SizeF(width, height);
+            break;
         }
 
         if (this.PerPage)
@@ -239,23 +309,23 @@ namespace Org.RPT
         if (this.RDef.Trace.Length == 0)
         {
           this.RDef.Trace.Append("REPORT TRACE" + g.crlf2);
-          this.RDef.Trace.Append("LVL   TYPE                 Name                   X         Y         W         H            RdNextY        RosCurrY" + g.crlf); 
+          this.RDef.Trace.Append("LVL   TYPE                 Name                   X         Y         W         H            RdNextY        RosCurrY" + g.crlf);
         }
 
         if (roType == ReportObjectType.Rectangle)
           this.RDef.Trace.Append(g.crlf);
 
-        this.RDef.Trace.Append(this.Level.ToString("00") + "    " + roType.ToString().PadTo(18) + "   " + this.Name.PadTo(18) + " " + 
-          left.ToString("0000.000") + "  " + top.ToString("0000.000") + "  " + width.ToString("0000.000") + "  " + height.ToString("0000.000") + "        " +
-          this.RDef.NextY.ToString("0000.000") + "        " + this.Parent.CurrY.ToString("0000.000") + "  " + 
-          holdText.TrimToMax(30).Replace("\n", String.Empty).Replace("\r", String.Empty) + g.crlf); 
+        this.RDef.Trace.Append(this.Level.ToString("00") + "    " + roType.ToString().PadTo(18) + "   " + this.Name.PadTo(18) + " " +
+                               left.ToString("0000.000") + "  " + top.ToString("0000.000") + "  " + width.ToString("0000.000") + "  " + height.ToString("0000.000") + "        " +
+                               this.RDef.NextY.ToString("0000.000") + "        " + this.Parent.CurrY.ToString("0000.000") + "  " +
+                               holdText.TrimToMax(30).Replace("\n", String.Empty).Replace("\r", String.Empty) + g.crlf);
 
 
         if (this.ReportObjectSet != null)
         {
           //this.Parent.CurrY = top;
           this.RDef.Trace.Append(this.Level.ToString("00") + "    " + ("ReportObjectSet").PadTo(18) + "   " + String.Empty.PadTo(18) + " " +
-              "          " + this.Parent.CurrY.ToString("0000.000") + g.crlf); 
+                                 "          " + this.Parent.CurrY.ToString("0000.000") + g.crlf);
 
           foreach (ReportObject ro in this.ReportObjectSet.Values)
           {
@@ -269,10 +339,10 @@ namespace Org.RPT
         MessageBox.Show(e.Message, "Error in ReportObject.DrawObject");
       }
 
-		}
+    }
 
-		public void DrawObject(Graphics gr, float scale)
-		{
+    public void DrawObject(Graphics gr, float scale)
+    {
       bool diagMode = this.RDef.DiagMode;
       Font diagFont = this.RDef.DiagFont;
 
@@ -282,7 +352,7 @@ namespace Org.RPT
       float left = this.ActualLocation.X;
       float top = this.ActualLocation.Y;
       float width = this.ActualSize.Width;
-      float height = this.ActualSize.Height;            
+      float height = this.ActualSize.Height;
 
       float holdFontSize = 10.0F;
       string holdText = String.Empty;
@@ -298,8 +368,8 @@ namespace Org.RPT
           _textBrush = new System.Drawing.SolidBrush(System.Drawing.ColorTranslator.FromHtml(this.ReportText.TextColor));
       }
 
-			float textLeft = 0F;
-			SizeF szText = new SizeF(0.0F, 0.0F);
+      float textLeft = 0F;
+      SizeF szText = new SizeF(0.0F, 0.0F);
 
       Color borderColor = Color.Black;
       if (this.BorderColor.IsNotBlank())
@@ -328,7 +398,7 @@ namespace Org.RPT
 
             if (diagMode)
             {
-              gr.DrawString(roName + " [" + this.Level.ToString() + "] " + left.ToString() + "  " + top.ToString() + "  " + width.ToString() + "  " + height.ToString(), diagFont, Brushes.Black, new PointF(left + 2, top + 2)); 
+              gr.DrawString(roName + " [" + this.Level.ToString() + "] " + left.ToString() + "  " + top.ToString() + "  " + width.ToString() + "  " + height.ToString(), diagFont, Brushes.Black, new PointF(left + 2, top + 2));
             }
             break;
 
@@ -340,8 +410,8 @@ namespace Org.RPT
               float availableWidth = this.RDef.PageWidth - (left + 3 + this.RDef.RightMargin + 3);
               float availableHeight = this.RDef.PageHeight - (top + 3 + this.RDef.BottomMargin + 3);
               Font f = new Font(this.ReportText.FontName, this.ReportText.FontSize * scale, this.ReportText.FontStyle.ToFontStyle());
-              RectangleF textRect = new RectangleF(left + 3, top + 3, availableWidth, availableHeight); 
-                            
+              RectangleF textRect = new RectangleF(left + 3, top + 3, availableWidth, availableHeight);
+
               float fontHeight = f.GetHeight();
               szText = gr.MeasureString(text, f, Convert.ToInt32(availableWidth));
               bool multiLine = false;
@@ -374,7 +444,7 @@ namespace Org.RPT
                         {
                           this.RDef.NextY = textRect.Top + szText.Height + 10;
                           if (this.ParentReportObject.ReportObjectSize.Height < szText.Height)
-                            this.ParentReportObject.ReportObjectSize.Height = szText.Height + 10; 
+                            this.ParentReportObject.ReportObjectSize.Height = szText.Height + 10;
                         }
                       }
                     }
@@ -384,7 +454,9 @@ namespace Org.RPT
                     if (multiLine)
                     {
                       textRect.Height = fontHeight;
-                      gr.DrawString(text, f, _textBrush, textRect, new StringFormat() { Trimming = StringTrimming.EllipsisCharacter } );
+                      gr.DrawString(text, f, _textBrush, textRect, new StringFormat() {
+                        Trimming = StringTrimming.EllipsisCharacter
+                      } );
                     }
                     else
                     {
@@ -422,7 +494,7 @@ namespace Org.RPT
         MessageBox.Show(e.Message, "Error in ReportObject.DrawObject");
       }
 
-		}
+    }
 
     public void SetReferences()
     {
@@ -454,7 +526,7 @@ namespace Org.RPT
       }
 
       if (this.ReportObjectSet == null)
-          return;
+        return;
 
       this.ReportObjectSet.Parent = this;
       this.ReportObjectSet.Level = this.Level + 1;

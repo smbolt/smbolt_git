@@ -6,7 +6,7 @@ using System.IO;
 using System.Xml.Linq;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Text; 
+using System.Drawing.Text;
 using Org.GS;
 
 namespace Org.RPT
@@ -18,7 +18,10 @@ namespace Org.RPT
     private ReportDefs _reportDefs;
     private float _scale;
 
-    public List<Image> PageImages { get; set; }
+    public List<Image> PageImages {
+      get;
+      set;
+    }
 
     public QuickReport(ReportData reportData, ReportDef reportDef)
     {
@@ -27,8 +30,8 @@ namespace Org.RPT
       _scale = 1.0F;
       this.PageImages = new List<Image>();
       Image page1 = new Bitmap(Convert.ToInt32(reportDef.PageWidth), Convert.ToInt32(reportDef.PageHeight));
-      page1.Tag = 1; 
-      this.PageImages.Add(page1); 
+      page1.Tag = 1;
+      this.PageImages.Add(page1);
     }
 
     public List<Image> DrawReport(float scale)
@@ -51,10 +54,10 @@ namespace Org.RPT
       gr.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
       gr.TextRenderingHint = TextRenderingHint.AntiAlias;
 
-      //_reportDef = _reportDefs["GeminiTicket"]; 
+      //_reportDef = _reportDefs["GeminiTicket"];
 
       _reportDef.LayoutReport(gr, _reportData, 1.0F);
-      _reportDef.PrintReport(gr, _reportData, 1.0F); 
+      _reportDef.PrintReport(gr, _reportData, 1.0F);
 
       _reportDef.DumpTrace();
 

@@ -34,7 +34,7 @@ namespace Org.ExcelExtract
     private static string _outputFilePath;
     private static string _inputFolderPath;
     private static string _outputFolderPath;
-    
+
     private static string _errorMessage = String.Empty;
     private static int _returnCode = 0;
 
@@ -85,7 +85,7 @@ namespace Org.ExcelExtract
         Console.WriteLine("Press any key to end program.");
         Console.ReadLine();
       }
-      
+
       return _returnCode;
     }
 
@@ -111,7 +111,7 @@ namespace Org.ExcelExtract
 
     private static string[] GetArgsFromCommandLine(string commandLine)
     {
-      string cmdWork = commandLine.Trim().Replace("'", "\""); 
+      string cmdWork = commandLine.Trim().Replace("'", "\"");
 
       while (cmdWork.Contains("\""))
       {
@@ -129,14 +129,14 @@ namespace Org.ExcelExtract
 
         cmdWork = cmdWork.ReplaceAtPosition(quotedNoSpace, pos);
       }
-      
+
       // split the work string
-      string[] argArray = cmdWork.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries); 
-      
+      string[] argArray = cmdWork.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
+
       // replace the pipes with spaces to restore values
       for (int i = 0; i < argArray.Length; i++)
       {
-        argArray[i] = argArray[i].Replace("|", " "); 
+        argArray[i] = argArray[i].Replace("|", " ");
       }
 
       return argArray;
@@ -157,7 +157,7 @@ namespace Org.ExcelExtract
 
       if (_fileProcessMode == FileProcessMode.InvalidMode)
       {
-        _errorMessage = _programName + " could not determine the requested mode of operation." + g.crlf + 
+        _errorMessage = _programName + " could not determine the requested mode of operation." + g.crlf +
                         "The first command line parameter must be one of the following: " + g.crlf +
                         "  '-h'   to display usage information and instructions" + g.crlf +
                         "  '-s'   to process a single file" + g.crlf +
@@ -178,7 +178,7 @@ namespace Org.ExcelExtract
         switch(_fileProcessMode)
         {
           case FileProcessMode.SingleFileMode:
-            _errorMessage = "The " + _programName + " command line must include an '-i' switch to specify the input file to be parsed." + g.crlf + 
+            _errorMessage = "The " + _programName + " command line must include an '-i' switch to specify the input file to be parsed." + g.crlf +
                             "Use 'ExcelExtract -h' for help.";
             _returnCode = 102;
             return;
@@ -202,7 +202,7 @@ namespace Org.ExcelExtract
         switch(_fileProcessMode)
         {
           case FileProcessMode.SingleFileMode:
-            _errorMessage = "The " + _programName + " command line must include an '-o' switch to specify the output file name." + g.crlf + 
+            _errorMessage = "The " + _programName + " command line must include an '-o' switch to specify the output file name." + g.crlf +
                             "Use 'ExcelExtract -h' for help.";
             _returnCode = 105;
             return;
@@ -247,7 +247,7 @@ namespace Org.ExcelExtract
       {
         if (!File.Exists(inputValue))
         {
-          _errorMessage = "The " + _programName + " command line parameter immediately following the '-i' switch must be a valid input file name." + g.crlf + 
+          _errorMessage = "The " + _programName + " command line parameter immediately following the '-i' switch must be a valid input file name." + g.crlf +
                           "The value '" + inputValue + "' does not correspond to a valid file name." + g.crlf +
                           "Use 'ExcelExtract -h' for help.";
           _returnCode = 109;
@@ -258,7 +258,7 @@ namespace Org.ExcelExtract
       {
         if (!Directory.Exists(inputValue))
         {
-          _errorMessage = "The " + _programName + " command line parameter immediately following the '-i' switch must be a valid input folder name." + g.crlf + 
+          _errorMessage = "The " + _programName + " command line parameter immediately following the '-i' switch must be a valid input folder name." + g.crlf +
                           "The value '" + inputValue + "' does not correspond to a valid folder name." + g.crlf +
                           "Use 'ExcelExtract -h' for help.";
           _returnCode = 110;
@@ -320,8 +320,8 @@ namespace Org.ExcelExtract
           }
           catch (Exception ex)
           {
-            _errorMessage = "The " + _programName + " program is unable to create the non-existent output folder at '" + directoryName + "' to contain the output file." + g.crlf + 
-                            "The exception message follows." + g.crlf + ex.MessageReport(); 
+            _errorMessage = "The " + _programName + " program is unable to create the non-existent output folder at '" + directoryName + "' to contain the output file." + g.crlf +
+                            "The exception message follows." + g.crlf + ex.MessageReport();
             _returnCode = 116;
             return;
           }
@@ -346,8 +346,8 @@ namespace Org.ExcelExtract
           }
           catch (Exception ex)
           {
-            _errorMessage = "The " + _programName + " program is unable to create the non-existent output folder at '" + outputValue + "'." + g.crlf + 
-                            "The exception message follows." + g.crlf + ex.MessageReport(); 
+            _errorMessage = "The " + _programName + " program is unable to create the non-existent output folder at '" + outputValue + "'." + g.crlf +
+                            "The exception message follows." + g.crlf + ex.MessageReport();
             _returnCode = 116;
             return;
           }
@@ -366,10 +366,14 @@ namespace Org.ExcelExtract
     {
       switch (modeSwitch)
       {
-        case "-h": return FileProcessMode.InfoOnlyMode;
-        case "-s": return FileProcessMode.SingleFileMode;
-        case "-f": return FileProcessMode.ProcessFolderMode;
-        case "-w": return FileProcessMode.WatchFolderMode;
+        case "-h":
+          return FileProcessMode.InfoOnlyMode;
+        case "-s":
+          return FileProcessMode.SingleFileMode;
+        case "-f":
+          return FileProcessMode.ProcessFolderMode;
+        case "-w":
+          return FileProcessMode.WatchFolderMode;
       }
 
       return FileProcessMode.InvalidMode;
@@ -396,7 +400,7 @@ namespace Org.ExcelExtract
         if (!_inSilentMode)
         {
           Console.WriteLine( _programName + "  running in single file mode will extract text from file " + g.crlf + "  " + _inputFilePath +
-                            g.crlf + "    into text file " + g.crlf + "  " + _outputFilePath + "." + g.crlf); 
+                             g.crlf + "    into text file " + g.crlf + "  " + _outputFilePath + "." + g.crlf);
         }
 
         _logger.Log("Attempting to extract data from Excel file " + _inputFilePath + ".");
@@ -429,9 +433,9 @@ namespace Org.ExcelExtract
       catch (Exception ex)
       {
         if (!_inSilentMode)
-          Console.WriteLine("Data extraction failed - error message follows: " + g.crlf + ex.ToReport()); 
+          Console.WriteLine("Data extraction failed - error message follows: " + g.crlf + ex.ToReport());
 
-        _logger.Log("An exception occurred attempting to extract data from Excel file '" + _inputFilePath + 
+        _logger.Log("An exception occurred attempting to extract data from Excel file '" + _inputFilePath +
                     ". The exception message follows." + g.crlf + ex.ToReport());
         return 202;
       }

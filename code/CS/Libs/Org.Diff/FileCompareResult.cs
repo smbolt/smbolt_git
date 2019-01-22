@@ -8,9 +8,18 @@ namespace Org.Diff
 {
   public class FileCompareResult
   {
-    public FileCompareStatus FileCompareStatus { get; set; }
-    public string FileCompareReport { get; set; }
-    public Exception Exception { get; set; }
+    public FileCompareStatus FileCompareStatus {
+      get;
+      set;
+    }
+    public string FileCompareReport {
+      get;
+      set;
+    }
+    public Exception Exception {
+      get;
+      set;
+    }
 
     public FileCompareResult()
     {

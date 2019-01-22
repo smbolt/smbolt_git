@@ -8,10 +8,23 @@ namespace Org.GS
 {
   public class Prox
   {
-    public string Name { get; set; }
-    public Type Type { get; set; }
-    public object Value { get; set; }
-    public bool IsNull { get { return this.Value == null; } }
+    public string Name {
+      get;
+      set;
+    }
+    public Type Type {
+      get;
+      set;
+    }
+    public object Value {
+      get;
+      set;
+    }
+    public bool IsNull {
+      get {
+        return this.Value == null;
+      }
+    }
 
     public Prox()
     {

@@ -8,19 +8,28 @@ using Org.GS;
 namespace Org.QB.QBXML
 {
   [XMap (XType = XType.Element)]
-  [XElementSequence("ListID,FullName,MaxReturned,ActiveStatus,FromModifiedDate,ToModifiedDate," + 
+  [XElementSequence("ListID,FullName,MaxReturned,ActiveStatus,FromModifiedDate,ToModifiedDate," +
                     "NameFilter,NameRangeFilter,TotalBalanceFilter,CurrencyFilter,ClassFilter," +
                     "IncludeRetElement,OwnerID")]
   public class CustomerQueryRq : QueryRqBase
   {
     [XMap(XType = XType.Element)]
-    public TotalBalanceFilter TotalBalanceFilter { get; set; }
+    public TotalBalanceFilter TotalBalanceFilter {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public CurrencyFilter CurrencyFilter { get; set; }
+    public CurrencyFilter CurrencyFilter {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public ClassFilter ClassFilter { get; set; }
+    public ClassFilter ClassFilter {
+      get;
+      set;
+    }
 
     public CustomerQueryRq()
       : base()

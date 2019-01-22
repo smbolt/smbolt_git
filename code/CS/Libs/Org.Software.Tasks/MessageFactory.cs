@@ -19,11 +19,11 @@ namespace Org.SoftwareTasks
                   "CheckForUpdates_1.0.0.0 " +
                   "DownloadSoftware_1.0.0.0 " +
                   "GetFrameworkVersions_1.0.0.0 "
-                  )]
+                 )]
   public class MessageFactory : MessageFactoryBase, IMessageFactory
   {
     public MessageFactory() { }
-    
+
     public WsMessage CreateRequestMessage(WsParms wsParms)
     {
       try
@@ -42,7 +42,7 @@ namespace Org.SoftwareTasks
             break;
 
           case "GetFrameworkVersions":
-            trans = Build_GetFrameworkVersions(wsParms); 
+            trans = Build_GetFrameworkVersions(wsParms);
             break;
 
           default:

@@ -12,15 +12,36 @@ namespace Org.GS
     private FileSystemUtility fsu;
 
     // assembly data
-    public string _assemblyName { get; set; }
-    public string _companyName { get; set; }
-    public string _productName { get; set; }
-    public Version _version { get; set; }
-    public string _assemblyTitle { get; set; }
-    public string _appDataPath { get; set; }
+    public string _assemblyName {
+      get;
+      set;
+    }
+    public string _companyName {
+      get;
+      set;
+    }
+    public string _productName {
+      get;
+      set;
+    }
+    public Version _version {
+      get;
+      set;
+    }
+    public string _assemblyTitle {
+      get;
+      set;
+    }
+    public string _appDataPath {
+      get;
+      set;
+    }
 
     // environment data
-    public string _systemDriveLetter { get; set; }
+    public string _systemDriveLetter {
+      get;
+      set;
+    }
 
     public App(Assembly assembly)
     {

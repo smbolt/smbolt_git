@@ -117,7 +117,7 @@ namespace Org.Terminal.BMS
   }
 
   // DFHMSD (MAP SET) ENUMS
-  
+
   public enum DFHMSD_DSECT
   {
     ADS = 0,
@@ -195,7 +195,7 @@ namespace Org.Terminal.BMS
 
   public enum DFHMDI_HEADER
   {
-    NO = 0 ,
+    NO = 0,
     YES
   }
 

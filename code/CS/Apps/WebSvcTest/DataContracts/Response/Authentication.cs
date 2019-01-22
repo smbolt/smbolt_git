@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace FieldingSystems.FieldVisor.API.DataContracts.Response
 {
-    public class Authentication : BaseResponse
-    {
-        public string AuthID { get; set; }
+  public class Authentication : BaseResponse
+  {
+    public string AuthID {
+      get;
+      set;
     }
+  }
 }

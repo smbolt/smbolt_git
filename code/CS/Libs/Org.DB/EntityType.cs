@@ -9,8 +9,17 @@ namespace Org.DB
 {
   public class EntityType
   {
-    public Type TypeOfEntity { get; set; }
-    public PropertyInfo DbSetPI { get; set; }
-    public MethodInfo DbSetMI { get; set; }
+    public Type TypeOfEntity {
+      get;
+      set;
+    }
+    public PropertyInfo DbSetPI {
+      get;
+      set;
+    }
+    public MethodInfo DbSetMI {
+      get;
+      set;
+    }
   }
 }

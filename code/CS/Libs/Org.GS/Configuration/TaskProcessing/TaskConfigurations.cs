@@ -11,8 +11,11 @@ namespace Org.GS.Configuration
   [XMap(XType = XType.Element, CollectionElements="TaskConfigSet")]
   public class TaskConfigurations : Dictionary<string, TaskConfigSet>
   {
-    public ProgramConfig ProgramConfig { get; set; }
-    
+    public ProgramConfig ProgramConfig {
+      get;
+      set;
+    }
+
     [XParm(Name = "parent", ParmSource = XParmSource.Parent)]
     public TaskConfigurations(ProgramConfig parent)
     {

@@ -16,7 +16,10 @@ namespace Org.TSK
 
     private static string indent = g.BlankString(12);
     private static string _configFilesPath = String.Empty;
-    public static bool ServiceHasBeenTerminated { get; set; }
+    public static bool ServiceHasBeenTerminated {
+      get;
+      set;
+    }
 
 
     private static object DeleteFiles_LockObject = new object();
@@ -51,7 +54,7 @@ namespace Org.TSK
         if (!Directory.Exists(appLogPath))
         {
           logger.Log("The high level folder for AppLog files was not found '" + appLogPath);
-          // need to send an email... 
+          // need to send an email...
         }
 
         string pathBeingDeleted = String.Empty;
@@ -65,7 +68,7 @@ namespace Org.TSK
           string errorMessage = "An error occurred deleting application log files." + g.crlf2 + "File Path: " + appLogPath + g.crlf2 + ex.Message;
           sbReport.Append(indent + "*** ERROR ***  " + errorMessage + g.crlf);
           logger.Log(errorMessage);
-          // send an email... 
+          // send an email...
         }
 
         sbReport.Append(indent + "    Total files deleted: " + totalFilesDeleted.ToString() + g.crlf);

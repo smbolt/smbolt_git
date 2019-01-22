@@ -17,25 +17,41 @@ using Org.GS.Configuration;
 namespace Org.UI
 {
   public partial class UIBase : UserControl
-  {    
+  {
     public event Action<UIEventArgs> ControlEvent;
 
     private static Pen _bluePen = new Pen(new SolidBrush(Color.FromArgb(28, 117, 188)), 2.0f);
-    public static Pen BluePen { get { return _bluePen; } }
+    public static Pen BluePen {
+      get {
+        return _bluePen;
+      }
+    }
 
-    private static Brush _blueBrush = new SolidBrush(Color.FromArgb(28, 117, 188)); 
-    public static Brush BlueBrush { get { return _blueBrush; } }
+    private static Brush _blueBrush = new SolidBrush(Color.FromArgb(28, 117, 188));
+    public static Brush BlueBrush {
+      get {
+        return _blueBrush;
+      }
+    }
 
-    private static Brush _darkBlueBrush = new SolidBrush(Color.FromArgb(20, 86, 139)); 
-    public static Brush DarkBlueBrush { get { return _darkBlueBrush; } }
+    private static Brush _darkBlueBrush = new SolidBrush(Color.FromArgb(20, 86, 139));
+    public static Brush DarkBlueBrush {
+      get {
+        return _darkBlueBrush;
+      }
+    }
 
     public List<NavSection> NavSections = new List<NavSection>();
 
-    private static ControlSpec _controlSpec = null; 
+    private static ControlSpec _controlSpec = null;
     public static ControlSpec ControlSpec
     {
-      get { return _controlSpec; }
-      set { _controlSpec = value; }
+      get {
+        return _controlSpec;
+      }
+      set {
+        _controlSpec = value;
+      }
     }
 
     private UIControl _theControl = null;
@@ -48,18 +64,22 @@ namespace Org.UI
     private Dictionary<string, Control> _controlMap = null;
     private Label GridValues;
     private Label FormValues;
-    private Label PanelModeLabel; 
-    private Label IsDirtyLabel; 
-    private Label IsCompleteLabel; 
+    private Label PanelModeLabel;
+    private Label IsDirtyLabel;
+    private Label IsCompleteLabel;
     private Label DebugInfo;
     private Button AddNewButton;
     private Button OkButton;
     private Button CancelButton;
 
-    private bool _inDebug = false; 
-    
+    private bool _inDebug = false;
+
     private PanelManager _panelManager;
-    protected PanelManager PanelManager { get { return _panelManager; } }
+    protected PanelManager PanelManager {
+      get {
+        return _panelManager;
+      }
+    }
 
     private static bool _controlSpecLoaded = false;
     private static bool _xMapTypesLoaded = false;
@@ -72,10 +92,10 @@ namespace Org.UI
     {
       _panelManager = new PanelManager();
     }
-    
+
     public static void LoadXmlMapper()
     {
-      XmlMapper.AddAssembly(System.Reflection.Assembly.GetExecutingAssembly()); 
+      XmlMapper.AddAssembly(System.Reflection.Assembly.GetExecutingAssembly());
     }
 
     public void Initialize(string name, Point location, Size size, bool reloadControlSpec)
@@ -87,20 +107,20 @@ namespace Org.UI
 
       this.Name = name;
       this.Location = location;
-      this.Size = size; 
+      this.Size = size;
 
       InitializeControl();
-      
+
       try
       {
-       if (!UIBase.ControlSpec.UIControls.ContainsKey(name))
-         throw new Exception("UIControl '" + name + "' is not defined in the ControlSpec."); 
+        if (!UIBase.ControlSpec.UIControls.ContainsKey(name))
+          throw new Exception("UIControl '" + name + "' is not defined in the ControlSpec.");
 
         CreateControl(UIBase.ControlSpec.UIControls[name]);
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred during the creation of the UIControl '" + name + "'.", ex); 
+        throw new Exception("An exception occurred during the creation of the UIControl '" + name + "'.", ex);
       }
     }
 
@@ -108,11 +128,11 @@ namespace Org.UI
     {
       if (!_xMapTypesLoaded)
       {
-        XmlMapper.AddAssembly(System.Reflection.Assembly.GetExecutingAssembly()); 
+        XmlMapper.AddAssembly(System.Reflection.Assembly.GetExecutingAssembly());
         _xMapTypesLoaded = true;
 
         WinFormsAssembly = Assembly.GetAssembly(typeof(System.Windows.Forms.Label));
-        UIAssembly = Assembly.GetAssembly(typeof(Org.UI.UIBase)); 
+        UIAssembly = Assembly.GetAssembly(typeof(Org.UI.UIBase));
       }
 
       if (!_controlSpecLoaded)
@@ -124,16 +144,16 @@ namespace Org.UI
 
     private void LoadControlSpec()
     {
-      string controlSpecPath = String.Empty; 
+      string controlSpecPath = String.Empty;
 
       try
       {
-        controlSpecPath = g.ResourcePath + @"\Controls.xml"; 
+        controlSpecPath = g.ResourcePath + @"\Controls.xml";
         if (!File.Exists(controlSpecPath))
           throw new Exception("Controls.xml does not exist at '" + controlSpecPath + "' - cannot load control definitions.");
 
-        string controlSpec = File.ReadAllText(controlSpecPath); 
-        var controlSpecXml = XElement.Parse(controlSpec); 
+        string controlSpec = File.ReadAllText(controlSpecPath);
+        var controlSpecXml = XElement.Parse(controlSpec);
         var f = new ObjectFactory2();
         f.LogToMemory = true;
         _controlSpec = f.Deserialize(controlSpecXml) as ControlSpec;
@@ -142,32 +162,32 @@ namespace Org.UI
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to load the ControlSpec object from the Controls.xml file '" + 
-                            controlSpecPath + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to load the ControlSpec object from the Controls.xml file '" +
+                            controlSpecPath + "'.", ex);
       }
     }
-    
+
     protected void CreateControl(UIControl c)
     {
-      _theControl = c; 
+      _theControl = c;
 
       PopulateProperties(this, c);
       c.ObjectType = this.GetType();
       c.ObjectReference = this;
-      c.ParentObjectType = null; 
+      c.ParentObjectType = null;
       c.ParentObjectReference = null;
       c.TopObjectType = null;
       c.TopObjectReference = null;
 
-      int childControlCount = c.Count; 
-      int controlNumber = 0; 
+      int childControlCount = c.Count;
+      int controlNumber = 0;
 
       foreach(var childControl in c)
       {
         if (!childControl.Type.StartsWith("Org."))
-          childControl.Type = "System.Windows.Forms." + childControl.Type; 
+          childControl.Type = "System.Windows.Forms." + childControl.Type;
         bool isWinForms = childControl.Type.StartsWith("System.Windows.Forms");
-        Type controlType = isWinForms ? UIBase.WinFormsAssembly.GetType(childControl.Type) : UIBase.UIAssembly.GetType(childControl.Type);   
+        Type controlType = isWinForms ? UIBase.WinFormsAssembly.GetType(childControl.Type) : UIBase.UIAssembly.GetType(childControl.Type);
 
         object o = Activator.CreateInstance(controlType);
         childControl.ObjectType = controlType;
@@ -176,12 +196,12 @@ namespace Org.UI
         childControl.ParentObjectReference = this;
         childControl.TopObjectType = this.GetType();
         childControl.TopObjectReference = this;
-          
-        this.Controls.Add((Control) o); 
+
+        this.Controls.Add((Control) o);
         ((Control)o).Dock = DockStyle.Top;
         ((Control)o).BringToFront();
-        controlNumber++; 
-        PopulateProperties(o, childControl); 
+        controlNumber++;
+        PopulateProperties(o, childControl);
 
 
         if (c.Type.Contains("Navigator"))
@@ -189,14 +209,14 @@ namespace Org.UI
           ((Control)o).Dock = DockStyle.Top;
           ((Control)o).BringToFront();
           this.NavSections.Add((NavSection)o);
-          ((NavSection)o).Navigator = (UIPanel)this; 
+          ((NavSection)o).Navigator = (UIPanel)this;
         }
         else
         {
           if (controlNumber < childControlCount)
           {
             Panel spacerPanel = new Panel();
-            spacerPanel.Size = new Size(((Control)o).Width, 20); 
+            spacerPanel.Size = new Size(((Control)o).Width, 20);
             this.Controls.Add(spacerPanel);
             spacerPanel.Dock = DockStyle.Top;
             spacerPanel.BringToFront();
@@ -209,26 +229,26 @@ namespace Org.UI
         }
       }
 
-      _inDebug = c.Debug; 
+      _inDebug = c.Debug;
 
       if (_inDebug)
       {
-        this.Height += 200; 
-        int bottomOfControls = 0; 
+        this.Height += 200;
+        int bottomOfControls = 0;
         int leftOfControls = 0;
-        int maxWidthOfControls = 0; 
+        int maxWidthOfControls = 0;
         foreach(var childControl in c)
         {
           if (childControl.ObjectReference != null)
           {
-            Control childControlObject = childControl.ObjectReference as Control; 
-            int bottom = childControlObject.Top + childControlObject.Height; 
+            Control childControlObject = childControl.ObjectReference as Control;
+            int bottom = childControlObject.Top + childControlObject.Height;
             if (bottom > bottomOfControls)
-              bottomOfControls = bottom; 
+              bottomOfControls = bottom;
             if (childControlObject.Left > leftOfControls)
-              leftOfControls = childControlObject.Left; 
+              leftOfControls = childControlObject.Left;
             if (childControlObject.Width > maxWidthOfControls)
-              maxWidthOfControls = childControlObject.Width; 
+              maxWidthOfControls = childControlObject.Width;
           }
         }
 
@@ -236,25 +256,25 @@ namespace Org.UI
 
         Panel pnlDebug = new Panel();
         pnlDebug.BorderStyle = BorderStyle.FixedSingle;
-        ((Control) c.ObjectReference).Controls.Add(pnlDebug); 
+        ((Control) c.ObjectReference).Controls.Add(pnlDebug);
         pnlDebug.Top = topOfDebugPanel;
-        pnlDebug.Left = leftOfControls; 
+        pnlDebug.Left = leftOfControls;
         pnlDebug.Height = 180;
-        pnlDebug.Width = maxWidthOfControls; 
+        pnlDebug.Width = maxWidthOfControls;
 
         Label lblRowHeader = new Label();
         lblRowHeader.BorderStyle = BorderStyle.None;
-        lblRowHeader.Text = "Selected Row"; 
-        pnlDebug.Controls.Add(lblRowHeader); 
+        lblRowHeader.Text = "Selected Row";
+        pnlDebug.Controls.Add(lblRowHeader);
         lblRowHeader.Left = 4;
-        lblRowHeader.Top = 4; 
+        lblRowHeader.Top = 4;
 
         Label lblControlHeader = new Label();
         lblControlHeader.BorderStyle = BorderStyle.None;
-        lblControlHeader.Text = "Control Values"; 
-        pnlDebug.Controls.Add(lblControlHeader); 
+        lblControlHeader.Text = "Control Values";
+        pnlDebug.Controls.Add(lblControlHeader);
         lblControlHeader.Left = 280;
-        lblControlHeader.Top = 4; 
+        lblControlHeader.Top = 4;
 
         Label lblDebugInfo = new Label();
         lblDebugInfo.BorderStyle = BorderStyle.None;
@@ -296,9 +316,9 @@ namespace Org.UI
         lblGridValues.BorderStyle = BorderStyle.None;
         lblGridValues.AutoSize = false;
         lblGridValues.Width = 270;
-        lblGridValues.Height = 150; 
-        lblGridValues.Text = "Grid Values"; 
-        pnlDebug.Controls.Add(lblGridValues); 
+        lblGridValues.Height = 150;
+        lblGridValues.Text = "Grid Values";
+        pnlDebug.Controls.Add(lblGridValues);
         lblGridValues.Left = 4;
         lblGridValues.Top = 25;
         GridValues = lblGridValues;
@@ -307,9 +327,9 @@ namespace Org.UI
         lblFormValues.BorderStyle = BorderStyle.None;
         lblFormValues.AutoSize = false;
         lblFormValues.Width = 270;
-        lblFormValues.Height = 150; 
+        lblFormValues.Height = 150;
         lblFormValues.Text = "Form Values";
-        pnlDebug.Controls.Add(lblFormValues); 
+        pnlDebug.Controls.Add(lblFormValues);
         lblFormValues.Left = 280;
         lblFormValues.Top = 25;
         FormValues = lblFormValues;
@@ -317,14 +337,14 @@ namespace Org.UI
     }
 
     private void PopulateChildControls(UIControl c, object control)
-    {      
+    {
       if (!c.Type.StartsWith("Org."))
-        c.Type = "System.Windows.Forms." + c.Type; 
+        c.Type = "System.Windows.Forms." + c.Type;
 
       bool isWinForms = c.Type.StartsWith("System.Windows.Forms");
-      Type controlType = isWinForms ? UIBase.WinFormsAssembly.GetType(c.Type) : UIBase.UIAssembly.GetType(c.Type);   
+      Type controlType = isWinForms ? UIBase.WinFormsAssembly.GetType(c.Type) : UIBase.UIAssembly.GetType(c.Type);
 
-      object o = Activator.CreateInstance(controlType); 
+      object o = Activator.CreateInstance(controlType);
       c.ObjectType = controlType;
       c.ObjectReference = o;
       c.TopObjectType = this.GetType();
@@ -332,15 +352,15 @@ namespace Org.UI
 
       if (isWinForms)
       {
-        ((Control)control).Controls.Add((Control) o); 
+        ((Control)control).Controls.Add((Control) o);
         c.ParentObjectType = ((Control)o).Parent.GetType();
-        c.ParentObjectReference = ((Control)o).Parent; 
+        c.ParentObjectReference = ((Control)o).Parent;
       }
       else
       {
-        ((Control)control).Controls.Add((Control) o); 
+        ((Control)control).Controls.Add((Control) o);
         c.ParentObjectType = ((Control)o).Parent.GetType();
-        c.ParentObjectReference = ((Control)o).Parent; 
+        c.ParentObjectReference = ((Control)o).Parent;
 
         if (c.ObjectType.Name == "NavButton")
         {
@@ -349,25 +369,25 @@ namespace Org.UI
         }
       }
 
-      PopulateProperties(o, c); 
+      PopulateProperties(o, c);
 
       foreach(var childControl in c)
-      {   
-        PopulateChildControls(childControl, o); 
+      {
+        PopulateChildControls(childControl, o);
       }
     }
 
     private void PopulateProperties(object control, UIControl controlSpec)
     {
-      var specPiList = GetXMapProperties(controlSpec.GetType()); 
-      string controlType = control.GetType().Name; 
+      var specPiList = GetXMapProperties(controlSpec.GetType());
+      string controlType = control.GetType().Name;
 
       foreach(var specPi in specPiList)
       {
         if (controlType == "UIPanel")
         {
           if (specPi.Name.In("Name,Size,Location"))
-            continue; 
+            continue;
         }
 
         if (controlType == "NavSection")
@@ -395,34 +415,34 @@ namespace Org.UI
 
         if (specPi.Name == "Type")
           continue;
-        
-        XMap specPiXMap = specPi.GetCustomAttribute<XMap>(); 
+
+        XMap specPiXMap = specPi.GetCustomAttribute<XMap>();
         string specPropertyValue = specPi.GetValue(controlSpec).ToString();
         if (specPropertyValue.IsBlank() && specPiXMap.DefaultValue.IsNotBlank())
           specPropertyValue = specPiXMap.DefaultValue;
-        
+
         if (specPropertyValue.IsBlank())
           continue;
 
         if (specPi.Name == "EventSpec")
         {
-          string[] eventSpec = specPropertyValue.ToTokenArray(Constants.PipeDelimiter); 
+          string[] eventSpec = specPropertyValue.ToTokenArray(Constants.PipeDelimiter);
 
           if (eventSpec.Length % 2 != 0)
             throw new Exception("Invalid EventSpec '" + eventSpec + "' for control '" + controlSpec.Name + "'.");
 
-          int eventCount = eventSpec.Length / 2; 
+          int eventCount = eventSpec.Length / 2;
 
           for(int i = 0; i < eventCount; i++)
           {
-            WireUpEvent(controlSpec.Name, control, eventSpec[i * 2], eventSpec[i * 2 + 1]); 
+            WireUpEvent(controlSpec.Name, control, eventSpec[i * 2], eventSpec[i * 2 + 1]);
           }
-          continue; 
+          continue;
         }
 
-        string specPropertyName = specPi.Name; 
+        string specPropertyName = specPi.Name;
         if (specPiXMap.ClassName.IsNotBlank())
-          specPropertyName = specPiXMap.ClassName; 
+          specPropertyName = specPiXMap.ClassName;
 
         PropertyInfo controlProperty = control.GetType().GetProperty(specPropertyName);
         if (controlProperty != null)
@@ -433,21 +453,21 @@ namespace Org.UI
     }
 
     private void WireUpEvent(string controlName, object control, string eventName, string methodName)
-    {      
+    {
       // get the event from the control
-      EventInfo ei = control.GetType().GetEvent(eventName);  
+      EventInfo ei = control.GetType().GetEvent(eventName);
       if (ei == null)
-        throw new Exception("Cannot locate event '" + eventName + "' for control '" + controlName + "'."); 
-             
+        throw new Exception("Cannot locate event '" + eventName + "' for control '" + controlName + "'.");
+
       string eventTargetAll = methodName;
       string targetControlName = String.Empty;
       object targetControl = null;
       string targetMethod = String.Empty;
       if (eventTargetAll.Contains("."))
       {
-        string[] targetTokens = eventTargetAll.ToTokenArray(Constants.DotDelimiter); 
+        string[] targetTokens = eventTargetAll.ToTokenArray(Constants.DotDelimiter);
         if (targetTokens.Length != 2)
-          throw new Exception("Event target specification is invalid, must be in form as 'Control.Method' but found '" + eventTargetAll + "'."); 
+          throw new Exception("Event target specification is invalid, must be in form as 'Control.Method' but found '" + eventTargetAll + "'.");
         targetControlName = targetTokens[0];
         targetMethod = targetTokens[1];
         targetControl = GetEventTargetControl(control, targetControlName);
@@ -459,7 +479,7 @@ namespace Org.UI
       }
 
       if (targetControl == null)
-        throw new Exception("Event target control named '" + targetControlName + "' not found."); 
+        throw new Exception("Event target control named '" + targetControlName + "' not found.");
 
       MethodInfo handler = targetControl.GetType().GetMethod(targetMethod, BindingFlags.Public | BindingFlags.Instance);
 
@@ -476,23 +496,23 @@ namespace Org.UI
 
     private object GetEventTargetControl(object control, string objectName)
     {
-      string typeName = control.GetType().FullName; 
-      bool isWinForms = typeName.StartsWith("System.Windows.Forms."); 
+      string typeName = control.GetType().FullName;
+      bool isWinForms = typeName.StartsWith("System.Windows.Forms.");
 
       if (isWinForms)
       {
         Control wControl = ((Control)control);
-        string controlName = wControl.Name; 
+        string controlName = wControl.Name;
         if (controlName == objectName)
-          return control; 
+          return control;
 
-        Control parent = wControl.Parent; 
+        Control parent = wControl.Parent;
 
         if (parent == null)
-          return null; 
+          return null;
 
         if (parent.Name == objectName)
-          return parent; 
+          return parent;
 
         foreach(Control siblingControl in parent.Controls)
         {
@@ -500,11 +520,11 @@ namespace Org.UI
             return siblingControl;
         }
 
-        return GetEventTargetControl(parent, objectName); 
+        return GetEventTargetControl(parent, objectName);
       }
       else
       {
-        throw new Exception("Non-WinForms controls are not yet implemented."); 
+        throw new Exception("Non-WinForms controls are not yet implemented.");
       }
     }
 
@@ -517,11 +537,11 @@ namespace Org.UI
       {
         XMap propXMap = (XMap)pi.GetCustomAttributes(typeof(XMap), true).ToList().FirstOrDefault();
         if (propXMap != null)
-            xmapPiList.Add(pi); 
+          xmapPiList.Add(pi);
       }
       return xmapPiList;
     }
-    
+
     private void SetPropertyValue(object o, PropertyInfo pi, string propertyValue)
     {
       // For enumeration types
@@ -579,16 +599,16 @@ namespace Org.UI
           break;
 
         case "Color":
-          pi.SetValue(o, g.GetColorValue(propertyValue), null); 
+          pi.SetValue(o, g.GetColorValue(propertyValue), null);
           break;
 
         case "Object":
           if (pi.Name == "Tag")
-            pi.SetValue(o, propertyValue); 
+            pi.SetValue(o, propertyValue);
           break;
 
         default:
-            throw new Exception("Type '" + pi.PropertyType.Name + "' not yet supported in 'UIPanel.SetPropertyValue()' method.");
+          throw new Exception("Type '" + pi.PropertyType.Name + "' not yet supported in 'UIPanel.SetPropertyValue()' method.");
       }
     }
 
@@ -604,7 +624,7 @@ namespace Org.UI
 
       if (focusControl.ObjectReference != null)
       {
-        object o = focusControl.ObjectReference;      
+        object o = focusControl.ObjectReference;
         if (o.GetType().FullName.Contains("System.Windows.Forms."))
         {
           Control c = (Control) o;
@@ -626,7 +646,7 @@ namespace Org.UI
           return focusControl;
       }
 
-      return null; 
+      return null;
     }
 
     public string GetControlMap(string name)
@@ -634,7 +654,7 @@ namespace Org.UI
       if (_controlSpec == null)
         return String.Empty;
 
-      return _controlSpec.GetControlMap(name); 
+      return _controlSpec.GetControlMap(name);
     }
 
     private string Get_AssociatedModelName()
@@ -646,7 +666,7 @@ namespace Org.UI
       if (uiControl == null)
         return String.Empty;
 
-      return uiControl.Model; 
+      return uiControl.Model;
     }
 
     private string Get_ModelSort()
@@ -658,13 +678,13 @@ namespace Org.UI
       if (uiControl == null)
         return String.Empty;
 
-      return uiControl.ModelSort; 
+      return uiControl.ModelSort;
     }
 
     public void ClickEvent(object sender, EventArgs e)
     {
       Control control = (Control)sender;
-      TaggedControlSet tcs = null; 
+      TaggedControlSet tcs = null;
       string controlName = control.Name;
       string controlText = control.Text;
       string tag = control.Tag.ObjectToTrimmedString();
@@ -674,28 +694,28 @@ namespace Org.UI
       {
         case "NavSection":
           var navSection = (NavSection)sender;
-          this.ControlEvent(new UIEventArgs("NavButton", navSection.Name, controlText, navSection.Tag.ObjectToTrimmedString(), "Click")); 
+          this.ControlEvent(new UIEventArgs("NavButton", navSection.Name, controlText, navSection.Tag.ObjectToTrimmedString(), "Click"));
           break;
 
         case "NavButton":
           var navButton = (NavButton)sender;
-          navButton.IsSelected = true; 
-          this.ControlEvent(new UIEventArgs("NavButton", navButton.Name, controlText, navButton.Tag.ObjectToTrimmedString(), "Click")); 
+          navButton.IsSelected = true;
+          this.ControlEvent(new UIEventArgs("NavButton", navButton.Name, controlText, navButton.Tag.ObjectToTrimmedString(), "Click"));
           break;
       }
-      
+
       if (_inDebug)
       {
-        PanelModeLabel.Text = "Mode:" + _panelManager.PanelMode.ToString(); 
+        PanelModeLabel.Text = "Mode:" + _panelManager.PanelMode.ToString();
         IsDirtyLabel.Text = "Dirty:" + _panelManager.IsDirty.ToString();
-        IsCompleteLabel.Text = "Complete:" + _panelManager.IsComplete.ToString(); 
+        IsCompleteLabel.Text = "Complete:" + _panelManager.IsComplete.ToString();
       }
     }
 
     public void MouseEnterEvent(object sender, EventArgs e)
     {
       if (this.ControlEvent == null)
-        return; 
+        return;
 
       string tag = String.Empty;
       string controlName = String.Empty;
@@ -704,22 +724,22 @@ namespace Org.UI
 
       if (controlType.StartsWith("System.Windows.Forms."))
       {
-        tag = ((Control)sender).Tag.ObjectToTrimmedString(); 
+        tag = ((Control)sender).Tag.ObjectToTrimmedString();
         controlName = ((Control)sender).Name;
         controlText = ((Control)sender).Text;
       }
 
       if (tag.IsNotBlank())
-        this.ControlEvent(new UIEventArgs(controlType, controlName, controlText,  tag, "MouseEnter")); 
+        this.ControlEvent(new UIEventArgs(controlType, controlName, controlText,  tag, "MouseEnter"));
     }
 
 
     private void UIBase_Paint(object sender, PaintEventArgs e)
-    {    
+    {
       if (this.Name == "NavMain")
         return;
 
-      e.Graphics.DrawRectangle(BluePen, new Rectangle(10, 10, this.Width - 90, this.Height - 30)); 
+      e.Graphics.DrawRectangle(BluePen, new Rectangle(10, 10, this.Width - 90, this.Height - 30));
     }
   }
 }

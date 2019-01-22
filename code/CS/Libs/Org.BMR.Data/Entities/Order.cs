@@ -11,31 +11,70 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Order")]
-    public partial class Order
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Order")]
+  public partial class Order
+  {
+    public Order()
     {
-        public Order()
-        {
-            this.OrderDetails = new HashSet<OrderDetail>();
-            this.Services = new HashSet<Service>();
-        }
-    
-        public int OrderId { get; set; }
-        public int AccountId { get; set; }
-        public int PersonId { get; set; }
-        public System.DateTime OrderDate { get; set; }
-        public int StatusId { get; set; }
-        public System.DateTime CreateDateTime { get; set; }
-        public string IpAddress { get; set; }
-        public string SessionId { get; set; }
-    
-        public virtual Status Status { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual ICollection<Service> Services { get; set; }
-        public virtual Person Person { get; set; }
-        public virtual Account Account { get; set; }
+      this.OrderDetails = new HashSet<OrderDetail>();
+      this.Services = new HashSet<Service>();
     }
+
+    public int OrderId {
+      get;
+      set;
+    }
+    public int AccountId {
+      get;
+      set;
+    }
+    public int PersonId {
+      get;
+      set;
+    }
+    public System.DateTime OrderDate {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+    public System.DateTime CreateDateTime {
+      get;
+      set;
+    }
+    public string IpAddress {
+      get;
+      set;
+    }
+    public string SessionId {
+      get;
+      set;
+    }
+
+    public virtual Status Status {
+      get;
+      set;
+    }
+    public virtual ICollection<OrderDetail> OrderDetails {
+      get;
+      set;
+    }
+    public virtual ICollection<Service> Services {
+      get;
+      set;
+    }
+    public virtual Person Person {
+      get;
+      set;
+    }
+    public virtual Account Account {
+      get;
+      set;
+    }
+  }
 }

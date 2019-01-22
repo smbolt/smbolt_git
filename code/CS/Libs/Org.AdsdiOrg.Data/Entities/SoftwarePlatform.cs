@@ -11,23 +11,41 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "SoftwarePlatform")]
-    public partial class SoftwarePlatform
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "SoftwarePlatform")]
+  public partial class SoftwarePlatform
+  {
+    public SoftwarePlatform()
     {
-        public SoftwarePlatform()
-        {
-            this.SoftwareVersions = new HashSet<SoftwareVersion>();
-        }
-    
-        public int SoftwarePlatformId { get; set; }
-        public string SoftwarePlatformString { get; set; }
-        public string PlatformDescription { get; set; }
-        public int StatusId { get; set; }
-    
-        public virtual Status Status { get; set; }
-        public virtual ICollection<SoftwareVersion> SoftwareVersions { get; set; }
+      this.SoftwareVersions = new HashSet<SoftwareVersion>();
     }
+
+    public int SoftwarePlatformId {
+      get;
+      set;
+    }
+    public string SoftwarePlatformString {
+      get;
+      set;
+    }
+    public string PlatformDescription {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+
+    public virtual Status Status {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwareVersion> SoftwareVersions {
+      get;
+      set;
+    }
+  }
 }

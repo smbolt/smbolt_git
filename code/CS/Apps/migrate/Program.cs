@@ -48,7 +48,7 @@ namespace Org.Migrate
       }
 
       string formattedParms = FormatParms(parms);
-      Console.WriteLine(formattedParms); 
+      Console.WriteLine(formattedParms);
 
 
       if (parms.Contains("-cc"))
@@ -57,7 +57,7 @@ namespace Org.Migrate
       if (parms.Contains("-ro"))
       {
         _reportOnly = true;
-        Console.WriteLine("MIGRATE WILL BE RUN IN REPORT-ONLY MODE - NO CHANGES WILL BE MADE"); 
+        Console.WriteLine("MIGRATE WILL BE RUN IN REPORT-ONLY MODE - NO CHANGES WILL BE MADE");
       }
 
       string profileName = String.Empty;
@@ -72,7 +72,7 @@ namespace Org.Migrate
 
       if (profileName.IsNotBlank())
       {
-        Migrate(profileName); 
+        Migrate(profileName);
       }
       else
       {
@@ -99,15 +99,15 @@ namespace Org.Migrate
     {
       var migrator = new Migrator();
 
-      Console.WriteLine(g.crlf + "*** MIGRATE FUNCTION BEGINNING ***"); 
-      
+      Console.WriteLine(g.crlf + "*** MIGRATE FUNCTION BEGINNING ***");
+
       if (!_profileSet.ContainsKey(profileName))
       {
         Console.WriteLine(g.crlf + "*** ERROR ***  PROFILE '" + profileName + "' NOT FOUND");
         Console.Out.Flush();
         if (!_confirmClose)
           System.Threading.Thread.Sleep(2000);
-        Console.WriteLine(g.crlf + "*** MIGRATE FUNCTION ENDING ***"); 
+        Console.WriteLine(g.crlf + "*** MIGRATE FUNCTION ENDING ***");
         return;
       }
 
@@ -115,7 +115,7 @@ namespace Org.Migrate
 
       try
       {
-        _profileSet.ResolveVariables(profileName); 
+        _profileSet.ResolveVariables(profileName);
         Profile p = _profileSet[profileName];
 
         bool profileNameShown = false;
@@ -139,7 +139,7 @@ namespace Org.Migrate
           if (c.ClearDestination)
             Console.WriteLine("All existing files in destination will be deleted" + (c.Recursive ? " recursively" : String.Empty));
           if (c.Recursive)
-            Console.WriteLine("File copy functions will occur recursively"); 
+            Console.WriteLine("File copy functions will occur recursively");
 
           sb.Append("-----------------------------------------------------------------" + g.crlf);
           sb.Append("Mapping Control Element:  '" + c.Name + "'" + g.crlf);
@@ -173,19 +173,19 @@ namespace Org.Migrate
         sb.Append("-----------------------------------------------------------------" + g.crlf);
         sb.Append("Grand Totals for profile '" + p.Name + "'" + g.crlf);
         sb.Append("  Grand Total Source Folders                : " + gtResult.SourceFolders.ToString("#,##0") + g.crlf +
-        sb.Append("  Grand Total Source Files                  : " + gtResult.SourceFiles.ToString("#,##0") + g.crlf +
-                  "  Grand Total Dest Folders to be Deleted    : " + gtResult.DestFoldersToBeDeleted.ToString("#,##0") + g.crlf +
-                  "  Grand Total Dest Folders Deleted          : " + gtResult.DestFoldersDeleted.ToString("#,##0") + g.crlf +
-                  "  Grand Total Dest Files to be Deleted      : " + gtResult.DestFilesToBeDeleted.ToString("#,##0") + g.crlf +
-                  "  Grand Total Dest Files Deleted            : " + gtResult.DestFilesDeleted.ToString("#,##0") + g.crlf +
-                  "  Grand Total Dest Folders to be Created    : " + gtResult.DestFoldersToBeCreated.ToString("#,##0") + g.crlf +
-                  "  Grand Total Dest Folders Created          : " + gtResult.DestFoldersCreated.ToString("#,##0") + g.crlf +
-                  "  Grand Total Files to be Copied            : " + gtResult.FilesToBeCopied.ToString("#,##0") + g.crlf +
-                  "  Grand Total Files Copied                  : " + gtResult.FilesCopied.ToString("#,##0") + g.crlf +
-                  "  Grand Total Files to be Replaced          : " + gtResult.FilesToBeReplaced.ToString("#,##0") + g.crlf +
-                  "  Grand Total Files Replaced                : " + gtResult.FilesReplaced.ToString("#,##0") + g.crlf +
-                  "  Grand Total Files to be Excluded          : " + gtResult.FilesToBeExcluded.ToString("#,##0") + g.crlf +
-                  "  Grand Total Files Excluded                : " + gtResult.FilesExcluded.ToString("#,##0") + g.crlf2));
+                  sb.Append("  Grand Total Source Files                  : " + gtResult.SourceFiles.ToString("#,##0") + g.crlf +
+                            "  Grand Total Dest Folders to be Deleted    : " + gtResult.DestFoldersToBeDeleted.ToString("#,##0") + g.crlf +
+                            "  Grand Total Dest Folders Deleted          : " + gtResult.DestFoldersDeleted.ToString("#,##0") + g.crlf +
+                            "  Grand Total Dest Files to be Deleted      : " + gtResult.DestFilesToBeDeleted.ToString("#,##0") + g.crlf +
+                            "  Grand Total Dest Files Deleted            : " + gtResult.DestFilesDeleted.ToString("#,##0") + g.crlf +
+                            "  Grand Total Dest Folders to be Created    : " + gtResult.DestFoldersToBeCreated.ToString("#,##0") + g.crlf +
+                            "  Grand Total Dest Folders Created          : " + gtResult.DestFoldersCreated.ToString("#,##0") + g.crlf +
+                            "  Grand Total Files to be Copied            : " + gtResult.FilesToBeCopied.ToString("#,##0") + g.crlf +
+                            "  Grand Total Files Copied                  : " + gtResult.FilesCopied.ToString("#,##0") + g.crlf +
+                            "  Grand Total Files to be Replaced          : " + gtResult.FilesToBeReplaced.ToString("#,##0") + g.crlf +
+                            "  Grand Total Files Replaced                : " + gtResult.FilesReplaced.ToString("#,##0") + g.crlf +
+                            "  Grand Total Files to be Excluded          : " + gtResult.FilesToBeExcluded.ToString("#,##0") + g.crlf +
+                            "  Grand Total Files Excluded                : " + gtResult.FilesExcluded.ToString("#,##0") + g.crlf2));
 
         sb.Append("Code Pusher processing has completed successfully for Profile '" + p.Name + "'." + g.crlf);
         string report = sb.ToString();
@@ -195,7 +195,7 @@ namespace Org.Migrate
         throw new Exception("An exception occurred during the execution of migration profile '" + profileName + "'.", ex);
       }
 
-      Console.WriteLine(g.crlf + "*** MIGRATE FUNCTION ENDING ***"); 
+      Console.WriteLine(g.crlf + "*** MIGRATE FUNCTION ENDING ***");
     }
 
 
@@ -226,26 +226,26 @@ namespace Org.Migrate
       {
         formattedParms += " " + parm;
       }
-      return formattedParms; 
+      return formattedParms;
     }
 
     private static void ListProfiles()
-    {      
-      Console.WriteLine(g.crlf + "*** LIST FUNCTION BEGINNING ***"); 
+    {
+      Console.WriteLine(g.crlf + "*** LIST FUNCTION BEGINNING ***");
       Console.WriteLine(g.crlf + "Profile Directories Searched");
 
       foreach (string profilePath in _profilePaths)
       {
         string path = g.AppConfig.ResolveVariables(profilePath);
-        Console.WriteLine("  Path: " + path); 
+        Console.WriteLine("  Path: " + path);
       }
 
       Console.WriteLine(g.crlf + "Profiles Loaded");
       foreach (var profile in _profileSet.Values)
       {
-        Console.WriteLine("  Profile: " + profile.Name); 
+        Console.WriteLine("  Profile: " + profile.Name);
       }
-      Console.WriteLine(g.crlf + "*** LIST FUNCTION ENDING ***"); 
+      Console.WriteLine(g.crlf + "*** LIST FUNCTION ENDING ***");
     }
 
     private static void DisplayHelp(bool confirmClose)
@@ -262,9 +262,9 @@ namespace Org.Migrate
         return;
       }
 
-      Console.WriteLine(sb.ToString()); 
+      Console.WriteLine(sb.ToString());
       Console.Out.Flush();
-      
+
       System.Threading.Thread.Sleep(2000);
     }
 
@@ -299,7 +299,7 @@ namespace Org.Migrate
       catch (Exception ex)
       {
         Console.WriteLine(g.crlf + "*** ERROR ***" +
-          g.crlf + "An exception occurred during the startup of the migrate application - see details below." + g.crlf + ex.MessageReport());
+                          g.crlf + "An exception occurred during the startup of the migrate application - see details below." + g.crlf + ex.MessageReport());
         return false;
       }
     }
@@ -335,7 +335,7 @@ namespace Org.Migrate
 
               if (!_profileSet.VariableSet.ContainsKey(keyName))
               {
-                _profileSet.VariableSet.Add(keyName, kvp.Value); 
+                _profileSet.VariableSet.Add(keyName, kvp.Value);
               }
             }
           }
@@ -346,7 +346,7 @@ namespace Org.Migrate
       catch (Exception ex)
       {
         Console.WriteLine(g.crlf + "*** ERROR ***" +
-          g.crlf + "An exception occurred during the loading of migration profiles - see details below." + g.crlf + ex.MessageReport());
+                          g.crlf + "An exception occurred during the loading of migration profiles - see details below." + g.crlf + ex.MessageReport());
         return false;
       }
     }
@@ -372,23 +372,23 @@ namespace Org.Migrate
         var f = new ObjectFactory2();
         f.LogToMemory = true;
         var profileSet = f.Deserialize(profileSetXml) as ProfileSet;
-        
-        XElement profileSetAfterXml = f.Serialize(profileSet); 
+
+        XElement profileSetAfterXml = f.Serialize(profileSet);
         string profileXmlAfterFormatted = profileSetAfterXml.ToString();
 
         if (profileXmlAfterFormatted != profileSetXmlBeforeFormatted)
         {
-          throw new Exception("Before and after xml values for migration profiles do not match."); 
+          throw new Exception("Before and after xml values for migration profiles do not match.");
         }
 
-        return profileSet; 
+        return profileSet;
       }
       catch (Exception ex)
       {
-        string memoryLog = g.MemoryLog; 
+        string memoryLog = g.MemoryLog;
 
         throw new Exception("An exception occurred attempting to deserialize the migration profiles in file '" +
-                            profileFile + "'." + g.crlf + "Exception messages follow:" + g.crlf + ex.ToReport()); 
+                            profileFile + "'." + g.crlf + "Exception messages follow:" + g.crlf + ex.ToReport());
       }
     }
   }

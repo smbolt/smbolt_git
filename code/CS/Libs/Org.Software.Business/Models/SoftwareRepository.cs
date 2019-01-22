@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace Org.Software.Business.Models
 {
-	public class SoftwareRepository
-	{
-		public int RepositoryId { get; set; }
-		public int SoftwareStatusId { get; set; }
-		public string RepositoryRoot { get; set; }
-	}
+  public class SoftwareRepository
+  {
+    public int RepositoryId {
+      get;
+      set;
+    }
+    public int SoftwareStatusId {
+      get;
+      set;
+    }
+    public string RepositoryRoot {
+      get;
+      set;
+    }
+  }
 }

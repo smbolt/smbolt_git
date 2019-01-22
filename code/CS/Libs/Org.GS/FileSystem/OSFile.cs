@@ -8,23 +8,72 @@ namespace Org.GS
 {
   public class OSFile :FSBase
   {
-    public SearchParms SearchParms { get; set; }
+    public SearchParms SearchParms {
+      get;
+      set;
+    }
 
-    public int FileID { get; set; }
-    public string FileName { get; set; }
-    public string FullPath { get; set; }
-    public long FileSize { get; set; }
-    public int ExtensionID { get; set; }
-    public string LogicalPath { get { return Get_LogicalPath(); } }
-    public string FileExtension { get; set; }
-    public bool IsFileIncluded { get; set; }
-    public DateTime LastChangedDateTime { get; set; }
-    public DateTime CompareLastChangeDateTime { get; set; }
-    public List<string> ContainedControls { get; set; }
-    public FileCompareStatus FileCompareStatus { get; set; }
-    public OSFolder ParentFolder { get; set; }
-    public bool IsProcessed { get; set; }
-    public bool MaxPathExceeded { get; set; }
+    public int FileID {
+      get;
+      set;
+    }
+    public string FileName {
+      get;
+      set;
+    }
+    public string FullPath {
+      get;
+      set;
+    }
+    public long FileSize {
+      get;
+      set;
+    }
+    public int ExtensionID {
+      get;
+      set;
+    }
+    public string LogicalPath {
+      get {
+        return Get_LogicalPath();
+      }
+    }
+    public string FileExtension {
+      get;
+      set;
+    }
+    public bool IsFileIncluded {
+      get;
+      set;
+    }
+    public DateTime LastChangedDateTime {
+      get;
+      set;
+    }
+    public DateTime CompareLastChangeDateTime {
+      get;
+      set;
+    }
+    public List<string> ContainedControls {
+      get;
+      set;
+    }
+    public FileCompareStatus FileCompareStatus {
+      get;
+      set;
+    }
+    public OSFolder ParentFolder {
+      get;
+      set;
+    }
+    public bool IsProcessed {
+      get;
+      set;
+    }
+    public bool MaxPathExceeded {
+      get;
+      set;
+    }
 
     public OSFile(OSFolder parentFolder)
     {
@@ -47,10 +96,10 @@ namespace Org.GS
       this.FullPath = fullPath;
       this.FileSize = 0;
       this.FileExtension = String.Empty;
-      this.FileName = Path.GetFileName(this.FullPath); 
+      this.FileName = Path.GetFileName(this.FullPath);
       this.IsFileIncluded = false;
       this.ContainedControls = new List<string>();
-      this.IsProcessed = false; 
+      this.IsProcessed = false;
       this.MaxPathExceeded = false;
     }
 
@@ -120,7 +169,7 @@ namespace Org.GS
         return String.Empty;
       }
     }
-    
+
     public void SetFileProperties()
     {
       if (this.FullPath.Length > 260)
@@ -147,7 +196,7 @@ namespace Org.GS
       if (this.ParentFolder == null || this.ParentFolder.RootFolderPath == null)
         throw new Exception("ParentFolder or ParentFolder.RootFolder is null for file '" + this.FullPath + "'.");
 
-      return this.FullPath.Replace(this.ParentFolder.RootFolderPath, "$CompareRoot$"); 
+      return this.FullPath.Replace(this.ParentFolder.RootFolderPath, "$CompareRoot$");
     }
   }
 }

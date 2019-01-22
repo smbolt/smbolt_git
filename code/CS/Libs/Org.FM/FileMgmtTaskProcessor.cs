@@ -12,7 +12,11 @@ namespace Org.FM
 {
   public class FileMgmtTaskProcessor : TaskProcessorBase
   {
-    public override int EntityId { get { return 522; } }
+    public override int EntityId {
+      get {
+        return 522;
+      }
+    }
     private Logger _logger;
 
 

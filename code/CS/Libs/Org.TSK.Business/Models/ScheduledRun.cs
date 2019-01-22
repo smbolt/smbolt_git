@@ -26,15 +26,39 @@ namespace Org.TSK.Business.Models
 
   public class ScheduledRun
   {
-    public ScheduledTask ScheduledTask { get; set; }
-    public TaskSchedule TaskSchedule { get; set; }
-    public TaskScheduleElement TaskScheduleElement { get; set; }
-    public DateTime ScheduledRunDateTime { get; set; }
-    public ScheduledRunType ScheduledRunType { get; set; }
-    public ScheduledRunStatus ScheduledRunStatus { get; set; }
-    public DateTime TimeDispatched { get; set; }
-    public DateTime TimeCompleted { get; set; }
-        
+    public ScheduledTask ScheduledTask {
+      get;
+      set;
+    }
+    public TaskSchedule TaskSchedule {
+      get;
+      set;
+    }
+    public TaskScheduleElement TaskScheduleElement {
+      get;
+      set;
+    }
+    public DateTime ScheduledRunDateTime {
+      get;
+      set;
+    }
+    public ScheduledRunType ScheduledRunType {
+      get;
+      set;
+    }
+    public ScheduledRunStatus ScheduledRunStatus {
+      get;
+      set;
+    }
+    public DateTime TimeDispatched {
+      get;
+      set;
+    }
+    public DateTime TimeCompleted {
+      get;
+      set;
+    }
+
     public ScheduledRun(ScheduledTask scheduledTask, TaskSchedule taskSchedule, TaskScheduleElement taskScheduleElement, DateTime runDateTime, ScheduledRunType scheduledRunType)
     {
       this.ScheduledTask = scheduledTask;
@@ -50,11 +74,11 @@ namespace Org.TSK.Business.Models
     public TaskRequest ToTaskRequest()
     {
       TaskRequest taskRequest = new TaskRequest(
-        this.ScheduledTask.ScheduledTaskId, 
+        this.ScheduledTask.ScheduledTaskId,
         this.ScheduledTask.TaskName,
         this.ScheduledTask.ProcessorName,
         this.ScheduledTask.ProcessorVersion,
-        this.ScheduledTask.ProcessorTypeId, 
+        this.ScheduledTask.ProcessorTypeId,
         this.ScheduledTask.AssemblyName,
         this.ScheduledTask.CatalogName,
         this.ScheduledTask.CatalogEntry,
@@ -67,7 +91,7 @@ namespace Org.TSK.Business.Models
         this.ScheduledTask.RunUntilPeriodContextID,
         this.ScheduledTask.RunUntilOffsetMinutes,
         this.ScheduledTask.SuppressNotificationsOnSuccess
-        );
+      );
 
       taskRequest.IsActive = true;
 

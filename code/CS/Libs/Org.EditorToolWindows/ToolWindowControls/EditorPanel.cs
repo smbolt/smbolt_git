@@ -18,10 +18,23 @@ namespace Org.EditorToolWindows
 {
   public partial class EditorPanel : ToolPanelBase
   {
-    public FileBase FileBase { get; private set; }
-    public bool IsFileLoaded { get { return this.FileBase != null; } }
-    public int? FirstFileLineShown { get; private set; }
-    public InsertMode InsertMode { get; private set; }
+    public FileBase FileBase {
+      get;
+      private set;
+    }
+    public bool IsFileLoaded {
+      get {
+        return this.FileBase != null;
+      }
+    }
+    public int? FirstFileLineShown {
+      get;
+      private set;
+    }
+    public InsertMode InsertMode {
+      get;
+      private set;
+    }
 
     public event Action<MFEventArgs> EventToHost;
 
@@ -53,7 +66,7 @@ namespace Org.EditorToolWindows
         switch (cmd)
         {
           case "OPEN":
-            this.FirstFileLineShown = 0; 
+            this.FirstFileLineShown = 0;
             OpenFile(g.ImportsPath + @"\COBOL\ORGUT100.CBL");
             break;
 
@@ -85,7 +98,7 @@ namespace Org.EditorToolWindows
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred while attempting to open the file named '" + fullPath + "'." +
-                        ex.ToReport(), "TerminalTest - File Open Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        ex.ToReport(), "TerminalTest - File Open Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -140,7 +153,7 @@ namespace Org.EditorToolWindows
       mfContainer.BackColor = Color.Black;
 
       BlueBrush = new SolidBrush(Color.FromArgb(255, 51, 153, 255));
-      RedBrush = new SolidBrush(Color.FromArgb(255, 252, 2, 4)); 
+      RedBrush = new SolidBrush(Color.FromArgb(255, 252, 2, 4));
       GreenBrush= new SolidBrush(Color.FromArgb(255, 14, 235, 16));
       YellowBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 0));
       PinkBrush = new SolidBrush(Color.FromArgb(255, 255, 0, 255));
@@ -154,29 +167,29 @@ namespace Org.EditorToolWindows
       if (this.EventToHost != null)
       {
         e.EventCommand = EventCommand.UpdateInfoPanel;
-        this.EventToHost(e); 
+        this.EventToHost(e);
       }
     }
 
     public void SetScreenSpec(ScreenSpec screenSpec)
     {
-      _screenSpec = screenSpec; 
+      _screenSpec = screenSpec;
     }
 
     public void SetFontSpec(FontSpec fontSpec)
     {
-      mfContainer.SetFontSpec(fontSpec); 
+      mfContainer.SetFontSpec(fontSpec);
     }
 
     public void ShowFields(bool show)
     {
-      mfContainer.ShowFields(show); 
+      mfContainer.ShowFields(show);
     }
 
     public void RefreshUI()
     {
       mfContainer.RefreshUI();
-      LoadFileToScreen(0); 
+      LoadFileToScreen(0);
     }
 
     public void ShowScreen()
@@ -229,7 +242,7 @@ namespace Org.EditorToolWindows
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to show the screen.", ex); 
+        throw new Exception("An exception occurred while attempting to show the screen.", ex);
       }
     }
 
@@ -256,7 +269,7 @@ namespace Org.EditorToolWindows
               if (commandText.IsNotBlank())
               {
                 tb.Text = String.Empty;
-                tb.CurrPos = 0; 
+                tb.CurrPos = 0;
                 tb.Draw();
                 ProcessCommand(commandText);
                 return;
@@ -357,14 +370,14 @@ namespace Org.EditorToolWindows
       TextBlock tb = sender as TextBlock;
 
       MFEventArgs args = null;
-      
+
       if (this.EventToHost != null)
       {
         if (args == null)
           args = new MFEventArgs(tb, EventType.MouseEnter, e);
         args.EventType = EventType.NotSet;
         args.EventCommand = EventCommand.UpdateInfoPanel;
-        args.EventMessage = tb.Name + " got focus"; 
+        args.EventMessage = tb.Name + " got focus";
         this.EventToHost(args);
       }
 
@@ -388,7 +401,7 @@ namespace Org.EditorToolWindows
     public new void KeyDown(object sender, KeyEventArgs e)
     {
       if (_focusedTb != null)
-        _focusedTb.KeyDown(sender, e); 
+        _focusedTb.KeyDown(sender, e);
     }
 
     public new void KeyPress(object sender, KeyPressEventArgs e)
@@ -429,7 +442,7 @@ namespace Org.EditorToolWindows
       }
 
       if (_focusedTb != null)
-        _focusedTb.KeyUp(sender, e); 
+        _focusedTb.KeyUp(sender, e);
     }
 
     private void UpdateInsertModeUI()
@@ -465,13 +478,13 @@ namespace Org.EditorToolWindows
 
         int linesToScroll = GetLinesToScroll();
 
-        LoadFileToScreen(linesToScroll); 
+        LoadFileToScreen(linesToScroll);
 
       }
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while attempting to scroll down." + ex.ToReport(),
-                        "TerminalTest - Scroll Down Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "TerminalTest - Scroll Down Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -484,13 +497,13 @@ namespace Org.EditorToolWindows
 
         int linesToScroll = GetLinesToScroll() * -1;
 
-        LoadFileToScreen(linesToScroll); 
+        LoadFileToScreen(linesToScroll);
 
       }
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while attempting to scroll up." + ex.ToReport(),
-                        "TerminalTest - Scroll Down Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "TerminalTest - Scroll Down Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -519,7 +532,7 @@ namespace Org.EditorToolWindows
           if (this.EventToHost != null)
           {
             var sender = e.Sender as MFBase;
-            var ma = e.MouseEventArgs; 
+            var ma = e.MouseEventArgs;
             if (sender == null || ma == null)
               return;
             e.EventMessage = sender.Name + " X: " + ma.X.ToString("0000") + "  Y: " + ma.Y.ToString("0000");
@@ -558,7 +571,7 @@ namespace Org.EditorToolWindows
           break;
 
         default:
-          break; 
+          break;
       }
     }
 

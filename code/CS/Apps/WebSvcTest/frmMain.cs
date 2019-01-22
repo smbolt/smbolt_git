@@ -196,7 +196,7 @@ namespace Org.WebSvcTest
     private void InitializeForm()
     {
       XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(MainSvcEngine)));
-      //XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(CheckForUpdatesRequest))); 
+      //XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(CheckForUpdatesRequest)));
       XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(ExcelExtractRequest)));
       XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(DxWorkbook)));
       try
@@ -206,7 +206,7 @@ namespace Org.WebSvcTest
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred attempting to initialize the application." + g.crlf2 +
-                          ex.ToReport(), "WebSvcTest - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), "WebSvcTest - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
 
@@ -720,7 +720,7 @@ namespace Org.WebSvcTest
 
           //    sb.Append("Upgrade is available from version '" + checkForUpdatesResponse.CurrentVersion + ":" + g.crlf +
           //      "  Version   : " + checkForUpdatesResponse.UpgradeVersion + g.crlf +
-          //      "  Platform  : " + checkForUpdatesResponse.PlatformString + g.crlf);                 
+          //      "  Platform  : " + checkForUpdatesResponse.PlatformString + g.crlf);
           //  }
 
           //  transResult += sb.ToString();
@@ -787,11 +787,11 @@ namespace Org.WebSvcTest
         }
 
         result = wsCallCount.ToString("00000") + "   " +
-                        responseMessage.MessageHeader.ServerResponseTime.Seconds.ToString("00") + "." +
-                        responseMessage.MessageHeader.ServerResponseTime.Milliseconds.ToString("000") + "    " +
-                        responseMessage.MessageHeader.TotalResponseTime.Seconds.ToString("00") + "." +
-                        responseMessage.MessageHeader.TotalResponseTime.Milliseconds.ToString("000") + g.crlf +
-                        responseMessage.MessageDebug.Replace("^", g.crlf);
+                 responseMessage.MessageHeader.ServerResponseTime.Seconds.ToString("00") + "." +
+                 responseMessage.MessageHeader.ServerResponseTime.Milliseconds.ToString("000") + "    " +
+                 responseMessage.MessageHeader.TotalResponseTime.Seconds.ToString("00") + "." +
+                 responseMessage.MessageHeader.TotalResponseTime.Milliseconds.ToString("000") + g.crlf +
+                 responseMessage.MessageDebug.Replace("^", g.crlf);
 
 
 
@@ -881,7 +881,7 @@ namespace Org.WebSvcTest
               subCommand.Parms.Add("IncludeAllAssemblies", includeAllAssemblies.ToString());
               wsParms.ParmSet.Add(new Parm("Command" + wsParms.ParmSet.Count.ToString(), subCommand));
               break;
-              
+
             case WsCommandName.GetAppDomainReport:
               wsParms.ParmSet.Add(new Parm("Command" + wsParms.ParmSet.Count.ToString(), subCommand));
               break;
@@ -894,7 +894,7 @@ namespace Org.WebSvcTest
           subCommandParameter = cboSubCommandParameter.Text;
 
           switch (subCommand.WsCommandName)
-            {
+          {
             case WsCommandName.FlushAppDomains:
               wsParms.ParmSet.Add(new Parm("Command" + wsParms.ParmSet.Count.ToString(), subCommand));
               break;
@@ -965,23 +965,23 @@ namespace Org.WebSvcTest
       //WsParms wsParms = new WsParms();
       //wsParms.TransactionName = "DownloadSoftware";
       //wsParms.TransactionVersion = "1.0.0.0";
-      //wsParms.MessagingParticipant = MessagingParticipant.Sender; 
+      //wsParms.MessagingParticipant = MessagingParticipant.Sender;
       //wsParms.ConfigWsSpec = _configWsSpec;
       //wsParms.TrackPerformance = ckTrackPerformance.Checked;
 
       //wsParms.DomainName = g.SystemInfo.DomainName;
-      //wsParms.MachineName = g.SystemInfo.ComputerName; 
-      //wsParms.UserName = g.SystemInfo.UserName; 
+      //wsParms.MachineName = g.SystemInfo.ComputerName;
+      //wsParms.UserName = g.SystemInfo.UserName;
       //wsParms.ModuleCode = g.AppInfo.ModuleCode;
       //wsParms.ModuleName = g.AppInfo.ModuleName;
       //wsParms.ModuleVersion = g.AppInfo.AppVersion;
       //wsParms.AppName = g.AppInfo.AppName;
-      //wsParms.AppVersion = g.AppInfo.AppVersion; 
+      //wsParms.AppVersion = g.AppInfo.AppVersion;
 
       //wsParms.ModuleCode = 301;
       //wsParms.ModuleName = "BulkTrans.RPDM";
-      //wsParms.ModuleVersion = "1.0.0.0";  
-      //wsParms.OrgId = 3; 
+      //wsParms.ModuleVersion = "1.0.0.0";
+      //wsParms.OrgId = 3;
 
       //WsMessage responseMessage = null;
       //WsMessage requestMessage = null;
@@ -1002,17 +1002,17 @@ namespace Org.WebSvcTest
 
       //  downloadSoftwareRequest.UpgradeVersion = _softwareUpdateVersion;
       //  downloadSoftwareRequest.UpgradePlatformString = _softwareUpdatePlatformString;
-      //  requestMessage.TransactionBody = f.Serialize(downloadSoftwareRequest); 
+      //  requestMessage.TransactionBody = f.Serialize(downloadSoftwareRequest);
 
       //  responseMessage = WsClient.InvokeServiceCall(wsParms, requestMessage);
-      //}            
+      //}
 
       //wsCallCount++;
 
       //if (responseMessage.TransactionHeader.TransactionName == "ErrorResponse")
       //{
       //  ErrorResponse errorResponse = f.Deserialize(responseMessage.TransactionBody, true) as ErrorResponse;
-      //  string errorResponseMessage = errorResponse.Message; 
+      //  string errorResponseMessage = errorResponse.Message;
       //  errorResponseMessage += errorResponse.HasException ? (g.crlf + errorResponse.WsException.ToReport()) : (g.crlf + "No exception" + g.crlf);
       //  if (this.InvokeRequired)
       //    this.Invoke((Action)((() => txtOut.Text += errorResponseMessage)));
@@ -1038,7 +1038,7 @@ namespace Org.WebSvcTest
       //{
       //  downloadSoftwareRequest.SegmentNumber = i;
       //  downloadSoftwareRequest.RequestType = RequestType.GetNextSegment;
-      //  requestMessage.TransactionBody = f.Serialize(downloadSoftwareRequest); 
+      //  requestMessage.TransactionBody = f.Serialize(downloadSoftwareRequest);
       //  responseMessage = WsClient.InvokeServiceCall(wsParms, requestMessage);
       //  if (responseMessage.TransactionHeader.TransactionName == "ErrorResponse")
       //  {
@@ -1052,7 +1052,7 @@ namespace Org.WebSvcTest
       //                  downloadSoftwareResponse.SegmentNumber.ToString("##,##0") + " of " +
       //                  downloadSoftwareResponse.TotalSegments.ToString("##,##0") + " received " +
       //                  "segment size is " + downloadSoftwareResponse.SegmentSize.ToString("##,###,##0") +
-      //                  " total file size is " + downloadSoftwareResponse.TotalFileSize.ToString("#,###,###,##0") + 
+      //                  " total file size is " + downloadSoftwareResponse.TotalFileSize.ToString("#,###,###,##0") +
       //                  g.crlf + downloadSoftwareResponse.SegmentData.PadTo(1000) + g.crlf;
 
       //  txtOut.Text = transResult;
@@ -1062,7 +1062,7 @@ namespace Org.WebSvcTest
 
       //if (downloadSoftwareResponse.SegmentData.IsNotBlank())
       //{
-      //  transResult += g.crlf + downloadSoftwareResponse.SegmentData.PadTo(1000); 
+      //  transResult += g.crlf + downloadSoftwareResponse.SegmentData.PadTo(1000);
       //}
 
       //transResult += sb.ToString();
@@ -1073,14 +1073,14 @@ namespace Org.WebSvcTest
 
       //if (ckTrackPerformance.Checked)
       //{
-      //  perfResult = responseMessage.MessageHeader.PerformanceInfoSet.GetReport(); 
+      //  perfResult = responseMessage.MessageHeader.PerformanceInfoSet.GetReport();
       //}
 
       //result = wsCallCount.ToString("00000") + "   " +
       //                responseMessage.MessageHeader.ServerResponseTime.Seconds.ToString("00") + "." +
       //                responseMessage.MessageHeader.ServerResponseTime.Milliseconds.ToString("000") + "    " +
       //                responseMessage.MessageHeader.TotalResponseTime.Seconds.ToString("00") + "." +
-      //                responseMessage.MessageHeader.TotalResponseTime.Milliseconds.ToString("000") + g.crlf  + 
+      //                responseMessage.MessageHeader.TotalResponseTime.Milliseconds.ToString("000") + g.crlf  +
       //                responseMessage.MessageDebug.Replace("^", g.crlf);
 
 

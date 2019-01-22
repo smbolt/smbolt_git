@@ -102,7 +102,7 @@ namespace Org.TSK
         return true;
       };
     }
-        
+
     public static bool ProgramIsAlreadyRunning(string processName)
     {
       Process[] runningProcesses = Process.GetProcessesByName(processName);

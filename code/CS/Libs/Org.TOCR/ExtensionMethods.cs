@@ -16,7 +16,7 @@ namespace Org.TOCR
 
       if (value.IsBlank())
         return String.Empty;
-      
+
       string alphaTokens = value.ToUpper().ToAlphaTokens(2);
       int payToken = alphaTokens.IndexOf(" PAY ", 10);
       if (payToken > -1)

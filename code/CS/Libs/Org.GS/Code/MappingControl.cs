@@ -9,35 +9,62 @@ using Org.GS;
 namespace Org.GS.Code
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
+  [XMap(XType = XType.Element)]
   public class MappingControl
   {
     [XMap(IsKey=true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Source { get; set; }
+    public string Source {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Destination { get; set; }
+    public string Destination {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool ClearDestination { get; set; }
+    public bool ClearDestination {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, WrapperElement="IncludedExtensionSet", CollectionElements = "IncludedExtension")]
-    public IncludedExtensionSet IncludedExtensionSet { get; set; }
+    public IncludedExtensionSet IncludedExtensionSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public IncludedFileSet IncludedFileSet { get; set; }
+    public IncludedFileSet IncludedFileSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public ExcludedFileSet ExcludedFileSet { get; set; }
+    public ExcludedFileSet ExcludedFileSet {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool Recursive { get; set; }
+    public bool Recursive {
+      get;
+      set;
+    }
 
     public MappingControl()
     {

@@ -37,9 +37,9 @@
       this.pnlTop.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.fctxtMain)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnSaveAndRefresh);
       this.pnlTop.Controls.Add(this.btnHide);
       this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -47,9 +47,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1053, 38);
       this.pnlTop.TabIndex = 0;
-      // 
+      //
       // btnHide
-      // 
+      //
       this.btnHide.Location = new System.Drawing.Point(17, 7);
       this.btnHide.Name = "btnHide";
       this.btnHide.Size = new System.Drawing.Size(104, 23);
@@ -57,9 +57,9 @@
       this.btnHide.Text = "Hide";
       this.btnHide.UseVisualStyleBackColor = true;
       this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
-      // 
+      //
       // fctxtMain
-      // 
+      //
       this.fctxtMain.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -70,7 +70,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.fctxtMain.AutoIndent = false;
       this.fctxtMain.AutoIndentChars = false;
       this.fctxtMain.AutoIndentCharsPatterns = "";
@@ -100,9 +101,9 @@
       this.fctxtMain.TabIndex = 2;
       this.fctxtMain.Zoom = 100;
       this.fctxtMain.CustomAction += new System.EventHandler<FastColoredTextBoxNS.CustomActionEventArgs>(this.fctxtMain_CustomAction);
-      // 
+      //
       // btnSaveAndRefresh
-      // 
+      //
       this.btnSaveAndRefresh.Location = new System.Drawing.Point(127, 7);
       this.btnSaveAndRefresh.Name = "btnSaveAndRefresh";
       this.btnSaveAndRefresh.Size = new System.Drawing.Size(131, 23);
@@ -111,9 +112,9 @@
       this.btnSaveAndRefresh.Text = "Save and Refresh";
       this.btnSaveAndRefresh.UseVisualStyleBackColor = true;
       this.btnSaveAndRefresh.Click += new System.EventHandler(this.btnSaveAndRefresh_Click);
-      // 
+      //
       // frmConfig
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1053, 739);

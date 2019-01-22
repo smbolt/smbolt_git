@@ -11,15 +11,27 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "TriviaAnswer")]
-    public partial class TriviaAnswer
-    {
-        public int QuestionId { get; set; }
-        public int OptionId { get; set; }
-        public int Id { get; set; }
-        public string UserId { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "TriviaAnswer")]
+  public partial class TriviaAnswer
+  {
+    public int QuestionId {
+      get;
+      set;
     }
+    public int OptionId {
+      get;
+      set;
+    }
+    public int Id {
+      get;
+      set;
+    }
+    public string UserId {
+      get;
+      set;
+    }
+  }
 }

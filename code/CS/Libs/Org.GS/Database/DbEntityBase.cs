@@ -9,23 +9,44 @@ namespace Org.GS.Database
 {
   public class DbEntityBase
   {
-    public string AliasedTypeName { get; set; }
-    public string TableName { get; set; }
-    public DbTable DbTable { get; set; }
-    public DbEntityBase OriginalValue { get; set; }
+    public string AliasedTypeName {
+      get;
+      set;
+    }
+    public string TableName {
+      get;
+      set;
+    }
+    public DbTable DbTable {
+      get;
+      set;
+    }
+    public DbEntityBase OriginalValue {
+      get;
+      set;
+    }
 
-    public virtual bool IsLoadingForUpdate { get; set; }
+    public virtual bool IsLoadingForUpdate {
+      get;
+      set;
+    }
 
     private bool _isLoadedForUpdate;
     public bool IsLoadedForUpdate
     {
-      get { return _isLoadedForUpdate; }
-      set { _isLoadedForUpdate = value; }
+      get {
+        return _isLoadedForUpdate;
+      }
+      set {
+        _isLoadedForUpdate = value;
+      }
     }
 
     public bool IsUpdated
     {
-      get { return this.IsThisEntityUpdated(); }
+      get {
+        return this.IsThisEntityUpdated();
+      }
     }
 
     public DbEntityBase()

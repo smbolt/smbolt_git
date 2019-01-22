@@ -32,15 +32,27 @@ namespace Org.OrgScriptWorkbench
     TextStyle MaroonStyle = new TextStyle(Brushes.Maroon, null, FontStyle.Regular);
     MarkerStyle SameWordsStyle = new MarkerStyle(new SolidBrush(Color.FromArgb(40, Color.Gray)));
 
-    private Style StringStyle { get; set; }
-    private Style CommentStyle { get; set; }
-    private Style NumberStyle { get; set; }
-    private Style KeywordStyle { get; set; }
+    private Style StringStyle {
+      get;
+      set;
+    }
+    private Style CommentStyle {
+      get;
+      set;
+    }
+    private Style NumberStyle {
+      get;
+      set;
+    }
+    private Style KeywordStyle {
+      get;
+      set;
+    }
 
 
     protected Regex JScriptCommentRegex1,
-                  JScriptCommentRegex2,
-                  JScriptCommentRegex3;
+              JScriptCommentRegex2,
+              JScriptCommentRegex3;
 
     protected Regex JScriptKeywordRegex;
     protected Regex JScriptNumberRegex;
@@ -273,7 +285,7 @@ namespace Org.OrgScriptWorkbench
       range.tb.BracketsHighlightStrategy = BracketsHighlightStrategy.Strategy2;
 
       range.tb.AutoIndentCharsPatterns
-          = @"
+        = @"
 ^\s*[\w\.]+(\s\w+)?\s*(?<range>=)\s*(?<range>[^;]+);
 ";
 
@@ -310,9 +322,9 @@ namespace Org.OrgScriptWorkbench
       JScriptNumberRegex = new Regex(@"\b\d+[\.]?\d*([eE]\-?\d+)?[lLdDfF]?\b|\b0x[a-fA-F\d]+\b",
                                      RegexCompiledOption);
       JScriptKeywordRegex =
-          new Regex(
-              @"\b(true|false|break|case|catch|const|continue|default|delete|do|else|export|for|function|if|in|instanceof|new|null|return|switch|this|throw|try|var|void|while|with|typeof)\b",
-              RegexCompiledOption);
+        new Regex(
+        @"\b(true|false|break|case|catch|const|continue|default|delete|do|else|export|for|function|if|in|instanceof|new|null|return|switch|this|throw|try|var|void|while|with|typeof)\b",
+        RegexCompiledOption);
     }
 
   }

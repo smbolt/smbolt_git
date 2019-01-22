@@ -8,19 +8,19 @@ using Org.GS;
 
 namespace Org.DocGen.DocSpec
 {
-    public class MapEntrySet : DocumentElement
+  public class MapEntrySet : DocumentElement
+  {
+    public MapEntrySet() { }
+
+    public MapEntrySet(XElement xml, Doc doc, DocumentElement parent)
     {
-        public MapEntrySet() { }
+      base.Initialize(xml, doc, parent);
 
-        public MapEntrySet(XElement xml, Doc doc, DocumentElement parent)
-        {
-            base.Initialize(xml, doc, parent);
-            
-            if (xml == null)
-                return;
+      if (xml == null)
+        return;
 
-            this.LoadChildren(xml, doc, this);
-        }
-
+      this.LoadChildren(xml, doc, this);
     }
+
+  }
 }

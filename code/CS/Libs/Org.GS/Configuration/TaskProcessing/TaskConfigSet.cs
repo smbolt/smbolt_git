@@ -15,12 +15,19 @@ namespace Org.GS.Configuration
     [XMap(IsKey = true)]
     public string Mode
     {
-      get { return _mode; }
-      set { _mode = value; }
+      get {
+        return _mode;
+      }
+      set {
+        _mode = value;
+      }
     }
 
     [XMap(XType = XType.Element)]
-    public TaskHolidayCalendar TaskHolidayCalendar { get; set; }
+    public TaskHolidayCalendar TaskHolidayCalendar {
+      get;
+      set;
+    }
 
     public TaskConfigSet()
     {

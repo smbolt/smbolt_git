@@ -15,38 +15,63 @@ namespace Org.GraphicReports.Business
   {
     private Image _logo;
 
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public DateTime FirstDateInView { get; set; }
-    public DateTime LastDateInView { get; set; }
+    public DateTime StartDate {
+      get;
+      set;
+    }
+    public DateTime EndDate {
+      get;
+      set;
+    }
+    public DateTime FirstDateInView {
+      get;
+      set;
+    }
+    public DateTime LastDateInView {
+      get;
+      set;
+    }
 
-    public Font TitleFont { get; set; }
-    public Font MonthFont { get; set; }
-    public Font DayFont { get; set; }
+    public Font TitleFont {
+      get;
+      set;
+    }
+    public Font MonthFont {
+      get;
+      set;
+    }
+    public Font DayFont {
+      get;
+      set;
+    }
 
     private int _titleHeight = 25;
     private int _monthBarHeight = 31;
     private int _dayHeight = 17;
     private int _dayWidth = 17;
-		public int DayWidth { get { return _dayWidth; } }
+    public int DayWidth {
+      get {
+        return _dayWidth;
+      }
+    }
     private int _rigColWidth = 90;
 
     public Calendar(DateSpan dateSpan)
     {
       this.StartDate = dateSpan.StartDateTime;
       this.EndDate = dateSpan.EndDateTime;
-			this.FirstDateInView = this.StartDate;
+      this.FirstDateInView = this.StartDate;
 
       var dt = this.StartDate;
       while (dt <= dateSpan.EndDateTime)
       {
         var calendarMonth = new CalendarMonth(this, dt);
-        this.Add(calendarMonth.CCYYMM, calendarMonth); 
+        this.Add(calendarMonth.CCYYMM, calendarMonth);
         dt = dt.AddMonths(1);
       }
 
       this.TitleFont = new Font("Calibri", 14.0F, FontStyle.Bold);
-      this.MonthFont = new Font("Calibri", 10.5F); 
+      this.MonthFont = new Font("Calibri", 10.5F);
       this.DayFont = new Font("Calibri", 9.0F);
 
       ResourceManager resourceManager = new ResourceManager("Org.GraphicReports.Resource1", Assembly.GetExecutingAssembly());
@@ -66,8 +91,8 @@ namespace Org.GraphicReports.Business
 
       y += 60;
 
-      // what if the string is too long for the width? 
-      gx.DrawString("Rig Schedule: " + this.StartDate.ToString("MM/dd/yyyy") + " - " + this.EndDate.ToString("MM/dd/yyyy"), 
+      // what if the string is too long for the width?
+      gx.DrawString("Rig Schedule: " + this.StartDate.ToString("MM/dd/yyyy") + " - " + this.EndDate.ToString("MM/dd/yyyy"),
                     this.TitleFont, Brushes.Green, new PointF(x, y));
       y += _titleHeight;
 
@@ -136,26 +161,26 @@ namespace Org.GraphicReports.Business
       while(remainingPixels > 0 && monthIndex < this.Count)
       {
         CalendarMonth mth = this.Values.ElementAt(monthIndex);
-				if (mth.FirstDayOfMonth >= firstDayInView)
-        for (int i = 0; i < mth.Count; i++)
-        {
-          var day = mth.Values.ElementAt(i);
-          day.Left = x;
-          if (remainingPixels >= _dayWidth)
+        if (mth.FirstDayOfMonth >= firstDayInView)
+          for (int i = 0; i < mth.Count; i++)
           {
-            day.PixelsToDraw = _dayWidth;
-            remainingPixels -= _dayWidth;
-            x += _dayWidth;
+            var day = mth.Values.ElementAt(i);
+            day.Left = x;
+            if (remainingPixels >= _dayWidth)
+            {
+              day.PixelsToDraw = _dayWidth;
+              remainingPixels -= _dayWidth;
+              x += _dayWidth;
+            }
+            else
+            {
+              day.PixelsToDraw = remainingPixels;
+              x += remainingPixels;
+              remainingPixels = 0;
+              break;
+            }
           }
-          else
-          {
-            day.PixelsToDraw = remainingPixels;
-            x += remainingPixels;
-            remainingPixels = 0;
-            break;
-          }
-        }
-        monthIndex++; 
+        monthIndex++;
       }
       return DateTime.MinValue;
     }

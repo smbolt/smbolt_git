@@ -8,7 +8,13 @@ namespace Org.BMR.ApiModels
 {
   public class SecurityQuestionModel : ApiModelBase
   {
-    public int SecurityQuestionId { get; set; }
-    public string SecurityQuestionText { get; set; }
+    public int SecurityQuestionId {
+      get;
+      set;
+    }
+    public string SecurityQuestionText {
+      get;
+      set;
+    }
   }
 }

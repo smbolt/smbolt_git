@@ -55,7 +55,7 @@ namespace Org.FSO
             p.ProjectID = reader["ProjectID"].ToInt32();
             p.Name = reader["Name"].ToString();
             if (!projectSet.ContainsKey(p.Name))
-              projectSet.Add(p.Name, p); 
+              projectSet.Add(p.Name, p);
           }
 
           reader.Close();
@@ -107,7 +107,7 @@ namespace Org.FSO
     public void InsertNewProject(string projectName)
     {
       EnsureConnection();
-      
+
       try
       {
         string sql = "INSERT INTO LAND.Projects " + g.crlf +
@@ -203,8 +203,8 @@ namespace Org.FSO
       try
       {
         string docTypeSql = "SELECT DocTypeID, ProjectID, DocName " + g.crlf +
-                     "FROM LAND.DocumentType " + g.crlf +
-                     "WHERE DocName = '" + docTypeName + "' ";
+                            "FROM LAND.DocumentType " + g.crlf +
+                            "WHERE DocName = '" + docTypeName + "' ";
 
         using (var cmd = new SqlCommand(docTypeSql, _conn))
         {
@@ -232,7 +232,7 @@ namespace Org.FSO
     public void InsertNewDocType(string DocTypeName)
     {
       EnsureConnection();
-      
+
       try
       {
         string sql =  "INSERT INTO GPStaging.LAND.DocumentType(ProjectID, DocName)" + g.crlf +
@@ -264,7 +264,7 @@ namespace Org.FSO
       try
       {
         string sql =  "SELECT Dt.DocTypeID, Dt.ProjectID, P.Name, Dt.DocName FROM GPStaging.LAND.DocumentType Dt" + g.crlf +
-                      "JOIN GPStaging.LAND.Projects P ON Dt.ProjectID = P.ProjectID" + g.crlf + 
+                      "JOIN GPStaging.LAND.Projects P ON Dt.ProjectID = P.ProjectID" + g.crlf +
                       "WHERE Dt.ProjectID = " + currentProjectID;
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -302,8 +302,8 @@ namespace Org.FSO
       try
       {
         string tagTypeSql = "SELECT TagTypeID, ProjectID, TagName " + g.crlf +
-                     "FROM LAND.TagType " + g.crlf +
-                     "WHERE TagName = '" + tagTypeName + "' ";
+                            "FROM LAND.TagType " + g.crlf +
+                            "WHERE TagName = '" + tagTypeName + "' ";
 
         using (var cmd = new SqlCommand(tagTypeSql, _conn))
         {
@@ -335,7 +335,7 @@ namespace Org.FSO
       if(currentProjectID.Equals(""))
         return;
       EnsureConnection();
-      
+
       try
       {
         string sql =  "INSERT INTO GPStaging.LAND.TagType(ProjectID, TagName)" + g.crlf +
@@ -365,7 +365,7 @@ namespace Org.FSO
       try
       {
         string sql =  "SELECT Tt.TagTypeID, Tt.ProjectID, P.Name, Tt.TagName FROM GPStaging.LAND.TagType Tt" + g.crlf +
-                      "JOIN GPStaging.LAND.Projects P ON Tt.ProjectID = P.ProjectID" + g.crlf + 
+                      "JOIN GPStaging.LAND.Projects P ON Tt.ProjectID = P.ProjectID" + g.crlf +
                       "WHERE Tt.ProjectID = " + currentProjectID;
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -404,7 +404,7 @@ namespace Org.FSO
       try
       {
         string sqlRoot =  "INSERT INTO GPStaging.LAND.RootFolders(ProjectID, RootFolderName, RootFolderPath)" + g.crlf +
-          "VALUES(" + currentProjectID + ", '" + folderName.ToLower() + "', '" + pathName.ToLower() + "')";
+                          "VALUES(" + currentProjectID + ", '" + folderName.ToLower() + "', '" + pathName.ToLower() + "')";
 
         using(var cmd = new SqlCommand(sqlRoot, _conn))
         {
@@ -617,7 +617,7 @@ namespace Org.FSO
           cmd.Parameters.AddWithValue("@FolderFullPath", fsi.FullPath);
           folderId = cmd.ExecuteScalar().ToInt32OrDefault(-1);
           if (folderId == -1)
-            throw new Exception("The insert of a row to the LAND.Folders table returned a null FolderId"); 
+            throw new Exception("The insert of a row to the LAND.Folders table returned a null FolderId");
         }
 
         foreach (var folder in fsi.FileSystemItemSet.Folders)
@@ -629,7 +629,7 @@ namespace Org.FSO
           else
             LoadFileSystem(folder, projectId, rootFolderId, parentFolderId);
         }
-        
+
         foreach(var file in fsi.FileSystemItemSet.Files)
         {
           string fileSql =  "INSERT INTO GPStaging.LAND.Files(ProjectID, FileName, FileFullPath, FileSize, FileExtension, RootFolderID, FolderID)" + g.crlf +
@@ -710,7 +710,7 @@ namespace Org.FSO
           cmd.Parameters.AddWithValue("@FolderFullPath", fsi.FullPath);
           folderId = cmd.ExecuteScalar().ToInt32OrDefault(-1);
           if (folderId == -1)
-            throw new Exception("The insert of a row to the LAND.Folders table returned a null FolderId"); 
+            throw new Exception("The insert of a row to the LAND.Folders table returned a null FolderId");
         }
         return folderId;
       }
@@ -735,7 +735,7 @@ namespace Org.FSO
 
         string folderSql =  "INSERT INTO LAND.Folders(ProjectID, ParentFolderID, RootFolderID, FolderName, FolderFullPath)" + g.crlf +
                             "VALUES(@ProjectID, @ParentFolderID, @RootFolderId, @FolderName, @FolderFullPath); SELECT SCOPE_IDENTITY()";
-                           
+
         using(var cmd = new SqlCommand(folderSql, _conn))
         {
           cmd.Parameters.AddWithValue("@ProjectID", folder.ProjectID.ToInt32());
@@ -791,7 +791,7 @@ namespace Org.FSO
     //public TaskResult LoadRootFolder(FileSystemItem fsi, int rootFolderId, int projectId)
     //{
     //  EnsureConnection();
-      
+
     //  var taskResult = new TaskResult();
 
     //  try
@@ -822,7 +822,7 @@ namespace Org.FSO
     public TaskResult LoadRootFolder(OSFolder folder, int rootFolderId)
     {
       EnsureConnection();
-      
+
       var taskResult = new TaskResult();
 
       try

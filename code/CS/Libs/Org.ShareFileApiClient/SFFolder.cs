@@ -10,9 +10,19 @@ namespace Org.ShareFileApiClient
 {
   public class SFFolder : SFBase
   {
-    public SFFolderSet SFFolderSet { get; set; }
-    public SFFileSet SFFileSet { get; set; }
-    public override SFType SFType { get { return SFType.Folder; } }
+    public SFFolderSet SFFolderSet {
+      get;
+      set;
+    }
+    public SFFileSet SFFileSet {
+      get;
+      set;
+    }
+    public override SFType SFType {
+      get {
+        return SFType.Folder;
+      }
+    }
 
     private static ApiParms _apiParms;
     private static FileManager _fm;
@@ -32,14 +42,14 @@ namespace Org.ShareFileApiClient
         this.ParentFolder = null;
         RootFolder = this;
 
-        _fm = new FileManager(apiParms,_logger, _isDryRun); 
+        _fm = new FileManager(apiParms,_logger, _isDryRun);
 
         this.SFFolderSet = new SFFolderSet();
         this.SFFileSet = new SFFileSet();
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred in the constructor of the SFFolder class which includes the creation of the FileManager and authentication to the ShareFile API.", ex); 
+        throw new Exception("An exception occurred in the constructor of the SFFolder class which includes the creation of the FileManager and authentication to the ShareFile API.", ex);
       }
     }
 
@@ -49,7 +59,7 @@ namespace Org.ShareFileApiClient
       this.SFFolderSet = new SFFolderSet();
       this.SFFileSet = new SFFileSet();
     }
-    
+
     public void GetAllContent(string folderId)
     {
       var sfFolder = _fm.GetFolderById(folderId, null);
@@ -58,11 +68,11 @@ namespace Org.ShareFileApiClient
         return;
 
       this.Id = sfFolder.Id;
-      this.Name = sfFolder.Name; 
+      this.Name = sfFolder.Name;
       this.SFFolderSet = sfFolder.SFFolderSet;
       this.SFFileSet = sfFolder.SFFileSet;
 
-      GetAllContent(this); 
+      GetAllContent(this);
     }
 
     public void GetAllContent(SFFolder sfFolder)
@@ -72,12 +82,12 @@ namespace Org.ShareFileApiClient
       foreach (var kvpFolder in fc.SFFolderSet)
       {
         GetAllContent(kvpFolder.Value);
-        sfFolder.SFFolderSet.Add(kvpFolder.Key, kvpFolder.Value); 
+        sfFolder.SFFolderSet.Add(kvpFolder.Key, kvpFolder.Value);
       }
 
       foreach (var kvpFile in fc.SFFileSet)
       {
-        sfFolder.SFFileSet.Add(kvpFile.Key, kvpFile.Value); 
+        sfFolder.SFFileSet.Add(kvpFile.Key, kvpFile.Value);
       }
     }
 
@@ -100,7 +110,7 @@ namespace Org.ShareFileApiClient
     private void BuildLevelReport(StringBuilder sb, SFFolder sfFolder, SFStats sfStats)
     {
       sb.Append(g.BlankString(sfFolder.Depth * 2) + "(" + sfFolder.Depth.ToString("00") + ") FLDR: " + sfFolder.Name + g.crlf);
-      sfStats.FolderCount++; 
+      sfStats.FolderCount++;
 
       foreach (var file in sfFolder.SFFileSet.Values)
       {
@@ -110,7 +120,7 @@ namespace Org.ShareFileApiClient
       }
 
       foreach (var subFolder in sfFolder.SFFolderSet.Values)
-        BuildLevelReport(sb, subFolder, sfStats); 
+        BuildLevelReport(sb, subFolder, sfStats);
     }
   }
 }

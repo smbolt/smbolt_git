@@ -12,55 +12,78 @@ namespace Org.GS.Configuration
   public class ProgramRole
   {
     [XMap(IsRequired = true, IsExplicit = true, IsKey = true)]
-    public int RoleNumber { get; set; }
+    public int RoleNumber {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public string OrgRoleName { get; set; }
+    public string OrgRoleName {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public string ClientRoleName { get; set; }
+    public string ClientRoleName {
+      get;
+      set;
+    }
 
     private string _functionsAllowed;
     [XMap(IsRequired = true, IsExplicit = true)]
-    public string FunctionsAllowed 
-    { 
-      get { return this._functionsAllowed; }
-      set 
+    public string FunctionsAllowed
+    {
+      get {
+        return this._functionsAllowed;
+      }
+      set
       {
         this._functionsAllowed = value;
-        Set_FunctionsAllowedList(value); 
+        Set_FunctionsAllowedList(value);
       }
     }
 
     private List<int> _functionsAllowedList;
     public List<int> FunctionsAllowedList
     {
-      get { return this._functionsAllowedList; }
+      get {
+        return this._functionsAllowedList;
+      }
     }
 
     private string _inheritedRoles;
     [XMap(IsExplicit = true)]
     public string InheritedRoles
-    { 
-      get { return this._inheritedRoles; }
-      set 
+    {
+      get {
+        return this._inheritedRoles;
+      }
+      set
       {
         this._inheritedRoles = value;
-        Set_InheritedRolesList(value); 
+        Set_InheritedRolesList(value);
       }
     }
 
     private List<int> _inheritedRolesList;
-    public List<int> InheritedRolesList 
+    public List<int> InheritedRolesList
     {
-      get { return this._inheritedRolesList; } 
+      get {
+        return this._inheritedRolesList;
+      }
     }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public bool CLSecurity { get; set; }
+    public bool CLSecurity {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public bool Hide { get; set; }
+    public bool Hide {
+      get;
+      set;
+    }
 
     public ProgramRole()
     {

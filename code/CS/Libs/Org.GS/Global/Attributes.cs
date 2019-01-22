@@ -10,7 +10,7 @@ namespace Org.GS
   public class OrgConfigItem : System.Attribute { }
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgVersion : System.Attribute 
+  public class OrgVersion : System.Attribute
   {
     public string Value;
     public OrgVersion(string value)
@@ -20,7 +20,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgMainWindowTitle : System.Attribute 
+  public class OrgMainWindowTitle : System.Attribute
   {
     public string Text;
     public OrgMainWindowTitle(string text = "")
@@ -30,7 +30,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgApplicationType : System.Attribute 
+  public class OrgApplicationType : System.Attribute
   {
     public ApplicationType ApplicationType;
     public OrgApplicationType(string applicationTypeString)
@@ -43,7 +43,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgConfigName : System.Attribute 
+  public class OrgConfigName : System.Attribute
   {
     public string Value;
     public OrgConfigName(string value)
@@ -53,7 +53,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgModuleName : System.Attribute 
+  public class OrgModuleName : System.Attribute
   {
     public string Value;
     public OrgModuleName(string value)
@@ -63,7 +63,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgModuleTitle : System.Attribute 
+  public class OrgModuleTitle : System.Attribute
   {
     public string Value;
     public OrgModuleTitle(string value)
@@ -73,7 +73,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgModuleCode : System.Attribute 
+  public class OrgModuleCode : System.Attribute
   {
     public int Value;
     public OrgModuleCode(int value)
@@ -98,7 +98,7 @@ namespace Org.GS
   public class OrgAssemblyTag : System.Attribute {}
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgFreeUntil : System.Attribute 
+  public class OrgFreeUntil : System.Attribute
   {
     public string Value;
     public OrgFreeUntil(string value)
@@ -108,7 +108,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgFreeAfter : System.Attribute 
+  public class OrgFreeAfter : System.Attribute
   {
     public string Value;
     public OrgFreeAfter(string value)
@@ -118,7 +118,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Assembly)]
-  public class OrgLicenseExpiringInterval : System.Attribute 
+  public class OrgLicenseExpiringInterval : System.Attribute
   {
     public int Days;
     public OrgLicenseExpiringInterval(int days)
@@ -138,7 +138,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple = false)]
-  public class ObjectMapPrefix : Attribute 
+  public class ObjectMapPrefix : Attribute
   {
     public string MapPrefix;
     public ObjectMapPrefix(string prefix)
@@ -148,14 +148,14 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.All, AllowMultiple = false)]
-  public class XMap : Attribute 
+  public class XMap : Attribute
   {
     public string CollectionElements;
 
-    private XType _xType; 
+    private XType _xType;
     public XType XType
     {
-      get 
+      get
       {
         if (this.CollectionElements.IsNotBlank())
           return XType.Element;
@@ -172,8 +172,8 @@ namespace Org.GS
     public string WrapperElement;
     public string DefaultValue;
     public bool IsKey;
-    public string CompositeKey; 
-    public bool SequenceDuplicates; 
+    public string CompositeKey;
+    public bool SequenceDuplicates;
     public string Format;
     public string KeyName;
     public bool IsRequired;
@@ -183,9 +183,9 @@ namespace Org.GS
     public bool IsObject;
 
     [DebuggerStepThrough]
-    public XMap(string collectionElements = "", XType xType = XType.Attribute, string name = "", string className = "", string wrapperElement = "", 
-        string defaultValue = "", bool isKey = false, string compositeKey = "", string format = "", bool sequenceDuplicates = false, string keyName = "", 
-        bool isRequired = false, bool isExplicit = false, bool myParent = false, bool useKeyValue = false, bool isObject = false)
+    public XMap(string collectionElements = "", XType xType = XType.Attribute, string name = "", string className = "", string wrapperElement = "",
+                string defaultValue = "", bool isKey = false, string compositeKey = "", string format = "", bool sequenceDuplicates = false, string keyName = "",
+                bool isRequired = false, bool isExplicit = false, bool myParent = false, bool useKeyValue = false, bool isObject = false)
     {
       this.CollectionElements = collectionElements;
       this.XType = xType;
@@ -209,7 +209,10 @@ namespace Org.GS
   [System.AttributeUsage(System.AttributeTargets.Class)]
   public class XElementSequence : Attribute
   {
-    public Dictionary<int, string> NameSequence { get; private set; }
+    public Dictionary<int, string> NameSequence {
+      get;
+      private set;
+    }
     public XElementSequence(string value = "")
     {
       this.NameSequence = new Dictionary<int, string>();
@@ -226,7 +229,7 @@ namespace Org.GS
   }
 
   [System.AttributeUsage(System.AttributeTargets.Constructor, AllowMultiple = true)]
-  public class XParm : Attribute 
+  public class XParm : Attribute
   {
     public XParmSource ParmSource;
     public string Name;
@@ -248,7 +251,7 @@ namespace Org.GS
   }
 
   [AttributeUsage(AttributeTargets.Property)]
-  public class IsDbColumn : Attribute 
+  public class IsDbColumn : Attribute
   {
     public bool SkipOnInsert;
     public bool IsNullable;
@@ -274,7 +277,7 @@ namespace Org.GS
 
 
   [System.AttributeUsage(System.AttributeTargets.All, AllowMultiple = true)]
-  public class DbMap : Attribute 
+  public class DbMap : Attribute
   {
     public DbElement DbElement;
     public string EntityStore;
@@ -287,7 +290,7 @@ namespace Org.GS
     public MappingRule MappingRule;
 
     [DebuggerStepThrough]
-    public DbMap(DbElement dbElement, string entityStore, string schemaName, string entityName, string columnName = "", bool isNullable = false, bool isPrimaryKey = false, 
+    public DbMap(DbElement dbElement, string entityStore, string schemaName, string entityName, string columnName = "", bool isNullable = false, bool isPrimaryKey = false,
                  bool isIdentity = false, MappingRule mappingRule = MappingRule.None)
     {
       this.DbElement = dbElement;
@@ -296,7 +299,7 @@ namespace Org.GS
       this.EntityName = entityName;
       this.ColumnName = columnName;
       this.IsNullable = isNullable;
-      this.IsPrimaryKey = isPrimaryKey; 
+      this.IsPrimaryKey = isPrimaryKey;
       this.IsIdentity = isIdentity;
       this.MappingRule = mappingRule;
     }

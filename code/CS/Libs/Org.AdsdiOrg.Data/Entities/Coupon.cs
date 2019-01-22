@@ -11,17 +11,32 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Coupon")]
-    public partial class Coupon
-    {
-        public int CouponId { get; set; }
-        public string CouponTypeCode { get; set; }
-        public string CouponDesc { get; set; }
-        public double Discount { get; set; }
-    
-        public virtual CouponType CouponType { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Coupon")]
+  public partial class Coupon
+  {
+    public int CouponId {
+      get;
+      set;
     }
+    public string CouponTypeCode {
+      get;
+      set;
+    }
+    public string CouponDesc {
+      get;
+      set;
+    }
+    public double Discount {
+      get;
+      set;
+    }
+
+    public virtual CouponType CouponType {
+      get;
+      set;
+    }
+  }
 }

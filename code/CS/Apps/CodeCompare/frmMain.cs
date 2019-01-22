@@ -10,7 +10,7 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using fctb = FastColoredTextBoxNS; 
+using fctb = FastColoredTextBoxNS;
 using Org.GS;
 
 namespace Org.CodeCompare
@@ -40,7 +40,7 @@ namespace Org.CodeCompare
 
     private List<string> _fileSystemStems;
 
-    
+
     public frmMain()
     {
       InitializeComponent();
@@ -140,7 +140,7 @@ namespace Org.CodeCompare
 
         var leftFolder = new OSFolder(leftSearchParms);
         var rightFolder = new OSFolder(rightSearchParms);
-       
+
         StringBuilder sb = new StringBuilder();
 
         //Task[] tasks = new Task[2];
@@ -158,8 +158,8 @@ namespace Org.CodeCompare
           {
             kvpFile.Value.CompareLastChangeDateTime = rightFolder.FileList[kvpFile.Key].LastChangedDateTime;
             rightFolder.FileList[kvpFile.Key].CompareLastChangeDateTime = kvpFile.Value.LastChangedDateTime;
-            
-            string leftFile = File.ReadAllText(kvpFile.Value.FullPath); 
+
+            string leftFile = File.ReadAllText(kvpFile.Value.FullPath);
             string rightFile = File.ReadAllText(rightFolder.FileList[kvpFile.Key].FullPath);
 
             if (leftFile == rightFile)
@@ -194,7 +194,7 @@ namespace Org.CodeCompare
 
         gvResults.SuspendLayout();
 
-        sb.Append("LEFT FOLDER" + g.crlf2); 
+        sb.Append("LEFT FOLDER" + g.crlf2);
         foreach (var file in leftFolder.FileList.Values)
         {
           if (file.FileCompareStatus != FileCompareStatus.Identical)
@@ -213,7 +213,7 @@ namespace Org.CodeCompare
           }
         }
 
-        sb.Append(g.crlf2 + "RIGHT FOLDER" + g.crlf2); 
+        sb.Append(g.crlf2 + "RIGHT FOLDER" + g.crlf2);
 
         foreach (var file in rightFolder.FileList.Values.Where(f => f.FileCompareStatus == FileCompareStatus.OppositeMissing))
         {
@@ -240,7 +240,7 @@ namespace Org.CodeCompare
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during compare operation'." + g.crlf2 +
-          ex.ToReport(), "Code Compare - Compare Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), "Code Compare - Compare Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
     }
@@ -271,7 +271,7 @@ namespace Org.CodeCompare
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while attempting to save the configuration file'." + g.crlf2 +
-          ex.ToReport(), g.AppInfo.AppName + " - Compare Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), g.AppInfo.AppName + " - Compare Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -324,7 +324,7 @@ namespace Org.CodeCompare
         //string defaultLeftPath = g.CI("DefaultLeftPath");
         //string defaultRightPath = g.CI("DefaultRightPath");
 
-        string defaultFileTypes = g.CI("DefaultFileTypes"); 
+        string defaultFileTypes = g.CI("DefaultFileTypes");
 
         //var searchPaths = g.AppConfig.GetList("SearchPaths");
 
@@ -354,7 +354,7 @@ namespace Org.CodeCompare
         //  }
         //}
 
-        var fileTypes = g.AppConfig.GetList("FileTypes"); 
+        var fileTypes = g.AppConfig.GetList("FileTypes");
 
         cboFileTypes.Items.Clear();
         foreach (var fileType in fileTypes)
@@ -378,7 +378,7 @@ namespace Org.CodeCompare
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred the initialization of the program." + g.crlf2 +
-          ex.ToReport(), "Code Compare - Program Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), "Code Compare - Program Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
     }
@@ -514,17 +514,17 @@ namespace Org.CodeCompare
       else
       {
         ctxMnuResultsCompareFiles.Visible = _canCompare;
-      }     
+      }
     }
-    
+
 
     private void RunFileCompareUtility()
     {
       try
       {
         string relativePath = gvResults.SelectedRows[0].Cells[1].Value.ToString() == "LEFT" ?
-          _filePath.Replace(_fullLeftPath, String.Empty) :
-          _filePath.Replace(_fullRightPath, String.Empty);
+                              _filePath.Replace(_fullLeftPath, String.Empty) :
+                              _filePath.Replace(_fullRightPath, String.Empty);
 
         string leftFilePath = _fullLeftPath + relativePath;
         string rightFilePath = _fullRightPath + relativePath;
@@ -532,7 +532,7 @@ namespace Org.CodeCompare
         if (!File.Exists(leftFilePath))
         {
           MessageBox.Show("The left file path '" + leftFilePath + "' cannot be located.",
-            g.AppInfo.AppName + " - Error Locating Left File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                          g.AppInfo.AppName + " - Error Locating Left File", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
           return;
         }
@@ -540,7 +540,7 @@ namespace Org.CodeCompare
         if (!File.Exists(rightFilePath))
         {
           MessageBox.Show("The right file path '" + rightFilePath + "' cannot be located.",
-            g.AppInfo.AppName + " - Error Locating Right File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                          g.AppInfo.AppName + " - Error Locating Right File", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
           return;
         }
@@ -553,7 +553,7 @@ namespace Org.CodeCompare
           "/u",
           leftFilePath,
           rightFilePath
-      };
+        };
 
         var processHelper = new ProcessHelper();
         var taskResult = processHelper.RunExternalProcess(processParms);
@@ -580,7 +580,7 @@ namespace Org.CodeCompare
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while attempting to run the file compare utility'." + g.crlf2 +
-          ex.ToReport(), g.AppInfo.AppName + " - Error Running File Compare Utility", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), g.AppInfo.AppName + " - Error Running File Compare Utility", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -635,7 +635,7 @@ namespace Org.CodeCompare
         {
           string directoryName = Path.GetDirectoryName(destFile);
           if (!Directory.Exists(directoryName))
-            Directory.CreateDirectory(directoryName); 
+            Directory.CreateDirectory(directoryName);
 
           File.Copy(sourceFile, destFile, true);
         }
@@ -643,16 +643,16 @@ namespace Org.CodeCompare
         {
           File.Delete(sourceFile);
         }
-        
+
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An exception occurred while attempting to execute the command " + fsCommand.ToString() + " for the direction " + 
+        MessageBox.Show("An exception occurred while attempting to execute the command " + fsCommand.ToString() + " for the direction " +
                         direction.ToString() + "." + g.crlf2 + ex.ToReport(),
                         "Code Compare - File Copy Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
-    
+
     private void gvResults_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
     {
       if (e.RowIndex < 0)
@@ -731,7 +731,7 @@ namespace Org.CodeCompare
     {
       cboLeftBranch.Text = String.Empty;
       cboLeftPath.Text = String.Empty;
-    }   
+    }
 
     private void cboRightStem_TextChanged(object sender, EventArgs e)
     {

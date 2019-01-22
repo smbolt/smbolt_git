@@ -17,28 +17,32 @@ namespace Org.MainSvc
 {
   public class MainSvc : ServiceBase, ISimpleService
   {
-    public override int EntityId { get { return 302; } }
-    
+    public override int EntityId {
+      get {
+        return 302;
+      }
+    }
+
     public MainSvc()
     {
       base.EntityId = this.EntityId;
-      XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(MainSvcEngine))); 
+      XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(MainSvcEngine)));
     }
 
     public string SendMessage(string messageString)
     {
       try
       {
-        PreTransactionProcessing(messageString); 
+        PreTransactionProcessing(messageString);
 
         using (var engine = new MainSvcEngine(this))
         {
-          ReceivedMessage.AddPerfInfoEntry("After engine creation / before ProcessTransaction"); 
+          ReceivedMessage.AddPerfInfoEntry("After engine creation / before ProcessTransaction");
           XElement result = engine.ProcessTransaction(ReceivedMessage);
           var responseMessage = PostTransactionProcessing(result);
           Logger.ClearClientProperties();
           return responseMessage;
-        }     
+        }
       }
       catch (Exception ex)
       {

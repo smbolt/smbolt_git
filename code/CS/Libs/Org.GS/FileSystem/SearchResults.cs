@@ -7,7 +7,10 @@ namespace Org.GS
 {
   public class SearchResults
   {
-    public SortedList<string, OSFile> OSFileList { get; set; }
+    public SortedList<string, OSFile> OSFileList {
+      get;
+      set;
+    }
 
     public SearchResults()
     {

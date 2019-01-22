@@ -12,15 +12,28 @@ namespace Org.GS.Configuration
   public class CO
   {
     [XMap(MyParent = true)]
-    public COSet COSet { get; set; }
+    public COSet COSet {
+      get;
+      set;
+    }
 
-    public ProgramConfig ProgramConfig { get { return this.COSet == null ? null : this.COSet.ProgramConfig; } }
+    public ProgramConfig ProgramConfig {
+      get {
+        return this.COSet == null ? null : this.COSet.ProgramConfig;
+      }
+    }
 
     [XMap(Name = "K", IsKey = true)]
-    public string Key { get; set; }
+    public string Key {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, Name = "V", IsObject = true)]
-    public object Value { get; set; }
+    public object Value {
+      get;
+      set;
+    }
 
     public CO()
     {

@@ -12,7 +12,10 @@ namespace Org.GS
   public class FileSpec
   {
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     public FileSpec()
     {

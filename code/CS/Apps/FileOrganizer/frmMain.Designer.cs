@@ -72,55 +72,57 @@
       ((System.ComponentModel.ISupportInitialize)(this.gvTagTypes)).BeginInit();
       this.pnlTagType.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.ImageScalingSize = new System.Drawing.Size(24, 24);
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
       this.mnuMain.Size = new System.Drawing.Size(1479, 25);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileNewProject,
-            this.mnuFileDeleteProject,
-            this.mnuFileExit});
+        this.mnuFileNewProject,
+        this.mnuFileDeleteProject,
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 19);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileNewProject
-      // 
+      //
       this.mnuFileNewProject.Name = "mnuFileNewProject";
       this.mnuFileNewProject.Size = new System.Drawing.Size(147, 22);
       this.mnuFileNewProject.Tag = "NewProject";
       this.mnuFileNewProject.Text = "New Project";
       this.mnuFileNewProject.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuFileDeleteProject
-      // 
+      //
       this.mnuFileDeleteProject.Name = "mnuFileDeleteProject";
       this.mnuFileDeleteProject.Size = new System.Drawing.Size(147, 22);
       this.mnuFileDeleteProject.Tag = "DeleteProject";
       this.mnuFileDeleteProject.Text = "&Delete Project";
       this.mnuFileDeleteProject.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(147, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.lblProject);
       this.pnlTop.Controls.Add(this.cboProject);
       this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -129,9 +131,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1479, 154);
       this.pnlTop.TabIndex = 1;
-      // 
+      //
       // lblProject
-      // 
+      //
       this.lblProject.AutoSize = true;
       this.lblProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblProject.Location = new System.Drawing.Point(27, 35);
@@ -140,9 +142,9 @@
       this.lblProject.Size = new System.Drawing.Size(40, 13);
       this.lblProject.TabIndex = 1;
       this.lblProject.Text = "Project";
-      // 
+      //
       // cboProject
-      // 
+      //
       this.cboProject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.cboProject.FormattingEnabled = true;
@@ -153,9 +155,9 @@
       this.cboProject.TabIndex = 0;
       this.cboProject.Tag = "SelectedProjectChange";
       this.cboProject.SelectedIndexChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblStatus.Location = new System.Drawing.Point(0, 726);
@@ -166,9 +168,9 @@
       this.lblStatus.TabIndex = 2;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageMain);
       this.tabMain.Controls.Add(this.tabPageDocs);
       this.tabMain.Controls.Add(this.tabPageTags);
@@ -182,9 +184,9 @@
       this.tabMain.Size = new System.Drawing.Size(1479, 547);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 3;
-      // 
+      //
       // tabPageMain
-      // 
+      //
       this.tabPageMain.Controls.Add(this.txtOut);
       this.tabPageMain.Controls.Add(this.pnlFileProcessing);
       this.tabPageMain.Location = new System.Drawing.Point(4, 29);
@@ -195,9 +197,9 @@
       this.tabPageMain.TabIndex = 0;
       this.tabPageMain.Text = "File Processing";
       this.tabPageMain.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtOut.Location = new System.Drawing.Point(4, 148);
@@ -209,9 +211,9 @@
       this.txtOut.TabIndex = 1;
       this.txtOut.Tag = "txtOut";
       this.txtOut.WordWrap = false;
-      // 
+      //
       // pnlFileProcessing
-      // 
+      //
       this.pnlFileProcessing.Controls.Add(this.btnDeleteRootFolder);
       this.pnlFileProcessing.Controls.Add(this.txtFileCountLimit);
       this.pnlFileProcessing.Controls.Add(this.lblFileCountLimit);
@@ -225,9 +227,9 @@
       this.pnlFileProcessing.Name = "pnlFileProcessing";
       this.pnlFileProcessing.Size = new System.Drawing.Size(1463, 143);
       this.pnlFileProcessing.TabIndex = 0;
-      // 
+      //
       // btnDeleteRootFolder
-      // 
+      //
       this.btnDeleteRootFolder.Location = new System.Drawing.Point(458, 91);
       this.btnDeleteRootFolder.Name = "btnDeleteRootFolder";
       this.btnDeleteRootFolder.Size = new System.Drawing.Size(225, 35);
@@ -236,17 +238,17 @@
       this.btnDeleteRootFolder.Text = "Delete Root Folder";
       this.btnDeleteRootFolder.UseVisualStyleBackColor = true;
       this.btnDeleteRootFolder.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtFileCountLimit
-      // 
+      //
       this.txtFileCountLimit.Location = new System.Drawing.Point(858, 94);
       this.txtFileCountLimit.Name = "txtFileCountLimit";
       this.txtFileCountLimit.Size = new System.Drawing.Size(142, 20);
       this.txtFileCountLimit.TabIndex = 9;
       this.txtFileCountLimit.Tag = "txtFileCountLimit";
-      // 
+      //
       // lblFileCountLimit
-      // 
+      //
       this.lblFileCountLimit.BackColor = System.Drawing.SystemColors.Control;
       this.lblFileCountLimit.Location = new System.Drawing.Point(717, 91);
       this.lblFileCountLimit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -255,9 +257,9 @@
       this.lblFileCountLimit.TabIndex = 8;
       this.lblFileCountLimit.Text = "File Count Limit:";
       this.lblFileCountLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      // 
+      //
       // ckIncludeChildFolders
-      // 
+      //
       this.ckIncludeChildFolders.AutoSize = true;
       this.ckIncludeChildFolders.Location = new System.Drawing.Point(722, 48);
       this.ckIncludeChildFolders.Name = "ckIncludeChildFolders";
@@ -265,9 +267,9 @@
       this.ckIncludeChildFolders.TabIndex = 7;
       this.ckIncludeChildFolders.Text = "Include Child Folders";
       this.ckIncludeChildFolders.UseVisualStyleBackColor = true;
-      // 
+      //
       // btnProcessRootFolder
-      // 
+      //
       this.btnProcessRootFolder.Location = new System.Drawing.Point(212, 89);
       this.btnProcessRootFolder.Name = "btnProcessRootFolder";
       this.btnProcessRootFolder.Size = new System.Drawing.Size(240, 35);
@@ -276,9 +278,9 @@
       this.btnProcessRootFolder.Text = "Process Root Folder";
       this.btnProcessRootFolder.UseVisualStyleBackColor = true;
       this.btnProcessRootFolder.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnAddRootFolder
-      // 
+      //
       this.btnAddRootFolder.Location = new System.Drawing.Point(26, 89);
       this.btnAddRootFolder.Name = "btnAddRootFolder";
       this.btnAddRootFolder.Size = new System.Drawing.Size(180, 35);
@@ -287,27 +289,27 @@
       this.btnAddRootFolder.Text = "Add A Root Folder";
       this.btnAddRootFolder.UseVisualStyleBackColor = true;
       this.btnAddRootFolder.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblProjectRoot
-      // 
+      //
       this.lblProjectRoot.AutoSize = true;
       this.lblProjectRoot.Location = new System.Drawing.Point(24, 15);
       this.lblProjectRoot.Name = "lblProjectRoot";
       this.lblProjectRoot.Size = new System.Drawing.Size(62, 13);
       this.lblProjectRoot.TabIndex = 1;
       this.lblProjectRoot.Text = "Root Folder";
-      // 
+      //
       // cboRootFolderDropDown
-      // 
+      //
       this.cboRootFolderDropDown.FormattingEnabled = true;
       this.cboRootFolderDropDown.Location = new System.Drawing.Point(26, 45);
       this.cboRootFolderDropDown.Name = "cboRootFolderDropDown";
       this.cboRootFolderDropDown.Size = new System.Drawing.Size(655, 21);
       this.cboRootFolderDropDown.TabIndex = 0;
       this.cboRootFolderDropDown.SelectedIndexChanged += new System.EventHandler(this.cboRootFolderDropDown_SelectedIndexChanged);
-      // 
+      //
       // tabPageDocs
-      // 
+      //
       this.tabPageDocs.Controls.Add(this.gvDocTypes);
       this.tabPageDocs.Controls.Add(this.pnlDocTypes);
       this.tabPageDocs.Location = new System.Drawing.Point(4, 29);
@@ -318,9 +320,9 @@
       this.tabPageDocs.TabIndex = 1;
       this.tabPageDocs.Text = "Doc Types";
       this.tabPageDocs.UseVisualStyleBackColor = true;
-      // 
+      //
       // gvDocTypes
-      // 
+      //
       this.gvDocTypes.AllowUserToAddRows = false;
       this.gvDocTypes.AllowUserToDeleteRows = false;
       this.gvDocTypes.AllowUserToResizeRows = false;
@@ -340,9 +342,9 @@
       this.gvDocTypes.Size = new System.Drawing.Size(1463, 366);
       this.gvDocTypes.TabIndex = 6;
       this.gvDocTypes.Tag = "DocTypes";
-      // 
+      //
       // pnlDocTypes
-      // 
+      //
       this.pnlDocTypes.Controls.Add(this.btnPopulateDocTypeGrid);
       this.pnlDocTypes.Controls.Add(this.btnAddDocType);
       this.pnlDocTypes.Dock = System.Windows.Forms.DockStyle.Top;
@@ -350,9 +352,9 @@
       this.pnlDocTypes.Name = "pnlDocTypes";
       this.pnlDocTypes.Size = new System.Drawing.Size(1463, 126);
       this.pnlDocTypes.TabIndex = 0;
-      // 
+      //
       // btnPopulateDocTypeGrid
-      // 
+      //
       this.btnPopulateDocTypeGrid.Location = new System.Drawing.Point(202, 22);
       this.btnPopulateDocTypeGrid.Name = "btnPopulateDocTypeGrid";
       this.btnPopulateDocTypeGrid.Size = new System.Drawing.Size(234, 35);
@@ -361,9 +363,9 @@
       this.btnPopulateDocTypeGrid.Text = "Populate Doc Type Grid";
       this.btnPopulateDocTypeGrid.UseVisualStyleBackColor = true;
       this.btnPopulateDocTypeGrid.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnAddDocType
-      // 
+      //
       this.btnAddDocType.Location = new System.Drawing.Point(22, 22);
       this.btnAddDocType.Name = "btnAddDocType";
       this.btnAddDocType.Size = new System.Drawing.Size(154, 35);
@@ -372,9 +374,9 @@
       this.btnAddDocType.Text = "Add Doc Type";
       this.btnAddDocType.UseVisualStyleBackColor = true;
       this.btnAddDocType.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // tabPageTags
-      // 
+      //
       this.tabPageTags.Controls.Add(this.gvTagTypes);
       this.tabPageTags.Controls.Add(this.pnlTagType);
       this.tabPageTags.Location = new System.Drawing.Point(4, 29);
@@ -384,9 +386,9 @@
       this.tabPageTags.TabIndex = 2;
       this.tabPageTags.Text = "Tags";
       this.tabPageTags.UseVisualStyleBackColor = true;
-      // 
+      //
       // gvTagTypes
-      // 
+      //
       this.gvTagTypes.AllowUserToAddRows = false;
       this.gvTagTypes.AllowUserToDeleteRows = false;
       this.gvTagTypes.AllowUserToResizeRows = false;
@@ -406,9 +408,9 @@
       this.gvTagTypes.Size = new System.Drawing.Size(1471, 376);
       this.gvTagTypes.TabIndex = 7;
       this.gvTagTypes.Tag = "TagTypes";
-      // 
+      //
       // pnlTagType
-      // 
+      //
       this.pnlTagType.Controls.Add(this.btnPopulateTagTypeGrid);
       this.pnlTagType.Controls.Add(this.btnAddTagType);
       this.pnlTagType.Dock = System.Windows.Forms.DockStyle.Top;
@@ -416,9 +418,9 @@
       this.pnlTagType.Name = "pnlTagType";
       this.pnlTagType.Size = new System.Drawing.Size(1471, 126);
       this.pnlTagType.TabIndex = 1;
-      // 
+      //
       // btnPopulateTagTypeGrid
-      // 
+      //
       this.btnPopulateTagTypeGrid.Location = new System.Drawing.Point(202, 22);
       this.btnPopulateTagTypeGrid.Name = "btnPopulateTagTypeGrid";
       this.btnPopulateTagTypeGrid.Size = new System.Drawing.Size(234, 35);
@@ -427,9 +429,9 @@
       this.btnPopulateTagTypeGrid.Text = "Populate Tag Type Grid";
       this.btnPopulateTagTypeGrid.UseVisualStyleBackColor = true;
       this.btnPopulateTagTypeGrid.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnAddTagType
-      // 
+      //
       this.btnAddTagType.Location = new System.Drawing.Point(22, 22);
       this.btnAddTagType.Name = "btnAddTagType";
       this.btnAddTagType.Size = new System.Drawing.Size(154, 35);
@@ -438,9 +440,9 @@
       this.btnAddTagType.Text = "Add Tag Type";
       this.btnAddTagType.UseVisualStyleBackColor = true;
       this.btnAddTagType.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1479, 768);

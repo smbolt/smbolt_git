@@ -12,23 +12,51 @@ namespace Org.GS
 {
   public class Decryptor
   {
-    public string Key { get; set; }
-    public string KeyId { get; set; }
-    private byte[] KeyIdBytes; 
+    public string Key {
+      get;
+      set;
+    }
+    public string KeyId {
+      get;
+      set;
+    }
+    private byte[] KeyIdBytes;
 
     private bool _isInitialized = false;
     public bool IsInitialized
     {
-      get { return _isInitialized; }
-      set { _isInitialized = value; }
+      get {
+        return _isInitialized;
+      }
+      set {
+        _isInitialized = value;
+      }
     }
 
-    public byte[] InitializationVector { get; set; }
-    public byte[] SaltValue { get; set; }
-    public byte[] PassPhrase { get; set; }
-    public string HashAlgorithm { get; set; }
-    public int PasswordIterations { get; set; }
-    public int KeySize { get; set; }
+    public byte[] InitializationVector {
+      get;
+      set;
+    }
+    public byte[] SaltValue {
+      get;
+      set;
+    }
+    public byte[] PassPhrase {
+      get;
+      set;
+    }
+    public string HashAlgorithm {
+      get;
+      set;
+    }
+    public int PasswordIterations {
+      get;
+      set;
+    }
+    public int KeySize {
+      get;
+      set;
+    }
 
     public Decryptor()
     {
@@ -37,7 +65,7 @@ namespace Org.GS
       string rawKey = String.Empty;
       this.KeyId = TokenMaker.RemoveIdFromKey(key, out rawKey);
       this.KeyIdBytes = this.GetKeyIdBytes();
-      this.Initialize_EncryptionKeys(rawKey);            
+      this.Initialize_EncryptionKeys(rawKey);
     }
 
     public Decryptor(string keyId)
@@ -53,7 +81,7 @@ namespace Org.GS
       string rawKey = String.Empty;
       this.KeyId = TokenMaker.RemoveIdFromKey(key, out rawKey);
       this.KeyIdBytes = this.GetKeyIdBytes();
-      this.Initialize_EncryptionKeys(rawKey);  
+      this.Initialize_EncryptionKeys(rawKey);
     }
 
     public string DecryptString(string cipherText)

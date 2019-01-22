@@ -9,16 +9,46 @@ namespace Org.Terminal.Controls
 {
   public class MFEventArgs
   {
-    public MFBase Sender { get; set; }
-    public MFContainer MFContainer { get; set; }
-    public EventType EventType { get; set; }
-    public KeyEventArgs KeyEventArgs { get; set; }
-    public KeyPressEventArgs KeyPressEventArgs { get; set; }
-    public PaintEventArgs PaintEventArgs { get; set; }
-    public MouseEventArgs MouseEventArgs { get; set; }
-    public EventArgs EventArgs { get; set; }
-    public EventCommand EventCommand { get; set; }
-    public string EventMessage { get; set; }
+    public MFBase Sender {
+      get;
+      set;
+    }
+    public MFContainer MFContainer {
+      get;
+      set;
+    }
+    public EventType EventType {
+      get;
+      set;
+    }
+    public KeyEventArgs KeyEventArgs {
+      get;
+      set;
+    }
+    public KeyPressEventArgs KeyPressEventArgs {
+      get;
+      set;
+    }
+    public PaintEventArgs PaintEventArgs {
+      get;
+      set;
+    }
+    public MouseEventArgs MouseEventArgs {
+      get;
+      set;
+    }
+    public EventArgs EventArgs {
+      get;
+      set;
+    }
+    public EventCommand EventCommand {
+      get;
+      set;
+    }
+    public string EventMessage {
+      get;
+      set;
+    }
 
     public MFEventArgs(MFBase sender, EventType eventType, object eventArgs = null)
     {
@@ -51,7 +81,7 @@ namespace Org.Terminal.Controls
     private void SetEventArgs(object eventArgs)
     {
       if (eventArgs == null)
-        return; 
+        return;
 
       string eventArgsTypeName = eventArgs.GetType().Name;
 
@@ -63,7 +93,7 @@ namespace Org.Terminal.Controls
 
         case "KeyPressEventArgs":
           this.KeyPressEventArgs = (KeyPressEventArgs)eventArgs;
-          break; 
+          break;
 
         case "PaintEventArgs":
           this.PaintEventArgs = (PaintEventArgs)eventArgs;
@@ -76,9 +106,9 @@ namespace Org.Terminal.Controls
         case "MouseEventArgs":
           this.MouseEventArgs = (MouseEventArgs)eventArgs;
           break;
- 
+
         default:
-          throw new Exception("EventArgs object of type '" + eventArgsTypeName + "' is not implemented."); 
+          throw new Exception("EventArgs object of type '" + eventArgsTypeName + "' is not implemented.");
       }
     }
   }

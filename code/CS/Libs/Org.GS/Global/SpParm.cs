@@ -8,13 +8,19 @@ namespace Org.GS
 {
   public class SpParm
   {
-    public string ParmName { get; set; }
-    public object ParmValue { get; set; }
+    public string ParmName {
+      get;
+      set;
+    }
+    public object ParmValue {
+      get;
+      set;
+    }
 
     public SpParm(string parmName, object parmValue)
     {
       this.ParmName = parmName;
-      this.ParmValue = parmValue;  
+      this.ParmValue = parmValue;
     }
   }
 }

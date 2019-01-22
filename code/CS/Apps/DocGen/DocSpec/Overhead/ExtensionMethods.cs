@@ -8,20 +8,20 @@ using System.Diagnostics;
 
 namespace Org.DocGen.DocSpec
 {
-    public static class ExtensionMethods2
+  public static class ExtensionMethods2
+  {
+    [DebuggerStepThrough]
+    public static SectionSet ToSectionSet(this DocumentElementSet value)
     {
-        [DebuggerStepThrough]
-        public static SectionSet ToSectionSet(this DocumentElementSet value)
-        {
-            SectionSet ss = new SectionSet();
+      SectionSet ss = new SectionSet();
 
-            foreach (DocumentElement de in value.Values)
-            {
-                if (de.DeType == DeType.Section)
-                    ss.Add(de.Name, (Section)de);
-            }
+      foreach (DocumentElement de in value.Values)
+      {
+        if (de.DeType == DeType.Section)
+          ss.Add(de.Name, (Section)de);
+      }
 
-            return ss;
-        }
+      return ss;
     }
+  }
 }

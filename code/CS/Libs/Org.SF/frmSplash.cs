@@ -18,15 +18,22 @@ namespace Org.SF
 
     public string VersionInfo
     {
-      set { lblVersion.Text = value; }
+      set {
+        lblVersion.Text = value;
+      }
     }
 
     public string CopyrightInfo
     {
-      set { lblCopyright.Text = value; }
+      set {
+        lblCopyright.Text = value;
+      }
     }
 
-    public bool Escaped { get; set; }
+    public bool Escaped {
+      get;
+      set;
+    }
     public bool UseSmallSize
     {
       set
@@ -73,12 +80,12 @@ namespace Org.SF
       switch (e.KeyCode)
       {
         case Keys.Escape:
-          {
-            this.Escaped = true;
-            lblReset.Visible = true;
-            SetMessage("Splash screen has been escaped...");
-            break;
-          }
+        {
+          this.Escaped = true;
+          lblReset.Visible = true;
+          SetMessage("Splash screen has been escaped...");
+          break;
+        }
       }
     }
 

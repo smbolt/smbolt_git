@@ -8,8 +8,14 @@ namespace Org.GS.OrgScript.Compilation
 {
   public class Token
   {
-    public string RawText { get; private set; }
-    public TokenType TokenType { get; set; }
+    public string RawText {
+      get;
+      private set;
+    }
+    public TokenType TokenType {
+      get;
+      set;
+    }
 
 
     public Token(string rawText)

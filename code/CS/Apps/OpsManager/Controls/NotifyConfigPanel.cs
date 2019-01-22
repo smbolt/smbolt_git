@@ -14,7 +14,10 @@ namespace Org.OpsManager.Controls
 {
   public partial class NotifyConfigPanel : BasePanel
   {
-    private NotifyConfig NotifyConfig { get; set; }
+    private NotifyConfig NotifyConfig {
+      get;
+      set;
+    }
 
     public NotifyConfigPanel(PanelData panelData, ChangeType changeType)
     {
@@ -29,7 +32,7 @@ namespace Org.OpsManager.Controls
       {
         using (var notifyRepo = new NotifyRepository(base.ConfigDbSpec))
           this.NotifyConfig = notifyRepo.GetNotifyConfig(panelData.ObjectId.Value);
-  
+
         txtName.Text = this.NotifyConfig.Name;
         txtSupportEmail.Text = this.NotifyConfig.SupportEmail;
         txtSupportPhone.Text = this.NotifyConfig.SupportPhone;
@@ -101,7 +104,7 @@ namespace Org.OpsManager.Controls
           this.NotifyConfig.ModifiedOn = DateTime.Now;
 
           using (var notifyRepo = new NotifyRepository(base.ConfigDbSpec))
-            notifyRepo.UpdateNotifyConfig(this.NotifyConfig);  
+            notifyRepo.UpdateNotifyConfig(this.NotifyConfig);
         }
         //Insert NotifyConfig
         else
@@ -153,7 +156,8 @@ namespace Org.OpsManager.Controls
               base.FireNotifyDelete(new NotifyChangeResult(base.NotifyType, this.NotifyConfig.NotifyConfigId, this.NotifyConfig.Name, base.ParentId.Value));
               break;
 
-            default: return;
+            default:
+              return;
           }
         }
       }

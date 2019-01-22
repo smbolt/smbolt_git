@@ -15,22 +15,40 @@ namespace Org.Dx.Business
   public class ExcelExtractRequest : TransactionBase
   {
     [XMap]
-    public FileExtractMode FileExtractMode { get; set; }
+    public FileExtractMode FileExtractMode {
+      get;
+      set;
+    }
 
     [XMap]
-    public string FullPath { get; set; }
+    public string FullPath {
+      get;
+      set;
+    }
 
     [XMap]
-    public string FileNamePrefix { get; set; }
+    public string FileNamePrefix {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, WrapperElement="WorksheetsToInclude", CollectionElements="WorksheetName")]
-    public List<string> WorksheetsToInclude { get; set; }
+    public List<string> WorksheetsToInclude {
+      get;
+      set;
+    }
 
     [XMap]
-    public string MapName { get; set; }
+    public string MapName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string FullMapPath { get; set; }
+    public string FullMapPath {
+      get;
+      set;
+    }
 
     public ExcelExtractRequest()
     {

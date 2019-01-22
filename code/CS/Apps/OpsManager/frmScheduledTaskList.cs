@@ -21,7 +21,10 @@ namespace Org.OpsManager
     private SortedList<int, ScheduledTask> _scheduledTasks;
     private ConfigDbSpec _configDbSpec;
 
-    public string Result { get; private set; }
+    public string Result {
+      get;
+      private set;
+    }
 
     public frmScheduledTaskList(int copyToTaskId, SortedList<int, ScheduledTask> scheduledTasks, ConfigDbSpec configDbSpec)
     {
@@ -104,7 +107,7 @@ namespace Org.OpsManager
         if (scheduledTask.ScheduledTaskId == _copyToTaskId)
           continue;
 
-        scheduledTaskNames.Add(scheduledTask.TaskName); 
+        scheduledTaskNames.Add(scheduledTask.TaskName);
       }
 
       scheduledTaskNames.Sort();

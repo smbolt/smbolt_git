@@ -11,20 +11,29 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PoliticalUnitType")]
-    public partial class PoliticalUnitType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PoliticalUnitType")]
+  public partial class PoliticalUnitType
+  {
+    public PoliticalUnitType()
     {
-        public PoliticalUnitType()
-        {
-            this.PoliticalUnits = new HashSet<PoliticalUnit>();
-        }
-    
-        public int PoliticalUnitTypeId { get; set; }
-        public string PoliticalUnitTypeValue { get; set; }
-    
-        public virtual ICollection<PoliticalUnit> PoliticalUnits { get; set; }
+      this.PoliticalUnits = new HashSet<PoliticalUnit>();
     }
+
+    public int PoliticalUnitTypeId {
+      get;
+      set;
+    }
+    public string PoliticalUnitTypeValue {
+      get;
+      set;
+    }
+
+    public virtual ICollection<PoliticalUnit> PoliticalUnits {
+      get;
+      set;
+    }
+  }
 }

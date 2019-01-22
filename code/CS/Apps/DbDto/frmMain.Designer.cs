@@ -38,35 +38,37 @@
       this.mnuMain.SuspendLayout();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(925, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 541);
       this.lblStatus.Name = "lblStatus";
@@ -75,18 +77,18 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnGetWells);
       this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlTop.Location = new System.Drawing.Point(0, 24);
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(925, 37);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtOut.Location = new System.Drawing.Point(0, 61);
@@ -96,9 +98,9 @@
       this.txtOut.Size = new System.Drawing.Size(925, 480);
       this.txtOut.TabIndex = 3;
       this.txtOut.WordWrap = false;
-      // 
+      //
       // btnGetWells
-      // 
+      //
       this.btnGetWells.Location = new System.Drawing.Point(12, 8);
       this.btnGetWells.Name = "btnGetWells";
       this.btnGetWells.Size = new System.Drawing.Size(118, 23);
@@ -107,9 +109,9 @@
       this.btnGetWells.Text = "Get Wells";
       this.btnGetWells.UseVisualStyleBackColor = true;
       this.btnGetWells.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(925, 563);

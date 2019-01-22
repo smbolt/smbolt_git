@@ -12,19 +12,38 @@ namespace Org.TW
 {
   public class ToolWindowManager
   {
-    public ToolWindowComponentsSet ToolWindowComponentsSet { get; set; }
+    public ToolWindowComponentsSet ToolWindowComponentsSet {
+      get;
+      set;
+    }
 
     private Dictionary<string, frmToolWindowBase> _toolWindows;
-    public Dictionary<string, frmToolWindowBase> ToolWindows { get { return Get_ToolWindows(); } }
+    public Dictionary<string, frmToolWindowBase> ToolWindows {
+      get {
+        return Get_ToolWindows();
+      }
+    }
 
     private Dictionary<string, ToolPanelBase> _toolPanels;
-    public Dictionary<string, ToolPanelBase> ToolPanels { get { return Get_ToolPanels(); } }
+    public Dictionary<string, ToolPanelBase> ToolPanels {
+      get {
+        return Get_ToolPanels();
+      }
+    }
 
     private Dictionary<string, Panel> _dockedTargets;
-    public Dictionary<string, Panel> DockedTargets { get { return Get_DockedTargets(); } }
+    public Dictionary<string, Panel> DockedTargets {
+      get {
+        return Get_DockedTargets();
+      }
+    }
 
     private Dictionary<string, Panel> _floatedTargets;
-    public Dictionary<string, Panel> FloatedTargets { get { return Get_FloatedTargets(); } }
+    public Dictionary<string, Panel> FloatedTargets {
+      get {
+        return Get_FloatedTargets();
+      }
+    }
 
     public ToolWindowManager()
     {

@@ -11,18 +11,18 @@ using Org.GS;
 
 namespace Org.DocGen.DocSpec
 {
-    //public class OxPersonHeading : OxComposite
-    //{
-    //    //public OxPersonHeading(Doc doc, Rs.Person person, string format)
-    //    //{
-    //    //    string styleId = "ResumeTitle1";
-    //    //    this.Add(OxHelper.BuildParagraph(doc, styleId, person.GetFormattedName("format")));
+  //public class OxPersonHeading : OxComposite
+  //{
+  //    //public OxPersonHeading(Doc doc, Rs.Person person, string format)
+  //    //{
+  //    //    string styleId = "ResumeTitle1";
+  //    //    this.Add(OxHelper.BuildParagraph(doc, styleId, person.GetFormattedName("format")));
 
-    //    //    styleId = "ResumeSubTitle1";
-    //    //    this.Add(OxHelper.BuildParagraph(doc, styleId, person.GetFormattedAddress("format")));
+  //    //    styleId = "ResumeSubTitle1";
+  //    //    this.Add(OxHelper.BuildParagraph(doc, styleId, person.GetFormattedAddress("format")));
 
-    //    //    styleId = "ResumeSubTitle1";
-    //    //    this.Add(OxHelper.BuildParagraph(doc, styleId, person.GetEmailAddress("format")));
-    //    //}
-    //}
+  //    //    styleId = "ResumeSubTitle1";
+  //    //    this.Add(OxHelper.BuildParagraph(doc, styleId, person.GetEmailAddress("format")));
+  //    //}
+  //}
 }

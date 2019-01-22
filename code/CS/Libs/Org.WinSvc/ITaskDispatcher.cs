@@ -11,7 +11,10 @@ namespace Org.WinSvc
   public interface ITaskDispatcher
   {
     event Action<NotifyMessage> NotifyMessage;
-    bool ContinueTask { get; set; }
+    bool ContinueTask {
+      get;
+      set;
+    }
     Task<TaskResult> DispatchTaskAsync(ITaskProcessor taskProcessor, TaskRequest taskRequest);
     void NotifyMessageMethod(NotifyMessage notifyMessage);
     bool CheckContinue();

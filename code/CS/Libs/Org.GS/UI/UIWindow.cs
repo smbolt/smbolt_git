@@ -11,34 +11,64 @@ namespace Org.GS.UI
   public class UIWindow
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public string TypeName { get; set; }
+    public string TypeName {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap]
-    public string WindowTitle { get; set; }
+    public string WindowTitle {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Normal")]
-    public UIWindowState UIWindowState { get; set; }
+    public UIWindowState UIWindowState {
+      get;
+      set;
+    }
 
     [XMap]
-    public StartPosition StartPosition { get; set; }
+    public StartPosition StartPosition {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool IsMainForm { get; set; }
+    public bool IsMainForm {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "True")]
-    public bool IsDockable { get; set; }
+    public bool IsDockable {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Normal")]
-    public WindowType WindowType { get; set; }
+    public WindowType WindowType {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public WindowLocation WindowLocation { get; set; }
+    public WindowLocation WindowLocation {
+      get;
+      set;
+    }
 
     public UIWindow()
     {
@@ -58,7 +88,7 @@ namespace Org.GS.UI
     {
       if (this.WindowLocation.Size.Width == 0 && this.WindowLocation.Size.Height == 0)
       {
-        this.WindowLocation.Size = new Size(100, 100); 
+        this.WindowLocation.Size = new Size(100, 100);
       }
     }
   }

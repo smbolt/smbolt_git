@@ -8,9 +8,18 @@ namespace Org.DynamoDB
 {
   public class DbConnectionResult
   {
-    public DbConnectionStatus DbConnectionStatus { get; set; }
-    public string Message { get; set; }
-    public Exception Exception { get; set; }
+    public DbConnectionStatus DbConnectionStatus {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public Exception Exception {
+      get;
+      set;
+    }
 
     public DbConnectionResult()
     {

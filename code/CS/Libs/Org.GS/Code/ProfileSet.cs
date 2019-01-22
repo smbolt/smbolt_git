@@ -8,11 +8,14 @@ using Org.GS;
 namespace Org.GS.Code
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element, CollectionElements="Profile")] 
+  [XMap(XType = XType.Element, CollectionElements="Profile")]
   public class ProfileSet : Dictionary<string, Profile>
   {
-    [XMap(XType = XType.Element, WrapperElement = "VariableSet", CollectionElements = "Variable", UseKeyValue = true)] 
-    public VariableSet VariableSet{ get; set; }
+    [XMap(XType = XType.Element, WrapperElement = "VariableSet", CollectionElements = "Variable", UseKeyValue = true)]
+    public VariableSet VariableSet {
+      get;
+      set;
+    }
 
     public ProfileSet()
     {
@@ -75,11 +78,11 @@ namespace Org.GS.Code
 
           else
 
-          if (!this.VariableSet.ContainsKey(variableName))
-            value = value.Replace("$" + variableName + "$", this.VariableSet[variableName]);
+            if (!this.VariableSet.ContainsKey(variableName))
+              value = value.Replace("$" + variableName + "$", this.VariableSet[variableName]);
 
-          else
-            return value;
+            else
+              return value;
         }
 
         variableCount++;

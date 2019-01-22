@@ -12,9 +12,16 @@ namespace Org.GS.Configuration
   [XMap(XType = XType.Element, CollectionElements = "ConfigGroup")]
   public class ConfigGroupSet : SortedList<string, ConfigGroup>
   {
-    public List<string> GroupNameList { get { return Get_GroupNameList(); } }
-    public ConfigSecurity ConfigSecurity { get; set; }
-      
+    public List<string> GroupNameList {
+      get {
+        return Get_GroupNameList();
+      }
+    }
+    public ConfigSecurity ConfigSecurity {
+      get;
+      set;
+    }
+
     public string GetNextID()
     {
       int highestID = 0;
@@ -64,7 +71,7 @@ namespace Org.GS.Configuration
         if (g.GroupName.ToLower() == groupName.ToLower())
           return g.GroupID;
       }
-            
+
       throw new Exception("GroupID not found for group name '" + groupName + "'.");
     }
 
@@ -96,18 +103,18 @@ namespace Org.GS.Configuration
 
 
       foreach (ConfigUser u in g.AppConfig.ConfigSecurity.ConfigUserSet.Values)
-      {                
+      {
         List<int> indiciesToDelete = new List<int>();
         for (int i = 0; i < u.ConfigGroupAssignments.Count; i++)
         {
           if (u.ConfigGroupAssignments.Where(e => e.GroupID == groupID).FirstOrDefault() != null)
-                indiciesToDelete.Add(i);
+            indiciesToDelete.Add(i);
         }
 
         foreach (int i in indiciesToDelete)
           u.ConfigGroupAssignments.RemoveAt(i);
       }
-            
+
       g.AppConfig.ConfigSecurity.ConfigGroupSet.Remove(groupID);
     }
 
@@ -177,10 +184,10 @@ namespace Org.GS.Configuration
 
       foreach (var group in this.Values)
       {
-        groupNameList.Add(group.GroupName); 
+        groupNameList.Add(group.GroupName);
       }
 
-      return groupNameList; 
+      return groupNameList;
     }
-  }        
+  }
 }

@@ -7,7 +7,7 @@
     /// </summary>
     private System.ComponentModel.IContainer components = null;
 
-    /// <summary> 
+    /// <summary>
     /// Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -30,23 +30,24 @@
     {
       this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
       this.PerfServiceInstaller = new System.ServiceProcess.ServiceInstaller();
-      // 
+      //
       // serviceProcessInstaller1
-      // 
+      //
       this.serviceProcessInstaller1.Password = null;
       this.serviceProcessInstaller1.Username = null;
-      // 
+      //
       // PerfServiceInstaller
-      // 
+      //
       this.PerfServiceInstaller.Description = "PerfService";
       this.PerfServiceInstaller.DisplayName = "PerfService";
       this.PerfServiceInstaller.ServiceName = "PerfService";
-      // 
+      //
       // ProjectInstaller
-      // 
+      //
       this.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.serviceProcessInstaller1,
-            this.PerfServiceInstaller});
+        this.serviceProcessInstaller1,
+        this.PerfServiceInstaller
+      });
 
     }
 

@@ -12,7 +12,10 @@ namespace Org.Ops.Business
 {
   public class ExchangeServiceManager
   {
-    private ExchangeService _exchangeService { get; set; }
+    private ExchangeService _exchangeService {
+      get;
+      set;
+    }
 
     public ExchangeServiceManager(ExchangeService exchangeService)
     {

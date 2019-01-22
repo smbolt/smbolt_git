@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Org.GraphicReports.Business
 {
-	public class PadSet : SortedList<int, Pad>
-	{
-	}
+  public class PadSet : SortedList<int, Pad>
+  {
+  }
 }

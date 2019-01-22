@@ -34,7 +34,7 @@ namespace Org.GS
         }
         catch (Exception ex)
         {
-          throw new Exception("An exception occurred attempting to send an email.", ex); 
+          throw new Exception("An exception occurred attempting to send an email.", ex);
         }
       }
     }

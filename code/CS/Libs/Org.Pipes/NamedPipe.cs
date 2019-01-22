@@ -8,9 +8,18 @@ namespace Org.Pipes
 {
   public class NamedPipe
   {
-    public string PipeName { get; set; }
-    public int Instances { get; set; }
-    public int MaxInstances { get; set; }
+    public string PipeName {
+      get;
+      set;
+    }
+    public int Instances {
+      get;
+      set;
+    }
+    public int MaxInstances {
+      get;
+      set;
+    }
 
     public NamedPipe(string pipeName, int instances, int maxInstances)
     {

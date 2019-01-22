@@ -15,7 +15,11 @@ namespace Org.GS.Configuration
     private Dictionary<string, string> lc;
 
     private bool _isLoaded = false;
-    public bool IsLoaded { get { return _isLoaded; } }
+    public bool IsLoaded {
+      get {
+        return _isLoaded;
+      }
+    }
 
     public LocalConfig()
     {
@@ -37,12 +41,12 @@ namespace Org.GS.Configuration
             g.ExecutablePath = g.GetAppPath();
             break;
 
-            case ApplicationType.PlugInModule:
-            case ApplicationType.MEFModule:
-            case ApplicationType.OrgGS:
-              if (g.AppInfo.RunningInNonDefaultAppDomain)
-                g.ExecutablePath = g.AppInfo.ModulePath;
-              break;
+          case ApplicationType.PlugInModule:
+          case ApplicationType.MEFModule:
+          case ApplicationType.OrgGS:
+            if (g.AppInfo.RunningInNonDefaultAppDomain)
+              g.ExecutablePath = g.AppInfo.ModulePath;
+            break;
 
           default:
             break;
@@ -73,13 +77,13 @@ namespace Org.GS.Configuration
           g.UseLocalAppData = this.GetBoolean("UseLocalAppData");
 
         if (this.ContainsKey("UseStartupLogging"))
-          g.UseStartupLogging = this.GetBoolean("UseStartupLogging"); 
+          g.UseStartupLogging = this.GetBoolean("UseStartupLogging");
 
         _isLoaded = true;
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred in the constructor of the LocalConfig object - AppDomain name is '" + AppDomain.CurrentDomain.FriendlyName + "'.", ex); 
+        throw new Exception("An exception occurred in the constructor of the LocalConfig object - AppDomain name is '" + AppDomain.CurrentDomain.FriendlyName + "'.", ex);
       }
     }
 
@@ -127,7 +131,7 @@ namespace Org.GS.Configuration
         if (lc.ContainsKey(k))
           throw new Exception("Duplicate key '" + k + "' found in LocalConfig file.");
 
-        lc.Add(k, v); 
+        lc.Add(k, v);
       }
     }
 
@@ -151,7 +155,7 @@ namespace Org.GS.Configuration
         ciElement.Attribute("V").Value = value;
 
       if (!lc.ContainsKey(key))
-        lc.Add(key, value); 
+        lc.Add(key, value);
     }
 
     public bool GetBoolean(string key)
@@ -159,7 +163,7 @@ namespace Org.GS.Configuration
       if (!lc.ContainsKey(key))
         return false;
 
-      return Boolean.Parse(lc[key]); 
+      return Boolean.Parse(lc[key]);
     }
 
     public int GetInteger(string key)
@@ -167,12 +171,12 @@ namespace Org.GS.Configuration
       if (!lc.ContainsKey(key))
         return 0;
 
-      return Int32.Parse(lc[key]); 
+      return Int32.Parse(lc[key]);
     }
 
     public bool ContainsKey(string key)
     {
-      return lc.ContainsKey(key); 
+      return lc.ContainsKey(key);
     }
 
     public string GetXml()

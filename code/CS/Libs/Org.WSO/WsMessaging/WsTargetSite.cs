@@ -10,17 +10,35 @@ namespace Org.WSO
   public class WsTargetSite
   {
     [XMap]
-    public string DeclaringTypeAssemblyName { get; set; }
+    public string DeclaringTypeAssemblyName {
+      get;
+      set;
+    }
     [XMap]
-    public string DeclaringTypeFullName { get; set; }
+    public string DeclaringTypeFullName {
+      get;
+      set;
+    }
     [XMap]
-    public string DeclaringTypeModuleName { get; set; }
+    public string DeclaringTypeModuleName {
+      get;
+      set;
+    }
     [XMap]
-    public string DeclaringTypeNamespace { get; set; }
+    public string DeclaringTypeNamespace {
+      get;
+      set;
+    }
     [XMap]
-    public string MemberType { get; set; }
+    public string MemberType {
+      get;
+      set;
+    }
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     public WsTargetSite()
     {
@@ -49,7 +67,7 @@ namespace Org.WSO
 
       this.MemberType = ex.TargetSite.MemberType.ToString();
 
-      this.Name = ex.TargetSite.Name; 
+      this.Name = ex.TargetSite.Name;
     }
 
     public string ToReport(int level)
@@ -58,9 +76,9 @@ namespace Org.WSO
       return indent + "Declaring Assembly Name:" + this.DeclaringTypeAssemblyName + g.crlf +
              indent + "Declaring Type Full Name:" + this.DeclaringTypeFullName + g.crlf +
              indent + "Delcaring Type Module Name:" + this.DeclaringTypeModuleName + g.crlf +
-             indent + "Declaring Type Namespace:" + this.DeclaringTypeNamespace + g.crlf + 
-             indent + "MemberType:" + this.MemberType.ToString() + 
-             indent + "Name:" + this.Name + g.crlf; 
+             indent + "Declaring Type Namespace:" + this.DeclaringTypeNamespace + g.crlf +
+             indent + "MemberType:" + this.MemberType.ToString() +
+             indent + "Name:" + this.Name + g.crlf;
     }
   }
 }

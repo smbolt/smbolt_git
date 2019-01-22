@@ -11,22 +11,34 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Module")]
-    public partial class Module
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Module")]
+  public partial class Module
+  {
+    public Module()
     {
-        public Module()
-        {
-            this.AppLogs = new HashSet<AppLog>();
-            this.ConfigItems = new HashSet<ConfigItem>();
-        }
-    
-        public int ModuleCode { get; set; }
-        public string ModuleName { get; set; }
-    
-        public virtual ICollection<AppLog> AppLogs { get; set; }
-        public virtual ICollection<ConfigItem> ConfigItems { get; set; }
+      this.AppLogs = new HashSet<AppLog>();
+      this.ConfigItems = new HashSet<ConfigItem>();
     }
+
+    public int ModuleCode {
+      get;
+      set;
+    }
+    public string ModuleName {
+      get;
+      set;
+    }
+
+    public virtual ICollection<AppLog> AppLogs {
+      get;
+      set;
+    }
+    public virtual ICollection<ConfigItem> ConfigItems {
+      get;
+      set;
+    }
+  }
 }

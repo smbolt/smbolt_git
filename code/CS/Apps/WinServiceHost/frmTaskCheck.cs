@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Org.GS;
-using Org.GS.Configuration; 
+using Org.GS.Configuration;
 
 namespace Org.WinServiceHost
 {
@@ -50,7 +50,7 @@ namespace Org.WinServiceHost
       Load_cboProfiles();
       LoadConfigToGrid();
 
-      this.Text = this.Text.Replace("$AppName", _appInfo.AppName); 
+      this.Text = this.Text.Replace("$AppName", _appInfo.AppName);
     }
 
     private void AssertRequiredContext()
@@ -84,7 +84,7 @@ namespace Org.WinServiceHost
       }
 
       if (idx != -1)
-        cboProfile.SelectedIndex = idx; 
+        cboProfile.SelectedIndex = idx;
     }
 
     private void LoadConfigToGrid()
@@ -117,7 +117,7 @@ namespace Org.WinServiceHost
       c.Name = "TaskName";
       c.HeaderText = "Task Name";
       c.Width = 160;
-      gvTasks.Columns.Add(c); 
+      gvTasks.Columns.Add(c);
 
       ckCol = new DataGridViewCheckBoxColumn();
       ckCol.Name = "Immediate";

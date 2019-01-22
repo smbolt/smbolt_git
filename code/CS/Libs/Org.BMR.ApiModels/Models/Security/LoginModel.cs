@@ -8,9 +8,18 @@ namespace Org.BMR.ApiModels
 {
   public class LoginModel : ApiModelBase
   {
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public bool IsNewRegistration { get; set; }
+    public string UserName {
+      get;
+      set;
+    }
+    public string Password {
+      get;
+      set;
+    }
+    public bool IsNewRegistration {
+      get;
+      set;
+    }
 
     public LoginModel()
     {

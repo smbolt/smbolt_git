@@ -21,7 +21,10 @@ namespace Org.GS
     private static object lockObject2 = new object();
     private static object lockObject3 = new object();
 
-    public static string ExplainResults { get; set; }
+    public static string ExplainResults {
+      get;
+      set;
+    }
 
     public static string GenerateEncryptionKey(string id)
     {
@@ -231,7 +234,7 @@ namespace Org.GS
       StringBuilder sbToken = new StringBuilder();
 
       foreach (KeyValuePair<string, String> kvp in randomlySortedEntries)
-          sbToken.Append(kvp.Value);
+        sbToken.Append(kvp.Value);
 
       string token = sbToken.ToString();
 
@@ -265,7 +268,7 @@ namespace Org.GS
 
         sortedEntries.Add(sorterValueString, entry);
         i += offset;
-      }   
+      }
 
       StringBuilder sbKey = new StringBuilder();
 
@@ -374,7 +377,7 @@ namespace Org.GS
 
       string checkKey = sb3.ToString();
       if (keyValue != checkKey)
-        throw new Exception("The encoded value could not be decoded back to the original value."); 
+        throw new Exception("The encoded value could not be decoded back to the original value.");
 
       return encodedString;
     }
@@ -417,7 +420,7 @@ namespace Org.GS
         while (tempKeyChar == doNotDuplicate)
           tempKeyChar = GetRandomCharsGenKey(1);
 
-        doNotDuplicate = tempKeyChar;                
+        doNotDuplicate = tempKeyChar;
         sbRandomKey.Append(tempKeyChar);
       }
 
@@ -449,7 +452,7 @@ namespace Org.GS
 
       return chars;
     }
-        
+
     public static string DecodeToken(string token)
     {
       SortedList<string, string> sortedEntries = new SortedList<string, string>();
@@ -473,7 +476,7 @@ namespace Org.GS
 
         sortedEntries.Add(sorterValueString, entry);
         i += offset;
-      }   
+      }
 
       StringBuilder sbKey = new StringBuilder();
 
@@ -518,7 +521,7 @@ namespace Org.GS
           sb.Append(sorterEntry);
         }
       }
-            
+
       return sb.ToString();
     }
   }

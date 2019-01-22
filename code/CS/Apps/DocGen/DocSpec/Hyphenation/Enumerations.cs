@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace Org.DocGen.DocSpec
 {
 
-    public enum TriNodeType
-    {
-        Low,
-        Equal,
-        High,
-        Root
-    }
+  public enum TriNodeType
+  {
+    Low,
+    Equal,
+    High,
+    Root
+  }
 
 }

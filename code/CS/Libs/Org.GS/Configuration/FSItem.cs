@@ -9,11 +9,14 @@ using System.Reflection;
 namespace Org.GS.Configuration
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
+  [XMap(XType = XType.Element)]
   public class FSItem
   {
     [XMap(IsKey=true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     public FSItem()
     {

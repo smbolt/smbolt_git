@@ -9,8 +9,14 @@ namespace Org.FTW
 {
   public class ToolPanelUpdateParms
   {
-    public string ToolPanelName { get; set; }
-    public string Command { get; set; }
+    public string ToolPanelName {
+      get;
+      set;
+    }
+    public string Command {
+      get;
+      set;
+    }
 
     public ToolPanelUpdateParms()
     {

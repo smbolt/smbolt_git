@@ -21,84 +21,179 @@ namespace Org.GS
 
     [DllImport("kernel32", CharSet = CharSet.Auto, SetLastError = true)]
     static extern IntPtr GetProcAddress(IntPtr hModule,
-        [MarshalAs(UnmanagedType.LPStr)]string procName);
+                                        [MarshalAs(UnmanagedType.LPStr)]string procName);
 
     [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
     static extern bool IsWow64Process(IntPtr hProcess, out bool wow64Process);
 
     private int _processId = -1;
-    public int ProcessId { get { return _processId; } }
+    public int ProcessId {
+      get {
+        return _processId;
+      }
+    }
 
     private string _domainName = String.Empty;
-    public string DomainName { get { return _domainName; } }
+    public string DomainName {
+      get {
+        return _domainName;
+      }
+    }
 
     private string _computerName = String.Empty;
-    public string ComputerName { get { return _computerName; } }
+    public string ComputerName {
+      get {
+        return _computerName;
+      }
+    }
 
     private string _userName = String.Empty;
-    public string UserName { get { return _userName; } }
+    public string UserName {
+      get {
+        return _userName;
+      }
+    }
 
-    public string DomainAndComputer { get { return _domainName + @"\" + _computerName; } }
+    public string DomainAndComputer {
+      get {
+        return _domainName + @"\" + _computerName;
+      }
+    }
 
-    public string DomainAndUser { get { return _domainName + @"\" + _userName; } }
+    public string DomainAndUser {
+      get {
+        return _domainName + @"\" + _userName;
+      }
+    }
 
     private string _windowsVersion = String.Empty;
-    public string WindowsVersion { get { return _windowsVersion; } }
+    public string WindowsVersion {
+      get {
+        return _windowsVersion;
+      }
+    }
 
     private string _windowsBuild = String.Empty;
-    public string WindowsBuild { get { return _windowsBuild; } }
+    public string WindowsBuild {
+      get {
+        return _windowsBuild;
+      }
+    }
 
     private string _windowsReleaseId = String.Empty;
-    public string WindowsReleaseId { get { return _windowsReleaseId; } }
+    public string WindowsReleaseId {
+      get {
+        return _windowsReleaseId;
+      }
+    }
 
     private string _windowsOsVer = String.Empty;
-    public string WindowsOsVer { get { return _windowsOsVer; } }
+    public string WindowsOsVer {
+      get {
+        return _windowsOsVer;
+      }
+    }
 
     private string _servicePack = String.Empty;
-    public string ServicePack { get { return _servicePack; } }
+    public string ServicePack {
+      get {
+        return _servicePack;
+      }
+    }
 
     private string _systemRoot = String.Empty;
-    public string SystemRoot { get { return _systemRoot; } }
+    public string SystemRoot {
+      get {
+        return _systemRoot;
+      }
+    }
 
     private bool _isNT = false;
-    public bool IsNT { get { return _isNT; } }
+    public bool IsNT {
+      get {
+        return _isNT;
+      }
+    }
 
     private bool _isCE = false;
-    public bool IsCE { get { return _isCE; } }
+    public bool IsCE {
+      get {
+        return _isCE;
+      }
+    }
 
     private bool _isWin9X = false;
-    public bool IsWin9X { get { return _isWin9X; } }
+    public bool IsWin9X {
+      get {
+        return _isWin9X;
+      }
+    }
 
     private bool _is64Bit = false;
-    public bool Is64Bit { get { return _is64Bit; } }
-    public bool Is32Bit { get { return !_is64Bit; } }
+    public bool Is64Bit {
+      get {
+        return _is64Bit;
+      }
+    }
+    public bool Is32Bit {
+      get {
+        return !_is64Bit;
+      }
+    }
 
     private string _highestFramework = String.Empty;
-    public string HighestFramework { get { return _highestFramework; } }
-    public string HighestFrameworkShort { get { return Get_HighestFrameworkShort(); } }
+    public string HighestFramework {
+      get {
+        return _highestFramework;
+      }
+    }
+    public string HighestFrameworkShort {
+      get {
+        return Get_HighestFrameworkShort();
+      }
+    }
 
     private InstalledFrameworks _installedFrameworks = new InstalledFrameworks();
-    public InstalledFrameworks InstalledFrameworks { get { return _installedFrameworks; } }
+    public InstalledFrameworks InstalledFrameworks {
+      get {
+        return _installedFrameworks;
+      }
+    }
 
     private bool _exceptionOccurred = false;
-    public bool ExceptionOccurred { get { return _exceptionOccurred; } }
+    public bool ExceptionOccurred {
+      get {
+        return _exceptionOccurred;
+      }
+    }
 
-    public Exception Exception { get; private set; }
+    public Exception Exception {
+      get;
+      private set;
+    }
 
-    public string SystemInfoString { get { return Get_SystemInfoString(); } }
-    public string PlatformString { get { return Get_PlatformString(); } }
+    public string SystemInfoString {
+      get {
+        return Get_SystemInfoString();
+      }
+    }
+    public string PlatformString {
+      get {
+        return Get_PlatformString();
+      }
+    }
 
     [StructLayout(LayoutKind.Sequential)]
-    public struct OSVERSIONINFO 
+    public struct OSVERSIONINFO
     {
-	    public int dwOSVersionInfoSize;
-	    public int dwMajorVersion;
-	    public int dwMinorVersion;
-	    public int dwBuildNumber;
-	    public int dwPlatformId;
-	    [MarshalAs(UnmanagedType.ByValTStr, SizeConst=128)]
-	    public string szCSDVersion;
+      public int dwOSVersionInfoSize;
+      public int dwMajorVersion;
+      public int dwMinorVersion;
+      public int dwBuildNumber;
+      public int dwPlatformId;
+      [MarshalAs(UnmanagedType.ByValTStr, SizeConst=128)]
+      public string szCSDVersion;
     }
 
 
@@ -113,12 +208,12 @@ namespace Org.GS
       {
         var thisProcess = Process.GetCurrentProcess();
         _processId = thisProcess.Id;
-        
+
         _systemRoot = Environment.GetFolderPath(Environment.SpecialFolder.System).ToString();
         _domainName = Environment.UserDomainName;
         _computerName = Environment.MachineName;
         _userName = Environment.UserName;
-        _servicePack = GetServicePack(); 
+        _servicePack = GetServicePack();
 
         _windowsReleaseId = Microsoft.Win32.Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString();
         _windowsOsVer = GetOsVer();
@@ -269,7 +364,7 @@ namespace Org.GS
         }
 
         _windowsBuild = Environment.OSVersion.Version.Major.ToString() + "." + Environment.OSVersion.Version.Minor.ToString() +
-                " - Build " + Environment.OSVersion.Version.Build.ToString();
+                        " - Build " + Environment.OSVersion.Version.Build.ToString();
 
         _is64Bit = Is64BitOperatingSystem();
 
@@ -313,7 +408,7 @@ namespace Org.GS
     }
 
     private void ProcessFrameworks()
-    {      
+    {
       var fxs = GetFrameworkVersions();
 
       SortedList<string, string> sortedFx = new SortedList<string,string>();
@@ -323,14 +418,14 @@ namespace Org.GS
         var tokens = fx.ToTokenArray(Constants.SpaceDelimiter).ToList();
         foreach(string token in tokens)
         {
-          string tokenNoDots = token.Replace(".", String.Empty); 
+          string tokenNoDots = token.Replace(".", String.Empty);
           if (tokenNoDots.IsNumeric())
           {
             string versionKey = String.Empty;
             List<string> versionTokens = token.ToTokenArray(Constants.DotDelimiter).ToList();
             foreach(string versionToken in versionTokens)
             {
-              string versionTokenFmt = Int32.Parse(versionToken).ToString("000000"); 
+              string versionTokenFmt = Int32.Parse(versionToken).ToString("000000");
               if (versionKey.IsBlank())
                 versionKey = versionTokenFmt;
               else
@@ -341,18 +436,18 @@ namespace Org.GS
 
             if (fx.ToLower().Contains("client"))
             {
-              versionKey += "(CLIENT)"; 
+              versionKey += "(CLIENT)";
               clientFull = "-C";
             }
 
             if (fx.ToLower().Contains("full"))
             {
-              versionKey += "(FULL)"; 
+              versionKey += "(FULL)";
               clientFull = "-F";
             }
 
             if (!sortedFx.ContainsKey(versionKey))
-              sortedFx.Add(versionKey, token + clientFull + "|" + fx); 
+              sortedFx.Add(versionKey, token + clientFull + "|" + fx);
 
             break;
           }
@@ -360,10 +455,10 @@ namespace Org.GS
       }
 
       if (sortedFx.Count > 0)
-        _highestFramework = sortedFx.Last().Value; 
+        _highestFramework = sortedFx.Last().Value;
 
       foreach(var fwk in sortedFx.Values)
-        _installedFrameworks.Insert(0, fwk); 
+        _installedFrameworks.Insert(0, fwk);
     }
 
     private string Get_HighestFrameworkShort()
@@ -373,7 +468,7 @@ namespace Org.GS
 
       if (_highestFramework.Contains("|"))
       {
-        string[] tokens = _highestFramework.ToTokenArray(Constants.PipeDelimiter); 
+        string[] tokens = _highestFramework.ToTokenArray(Constants.PipeDelimiter);
         return tokens[0];
       }
 
@@ -384,20 +479,20 @@ namespace Org.GS
     {
       if (_exceptionOccurred)
         return "Exception occurred";
-      
+
       string systemInfo = "SYSTEM INFORMATION" + g.crlf +
-          "  Windows Version   : " + _windowsVersion + g.crlf +
-          "  Windows OsVer     : " + _windowsOsVer + g.crlf +
-          "  Windows ReleaseId : " + _windowsReleaseId + g.crlf +
-          "  Windows Build     : " + _windowsBuild + g.crlf +
-          "  OS Type           : " + (_is64Bit ? "64 bit" : "32 bit") + g.crlf + 
-          "  Service Pack      : " + _servicePack + g.crlf +
-          "  Highest FX        : " + _highestFramework + g.crlf +
-          "  SystemRoot        : " + _systemRoot + g.crlf +
-          "  Computer Name     : " + _computerName + g.crlf +
-          "  Domain            : " + _domainName + g.crlf +
-          "  User Name         : " + _userName + g.crlf + 
-          "  Process ID        : " + _processId.ToString();
+                          "  Windows Version   : " + _windowsVersion + g.crlf +
+                          "  Windows OsVer     : " + _windowsOsVer + g.crlf +
+                          "  Windows ReleaseId : " + _windowsReleaseId + g.crlf +
+                          "  Windows Build     : " + _windowsBuild + g.crlf +
+                          "  OS Type           : " + (_is64Bit ? "64 bit" : "32 bit") + g.crlf +
+                          "  Service Pack      : " + _servicePack + g.crlf +
+                          "  Highest FX        : " + _highestFramework + g.crlf +
+                          "  SystemRoot        : " + _systemRoot + g.crlf +
+                          "  Computer Name     : " + _computerName + g.crlf +
+                          "  Domain            : " + _domainName + g.crlf +
+                          "  User Name         : " + _userName + g.crlf +
+                          "  Process ID        : " + _processId.ToString();
 
       return systemInfo;
 
@@ -405,41 +500,60 @@ namespace Org.GS
 
     private string Get_PlatformString()
     {
-      string winVersion = Get_WinVersion(); 
+      string winVersion = Get_WinVersion();
       string winBits = _is64Bit ? "X64" : "X86";
-      string sp = _servicePack.Replace("Service Pack ", "SP"); 
+      string sp = _servicePack.Replace("Service Pack ", "SP");
       string fx = this.HighestFrameworkShort;
       if (g.FxVersionSet.ContainsKey(fx))
         fx = g.FxVersionSet[fx].Version;
 
       string extra = "#";
-      return winVersion + "^" + winBits + "^" + sp + "^" + fx + "^" + extra; 
+      return winVersion + "^" + winBits + "^" + sp + "^" + fx + "^" + extra;
     }
 
     private string Get_WinVersion()
     {
       switch(_windowsVersion)
       {
-        case "Windows 10.4": return "WIN10.4";
-        case "Windows 10.3": return "WIN10.3";
-        case "Windows 10.2": return "WIN10.2";
-        case "Windows 10.1": return "WIN10.1";
-        case "Windows 10.0": return "WIN10.0";
-        case "Windows 8.1": return "WIN8.1";
-        case "Windows 8": return "WIN8";
-        case "Windows 7": return "WIN7";
-        case "Windows Vista": return "WINVST";
-        case "Windows XP": return "WINXP";
-        case "Windows 2000": return "WIN2K";
-        case "Windows NT 4": return "NT4";
-        case "Windows NT 3.51": return "NT351";
-        case "Windows ME": return "WINME";
-        case "Windows 98": return "WIN98";
-        case "Windows 95": return "WIN95";
-        case "Windows 3.x - Version ": return "WIN3X";
+        case "Windows 10.4":
+          return "WIN10.4";
+        case "Windows 10.3":
+          return "WIN10.3";
+        case "Windows 10.2":
+          return "WIN10.2";
+        case "Windows 10.1":
+          return "WIN10.1";
+        case "Windows 10.0":
+          return "WIN10.0";
+        case "Windows 8.1":
+          return "WIN8.1";
+        case "Windows 8":
+          return "WIN8";
+        case "Windows 7":
+          return "WIN7";
+        case "Windows Vista":
+          return "WINVST";
+        case "Windows XP":
+          return "WINXP";
+        case "Windows 2000":
+          return "WIN2K";
+        case "Windows NT 4":
+          return "NT4";
+        case "Windows NT 3.51":
+          return "NT351";
+        case "Windows ME":
+          return "WINME";
+        case "Windows 98":
+          return "WIN98";
+        case "Windows 95":
+          return "WIN95";
+        case "Windows 3.x - Version ":
+          return "WIN3X";
 
-        case "Windows Server 2003": return "SVR2K3";
-        case "Windows CE / PocketPC": return "WINCE";
+        case "Windows Server 2003":
+          return "SVR2K3";
+        case "Windows CE / PocketPC":
+          return "WINCE";
       }
 
       return "WIN?";
@@ -453,22 +567,22 @@ namespace Org.GS
       }
       else  // 32-bit programs run on both 32-bit and 64-bit Windows
       {
-        // Detect whether the current process is a 32-bit process 
+        // Detect whether the current process is a 32-bit process
         // running on a 64-bit system.
         bool flag;
         return ((DoesWin32MethodExist("kernel32.dll", "IsWow64Process") &&
-            IsWow64Process(GetCurrentProcess(), out flag)) && flag);
+                 IsWow64Process(GetCurrentProcess(), out flag)) && flag);
       }
     }
 
     /// <summary>
-    /// The function determins whether a method exists in the export 
+    /// The function determins whether a method exists in the export
     /// table of a certain module.
     /// </summary>
     /// <param name="moduleName">The name of the module</param>
     /// <param name="methodName">The name of the method</param>
     /// <returns>
-    /// The function returns true if the method specified by methodName 
+    /// The function returns true if the method specified by methodName
     /// exists in the export table of the module specified by moduleName.
     /// </returns>
     private bool DoesWin32MethodExist(string moduleName, string methodName)
@@ -481,25 +595,25 @@ namespace Org.GS
       return (GetProcAddress(moduleHandle, methodName) != IntPtr.Zero);
     }
 
-    
+
     /// <summary>
-    /// The function determines whether the operating system of the 
-    /// current machine of any remote machine is a 64-bit operating 
+    /// The function determines whether the operating system of the
+    /// current machine of any remote machine is a 64-bit operating
     /// system through Windows Management Instrumentation (WMI).
     /// </summary>
     /// <param name="machineName">
-    /// The full computer name or IP address of the target machine. "." 
+    /// The full computer name or IP address of the target machine. "."
     /// or null means the local machine.
     /// </param>
     /// <param name="domain">
-    /// NTLM domain name. If the parameter is null, NTLM authentication 
+    /// NTLM domain name. If the parameter is null, NTLM authentication
     /// will be used and the NTLM domain of the current user will be used.
     /// </param>
     /// <param name="userName">
-    /// The user name to be used for the connection operation. If the 
-    /// user name is from a domain other than the current domain, the 
-    /// string may contain the domain name and user name, separated by a 
-    /// backslash: string 'username' = "DomainName\\UserName". If the 
+    /// The user name to be used for the connection operation. If the
+    /// user name is from a domain other than the current domain, the
+    /// string may contain the domain name and user name, separated by a
+    /// backslash: string 'username' = "DomainName\\UserName". If the
     /// parameter is null, the connection will use the currently logged-
     /// on user
     /// </param>
@@ -507,29 +621,29 @@ namespace Org.GS
     /// The password for the specified user.
     /// </param>
     /// <returns>
-    /// The function returns true if the operating system is 64-bit; 
+    /// The function returns true if the operating system is 64-bit;
     /// otherwise, it returns false.
     /// </returns>
     /// <exception cref="System.Management.ManagementException">
-    /// The ManagementException exception is generally thrown with the  
+    /// The ManagementException exception is generally thrown with the
     /// error code: System.Management.ManagementStatus.InvalidParameter.
-    /// You need to check whether the parameters for ConnectionOptions 
+    /// You need to check whether the parameters for ConnectionOptions
     /// (e.g. user name, password, domain) are set correctly.
     /// </exception>
     /// <exception cref="System.Runtime.InteropServices.COMException">
-    /// A common error accompanied with the COMException is "The RPC 
-    /// server is unavailable. (Exception from HRESULT: 0x800706BA)". 
-    /// This is usually caused by the firewall on the target machine that 
+    /// A common error accompanied with the COMException is "The RPC
+    /// server is unavailable. (Exception from HRESULT: 0x800706BA)".
+    /// This is usually caused by the firewall on the target machine that
     /// blocks the WMI connection or some network problem.
     /// </exception>
     public bool Is64BitOperatingSystem(string machineName,
-        string domain, string userName, string password)
+                                       string domain, string userName, string password)
     {
       ConnectionOptions options = null;
       if (!string.IsNullOrEmpty(userName))
       {
-        // Build a ConnectionOptions object for the remote connection 
-        // if you plan to connect to the remote with a different user 
+        // Build a ConnectionOptions object for the remote connection
+        // if you plan to connect to the remote with a different user
         // name and password than the one you are currently using.
         options = new ConnectionOptions();
         options.Username = userName;
@@ -544,16 +658,16 @@ namespace Org.GS
           "\\root\\cimv2", options);
       scope.Connect();
 
-      // Query Win32_Processor.AddressWidth which dicates the current 
-      // operating mode of the processor (on a 32-bit OS, it would be 
+      // Query Win32_Processor.AddressWidth which dicates the current
+      // operating mode of the processor (on a 32-bit OS, it would be
       // "32"; on a 64-bit OS, it would be "64").
-      // Note: Win32_Processor.DataWidth indicates the capability of 
+      // Note: Win32_Processor.DataWidth indicates the capability of
       // the processor. On a 64-bit processor, it is "64".
       // Note: Win32_OperatingSystem.OSArchitecture tells the bitness
-      // of OS too. On a 32-bit OS, it would be "32-bit". However, it 
+      // of OS too. On a 32-bit OS, it would be "32-bit". However, it
       // is only available on Windows Vista and newer OS.
       ObjectQuery query = new ObjectQuery(
-          "SELECT AddressWidth FROM Win32_Processor");
+        "SELECT AddressWidth FROM Win32_Processor");
 
       // Perform the query and get the result.
       ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
@@ -568,17 +682,17 @@ namespace Org.GS
 
       return false;
     }
-    
+
     [DllImport("kernel32.Dll")] public static extern short GetVersionEx(ref OSVERSIONINFO o);
     static public string GetServicePack()
     {
-	    OSVERSIONINFO os = new OSVERSIONINFO();
-	    os.dwOSVersionInfoSize=Marshal.SizeOf(typeof(OSVERSIONINFO)); 
-	    GetVersionEx(ref os);
-	    if (os.szCSDVersion=="")					 
-    	  return "NOSP";
-	    else
-   	    return os.szCSDVersion;
+      OSVERSIONINFO os = new OSVERSIONINFO();
+      os.dwOSVersionInfoSize=Marshal.SizeOf(typeof(OSVERSIONINFO));
+      GetVersionEx(ref os);
+      if (os.szCSDVersion=="")
+        return "NOSP";
+      else
+        return os.szCSDVersion;
     }
 
     private List<string> GetFrameworkVersions()
@@ -605,14 +719,13 @@ namespace Org.GS
 
             if (install.IsBlank())
               framework = versionKeyName + " " + name;
-            else
-              if (sp.IsNotBlank() && install == "1")
-                framework = versionKeyName + " " + name + " " + sp;
+            else if (sp.IsNotBlank() && install == "1")
+              framework = versionKeyName + " " + name + " " + sp;
 
             if (name.IsNotBlank())
             {
               if (framework.IsNotBlank())
-                frameworks.Add(framework); 
+                frameworks.Add(framework);
               continue;
             }
 
@@ -703,7 +816,7 @@ namespace Org.GS
 
               if (framework.IsNotBlank())
               {
-                frameworks.Add(framework); 
+                frameworks.Add(framework);
               }
             }
           }
@@ -717,14 +830,14 @@ namespace Org.GS
           Exception = ex;
         }
       }
-        
+
       return frameworks;
     }
 
     public static AssemblyMapSet GetAssemblyMapSet()
     {
       var set = new AssemblyMapSet();
-      
+
       var assemblies = AppDomain.CurrentDomain.GetAssemblies();
       foreach( var asm in assemblies)
       {
@@ -741,7 +854,7 @@ namespace Org.GS
           set.Add(asm.FullName.ToString(), assemblyMap);
         }
       }
-      
+
       return set;
     }
 

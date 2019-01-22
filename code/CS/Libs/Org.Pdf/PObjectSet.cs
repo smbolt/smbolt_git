@@ -8,8 +8,14 @@ namespace Org.Pdf
 {
   public class PObjectSet : Dictionary<string, PObject>
   {
-    public PObjectSetType pObjectSetType { get; set; }
-    public PObject Parent { get; private set; }
+    public PObjectSetType pObjectSetType {
+      get;
+      set;
+    }
+    public PObject Parent {
+      get;
+      private set;
+    }
 
     public PObjectSet(PObject parent)
     {

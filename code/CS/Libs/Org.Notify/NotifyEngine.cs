@@ -154,8 +154,10 @@ namespace Org.Notify
                 emailMessage.NotificationAddresses.Add(new EmailNotificationAddress(NotificationAddressType.EmailToAddress, notifyPerson.EmailAddress));
                 emailAddressesUsed.Add(notifyPerson.EmailAddress);
                 emailMessage.NotificationAddresses.Add(new EmailNotificationAddress(NotificationAddressType.EmailFromAddress, _smtpParms.EmailFromAddress));
-                var emailTask = TPL.Task.Run(() => { return ProcessEmailTaskAsync(_smtpParms, emailMessage); });
-                emailTasks.Add(emailTask); 
+                var emailTask = TPL.Task.Run(() => {
+                  return ProcessEmailTaskAsync(_smtpParms, emailMessage);
+                });
+                emailTasks.Add(emailTask);
               }
 
               if (notifyPerson.IsSmsActive)
@@ -180,7 +182,7 @@ namespace Org.Notify
         int emailSendsNotSuccessful = taskResult.TaskResultSet.Values.Where(e => e.TaskResultStatus != TaskResultStatus.Success).Count();
         taskResult.TaskResultStatus = emailSendsNotSuccessful == 0 ? TaskResultStatus.Success : TaskResultStatus.Warning;
         taskResult.Message = "Email sends attempted: " + emailSendsAttempted.ToString() + ", sends successful: " +
-                              emailSendsSuccessful.ToString() + ", sends failed: " + emailSendsNotSuccessful.ToString();
+                             emailSendsSuccessful.ToString() + ", sends failed: " + emailSendsNotSuccessful.ToString();
         SendNotifyAction(NotifyEventType.NotificationCompleted, false);
         return taskResult;
       }

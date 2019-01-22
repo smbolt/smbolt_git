@@ -11,20 +11,29 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "CouponType")]
-    public partial class CouponType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "CouponType")]
+  public partial class CouponType
+  {
+    public CouponType()
     {
-        public CouponType()
-        {
-            this.Coupons = new HashSet<Coupon>();
-        }
-    
-        public string CouponTypeCode { get; set; }
-        public string CouponTypeDesc { get; set; }
-    
-        public virtual ICollection<Coupon> Coupons { get; set; }
+      this.Coupons = new HashSet<Coupon>();
     }
+
+    public string CouponTypeCode {
+      get;
+      set;
+    }
+    public string CouponTypeDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Coupon> Coupons {
+      get;
+      set;
+    }
+  }
 }

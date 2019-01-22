@@ -16,8 +16,14 @@ namespace Org.GS
 
   public class ToolActionEventArgs
   {
-    public Form ToolWindow { get; set; }
-    public ToolActionEvent ToolActionEvent { get; set; }
+    public Form ToolWindow {
+      get;
+      set;
+    }
+    public ToolActionEvent ToolActionEvent {
+      get;
+      set;
+    }
 
     public ToolActionEventArgs(Form form, ToolActionEvent toolActionEvent)
     {

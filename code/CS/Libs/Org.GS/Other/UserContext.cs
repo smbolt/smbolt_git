@@ -8,7 +8,10 @@ namespace Org.GS
 {
   public class UserContext
   {
-    public Vault Vault { get; set; }
+    public Vault Vault {
+      get;
+      set;
+    }
 
     public UserContext()
     {

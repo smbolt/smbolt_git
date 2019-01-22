@@ -15,7 +15,7 @@ namespace Org.GS
     Stopped = 3,
     Unknown = 99
   }
-  
+
   public enum AppPoolCommand
   {
     Start,
@@ -27,13 +27,25 @@ namespace Org.GS
   public class AppPool
   {
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
     [XMap]
-    public bool AutoStart { get; set; }
+    public bool AutoStart {
+      get;
+      set;
+    }
     [XMap]
-    public bool Enable32BitAppOnWin64 { get; set; }
+    public bool Enable32BitAppOnWin64 {
+      get;
+      set;
+    }
     [XMap]
-    public AppPoolStatus AppPoolStatus { get; set; }
+    public AppPoolStatus AppPoolStatus {
+      get;
+      set;
+    }
 
     public AppPool()
     {

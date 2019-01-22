@@ -7,18 +7,28 @@ using System.Threading.Tasks;
 
 namespace Org.Dx.Business
 {
-  public class Node 
+  public class Node
   {
     private NodeType _nodeType;
-    public NodeType NodeType { get { return _nodeType; } }
+    public NodeType NodeType {
+      get {
+        return _nodeType;
+      }
+    }
 
     private DxObjectType _dxObjectType;
-    public DxObjectType DxObjectType { get { return _dxObjectType; } }
+    public DxObjectType DxObjectType {
+      get {
+        return _dxObjectType;
+      }
+    }
 
     private object _dxObject;
     public object DxObject
     {
-      get { return _dxObject; }
+      get {
+        return _dxObject;
+      }
       set
       {
         _dxObject = value;
@@ -26,18 +36,53 @@ namespace Org.Dx.Business
       }
     }
 
-    public string TextValue { get { return Get_TextValue(); } }
-    public bool IsFirstInSet { get; set; }
-    public bool IsLastInSet { get; set; }
-    public bool IsFirstInSequence { get; set; }
-    public bool IsLastInSequence { get; set; }
-    public string SetSeqIndicator { get { return Get_SetSeqIndicator(); } }
-    public int Ex { get; set; } // Element index, the position of the node in the sequence of nodes
-    public int Ax { get; set; } // Alignment index, relates this object to a specific node query element within the query
-    public QueryExecutionStatus QueryExecutionStatus { get; set; }
+    public string TextValue {
+      get {
+        return Get_TextValue();
+      }
+    }
+    public bool IsFirstInSet {
+      get;
+      set;
+    }
+    public bool IsLastInSet {
+      get;
+      set;
+    }
+    public bool IsFirstInSequence {
+      get;
+      set;
+    }
+    public bool IsLastInSequence {
+      get;
+      set;
+    }
+    public string SetSeqIndicator {
+      get {
+        return Get_SetSeqIndicator();
+      }
+    }
+    public int Ex {
+      get;  // Element index, the position of the node in the sequence of nodes
+      set;
+    }
+    public int Ax {
+      get;  // Alignment index, relates this object to a specific node query element within the query
+      set;
+    }
+    public QueryExecutionStatus QueryExecutionStatus {
+      get;
+      set;
+    }
 
-    public Node Parent { get; set; }
-    public NodeSet NodeSet { get; set; }
+    public Node Parent {
+      get;
+      set;
+    }
+    public NodeSet NodeSet {
+      get;
+      set;
+    }
     public Dictionary<string, object> NodeData;
 
     public Node()
@@ -114,7 +159,7 @@ namespace Org.Dx.Business
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to process the NodeData value '" + nodeData + "'.", ex);
-      }    
+      }
     }
 
     private void SetDxObjectType(object dxObject)

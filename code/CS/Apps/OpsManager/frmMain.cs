@@ -360,7 +360,7 @@ namespace Org.OpsManager
                 continue;
             }
           }
-          
+
           string processorType = st.ProcessorTypeId.ToEnum<ProcessorType>(ProcessorType.NotSet).ToString();
           string periodContext = st.RunUntilPeriodContextID.ToEnum<PeriodContexts>(PeriodContexts.NotSet).ToString();
           if (periodContext == "NotSet")
@@ -545,8 +545,12 @@ namespace Org.OpsManager
       DateTime toDate = DateTime.Now.ToNextDateAtMidnight();
       switch (cboScheduleInterval.Text)
       {
-        case "Week": toDate = toDate.AddDays(7); break;
-        case "Month": toDate = toDate.AddMonths(1); break;
+        case "Week":
+          toDate = toDate.AddDays(7);
+          break;
+        case "Month":
+          toDate = toDate.AddMonths(1);
+          break;
       }
 
       var ts = toDate - DateTime.Now;
@@ -621,7 +625,7 @@ namespace Org.OpsManager
           destinationEnv = "Test";
 
         if (MessageBox.Show("Are you sure you want to migrate Task '" + scheduledTask.TaskName + "' to " + destinationEnv + "?",
-                             "Confirm ScheduledTask Migration to " + destinationEnv, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                            "Confirm ScheduledTask Migration to " + destinationEnv, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
         {
           return;
         }
@@ -634,7 +638,7 @@ namespace Org.OpsManager
         }
 
         MessageBox.Show("The ScheduledTask with its schedules and parameters have been migrated to the " + destinationEnv + " environment.",
-                        "ScheduledTask Migration Successful", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                        "ScheduledTask Migration Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
       catch (Exception ex)
       {
@@ -918,7 +922,7 @@ namespace Org.OpsManager
         foreach (var mapRecon in mapReconSet.Values)
         {
           _maps.Rows.Add(mapRecon.MapName, mapRecon.TaskName, mapRecon.InMapsFolder, mapRecon.MapInDatabase, mapRecon.TaskActive, mapRecon.OppositeTaskName, mapRecon.InOppositeEnvMapsFolder,
-                        mapRecon.MapInOppositeDatabase, mapRecon.TaskActiveInOppositeEnv, mapRecon.MatchStatus);
+                         mapRecon.MapInOppositeDatabase, mapRecon.TaskActiveInOppositeEnv, mapRecon.MatchStatus);
         }
 
         gvMaps.DataSource = _maps;
@@ -1063,7 +1067,7 @@ namespace Org.OpsManager
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while attempting to update the frequency of the task." + g.crlf2 + ex.ToReport(),
-                        "Task Frequency Update - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Task Frequency Update - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -1092,14 +1096,14 @@ namespace Org.OpsManager
 
       int scheduledTaskId = gvScheduledTasks.SelectedRows[0].Cells[0].Value.ToInt32();
       var task = _scheduledTasks[scheduledTaskId];
-      
+
       using (var fAssignTaskGroup = new frmAssignTaskGroup(task, _scheduledTaskGroups, _opsData.TasksDbSpec))
       {
         if (fAssignTaskGroup.ShowDialog() == DialogResult.OK)
         {
           var row = gvScheduledTasks.SelectedRows[0];
           row.Cells[3].Value = task.TaskGroupName;
-          MessageBox.Show("Task Group Updated", "Task Group Assignment"); 
+          MessageBox.Show("Task Group Updated", "Task Group Assignment");
         }
       }
     }
@@ -1121,7 +1125,7 @@ namespace Org.OpsManager
       {
         if (fScheduledTaskList.ShowDialog() == DialogResult.OK)
         {
-          MessageBox.Show(fScheduledTaskList.Result  + g.crlf2 + "Be sure to update any parameter values that were uniquely for the task the parameters were copied from.", 
+          MessageBox.Show(fScheduledTaskList.Result  + g.crlf2 + "Be sure to update any parameter values that were uniquely for the task the parameters were copied from.",
                           "Scheduled Task Items Copied", MessageBoxButtons.OK, MessageBoxIcon.Information);
           LoadScheduledTasksToGrid();
         }
@@ -1159,7 +1163,7 @@ namespace Org.OpsManager
           string processorNameAndVersion = scheduledRun.ScheduledTask.ProcessorName + "_" + scheduledRun.ScheduledTask.ProcessorVersion;
 
           gvScheduledRuns.Rows.Add(scheduledRun.ScheduledTask.TaskName, scheduledRun.ScheduledRunDateTime, processorType, processorNameAndVersion,
-            scheduledRun.ScheduledRunType, scheduledRun.ScheduledTask.RunUntilTask ? "Y" : "N");
+                                   scheduledRun.ScheduledRunType, scheduledRun.ScheduledTask.RunUntilTask ? "Y" : "N");
         }
       }
       catch (Exception ex)
@@ -1184,7 +1188,7 @@ namespace Org.OpsManager
         var configWsSpec = GetServiceEndpointWsSpec(serviceName);
         if (configWsSpec == null)
         {
-          MessageBox.Show("Configuration data for management web service for Windows service named '" + serviceName + "' is incorrect." + g.crlf2 + 
+          MessageBox.Show("Configuration data for management web service for Windows service named '" + serviceName + "' is incorrect." + g.crlf2 +
                           "Could not create specification for web service endpoint.", "OpsManager - Configuration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
           return;
         }
@@ -1204,7 +1208,7 @@ namespace Org.OpsManager
           if (subCommandName == "PauseTaskProcessing")
             subCommandName = "PauseWinService";
           if (subCommandName == "ResumeTaskProcessing")
-            subCommandName = "ResumeWinService";      
+            subCommandName = "ResumeWinService";
 
           subCommand.WsCommandName = g.ToEnum<WsCommandName>(subCommandName, WsCommandName.NotSet);
 
@@ -1300,7 +1304,7 @@ namespace Org.OpsManager
         env = "Dev";
       }
 
-      string endPointKey = env + "_" + serviceName; 
+      string endPointKey = env + "_" + serviceName;
 
       if (!_serviceEndpoints.ContainsKey(endPointKey))
         return null;
@@ -1357,7 +1361,7 @@ namespace Org.OpsManager
             TreeNode configNode = configSetNode.Nodes.Add(config.Key);
             configNode.ImageKey = configNode.SelectedImageKey = "config.ico";
             configNode.Tag = new OpsCtl.PanelData(OpsCtl.NotifyType.NotifyConfig, OpsCtl.NodeType.Reference, config.Value.NotifyConfigId, null,
-                                           configSet.NotifyConfigSetId, configNode.FullPath, _opsData.NotifyDbSpec);
+                                                  configSet.NotifyConfigSetId, configNode.FullPath, _opsData.NotifyDbSpec);
             foreach (var nEvent in config.Value.NotifyEventSet)
             {
               TreeNode eventNode = configNode.Nodes.Add(nEvent.Key);
@@ -1370,15 +1374,15 @@ namespace Org.OpsManager
                 TreeNode groupNode = eventNode.Nodes.Add(group.Name);
                 groupNode.ImageKey = groupNode.SelectedImageKey = "group.ico";
                 int eventGroupId = config.Value.NotifyEventGroups.First(eg => eg.Value.NotifyEventID == nEvent.Value.NotifyEventId &&
-                                                                        eg.Value.NotifyGroupID == group.NotifyGroupId).Key;
+                                   eg.Value.NotifyGroupID == group.NotifyGroupId).Key;
                 groupNode.Tag = new OpsCtl.PanelData(OpsCtl.NotifyType.NotifyGroup, OpsCtl.NodeType.Reference, group.NotifyGroupId, eventGroupId,
-                                              nEvent.Value.NotifyEventId, groupNode.FullPath, _opsData.NotifyDbSpec);
+                                                     nEvent.Value.NotifyEventId, groupNode.FullPath, _opsData.NotifyDbSpec);
                 foreach (var person in group)
                 {
                   TreeNode personNode = groupNode.Nodes.Add(person.Name);
                   personNode.ImageKey = personNode.SelectedImageKey = "person.ico";
                   personNode.Tag = new OpsCtl.PanelData(OpsCtl.NotifyType.NotifyPerson, OpsCtl.NodeType.Reference, person.NotifyPersonId, person.NotifyPersonGroupId,
-                                                 group.NotifyGroupId, personNode.FullPath, _opsData.NotifyDbSpec);
+                                                        group.NotifyGroupId, personNode.FullPath, _opsData.NotifyDbSpec);
                 }
               }
             }
@@ -1411,15 +1415,15 @@ namespace Org.OpsManager
               TreeNode groupNode = eventNode.Nodes.Add(group.Name);
               groupNode.ImageKey = groupNode.SelectedImageKey = "group.ico";
               int eventGroupId = config.NotifyEventGroups.First(eg => eg.Value.NotifyEventID == nEvent.Value.NotifyEventId &&
-                                                                      eg.Value.NotifyGroupID == group.NotifyGroupId).Key;
+                                 eg.Value.NotifyGroupID == group.NotifyGroupId).Key;
               groupNode.Tag = new OpsCtl.PanelData(OpsCtl.NotifyType.NotifyGroup, OpsCtl.NodeType.Reference, group.NotifyGroupId, eventGroupId,
-                                            nEvent.Value.NotifyEventId, groupNode.FullPath, _opsData.NotifyDbSpec);
+                                                   nEvent.Value.NotifyEventId, groupNode.FullPath, _opsData.NotifyDbSpec);
               foreach (var person in group)
               {
                 TreeNode personNode = groupNode.Nodes.Add(person.Name);
                 personNode.ImageKey = personNode.SelectedImageKey = "person.ico";
                 personNode.Tag = new OpsCtl.PanelData(OpsCtl.NotifyType.NotifyPerson, OpsCtl.NodeType.Reference, person.NotifyPersonId, person.NotifyPersonGroupId,
-                                               group.NotifyGroupId, personNode.FullPath, _opsData.NotifyDbSpec);
+                                                      group.NotifyGroupId, personNode.FullPath, _opsData.NotifyDbSpec);
               }
             }
           }
@@ -1439,7 +1443,7 @@ namespace Org.OpsManager
             TreeNode personNode = groupNode.Nodes.Add(person.Name);
             personNode.ImageKey = personNode.SelectedImageKey = "person.ico";
             personNode.Tag = new OpsCtl.PanelData(OpsCtl.NotifyType.NotifyPerson, OpsCtl.NodeType.Reference, person.NotifyPersonId, person.NotifyPersonGroupId,
-                                           group.NotifyGroupId, personNode.FullPath, _opsData.NotifyDbSpec);
+                                                  group.NotifyGroupId, personNode.FullPath, _opsData.NotifyDbSpec);
           }
         }
 
@@ -1649,9 +1653,15 @@ namespace Org.OpsManager
         {
           switch (currentNode.Text)
           {
-            case "NotifyConfigs": newNotifyType = OpsCtl.NotifyType.NotifyConfig; break;
-            case "NotifyGroups": newNotifyType = OpsCtl.NotifyType.NotifyGroup; break;
-            case "NotifyPersons": newNotifyType = OpsCtl.NotifyType.NotifyPerson; break;
+            case "NotifyConfigs":
+              newNotifyType = OpsCtl.NotifyType.NotifyConfig;
+              break;
+            case "NotifyGroups":
+              newNotifyType = OpsCtl.NotifyType.NotifyGroup;
+              break;
+            case "NotifyPersons":
+              newNotifyType = OpsCtl.NotifyType.NotifyPerson;
+              break;
           }
           panelData = new OpsCtl.PanelData(newNotifyType, OpsCtl.NodeType.NotSet, null, null, null, currentNode.FullPath + "\\[NewObject]", _opsData.NotifyDbSpec);
           panel = panelFactory.CreatePanel(panelData, OpsCtl.ChangeType.Insert);
@@ -1677,12 +1687,28 @@ namespace Org.OpsManager
         var basePanel = pnlNotificationHolder.Controls[0] as OpsCtl.BasePanel;
         switch (basePanel.NotifyType)
         {
-          case OpsCtl.NotifyType.NotifyConfigSet: var ncsPanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyConfigSetPanel; ncsPanel.Delete(); break;
-          case OpsCtl.NotifyType.NotifyConfig: var ncPanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyConfigPanel; ncPanel.Delete(); break;
-          case OpsCtl.NotifyType.NotifyEvent: var ePanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyEventPanel; ePanel.Delete(); break;
-          case OpsCtl.NotifyType.NotifyGroup: var gPanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyGroupPanel; gPanel.Delete(); break;
-          case OpsCtl.NotifyType.NotifyPerson: var pPanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyPersonPanel; pPanel.Delete(); break;
-          default: return;
+          case OpsCtl.NotifyType.NotifyConfigSet:
+            var ncsPanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyConfigSetPanel;
+            ncsPanel.Delete();
+            break;
+          case OpsCtl.NotifyType.NotifyConfig:
+            var ncPanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyConfigPanel;
+            ncPanel.Delete();
+            break;
+          case OpsCtl.NotifyType.NotifyEvent:
+            var ePanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyEventPanel;
+            ePanel.Delete();
+            break;
+          case OpsCtl.NotifyType.NotifyGroup:
+            var gPanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyGroupPanel;
+            gPanel.Delete();
+            break;
+          case OpsCtl.NotifyType.NotifyPerson:
+            var pPanel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyPersonPanel;
+            pPanel.Delete();
+            break;
+          default:
+            return;
         }
       }
     }
@@ -1749,18 +1775,28 @@ namespace Org.OpsManager
           case OpsCtl.NotifyType.NotSet:
             switch (e.Node.Text)
             {
-              case "ConfigurationsInUse": newObjectName = "NotifyConfigSet"; break;
-              case "NotifyConfigs": newObjectName = "NotifyConfig"; break;
-              case "NotifyGroups": newObjectName = "NotifyGroup"; break;
-              case "NotifyPersons": newObjectName = "NotifyPerson"; break;
-              default: return;
+              case "ConfigurationsInUse":
+                newObjectName = "NotifyConfigSet";
+                break;
+              case "NotifyConfigs":
+                newObjectName = "NotifyConfig";
+                break;
+              case "NotifyGroups":
+                newObjectName = "NotifyGroup";
+                break;
+              case "NotifyPersons":
+                newObjectName = "NotifyPerson";
+                break;
+              default:
+                return;
             }
 
             ctxMenuNotifications.Items[0].Visible = true;
             ctxMenuNotifications.Items[1].Visible = false;
             break;
 
-          default: return;
+          default:
+            return;
         }
 
         ctxMenuNotifications.Items[0].Text = "Add New " + newObjectName;
@@ -1877,7 +1913,8 @@ namespace Org.OpsManager
               result.XRefId = newXRefId = notifyRepo.InsertNotifyPersonGroup(npg);
             break;
 
-          default: return;
+          default:
+            return;
         }
 
         TreeNode clone = draggedNode.Clone() as TreeNode;
@@ -1918,11 +1955,21 @@ namespace Org.OpsManager
 
         switch (command)
         {
-          case "StartWinService": wsCommandRequest.WsCommandName = WsCommandName.StartWinService; break;
-          case "StopWinService": wsCommandRequest.WsCommandName = WsCommandName.StopWinService; break;
-          case "PauseWinService": wsCommandRequest.WsCommandName = WsCommandName.PauseWinService; break;
-          case "ResumeWinService": wsCommandRequest.WsCommandName = WsCommandName.ResumeWinService; break;
-          default: this.Cursor = Cursors.Default; return;
+          case "StartWinService":
+            wsCommandRequest.WsCommandName = WsCommandName.StartWinService;
+            break;
+          case "StopWinService":
+            wsCommandRequest.WsCommandName = WsCommandName.StopWinService;
+            break;
+          case "PauseWinService":
+            wsCommandRequest.WsCommandName = WsCommandName.PauseWinService;
+            break;
+          case "ResumeWinService":
+            wsCommandRequest.WsCommandName = WsCommandName.ResumeWinService;
+            break;
+          default:
+            this.Cursor = Cursors.Default;
+            return;
         }
 
         WsMessage responseMessage = SendRequestMessage(wsCommandRequest);
@@ -1954,9 +2001,15 @@ namespace Org.OpsManager
 
         switch (command)
         {
-          case "StartWebSite": wsCommandRequest.WsCommandName = WsCommandName.StartWebSite; break;
-          case "StopWebSite": wsCommandRequest.WsCommandName = WsCommandName.StopWebSite; break;
-          default: this.Cursor = Cursors.Default; return;
+          case "StartWebSite":
+            wsCommandRequest.WsCommandName = WsCommandName.StartWebSite;
+            break;
+          case "StopWebSite":
+            wsCommandRequest.WsCommandName = WsCommandName.StopWebSite;
+            break;
+          default:
+            this.Cursor = Cursors.Default;
+            return;
         }
 
         WsMessage responseMessage = SendRequestMessage(wsCommandRequest);
@@ -1989,9 +2042,14 @@ namespace Org.OpsManager
 
         switch (command)
         {
-          case "StartAppPool": wsCommandRequest.WsCommandName = WsCommandName.StartAppPool; break;
-          case "StopAppPool": wsCommandRequest.WsCommandName = WsCommandName.StopAppPool; break;
-          default: return;
+          case "StartAppPool":
+            wsCommandRequest.WsCommandName = WsCommandName.StartAppPool;
+            break;
+          case "StopAppPool":
+            wsCommandRequest.WsCommandName = WsCommandName.StopAppPool;
+            break;
+          default:
+            return;
         }
 
         WsMessage responseMessage = SendRequestMessage(wsCommandRequest);
@@ -2205,7 +2263,8 @@ namespace Org.OpsManager
 
             return wsCommand.ObjectWrapper.GetObject();
 
-          default: return null;
+          default:
+            return null;
         }
       }
       catch (Exception ex)
@@ -2225,7 +2284,10 @@ namespace Org.OpsManager
           var gvMousePos = gvWindowsServices.PointToClient(Control.MousePosition);
           var hit = gvWindowsServices.HitTest(gvMousePos.X, gvMousePos.Y);
           if (hit.RowIndex == -1)
-          { e.Cancel = true; return; }
+          {
+            e.Cancel = true;
+            return;
+          }
 
           gvWindowsServices.ClearSelection();
           gvWindowsServices.Rows[hit.RowIndex].Selected = true;
@@ -2254,7 +2316,10 @@ namespace Org.OpsManager
           var gvMousePos = gvWebSites.PointToClient(Control.MousePosition);
           var hit = gvWebSites.HitTest(gvMousePos.X, gvMousePos.Y);
           if (hit.RowIndex == -1)
-          { e.Cancel = true; return; }
+          {
+            e.Cancel = true;
+            return;
+          }
 
           gvWebSites.ClearSelection();
           gvWebSites.Rows[hit.RowIndex].Selected = true;
@@ -2285,7 +2350,10 @@ namespace Org.OpsManager
           var gvMousePos = gvAppPools.PointToClient(Control.MousePosition);
           var hit = gvAppPools.HitTest(gvMousePos.X, gvMousePos.Y);
           if (hit.RowIndex == -1)
-          { e.Cancel = true; return; }
+          {
+            e.Cancel = true;
+            return;
+          }
 
           gvAppPools.ClearSelection();
           gvAppPools.Rows[hit.RowIndex].Selected = true;
@@ -2359,8 +2427,8 @@ namespace Org.OpsManager
           string entityDesc = al.EntityId.HasValue ? _opsData.AppLogEntities[al.EntityId.Value] + " (" + al.EntityId + ")" : "";
           string moduleDesc = al.ModuleId.HasValue ? _opsData.AppLogModules[al.ModuleId.Value] + " (" + al.ModuleId + ")" : "";
           string client = (al.ClientHost.IsNotBlank() || al.ClientIp.IsNotBlank() || al.ClientUser.IsNotBlank() ||
-                         al.ClientApplication.IsNotBlank() || al.ClientApplicationVersion.IsNotBlank() || al.TransactionName.IsNotBlank()) ?
-                         "Y" : "";
+                           al.ClientApplication.IsNotBlank() || al.ClientApplicationVersion.IsNotBlank() || al.TransactionName.IsNotBlank()) ?
+                          "Y" : "";
           string detail = al.AppLogDetailSet.Count > 0 ? "Y" : "";
           gvLogging.Rows.Add(al.LogDateTime, al.SeverityCode, al.Message, moduleDesc, al.EventCode, entityDesc, client, detail, al.LogId);
         }
@@ -2514,7 +2582,8 @@ namespace Org.OpsManager
               btnNewIdentifier.Enabled = true;
               break;
 
-            default: btnNewIdentifier.Enabled = false;
+            default:
+              btnNewIdentifier.Enabled = false;
               break;
           }
         }
@@ -2548,7 +2617,8 @@ namespace Org.OpsManager
           identifierType = IdentifierType.Entity;
           break;
 
-        default: return;
+        default:
+          return;
       }
 
       bool isNewIdentifier;
@@ -2620,12 +2690,13 @@ namespace Org.OpsManager
               else return;
               break;
 
-            default: return;
+            default:
+              return;
           }
         }
 
         result = MessageBox.Show("A " + cboIdentifiers.Text.Substring(0, cboIdentifiers.Text.Length - 1) + " with ID " + id + " already exists in " + destinationEnv + " with description: " +
-                                     destDescription + "." + g.crlf2 + "Are you sure you want to overwrite?", "OpsManager - Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                 destDescription + "." + g.crlf2 + "Are you sure you want to overwrite?", "OpsManager - Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
         if (result == DialogResult.No)
           return;
@@ -2634,9 +2705,15 @@ namespace Org.OpsManager
         {
           switch (cboIdentifiers.Text)
           {
-            case "Modules": logRepo.UpdateAppLogModule(id, description); break;
-            case "Events": logRepo.UpdateAppLogEvent(id, description); break;
-            case "Entities": logRepo.UpdateAppLogEntity(id, description); break;
+            case "Modules":
+              logRepo.UpdateAppLogModule(id, description);
+              break;
+            case "Events":
+              logRepo.UpdateAppLogEvent(id, description);
+              break;
+            case "Entities":
+              logRepo.UpdateAppLogEntity(id, description);
+              break;
           }
         }
       }
@@ -2898,7 +2975,7 @@ namespace Org.OpsManager
           ctxMenuScheduledTaskRefreshTaskRequests.Visible = false;
           ctxMenuScheduledTaskPingWebService.Visible = false;
           ctxMenuScheduledTaskPauseTaskProcessing.Visible = false;
-          ctxMenuScheduledTaskResumeTaskProcessing.Visible = false; 
+          ctxMenuScheduledTaskResumeTaskProcessing.Visible = false;
           break;
 
         case "Freq":
@@ -3088,17 +3165,28 @@ namespace Org.OpsManager
         if (panel.IsDirty)
         {
           result = MessageBox.Show("Changes have been made to the current window." + g.crlf + "Do you want to save your changes?",
-                                       "OpsManager - Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                                   "OpsManager - Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
           if (result == DialogResult.Yes)
           {
             switch (panel.NotifyType)
             {
-              case OpsCtl.NotifyType.NotifyConfigSet: panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyConfigSetPanel; break;
-              case OpsCtl.NotifyType.NotifyConfig: panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyConfigPanel; break;
-              case OpsCtl.NotifyType.NotifyEvent: panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyEventPanel; break;
-              case OpsCtl.NotifyType.NotifyGroup: panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyGroupPanel; break;
-              case OpsCtl.NotifyType.NotifyPerson: panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyPersonPanel; break;
-              default: return DialogResult.None;
+              case OpsCtl.NotifyType.NotifyConfigSet:
+                panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyConfigSetPanel;
+                break;
+              case OpsCtl.NotifyType.NotifyConfig:
+                panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyConfigPanel;
+                break;
+              case OpsCtl.NotifyType.NotifyEvent:
+                panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyEventPanel;
+                break;
+              case OpsCtl.NotifyType.NotifyGroup:
+                panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyGroupPanel;
+                break;
+              case OpsCtl.NotifyType.NotifyPerson:
+                panel = pnlNotificationHolder.Controls[0] as OpsCtl.NotifyPersonPanel;
+                break;
+              default:
+                return DialogResult.None;
             }
             panel.Controls.OfType<Button>().First(b => b.Name == "btnSave").PerformClick();
           }
@@ -3134,7 +3222,7 @@ namespace Org.OpsManager
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during program initialiation." + g.crlf2 +
-                         ex.ToReport(), "OpsManager - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), "OpsManager - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
       try
@@ -3211,7 +3299,7 @@ namespace Org.OpsManager
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during program initialiation." + g.crlf2 +
-                         ex.ToReport(), "OpsManager - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), "OpsManager - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 

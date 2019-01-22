@@ -28,17 +28,44 @@ namespace Org.GS.Notifications
 
   public class Notification
   {
-    public NotificationSource NotificationSource { get; set; }
-    public string EventName { get; set; }
-    public string TaskName { get; set; }
-    public string Subject { get; set; }
-    public string Body { get; set; }
-    public bool IsBodyHtml { get; set; }
-    public int Code { get; set; }
-    public NotificationStatus NotificationStatus { get; set; }
-    public TaskResult TaskResult { get; set; }
+    public NotificationSource NotificationSource {
+      get;
+      set;
+    }
+    public string EventName {
+      get;
+      set;
+    }
+    public string TaskName {
+      get;
+      set;
+    }
+    public string Subject {
+      get;
+      set;
+    }
+    public string Body {
+      get;
+      set;
+    }
+    public bool IsBodyHtml {
+      get;
+      set;
+    }
+    public int Code {
+      get;
+      set;
+    }
+    public NotificationStatus NotificationStatus {
+      get;
+      set;
+    }
+    public TaskResult TaskResult {
+      get;
+      set;
+    }
 
-    public Exception Exception 
+    public Exception Exception
     {
       set
       {
@@ -65,7 +92,7 @@ namespace Org.GS.Notifications
       }
 
       var notifyEvent = notifyConfigSet.GetNotifyEventForTaskResult(taskResult);
-      
+
       if (notifyEvent == null)
       {
         this.NotificationStatus = NotificationStatus.NotConfigured;
@@ -146,7 +173,7 @@ namespace Org.GS.Notifications
       this.IsBodyHtml = false;
       this.Code = -1;
       this.NotificationStatus = NotificationStatus.NotSet;
-      this.Exception = null; 
+      this.Exception = null;
     }
   }
 }

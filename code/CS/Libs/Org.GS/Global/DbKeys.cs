@@ -8,7 +8,10 @@ namespace Org.GS
 {
   public class DbKeys : Dictionary<string, object>
   {
-    public Dictionary<string, DbKeys> ChildKeys { get; set; }
+    public Dictionary<string, DbKeys> ChildKeys {
+      get;
+      set;
+    }
     public DbKeys()
     {
       this.ChildKeys = new Dictionary<string, DbKeys>();

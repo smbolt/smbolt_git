@@ -14,33 +14,64 @@ namespace Org.Dx.Business
   public class DxMapSet : Dictionary<string, DxMap>
   {
     [XMap(IsRequired = true )]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public ExtractionMap ExtractionMap { get; set; }
+    public ExtractionMap ExtractionMap {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, WrapperElement = "DxCommandSet", CollectionElements = "DxCommand")]
-    public DxCommandSet DxCommandSet { get; set; }
+    public DxCommandSet DxCommandSet {
+      get;
+      set;
+    }
 
     [XMap]
-    public string PreProcessingRoutine { get; set; }
-    
+    public string PreProcessingRoutine {
+      get;
+      set;
+    }
+
     [XMap(XType = XType.Element, WrapperElement = "DxMapSet", CollectionElements = "DxProcessingRoutine")]
-    public DxProcessingRoutineSet DxProcessingRoutineSet { get; set; }
-    
+    public DxProcessingRoutineSet DxProcessingRoutineSet {
+      get;
+      set;
+    }
+
     [XMap(XType = XType.Element, WrapperElement = "DxMapSet", CollectionElements = "DxRegion")]
-    public DxRegionSet DxRegionSet { get; set; }
+    public DxRegionSet DxRegionSet {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ColumnIndexMapName { get; set; }
+    public string ColumnIndexMapName {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, WrapperElement = "DxMapSet", CollectionElements = "DxFilterSet")]
-    public DxFilterSet DxFilterSet { get; set; }
+    public DxFilterSet DxFilterSet {
+      get;
+      set;
+    }
 
     [XMap]
-    public string FullMapPath { get; set; }
+    public string FullMapPath {
+      get;
+      set;
+    }
 
-    public DxMapType DxMapType { get { return Get_DxMapType(); } }
+    public DxMapType DxMapType {
+      get {
+        return Get_DxMapType();
+      }
+    }
 
     public DxMapSet()
     {
@@ -162,7 +193,7 @@ namespace Org.Dx.Business
     private DxProcessingRoutineSet Get_DxProcessingRoutineSet()
     {
       var dxProcessingRoutineSet = new DxProcessingRoutineSet();
-      
+
       return dxProcessingRoutineSet;
     }
   }

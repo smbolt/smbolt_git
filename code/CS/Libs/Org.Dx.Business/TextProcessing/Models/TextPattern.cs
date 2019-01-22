@@ -9,8 +9,14 @@ namespace Org.Dx.Business.TextProcessing
 {
   public class TextPattern
   {
-    public int OccurrenceCount { get; set; }
-    public SortedList<int, Text> TextPatternItems { get; set; }
+    public int OccurrenceCount {
+      get;
+      set;
+    }
+    public SortedList<int, Text> TextPatternItems {
+      get;
+      set;
+    }
 
     public TextPattern()
     {

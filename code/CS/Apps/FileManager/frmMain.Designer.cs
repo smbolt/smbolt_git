@@ -65,9 +65,9 @@
       this.gbArchiveManagement.SuspendLayout();
       this.mnuMain.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 513);
       this.lblStatus.Name = "lblStatus";
@@ -76,9 +76,9 @@
       this.lblStatus.TabIndex = 0;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.gbFileSegmentation);
       this.pnlTop.Controls.Add(this.gbFileLocations);
       this.pnlTop.Controls.Add(this.gbArchiveManagement);
@@ -87,9 +87,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1052, 223);
       this.pnlTop.TabIndex = 1;
-      // 
+      //
       // gbFileSegmentation
-      // 
+      //
       this.gbFileSegmentation.Controls.Add(this.lblSegmentSize);
       this.gbFileSegmentation.Controls.Add(this.lblFileSize);
       this.gbFileSegmentation.Controls.Add(this.cboSegmentSize);
@@ -103,9 +103,9 @@
       this.gbFileSegmentation.TabIndex = 0;
       this.gbFileSegmentation.TabStop = false;
       this.gbFileSegmentation.Text = "File Segmentation";
-      // 
+      //
       // btnDesegmentFile
-      // 
+      //
       this.btnDesegmentFile.Location = new System.Drawing.Point(19, 48);
       this.btnDesegmentFile.Name = "btnDesegmentFile";
       this.btnDesegmentFile.Size = new System.Drawing.Size(125, 23);
@@ -114,9 +114,9 @@
       this.btnDesegmentFile.Text = "Desegment File";
       this.btnDesegmentFile.UseVisualStyleBackColor = true;
       this.btnDesegmentFile.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSegmentFile
-      // 
+      //
       this.btnSegmentFile.Location = new System.Drawing.Point(19, 19);
       this.btnSegmentFile.Name = "btnSegmentFile";
       this.btnSegmentFile.Size = new System.Drawing.Size(125, 23);
@@ -125,11 +125,11 @@
       this.btnSegmentFile.Text = "Segment File";
       this.btnSegmentFile.UseVisualStyleBackColor = true;
       this.btnSegmentFile.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // gbFileLocations
-      // 
-      this.gbFileLocations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      //
+      this.gbFileLocations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                                     | System.Windows.Forms.AnchorStyles.Right)));
       this.gbFileLocations.Controls.Add(this.lblDesegmentationTargetValue);
       this.gbFileLocations.Controls.Add(this.lblExtractTargetValue);
       this.gbFileLocations.Controls.Add(this.lblSegmentationTargetValue);
@@ -148,117 +148,117 @@
       this.gbFileLocations.TabIndex = 0;
       this.gbFileLocations.TabStop = false;
       this.gbFileLocations.Text = "File Locations";
-      // 
+      //
       // lblDesegmentationTargetValue
-      // 
+      //
       this.lblDesegmentationTargetValue.AutoSize = true;
       this.lblDesegmentationTargetValue.Location = new System.Drawing.Point(136, 121);
       this.lblDesegmentationTargetValue.Name = "lblDesegmentationTargetValue";
       this.lblDesegmentationTargetValue.Size = new System.Drawing.Size(118, 13);
       this.lblDesegmentationTargetValue.TabIndex = 0;
       this.lblDesegmentationTargetValue.Text = "[desegmentation target]";
-      // 
+      //
       // lblExtractTargetValue
-      // 
+      //
       this.lblExtractTargetValue.AutoSize = true;
       this.lblExtractTargetValue.Location = new System.Drawing.Point(136, 56);
       this.lblExtractTargetValue.Name = "lblExtractTargetValue";
       this.lblExtractTargetValue.Size = new System.Drawing.Size(75, 13);
       this.lblExtractTargetValue.TabIndex = 0;
       this.lblExtractTargetValue.Text = "[extract target]";
-      // 
+      //
       // lblSegmentationTargetValue
-      // 
+      //
       this.lblSegmentationTargetValue.AutoSize = true;
       this.lblSegmentationTargetValue.Location = new System.Drawing.Point(136, 103);
       this.lblSegmentationTargetValue.Name = "lblSegmentationTargetValue";
       this.lblSegmentationTargetValue.Size = new System.Drawing.Size(106, 13);
       this.lblSegmentationTargetValue.TabIndex = 0;
       this.lblSegmentationTargetValue.Text = "[segmentation target]";
-      // 
+      //
       // lblArchiveTargetValue
-      // 
+      //
       this.lblArchiveTargetValue.AutoSize = true;
       this.lblArchiveTargetValue.Location = new System.Drawing.Point(136, 38);
       this.lblArchiveTargetValue.Name = "lblArchiveTargetValue";
       this.lblArchiveTargetValue.Size = new System.Drawing.Size(78, 13);
       this.lblArchiveTargetValue.TabIndex = 0;
       this.lblArchiveTargetValue.Text = "[archive target]";
-      // 
+      //
       // lblSegmentationSourceValue
-      // 
+      //
       this.lblSegmentationSourceValue.AutoSize = true;
       this.lblSegmentationSourceValue.Location = new System.Drawing.Point(136, 85);
       this.lblSegmentationSourceValue.Name = "lblSegmentationSourceValue";
       this.lblSegmentationSourceValue.Size = new System.Drawing.Size(111, 13);
       this.lblSegmentationSourceValue.TabIndex = 0;
       this.lblSegmentationSourceValue.Text = "[segmentation source]";
-      // 
+      //
       // lblArchiveSourceValue
-      // 
+      //
       this.lblArchiveSourceValue.AutoSize = true;
       this.lblArchiveSourceValue.Location = new System.Drawing.Point(136, 20);
       this.lblArchiveSourceValue.Name = "lblArchiveSourceValue";
       this.lblArchiveSourceValue.Size = new System.Drawing.Size(83, 13);
       this.lblArchiveSourceValue.TabIndex = 0;
       this.lblArchiveSourceValue.Text = "[archive source]";
-      // 
+      //
       // lblDesegmentationTarget
-      // 
+      //
       this.lblDesegmentationTarget.AutoSize = true;
       this.lblDesegmentationTarget.Location = new System.Drawing.Point(7, 121);
       this.lblDesegmentationTarget.Name = "lblDesegmentationTarget";
       this.lblDesegmentationTarget.Size = new System.Drawing.Size(121, 13);
       this.lblDesegmentationTarget.TabIndex = 0;
       this.lblDesegmentationTarget.Text = "Desegmentation Target:";
-      // 
+      //
       // lblExtractTarget
-      // 
+      //
       this.lblExtractTarget.AutoSize = true;
       this.lblExtractTarget.Location = new System.Drawing.Point(7, 56);
       this.lblExtractTarget.Name = "lblExtractTarget";
       this.lblExtractTarget.Size = new System.Drawing.Size(77, 13);
       this.lblExtractTarget.TabIndex = 0;
       this.lblExtractTarget.Text = "Extract Target:";
-      // 
+      //
       // lblSegmentationTarget
-      // 
+      //
       this.lblSegmentationTarget.AutoSize = true;
       this.lblSegmentationTarget.Location = new System.Drawing.Point(7, 103);
       this.lblSegmentationTarget.Name = "lblSegmentationTarget";
       this.lblSegmentationTarget.Size = new System.Drawing.Size(109, 13);
       this.lblSegmentationTarget.TabIndex = 0;
       this.lblSegmentationTarget.Text = "Segmentation Target:";
-      // 
+      //
       // lblSegmentationSource
-      // 
+      //
       this.lblSegmentationSource.AutoSize = true;
       this.lblSegmentationSource.Location = new System.Drawing.Point(7, 85);
       this.lblSegmentationSource.Name = "lblSegmentationSource";
       this.lblSegmentationSource.Size = new System.Drawing.Size(112, 13);
       this.lblSegmentationSource.TabIndex = 0;
       this.lblSegmentationSource.Text = "Segmentation Source:";
-      // 
+      //
       // lblArchiveTarget
-      // 
+      //
       this.lblArchiveTarget.AutoSize = true;
       this.lblArchiveTarget.Location = new System.Drawing.Point(7, 38);
       this.lblArchiveTarget.Name = "lblArchiveTarget";
       this.lblArchiveTarget.Size = new System.Drawing.Size(80, 13);
       this.lblArchiveTarget.TabIndex = 0;
       this.lblArchiveTarget.Text = "Archive Target:";
-      // 
+      //
       // lblArchiveSource
-      // 
+      //
       this.lblArchiveSource.AutoSize = true;
       this.lblArchiveSource.Location = new System.Drawing.Point(7, 20);
       this.lblArchiveSource.Name = "lblArchiveSource";
       this.lblArchiveSource.Size = new System.Drawing.Size(83, 13);
       this.lblArchiveSource.TabIndex = 0;
       this.lblArchiveSource.Text = "Archive Source:";
-      // 
+      //
       // gbArchiveManagement
-      // 
+      //
       this.gbArchiveManagement.Controls.Add(this.btnExtractArchive);
       this.gbArchiveManagement.Controls.Add(this.btnCreateArchive);
       this.gbArchiveManagement.Location = new System.Drawing.Point(13, 6);
@@ -267,9 +267,9 @@
       this.gbArchiveManagement.TabIndex = 0;
       this.gbArchiveManagement.TabStop = false;
       this.gbArchiveManagement.Text = "Archive Management";
-      // 
+      //
       // btnExtractArchive
-      // 
+      //
       this.btnExtractArchive.Location = new System.Drawing.Point(19, 46);
       this.btnExtractArchive.Name = "btnExtractArchive";
       this.btnExtractArchive.Size = new System.Drawing.Size(125, 23);
@@ -278,9 +278,9 @@
       this.btnExtractArchive.Text = "Extract Archive";
       this.btnExtractArchive.UseVisualStyleBackColor = true;
       this.btnExtractArchive.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCreateArchive
-      // 
+      //
       this.btnCreateArchive.Location = new System.Drawing.Point(19, 19);
       this.btnCreateArchive.Name = "btnCreateArchive";
       this.btnCreateArchive.Size = new System.Drawing.Size(125, 23);
@@ -289,35 +289,37 @@
       this.btnCreateArchive.Text = "Create Archive";
       this.btnCreateArchive.UseVisualStyleBackColor = true;
       this.btnCreateArchive.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1052, 24);
       this.mnuMain.TabIndex = 2;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtOut.Location = new System.Drawing.Point(0, 247);
@@ -327,9 +329,9 @@
       this.txtOut.Size = new System.Drawing.Size(1052, 266);
       this.txtOut.TabIndex = 3;
       this.txtOut.WordWrap = false;
-      // 
+      //
       // btnCreateDummySegmentationData
-      // 
+      //
       this.btnCreateDummySegmentationData.Location = new System.Drawing.Point(19, 77);
       this.btnCreateDummySegmentationData.Name = "btnCreateDummySegmentationData";
       this.btnCreateDummySegmentationData.Size = new System.Drawing.Size(125, 23);
@@ -338,61 +340,63 @@
       this.btnCreateDummySegmentationData.Text = "Create Dummy Data";
       this.btnCreateDummySegmentationData.UseVisualStyleBackColor = true;
       this.btnCreateDummySegmentationData.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // cboFileSize
-      // 
+      //
       this.cboFileSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboFileSize.FormattingEnabled = true;
       this.cboFileSize.Items.AddRange(new object[] {
-            "100 (0.1 MB)",
-            "1,000 (1 MB)",
-            "5,000 (5 MB)",
-            "10,000 (10 MB)",
-            "20,000 (20 MB)",
-            "50,000 (50 MB)",
-            "100,000 (100 MB)"});
+        "100 (0.1 MB)",
+        "1,000 (1 MB)",
+        "5,000 (5 MB)",
+        "10,000 (10 MB)",
+        "20,000 (20 MB)",
+        "50,000 (50 MB)",
+        "100,000 (100 MB)"
+      });
       this.cboFileSize.Location = new System.Drawing.Point(19, 131);
       this.cboFileSize.Name = "cboFileSize";
       this.cboFileSize.Size = new System.Drawing.Size(125, 21);
       this.cboFileSize.TabIndex = 1;
-      // 
+      //
       // lblFileSize
-      // 
+      //
       this.lblFileSize.AutoSize = true;
       this.lblFileSize.Location = new System.Drawing.Point(19, 114);
       this.lblFileSize.Name = "lblFileSize";
       this.lblFileSize.Size = new System.Drawing.Size(69, 13);
       this.lblFileSize.TabIndex = 2;
       this.lblFileSize.Text = "File Size (KB)";
-      // 
+      //
       // cboSegmentSize
-      // 
+      //
       this.cboSegmentSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboSegmentSize.FormattingEnabled = true;
       this.cboSegmentSize.Items.AddRange(new object[] {
-            "1",
-            "5",
-            "10",
-            "20",
-            "50",
-            "100",
-            "200"});
+        "1",
+        "5",
+        "10",
+        "20",
+        "50",
+        "100",
+        "200"
+      });
       this.cboSegmentSize.Location = new System.Drawing.Point(19, 179);
       this.cboSegmentSize.Name = "cboSegmentSize";
       this.cboSegmentSize.Size = new System.Drawing.Size(125, 21);
       this.cboSegmentSize.TabIndex = 1;
-      // 
+      //
       // lblSegmentSize
-      // 
+      //
       this.lblSegmentSize.AutoSize = true;
       this.lblSegmentSize.Location = new System.Drawing.Point(19, 162);
       this.lblSegmentSize.Name = "lblSegmentSize";
       this.lblSegmentSize.Size = new System.Drawing.Size(95, 13);
       this.lblSegmentSize.TabIndex = 2;
       this.lblSegmentSize.Text = "Segment Size (KB)";
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1052, 536);

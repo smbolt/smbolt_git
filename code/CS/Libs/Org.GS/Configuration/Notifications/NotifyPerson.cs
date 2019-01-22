@@ -12,31 +12,67 @@ namespace Org.GS.Configuration
   [XMap(XType = XType.Element)]
   public class NotifyPerson
   {
-    public int NotifyPersonId { get; set; }
+    public int NotifyPersonId {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public string EmailAddress { get; set; }
+    public string EmailAddress {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public bool IsEmailActive { get; set; }
+    public bool IsEmailActive {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public string SmsNumber { get; set; }
+    public string SmsNumber {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public bool IsSmsActive { get; set; }
+    public bool IsSmsActive {
+      get;
+      set;
+    }
 
-    public string CreatedBy { get; set; }
-    public DateTime CreatedOn { get; set; }
-    public string ModifiedBy { get; set; }
-    public DateTime? ModifiedOn { get; set; }
-    public int? NotifyPersonGroupId { get; set; }
+    public string CreatedBy {
+      get;
+      set;
+    }
+    public DateTime CreatedOn {
+      get;
+      set;
+    }
+    public string ModifiedBy {
+      get;
+      set;
+    }
+    public DateTime? ModifiedOn {
+      get;
+      set;
+    }
+    public int? NotifyPersonGroupId {
+      get;
+      set;
+    }
 
     public NotifyPerson()
     {

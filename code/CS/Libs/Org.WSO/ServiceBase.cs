@@ -24,8 +24,15 @@ namespace Org.WSO
   public class ServiceBase : IDisposable
   {
     private int _entityId = 9999;
-    public virtual int EntityId { get { return _entityId; } set { _entityId = value; } }
-    protected ServiceState _serviceState; 
+    public virtual int EntityId {
+      get {
+        return _entityId;
+      }
+      set {
+        _entityId = value;
+      }
+    }
+    protected ServiceState _serviceState;
 
     private WsHost _wsHost;
     protected WsHost WsHost
@@ -38,30 +45,104 @@ namespace Org.WSO
       }
     }
 
-    public ComponentLoadMode ComponentLoadMode { get { return Get_ComponentLoadMode(); } }
-    public string CatalogStem { get { return Get_CatalogStem(); } }
-    public string CatalogEnvironment { get { return Get_CatalogEnvironment(); } }
-    public string CatalogTaskNode { get { return Get_CatalogTaskNode(); } }
-    public string CatalogName { get { return Get_CatalogName(); } }
-    public string TransactionName { get; set; }
-    public int OrgId { get; set; }
-    public string AbsoluteUri { get; set; }
-    public string IPAddress { get; set; }
-    public int Port { get; set; }
-    public string AppName { get; set; }
-    public string WebServiceName { get { return Get_WebServiceName(); } }
-    public string ComputerName { get { return Get_ComputerName(); } }
-    public WsMessage ReceivedMessage { get; set; }
-    public string ReceivedMessageString { get { return (ReceivedMessage != null ? ReceivedMessage.GetXml().ToString() : "NULL"); } }
-    public WsMessage ResponseMessage { get; set; }
-    public WsDateTime ReceiverReceiveTime { get; set; }
-    public List<string> TraceLog { get; set; }  
-    public Logger Logger; 
+    public ComponentLoadMode ComponentLoadMode {
+      get {
+        return Get_ComponentLoadMode();
+      }
+    }
+    public string CatalogStem {
+      get {
+        return Get_CatalogStem();
+      }
+    }
+    public string CatalogEnvironment {
+      get {
+        return Get_CatalogEnvironment();
+      }
+    }
+    public string CatalogTaskNode {
+      get {
+        return Get_CatalogTaskNode();
+      }
+    }
+    public string CatalogName {
+      get {
+        return Get_CatalogName();
+      }
+    }
+    public string TransactionName {
+      get;
+      set;
+    }
+    public int OrgId {
+      get;
+      set;
+    }
+    public string AbsoluteUri {
+      get;
+      set;
+    }
+    public string IPAddress {
+      get;
+      set;
+    }
+    public int Port {
+      get;
+      set;
+    }
+    public string AppName {
+      get;
+      set;
+    }
+    public string WebServiceName {
+      get {
+        return Get_WebServiceName();
+      }
+    }
+    public string ComputerName {
+      get {
+        return Get_ComputerName();
+      }
+    }
+    public WsMessage ReceivedMessage {
+      get;
+      set;
+    }
+    public string ReceivedMessageString {
+      get {
+        return (ReceivedMessage != null ? ReceivedMessage.GetXml().ToString() : "NULL");
+      }
+    }
+    public WsMessage ResponseMessage {
+      get;
+      set;
+    }
+    public WsDateTime ReceiverReceiveTime {
+      get;
+      set;
+    }
+    public List<string> TraceLog {
+      get;
+      set;
+    }
+    public Logger Logger;
     private Encryptor _encryptor;
-    public Encryptor Encryptor { get { return _encryptor; } }
+    public Encryptor Encryptor {
+      get {
+        return _encryptor;
+      }
+    }
     private NotificationsManager _notificationsManager;
-    public string ServiceInfo { get { return Get_ServiceInfo(); } }
-    public string ServiceIdentification { get { return Get_ServiceIdentification(); } }
+    public string ServiceInfo {
+      get {
+        return Get_ServiceInfo();
+      }
+    }
+    public string ServiceIdentification {
+      get {
+        return Get_ServiceIdentification();
+      }
+    }
 
     public ServiceBase()
     {
@@ -70,7 +151,7 @@ namespace Org.WSO
         _encryptor = new Encryptor();
         _notificationsManager = new NotificationsManager();
 
-        StartupLogging.StartupLogPath = System.Web.Hosting.HostingEnvironment.MapPath("~") + @"StartupLog"; 
+        StartupLogging.StartupLogPath = System.Web.Hosting.HostingEnvironment.MapPath("~") + @"StartupLog";
         StartupLogging.WriteStartupLog("Service Base at point 1");
         this.Logger = new Logger();
         this.Logger.ModuleId = g.AppInfo.ModuleCode;
@@ -93,7 +174,7 @@ namespace Org.WSO
         {
           string message = this.ServiceIdentification + " is starting.";
           Logger.Log(message, 1001, this.EntityId);
-          ProcessNotifications(message); 
+          ProcessNotifications(message);
         }
 
         StartupLogging.WriteStartupLog("Service Base at point 4");
@@ -102,7 +183,7 @@ namespace Org.WSO
       {
         int code = 6018;
         string message = "An exception occurrred in the ServiceBase constructor (code " + code.ToString() + ").";
-        ProcessNotifications("Exception occurred in " + this.ServiceIdentification, message + g.crlf2 + ex.ToReport()); 
+        ProcessNotifications("Exception occurred in " + this.ServiceIdentification, message + g.crlf2 + ex.ToReport());
         StartupLogging.WriteStartupLog(message + g.crlf + ex.ToReport());
         Logger.Log(LogSeverity.SEVR, message, code, this.EntityId, ex);
         throw new Exception(message, ex);
@@ -113,16 +194,16 @@ namespace Org.WSO
     {
       try
       {
-        _serviceState.InvokeCount++; 
-        string decryptedReceivedMessageString = _encryptor.DecryptString(receivedMessage);        
+        _serviceState.InvokeCount++;
+        string decryptedReceivedMessageString = _encryptor.DecryptString(receivedMessage);
         this.ReceivedMessage = new WsMessage(decryptedReceivedMessageString);
         SetLoggerProperties();
         this.OrgId = this.ReceivedMessage.MessageHeader.OrgId;
         this.TransactionName = this.ReceivedMessage.TransactionHeader.TransactionName;
       }
       catch(Exception ex)
-      {             
-        throw new Exception("An exception occurred during PreTransaction processing of the web service message.", ex); 
+      {
+        throw new Exception("An exception occurred during PreTransaction processing of the web service message.", ex);
       }
     }
 
@@ -156,7 +237,7 @@ namespace Org.WSO
         TransactionStatus transactionStatus = TransactionStatus.Success;
         if (responseTransactionBodyXml.Attribute("TransactionStatus") != null)
           transactionStatus = g.ToEnum<TransactionStatus>(responseTransactionBodyXml.Attribute("TransactionStatus").Value.Trim(), TransactionStatus.NotSet);
-      
+
         this.ResponseMessage.MessageHeader.SenderSendDateTime = this.ReceivedMessage.MessageHeader.SenderSendDateTime;
         this.ResponseMessage.MessageHeader.ReceiverReceiveDateTime = this.ReceiverReceiveTime;
         this.ResponseMessage.MessageHeader.ReceiverRespondDateTime = MessageFactory.GetWebServiceDateTime();
@@ -181,22 +262,22 @@ namespace Org.WSO
             this.ResponseMessage.TransactionHeader.TransactionVersion = this.ReceivedMessage.TransactionHeader.TransactionVersion;
             break;
         }
- 
+
         this.ResponseMessage.MessageBody.Transaction.TransactionBody = responseTransactionBodyXml;
-            
+
         if (this.ReceivedMessage.MessageHeader.TrackPerformance)
         {
           this.ReceivedMessage.AddPerfInfoEntry("Prior to response message serialization");
           this.ResponseMessage.MessageHeader.TrackPerformance = true;
-          this.ResponseMessage.MessageHeader.PerformanceInfoSet = this.ReceivedMessage.MessageHeader.PerformanceInfoSet; 
+          this.ResponseMessage.MessageHeader.PerformanceInfoSet = this.ReceivedMessage.MessageHeader.PerformanceInfoSet;
         }
-      
-        XElement responseMessageXml = this.ResponseMessage.GetXml();                
-        string encryptedResponseMessage = _encryptor.EncryptString(responseMessageXml.ToString());  
+
+        XElement responseMessageXml = this.ResponseMessage.GetXml();
+        string encryptedResponseMessage = _encryptor.EncryptString(responseMessageXml.ToString());
         return encryptedResponseMessage;
       }
       catch(Exception ex)
-      {        
+      {
         throw new Exception("An exception occurred during PostTransaction processing of web service message.", ex);
       }
     }
@@ -254,11 +335,13 @@ namespace Org.WSO
         if (eventName.IsBlank())
           eventName = _serviceState.DefaultNotifyEventName;
         notification.EventName = eventName;
-        
+
         using (var notifyEngine = new NotifyEngine(notifyConfigSet, _serviceState.NotifySmtpParms))
         {
           notifyEngine.NotifyAction += _notificationsManager.NotifyActionHandler;
-          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => { NotificationsAsyncComplete(r); });            
+          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => {
+            NotificationsAsyncComplete(r);
+          });
         }
       }
       catch (Exception ex)
@@ -267,7 +350,7 @@ namespace Org.WSO
                    "message '" + message.PadTo(100).Trim() + "' for notification event name '" + notifyEventName + "'.", 6015, ex);
       }
     }
-       
+
     private void NotificationsAsyncComplete(Task<TaskResult> result)
     {
       switch (result.Status)
@@ -277,44 +360,44 @@ namespace Org.WSO
           switch (taskResult.TaskResultStatus)
           {
             case TaskResultStatus.Success:
-              //Logger.Log("Notification async task RanToCompletion (TPL status) and TaskResult status 'Success'.", 6009, this.EntityId); 
+              //Logger.Log("Notification async task RanToCompletion (TPL status) and TaskResult status 'Success'.", 6009, this.EntityId);
               break;
 
             case TaskResultStatus.Warning:
-              Logger.Log("Notification async task RanToCompletion (TPL status) and TaskResult status 'Warning'.", 6010, this.EntityId); 
+              Logger.Log("Notification async task RanToCompletion (TPL status) and TaskResult status 'Warning'.", 6010, this.EntityId);
               break;
 
             case TaskResultStatus.Failed:
-              Logger.Log("Notification async task RanToCompletion (TPL status) and TaskResult status 'Failed'.", 6011, this.EntityId); 
+              Logger.Log("Notification async task RanToCompletion (TPL status) and TaskResult status 'Failed'.", 6011, this.EntityId);
               break;
 
             case TaskResultStatus.NotExecuted:
               break;
 
             default:
-              Logger.Log("Notification async task RanToCompletion (TPL status) with unanticipated TaskResult status '" + taskResult.TaskResultStatus.ToString() + "'.", 6012, this.EntityId); 
+              Logger.Log("Notification async task RanToCompletion (TPL status) with unanticipated TaskResult status '" + taskResult.TaskResultStatus.ToString() + "'.", 6012, this.EntityId);
               break;
           }
           break;
 
         case TaskStatus.Faulted:
-          Logger.Log(LogSeverity.WARN, "Notification task completed with TPL task status 'Faulted'.", 6013, this.EntityId); 
+          Logger.Log(LogSeverity.WARN, "Notification task completed with TPL task status 'Faulted'.", 6013, this.EntityId);
           break;
 
         default:
-          Logger.Log(LogSeverity.WARN, "Notification task completed with unanticipated TPL task status '" + result.Status.ToString() + "'.", 6014, this.EntityId); 
+          Logger.Log(LogSeverity.WARN, "Notification task completed with unanticipated TPL task status '" + result.Status.ToString() + "'.", 6014, this.EntityId);
           break;
       }
     }
-        
+
     public void NotifyHost(IpdxMessage ipdxMessage)
     {
       if (ipdxMessage == null)
         return;
 
-      IPDX.SendIpdxData(ipdxMessage); 
+      IPDX.SendIpdxData(ipdxMessage);
     }
-    
+
     private WsHost GetWebServiceHost()
     {
       WsHost host = new WsHost();
@@ -371,7 +454,7 @@ namespace Org.WSO
 
     private string Get_ServiceIdentification()
     {
-      return "Web Service " + this.WebServiceName + " on " + this.ComputerName; 
+      return "Web Service " + this.WebServiceName + " on " + this.ComputerName;
     }
 
     private ComponentLoadMode Get_ComponentLoadMode()
@@ -446,7 +529,7 @@ namespace Org.WSO
     }
 
     public void Dispose()
-    {      
+    {
     }
   }
 }

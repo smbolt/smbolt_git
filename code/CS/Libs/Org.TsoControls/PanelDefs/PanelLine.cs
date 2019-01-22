@@ -7,23 +7,32 @@ using Org.GS;
 
 namespace Org.TsoControls.PanelDefs
 {
-	[XMap(XType=XType.Element, CollectionElements = "PanelLineElement")]
-	public class PanelLine : List<PanelLineElement>
-	{
-		[XMap(IsKey = true)]
-		public int LineNumber { get; set; }
+  [XMap(XType=XType.Element, CollectionElements = "PanelLineElement")]
+  public class PanelLine : List<PanelLineElement>
+  {
+    [XMap(IsKey = true)]
+    public int LineNumber {
+      get;
+      set;
+    }
 
-		[XMap]
-		public string SetName { get; set; }
+    [XMap]
+    public string SetName {
+      get;
+      set;
+    }
 
-		[XMap(DefaultValue = "1")]
-		public int Repeat { get; set; }
+    [XMap(DefaultValue = "1")]
+    public int Repeat {
+      get;
+      set;
+    }
 
-		public PanelLine()
-		{
-			this.LineNumber = 0;
-			this.SetName = String.Empty;
-			this.Repeat = 1;
-		}
-	}
+    public PanelLine()
+    {
+      this.LineNumber = 0;
+      this.SetName = String.Empty;
+      this.Repeat = 1;
+    }
+  }
 }

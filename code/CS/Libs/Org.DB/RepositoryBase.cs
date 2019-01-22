@@ -17,27 +17,40 @@ namespace Org.DB
 
   public class RepositoryBase : IDisposable
   {
-    protected static CacheManager CacheManager = new CacheManager(); 
+    protected static CacheManager CacheManager = new CacheManager();
     protected static PropertyInfoSet PropertyInfoSet = new PropertyInfoSet();
     protected static EntityModelMapSet EntityModelMapSet = new EntityModelMapSet();
-    public static string EntityModelMapReport { get { return EntityModelMapSet.GetReport(); } } 
+    public static string EntityModelMapReport {
+      get {
+        return EntityModelMapSet.GetReport();
+      }
+    }
 
     protected static Dictionary<string, EntityType> EntityTypes = new Dictionary<string,EntityType>();
 
     private static Type _dataEntitiesType;
     private static List<string> _dataAssembliesLoaded = new List<string>();
     private static List<string> _businessObjectAssembliesLoaded = new List<string>();
-    
-    protected string ConnectionStringName { get; private set; }
-    protected static string ConnectionString { get; private set; }
-    protected string DataStoreName { get; private set; }
+
+    protected string ConnectionStringName {
+      get;
+      private set;
+    }
+    protected static string ConnectionString {
+      get;
+      private set;
+    }
+    protected string DataStoreName {
+      get;
+      private set;
+    }
 
     private bool _isDisposed = false;
 
     public RepositoryBase(string connectionStringName, string dataStoreName)
     {
       this.ConnectionStringName = connectionStringName;
-      this.DataStoreName = dataStoreName; 
+      this.DataStoreName = dataStoreName;
     }
 
     ~RepositoryBase()
@@ -50,11 +63,11 @@ namespace Org.DB
       string assemblyName = dataAssembly.GetName().Name;
 
       if (_dataAssembliesLoaded.Contains(assemblyName))
-        return; 
+        return;
 
       LoadEntityTypes(dataAssembly);
 
-      _dataAssembliesLoaded.Add(assemblyName); 
+      _dataAssembliesLoaded.Add(assemblyName);
     }
 
     public static void AddBusinessObjectTypes(Assembly businessObjectAssembly)
@@ -62,7 +75,7 @@ namespace Org.DB
       string assemblyName = businessObjectAssembly.GetName().Name;
 
       if (_businessObjectAssembliesLoaded.Contains(assemblyName))
-        return; 
+        return;
 
       LoadModelTypes(businessObjectAssembly);
 
@@ -73,91 +86,91 @@ namespace Org.DB
     {
       try
       {
-        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
-        EnsureMaps(map.ModelType, map.EntityType); 
+        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
+        EnsureMaps(map.ModelType, map.EntityType);
 
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet."); 
-        
-        if (!map.PropertyInfoPairSet.ContainsKey(orderBy))
-          throw new Exception("Could not locate entity field translation for model field '" + orderBy + "' for model name '" + modelName + "'."); 
+          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
 
-        string entitySort = map.PropertyInfoPairSet[orderBy].EntityPropertyInfo.Name;  
+        if (!map.PropertyInfoPairSet.ContainsKey(orderBy))
+          throw new Exception("Could not locate entity field translation for model field '" + orderBy + "' for model name '" + modelName + "'.");
+
+        string entitySort = map.PropertyInfoPairSet[orderBy].EntityPropertyInfo.Name;
 
         IList<ModelBase> list = new List<ModelBase>();
 
-        object[] parms = new object[] { ConnectionStringName }; 
-        var db = Activator.CreateInstance(_dataEntitiesType, parms); 
+        object[] parms = new object[] { ConnectionStringName };
+        var db = Activator.CreateInstance(_dataEntitiesType, parms);
         IQueryable dbSet = map.DbSetPI.GetValue(db) as IQueryable;
 
         foreach(object row in dbSet.OrderBy(map.EntityType, entitySort))
         {
           // might want to put this somewhere sharable
           var model = Activator.CreateInstance(map.ModelType);
-        
-          ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet; 
+
+          ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet;
 
           foreach(var pip in map.PropertyInfoPairSet.Values)
           {
-            object value = pip.EntityPropertyInfo.GetValue(row); 
+            object value = pip.EntityPropertyInfo.GetValue(row);
 
             switch(pip.MappingRule)
             {
               case MappingRule.None:
-                pip.ModelPropertyInfo.SetValue(model, value); 
+                pip.ModelPropertyInfo.SetValue(model, value);
                 break;
 
               case MappingRule.DoubleToDecimal:
-                pip.ModelPropertyInfo.SetValue(model, value.ToDecimal()); 
+                pip.ModelPropertyInfo.SetValue(model, value.ToDecimal());
                 break;
 
               case MappingRule.DoubleToFloat:
-                pip.ModelPropertyInfo.SetValue(model, value.ToFloat()); 
+                pip.ModelPropertyInfo.SetValue(model, value.ToFloat());
                 break;
 
               case MappingRule.Boolean1:
-              
+
                 if (value != null && value.ToString().ToUpper().In("Y,1"))
                   pip.ModelPropertyInfo.SetValue(model, true);
                 else
                   pip.ModelPropertyInfo.SetValue(model, false);
                 break;
-            }    
+            }
           }
 
-          list.Add((ModelBase)model); 
+          list.Add((ModelBase)model);
         }
 
         return list;
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex);
       }
     }
 
     public IList<T> GetList<T>(string modelSort)
-    {      
-      Type modelType = typeof(T); 
-      string modelName = modelType.Name; 
+    {
+      Type modelType = typeof(T);
+      string modelName = modelType.Name;
 
       try
       {
-        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
-        EnsureMaps(map.ModelType, map.EntityType); 
+        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
+        EnsureMaps(map.ModelType, map.EntityType);
 
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet."); 
-        
-        if (!map.PropertyInfoPairSet.ContainsKey(modelSort))
-          throw new Exception("Could not locate entity field translation for model field '" + modelSort + "' for model name '" + modelName + "'."); 
+          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
 
-        string entitySort = map.PropertyInfoPairSet[modelSort].EntityPropertyInfo.Name;  
+        if (!map.PropertyInfoPairSet.ContainsKey(modelSort))
+          throw new Exception("Could not locate entity field translation for model field '" + modelSort + "' for model name '" + modelName + "'.");
+
+        string entitySort = map.PropertyInfoPairSet[modelSort].EntityPropertyInfo.Name;
 
         IList<T> list = new List<T>();
 
-        object[] entitySetParms = new object[] { ConnectionStringName }; 
-        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms); 
+        object[] entitySetParms = new object[] { ConnectionStringName };
+        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms);
 
         DateTime beginDT = DateTime.Now;
 
@@ -181,45 +194,45 @@ namespace Org.DB
           ts = DateTime.Now - beginDT;
           ms = (int)ts.TotalMilliseconds;
 
-          return list; 
+          return list;
         }
 
         IQueryable dbSet = map.DbSetPI.GetValue(db) as IQueryable;
 
         foreach(object entity in dbSet.OrderBy(map.EntityType, entitySort))
-        {     
+        {
           var model = Activator.CreateInstance(map.ModelType);
-          ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet; 
-          var modelBase = (ModelBase) model; 
+          ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet;
+          var modelBase = (ModelBase) model;
 
-          list.Add((T) MapEntityToModel(entity, model, map.PropertyInfoPairSet)); 
+          list.Add((T) MapEntityToModel(entity, model, map.PropertyInfoPairSet));
         }
 
         return list;
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex);
       }
     }
 
     public IList<T> GetList<T>()
-    {      
-      Type modelType = typeof(T); 
-      string modelName = modelType.Name; 
+    {
+      Type modelType = typeof(T);
+      string modelName = modelType.Name;
 
       try
       {
-        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
-        EnsureMaps(map.ModelType, map.EntityType); 
+        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
+        EnsureMaps(map.ModelType, map.EntityType);
 
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet."); 
+          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
 
         IList<T> list = new List<T>();
 
-        object[] entitySetParms = new object[] { ConnectionStringName }; 
-        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms); 
+        object[] entitySetParms = new object[] { ConnectionStringName };
+        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms);
 
         DateTime beginDT = DateTime.Now;
 
@@ -243,43 +256,43 @@ namespace Org.DB
           ts = DateTime.Now - beginDT;
           ms = (int)ts.TotalMilliseconds;
 
-          return list; 
+          return list;
         }
 
         IQueryable dbSet = map.DbSetPI.GetValue(db) as IQueryable;
 
         foreach(object entity in dbSet)
-        {     
+        {
           var model = Activator.CreateInstance(map.ModelType);
-          ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet; 
-          var modelBase = (ModelBase) model; 
+          ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet;
+          var modelBase = (ModelBase) model;
 
-          list.Add((T) MapEntityToModel(entity, model, map.PropertyInfoPairSet)); 
+          list.Add((T) MapEntityToModel(entity, model, map.PropertyInfoPairSet));
         }
 
         return list;
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex);
       }
     }
 
     public object Insert<T>(ModelBase model)
-    {      
-      Type modelType = typeof(T); 
-      string modelName = modelType.Name; 
+    {
+      Type modelType = typeof(T);
+      string modelName = modelType.Name;
 
       try
       {
-        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
-        EnsureMaps(map.ModelType, map.EntityType); 
+        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
+        EnsureMaps(map.ModelType, map.EntityType);
 
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet."); 
-        
-        object[] entitySetParms = new object[] { ConnectionStringName }; 
-        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms); 
+          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
+
+        object[] entitySetParms = new object[] { ConnectionStringName };
+        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms);
 
         DateTime beginDT = DateTime.Now;
 
@@ -316,28 +329,28 @@ namespace Org.DB
           int ms = (int)ts.TotalMilliseconds;
           beginDT = DateTime.Now;
 
-          return id; 
+          return id;
         }
 
-        throw new Exception("EntitySet processing is not yet implemented in RepositoryBase.Insert."); 
+        throw new Exception("EntitySet processing is not yet implemented in RepositoryBase.Insert.");
 
         //IQueryable dbSet = map.DbSetPI.GetValue(db) as IQueryable;
         //var entity = Activa
 
         //foreach(object entity in dbSet)
-        //{     
+        //{
         //  var model = Activator.CreateInstance(map.ModelType);
-        //  ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet; 
-        //  var modelBase = (ModelBase) model; 
+        //  ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet;
+        //  var modelBase = (ModelBase) model;
 
-        //  list.Add((T) MapEntityToModel(entity, model, map.PropertyInfoPairSet)); 
+        //  list.Add((T) MapEntityToModel(entity, model, map.PropertyInfoPairSet));
         //}
 
         //return list;
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex);
       }
     }
 
@@ -353,7 +366,7 @@ namespace Org.DB
         var dbMap = _dataEntitiesType.GetCustomAttribute<DbMap>();
         if (dbMap.DbElement == DbElement.ListSet)
         {
-          string methodName = "ExecSp_" + schemaName + "_" + spName; 
+          string methodName = "ExecSp_" + schemaName + "_" + spName;
 
           MethodInfo mi = null;
           MethodInfo[] miSet = db.GetType().GetMethods();
@@ -378,7 +391,7 @@ namespace Org.DB
 
           TimeSpan ts = DateTime.Now - beginDT;
           int ms = (int)ts.TotalMilliseconds;
-          beginDT = DateTime.Now;          
+          beginDT = DateTime.Now;
 
           return result;
         }
@@ -389,34 +402,34 @@ namespace Org.DB
         //var entity = Activa
 
         //foreach(object entity in dbSet)
-        //{     
+        //{
         //  var model = Activator.CreateInstance(map.ModelType);
-        //  ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet; 
-        //  var modelBase = (ModelBase) model; 
+        //  ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet;
+        //  var modelBase = (ModelBase) model;
 
-        //  list.Add((T) MapEntityToModel(entity, model, map.PropertyInfoPairSet)); 
+        //  list.Add((T) MapEntityToModel(entity, model, map.PropertyInfoPairSet));
         //}
 
         //return list;
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attempting to execute stored procedure named '" + spName + "' and schema name '" + schemaName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to execute stored procedure named '" + spName + "' and schema name '" + schemaName + "'.", ex);
       }
     }
 
     public IList<T> GetListForParent<T>(int parentId)
-    {      
-      Type modelType = typeof(T); 
-      string modelName = modelType.Name; 
+    {
+      Type modelType = typeof(T);
+      string modelName = modelType.Name;
 
       try
       {
-        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
-        EnsureMaps(map.ModelType, map.EntityType); 
+        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
+        EnsureMaps(map.ModelType, map.EntityType);
 
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet."); 
+          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
 
         IList<T> list = new List<T>();
 
@@ -465,21 +478,21 @@ namespace Org.DB
           ts = DateTime.Now - beginDT;
           ms = (int)ts.TotalMilliseconds;
 
-          return list; 
+          return list;
         }
 
         return list;
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex);
       }
     }
 
     public ModelBase Find<T>(int Id)
     {
-      Type modelType = typeof(T); 
-      string modelName = modelType.Name; 
+      Type modelType = typeof(T);
+      string modelName = modelType.Name;
 
       try
       {
@@ -488,15 +501,15 @@ namespace Org.DB
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
           throw new Exception("No entity is mapped to the model named '" + modelName + "' in the ModelToEntityIndex of the EntityModelMapSet.");
 
-        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
-        EnsureMaps(map.ModelType, map.EntityType); 
+        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
+        EnsureMaps(map.ModelType, map.EntityType);
 
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet."); 
-                
-        object[] entitySetParms = new object[] { ConnectionStringName }; 
-        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms); 
-        
+          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
+
+        object[] entitySetParms = new object[] { ConnectionStringName };
+        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms);
+
         var dbMap = _dataEntitiesType.GetCustomAttribute<DbMap>();
 
         if (dbMap.DbElement == DbElement.ListSet)
@@ -505,124 +518,124 @@ namespace Org.DB
         }
 
 
-        Type genericDbSetType = typeof(System.Data.Entity.DbSet<>); 
-        Type dbSetType = genericDbSetType.MakeGenericType(map.EntityType); 
+        Type genericDbSetType = typeof(System.Data.Entity.DbSet<>);
+        Type dbSetType = genericDbSetType.MakeGenericType(map.EntityType);
         var dbSet = map.DbSetPI.GetValue(db);
-        var findMI = dbSetType.GetMethod("Find"); 
-        object[] findParms = new object[] { Id }; 
-        var entity = findMI.Invoke(dbSet, new object[] { findParms}); 
+        var findMI = dbSetType.GetMethod("Find");
+        object[] findParms = new object[] { Id };
+        var entity = findMI.Invoke(dbSet, new object[] { findParms});
 
         if (entity == null)
-          return null; 
+          return null;
 
         // map entity to model
-        
-        model = (ModelBase) Activator.CreateInstance(map.ModelType);
-        
-        ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet; 
 
-        return MapEntityToModel(entity, model, map.PropertyInfoPairSet); 
+        model = (ModelBase) Activator.CreateInstance(map.ModelType);
+
+        ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet;
+
+        return MapEntityToModel(entity, model, map.PropertyInfoPairSet);
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to build list of model '" + modelName + "'.", ex);
       }
     }
 
     public IList<T> GetSpResult<T>(SpParmSet spParmSet)
-    { 
-      Type modelType = typeof(T); 
-      string modelName = modelType.Name; 
-      string spResultName = "entity name not yet determined"; 
+    {
+      Type modelType = typeof(T);
+      string modelName = modelType.Name;
+      string spResultName = "entity name not yet determined";
 
       try
       {
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
           throw new Exception("No entity is mapped to the model named '" + modelName + "' in the ModelToEntityIndex of the EntityModelMapSet.");
         string entityName = EntityModelMapSet.ModelToEntityIndex[modelName];
-        var map = EntityModelMapSet[entityName]; 
-        EnsureMaps(map.ModelType, map.EntityType); 
+        var map = EntityModelMapSet[entityName];
+        EnsureMaps(map.ModelType, map.EntityType);
 
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet."); 
-        
+          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
+
         var list = new List<T>();
 
         spResultName = map.EntityType.FullName;
-        string spName = entityName.Replace("_Result", String.Empty); 
-        
-        object[] entitySetParms = new object[] { ConnectionStringName }; 
-        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms);   
-        object[] spParms = BuildSpParms(spParmSet); 
+        string spName = entityName.Replace("_Result", String.Empty);
 
-        var spResults = map.DbSetMI.Invoke(db, spParms) as System.Data.Entity.Core.Objects.ObjectResult; 
+        object[] entitySetParms = new object[] { ConnectionStringName };
+        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms);
+        object[] spParms = BuildSpParms(spParmSet);
+
+        var spResults = map.DbSetMI.Invoke(db, spParms) as System.Data.Entity.Core.Objects.ObjectResult;
         foreach(var spResult in spResults)
-        {    
+        {
           var model = Activator.CreateInstance(map.ModelType);
-          ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet; 
-          var modelBase = (ModelBase) model; 
-          list.Add((T) MapEntityToModel(spResult, model, map.PropertyInfoPairSet)); 
+          ((ModelBase)model).PropertyInfoPairSet = map.PropertyInfoPairSet;
+          var modelBase = (ModelBase) model;
+          list.Add((T) MapEntityToModel(spResult, model, map.PropertyInfoPairSet));
         }
 
 
-        return list; 
+        return list;
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to build list of model '" + modelName + 
-                            "' from stored procedure result '" +spResultName + "'." , ex); 
+        throw new Exception("An exception occurred attempting to build list of model '" + modelName +
+                            "' from stored procedure result '" +spResultName + "'.", ex);
       }
     }
 
     private object[] BuildSpParms(SpParmSet spParmSet)
     {
-      object[] spParms = new object[spParmSet.Count]; 
+      object[] spParms = new object[spParmSet.Count];
 
       for(int i = 0; i < spParmSet.Count; i++)
       {
-        var spParm = spParmSet.ElementAt(i); 
+        var spParm = spParmSet.ElementAt(i);
         spParms[i] = spParm.ParmValue;
       }
 
-      return spParms; 
+      return spParms;
     }
 
     private T MapEntityToModel<T>(object entity, T model, PropertyInfoPairSet pipSet)
-    {      
+    {
       if (entity == null)
         return model;
 
       if (pipSet == null)
-        throw new Exception("No property mapping specification was made available to map entity properties to model properties for entity type'" + 
-                            entity.GetType().Name + "' and model type '" + model.GetType().Name + "'."); 
+        throw new Exception("No property mapping specification was made available to map entity properties to model properties for entity type'" +
+                            entity.GetType().Name + "' and model type '" + model.GetType().Name + "'.");
       try
       {
         foreach(var pip in pipSet.Values)
         {
-          var value = pip.EntityPropertyInfo.GetValue(entity); 
+          var value = pip.EntityPropertyInfo.GetValue(entity);
 
           switch(pip.MappingRule)
           {
             case MappingRule.None:
-              pip.ModelPropertyInfo.SetValue(model, value); 
+              pip.ModelPropertyInfo.SetValue(model, value);
               break;
 
             case MappingRule.DoubleToDecimal:
-              pip.ModelPropertyInfo.SetValue(model, value.ToDecimal()); 
+              pip.ModelPropertyInfo.SetValue(model, value.ToDecimal());
               break;
 
             case MappingRule.DecimalToInt:
-              pip.ModelPropertyInfo.SetValue(model, System.Convert.ToInt32(value)); 
+              pip.ModelPropertyInfo.SetValue(model, System.Convert.ToInt32(value));
               break;
 
             case MappingRule.Boolean1:
-              
+
               if (value != null && value.ToString().ToUpper().In("Y,1"))
                 pip.ModelPropertyInfo.SetValue(model, true);
               else
                 pip.ModelPropertyInfo.SetValue(model, false);
               break;
-          }    
+          }
         }
 
         return model;
@@ -630,7 +643,7 @@ namespace Org.DB
       catch(Exception ex)
       {
         throw new Exception("An exception occurred while mapping entity properties to model properties for entity type '" + entity.GetType().Name +
-                            "' and model type '" + model.GetType().Name + "'.", ex); 
+                            "' and model type '" + model.GetType().Name + "'.", ex);
       }
     }
 
@@ -640,32 +653,32 @@ namespace Org.DB
         return model;
 
       if (pipSet == null)
-        throw new Exception("No property mapping specification was made available to map entity properties to model properties for entity type'" + 
-                            entity.GetType().Name + "' and model type '" + model.GetType().Name + "'."); 
+        throw new Exception("No property mapping specification was made available to map entity properties to model properties for entity type'" +
+                            entity.GetType().Name + "' and model type '" + model.GetType().Name + "'.");
       try
       {
         foreach(var pip in pipSet.Values)
         {
-          var value = pip.EntityPropertyInfo.GetValue(entity); 
+          var value = pip.EntityPropertyInfo.GetValue(entity);
 
           switch(pip.MappingRule)
           {
             case MappingRule.None:
-              pip.ModelPropertyInfo.SetValue(model, value); 
+              pip.ModelPropertyInfo.SetValue(model, value);
               break;
 
             case MappingRule.DoubleToDecimal:
-              pip.ModelPropertyInfo.SetValue(model, value.ToDecimal()); 
+              pip.ModelPropertyInfo.SetValue(model, value.ToDecimal());
               break;
 
             case MappingRule.Boolean1:
-              
+
               if (value != null && value.ToString().ToUpper().In("Y,1"))
                 pip.ModelPropertyInfo.SetValue(model, true);
               else
                 pip.ModelPropertyInfo.SetValue(model, false);
               break;
-          }    
+          }
         }
 
         return model;
@@ -673,46 +686,46 @@ namespace Org.DB
       catch(Exception ex)
       {
         throw new Exception("An exception occurred while mapping entity properties to model properties for entity type '" + entity.GetType().Name +
-                            "' and model type '" + model.GetType().Name + "'.", ex); 
+                            "' and model type '" + model.GetType().Name + "'.", ex);
       }
-    }  
+    }
 
     private T MapModelToEntity<T>(object model, T entity, PropertyInfoPairSet pipSet, bool isNew, object userId)
-    {      
+    {
       if (model == null)
         return entity;
 
       if (pipSet == null)
-        throw new Exception("No property mapping specification was made available to map model properties to entity properties for model type'" + 
-                            model.GetType().Name + "' and entity type '" + entity.GetType().Name + "'."); 
+        throw new Exception("No property mapping specification was made available to map model properties to entity properties for model type'" +
+                            model.GetType().Name + "' and entity type '" + entity.GetType().Name + "'.");
       try
       {
         foreach(var pip in pipSet.Values)
         {
-          var value = pip.ModelPropertyInfo.GetValue(model); 
+          var value = pip.ModelPropertyInfo.GetValue(model);
 
           switch(pip.MappingRule)
           {
             case MappingRule.None:
-              pip.EntityPropertyInfo.SetValue(entity, value); 
+              pip.EntityPropertyInfo.SetValue(entity, value);
               break;
 
             case MappingRule.DoubleToDecimal:
-              pip.EntityPropertyInfo.SetValue(entity, value.ToDecimal()); 
+              pip.EntityPropertyInfo.SetValue(entity, value.ToDecimal());
               break;
 
             case MappingRule.DecimalToInt:
-              pip.EntityPropertyInfo.SetValue(entity, System.Convert.ToInt32(value)); 
+              pip.EntityPropertyInfo.SetValue(entity, System.Convert.ToInt32(value));
               break;
 
             case MappingRule.Boolean1:
-              
+
               if (value != null && value.ToString().ToUpper().In("Y,1"))
                 pip.EntityPropertyInfo.SetValue(entity, true);
               else
                 pip.EntityPropertyInfo.SetValue(entity, false);
               break;
-          }    
+          }
         }
 
         return entity;
@@ -720,46 +733,46 @@ namespace Org.DB
       catch(Exception ex)
       {
         throw new Exception("An exception occurred while mapping model properties to entity properties for model type '" + model.GetType().Name +
-                            "' and entity type '" + entity.GetType().Name + "'.", ex); 
+                            "' and entity type '" + entity.GetType().Name + "'.", ex);
       }
-    } 
+    }
 
     private EntityBase MapModelToEntity(object model, EntityBase entity, PropertyInfoPairSet pipSet, bool isNew, object userId)
-    {      
+    {
       if (model == null)
         return entity;
 
       if (pipSet == null)
-        throw new Exception("No property mapping specification was made available to map model properties to entity properties for model type'" + 
-                            model.GetType().Name + "' and entity type '" + entity.GetType().Name + "'."); 
+        throw new Exception("No property mapping specification was made available to map model properties to entity properties for model type'" +
+                            model.GetType().Name + "' and entity type '" + entity.GetType().Name + "'.");
       try
       {
         foreach(var pip in pipSet.Values)
         {
-          var value = pip.ModelPropertyInfo.GetValue(model); 
+          var value = pip.ModelPropertyInfo.GetValue(model);
 
           switch(pip.MappingRule)
           {
             case MappingRule.None:
-              pip.EntityPropertyInfo.SetValue(entity, value); 
+              pip.EntityPropertyInfo.SetValue(entity, value);
               break;
 
             case MappingRule.DoubleToDecimal:
-              pip.EntityPropertyInfo.SetValue(entity, value.ToDecimal()); 
+              pip.EntityPropertyInfo.SetValue(entity, value.ToDecimal());
               break;
 
             case MappingRule.DecimalToInt:
-              pip.EntityPropertyInfo.SetValue(entity, System.Convert.ToInt32(value)); 
+              pip.EntityPropertyInfo.SetValue(entity, System.Convert.ToInt32(value));
               break;
 
             case MappingRule.Boolean1:
-              
+
               if (value != null && value.ToString().ToUpper().In("Y,1"))
                 pip.EntityPropertyInfo.SetValue(entity, true);
               else
                 pip.EntityPropertyInfo.SetValue(entity, false);
               break;
-          }    
+          }
         }
 
         return entity;
@@ -767,131 +780,131 @@ namespace Org.DB
       catch(Exception ex)
       {
         throw new Exception("An exception occurred while mapping model properties to entity properties for model type '" + model.GetType().Name +
-                            "' and entity type '" + entity.GetType().Name + "'.", ex); 
+                            "' and entity type '" + entity.GetType().Name + "'.", ex);
       }
-    } 
+    }
 
     public TaskResult Add(ModelBase model)
-    {            
+    {
       Type modelType = model.GetType();
-      string modelName = modelType.Name; 
+      string modelName = modelType.Name;
       var taskResult = new TaskResult();
-      taskResult.TaskName = modelName + ".Add"; 
+      taskResult.TaskName = modelName + ".Add";
 
       try
       {
-        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
-        EnsureMaps(map.ModelType, map.EntityType); 
+        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
+        EnsureMaps(map.ModelType, map.EntityType);
 
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");         
-        
-        object[] entitySetParms = new object[] { ConnectionStringName }; 
-        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms); 
+          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
+
+        object[] entitySetParms = new object[] { ConnectionStringName };
+        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms);
 
         var pkPip = map.PropertyInfoPairSet.Where(x => x.Value.IsPrimaryKey);
         if (pkPip == null)
           throw new Exception("Cannot locate PropertyInfoPair for the primary key for model '" + modelName + "'.");
         var pkPiKvp = pkPip.FirstOrDefault();
-        PropertyInfo pkPi = pkPiKvp.Value.ModelPropertyInfo; 
-        var pk = pkPi.GetValue(model); 
-        
-        Type genericDbSetType = typeof(System.Data.Entity.DbSet<>); 
-        Type dbSetType = genericDbSetType.MakeGenericType(map.EntityType); 
+        PropertyInfo pkPi = pkPiKvp.Value.ModelPropertyInfo;
+        var pk = pkPi.GetValue(model);
+
+        Type genericDbSetType = typeof(System.Data.Entity.DbSet<>);
+        Type dbSetType = genericDbSetType.MakeGenericType(map.EntityType);
         var dbSet = map.DbSetPI.GetValue(db);
-        var findMI = dbSetType.GetMethod("Find"); 
-        object[] findParms = new object[] { pk }; 
-        var entity = findMI.Invoke(dbSet, new object[] { findParms}); 
+        var findMI = dbSetType.GetMethod("Find");
+        object[] findParms = new object[] { pk };
+        var entity = findMI.Invoke(dbSet, new object[] { findParms});
         if (entity != null)
         {
           taskResult.TaskResultStatus = TaskResultStatus.AlreadyExists;
           taskResult.EndDateTime = DateTime.Now;
         }
 
-        entity = Activator.CreateInstance(map.EntityType); 
+        entity = Activator.CreateInstance(map.EntityType);
 
-        MapModelToEntity(model, entity, map.PropertyInfoPairSet, false, null);        
+        MapModelToEntity(model, entity, map.PropertyInfoPairSet, false, null);
 
-        var attachMI = dbSetType.GetMethod("Attach"); 
-        attachMI.Invoke(dbSet, new object[] { entity }); 
-        
-        var dbContext = (System.Data.Entity.DbContext) db; 
+        var attachMI = dbSetType.GetMethod("Attach");
+        attachMI.Invoke(dbSet, new object[] { entity });
+
+        var dbContext = (System.Data.Entity.DbContext) db;
         dbContext.Entry(entity).State = System.Data.Entity.EntityState.Added;
-        int rowsUpdated = dbContext.SaveChanges(); 
-        
+        int rowsUpdated = dbContext.SaveChanges();
+
         if (rowsUpdated != 1)
         {
           taskResult.TaskResultStatus = TaskResultStatus.Failed;
-          taskResult.Message = "Rows updated was " + rowsUpdated.ToString() + " when adding model '" + modelName + "'."; 
+          taskResult.Message = "Rows updated was " + rowsUpdated.ToString() + " when adding model '" + modelName + "'.";
           taskResult.EndDateTime = DateTime.Now;
           return taskResult;
         }
 
-        taskResult.Message = "Model '" + modelName + "' successfully added."; 
+        taskResult.Message = "Model '" + modelName + "' successfully added.";
         taskResult.EndDateTime = DateTime.Now;
-        return taskResult; 
+        return taskResult;
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to add model '" + modelName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to add model '" + modelName + "'.", ex);
       }
     }
 
     public void Update(ModelBase model, object userId)
-    {      
+    {
       Type modelType = model.GetType();
-      string modelName = modelType.Name; 
+      string modelName = modelType.Name;
 
       try
       {
-        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
-        EnsureMaps(map.ModelType, map.EntityType); 
+        var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
+        EnsureMaps(map.ModelType, map.EntityType);
 
         if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");         
-        
-        object[] entitySetParms = new object[] { ConnectionStringName }; 
-        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms); 
+          throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
+
+        object[] entitySetParms = new object[] { ConnectionStringName };
+        var db = Activator.CreateInstance(_dataEntitiesType, entitySetParms);
 
         var pkPip = map.PropertyInfoPairSet.Where(x => x.Value.IsPrimaryKey);
         if (pkPip == null)
           throw new Exception("Cannot locate PropertyInfoPair for the primary key for model '" + modelName + "'.");
         var pkPiKvp = pkPip.FirstOrDefault();
-        PropertyInfo pkPi = pkPiKvp.Value.ModelPropertyInfo; 
-        var pk = pkPi.GetValue(model); 
-        
-        Type genericDbSetType = typeof(System.Data.Entity.DbSet<>); 
-        Type dbSetType = genericDbSetType.MakeGenericType(map.EntityType); 
+        PropertyInfo pkPi = pkPiKvp.Value.ModelPropertyInfo;
+        var pk = pkPi.GetValue(model);
+
+        Type genericDbSetType = typeof(System.Data.Entity.DbSet<>);
+        Type dbSetType = genericDbSetType.MakeGenericType(map.EntityType);
         var dbSet = map.DbSetPI.GetValue(db);
-        var findMI = dbSetType.GetMethod("Find"); 
-        object[] findParms = new object[] { pk }; 
+        var findMI = dbSetType.GetMethod("Find");
+        object[] findParms = new object[] { pk };
         var entity = findMI.Invoke(dbSet, new object[] { findParms});
         if (entity == null)
-          throw new Exception("Entity not found for update, model name is '" + modelName + "' primary key value is '" + pk.ToString() + "'."); 
-        MapModelToEntity(model, entity, map.PropertyInfoPairSet, false, userId);  
-        var dbContext = (System.Data.Entity.DbContext) db; 
+          throw new Exception("Entity not found for update, model name is '" + modelName + "' primary key value is '" + pk.ToString() + "'.");
+        MapModelToEntity(model, entity, map.PropertyInfoPairSet, false, userId);
+        var dbContext = (System.Data.Entity.DbContext) db;
         dbContext.Entry(entity).State = System.Data.Entity.EntityState.Modified;
-        int rowsUpdated = dbContext.SaveChanges(); 
-        
+        int rowsUpdated = dbContext.SaveChanges();
+
         if (rowsUpdated != 1)
-          throw new Exception("Row update count was not equal to 1 when updating model '" + modelName + "'."); 
+          throw new Exception("Row update count was not equal to 1 when updating model '" + modelName + "'.");
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to update model '" + modelName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to update model '" + modelName + "'.", ex);
       }
     }
 
     public PropertyInfoPairSet GetPipSet(string modelName)
-    {      
+    {
       if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-        throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet."); 
+        throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
 
-      var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
+      var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
       return map.PropertyInfoPairSet;
     }
 
-    public static dynamic Convert(dynamic source, Type dest) 
+    public static dynamic Convert(dynamic source, Type dest)
     {
       return System.Convert.ChangeType(source, dest);
     }
@@ -903,28 +916,28 @@ namespace Org.DB
         bool useListSets = false;
 
         // get the data context - object marked with DbElement.EntitySet annotation
-        var dataAssemblyTypes = dataAssembly.GetTypes().Where(t => t.GetCustomAttributes<DbMap>().Count() > 0); 
-        _dataEntitiesType = dataAssemblyTypes.Where(t => t.GetCustomAttribute<DbMap>().DbElement == DbElement.EntitySet).FirstOrDefault(); 
+        var dataAssemblyTypes = dataAssembly.GetTypes().Where(t => t.GetCustomAttributes<DbMap>().Count() > 0);
+        _dataEntitiesType = dataAssemblyTypes.Where(t => t.GetCustomAttribute<DbMap>().DbElement == DbElement.EntitySet).FirstOrDefault();
 
         if (_dataEntitiesType == null)
         {
           _dataEntitiesType = dataAssemblyTypes.Where(t => t.GetCustomAttribute<DbMap>().DbElement == DbElement.ListSet).FirstOrDefault();
           if (_dataEntitiesType != null)
-            useListSets = true; 
+            useListSets = true;
         }
 
         if (_dataEntitiesType == null)
-          throw new Exception("No Entity Type found which is annotated with DbMap.DbElement = DbElement.EntitySet for data assembly '" + dataAssembly.FullName); 
+          throw new Exception("No Entity Type found which is annotated with DbMap.DbElement = DbElement.EntitySet for data assembly '" + dataAssembly.FullName);
 
         string dataEntitiesTypeName = _dataEntitiesType.Name;
 
-        var dataEntitiesDbMap = _dataEntitiesType.GetCustomAttribute<DbMap>(); 
+        var dataEntitiesDbMap = _dataEntitiesType.GetCustomAttribute<DbMap>();
 
         // get the PropertyInfo objects for the entity classes (DbSets)
         var dbSetPIs = new Dictionary<string, PropertyInfo>();
         string setPropertyType = "DbSet`1";
         if (useListSets)
-          setPropertyType = "List`1"; 
+          setPropertyType = "List`1";
 
         var piList = _dataEntitiesType.GetProperties().Where(p => p.PropertyType.Name == setPropertyType); ;
         foreach (var pi in piList)
@@ -942,7 +955,7 @@ namespace Org.DB
 
         // get the MethodInfo objects for the stored proc executors (ObjectResults)
         var dbSetMIs = new Dictionary<string, MethodInfo>();
-        var miList = _dataEntitiesType.GetMethods().Where(m => m.ReturnType.Name == "ObjectResult`1"); 
+        var miList = _dataEntitiesType.GetMethods().Where(m => m.ReturnType.Name == "ObjectResult`1");
         foreach(var mi in miList)
         {
           string name = mi.Name;
@@ -951,7 +964,7 @@ namespace Org.DB
           {
             if (!dbSetMIs.ContainsKey(args[0].FullName))
             {
-              dbSetMIs.Add(args[0].FullName, mi); 
+              dbSetMIs.Add(args[0].FullName, mi);
             }
           }
         }
@@ -972,7 +985,7 @@ namespace Org.DB
               if (dbSetPIs.ContainsKey(entityType.FullName))
                 et.DbSetPI = dbSetPIs[entityType.FullName];
               if (dbSetMIs.ContainsKey(entityType.FullName))
-                et.DbSetMI = dbSetMIs[entityType.FullName]; 
+                et.DbSetMI = dbSetMIs[entityType.FullName];
               string typeName = entityType.Name;
               if (!EntityTypes.ContainsKey(typeName))
                 EntityTypes.Add(typeName, et);
@@ -988,7 +1001,7 @@ namespace Org.DB
 
     private static void LoadModelTypes(Assembly businessObjectAssembly)
     {
-      List<Type> modelTypes = businessObjectAssembly.GetTypes().Where(x => x.GetCustomAttributes<DbMap>().Count() > 0).ToList(); 
+      List<Type> modelTypes = businessObjectAssembly.GetTypes().Where(x => x.GetCustomAttributes<DbMap>().Count() > 0).ToList();
 
       foreach (Type modelType in modelTypes)
       {
@@ -997,24 +1010,24 @@ namespace Org.DB
         {
           if (dbMap.DbElement == DbElement.Model)
           {
-            string dataStoreName = dbMap.EntityStore; 
-            string modelTypeName = modelType.FullName; 
-            string entityTypeName = dbMap.EntityName; 
+            string dataStoreName = dbMap.EntityStore;
+            string modelTypeName = modelType.FullName;
+            string entityTypeName = dbMap.EntityName;
             if (!EntityTypes.ContainsKey(entityTypeName))
               continue;
-              //throw new Exception("Entity type '" + entityTypeName + "' specified in DbMap.EntityName for model '" + modelTypeName + "' does not exist " +
-              //                    "in the EntityTypes collection."); 
+            //throw new Exception("Entity type '" + entityTypeName + "' specified in DbMap.EntityName for model '" + modelTypeName + "' does not exist " +
+            //                    "in the EntityTypes collection.");
             Type entityType = EntityTypes[entityTypeName].TypeOfEntity;
-            PropertyInfo dbSetPI = EntityTypes[entityTypeName].DbSetPI; 
+            PropertyInfo dbSetPI = EntityTypes[entityTypeName].DbSetPI;
             MethodInfo dbSetMI = EntityTypes[entityTypeName].DbSetMI;
             if (!EntityModelMapSet.ContainsKey(dataStoreName + "." + entityType.Name))
             {
-              var entityModelMap = new EntityModelMap(dataStoreName + "." + entityType.Name, entityType, modelType, dbSetPI, dbSetMI); 
-              EntityModelMapSet.Add(entityModelMap.Name, entityModelMap); 
+              var entityModelMap = new EntityModelMap(dataStoreName + "." + entityType.Name, entityType, modelType, dbSetPI, dbSetMI);
+              EntityModelMapSet.Add(entityModelMap.Name, entityModelMap);
               if (EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelType.Name))
-                EntityModelMapSet.ModelToEntityIndex[modelType.Name] = entityModelMap.Name; 
+                EntityModelMapSet.ModelToEntityIndex[modelType.Name] = entityModelMap.Name;
               else
-                EntityModelMapSet.ModelToEntityIndex.Add(modelType.Name, entityModelMap.Name); 
+                EntityModelMapSet.ModelToEntityIndex.Add(modelType.Name, entityModelMap.Name);
             }
           }
         }
@@ -1026,7 +1039,7 @@ namespace Org.DB
     {
       if (PropertyInfoSet.ContainsKey(modelType.FullName) &&
           PropertyInfoSet.ContainsKey(entityType.FullName) &&
-          EntityModelMapSet.ContainsKey(DataStoreName + "." + entityType.Name) && 
+          EntityModelMapSet.ContainsKey(DataStoreName + "." + entityType.Name) &&
           EntityModelMapSet[DataStoreName + "." + entityType.Name].PropertiesLoaded)
         return;
 
@@ -1053,7 +1066,7 @@ namespace Org.DB
           // deferred property loading for existing maps
           if (EntityModelMapSet.ContainsKey(DataStoreName + "." + entityType.Name))
           {
-            var entityModelMap = EntityModelMapSet[DataStoreName + "." + entityType.Name]; 
+            var entityModelMap = EntityModelMapSet[DataStoreName + "." + entityType.Name];
             foreach (var pi in PropertyInfoSet[modelType.FullName].Values)
             {
               var dbMap = pi.GetCustomAttributes<DbMap>().Where(x => x.DbElement == DbElement.Column && x.EntityStore == DataStoreName).FirstOrDefault();
@@ -1070,11 +1083,11 @@ namespace Org.DB
                 }
               }
             }
-            entityModelMap.PropertiesLoaded = true; 
+            entityModelMap.PropertiesLoaded = true;
           }
           else // create map and load properties
           {
-            throw new Exception("EntityModelMapSet does not contain entry for " + DataStoreName + "." + entityType.Name + "."); 
+            throw new Exception("EntityModelMapSet does not contain entry for " + DataStoreName + "." + entityType.Name + ".");
           }
 
         }
@@ -1097,18 +1110,18 @@ namespace Org.DB
 
     public CacheEntry GetFromCache(string modelName)
     {
-      var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]]; 
-      EnsureMaps(map.ModelType, map.EntityType); 
+      var map = EntityModelMapSet[EntityModelMapSet.ModelToEntityIndex[modelName]];
+      EnsureMaps(map.ModelType, map.EntityType);
 
       if (!EntityModelMapSet.ModelToEntityIndex.ContainsKey(modelName))
-        throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet."); 
-       
+        throw new Exception("Model name '" + modelName + "' does not exist in the ModelToEntityIndex of the EntityModelMapSet.");
+
       var entityPi =  map.PropertyInfoPairSet.Where(x => x.Value.IsPrimaryKey).FirstOrDefault();
       if (entityPi.Key == null)
-        throw new Exception("Could not find primary key for entity which corresponds to model '" + modelName + "'."); 
-      string modelKey = entityPi.Value.ModelPropertyInfo.Name; 
+        throw new Exception("Could not find primary key for entity which corresponds to model '" + modelName + "'.");
+      string modelKey = entityPi.Value.ModelPropertyInfo.Name;
 
-      return CacheManager.GetModelCache(modelName, modelKey, this); 
+      return CacheManager.GetModelCache(modelName, modelKey, this);
     }
 
     public static string GetKeyNameForModel(string modelName)

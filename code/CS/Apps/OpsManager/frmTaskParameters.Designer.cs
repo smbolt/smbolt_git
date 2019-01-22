@@ -54,9 +54,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.gvParametersInSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // gvTaskParameters
-      // 
+      //
       this.gvTaskParameters.AllowUserToAddRows = false;
       this.gvTaskParameters.AllowUserToDeleteRows = false;
       this.gvTaskParameters.AllowUserToResizeRows = false;
@@ -75,34 +75,35 @@
       this.gvTaskParameters.TabIndex = 6;
       this.gvTaskParameters.Tag = "EditTaskParameter";
       this.gvTaskParameters.DoubleClick += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuTaskParameters
-      // 
+      //
       this.ctxMenuTaskParameters.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMenuTaskParametersDelete,
-            this.ctxMenuTaskParametersMigrate});
+        this.ctxMenuTaskParametersDelete,
+        this.ctxMenuTaskParametersMigrate
+      });
       this.ctxMenuTaskParameters.Name = "ctxMenuTaskParameters";
       this.ctxMenuTaskParameters.Size = new System.Drawing.Size(230, 48);
       this.ctxMenuTaskParameters.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenu_Opening);
-      // 
+      //
       // ctxMenuTaskParametersDelete
-      // 
+      //
       this.ctxMenuTaskParametersDelete.Name = "ctxMenuTaskParametersDelete";
       this.ctxMenuTaskParametersDelete.Size = new System.Drawing.Size(229, 22);
       this.ctxMenuTaskParametersDelete.Tag = "DeleteTaskParameter";
       this.ctxMenuTaskParametersDelete.Text = "Delete";
       this.ctxMenuTaskParametersDelete.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuTaskParametersMigrate
-      // 
+      //
       this.ctxMenuTaskParametersMigrate.Name = "ctxMenuTaskParametersMigrate";
       this.ctxMenuTaskParametersMigrate.Size = new System.Drawing.Size(229, 22);
       this.ctxMenuTaskParametersMigrate.Tag = "MigrateVariable";
       this.ctxMenuTaskParametersMigrate.Text = "Migrate Variable to [new env]";
       this.ctxMenuTaskParametersMigrate.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 520);
       this.lblStatus.Name = "lblStatus";
@@ -111,9 +112,9 @@
       this.lblStatus.TabIndex = 7;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // gvParameterSets
-      // 
+      //
       this.gvParameterSets.AllowUserToAddRows = false;
       this.gvParameterSets.AllowUserToDeleteRows = false;
       this.gvParameterSets.AllowUserToResizeRows = false;
@@ -133,34 +134,35 @@
       this.gvParameterSets.Tag = "EditParameterSet";
       this.gvParameterSets.SelectionChanged += new System.EventHandler(this.gvParameterSets_SelectionChange);
       this.gvParameterSets.DoubleClick += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuParameterSets
-      // 
+      //
       this.ctxMenuParameterSets.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMenuParameterSetsAddToTask,
-            this.ctxMenuParameterSetsMigrate});
+        this.ctxMenuParameterSetsAddToTask,
+        this.ctxMenuParameterSetsMigrate
+      });
       this.ctxMenuParameterSets.Name = "ctxMenuParameterSets";
       this.ctxMenuParameterSets.Size = new System.Drawing.Size(204, 48);
       this.ctxMenuParameterSets.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenu_Opening);
-      // 
+      //
       // ctxMenuParameterSetsAddToTask
-      // 
+      //
       this.ctxMenuParameterSetsAddToTask.Name = "ctxMenuParameterSetsAddToTask";
       this.ctxMenuParameterSetsAddToTask.Size = new System.Drawing.Size(203, 22);
       this.ctxMenuParameterSetsAddToTask.Tag = "AddSetToTaskParameters";
       this.ctxMenuParameterSetsAddToTask.Text = "Add to Task Parameters";
       this.ctxMenuParameterSetsAddToTask.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuParameterSetsMigrate
-      // 
+      //
       this.ctxMenuParameterSetsMigrate.Name = "ctxMenuParameterSetsMigrate";
       this.ctxMenuParameterSetsMigrate.Size = new System.Drawing.Size(203, 22);
       this.ctxMenuParameterSetsMigrate.Tag = "MigrateParameterSet";
       this.ctxMenuParameterSetsMigrate.Text = "Migrate Set to [new env]";
       this.ctxMenuParameterSetsMigrate.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblTaskParameters
-      // 
+      //
       this.lblTaskParameters.AutoSize = true;
       this.lblTaskParameters.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblTaskParameters.Location = new System.Drawing.Point(320, 9);
@@ -168,9 +170,9 @@
       this.lblTaskParameters.Size = new System.Drawing.Size(122, 18);
       this.lblTaskParameters.TabIndex = 9;
       this.lblTaskParameters.Text = "Task Parameters";
-      // 
+      //
       // lblAvialableParameterSets
-      // 
+      //
       this.lblAvialableParameterSets.AutoSize = true;
       this.lblAvialableParameterSets.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblAvialableParameterSets.Location = new System.Drawing.Point(38, 260);
@@ -178,9 +180,9 @@
       this.lblAvialableParameterSets.Size = new System.Drawing.Size(172, 18);
       this.lblAvialableParameterSets.TabIndex = 10;
       this.lblAvialableParameterSets.Text = "Available Parameter Sets";
-      // 
+      //
       // btnNewTaskParameter
-      // 
+      //
       this.btnNewTaskParameter.Location = new System.Drawing.Point(620, 237);
       this.btnNewTaskParameter.Name = "btnNewTaskParameter";
       this.btnNewTaskParameter.Size = new System.Drawing.Size(156, 23);
@@ -189,9 +191,9 @@
       this.btnNewTaskParameter.Text = "New Task Parameter";
       this.btnNewTaskParameter.UseVisualStyleBackColor = true;
       this.btnNewTaskParameter.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // gvParametersInSet
-      // 
+      //
       this.gvParametersInSet.AllowUserToAddRows = false;
       this.gvParametersInSet.AllowUserToDeleteRows = false;
       this.gvParametersInSet.AllowUserToResizeRows = false;
@@ -209,9 +211,9 @@
       this.gvParametersInSet.Size = new System.Drawing.Size(501, 195);
       this.gvParametersInSet.TabIndex = 12;
       this.gvParametersInSet.Tag = "EditParameterInSet";
-      // 
+      //
       // label1
-      // 
+      //
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label1.Location = new System.Drawing.Point(459, 260);
@@ -219,9 +221,9 @@
       this.label1.Size = new System.Drawing.Size(126, 18);
       this.label1.TabIndex = 13;
       this.label1.Text = "Parameters In Set";
-      // 
+      //
       // pictureBox1
-      // 
+      //
       this.pictureBox1.Image = global::Org.OpsManager.Properties.Resources.Right_Arrow;
       this.pictureBox1.Location = new System.Drawing.Point(244, 344);
       this.pictureBox1.Name = "pictureBox1";
@@ -229,9 +231,9 @@
       this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.pictureBox1.TabIndex = 15;
       this.pictureBox1.TabStop = false;
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Location = new System.Drawing.Point(323, 482);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new System.Drawing.Size(110, 25);
@@ -240,9 +242,9 @@
       this.btnCancel.Text = "Close";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnNewParameterSet
-      // 
+      //
       this.btnNewParameterSet.Location = new System.Drawing.Point(59, 482);
       this.btnNewParameterSet.Name = "btnNewParameterSet";
       this.btnNewParameterSet.Size = new System.Drawing.Size(125, 25);
@@ -251,9 +253,9 @@
       this.btnNewParameterSet.Text = "New Parameter Set";
       this.btnNewParameterSet.UseVisualStyleBackColor = true;
       this.btnNewParameterSet.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmTaskParameters
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(783, 538);

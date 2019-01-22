@@ -11,20 +11,29 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "SoftwareModuleType")]
-    public partial class SoftwareModuleType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "SoftwareModuleType")]
+  public partial class SoftwareModuleType
+  {
+    public SoftwareModuleType()
     {
-        public SoftwareModuleType()
-        {
-            this.SoftwareModules = new HashSet<SoftwareModule>();
-        }
-    
-        public int SoftwareModuleTypeId { get; set; }
-        public string SoftwareModuleTypeName { get; set; }
-    
-        public virtual ICollection<SoftwareModule> SoftwareModules { get; set; }
+      this.SoftwareModules = new HashSet<SoftwareModule>();
     }
+
+    public int SoftwareModuleTypeId {
+      get;
+      set;
+    }
+    public string SoftwareModuleTypeName {
+      get;
+      set;
+    }
+
+    public virtual ICollection<SoftwareModule> SoftwareModules {
+      get;
+      set;
+    }
+  }
 }

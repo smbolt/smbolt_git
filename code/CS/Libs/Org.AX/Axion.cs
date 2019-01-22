@@ -23,15 +23,27 @@ namespace Org.AX
   public class Axion : UnitOfWork
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public AxionType AxionType { get; set; }    
+    public AxionType AxionType {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
-    public bool IsDryRun { get; set; }
+    public bool IsDryRun {
+      get;
+      set;
+    }
 
     public Axion()
     {

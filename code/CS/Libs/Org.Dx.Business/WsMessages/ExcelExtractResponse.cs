@@ -14,10 +14,16 @@ namespace Org.Dx.Business
   public class ExcelExtractResponse : TransactionBase
   {
     [XMap(XType=XType.Element, CollectionElements="DxWorksheet", WrapperElement="DxWorkbook")]
-    public DxWorkbook DxWorkbook { get; set; }
+    public DxWorkbook DxWorkbook {
+      get;
+      set;
+    }
 
     [XMap]
-    public string RegressionFullFilePath { get; set; }
+    public string RegressionFullFilePath {
+      get;
+      set;
+    }
 
     public ExcelExtractResponse()
     {

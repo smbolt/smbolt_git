@@ -7,8 +7,14 @@ namespace Org.GS
 {
   public class XmlLine
   {
-    public string Line { get; set; }
-    public List<XmlLineError> XmlLineErrors { get; set; }
+    public string Line {
+      get;
+      set;
+    }
+    public List<XmlLineError> XmlLineErrors {
+      get;
+      set;
+    }
 
     public XmlLine(string line)
     {

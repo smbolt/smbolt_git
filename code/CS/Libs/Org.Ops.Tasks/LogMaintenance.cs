@@ -26,7 +26,7 @@ namespace Org.Ops.Tasks
     private string _modulesToExclude = String.Empty;
     private string _eventsToExclude = String.Empty;
     private string _entitiesToExclude = String.Empty;
-    
+
     public override async Task<TaskResult> ProcessTaskAsync(Func<bool> checkContinue)
     {
       TaskResult taskResult = base.InitializeTaskResult();
@@ -52,7 +52,7 @@ namespace Org.Ops.Tasks
             {
               string message = "ModulesToExclude parameter contains invalid characters or comma placement. Must be comma delimited string of integers.";
               return taskResult.Failed(message, LogSeverity.MINR);
-            }   
+            }
           }
           if (ParmExists("EventsToExclude"))
           {
@@ -92,7 +92,7 @@ namespace Org.Ops.Tasks
 
           using (var repo = new LoggingRepository(loggingDbSpec))
             deletedRows = repo.DeleteOldLogRecords(_retentionDaysAUDT, _retentionDaysDIAG, _retentionDaysINFO, _retentionDaysMAJR, _retentionDaysMINR, _retentionDaysSEVR, _retentionDaysTRAC,
-                                     _retentionDaysWARN, _modulesToExclude, _eventsToExclude, _entitiesToExclude, IsDryRun);
+                                                   _retentionDaysWARN, _modulesToExclude, _eventsToExclude, _entitiesToExclude, IsDryRun);
 
           if (IsDryRun)
             taskResult.NoWorkDone = true;
@@ -100,7 +100,7 @@ namespace Org.Ops.Tasks
           string successMsg = deletedRows + " log records were deleted.";
 
           return taskResult.Success(successMsg);
-        });     
+        });
 
         return taskResult;
       }

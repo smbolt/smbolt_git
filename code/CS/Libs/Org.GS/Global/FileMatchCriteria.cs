@@ -9,10 +9,20 @@ namespace Org.GS
 {
   public class FileMatchCriteria
   {
-    public FileSet IncludedFileSet { get; set; }
-    public FileSet ExcludedFileSet { get; set; }
+    public FileSet IncludedFileSet {
+      get;
+      set;
+    }
+    public FileSet ExcludedFileSet {
+      get;
+      set;
+    }
 
-    public string Report { get { return Get_Report(); } }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public FileMatchCriteria(string includePattern)
     {
@@ -30,7 +40,7 @@ namespace Org.GS
     public bool IncludeThisFile(string fullFilePath)
     {
       if (this.IncludedFileSet.Count == 0 && this.ExcludedFileSet.Count == 0)
-        return true; 
+        return true;
 
       string fileName = Path.GetFileName(fullFilePath);
 

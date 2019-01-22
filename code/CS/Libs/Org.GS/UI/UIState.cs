@@ -35,11 +35,14 @@ namespace Org.GS.UI
   public class UIState
   {
     [XMap(XType = XType.Element, CollectionElements = "UIWindow", WrapperElement = "UIWindowSet")]
-    public UIWindowSet UIWindowSet { get; set; }
+    public UIWindowSet UIWindowSet {
+      get;
+      set;
+    }
 
     public UIState()
     {
-        this.UIWindowSet = new UIWindowSet();
+      this.UIWindowSet = new UIWindowSet();
     }
   }
 }

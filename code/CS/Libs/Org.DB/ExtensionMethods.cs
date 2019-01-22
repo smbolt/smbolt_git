@@ -13,10 +13,10 @@ namespace Org.DB
     public static IQueryable OrderBy(this IQueryable source, Type entityType, string sortExpression)
     {
       if (source == null)
-          throw new ArgumentNullException("source", "source is null.");
+        throw new ArgumentNullException("source", "source is null.");
 
       if (string.IsNullOrEmpty(sortExpression))
-          throw new ArgumentException("sortExpression is null or empty.", "sortExpression");
+        throw new ArgumentException("sortExpression is null or empty.", "sortExpression");
 
       var parts = sortExpression.Split(' ');
       var isDescending = false;
@@ -42,9 +42,9 @@ namespace Org.DB
         var funcType = typeof(Func<,>).MakeGenericType(tType, prop.PropertyType);
 
         var lambdaBuilder = typeof(Expression)
-          .GetMethods()
-          .First(x => x.Name == "Lambda" && x.ContainsGenericParameters && x.GetParameters().Length == 2)
-          .MakeGenericMethod(funcType);
+                            .GetMethods()
+                            .First(x => x.Name == "Lambda" && x.ContainsGenericParameters && x.GetParameters().Length == 2)
+                            .MakeGenericMethod(funcType);
 
         var parameter = Expression.Parameter(tType);
         var propExpress = Expression.Property(parameter, prop);
@@ -52,9 +52,9 @@ namespace Org.DB
         var sortLambda = lambdaBuilder.Invoke(null, new object[] { propExpress, new ParameterExpression[] { parameter } });
 
         var sorter = typeof(Queryable)
-          .GetMethods()
-          .FirstOrDefault(x => x.Name == (isDescending ? "OrderByDescending" : "OrderBy") && x.GetParameters().Length == 2)
-          .MakeGenericMethod(new[] { tType, prop.PropertyType });
+                     .GetMethods()
+                     .FirstOrDefault(x => x.Name == (isDescending ? "OrderByDescending" : "OrderBy") && x.GetParameters().Length == 2)
+                     .MakeGenericMethod(new[] { tType, prop.PropertyType });
 
         return (IQueryable)sorter.Invoke(null, new object[] { source, sortLambda });
       }

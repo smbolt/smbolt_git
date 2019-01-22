@@ -8,78 +8,163 @@ using System.Threading.Tasks;
 using Org.GS;
 
 namespace Org.Dx.Business
-{ 
+{
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
   [XMap(XType = XType.Element, CollectionElements = "DxRegionRow")]
   public class DxRegion
   {
     [XMap(IsKey =  true, IsRequired = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "99999")]
-    public int RegionsPerSheet { get; set; }
+    public int RegionsPerSheet {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Vertical")]
-    public Direction Direction { get; set; }
+    public Direction Direction {
+      get;
+      set;
+    }
 
-    public DxRowSet DxRowSet { get; set; }
+    public DxRowSet DxRowSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "DxMap")]
-    public DxMapSet DxMapSet { get; set; }
+    public DxMapSet DxMapSet {
+      get;
+      set;
+    }
 
     [XMap (DefaultValue="NotUsed")]
-    public DxRegionExtractMethod DxRegionExtractMethod { get; set; }
+    public DxRegionExtractMethod DxRegionExtractMethod {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "DxRegionRow", WrapperElement = "DxRegionRowSet")]
-    public DxRegionRowSet DxRegionRowSet { get; set; }
+    public DxRegionRowSet DxRegionRowSet {
+      get;
+      set;
+    }
 
     [XMap]
-    public string TopLeftCell { get; set; }
-      
-    [XMap]
-    public string TopRightCell { get; set; }
+    public string TopLeftCell {
+      get;
+      set;
+    }
 
     [XMap]
-    public string BottomRightCell { get; set; }
+    public string TopRightCell {
+      get;
+      set;
+    }
 
-    public CellDefinition TopLeftCellDefinition { get; set; }
-    public CellDefinition TopRightCellDefinition { get; set; }
-    public CellDefinition BottomRightCellDefinition { get; set; }
+    [XMap]
+    public string BottomRightCell {
+      get;
+      set;
+    }
+
+    public CellDefinition TopLeftCellDefinition {
+      get;
+      set;
+    }
+    public CellDefinition TopRightCellDefinition {
+      get;
+      set;
+    }
+    public CellDefinition BottomRightCellDefinition {
+      get;
+      set;
+    }
 
     [XMap (DefaultValue = "True")]
-    public bool Advance { get; set; }
+    public bool Advance {
+      get;
+      set;
+    }
 
     [XMap]
-    public string TopRowSpec { get; set; }
+    public string TopRowSpec {
+      get;
+      set;
+    }
 
     [XMap]
-    public string BottomRowSpec { get; set; }
+    public string BottomRowSpec {
+      get;
+      set;
+    }
 
     [XMap]
-    public string LeftColSpec { get; set; }
+    public string LeftColSpec {
+      get;
+      set;
+    }
 
     [XMap]
-    public string RightColSpec { get; set; }
+    public string RightColSpec {
+      get;
+      set;
+    }
 
     [XMap]
-    public string NodeData { get; set; }
+    public string NodeData {
+      get;
+      set;
+    }
 
     [XMap(MyParent = true)]
-    public DxRegionSet DxRegionSet { get; set; }
+    public DxRegionSet DxRegionSet {
+      get;
+      set;
+    }
 
-    public int TopIndex { get; private set; }
-    public int BottomIndex { get; private set; }
-    public int LeftIndex { get; private set; }
-    public int RightIndex { get; private set; }
-    
-    public string Report { get { return Get_Report(); } }
+    public int TopIndex {
+      get;
+      private set;
+    }
+    public int BottomIndex {
+      get;
+      private set;
+    }
+    public int LeftIndex {
+      get;
+      private set;
+    }
+    public int RightIndex {
+      get;
+      private set;
+    }
+
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     [XMap]
-    public string SheetSelect { get; set; }
+    public string SheetSelect {
+      get;
+      set;
+    }
 
-    public MapEngine MapEngine { get;  set; }
+    public MapEngine MapEngine {
+      get;
+      set;
+    }
 
-    public bool IndicesEstablished { get; set; }
+    public bool IndicesEstablished {
+      get;
+      set;
+    }
 
 
     [XParm(Name = "parent", ParmSource = XParmSource.Parent)]
@@ -220,7 +305,7 @@ namespace Org.Dx.Business
         throw new Exception("The DxRegion.LeftIndex '" + this.LeftIndex.ToString() + "' cannot be greater than the DxRegion.RightIndex '" +
                             this.RightIndex.ToString() + "'. DxRegion name is '" + this.Name + "'.");
     }
-    
+
     private string Get_Report()
     {
       return this.Name;

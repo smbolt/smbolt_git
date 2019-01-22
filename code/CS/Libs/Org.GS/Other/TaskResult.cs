@@ -14,80 +14,209 @@ namespace Org.GS
   {
     private string indent;
 
-    public string TaskName { get; set; }
+    public string TaskName {
+      get;
+      set;
+    }
     private TaskResultStatus _taskResultStatus;
-    public TaskResultStatus TaskResultStatus 
+    public TaskResultStatus TaskResultStatus
     {
-      get { return _taskResultStatus; }
+      get {
+        return _taskResultStatus;
+      }
       set
       {
         _taskResultStatus = value;
         this.EndDateTime = DateTime.Now;
       }
     }
-    public TaskRequest OriginalTaskRequest { get; set; }
-    public string Message { get; set; }
-    public int Code { get; set; }
-    public LogSeverity LogSeverity { get; set; }
-    public int OrgId { get; set; }
-    public int AccountId { get; set; }
-    public int ModuleId { get; set; }
-    public string SessionId { get; set; }
-    public int EntityTypeId { get; set; }
-    public int EntityId { get; set; }
-    public string UserName { get; set; }
-    public string Header { get; set; }
-    public bool ReenqueueTask { get; set; }
-    public string FullDetail { get; set; }
-    public string FullErrorDetail { get; set; }
+    public TaskRequest OriginalTaskRequest {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public int Code {
+      get;
+      set;
+    }
+    public LogSeverity LogSeverity {
+      get;
+      set;
+    }
+    public int OrgId {
+      get;
+      set;
+    }
+    public int AccountId {
+      get;
+      set;
+    }
+    public int ModuleId {
+      get;
+      set;
+    }
+    public string SessionId {
+      get;
+      set;
+    }
+    public int EntityTypeId {
+      get;
+      set;
+    }
+    public int EntityId {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public string Header {
+      get;
+      set;
+    }
+    public bool ReenqueueTask {
+      get;
+      set;
+    }
+    public string FullDetail {
+      get;
+      set;
+    }
+    public string FullErrorDetail {
+      get;
+      set;
+    }
     //public XElement Xml { get; set; }
-    public string Data { get; set; }
-    public bool? Boolean1 { get; set; }
-    public bool? Boolean2 { get; set; }
-    public string Field { get; set; }
-    public Exception Exception { get; set; }
-    public int MessageCode { get; set; }
-    public DataSet DataSet { get; set; }
-    public TaskResultSet TaskResultSet { get; set; }
-    public int Depth { get; set; }
-    public TaskResult Parent { get; set; }
-    public DateTime BeginDateTime { get; set; }
-    public DateTime EndDateTime { get; set; }
-    public string OutputFileName { get; set; }
-    public int TaskNumber { get; set; }
-    public object OriginalTask { get; set; }
-    public int ThreadId { get; set; }
-    public int TaskId { get; set; }
-    public object Object { get; set; }
-    public int TotalEntityCount { get; set; }
-    public int SubsetEntityCount { get; set; }
-    public bool IsPaging { get; set; }
-    public bool IsLogged { get; set; }
-    public bool NoWorkDone { get; set; }
-    public bool IsDryRun { get; set; }
-    public string Report { get { return Get_Report(this); } }
+    public string Data {
+      get;
+      set;
+    }
+    public bool? Boolean1 {
+      get;
+      set;
+    }
+    public bool? Boolean2 {
+      get;
+      set;
+    }
+    public string Field {
+      get;
+      set;
+    }
+    public Exception Exception {
+      get;
+      set;
+    }
+    public int MessageCode {
+      get;
+      set;
+    }
+    public DataSet DataSet {
+      get;
+      set;
+    }
+    public TaskResultSet TaskResultSet {
+      get;
+      set;
+    }
+    public int Depth {
+      get;
+      set;
+    }
+    public TaskResult Parent {
+      get;
+      set;
+    }
+    public DateTime BeginDateTime {
+      get;
+      set;
+    }
+    public DateTime EndDateTime {
+      get;
+      set;
+    }
+    public string OutputFileName {
+      get;
+      set;
+    }
+    public int TaskNumber {
+      get;
+      set;
+    }
+    public object OriginalTask {
+      get;
+      set;
+    }
+    public int ThreadId {
+      get;
+      set;
+    }
+    public int TaskId {
+      get;
+      set;
+    }
+    public object Object {
+      get;
+      set;
+    }
+    public int TotalEntityCount {
+      get;
+      set;
+    }
+    public int SubsetEntityCount {
+      get;
+      set;
+    }
+    public bool IsPaging {
+      get;
+      set;
+    }
+    public bool IsLogged {
+      get;
+      set;
+    }
+    public bool NoWorkDone {
+      get;
+      set;
+    }
+    public bool IsDryRun {
+      get;
+      set;
+    }
+    public string Report {
+      get {
+        return Get_Report(this);
+      }
+    }
     //public bool ReportOnly { get; set; }
-    public bool NotificationsSent { get; set; }
+    public bool NotificationsSent {
+      get;
+      set;
+    }
 
     private string _notificationMessage = String.Empty;
-    public string NotificationMessage 
+    public string NotificationMessage
     {
       get
       {
         if (_notificationMessage.IsBlank())
         {
-          _notificationMessage = "Task '" + this.TaskName + "' - Status is '" + this.TaskResultStatus.ToString() + "'." + g.crlf + 
-            "        Code    : " + this.Code + g.crlf + 
-            "        Started : " + this.BeginDateTime.ToString() + g.crlf + 
-            "        Ended   : " + this.EndDateTime.ToString() + g.crlf + 
-            "        Duration: " + this.DurationString + " seconds" + g.crlf2 +
-            "Message : " + g.crlf2 +  this.Message;
+          _notificationMessage = "Task '" + this.TaskName + "' - Status is '" + this.TaskResultStatus.ToString() + "'." + g.crlf +
+                                 "        Code    : " + this.Code + g.crlf +
+                                 "        Started : " + this.BeginDateTime.ToString() + g.crlf +
+                                 "        Ended   : " + this.EndDateTime.ToString() + g.crlf +
+                                 "        Duration: " + this.DurationString + " seconds" + g.crlf2 +
+                                 "Message : " + g.crlf2 +  this.Message;
 
           if (this.TaskResultStatus != GS.TaskResultStatus.Success && this.FullErrorDetail.IsNotBlank())
             _notificationMessage += g.crlf2 + "Full Error Detail" + g.crlf + this.FullErrorDetail;
 
           if (this.Exception != null)
-            _notificationMessage += g.crlf2 + "Exception" + g.crlf2 + this.Exception.ToReport(); 
+            _notificationMessage += g.crlf2 + "Exception" + g.crlf2 + this.Exception.ToReport();
         }
         return _notificationMessage;
       }
@@ -184,7 +313,7 @@ namespace Org.GS
       this.ThreadId = Thread.CurrentThread.ManagedThreadId;
       this.Message = message;
       this.TaskResultStatus = taskStatus;
-      this.Code = code; 
+      this.Code = code;
     }
 
     public TaskResult(string taskName, string message, TaskResultStatus taskStatus, int code, Exception ex)
@@ -238,7 +367,7 @@ namespace Org.GS
       this.TaskId = 0;
       this.Object = null;
       this.TotalEntityCount = 0;
-      this.SubsetEntityCount = 0; 
+      this.SubsetEntityCount = 0;
       this.IsPaging = false;
       this.IsLogged = false;
       this.NoWorkDone = false;

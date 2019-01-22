@@ -11,56 +11,119 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Status")]
-    public partial class Status
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Status")]
+  public partial class Status
+  {
+    public Status()
     {
-        public Status()
-        {
-            this.ConfigItems = new HashSet<ConfigItem>();
-            this.Groups = new HashSet<Group>();
-            this.GroupMemberships = new HashSet<GroupMembership>();
-            this.Orders = new HashSet<Order>();
-            this.OrderDetails = new HashSet<OrderDetail>();
-            this.PasswordChangeHistories = new HashSet<PasswordChangeHistory>();
-            this.PersonAddresses = new HashSet<PersonAddress>();
-            this.PersonPhoneNumbers = new HashSet<PersonPhoneNumber>();
-            this.PoliticalUnits = new HashSet<PoliticalUnit>();
-            this.Products = new HashSet<Product>();
-            this.Referrals = new HashSet<Referral>();
-            this.SecurityQuestions = new HashSet<SecurityQuestion>();
-            this.Services = new HashSet<Service>();
-            this.StatusUsages = new HashSet<StatusUsage>();
-            this.FrameworkVersions = new HashSet<FrameworkVersion>();
-            this.SoftwareModules = new HashSet<SoftwareModule>();
-            this.SoftwarePlatforms = new HashSet<SoftwarePlatform>();
-            this.SoftwareRepositories = new HashSet<SoftwareRepository>();
-            this.SoftwareVersions = new HashSet<SoftwareVersion>();
-        }
-    
-        public int StatusId { get; set; }
-        public string StatusValue { get; set; }
-    
-        public virtual ICollection<ConfigItem> ConfigItems { get; set; }
-        public virtual ICollection<Group> Groups { get; set; }
-        public virtual ICollection<GroupMembership> GroupMemberships { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual ICollection<PasswordChangeHistory> PasswordChangeHistories { get; set; }
-        public virtual ICollection<PersonAddress> PersonAddresses { get; set; }
-        public virtual ICollection<PersonPhoneNumber> PersonPhoneNumbers { get; set; }
-        public virtual ICollection<PoliticalUnit> PoliticalUnits { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
-        public virtual ICollection<Referral> Referrals { get; set; }
-        public virtual ICollection<SecurityQuestion> SecurityQuestions { get; set; }
-        public virtual ICollection<Service> Services { get; set; }
-        public virtual ICollection<StatusUsage> StatusUsages { get; set; }
-        public virtual ICollection<FrameworkVersion> FrameworkVersions { get; set; }
-        public virtual ICollection<SoftwareModule> SoftwareModules { get; set; }
-        public virtual ICollection<SoftwarePlatform> SoftwarePlatforms { get; set; }
-        public virtual ICollection<SoftwareRepository> SoftwareRepositories { get; set; }
-        public virtual ICollection<SoftwareVersion> SoftwareVersions { get; set; }
+      this.ConfigItems = new HashSet<ConfigItem>();
+      this.Groups = new HashSet<Group>();
+      this.GroupMemberships = new HashSet<GroupMembership>();
+      this.Orders = new HashSet<Order>();
+      this.OrderDetails = new HashSet<OrderDetail>();
+      this.PasswordChangeHistories = new HashSet<PasswordChangeHistory>();
+      this.PersonAddresses = new HashSet<PersonAddress>();
+      this.PersonPhoneNumbers = new HashSet<PersonPhoneNumber>();
+      this.PoliticalUnits = new HashSet<PoliticalUnit>();
+      this.Products = new HashSet<Product>();
+      this.Referrals = new HashSet<Referral>();
+      this.SecurityQuestions = new HashSet<SecurityQuestion>();
+      this.Services = new HashSet<Service>();
+      this.StatusUsages = new HashSet<StatusUsage>();
+      this.FrameworkVersions = new HashSet<FrameworkVersion>();
+      this.SoftwareModules = new HashSet<SoftwareModule>();
+      this.SoftwarePlatforms = new HashSet<SoftwarePlatform>();
+      this.SoftwareRepositories = new HashSet<SoftwareRepository>();
+      this.SoftwareVersions = new HashSet<SoftwareVersion>();
     }
+
+    public int StatusId {
+      get;
+      set;
+    }
+    public string StatusValue {
+      get;
+      set;
+    }
+
+    public virtual ICollection<ConfigItem> ConfigItems {
+      get;
+      set;
+    }
+    public virtual ICollection<Group> Groups {
+      get;
+      set;
+    }
+    public virtual ICollection<GroupMembership> GroupMemberships {
+      get;
+      set;
+    }
+    public virtual ICollection<Order> Orders {
+      get;
+      set;
+    }
+    public virtual ICollection<OrderDetail> OrderDetails {
+      get;
+      set;
+    }
+    public virtual ICollection<PasswordChangeHistory> PasswordChangeHistories {
+      get;
+      set;
+    }
+    public virtual ICollection<PersonAddress> PersonAddresses {
+      get;
+      set;
+    }
+    public virtual ICollection<PersonPhoneNumber> PersonPhoneNumbers {
+      get;
+      set;
+    }
+    public virtual ICollection<PoliticalUnit> PoliticalUnits {
+      get;
+      set;
+    }
+    public virtual ICollection<Product> Products {
+      get;
+      set;
+    }
+    public virtual ICollection<Referral> Referrals {
+      get;
+      set;
+    }
+    public virtual ICollection<SecurityQuestion> SecurityQuestions {
+      get;
+      set;
+    }
+    public virtual ICollection<Service> Services {
+      get;
+      set;
+    }
+    public virtual ICollection<StatusUsage> StatusUsages {
+      get;
+      set;
+    }
+    public virtual ICollection<FrameworkVersion> FrameworkVersions {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwareModule> SoftwareModules {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwarePlatform> SoftwarePlatforms {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwareRepository> SoftwareRepositories {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwareVersion> SoftwareVersions {
+      get;
+      set;
+    }
+  }
 }

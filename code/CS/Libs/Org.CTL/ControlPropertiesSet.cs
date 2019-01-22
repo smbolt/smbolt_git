@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Org.CTL
 {
-    public class ControlPropertiesSet : Dictionary<string, ControlProperties>
-    {
-    }
+  public class ControlPropertiesSet : Dictionary<string, ControlProperties>
+  {
+  }
 }

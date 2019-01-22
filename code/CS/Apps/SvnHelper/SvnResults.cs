@@ -20,16 +20,16 @@ namespace Org.SvnHelper
       string timeStamp = DateTime.Now.ToString("yyyyMMdd-HHmmss.fff");
       while (this._rawResults.ContainsKey(timeStamp))
       {
-        System.Threading.Thread.Sleep(5); 
+        System.Threading.Thread.Sleep(5);
         timeStamp = DateTime.Now.ToString("yyyyMMdd-HHmmss.fff");
       }
 
-      this._rawResults.Add(timeStamp, result); 
+      this._rawResults.Add(timeStamp, result);
     }
 
     public string GetResults()
     {
-      string[] delim = new string[] { g.crlf }; 
+      string[] delim = new string[] { g.crlf };
 
       StringBuilder sb = new StringBuilder();
 
@@ -55,10 +55,10 @@ namespace Org.SvnHelper
 
           if (line.StartsWith("Sending ") || line.StartsWith("Committed revision"))
           {
-            sb.Append("    " + line + g.crlf); 
+            sb.Append("    " + line + g.crlf);
             continue;
           }
-                            
+
 
           if (line.Contains("svn update"))
           {
@@ -71,14 +71,14 @@ namespace Org.SvnHelper
             continue;
           }
 
-          sb.Append(line + g.crlf); 
+          sb.Append(line + g.crlf);
         }
       }
-            
+
 
       string results = sb.ToString();
       return results;
     }
-        
+
   }
 }

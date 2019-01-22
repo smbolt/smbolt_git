@@ -13,7 +13,7 @@ namespace Org.Terminal.Screen
     //[DebuggerStepThrough]
     public static int FindEndOfStretch(this int[] line, int start)
     {
-      int lastCol = line.Length - 1; 
+      int lastCol = line.Length - 1;
 
       for (int c = start; c < lastCol; c++)
       {
@@ -32,7 +32,7 @@ namespace Org.Terminal.Screen
     //[DebuggerStepThrough]
     public static int GetRightMostPlacement(this int[] line, int length)
     {
-      int lastCol = line.Length - 1; 
+      int lastCol = line.Length - 1;
       int ptr = -1;
 
       for (int c = 0; c < lastCol + 1; c++)
@@ -50,7 +50,7 @@ namespace Org.Terminal.Screen
       // If the line already contains controls back up one character to allow space between controls.
       // If more space is desired between floated-right controls, use the length property to control spacing.
       if (ptr < lastCol)
-        ptr--; 
+        ptr--;
 
       ptr -= length - 1;
 
@@ -73,7 +73,7 @@ namespace Org.Terminal.Screen
       for (int c = col; c < lastCol + 1 && remainingLength > 0; c++)
       {
         line[c] = controlId;
-        remainingLength--; 
+        remainingLength--;
       }
     }
 
@@ -95,7 +95,7 @@ namespace Org.Terminal.Screen
 
       return false;
     }
- 
+
     [DebuggerStepThrough]
     public static BmsStatementType ToBmsStatementType(this string s)
     {
@@ -106,9 +106,12 @@ namespace Org.Terminal.Screen
 
       switch (upper)
       {
-        case "DFHMSD": return BmsStatementType.DFHMSD;
-        case "DFHMDI": return BmsStatementType.DFHMDI;
-        case "DFHMDF": return BmsStatementType.DFHMDF;
+        case "DFHMSD":
+          return BmsStatementType.DFHMSD;
+        case "DFHMDI":
+          return BmsStatementType.DFHMDI;
+        case "DFHMDF":
+          return BmsStatementType.DFHMDF;
       }
 
       return BmsStatementType.Unidentified;

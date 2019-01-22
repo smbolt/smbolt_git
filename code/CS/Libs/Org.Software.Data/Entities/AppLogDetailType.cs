@@ -12,20 +12,29 @@ using Org.GS;
 
 namespace Org.Software.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Org_Software", "", "AppLogDetailType")]
-    public partial class AppLogDetailType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Org_Software", "", "AppLogDetailType")]
+  public partial class AppLogDetailType
+  {
+    public AppLogDetailType()
     {
-        public AppLogDetailType()
-        {
-            this.AppLogDetails = new HashSet<AppLogDetail>();
-        }
-    
-        public string AppLogDetailTypeCode { get; set; }
-        public string AppLogDetailTypeDesc { get; set; }
-    
-        public virtual ICollection<AppLogDetail> AppLogDetails { get; set; }
+      this.AppLogDetails = new HashSet<AppLogDetail>();
     }
+
+    public string AppLogDetailTypeCode {
+      get;
+      set;
+    }
+    public string AppLogDetailTypeDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<AppLogDetail> AppLogDetails {
+      get;
+      set;
+    }
+  }
 }

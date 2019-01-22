@@ -14,13 +14,16 @@ namespace Org.OpsManager.Controls
 {
   public partial class NotifyEventPanel : BasePanel
   {
-    private NotifyEvent NotifyEvent { get; set; }
+    private NotifyEvent NotifyEvent {
+      get;
+      set;
+    }
 
     public NotifyEventPanel(PanelData panelData, ChangeType changeType)
     {
       InitializeComponent();
       base.InitializeBaseProperties(panelData, changeType);
-      
+
       lblTreeNodePath.Text += panelData.TreeNodePath;
 
       if (base.ChangeType == ChangeType.Update)
@@ -44,7 +47,7 @@ namespace Org.OpsManager.Controls
           chkIsActive.Checked != this.NotifyEvent.IsActive ||
           txtDefaultSubject.Text.Trim() != this.NotifyEvent.DefaultSubject)
         isDirty = true;
-      
+
       base.IsDirty = btnSave.Enabled = isDirty;
     }
 
@@ -86,7 +89,7 @@ namespace Org.OpsManager.Controls
           this.NotifyEvent.ModifiedOn = DateTime.Now;
 
           using (var notifyRepo = new NotifyRepository(base.ConfigDbSpec))
-            notifyRepo.UpdateNotifyEvent(this.NotifyEvent);      
+            notifyRepo.UpdateNotifyEvent(this.NotifyEvent);
         }
         //Insert NotifyEvent
         else

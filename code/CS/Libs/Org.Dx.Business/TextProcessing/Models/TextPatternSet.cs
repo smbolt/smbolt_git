@@ -15,12 +15,12 @@ namespace Org.Dx.Business.TextProcessing
     {
       try
       {
-        _text = text; 
+        _text = text;
         this.FindPatterns();
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to find patterns in text.", ex); 
+        throw new Exception("An exception occurred while attempting to find patterns in text.", ex);
       }
     }
 
@@ -83,7 +83,9 @@ namespace Org.Dx.Business.TextProcessing
       foreach (var kvp in multipleOccurrenceCounter)
       {
         if (!highestOccurrrences.ContainsKey(kvp.Value))
-          highestOccurrrences.Add(kvp.Value, new List<string>() { kvp.Key });
+          highestOccurrrences.Add(kvp.Value, new List<string>() {
+          kvp.Key
+        });
         else
           highestOccurrrences[kvp.Value].Add(kvp.Key);
       }

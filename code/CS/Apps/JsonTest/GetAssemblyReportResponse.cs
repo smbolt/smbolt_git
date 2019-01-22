@@ -10,7 +10,10 @@ namespace Org.JsonTest
 {
   public class GetAssemblyReportResponse
   {
-    public string AssemblyReport { get; set; }
+    public string AssemblyReport {
+      get;
+      set;
+    }
 
     public GetAssemblyReportResponse()
     {

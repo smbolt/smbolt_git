@@ -37,9 +37,9 @@
       this.pnlMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // pnlMain
-      // 
+      //
       this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.pnlMain.Controls.Add(this.pbMain);
       this.pnlMain.Controls.Add(this.lblMessage);
@@ -52,18 +52,18 @@
       this.pnlMain.Size = new System.Drawing.Size(500, 271);
       this.pnlMain.TabIndex = 10;
       this.pnlMain.UseWaitCursor = true;
-      // 
+      //
       // pbMain
-      // 
+      //
       this.pbMain.Location = new System.Drawing.Point(-1, -1);
       this.pbMain.Name = "pbMain";
       this.pbMain.Size = new System.Drawing.Size(500, 202);
       this.pbMain.TabIndex = 7;
       this.pbMain.TabStop = false;
       this.pbMain.UseWaitCursor = true;
-      // 
+      //
       // lblMessage
-      // 
+      //
       this.lblMessage.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblMessage.ForeColor = System.Drawing.Color.Black;
       this.lblMessage.Location = new System.Drawing.Point(11, 203);
@@ -73,9 +73,9 @@
       this.lblMessage.Text = "Message";
       this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.lblMessage.UseWaitCursor = true;
-      // 
+      //
       // lblCopyright
-      // 
+      //
       this.lblCopyright.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblCopyright.Location = new System.Drawing.Point(11, 225);
       this.lblCopyright.Name = "lblCopyright";
@@ -84,9 +84,9 @@
       this.lblCopyright.Text = "Copyright";
       this.lblCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.lblCopyright.UseWaitCursor = true;
-      // 
+      //
       // lblReset
-      // 
+      //
       this.lblReset.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblReset.ForeColor = System.Drawing.Color.SteelBlue;
       this.lblReset.Location = new System.Drawing.Point(307, 249);
@@ -96,9 +96,9 @@
       this.lblReset.Text = "ESCAPED";
       this.lblReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.lblReset.UseWaitCursor = true;
-      // 
+      //
       // lblVersion
-      // 
+      //
       this.lblVersion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblVersion.Location = new System.Drawing.Point(11, 247);
       this.lblVersion.Name = "lblVersion";
@@ -107,9 +107,9 @@
       this.lblVersion.Text = "Version";
       this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.lblVersion.UseWaitCursor = true;
-      // 
+      //
       // frmSplash
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.White;

@@ -1,41 +1,41 @@
 ﻿namespace Org.SF
 {
-	partial class frmTextDisplay
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+  partial class frmTextDisplay
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
+    {
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-		#region Windows Form Designer generated code
+    #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTextDisplay));
       this.txtOut = new FastColoredTextBoxNS.FastColoredTextBox();
       ((System.ComponentModel.ISupportInitialize)(this.txtOut)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -46,7 +46,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtOut.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtOut.BackBrush = null;
       this.txtOut.CharHeight = 13;
@@ -64,9 +65,9 @@
       this.txtOut.Size = new System.Drawing.Size(1255, 830);
       this.txtOut.TabIndex = 0;
       this.txtOut.Zoom = 100;
-      // 
+      //
       // frmTextDisplay
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1255, 830);
@@ -78,10 +79,10 @@
       ((System.ComponentModel.ISupportInitialize)(this.txtOut)).EndInit();
       this.ResumeLayout(false);
 
-		}
+    }
 
-		#endregion
+    #endregion
 
-		private FastColoredTextBoxNS.FastColoredTextBox txtOut;
-	}
+    private FastColoredTextBoxNS.FastColoredTextBox txtOut;
+  }
 }

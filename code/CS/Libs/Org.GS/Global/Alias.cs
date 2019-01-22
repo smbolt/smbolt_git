@@ -9,8 +9,14 @@ namespace Org.GS
 {
   public class Alias
   {
-    public string Spec { get; set; }
-    public string Value { get; set; }
+    public string Spec {
+      get;
+      set;
+    }
+    public string Value {
+      get;
+      set;
+    }
 
     public Alias(XElement xml)
     {

@@ -14,15 +14,42 @@ namespace Org.DxDocs
 {
   public class EndRowSearchParms
   {
-    public string FileName { get; set; }
-    public int StartColumn { get; set; }
-    public int EndColumn { get; set; }
-    public int StartRow { get; set; }
-    public string EndRowSearchString { get; set; }
-    public bool EndRowSearchCaseSensitive { get; set; }
-    public int EndRowSearchColumn { get; set; }
-    public int EndRowSearchStart { get; set; }
-    public int EndRowSearchLimit { get; set; }
+    public string FileName {
+      get;
+      set;
+    }
+    public int StartColumn {
+      get;
+      set;
+    }
+    public int EndColumn {
+      get;
+      set;
+    }
+    public int StartRow {
+      get;
+      set;
+    }
+    public string EndRowSearchString {
+      get;
+      set;
+    }
+    public bool EndRowSearchCaseSensitive {
+      get;
+      set;
+    }
+    public int EndRowSearchColumn {
+      get;
+      set;
+    }
+    public int EndRowSearchStart {
+      get;
+      set;
+    }
+    public int EndRowSearchLimit {
+      get;
+      set;
+    }
 
     public EndRowSearchParms()
     {
@@ -106,7 +133,7 @@ namespace Org.DxDocs
         string report = dxWb.ToReport();
 
         if (dxMapSet != null)
-        {            
+        {
           using (var mapEngine = new MapEngine())
           {
             dxWb = mapEngine.MapDxWorkbook(dxWb, dxMapSet);
@@ -122,7 +149,7 @@ namespace Org.DxDocs
 
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attempting to create a DxWorkbook object from the Excel file '" + 
+        throw new Exception("An exception occurred attempting to create a DxWorkbook object from the Excel file '" +
                             fullPath + "'.", ex);
       }
     }
@@ -235,7 +262,7 @@ namespace Org.DxDocs
                 ws.AddCell(cell);
               }
             }
-            
+
             wb.AddSheet(ws);
           }
 

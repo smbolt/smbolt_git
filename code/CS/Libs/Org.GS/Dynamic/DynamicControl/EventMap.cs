@@ -19,11 +19,20 @@ namespace Org.GS.Dynamic
   public class EventMap
   {
     [XMap]
-    public string Tag { get; set; }
+    public string Tag {
+      get;
+      set;
+    }
     [XMap]
-    public string Method { get; set; }
+    public string Method {
+      get;
+      set;
+    }
     [XMap]
-    public EventMapClass EventMapClass { get; set; }
+    public EventMapClass EventMapClass {
+      get;
+      set;
+    }
 
     public EventMap()
     {

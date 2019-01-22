@@ -16,50 +16,114 @@ namespace Org.Notify
     private NotificationsManagerOptions _options;
 
     private int _totalRequested;
-    public int TotalRequested { get { return _totalRequested; } }
+    public int TotalRequested {
+      get {
+        return _totalRequested;
+      }
+    }
 
     private int _totalNotExecuted;
-    public int TotalNotExecuted { get { return _totalNotExecuted; } }
+    public int TotalNotExecuted {
+      get {
+        return _totalNotExecuted;
+      }
+    }
 
     private int _totalCompleted;
-    public int TotalCompleted { get { return _totalCompleted; } }
-    
-    private int _totalFailed;
-    public int TotalFailed { get { return _totalFailed; } }
+    public int TotalCompleted {
+      get {
+        return _totalCompleted;
+      }
+    }
 
-    public int TotalInProgress { get { return Get_TotalInProgress(); } }
+    private int _totalFailed;
+    public int TotalFailed {
+      get {
+        return _totalFailed;
+      }
+    }
+
+    public int TotalInProgress {
+      get {
+        return Get_TotalInProgress();
+      }
+    }
 
     private int _totalSyncRequested;
-    public int TotalSyncRequested { get { return _totalSyncRequested; } }
+    public int TotalSyncRequested {
+      get {
+        return _totalSyncRequested;
+      }
+    }
 
     private int _totalSyncNotExecuted;
-    public int TotalSyncNotExecuted { get { return _totalSyncNotExecuted; } }
-    
+    public int TotalSyncNotExecuted {
+      get {
+        return _totalSyncNotExecuted;
+      }
+    }
+
     private int _totalSyncCompleted;
-    public int TotalSyncCompleted { get { return _totalSyncCompleted; } }
+    public int TotalSyncCompleted {
+      get {
+        return _totalSyncCompleted;
+      }
+    }
 
     private int _totalSyncFailed;
-    public int TotalSyncFailed { get { return _totalSyncFailed; } }
+    public int TotalSyncFailed {
+      get {
+        return _totalSyncFailed;
+      }
+    }
 
-    public int TotalSyncInProgress { get { return Get_TotalSyncInProgress(); } }
+    public int TotalSyncInProgress {
+      get {
+        return Get_TotalSyncInProgress();
+      }
+    }
 
     private int _totalAsyncRequested;
-    public int TotalAsyncRequested { get { return _totalAsyncRequested; } }
+    public int TotalAsyncRequested {
+      get {
+        return _totalAsyncRequested;
+      }
+    }
 
     private int _totalAsyncNotExecuted;
-    public int TotalAsyncNotExecuted { get { return _totalAsyncNotExecuted; } }
-    
+    public int TotalAsyncNotExecuted {
+      get {
+        return _totalAsyncNotExecuted;
+      }
+    }
+
     private int _totalAsyncCompleted;
-    public int TotalAsyncCompleted { get { return _totalAsyncCompleted; } }
+    public int TotalAsyncCompleted {
+      get {
+        return _totalAsyncCompleted;
+      }
+    }
 
     private int _totalAsyncFailed;
-    public int TotalAsyncFailed { get { return _totalAsyncFailed; } }
+    public int TotalAsyncFailed {
+      get {
+        return _totalAsyncFailed;
+      }
+    }
 
-    public int TotalAsyncInProgress { get { return Get_TotalAsyncInProgress(); } }
+    public int TotalAsyncInProgress {
+      get {
+        return Get_TotalAsyncInProgress();
+      }
+    }
 
     private object _statisticsLockObject = new object();
 
-    public string Report { get { return Get_Report(); } }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public NotificationsManager()
     {
@@ -107,7 +171,7 @@ namespace Org.Notify
       else
       {
         HandleExceptions(new Exception("Failed to obtain the '_statisticsLockObject' lock for (re-)initializing the NotificationsManager."));
-      }      
+      }
     }
 
     private int Get_TotalInProgress()

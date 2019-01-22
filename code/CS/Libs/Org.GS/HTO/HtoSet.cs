@@ -8,8 +8,14 @@ namespace Org.GS
 {
   public class HtoSet : List<Hto>
   {
-    public HtoSourceObjectType HtoSourceObjectType { get; private set; }
-    public Hto Parent { get; private set; }
+    public HtoSourceObjectType HtoSourceObjectType {
+      get;
+      private set;
+    }
+    public Hto Parent {
+      get;
+      private set;
+    }
 
     public HtoSet(Hto parent, HtoSourceObjectType htoSourceObjectType)
     {
@@ -19,7 +25,7 @@ namespace Org.GS
 
     public new void Add(Hto hto)
     {
-      hto.Seq = this.Count;      
+      hto.Seq = this.Count;
       base.Add(hto);
     }
   }

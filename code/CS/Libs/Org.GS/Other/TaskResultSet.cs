@@ -11,8 +11,12 @@ namespace Org.GS
     private TaskResult _parent;
     public TaskResult Parent
     {
-      get { return _parent; }
-      set { _parent = value; }
+      get {
+        return _parent;
+      }
+      set {
+        _parent = value;
+      }
     }
 
     public void AddTaskResult(TaskResult taskResult)
@@ -20,7 +24,7 @@ namespace Org.GS
       int taskNumber = this.Count + 1;
       taskResult.TaskNumber = taskNumber;
       this.Add(taskNumber, taskResult);
-            
+
       DistributeParentageAndDepth();
     }
 

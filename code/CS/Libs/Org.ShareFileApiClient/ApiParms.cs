@@ -9,26 +9,83 @@ namespace Org.ShareFileApiClient
 {
   public class ApiParms
   {
-    public string ClientId { get; set; }
-    public string ClientSecret { get; set; }
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public string HostName { get; set; }
+    public string ClientId {
+      get;
+      set;
+    }
+    public string ClientSecret {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public string Password {
+      get;
+      set;
+    }
+    public string HostName {
+      get;
+      set;
+    }
 
-    public string RootFolderId { get; set; }
-    public string RemoteTargetFolder { get; set; }
-    public bool AllowDuplicateFiles { get; set; }
-    public string ArchiveFolder { get; set; }
-    public string FolderFilter { get; set; }
-    public int MaxFilesUpload { get; set; }
-    public int MaxUploadSize { get; set; }
-    public int MaxFilesDownload { get; set; }
-    public int MaxDownloadSize { get; set; }
-    public string RemoteArchiveFolder { get; set; }
-    public bool ArchiveRemoteFiles { get; set; }
-    public bool SuppressRemoteDelete { get; set; }
-    public int AuthRetryLimit { get; set; }
-    public int AuthRetryWaitIntervalSeconds { get; set; }
+    public string RootFolderId {
+      get;
+      set;
+    }
+    public string RemoteTargetFolder {
+      get;
+      set;
+    }
+    public bool AllowDuplicateFiles {
+      get;
+      set;
+    }
+    public string ArchiveFolder {
+      get;
+      set;
+    }
+    public string FolderFilter {
+      get;
+      set;
+    }
+    public int MaxFilesUpload {
+      get;
+      set;
+    }
+    public int MaxUploadSize {
+      get;
+      set;
+    }
+    public int MaxFilesDownload {
+      get;
+      set;
+    }
+    public int MaxDownloadSize {
+      get;
+      set;
+    }
+    public string RemoteArchiveFolder {
+      get;
+      set;
+    }
+    public bool ArchiveRemoteFiles {
+      get;
+      set;
+    }
+    public bool SuppressRemoteDelete {
+      get;
+      set;
+    }
+    public int AuthRetryLimit {
+      get;
+      set;
+    }
+    public int AuthRetryWaitIntervalSeconds {
+      get;
+      set;
+    }
 
     public ApiParms()
     {
@@ -43,9 +100,9 @@ namespace Org.ShareFileApiClient
       this.AllowDuplicateFiles = true;
       this.ArchiveFolder = String.Empty;
       this.FolderFilter = "*.*";
-      this.MaxFilesUpload = 20; 
+      this.MaxFilesUpload = 20;
       this.MaxUploadSize = 2000000;
-      this.MaxFilesDownload = 20; 
+      this.MaxFilesDownload = 20;
       this.MaxDownloadSize = 2000000;
       this.RemoteArchiveFolder = String.Empty;
       this.ArchiveRemoteFiles = true;

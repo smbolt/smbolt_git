@@ -8,7 +8,13 @@ namespace Org.BMR.ApiModels
 {
   public class AuthValidationModel : ApiModelBase
   {
-    public bool IsAuthorized { get; set; }
-    public int AuthReasonCode { get; set; }
+    public bool IsAuthorized {
+      get;
+      set;
+    }
+    public int AuthReasonCode {
+      get;
+      set;
+    }
   }
 }

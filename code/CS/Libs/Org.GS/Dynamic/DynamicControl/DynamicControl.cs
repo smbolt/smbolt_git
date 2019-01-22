@@ -12,16 +12,24 @@ namespace Org.GS.Dynamic
   public class DynamicControl
   {
     [XMap(XType=XType.Element, CollectionElements="Control", WrapperElement="ControlSet")]
-    public ControlSet ControlSet { get; set; }
+    public ControlSet ControlSet {
+      get;
+      set;
+    }
 
     [XMap(XType=XType.Element, CollectionElements="EventMap", WrapperElement="EventMapSet")]
-    public EventMapSet EventMapSet { get; set; }
+    public EventMapSet EventMapSet {
+      get;
+      set;
+    }
 
     public bool IsEmpty
     {
-      get { return Get_IsEmpty(); }
+      get {
+        return Get_IsEmpty();
+      }
     }
-        
+
     public DynamicControl()
     {
       this.ControlSet = new ControlSet(this);

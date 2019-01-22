@@ -6,12 +6,18 @@ using System.Xml.Serialization;
 
 namespace OopFactory.X12.Hipaa.Claims
 {
-    public class ToothInformation
-    {
-        [XmlAttribute]
-        public string ToothCode { get; set; }
-
-        [XmlElement(ElementName="ToothSurface")]
-        public List<Common.Lookup> ToothSurfaces { get; set; }
+  public class ToothInformation
+  {
+    [XmlAttribute]
+    public string ToothCode {
+      get;
+      set;
     }
+
+    [XmlElement(ElementName="ToothSurface")]
+    public List<Common.Lookup> ToothSurfaces {
+      get;
+      set;
+    }
+  }
 }

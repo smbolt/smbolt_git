@@ -25,9 +25,9 @@ using Org.WSO.Transactions;
 using Org.GS.Configuration;
 using Org.GS;
 
-namespace Org.DxWorkbookTester 
+namespace Org.DxWorkbookTester
 {
-  public partial class frmMain : Form 
+  public partial class frmMain : Form
   {
     private a a;
     private ColumnIndexMap _ciMap;
@@ -38,7 +38,7 @@ namespace Org.DxWorkbookTester
     private ConfigWsSpec _configWsSpec;
     private bool _isDryRun;
     private Nb.ManifestUtility _manifestUtility;
-    
+
     private string _dbEnv;
     private string _wsEnv;
     private ParmSet _taskParms;
@@ -47,7 +47,7 @@ namespace Org.DxWorkbookTester
     private string _originalText;
 
 
-    public frmMain() 
+    public frmMain()
     {
       InitializeComponent();
       InitializeForm();
@@ -207,8 +207,8 @@ namespace Org.DxWorkbookTester
 
               default:
                 this.Cursor = Cursors.Default;
-                string errorMessage = "The task '" + _selectedScheduledTask.TaskName + "' failed with TaskResult.Status = '" + taskResult.TaskResultStatus.ToString() + 
-                       "'." + g.crlf2 + taskResult.Message + (taskResult.Exception == null ? String.Empty : taskResult.Exception.ToReport());
+                string errorMessage = "The task '" + _selectedScheduledTask.TaskName + "' failed with TaskResult.Status = '" + taskResult.TaskResultStatus.ToString() +
+                                      "'." + g.crlf2 + taskResult.Message + (taskResult.Exception == null ? String.Empty : taskResult.Exception.ToReport());
                 MessageBox.Show(errorMessage, "DxWorkbook Tester - Task Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtOut.Text = errorMessage;
                 _originalText = txtOut.Text;
@@ -265,14 +265,14 @@ namespace Org.DxWorkbookTester
       if (txtOutputFilter.Text.IsNotBlank())
       {
         MessageBox.Show("Remove Output Filter before saving text.", "DxWorkbookTester - Remove Output Filter before Saving", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-        return; 
+        return;
       }
 
       dlgSaveAs.Filter = "All files (*.*)|*.*";
       if (dlgSaveAs.ShowDialog() == DialogResult.OK)
       {
         File.WriteAllText(dlgSaveAs.FileName, txtOut.Text);
-        lblStatus.Text = "Output saved to file '" + dlgSaveAs.FileName + "'"; 
+        lblStatus.Text = "Output saved to file '" + dlgSaveAs.FileName + "'";
       }
     }
 
@@ -344,7 +344,7 @@ namespace Org.DxWorkbookTester
           return new NonOpAscentImport();
       }
 
-      throw new Exception("Creation of TaskProcessor '" + processorName + "' has not yet been implemented."); 
+      throw new Exception("Creation of TaskProcessor '" + processorName + "' has not yet been implemented.");
     }
 
     private void TestWebService()
@@ -429,13 +429,13 @@ namespace Org.DxWorkbookTester
         _originalText = txtOut.Text;
         txtOutputFilter.Clear();
         Application.DoEvents();
-        System.Threading.Thread.Sleep(50); 
+        System.Threading.Thread.Sleep(50);
 
         string mapName = _taskParms.GetParmValue("MapName").ToString();
 
         if (mapName.IsBlank() && _overrideMapNameParameter.IsNotBlank())
           mapName = _overrideMapNameParameter;
-        
+
         var f = new ObjectFactory2();
 
         DateTime dtBegin = DateTime.Now;
@@ -561,7 +561,7 @@ namespace Org.DxWorkbookTester
       var overrides = txtTaskParms.Text.ToParmDictionary();
       _taskParms.ProcessOverrides(overrides);
     }
-    
+
     private void InsertDummyRunHistory()
     {
       try
@@ -578,10 +578,10 @@ namespace Org.DxWorkbookTester
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while attempting to insert the dummy RunHistory record." + g.crlf2 +
-                        ex.ToReport(), "DxWorkbook Tester - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        ex.ToReport(), "DxWorkbook Tester - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
-    
+
     private RunHistory BuildDummyRunHistory()
     {
       var runHistory = new RunHistory();
@@ -635,7 +635,9 @@ namespace Org.DxWorkbookTester
 
         return null;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to create the DxWorkbook.", ex);
@@ -666,7 +668,7 @@ namespace Org.DxWorkbookTester
         if (ckSuppressMapping.Checked)
           mapName = String.Empty;
 
-        // transition to eliminating the "sheetsToInclude" parameter from the mapping utility... 
+        // transition to eliminating the "sheetsToInclude" parameter from the mapping utility...
         var wb = DxUtility.GetWorkbook(inputFilePath, fileNamePrefix, new List<string>(), mapName);
 
         string perfEntry = g.Perf.Start("SerializeUnmappedWorkbook", "Creating the DxWorkbook as XML");
@@ -682,14 +684,16 @@ namespace Org.DxWorkbookTester
 
           string mappedWorkbookFileName = fileNamePrefix + Path.GetFileNameWithoutExtension(inputFilePath) + ".xml";
 
-          string perfReport = g.Perf.End(perfEntry); 
+          string perfReport = g.Perf.End(perfEntry);
 
           File.WriteAllText(mappedFilePath + @"\" + mappedWorkbookFileName, mappedWorkbook);
         }
 
         return wb;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to create the DxWorkbook via mapping.", ex);
@@ -732,7 +736,7 @@ namespace Org.DxWorkbookTester
         var fileExtractMode = g.ToEnum<FileExtractMode>(fileExtractModeString);
 
         if (mapName.IsBlank() && _overrideMapNameParameter.IsNotBlank())
-          mapName = _overrideMapNameParameter;          
+          mapName = _overrideMapNameParameter;
 
         if (inputFiles.Length != 1)
           throw new Exception("There should be exactly one file in the input folder - number of files found is " + inputFiles.Length.ToString() + ".");
@@ -766,7 +770,7 @@ namespace Org.DxWorkbookTester
             ErrorResponse errorResponse = f.Deserialize(responseMessage.TransactionBody, true) as ErrorResponse;
             string errorResponseMessage = errorResponse.Message;
             if (errorResponse.WsException != null)
-              errorResponseMessage += g.crlf + "Web Service Exception" + g.crlf + errorResponse.WsException.ToReport(); 
+              errorResponseMessage += g.crlf + "Web Service Exception" + g.crlf + errorResponse.WsException.ToReport();
             throw new Exception("An ErrorResponse object was received from the web service." + g.crlf + errorResponseMessage);
 
           case "ExcelExtract":
@@ -823,8 +827,8 @@ namespace Org.DxWorkbookTester
         string taskNode = _taskParms.GetParmValue("$TASKNODE$").ToString();
         string inputFilePathUnresolved = _taskParms.GetParmValue("InputFilePath", @"$FSSTEM$\$ENV$\$TASKNODE$\Ready").ToString();
         string inputFilePath = inputFilePathUnresolved.Replace("$FSSTEM$", fsStem)
-                                                      .Replace("$ENV$", env)
-                                                      .Replace("$TASKNODE$", taskNode);
+                               .Replace("$ENV$", env)
+                               .Replace("$TASKNODE$", taskNode);
 
         if (overrideInputFolder.IsBlank())
         {
@@ -919,7 +923,7 @@ namespace Org.DxWorkbookTester
         return mapSet;
       }
     }
-    
+
     private void InitializeForm()
     {
       try
@@ -931,7 +935,7 @@ namespace Org.DxWorkbookTester
         string errorMessage = ex.ToReport();
 
         if (errorMessage.Length > 10000)
-          errorMessage = errorMessage.Substring(0, 10000); 
+          errorMessage = errorMessage.Substring(0, 10000);
 
         MessageBox.Show(errorMessage, "DxWorkbookTester - Application Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
@@ -962,7 +966,7 @@ namespace Org.DxWorkbookTester
         txtTaskParms.SelectionStart = 0;
         txtTaskParms.SelectionLength = 0;
         cboDxWorkbookSource.SelectedIndex = 0;
- 
+
         cboWsEnvironment.LoadItems(g.GetList("WsEnvironment"));
         cboDbEnvironment.LoadItems(g.GetList("DbEnvironment"));
         cboDbEnvironment.SelectItem(g.CI("SelectedDbEnvironment"));
@@ -984,7 +988,7 @@ namespace Org.DxWorkbookTester
                         MessageBoxIcon.Error);
       }
     }
-        
+
     private void DxUtility_NotifyHost(string message)
     {
       if (this.InvokeRequired)
@@ -1046,7 +1050,7 @@ namespace Org.DxWorkbookTester
       {
         g.AppConfig.Variables["DB_SERVER"] = selectedDbServer;
       }
-      
+
       _taskConfigDbSpec = g.GetDbSpec("Tasks");
 
       lblDbServer.Text = selectedDbServer;
@@ -1072,7 +1076,7 @@ namespace Org.DxWorkbookTester
       LoadTasks();
 
       if (selectedTask.IsNotBlank())
-        cboScheduledTasks.SelectItem(selectedTask);       
+        cboScheduledTasks.SelectItem(selectedTask);
     }
 
     private void cboWsEnvironment_SelectedIndexChanged(object sender, EventArgs e)
@@ -1172,7 +1176,7 @@ namespace Org.DxWorkbookTester
         MessageBox.Show("An exception occurred while attempting to get a list of parameters for the task from the database." + g.crlf2 + ex.ToReport(),
                         g.AppInfo.ModuleName + " - Error Retrieving Task Parameters from Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return null;
-      }      
+      }
     }
 
     private ParmSet GetParmsForTaskFromAppConfig()
@@ -1241,7 +1245,7 @@ namespace Org.DxWorkbookTester
           ckSuppressMapping.Enabled = false;
           ckOverrideConfigWsSpec.Visible = true;
           ckOverrideConfigWsSpec.Checked = false;
-          break;  
+          break;
       }
     }
 

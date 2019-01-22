@@ -14,50 +14,171 @@ namespace Org.Terminal.Controls
 {
   public partial class MFBase : UserControl
   {
-    public new string Text 
-    { 
-      get { return base.Text; }
-      set { base.Text = value; }
+    public new string Text
+    {
+      get {
+        return base.Text;
+      }
+      set {
+        base.Text = value;
+      }
     }
 
     protected FieldSpec _fieldSpec;
-    public FieldSpec FieldSpec { get { return _fieldSpec; } }
-    public int CurrLine { get { return _fieldSpec.CurrLine; } }
-    public int OrigLine { get { return _fieldSpec.OrigLine; } }
-    public int CurrCol { get { return _fieldSpec.CurrCol; } }
-    public int OrigCol { get { return _fieldSpec.OrigCol; } }
-    public int CurrLth { get { return _fieldSpec.CurrLth; } }
-    public int OrigLth { get { return _fieldSpec.OrigLth; } }
-    
+    public FieldSpec FieldSpec {
+      get {
+        return _fieldSpec;
+      }
+    }
+    public int CurrLine {
+      get {
+        return _fieldSpec.CurrLine;
+      }
+    }
+    public int OrigLine {
+      get {
+        return _fieldSpec.OrigLine;
+      }
+    }
+    public int CurrCol {
+      get {
+        return _fieldSpec.CurrCol;
+      }
+    }
+    public int OrigCol {
+      get {
+        return _fieldSpec.OrigCol;
+      }
+    }
+    public int CurrLth {
+      get {
+        return _fieldSpec.CurrLth;
+      }
+    }
+    public int OrigLth {
+      get {
+        return _fieldSpec.OrigLth;
+      }
+    }
+
     protected event Action<MFEventArgs> EventFromBase;
     public event Action<MFEventArgs> EventToHost;
-    protected Bitmap BaseBitmap { get; set; }
-    protected PictureBox pb { get { return pbMain; } }
-    protected bool IsFocused { get; set; }
-    protected bool IsFocusable { get; set; }
-    protected Timer CursorTimer { get; set; }
-    protected bool IsCursorVisible { get; set; }
-    protected bool IsCursorActive { get; set; }
-    public bool IsProtected { get { return Get_IsProtected(); } } 
-    protected static int CursorBlinkMilliseconds { get; set; }
-    protected int CharLeftPadding { get { return Get_CharLeftPadding(); } }
-    protected int CharTopPadding { get { return Get_CharTopPadding(); } }
-    protected Size CharSize { get { return Get_CharSize(); } }
-    protected Font MainTextFont { get { return Get_MainTextFont(); } }
-    protected Brush MainTextDefaultBrush { get { return Get_MainTextDefaultBrush(); } }
-    public Brush TextBrush { get; set; }
-    public Brush BackgroundBrush { get; set; }
-    public int CurrPos { get; set; }
-    public bool IsPlaced { get; set; }
-    public bool IsHFlexControl { get { return Get_IsHFlexControl(); } }
-    public bool IsVFlexCreated { get; set; }
-    public bool IsVFlexMoved { get; set; }
-    public bool IsFloatRight { get { return Get_IsFloatRight(); } }
-    public bool IsVFlexControl { get { return Get_IsVFlexControl(); } }
-    public bool IsStretch { get { return Get_IsStretch(); } }
-    public int LineItem { get; set; }
+    protected Bitmap BaseBitmap {
+      get;
+      set;
+    }
+    protected PictureBox pb {
+      get {
+        return pbMain;
+      }
+    }
+    protected bool IsFocused {
+      get;
+      set;
+    }
+    protected bool IsFocusable {
+      get;
+      set;
+    }
+    protected Timer CursorTimer {
+      get;
+      set;
+    }
+    protected bool IsCursorVisible {
+      get;
+      set;
+    }
+    protected bool IsCursorActive {
+      get;
+      set;
+    }
+    public bool IsProtected {
+      get {
+        return Get_IsProtected();
+      }
+    }
+    protected static int CursorBlinkMilliseconds {
+      get;
+      set;
+    }
+    protected int CharLeftPadding {
+      get {
+        return Get_CharLeftPadding();
+      }
+    }
+    protected int CharTopPadding {
+      get {
+        return Get_CharTopPadding();
+      }
+    }
+    protected Size CharSize {
+      get {
+        return Get_CharSize();
+      }
+    }
+    protected Font MainTextFont {
+      get {
+        return Get_MainTextFont();
+      }
+    }
+    protected Brush MainTextDefaultBrush {
+      get {
+        return Get_MainTextDefaultBrush();
+      }
+    }
+    public Brush TextBrush {
+      get;
+      set;
+    }
+    public Brush BackgroundBrush {
+      get;
+      set;
+    }
+    public int CurrPos {
+      get;
+      set;
+    }
+    public bool IsPlaced {
+      get;
+      set;
+    }
+    public bool IsHFlexControl {
+      get {
+        return Get_IsHFlexControl();
+      }
+    }
+    public bool IsVFlexCreated {
+      get;
+      set;
+    }
+    public bool IsVFlexMoved {
+      get;
+      set;
+    }
+    public bool IsFloatRight {
+      get {
+        return Get_IsFloatRight();
+      }
+    }
+    public bool IsVFlexControl {
+      get {
+        return Get_IsVFlexControl();
+      }
+    }
+    public bool IsStretch {
+      get {
+        return Get_IsStretch();
+      }
+    }
+    public int LineItem {
+      get;
+      set;
+    }
 
-    public MFContainer MFContainer { get; private set; }
+    public MFContainer MFContainer {
+      get;
+      private set;
+    }
 
     public MFBase() { }
 
@@ -88,7 +209,7 @@ namespace Org.Terminal.Controls
       if (charPos > this.Text.Length)
         this.CurrPos = this.Text.Length;
       else
-        this.CurrPos = charPos; 
+        this.CurrPos = charPos;
     }
 
     public void AddCharacter(char c)
@@ -140,9 +261,9 @@ namespace Org.Terminal.Controls
     public new void KeyPress(object sender, KeyPressEventArgs e)
     {
       if (this.EventFromBase == null)
-        return; 
+        return;
 
-      this.EventFromBase(new MFEventArgs(this, EventType.KeyPress, e)); 
+      this.EventFromBase(new MFEventArgs(this, EventType.KeyPress, e));
     }
 
     public new void KeyUp(object sender, KeyEventArgs e)
@@ -150,7 +271,7 @@ namespace Org.Terminal.Controls
       if (this.EventFromBase == null)
         return;
 
-      this.EventFromBase(new MFEventArgs(this, EventType.KeyUp, e)); 
+      this.EventFromBase(new MFEventArgs(this, EventType.KeyUp, e));
     }
 
     private void pbMain_SizeChanged(object sender, EventArgs e)
@@ -163,7 +284,7 @@ namespace Org.Terminal.Controls
       if (this.EventFromBase == null)
         return;
 
-      this.EventFromBase(new MFEventArgs(this, EventType.Paint, e)); 
+      this.EventFromBase(new MFEventArgs(this, EventType.Paint, e));
     }
 
     private void pbMain_Click(object sender, EventArgs e)
@@ -173,14 +294,14 @@ namespace Org.Terminal.Controls
       if (this.EventFromBase != null)
       {
         args = new MFEventArgs(this, EventType.Click, e);
-        this.EventFromBase(args); 
+        this.EventFromBase(args);
       }
 
       if (this.EventToHost != null)
       {
         if (args == null)
           args = new MFEventArgs(this, EventType.Click, e);
-        this.EventToHost(args); 
+        this.EventToHost(args);
       }
     }
 
@@ -191,7 +312,7 @@ namespace Org.Terminal.Controls
       if (this.EventFromBase != null)
       {
         args = new MFEventArgs(this, EventType.MouseEnter, e);
-        this.EventFromBase(args); 
+        this.EventFromBase(args);
       }
 
       if (this.EventToHost != null)
@@ -209,7 +330,7 @@ namespace Org.Terminal.Controls
       if (this.EventFromBase != null)
       {
         args = new MFEventArgs(this, EventType.MouseLeave, e);
-        this.EventFromBase(args); 
+        this.EventFromBase(args);
       }
 
       if (this.EventToHost != null)
@@ -227,7 +348,7 @@ namespace Org.Terminal.Controls
       if (this.EventFromBase != null)
       {
         args = new MFEventArgs(this, EventType.MouseMove, e);
-        this.EventFromBase(args); 
+        this.EventFromBase(args);
       }
 
       if (this.EventToHost != null)
@@ -245,7 +366,7 @@ namespace Org.Terminal.Controls
       if (this.EventFromBase != null)
       {
         args = new MFEventArgs(this, EventType.Enter, e);
-        this.EventFromBase(args); 
+        this.EventFromBase(args);
       }
 
       if (this.EventToHost != null)

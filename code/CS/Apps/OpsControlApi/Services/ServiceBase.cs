@@ -16,15 +16,31 @@ namespace Org.OpsControlApi.Services
   public class ServiceBase : IDisposable
   {
     private static ServiceCache _cache = new ServiceCache();
-    public static ServiceCache Cache { get { return _cache; } }
+    public static ServiceCache Cache {
+      get {
+        return _cache;
+      }
+    }
 
-    public Logger Logger { get { return _controller.Logger; } }
+    public Logger Logger {
+      get {
+        return _controller.Logger;
+      }
+    }
 
     private WebContext _webContext;
-    protected WebContext WebContext { get { return _webContext; } }
+    protected WebContext WebContext {
+      get {
+        return _webContext;
+      }
+    }
 
     private ControllerBase _controller;
-    protected ControllerBase Controller { get { return _controller; } }
+    protected ControllerBase Controller {
+      get {
+        return _controller;
+      }
+    }
 
     public ServiceBase(WebContext webContext, ControllerBase controller)
     {
@@ -102,7 +118,7 @@ namespace Org.OpsControlApi.Services
     public static void LoadCache()
     {
       try
-      {   
+      {
         using (var repoBase = new RepositoryBase(g.ConnectionStringName, "Adsdi_Org"))
         {
           // get account statuses
@@ -147,50 +163,50 @@ namespace Org.OpsControlApi.Services
       Cache.Clear();
     }
 
-    
+
     public void Log(int eventCode)
-    { 
+    {
       if (_controller.Logger == null)
-        return; 
+        return;
 
-      string logMessage = GetEventMessage(eventCode); 
+      string logMessage = GetEventMessage(eventCode);
 
-      _controller.Logger.Log(logMessage, _controller.SessionId, eventCode, GetOrgId(), GetAccountId(), 0, 0); 
+      _controller.Logger.Log(logMessage, _controller.SessionId, eventCode, GetOrgId(), GetAccountId(), 0, 0);
     }
 
     public void Log(int eventCode, int entityTypeId, int entityId)
     {
       if (_controller.Logger == null)
-        return; 
+        return;
 
       string logMessage = GetEventMessage(eventCode);
 
-      _controller.Logger.Log(logMessage, _controller.SessionId, eventCode, GetOrgId(), GetAccountId(), entityTypeId, entityId); 
+      _controller.Logger.Log(logMessage, _controller.SessionId, eventCode, GetOrgId(), GetAccountId(), entityTypeId, entityId);
     }
 
     public void Log(LogSeverity logSeverity, int eventCode, int entityTypeId, int entityId)
     {
       if (_controller.Logger == null)
-        return; 
+        return;
 
       string logMessage = GetEventMessage(eventCode);
 
-      _controller.Logger.Log(logSeverity, logMessage, _controller.SessionId, eventCode, GetOrgId(), GetAccountId(), entityTypeId, entityId); 
+      _controller.Logger.Log(logSeverity, logMessage, _controller.SessionId, eventCode, GetOrgId(), GetAccountId(), entityTypeId, entityId);
     }
 
     public void Log(LogSeverity logSeverity, int eventCode, int entityTypeId, int entityId, Exception ex)
     {
       if (_controller.Logger == null)
-        return; 
+        return;
 
       string logMessage = GetEventMessage(eventCode);
 
-      _controller.Logger.Log(logSeverity, logMessage, _controller.SessionId, eventCode, GetOrgId(), GetAccountId(), entityTypeId, entityId, ex); 
+      _controller.Logger.Log(logSeverity, logMessage, _controller.SessionId, eventCode, GetOrgId(), GetAccountId(), entityTypeId, entityId, ex);
     }
 
     public string GetEventMessage(int eventCode)
     {
-      var eventDict = Cache.AsDictionary("Event"); 
+      var eventDict = Cache.AsDictionary("Event");
 
       string eventMessage = String.Empty;
       if (eventDict.ContainsKey(eventCode))
@@ -200,7 +216,7 @@ namespace Org.OpsControlApi.Services
       else
       {
         eventCode = 9999;
-        eventMessage = Cache.AsDictionary("Event")[eventCode]; 
+        eventMessage = Cache.AsDictionary("Event")[eventCode];
       }
 
       return eventMessage;

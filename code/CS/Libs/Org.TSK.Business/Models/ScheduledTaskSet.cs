@@ -14,9 +14,20 @@ namespace Org.TSK.Business.Models
     private SortedList<UInt64, ScheduledRun> _tasksToRun;
     private object TaskSet_LockObject = new object();
 
-    public DateTime NextLoadTime { get; set; }
-    public bool MoreTasksToProcess { get { return Get_MoreTasksToProcess(); } }
-    public int  TasksToProcessCount{ get { return Get_TasksToProcessCount(); } }
+    public DateTime NextLoadTime {
+      get;
+      set;
+    }
+    public bool MoreTasksToProcess {
+      get {
+        return Get_MoreTasksToProcess();
+      }
+    }
+    public int  TasksToProcessCount {
+      get {
+        return Get_TasksToProcessCount();
+      }
+    }
 
     public ScheduledTaskSet()
     {
@@ -42,9 +53,8 @@ namespace Org.TSK.Business.Models
 
           if (waitMilliseconds < 0)
             return 0;
-          else
-            if (waitMilliseconds > maxInterval)
-              return maxInterval;
+          else if (waitMilliseconds > maxInterval)
+            return maxInterval;
 
           return waitMilliseconds;
         }
@@ -195,7 +205,7 @@ namespace Org.TSK.Business.Models
             longSortKey++;
 
           if (scheduledRun.Value.ScheduledRunType == ScheduledRunType.RunImmediate ||
-                      scheduledRun.Value.ScheduledRunDateTime > DateTime.Now || scheduleOnceNow)
+              scheduledRun.Value.ScheduledRunDateTime > DateTime.Now || scheduleOnceNow)
             _tasksToRun.Add(longSortKey, scheduledRun.Value);
         }
       }
@@ -252,7 +262,7 @@ namespace Org.TSK.Business.Models
       foreach (var scheduledTask in this)
       {
         //if (!scheduledTask.IsActive)
-        //  continue; 
+        //  continue;
 
         sb.Append(scheduledTask.TaskName + ": " +
                   scheduledTask.ProcessorName + " " +

@@ -13,10 +13,16 @@ namespace Org.GS.ServiceManagement
   public class ServiceSpecSet : SortedList<string, ServiceSpec>
   {
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, MyParent = true, Name = "ParentServiceHost")]
-    public ServiceHost ParentServiceHost { get; set; }
+    public ServiceHost ParentServiceHost {
+      get;
+      set;
+    }
 
     public ServiceSpecSet()
     {

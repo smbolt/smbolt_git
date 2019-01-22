@@ -9,22 +9,62 @@ namespace Org.GS
   // Hierarchical Text-Base Object (Hto)
   public class Hto
   {
-    public string Id { get; set; }
+    public string Id {
+      get;
+      set;
+    }
     private string _value;
     public string Value
     {
-      get { return Get_Value(); }
-      set { _value = value; }
+      get {
+        return Get_Value();
+      }
+      set {
+        _value = value;
+      }
     }
-    public bool IsElemental { get { return this.HtoSet == null; } }
-    public bool IsRoot { get { return this.Parent == null; } }
-    public int Count { get { return this.HtoSet?.Count ?? 0; } }
-    public HtoSet HtoSet { get; set; }
-    public Hto Parent { get; set; }
-    public Hto PrevSibling { get { return Get_PrevSibling(); } }
-    public Hto NextSibling { get { return Get_NextSibling(); } }
-    public int Seq { get; set; }
-    public int Level { get { return Get_Level(); } }
+    public bool IsElemental {
+      get {
+        return this.HtoSet == null;
+      }
+    }
+    public bool IsRoot {
+      get {
+        return this.Parent == null;
+      }
+    }
+    public int Count {
+      get {
+        return this.HtoSet?.Count ?? 0;
+      }
+    }
+    public HtoSet HtoSet {
+      get;
+      set;
+    }
+    public Hto Parent {
+      get;
+      set;
+    }
+    public Hto PrevSibling {
+      get {
+        return Get_PrevSibling();
+      }
+    }
+    public Hto NextSibling {
+      get {
+        return Get_NextSibling();
+      }
+    }
+    public int Seq {
+      get;
+      set;
+    }
+    public int Level {
+      get {
+        return Get_Level();
+      }
+    }
 
     public Hto()
     {

@@ -9,8 +9,15 @@ namespace Org.GS.Performance
 {
   public class PerfMetricSet : SortedList<DateTime, PerfMetrics>
   {
-    public bool IsActive { get; set; }
-    public string PerfReport { get { return Get_PerfReport(); } }
+    public bool IsActive {
+      get;
+      set;
+    }
+    public string PerfReport {
+      get {
+        return Get_PerfReport();
+      }
+    }
 
     private string Get_PerfReport()
     {
@@ -32,15 +39,15 @@ namespace Org.GS.Performance
           {
             sb.Append("PERF METRICS SET REPORT" + g.crlf +
                       "-----------------------------------------------------------------------" + g.crlf);
-            sb.Append(dt.ToString("yyyy-MM-dd HH:mm:ss.fff") + g.crlf + perfMetrics.PerfReport); 
+            sb.Append(dt.ToString("yyyy-MM-dd HH:mm:ss.fff") + g.crlf + perfMetrics.PerfReport);
             continue;
           }
 
           DateTime prevDt = this.ElementAt(i - 1).Key;
           TimeSpan ts = dt - prevDt;
 
-          sb.Append(dt.ToString("yyyy-MM-dd HH:mm:ss.fff") + " - " + g.crlf + 
-                    perfMetrics.PerfReport + g.crlf + 
+          sb.Append(dt.ToString("yyyy-MM-dd HH:mm:ss.fff") + " - " + g.crlf +
+                    perfMetrics.PerfReport + g.crlf +
                     ts.TotalMilliseconds.ToString() + " seconds" + g.crlf);
 
           // last item
@@ -58,7 +65,7 @@ namespace Org.GS.Performance
       }
       else
       {
-        return "Unable to produce report due to thread contention."; 
+        return "Unable to produce report due to thread contention.";
       }
     }
 
@@ -81,7 +88,7 @@ namespace Org.GS.Performance
     {
       if (!this.IsActive)
         return null;
-      
+
       if (this.Count == 0)
         return null;
 

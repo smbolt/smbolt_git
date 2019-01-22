@@ -12,13 +12,18 @@ namespace Org.UI
 {
   public partial class NavButton : UserControl
   {
-    public NavSection NavSection { get; set; }
+    public NavSection NavSection {
+      get;
+      set;
+    }
 
     private bool _isSelected = false;
-    public bool IsSelected 
-    { 
-      get { return _isSelected; }
-      set 
+    public bool IsSelected
+    {
+      get {
+        return _isSelected;
+      }
+      set
       {
         _isSelected = value;
         if (_isSelected)
@@ -41,7 +46,7 @@ namespace Org.UI
         }
       }
     }
-    
+
     private bool _mouseIn = false;
 
     public NavButton()
@@ -59,18 +64,18 @@ namespace Org.UI
     {
       if (_mouseIn)
       {
-        e.Graphics.FillRectangle(UIBase.BlueBrush, 0, 0, this.Width, this.Height); 
+        e.Graphics.FillRectangle(UIBase.BlueBrush, 0, 0, this.Width, this.Height);
         if (this.IsSelected)
-          e.Graphics.DrawString(this.Text, new Font("Tahoma", 10.0F, FontStyle.Bold), Brushes.White, new Point(20, 4)); 
+          e.Graphics.DrawString(this.Text, new Font("Tahoma", 10.0F, FontStyle.Bold), Brushes.White, new Point(20, 4));
         else
-          e.Graphics.DrawString(this.Text, new Font("Tahoma", 10.0F, FontStyle.Bold), Brushes.White, new Point(20, 4)); 
+          e.Graphics.DrawString(this.Text, new Font("Tahoma", 10.0F, FontStyle.Bold), Brushes.White, new Point(20, 4));
       }
       else
       {
         if (this.IsSelected)
         {
-          e.Graphics.FillRectangle(Brushes.LightGray, 0, 0, this.Width, this.Height); 
-          e.Graphics.DrawString(this.Text, new Font("Tahoma", 10.0F, FontStyle.Bold), UIBase.DarkBlueBrush, new Point(20, 4)); 
+          e.Graphics.FillRectangle(Brushes.LightGray, 0, 0, this.Width, this.Height);
+          e.Graphics.DrawString(this.Text, new Font("Tahoma", 10.0F, FontStyle.Bold), UIBase.DarkBlueBrush, new Point(20, 4));
         }
         else
         {

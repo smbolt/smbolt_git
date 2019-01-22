@@ -9,9 +9,18 @@ namespace Org.WSO
 {
   public class CatalogEntry
   {
-    public string ComponentName { get; set; }
-    public string AssemblyName { get; set; }
-    public string ObjectTypeName { get; set; }
+    public string ComponentName {
+      get;
+      set;
+    }
+    public string AssemblyName {
+      get;
+      set;
+    }
+    public string ObjectTypeName {
+      get;
+      set;
+    }
 
     public CatalogEntry(string entryConfig)
     {

@@ -11,21 +11,33 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "AppLogSeverity")]
-    public partial class AppLogSeverity
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "AppLogSeverity")]
+  public partial class AppLogSeverity
+  {
+    public AppLogSeverity()
     {
-        public AppLogSeverity()
-        {
-            this.AppLogs = new HashSet<AppLog>();
-        }
-    
-        public int SeverityCodeId { get; set; }
-        public string SeverityCode { get; set; }
-        public string SeverityDesc { get; set; }
-    
-        public virtual ICollection<AppLog> AppLogs { get; set; }
+      this.AppLogs = new HashSet<AppLog>();
     }
+
+    public int SeverityCodeId {
+      get;
+      set;
+    }
+    public string SeverityCode {
+      get;
+      set;
+    }
+    public string SeverityDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<AppLog> AppLogs {
+      get;
+      set;
+    }
+  }
 }

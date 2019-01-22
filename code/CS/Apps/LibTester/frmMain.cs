@@ -115,10 +115,10 @@ namespace Org.LibTester
 
 
       if (!FileSystemItem.IsRecursionFinished && fsi.FolderCount == 1 && !FileSystemItem.SearchParms.AllowMemoryUsageGrowth)
-        throw new Exception("Exception thrown to avoid unending loop when recursion is not finished and there is only one second level FileSystemItem."); 
+        throw new Exception("Exception thrown to avoid unending loop when recursion is not finished and there is only one second level FileSystemItem.");
       // end of problem to resolve
 
-      
+
       if (FileSystemItem.IsRecursionFinished || fsi.FolderCount > 1)
       {
         using (var repo = new FsoRepository(_dbSpec))
@@ -133,11 +133,11 @@ namespace Org.LibTester
             hasParentBeenInserted = true;
             parentId = repo.LoadFileSystemRoot(fsi, ProjectId, RootFolderId, null);
           }
-          
+
           foreach(var fsi2 in fsi.Folders)
           {
             if(fsi.FolderCount > 1)
-            repo.LoadFileSystem(fsi2, ProjectId, RootFolderId, parentId);
+              repo.LoadFileSystem(fsi2, ProjectId, RootFolderId, parentId);
           }
         }
         if(FileSystemItem.IsRecursionFinished)

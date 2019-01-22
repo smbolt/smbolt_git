@@ -9,9 +9,18 @@ namespace Org.AX
 {
   public class UnitOfWork
   {
-    public string Src { get; set; }
-    public string Tgt { get; set; }
-    public AxionClass AxionClass { get; set; }
+    public string Src {
+      get;
+      set;
+    }
+    public string Tgt {
+      get;
+      set;
+    }
+    public AxionClass AxionClass {
+      get;
+      set;
+    }
 
     public UnitOfWork()
     {

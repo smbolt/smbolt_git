@@ -11,45 +11,107 @@ using Org.GS;
 namespace Org.Dx.Business
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(CollectionElements = "DxCell", XType = XType.Element)] 
+  [XMap(CollectionElements = "DxCell", XType = XType.Element)]
   public class DxCell : Node
   {
     [XMap]
-    public int RowIndex { get; set; }
+    public int RowIndex {
+      get;
+      set;
+    }
 
     [XMap]
-    public int ColumnIndex { get; set; }
+    public int ColumnIndex {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
-    public DxCellSet DxCellSet { get; set; }
-    public string DefaultValue { get; set; }
-    public bool IsDummyCell { get; set; }
+    public DxCellSet DxCellSet {
+      get;
+      set;
+    }
+    public string DefaultValue {
+      get;
+      set;
+    }
+    public bool IsDummyCell {
+      get;
+      set;
+    }
 
-    public string TextValue { get { return Get_TextValue(); } }
-    public int Int32Value { get { return Get_Int32Value(); } }
-    public decimal DecimalValue { get { return Get_DecimalValue(); } }
-    public bool BooleanValue { get { return Get_BooleanValue(); } }
-    public DateTime DateTimeValue { get { return Get_DateTimeValue(); } }
-    public DateTime DateTimeMMYYYYValue { get { return Get_DateTimeValue(true); } }
-    public object ValueOrDefault { get { return Get_ValueOrDefault(); } }
-    public bool IsCellEmpty { get { return Get_IsCellEmpty(); } }
-    public bool IsString { get { return Get_IsString(); } }
-    public bool IsBlank { get { return Get_IsCellEmpty(); } }
-    public bool IsNotBlank { get { return !Get_IsCellEmpty(); } }
+    public string TextValue {
+      get {
+        return Get_TextValue();
+      }
+    }
+    public int Int32Value {
+      get {
+        return Get_Int32Value();
+      }
+    }
+    public decimal DecimalValue {
+      get {
+        return Get_DecimalValue();
+      }
+    }
+    public bool BooleanValue {
+      get {
+        return Get_BooleanValue();
+      }
+    }
+    public DateTime DateTimeValue {
+      get {
+        return Get_DateTimeValue();
+      }
+    }
+    public DateTime DateTimeMMYYYYValue {
+      get {
+        return Get_DateTimeValue(true);
+      }
+    }
+    public object ValueOrDefault {
+      get {
+        return Get_ValueOrDefault();
+      }
+    }
+    public bool IsCellEmpty {
+      get {
+        return Get_IsCellEmpty();
+      }
+    }
+    public bool IsString {
+      get {
+        return Get_IsString();
+      }
+    }
+    public bool IsBlank {
+      get {
+        return Get_IsCellEmpty();
+      }
+    }
+    public bool IsNotBlank {
+      get {
+        return !Get_IsCellEmpty();
+      }
+    }
 
     [XMap]
-    public bool IsBoolean 
-    { 
-      get 
+    public bool IsBoolean
+    {
+      get
       {
         return Get_IsBoolean();
       }
-    } 
+    }
 
     [XMap]
-    public bool IsDateTime 
+    public bool IsDateTime
     {
       get
       {
@@ -58,7 +120,7 @@ namespace Org.Dx.Business
     }
 
     [XMap]
-    public bool IsEmpty 
+    public bool IsEmpty
     {
       get
       {
@@ -67,7 +129,7 @@ namespace Org.Dx.Business
     }
 
     [XMap]
-    public bool IsNumeric 
+    public bool IsNumeric
     {
       get
       {
@@ -77,7 +139,7 @@ namespace Org.Dx.Business
 
 
     [XMap]
-    public bool IsText 
+    public bool IsText
     {
       get
       {
@@ -85,13 +147,27 @@ namespace Org.Dx.Business
       }
     }
 
-    public bool IsInteger { get { return Get_IsInteger(); } }
-    public bool IsDecimal { get { return Get_IsDecimal(); } }
+    public bool IsInteger {
+      get {
+        return Get_IsInteger();
+      }
+    }
+    public bool IsDecimal {
+      get {
+        return Get_IsDecimal();
+      }
+    }
 
     [XMap]
-    public object RawValue { get; set; }
+    public object RawValue {
+      get;
+      set;
+    }
 
-    public DxMapItem DxMapItem { get; set; }
+    public DxMapItem DxMapItem {
+      get;
+      set;
+    }
 
     public DxCell()
     {
@@ -196,13 +272,13 @@ namespace Org.Dx.Business
             if (decimalDigits > 11)
             {
               int digitsToTruncate = decimalDigits - 11;
-              this.RawValue = value.Substring(0, value.Length - digitsToTruncate); 
+              this.RawValue = value.Substring(0, value.Length - digitsToTruncate);
             }
           }
         }
 
         if (this.DefaultValue == null && this.DxMapItem != null && this.DxMapItem.DefaultValue.IsNotBlank())
-          this.DefaultValue = this.DxMapItem.DefaultValue; 
+          this.DefaultValue = this.DxMapItem.DefaultValue;
 
         if (this.RawValue != null && this.RawValue.ToString().IsNotBlank())
           returnValue = this.RawValue;
@@ -312,7 +388,7 @@ namespace Org.Dx.Business
         else
           return false;
       }
-            
+
       DateTime? dt = (DateTime?)null;
 
       try
@@ -505,12 +581,12 @@ namespace Org.Dx.Business
 
                   case "!dt":
                     if (this.IsDateTime)
-                        return true;
+                      return true;
                     break;
 
                   case "dt":
                     if (!this.IsDateTime)
-                        return true;
+                      return true;
                     break;
 
                   case "!":
@@ -556,7 +632,7 @@ namespace Org.Dx.Business
             return false;
           break;
       }
-      
+
       return true;
     }
 

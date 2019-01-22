@@ -68,7 +68,7 @@ namespace Org.GS
 
     public TaskResult StartStopWebSite(string siteName, SiteCommand command)
     {
-      TaskResult taskResult = new TaskResult(command.ToString() + "WebSite"); 
+      TaskResult taskResult = new TaskResult(command.ToString() + "WebSite");
       try
       {
         WebSiteStatus desiredStatus = command == SiteCommand.Start ? WebSiteStatus.Started : WebSiteStatus.Stopped;
@@ -151,7 +151,7 @@ namespace Org.GS
             throw new Exception("More than one WebSite has the name '" + siteName + "'.");
 
           return moSet.OfType<ManagementObject>().FirstOrDefault();
-        } 
+        }
       }
       catch (Exception ex)
       {
@@ -196,7 +196,7 @@ namespace Org.GS
         throw new Exception("An exception occurred attempting to get a WMI ManagementObjectCollection of web sites.", ex);
       }
     }
-      
+
     public void Dispose()
     {
     }

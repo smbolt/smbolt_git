@@ -10,6 +10,9 @@ namespace Org.QB.QBXML
   [XMap(XType = XType.Element)]
   public class QBXMLRs
   {
-    public QBXMLMsgsRs QBXMLMsgRs { get; set; }
+    public QBXMLMsgsRs QBXMLMsgRs {
+      get;
+      set;
+    }
   }
 }

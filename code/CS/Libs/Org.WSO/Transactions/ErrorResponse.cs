@@ -14,9 +14,11 @@ namespace Org.WSO.Transactions
   public class ErrorResponse : TransactionBase
   {
     private Exception _exception;
-    public Exception Exception 
-    { 
-      get { return _exception; }
+    public Exception Exception
+    {
+      get {
+        return _exception;
+      }
       set
       {
         _exception = value;
@@ -24,12 +26,22 @@ namespace Org.WSO.Transactions
       }
     }
 
-    public bool HasException { get { return this.WsException != null; } }
+    public bool HasException {
+      get {
+        return this.WsException != null;
+      }
+    }
 
     [XMap(XType = XType.Element)]
-    public WsException WsException { get; set; }
+    public WsException WsException {
+      get;
+      set;
+    }
 
-    public string Report { get; set; }
+    public string Report {
+      get;
+      set;
+    }
 
     public ErrorResponse()
     {

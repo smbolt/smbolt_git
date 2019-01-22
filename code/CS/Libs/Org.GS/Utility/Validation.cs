@@ -14,8 +14,14 @@ namespace Org.OrgUtility
 
   public class ValidationResult
   {
-    public ValidationResultCode ValidationResultCode { get; set; }
-    public string ValidationMessage { get; set; }
+    public ValidationResultCode ValidationResultCode {
+      get;
+      set;
+    }
+    public string ValidationMessage {
+      get;
+      set;
+    }
     public ValidationResult()
     {
       ValidationResultCode = ValidationResultCode.OK;
@@ -44,18 +50,18 @@ namespace Org.OrgUtility
         result.ValidationResultCode = ValidationResultCode.Error;
         return result;
       }
-            
+
       // email address cannot include illegal characters
       string legalChars = "1234567890abcdefghijklmnopqrstuvwxyz_-@.";
       string emailAddressLC = emailAddress.ToLower();
       for (int i = 0; i < emailAddressLC.Length; i++)
-      if (legalChars.IndexOf(emailAddressLC[i]) == -1)
-      {
-        result.ValidationMessage = "The email address contains the illegal character \"" + emailAddressLC[i] + "\"" +
-            " in position " + (i + 1).ToString() + " - please correct and try again.";
-        result.ValidationResultCode = ValidationResultCode.Error;
-        return result;
-      }
+        if (legalChars.IndexOf(emailAddressLC[i]) == -1)
+        {
+          result.ValidationMessage = "The email address contains the illegal character \"" + emailAddressLC[i] + "\"" +
+                                     " in position " + (i + 1).ToString() + " - please correct and try again.";
+          result.ValidationResultCode = ValidationResultCode.Error;
+          return result;
+        }
 
       // email address must include an "@"
       int atPos = emailAddress.IndexOf('@');
@@ -67,8 +73,8 @@ namespace Org.OrgUtility
       }
 
       int atPosLast = emailAddress.LastIndexOf('@');
-                
-      // there cannot be more than one "@"  
+
+      // there cannot be more than one "@"
       if (atPosLast != atPos)
       {
         result.ValidationMessage = "There cannot be more than one \"at sign\" character (@) in the email address - please correct and try again.";
@@ -107,7 +113,7 @@ namespace Org.OrgUtility
       if (perPosLast > lth - 3)
       {
         result.ValidationMessage = "The email address must contain at least two characters after the last period.  For example \"myaddress@abc.us\" or " +
-                "\"myaddress@abc.com\" .";
+                                   "\"myaddress@abc.com\" .";
         result.ValidationResultCode = ValidationResultCode.Error;
         return result;
       }
@@ -139,13 +145,13 @@ namespace Org.OrgUtility
       string legalChars = "1234567890abcdefghijklmnopqrstuvwxyz_-@.";
       string passwordLC = password.ToLower();
       for (int i = 0; i < passwordLC.Length; i++)
-      if (legalChars.IndexOf(passwordLC[i]) == -1)
-      {
-        result.ValidationMessage = "The password contains the illegal character \"" + passwordLC[i] + "\"" +
-            " in position " + (i + 1).ToString() + " - please correct and try again.";
-        result.ValidationResultCode = ValidationResultCode.Error;
-        return result;
-      }
+        if (legalChars.IndexOf(passwordLC[i]) == -1)
+        {
+          result.ValidationMessage = "The password contains the illegal character \"" + passwordLC[i] + "\"" +
+                                     " in position " + (i + 1).ToString() + " - please correct and try again.";
+          result.ValidationResultCode = ValidationResultCode.Error;
+          return result;
+        }
 
       return result;
     }

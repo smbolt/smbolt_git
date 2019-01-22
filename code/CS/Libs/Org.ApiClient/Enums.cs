@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Org.ApiClient
 {
-    public enum DiscoveryResponseStatus
-    {
-        DiscoveryNotAttempted,
-        DiscoveryError,
-        DiscoverySuccessful
-    }
+  public enum DiscoveryResponseStatus
+  {
+    DiscoveryNotAttempted,
+    DiscoveryError,
+    DiscoverySuccessful
+  }
 
-    public enum TokenResponseStatus
-    {
-        TokenNotRequested,
-        TokenRequestError,
-        TokenRequestSuccessful
-    }
+  public enum TokenResponseStatus
+  {
+    TokenNotRequested,
+    TokenRequestError,
+    TokenRequestSuccessful
+  }
 }

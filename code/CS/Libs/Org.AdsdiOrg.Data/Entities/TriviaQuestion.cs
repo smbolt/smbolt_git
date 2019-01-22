@@ -11,13 +11,19 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "TriviaQuestion")]
-    public partial class TriviaQuestion
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "TriviaQuestion")]
+  public partial class TriviaQuestion
+  {
+    public int Id {
+      get;
+      set;
     }
+    public string Title {
+      get;
+      set;
+    }
+  }
 }

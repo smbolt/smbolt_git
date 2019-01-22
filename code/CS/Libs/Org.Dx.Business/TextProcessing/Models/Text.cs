@@ -14,13 +14,34 @@ namespace Org.Dx.Business.TextProcessing
   {
     public static bool BreakpointEnabled = false;
     public static bool KeepBreakpointEnabled = false;
-    public static bool InDiagnosticsMode { get; set; }
-    public FileType FileType { get; set; }
-    public Dictionary<string, string> MetaData { get; set; }
-    public string RawText { get; set; }
-    public XElement XElement { get; set; }
-    public string Name { get; set; }
-    public bool DiscardThisText { get; set; }
+    public static bool InDiagnosticsMode {
+      get;
+      set;
+    }
+    public FileType FileType {
+      get;
+      set;
+    }
+    public Dictionary<string, string> MetaData {
+      get;
+      set;
+    }
+    public string RawText {
+      get;
+      set;
+    }
+    public XElement XElement {
+      get;
+      set;
+    }
+    public string Name {
+      get;
+      set;
+    }
+    public bool DiscardThisText {
+      get;
+      set;
+    }
     private TextUtility _u;
     private OptionsList _optionsList;
     protected OptionsList LevelExtractOptions
@@ -41,82 +62,240 @@ namespace Org.Dx.Business.TextProcessing
     }
 
     private OptionsList _aggregateOptions;
-    public OptionsList ExtractOptions { get { return Get_ExtractOptions(); } }
+    public OptionsList ExtractOptions {
+      get {
+        return Get_ExtractOptions();
+      }
+    }
 
     private bool _allowDebugBreak = false;
-    public bool AllowDebugBreak { get { return _allowDebugBreak; } }
+    public bool AllowDebugBreak {
+      get {
+        return _allowDebugBreak;
+      }
+    }
 
     private DxWorkbook _dxWorkbook;
     public DxWorkbook DxWorkbook
     {
-      get { return _dxWorkbook; }
+      get {
+        return _dxWorkbook;
+      }
     }
 
     private ExtractSpec _extractSpec;
-    public ExtractSpec ExtractSpec 
+    public ExtractSpec ExtractSpec
     {
-      get { return _extractSpec; }
-      set { _extractSpec = value; }
+      get {
+        return _extractSpec;
+      }
+      set {
+        _extractSpec = value;
+      }
     }
 
-    public Text Parent { get; private set; }
-    public TextSet TextSet { get; set; }
-    public string FullPath { get { return Get_FullPath(); } }
+    public Text Parent {
+      get;
+      private set;
+    }
+    public TextSet TextSet {
+      get;
+      set;
+    }
+    public string FullPath {
+      get {
+        return Get_FullPath();
+      }
+    }
 
     private string _fullFilePath;
-    public string FullFilePath { get { return _fullFilePath; } }
+    public string FullFilePath {
+      get {
+        return _fullFilePath;
+      }
+    }
 
-    public List<Text> Lines { get { return this.Decompose(Constants.NewLineDelimiter); } }
-    public string[] Tokens { get; set; }
+    public List<Text> Lines {
+      get {
+        return this.Decompose(Constants.NewLineDelimiter);
+      }
+    }
+    public string[] Tokens {
+      get;
+      set;
+    }
     public Dictionary<string, string> LocalVariables;
     public static Dictionary<string, string> GlobalVariables;
 
-    public int LineNumber { get; set; }
-    public int TextLength { get { return this.RawText.IsNotBlank() ? this.RawText.Length : 0; } }
-    public bool MoreText { get { return Get_MoreText(); } }
-    public bool HasMoreNonBlankText { get { return Get_HasMoreNonBlankText(); } }
-    public bool PriorText { get { return Get_PriorText(); } }
-    public string First50 { get { return this.RawText.First50(); } }
-    public int PriorEndPosition { get { return Get_PriorEndPosition(); } }
-    public int LastIndex { get { return this.RawText == null ? -1 : this.RawText.LastIndex(); } }
+    public int LineNumber {
+      get;
+      set;
+    }
+    public int TextLength {
+      get {
+        return this.RawText.IsNotBlank() ? this.RawText.Length : 0;
+      }
+    }
+    public bool MoreText {
+      get {
+        return Get_MoreText();
+      }
+    }
+    public bool HasMoreNonBlankText {
+      get {
+        return Get_HasMoreNonBlankText();
+      }
+    }
+    public bool PriorText {
+      get {
+        return Get_PriorText();
+      }
+    }
+    public string First50 {
+      get {
+        return this.RawText.First50();
+      }
+    }
+    public int PriorEndPosition {
+      get {
+        return Get_PriorEndPosition();
+      }
+    }
+    public int LastIndex {
+      get {
+        return this.RawText == null ? -1 : this.RawText.LastIndex();
+      }
+    }
 
-    public string Description { get { return Get_Description(); } }
-    public string Report { get { return Get_Report(); } }
-    public string FormatName { get; set; }
-    public Tsd Tsd { get; set; }
-    public string TsdCode { get { return this.Tsd == null ? String.Empty : this.Tsd.Code; } }
+    public string Description {
+      get {
+        return Get_Description();
+      }
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
+    public string FormatName {
+      get;
+      set;
+    }
+    public Tsd Tsd {
+      get;
+      set;
+    }
+    public string TsdCode {
+      get {
+        return this.Tsd == null ? String.Empty : this.Tsd.Code;
+      }
+    }
 
-    public int BegPosInParent { get; set; }
-    public int EndPosInParent { get; set; }
+    public int BegPosInParent {
+      get;
+      set;
+    }
+    public int EndPosInParent {
+      get;
+      set;
+    }
 
-    public int StartPos { get; set; }
-    public int CurrPos { get; set; }
-    public int BegPos { get; set; }
-    public int EndPos { get; set; }
-    public int TextLth { get { return this.RawText.IsBlank() ? 0 : this.RawText.Length; } }
-    public string AreaOfCurrPos { get { return Get_AreaOfCurrPos(); } }
+    public int StartPos {
+      get;
+      set;
+    }
+    public int CurrPos {
+      get;
+      set;
+    }
+    public int BegPos {
+      get;
+      set;
+    }
+    public int EndPos {
+      get;
+      set;
+    }
+    public int TextLth {
+      get {
+        return this.RawText.IsBlank() ? 0 : this.RawText.Length;
+      }
+    }
+    public string AreaOfCurrPos {
+      get {
+        return Get_AreaOfCurrPos();
+      }
+    }
 
-    public bool IsReportUnit { get { return this.Level == 0; } }
-    public bool IsRoot { get { return Get_IsRoot(); } }
-    public Text Root { get { return Get_Root(); } }
-    
-    public string FullReport { get { return Get_FullReport(); } }
-    public XElement ExtractXml { get; set; }
+    public bool IsReportUnit {
+      get {
+        return this.Level == 0;
+      }
+    }
+    public bool IsRoot {
+      get {
+        return Get_IsRoot();
+      }
+    }
+    public Text Root {
+      get {
+        return Get_Root();
+      }
+    }
 
-    public Text PriorSibling { get { return Get_PriorSibling(); } }
+    public string FullReport {
+      get {
+        return Get_FullReport();
+      }
+    }
+    public XElement ExtractXml {
+      get;
+      set;
+    }
 
-    public string HexDump { get { return Get_HexDump(); } }
-    public string TextDump { get { return Get_TextDump(); } }
-    public int Level { get { return Get_Level(); } }
-    public Cmdx Cmdx { get; set; }
-    public CmdxData CmdxData { get; set; }
-    public string ExtractionErrorReport { get; set; }
+    public Text PriorSibling {
+      get {
+        return Get_PriorSibling();
+      }
+    }
+
+    public string HexDump {
+      get {
+        return Get_HexDump();
+      }
+    }
+    public string TextDump {
+      get {
+        return Get_TextDump();
+      }
+    }
+    public int Level {
+      get {
+        return Get_Level();
+      }
+    }
+    public Cmdx Cmdx {
+      get;
+      set;
+    }
+    public CmdxData CmdxData {
+      get;
+      set;
+    }
+    public string ExtractionErrorReport {
+      get;
+      set;
+    }
 
     private Dictionary<string, XElement> _extractTemplates;
     public List<CxException> CxExceptionList = new List<CxException>();
-   
+
     private StringBuilder _sb;
-    public string Log { get { return this.Root == null ? "" : this.Root.Get_Log(); } }
+    public string Log {
+      get {
+        return this.Root == null ? "" : this.Root.Get_Log();
+      }
+    }
 
     public Text(bool allowDebugBreak, FileType fileType, Text parent = null, string fullFilePath = "")
     {
@@ -151,11 +330,11 @@ namespace Org.Dx.Business.TextProcessing
       catch(CxException cx)
       {
         throw new Exception("An exception occurred while attempting to extract data from the Text object." + g.crlf +
-                            "The CxException report is as follows:" + cx.ToReport(), cx.GetBaseException()); 
+                            "The CxException report is as follows:" + cx.ToReport(), cx.GetBaseException());
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to create a DxWorkbook from an ExtractSpec.", ex); 
+        throw new Exception("An exception occurred while attempting to create a DxWorkbook from an ExtractSpec.", ex);
       }
     }
 
@@ -189,12 +368,14 @@ namespace Org.Dx.Business.TextProcessing
             break;
 
           default:
-            throw new Exception("An unsupported file type is specified in the ExtractSpec '" + this.FileType.ToString() + "'."); 
+            throw new Exception("An unsupported file type is specified in the ExtractSpec '" + this.FileType.ToString() + "'.");
         }
 
         this.PropagateOptions();
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(50, new object[] { this, extractSpec, ex } );
@@ -251,7 +432,9 @@ namespace Org.Dx.Business.TextProcessing
           this.ExtractXml = f.Serialize(_dxWorkbook);
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(53, new object[] { this, ex });
@@ -297,10 +480,10 @@ namespace Org.Dx.Business.TextProcessing
               string textZoom = this.AreaOfCurrPos;
 
               this.WriteLog(cmdx.Code + g.crlf + textZoom);
-              
+
               t.Cmdx = cmdx;
-              cmdx.Text = t;  
-              
+              cmdx.Text = t;
+
               if (!cmdx.Execute)
               {
                 this.WriteLog("Cmdx code = '" + cmdx.Code + "' skipped due to a condition or run limit.");
@@ -310,7 +493,7 @@ namespace Org.Dx.Business.TextProcessing
               cmd.RunCount++;
 
               switch (cmdx.Verb)
-              {              
+              {
                 case Verb.SetTextStart:
                   t.BegPos = t.FindTextPosition(cmdx, t.CurrPos);
                   posAdjust = 0;
@@ -340,7 +523,7 @@ namespace Org.Dx.Business.TextProcessing
                     trimSet = true;
                     trimText = true;
                   }
-                  
+
                   if (t.BegPos > -1)
                   {
                     int adjustedPos = t.BegPos + posAdjust;
@@ -369,7 +552,7 @@ namespace Org.Dx.Business.TextProcessing
 
           if (t.BegPos >= t.EndPos)
             return;
-          
+
           if (t.RawText.Length < t.EndPos)
             return;
 
@@ -398,7 +581,7 @@ namespace Org.Dx.Business.TextProcessing
           {
             int tokenCount = subText.TokenCount();
             if (tokenCount < minimumTokens)
-              discardText = true; 
+              discardText = true;
           }
 
           if (trimText)
@@ -409,10 +592,10 @@ namespace Org.Dx.Business.TextProcessing
           childText.DiscardThisText = discardText;
           childText.BegPosInParent = t.BegPos;
           childText.EndPosInParent = t.EndPos;
-          
+
           childText.Tsd = tsd;
           childText.LevelExtractOptions = tsd.LevelExtractOptions;
-          
+
           childText.Name = tsd.Name;
 
           if (tsd.Iterate)
@@ -432,7 +615,7 @@ namespace Org.Dx.Business.TextProcessing
           }
 
           t.WriteLog("Creating new Text object named '" + childText.Name + "' as a child of the parent Text object named '" + t.Name + "'." +
-                      "Starting at position " + t.BegPos.ToString("###,##0") + " and having a length of " + childText.TextLength.ToString("###,##0") + ".");
+                     "Starting at position " + t.BegPos.ToString("###,##0") + " and having a length of " + childText.TextLength.ToString("###,##0") + ".");
 
           t.TextSet.Add(childText.Name, childText);
 
@@ -440,7 +623,7 @@ namespace Org.Dx.Business.TextProcessing
           {
             CreateStructurePdf(kvpChildTsd.Value, childText, 0);
           }
-          
+
           if (!t.HasMoreNonBlankText)
           {
             t.CurrPos = t.LastIndex;
@@ -448,7 +631,9 @@ namespace Org.Dx.Business.TextProcessing
         }
         while (tsd.Iterate && t.CurrPos < t.LastIndex);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(52, new object[] { this, tsd, startPos, ex } );
@@ -481,8 +666,8 @@ namespace Org.Dx.Business.TextProcessing
           wb.Add(ws.WorksheetName, ws);
         }
 
-        string tName = t.Name; 
-                
+        string tName = t.Name;
+
         t.CurrPos = 0;
         int textLength = t.RawText.Length;
         string extractedValue = String.Empty;
@@ -490,7 +675,7 @@ namespace Org.Dx.Business.TextProcessing
         string textZoom = this.AreaOfCurrPos;
 
         var cmdxFactory = new CmdxFactory();
-        int rowIndex = 0; 
+        int rowIndex = 0;
 
         foreach (var cmd in tsd.TextExtractCommands)
         {
@@ -511,7 +696,7 @@ namespace Org.Dx.Business.TextProcessing
 
             if (cmdx.IsCommentedOut || !cmdx.ActiveToRun)
               continue;
-          
+
             this.WriteLog(cmdx.Code + g.crlf + textZoom);
 
             t.Cmdx = cmdx;
@@ -519,7 +704,7 @@ namespace Org.Dx.Business.TextProcessing
 
             if (!cmdx.Execute)
             {
-              this.WriteLog("Cmdx code = '" + cmdx.Code + "' skipped due to a condition or run limit."); 
+              this.WriteLog("Cmdx code = '" + cmdx.Code + "' skipped due to a condition or run limit.");
               continue;
             }
 
@@ -532,7 +717,7 @@ namespace Org.Dx.Business.TextProcessing
             cmd.RunCount++;
 
             bool trimText = cmdx.Trim;
-          
+
             switch (cmdx.Verb)
             {
               case Verb.ProcessingCommand:
@@ -551,7 +736,7 @@ namespace Org.Dx.Business.TextProcessing
               case Verb.Truncate:
                 t.Truncate(cmdx);
                 break;
-              
+
               case Verb.SetVariable:
                 t.SetVariable(cmdx);
                 break;
@@ -569,7 +754,7 @@ namespace Org.Dx.Business.TextProcessing
                 break;
 
               case Verb.SetTextPosition:
-                t.SetTextPosition(cmdx); 
+                t.SetTextPosition(cmdx);
                 break;
 
               case Verb.LocateToken:
@@ -621,7 +806,7 @@ namespace Org.Dx.Business.TextProcessing
                   throw new CxException(150, new object[] { this, cmdx });
                 extractedValue = cell.ValueOrDefault.ToString();
                 if (cmdx.HelperFunction.IsNotBlank())
-                  extractedValue = cmdx.RunHelperFunction(extractedValue); 
+                  extractedValue = cmdx.RunHelperFunction(extractedValue);
                 break;
 
               case Verb.TokenizeNextLine:
@@ -648,9 +833,9 @@ namespace Org.Dx.Business.TextProcessing
             if (extractedValue.IsNotBlank() && !cmdx.DataName.ToUpper().StartsWith("DISCARD"))
             {
               if (trimText)
-                extractedValue = extractedValue.Trim();             
+                extractedValue = extractedValue.Trim();
 
-              extractedValue = RunGlobalRoutines(extractedValue); 
+              extractedValue = RunGlobalRoutines(extractedValue);
 
               try
               {
@@ -659,10 +844,10 @@ namespace Org.Dx.Business.TextProcessing
                 ws.AddCell(dxCell);
 
                 // rowIndex of 99999 indicates that the actual row index (known by the worksheet (ws)) is to be
-                // incremented.  We then pull the actual row index from the DxCell object, which will have its 
+                // incremented.  We then pull the actual row index from the DxCell object, which will have its
                 // RowIndex property modified by the Worksheet to the appropriate value.
                 if (rowIndex == 99999)
-                  rowIndex = dxCell.RowIndex; 
+                  rowIndex = dxCell.RowIndex;
               }
               catch (CxException cex)
               {
@@ -699,10 +884,12 @@ namespace Org.Dx.Business.TextProcessing
           }
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(54, new object[] { t, ex }); 
+        throw new CxException(54, new object[] { t, ex });
       }
     }
 
@@ -786,13 +973,15 @@ namespace Org.Dx.Business.TextProcessing
             childText.Name = tsd.Name + "[" + t.TextSet.Count.ToString() + "]";
             childText.Tsd = kvpChildTsd.Value;
             t.WriteLog("Creating new Text object named '" + childText.Name + "' as a child of the parent Text object named '" + t.Name + "'." +
-                        "Starting at position " + t.BegPos.ToString("###,##0") + " and having a length of " + childText.TextLength.ToString("###,##0") + ".");
+                       "Starting at position " + t.BegPos.ToString("###,##0") + " and having a length of " + childText.TextLength.ToString("###,##0") + ".");
             t.TextSet.Add(childText.Name, childText);
             CreateStructureXml(kvpChildTsd.Value, childText);
           }
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(52, new object[] { this, tsd, ex });
@@ -947,7 +1136,7 @@ namespace Org.Dx.Business.TextProcessing
                 ws.AddCell(dxCell);
 
                 // rowIndex of 99999 indicates that the actual row index (known by the worksheet (ws)) is to be
-                // incremented.  We then pull the actual row index from the DxCell object, which will have its 
+                // incremented.  We then pull the actual row index from the DxCell object, which will have its
                 // RowIndex property modified by the Worksheet to the appropriate value.
                 if (rowIndex == 99999)
                   rowIndex = dxCell.RowIndex;
@@ -985,7 +1174,9 @@ namespace Org.Dx.Business.TextProcessing
           }
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(54, new object[] { t, ex });
@@ -1023,9 +1214,9 @@ namespace Org.Dx.Business.TextProcessing
         }
       }
 
-      return processedValue; 
+      return processedValue;
     }
-    
+
     private void Initialize(Text parent)
     {
       this.Name = String.Empty;
@@ -1033,7 +1224,7 @@ namespace Org.Dx.Business.TextProcessing
       this.LineNumber = 0;
       this.Parent = parent;
       this.RawText = String.Empty;
-      this.XElement = null; 
+      this.XElement = null;
       this.LocalVariables = new Dictionary<string, string>();
       this.TextSet = new TextSet();
       this.Cmdx = null;
@@ -1125,7 +1316,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return this.RawText.Substring(beg, lth).Trim();
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(56, new object[] { this, beg, lth, allowTruncation, ex });
@@ -1149,7 +1342,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return this.RawText.Substring(startingAt).Trim();
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(59, new object[] { this, startingAt, allowTruncation, ex });
@@ -1302,8 +1497,8 @@ namespace Org.Dx.Business.TextProcessing
             ////////////////////////////////
 
             // This section of code will get the stored token or a set of joined tokens "before" a stored literal or type-described token.
-            // If tokens are joined and more than one token is found, then the returned tokens are separated by a single blank. 
-            
+            // If tokens are joined and more than one token is found, then the returned tokens are separated by a single blank.
+
             if (tsc.BeforeToken.IsNotBlank())
             {
               if (this.Tokens == null || this.Tokens.Length == 0)
@@ -1364,7 +1559,7 @@ namespace Org.Dx.Business.TextProcessing
               }
 
               // loop through the tokens until finding the "target before token"
-              // at which point 
+              // at which point
               for (int i = 0; i < this.Tokens.Length; i++)
               {
                 if (targetBeforeTokenFound)
@@ -1410,7 +1605,7 @@ namespace Org.Dx.Business.TextProcessing
                     break;
                   }
                 }
-                else // process 'typed' values... 
+                else // process 'typed' values...
                 {
                   if (_u.TokenMatchesTypedValue(tk, dataType, typeParms))
                   {
@@ -1418,7 +1613,7 @@ namespace Org.Dx.Business.TextProcessing
                     break;
                   }
                 }
-                
+
               }
 
               // if the "target before token" is not found and we "require a value", throw exception
@@ -1485,7 +1680,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(107, this, cmdx, ex);
@@ -1530,7 +1727,7 @@ namespace Org.Dx.Business.TextProcessing
       string tsdName = this.Tsd == null ? "Tsd is null" : this.Tsd.Name == null ? "Tsd name is null" : this.Tsd.Name;
       string mapName = this.ExtractSpec == null ? " Map is null" : this.ExtractSpec.Name;
 
-      return this.Name + "         Level: " + this.Level.ToString() + "          Path: " + this.FullPath + "           TsdName: " + tsdName + "         Map: " + mapName; 
+      return this.Name + "         Level: " + this.Level.ToString() + "          Path: " + this.FullPath + "           TsdName: " + tsdName + "         Map: " + mapName;
     }
 
     private string Get_HexDump()
@@ -1659,16 +1856,16 @@ namespace Org.Dx.Business.TextProcessing
 
       return this.CurrPos < this.RawText.Length - 1;
     }
-    
+
     private int Get_PriorEndPosition()
     {
       if (this.TextSet == null)
         return 0;
 
       if (this.TextSet.Count == 0)
-        return 0; 
+        return 0;
 
-      return this.TextSet.Values.Last().EndPosInParent;			
+      return this.TextSet.Values.Last().EndPosInParent;
     }
 
     public void RemoveStoredTokens(List<Token> tokensToRemove)
@@ -1713,7 +1910,7 @@ namespace Org.Dx.Business.TextProcessing
         }
       }
     }
-    
+
     public XElement GetExtractTemplate(string name)
     {
       var root = this.Root;
@@ -1724,7 +1921,7 @@ namespace Org.Dx.Business.TextProcessing
 
       XElement e = new XElement(template.Name.LocalName);
       foreach(var attr in template.Attributes())
-        e.Add(new XAttribute(attr.Name, attr.Value)); 
+        e.Add(new XAttribute(attr.Name, attr.Value));
 
       return e;
     }
@@ -1819,7 +2016,7 @@ namespace Org.Dx.Business.TextProcessing
           throw new CxException(155, new object[] { this, originalValue });
 
       } while (value.IndexOf("$") > -1);
-      
+
       return value;
     }
 
@@ -1834,7 +2031,7 @@ namespace Org.Dx.Business.TextProcessing
           if (this.LocalVariables.ContainsKey(key))
             this.LocalVariables[key] = value;
           else
-            this.LocalVariables.Add(key, value); 
+            this.LocalVariables.Add(key, value);
           break;
 
         case VariableType.Global:
@@ -1872,7 +2069,7 @@ namespace Org.Dx.Business.TextProcessing
       Text t = this;
 
       optionsLists.Add(t.LevelExtractOptions);
-      
+
       while (t.Parent != null)
       {
         t = t.Parent;
@@ -1957,7 +2154,7 @@ namespace Org.Dx.Business.TextProcessing
       if (_sb == null)
         _sb = new StringBuilder();
 
-      _sb.Append(DateTime.Now.ToString("yyyyMMdd HHmmss.fff") + " - " + message + g.crlf); 
+      _sb.Append(DateTime.Now.ToString("yyyyMMdd HHmmss.fff") + " - " + message + g.crlf);
     }
 
     public Text Clone()

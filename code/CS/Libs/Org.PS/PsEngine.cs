@@ -32,7 +32,7 @@ namespace Org.PS
     {
       _logger = new Logger();
     }
-    
+
     public async Task<TaskResult> RunScriptAsync(string scriptPath)
     {
       try
@@ -70,8 +70,8 @@ namespace Org.PS
           });
 
           _taskResult.TaskResultStatus = _taskResult.TaskResultSet.GetWorstResult();
-          
-          return _taskResult;          
+
+          return _taskResult;
         }
       }
       catch (Exception ex)
@@ -118,7 +118,7 @@ namespace Org.PS
       if (message.ToUpper().Contains("STARTING"))
       {
         var taskResult = new TaskResult(message.ToUpper().Replace("###", String.Empty).Replace("STARTING", String.Empty)
-                                               .CondenseExtraSpaces().Replace(" ", "-"));
+                                        .CondenseExtraSpaces().Replace(" ", "-"));
 
         taskResult.TaskResultStatus = TaskResultStatus.InProgress;
         _taskResult.TaskResultSet.Add(_taskResult.TaskResultSet.Count, taskResult);
@@ -137,13 +137,13 @@ namespace Org.PS
         _returnCode = returnCodeText.ToInt32();
 
         string taskName = message.ToUpper().Substring(0, pos).Trim().Replace("###", String.Empty).Replace("COMPLETE", String.Empty)
-                                           .CondenseExtraSpaces().Replace(" ", "-");
+                          .CondenseExtraSpaces().Replace(" ", "-");
 
         var taskResult = _taskResult.TaskResultSet.Values.Where(t => t.TaskName == taskName).FirstOrDefault();
 
         if (taskResult == null)
           throw new Exception("Cannot locate TaskResult named '" + taskName + "' in the TaskResult set for top level task '" + _taskResult.TaskName + "'.");
-        
+
         if (_returnCode == 0)
         {
           taskResult.TaskResultStatus = TaskResultStatus.Success;
@@ -182,7 +182,7 @@ namespace Org.PS
           message = g.crlf +
                     "########################################################################################################" + g.crlf +
                     "### JOB COMPLETED (" + _jobName + ")" + g.crlf +
-                    "### RETURN CODE: " + _returnCode.ToString() + g.crlf +  
+                    "### RETURN CODE: " + _returnCode.ToString() + g.crlf +
                     "########################################################################################################" + g.crlf;
           _psInvocationState = e.InvocationStateInfo.State;
           break;

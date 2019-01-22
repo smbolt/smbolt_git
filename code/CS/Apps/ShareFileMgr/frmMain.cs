@@ -20,7 +20,7 @@ namespace Org.ShareFileMgr
     private a a;
     private ApiParms _apiParms;
     private SearchParms _searchParms;
-    private bool _isDryRun; 
+    private bool _isDryRun;
     private Logger _logger;
 
     public frmMain()
@@ -69,8 +69,8 @@ namespace Org.ShareFileMgr
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred attempting to connect to ShareFile." + g.crlf2 + ex.ToReport(),
                         "Share File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-      }      
-      
+      }
+
       this.Cursor = Cursors.Default;
     }
 
@@ -91,7 +91,7 @@ namespace Org.ShareFileMgr
             {
               string fileId = file.Id;
               long fileSize = file.FileSizeBytes.HasValue ? file.FileSizeBytes.Value : 0;
-              string fileName = file.Name; 
+              string fileName = file.Name;
               bool isFolder = file.__type == "ShareFile.Api.Models.Folder";
               if (isFolder)
               {
@@ -111,8 +111,8 @@ namespace Org.ShareFileMgr
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred attempting to connect to ShareFile." + g.crlf2 + ex.ToReport(),
                         "Share File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-      }      
-      
+      }
+
       this.Cursor = Cursors.Default;
     }
 
@@ -133,8 +133,8 @@ namespace Org.ShareFileMgr
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred attempting to list content of folder recursively." + g.crlf2 + ex.ToReport(),
                         "Share File Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-      }      
-      
+      }
+
       this.Cursor = Cursors.Default;
     }
 
@@ -153,7 +153,7 @@ namespace Org.ShareFileMgr
       _logger = new Logger();
 
       _apiParms = GetApiParms();
-      ckIsDryRun.Checked = g.CI("IsDryRun").ToBoolean(); 
+      ckIsDryRun.Checked = g.CI("IsDryRun").ToBoolean();
     }
 
 

@@ -77,7 +77,7 @@ namespace Org.GS
 
       if (tns.DetailSpecs.Count > 0)
       {
-        // need to rework this... the literal comparisions can use "contains", case sensitivity, etc. 
+        // need to rework this... the literal comparisions can use "contains", case sensitivity, etc.
         // need to think through comparisions involving literal values.
         throw new Exception("TextNodeSpec comparisions to literal string values cannot have DetailSpecifications.");
       }
@@ -293,7 +293,7 @@ namespace Org.GS
         bool containsResult = textIn.ToLower().Trim().Contains(containsSpec.DetailSpecData.ToLower());
         return containsResult.ToString();
       }
-            
+
       string[] txTokens = tns.TransformSpec.Split(Constants.CommaDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
       foreach (var txToken in txTokens)
@@ -424,7 +424,7 @@ namespace Org.GS
       if (useOrLogic)
         return results.Where(r => r == true).Count() > 0;
 
-      // if using "AND" logic (the default), any false count resolves to false 
+      // if using "AND" logic (the default), any false count resolves to false
       return results.Where(r => r == false).Count() == 0;
     }
 

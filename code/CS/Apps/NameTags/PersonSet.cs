@@ -4,8 +4,8 @@ using System.Text;
 
 namespace NameTags
 {
-    [Serializable]
-    public class PersonSet : SortedList<string, Person>
-    {
-    }
+  [Serializable]
+  public class PersonSet : SortedList<string, Person>
+  {
+  }
 }

@@ -21,10 +21,22 @@ namespace Org.WSO
   public class ServiceState
   {
     private ServiceBase _serviceBase;
-    public int InvokeCount { get; set; }
-    public bool IsNew { get; set; }
-    public string DefaultNotifyEventName { get; set; }
-    public ComponentLoadMode ComponentLoadMode { get; set; }
+    public int InvokeCount {
+      get;
+      set;
+    }
+    public bool IsNew {
+      get;
+      set;
+    }
+    public string DefaultNotifyEventName {
+      get;
+      set;
+    }
+    public ComponentLoadMode ComponentLoadMode {
+      get;
+      set;
+    }
 
 
     // AppDomain-Related Objects
@@ -32,10 +44,22 @@ namespace Org.WSO
     private AppDomainEventManager _appDomainEventManager;
     private Dictionary<string, CatalogEntry> _catalogEntries;
 
-    public string CatalogStem { get; set; }
-    public string CatalogEnvironment { get; set; }
-    public string CatalogTaskNode { get; set; }
-    public string CatalogName { get; set; }
+    public string CatalogStem {
+      get;
+      set;
+    }
+    public string CatalogEnvironment {
+      get;
+      set;
+    }
+    public string CatalogTaskNode {
+      get;
+      set;
+    }
+    public string CatalogName {
+      get;
+      set;
+    }
 
     // MEF Module-Related Objects
     [ImportMany(typeof(IRequestProcessorFactory))]
@@ -45,18 +69,40 @@ namespace Org.WSO
 
     private Dictionary<string, string> _devUsers;
     private Dictionary<string, string> _devComputers;
-    public string WebServiceName { get; set; }
-    public string ComputerName { get { return Get_ComputerName(); } }
+    public string WebServiceName {
+      get;
+      set;
+    }
+    public string ComputerName {
+      get {
+        return Get_ComputerName();
+      }
+    }
 
-    public string NotifyConfigSetName { get; private set; }
+    public string NotifyConfigSetName {
+      get;
+      private set;
+    }
     private NotifyConfigSets _defaultNotifyConfigs;
-    public NotifyConfigSets DefaultNotifyConfigs { get { return _defaultNotifyConfigs; } }
+    public NotifyConfigSets DefaultNotifyConfigs {
+      get {
+        return _defaultNotifyConfigs;
+      }
+    }
     private NotifyConfigSets _notifyConfigs;
-    public NotifyConfigSets NotifyConfigs { get { return _notifyConfigs; } }
+    public NotifyConfigSets NotifyConfigs {
+      get {
+        return _notifyConfigs;
+      }
+    }
 
     private ConfigSmtpSpec _notifySmtpSpec;
     private SmtpParms _notifySmtpParms;
-    public SmtpParms NotifySmtpParms { get { return _notifySmtpParms; } }
+    public SmtpParms NotifySmtpParms {
+      get {
+        return _notifySmtpParms;
+      }
+    }
 
     private Logger _logger;
 
@@ -85,12 +131,12 @@ namespace Org.WSO
       {
         if (g.AppConfig == null || !g.AppConfig.IsLoaded)
         {
-           new a();
+          new a();
         }
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to initialize the 'a' (application) object.", ex); 
+        throw new Exception("An exception occurred attempting to initialize the 'a' (application) object.", ex);
       }
 
       try
@@ -177,17 +223,17 @@ namespace Org.WSO
         throw new Exception("An exception occurred in the constructor of ServiceState.", ex);
       }
     }
-    
+
     public IRequestProcessorFactory GetRequestProcessorFactory(string processorKey)
     {
       if (this.LoadedRequestProcessorFactories.ContainsKey(processorKey))
-        return this.LoadedRequestProcessorFactories[processorKey];      
+        return this.LoadedRequestProcessorFactories[processorKey];
 
       foreach (Lazy<IRequestProcessorFactory, IRequestProcessorMetadata> requestProcessorFactory in requestProcessorFactories)
       {
         if (requestProcessorFactory.Metadata.Processors.ToListContains(Constants.SpaceDelimiter, processorKey))
         {
-          this.LoadedRequestProcessorFactories.Add(processorKey, requestProcessorFactory.Value); 
+          this.LoadedRequestProcessorFactories.Add(processorKey, requestProcessorFactory.Value);
           return requestProcessorFactory.Value;
         }
       }
@@ -259,8 +305,8 @@ namespace Org.WSO
           string notifyDbSpecPrefix = g.CI("NotifyDbSpecPrefix");
           var notifyDbSpec = g.GetDbSpec(notifyDbSpecPrefix);
           if (!notifyDbSpec.IsReadyToConnect())
-            throw new Exception("The Notifications database ConfigDbSpec is not ready to connect."); 
-          NotifyConfigHelper.SetNotifyConfigDbSpec(notifyDbSpec); 
+            throw new Exception("The Notifications database ConfigDbSpec is not ready to connect.");
+          NotifyConfigHelper.SetNotifyConfigDbSpec(notifyDbSpec);
         }
 
         _notifyConfigs = NotifyConfigHelper.GetNotifyConfigs(notifyConfigMode);
@@ -276,7 +322,7 @@ namespace Org.WSO
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to initialize the notification configs.", ex); 
+        throw new Exception("An exception occurred while attempting to initialize the notification configs.", ex);
       }
     }
 
@@ -298,7 +344,7 @@ namespace Org.WSO
 
       return g.SystemInfo.DomainAndComputer;
     }
-    
+
     private void Module_ProgressUpdate(ProgressMessage progressMessage)
     {
       var message = new IpdxMessage();

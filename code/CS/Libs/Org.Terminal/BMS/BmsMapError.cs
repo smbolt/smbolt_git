@@ -8,9 +8,18 @@ namespace Org.Terminal.BMS
 {
   public class BmsMapError
   {
-    public int Code { get; set; }
-    public string ErrorMessage { get; set; }
-    public BmsMapErrorLevel BmsMapErrorLevel { get; set; }
+    public int Code {
+      get;
+      set;
+    }
+    public string ErrorMessage {
+      get;
+      set;
+    }
+    public BmsMapErrorLevel BmsMapErrorLevel {
+      get;
+      set;
+    }
 
     public BmsMapError()
     {

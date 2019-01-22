@@ -20,18 +20,55 @@ namespace Org.TSK
 
   public class TaskEngineParms
   {
-    public TaskScheduleMode TaskScheduleMode { get; set; }
-    public int TaskLoadIntervalSeconds { get; set; }
-    public string TasksDbSpecPrefix { get; set; }
-    public string TaskProfile { get; set; }
-    public string WSHTaskProfile { get; set; }
-    public List<string> TasksToRun { get; set; }
-    public string MEFModulesPath { get; set; }
-    public bool LimitMEFImports { get; set; }
-    public string MEFLimitListName { get; set; }
-    public string OverrideEnvironment { get; set; }
-    public TaskAssignmentSource TaskAssignmentSource { get; set; }
-    public string TasksToRunReport { get { return Get_TasksToRunReport(); } }
+    public TaskScheduleMode TaskScheduleMode {
+      get;
+      set;
+    }
+    public int TaskLoadIntervalSeconds {
+      get;
+      set;
+    }
+    public string TasksDbSpecPrefix {
+      get;
+      set;
+    }
+    public string TaskProfile {
+      get;
+      set;
+    }
+    public string WSHTaskProfile {
+      get;
+      set;
+    }
+    public List<string> TasksToRun {
+      get;
+      set;
+    }
+    public string MEFModulesPath {
+      get;
+      set;
+    }
+    public bool LimitMEFImports {
+      get;
+      set;
+    }
+    public string MEFLimitListName {
+      get;
+      set;
+    }
+    public string OverrideEnvironment {
+      get;
+      set;
+    }
+    public TaskAssignmentSource TaskAssignmentSource {
+      get;
+      set;
+    }
+    public string TasksToRunReport {
+      get {
+        return Get_TasksToRunReport();
+      }
+    }
 
     public TaskEngineParms()
     {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OopFactory.X12.Hipaa.ClaimStatus
 {
-    public class ClaimStatusServiceLineRequest
-    {
-    }
+  public class ClaimStatusServiceLineRequest
+  {
+  }
 }

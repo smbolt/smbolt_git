@@ -8,10 +8,23 @@ namespace Org.GS
 {
   public class ModuleOnDisk
   {
-    public string ModuleName { get; set; }
-    public string ModuleVersion { get; set; }
-    public string ModuleKey { get { return Get_ModuleKey(); } }
-    public string ModuleFolder { get; set; }
+    public string ModuleName {
+      get;
+      set;
+    }
+    public string ModuleVersion {
+      get;
+      set;
+    }
+    public string ModuleKey {
+      get {
+        return Get_ModuleKey();
+      }
+    }
+    public string ModuleFolder {
+      get;
+      set;
+    }
 
     public ModuleOnDisk()
     {

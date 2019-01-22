@@ -9,14 +9,20 @@ using Org.GS.Configuration;
 namespace Org.GS
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
+  [XMap(XType = XType.Element)]
   public class DiagnosticsControl
   {
-    [XMap] 
-    public bool RunFsActionSet { get; set; }
+    [XMap]
+    public bool RunFsActionSet {
+      get;
+      set;
+    }
 
-    [XMap(XType = XType.Element)] 
-    public FSActionSet FSActionSet { get; set; }
+    [XMap(XType = XType.Element)]
+    public FSActionSet FSActionSet {
+      get;
+      set;
+    }
 
     public DiagnosticsControl()
     {

@@ -10,8 +10,16 @@ namespace Org.Software.Business
 {
   public class ReferenceManager
   {
-    public Assembly BusinessObjectAssembly { get { return Get_BusinessObjectAssembly(); } }
-    public Assembly DataAssembly { get { return Get_DataAssembly(); } }
+    public Assembly BusinessObjectAssembly {
+      get {
+        return Get_BusinessObjectAssembly();
+      }
+    }
+    public Assembly DataAssembly {
+      get {
+        return Get_DataAssembly();
+      }
+    }
 
     private Assembly Get_BusinessObjectAssembly()
     {

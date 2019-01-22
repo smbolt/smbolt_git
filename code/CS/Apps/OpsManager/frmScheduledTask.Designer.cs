@@ -76,27 +76,27 @@
       this.pnlTop.SuspendLayout();
       this.grpBxRunUntilParameters.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // lblTaskName
-      // 
+      //
       this.lblTaskName.AutoSize = true;
       this.lblTaskName.Location = new System.Drawing.Point(14, 15);
       this.lblTaskName.Name = "lblTaskName";
       this.lblTaskName.Size = new System.Drawing.Size(62, 13);
       this.lblTaskName.TabIndex = 0;
       this.lblTaskName.Text = "Task Name";
-      // 
+      //
       // txtTaskName
-      // 
+      //
       this.txtTaskName.Location = new System.Drawing.Point(17, 30);
       this.txtTaskName.Name = "txtTaskName";
       this.txtTaskName.Size = new System.Drawing.Size(188, 20);
       this.txtTaskName.TabIndex = 1;
       this.txtTaskName.Tag = "PropertyChange";
       this.txtTaskName.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // chkIsActive
-      // 
+      //
       this.chkIsActive.AutoSize = true;
       this.chkIsActive.Location = new System.Drawing.Point(762, 51);
       this.chkIsActive.Name = "chkIsActive";
@@ -107,9 +107,9 @@
       this.chkIsActive.Text = "Is Active";
       this.chkIsActive.UseVisualStyleBackColor = true;
       this.chkIsActive.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // chkIsLongRunning
-      // 
+      //
       this.chkIsLongRunning.AutoSize = true;
       this.chkIsLongRunning.Location = new System.Drawing.Point(725, 70);
       this.chkIsLongRunning.Name = "chkIsLongRunning";
@@ -120,36 +120,36 @@
       this.chkIsLongRunning.Text = "Is Long Running";
       this.chkIsLongRunning.UseVisualStyleBackColor = true;
       this.chkIsLongRunning.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblProcessorName
-      // 
+      //
       this.lblProcessorName.AutoSize = true;
       this.lblProcessorName.Location = new System.Drawing.Point(17, 59);
       this.lblProcessorName.Name = "lblProcessorName";
       this.lblProcessorName.Size = new System.Drawing.Size(85, 13);
       this.lblProcessorName.TabIndex = 6;
       this.lblProcessorName.Text = "Processor Name";
-      // 
+      //
       // txtProcessorName
-      // 
+      //
       this.txtProcessorName.Location = new System.Drawing.Point(18, 75);
       this.txtProcessorName.Name = "txtProcessorName";
       this.txtProcessorName.Size = new System.Drawing.Size(188, 20);
       this.txtProcessorName.TabIndex = 3;
       this.txtProcessorName.Tag = "PropertyChange";
       this.txtProcessorName.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblAssemblyLocation
-      // 
+      //
       this.lblAssemblyLocation.AutoSize = true;
       this.lblAssemblyLocation.Location = new System.Drawing.Point(225, 103);
       this.lblAssemblyLocation.Name = "lblAssemblyLocation";
       this.lblAssemblyLocation.Size = new System.Drawing.Size(95, 13);
       this.lblAssemblyLocation.TabIndex = 14;
       this.lblAssemblyLocation.Text = "Assembly Location";
-      // 
+      //
       // txtAssemblyLocation
-      // 
+      //
       this.txtAssemblyLocation.Enabled = false;
       this.txtAssemblyLocation.Location = new System.Drawing.Point(228, 120);
       this.txtAssemblyLocation.Name = "txtAssemblyLocation";
@@ -157,9 +157,9 @@
       this.txtAssemblyLocation.TabIndex = 6;
       this.txtAssemblyLocation.Tag = "PropertyChange";
       this.txtAssemblyLocation.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // txtStoredProcedureName
-      // 
+      //
       this.txtStoredProcedureName.Enabled = false;
       this.txtStoredProcedureName.Location = new System.Drawing.Point(17, 120);
       this.txtStoredProcedureName.Name = "txtStoredProcedureName";
@@ -167,27 +167,27 @@
       this.txtStoredProcedureName.TabIndex = 5;
       this.txtStoredProcedureName.Tag = "PropertyChange";
       this.txtStoredProcedureName.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStoredProcedureName
-      // 
+      //
       this.lblStoredProcedureName.AutoSize = true;
       this.lblStoredProcedureName.Location = new System.Drawing.Point(17, 104);
       this.lblStoredProcedureName.Name = "lblStoredProcedureName";
       this.lblStoredProcedureName.Size = new System.Drawing.Size(121, 13);
       this.lblStoredProcedureName.TabIndex = 12;
       this.lblStoredProcedureName.Text = "Stored Procedure Name";
-      // 
+      //
       // lblProcessorType
-      // 
+      //
       this.lblProcessorType.AutoSize = true;
       this.lblProcessorType.Location = new System.Drawing.Point(223, 15);
       this.lblProcessorType.Name = "lblProcessorType";
       this.lblProcessorType.Size = new System.Drawing.Size(81, 13);
       this.lblProcessorType.TabIndex = 14;
       this.lblProcessorType.Text = "Processor Type";
-      // 
+      //
       // cboProcessorType
-      // 
+      //
       this.cboProcessorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboProcessorType.FormattingEnabled = true;
       this.cboProcessorType.Location = new System.Drawing.Point(226, 30);
@@ -196,9 +196,9 @@
       this.cboProcessorType.TabIndex = 2;
       this.cboProcessorType.Tag = "PropertyChange";
       this.cboProcessorType.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 522);
       this.lblStatus.Name = "lblStatus";
@@ -206,9 +206,9 @@
       this.lblStatus.TabIndex = 16;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // gvTaskSchedules
-      // 
+      //
       this.gvTaskSchedules.AllowUserToAddRows = false;
       this.gvTaskSchedules.AllowUserToDeleteRows = false;
       this.gvTaskSchedules.AllowUserToResizeRows = false;
@@ -230,25 +230,26 @@
       this.gvTaskSchedules.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTaskSchedules_CellContentClick);
       this.gvTaskSchedules.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvTaskSchedules_CellMouseUp);
       this.gvTaskSchedules.DoubleClick += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuTaskSchedule
-      // 
+      //
       this.ctxMenuTaskSchedule.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMenuTaskScheduleDelete});
+        this.ctxMenuTaskScheduleDelete
+      });
       this.ctxMenuTaskSchedule.Name = "ctxMenuTaskSchedule";
       this.ctxMenuTaskSchedule.Size = new System.Drawing.Size(108, 26);
       this.ctxMenuTaskSchedule.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenuScheduledTask_Opening);
-      // 
+      //
       // ctxMenuTaskScheduleDelete
-      // 
+      //
       this.ctxMenuTaskScheduleDelete.Name = "ctxMenuTaskScheduleDelete";
       this.ctxMenuTaskScheduleDelete.Size = new System.Drawing.Size(107, 22);
       this.ctxMenuTaskScheduleDelete.Tag = "DeleteTaskSchedule";
       this.ctxMenuTaskScheduleDelete.Text = "Delete";
       this.ctxMenuTaskScheduleDelete.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // cbRunUntilTask
-      // 
+      //
       this.cbRunUntilTask.AutoSize = true;
       this.cbRunUntilTask.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.cbRunUntilTask.Location = new System.Drawing.Point(16, 20);
@@ -260,9 +261,9 @@
       this.cbRunUntilTask.Text = "Run Until Task";
       this.cbRunUntilTask.UseVisualStyleBackColor = true;
       this.cbRunUntilTask.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // cbRunUntilOverride
-      // 
+      //
       this.cbRunUntilOverride.AutoSize = true;
       this.cbRunUntilOverride.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.cbRunUntilOverride.Enabled = false;
@@ -275,50 +276,51 @@
       this.cbRunUntilOverride.Text = "Run Until Override";
       this.cbRunUntilOverride.UseVisualStyleBackColor = true;
       this.cbRunUntilOverride.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblProcessorVersion
-      // 
+      //
       this.lblProcessorVersion.AutoSize = true;
       this.lblProcessorVersion.Location = new System.Drawing.Point(225, 58);
       this.lblProcessorVersion.Name = "lblProcessorVersion";
       this.lblProcessorVersion.Size = new System.Drawing.Size(92, 13);
       this.lblProcessorVersion.TabIndex = 21;
       this.lblProcessorVersion.Text = "Processor Version";
-      // 
+      //
       // txtProcessorVersion
-      // 
+      //
       this.txtProcessorVersion.Location = new System.Drawing.Point(226, 75);
       this.txtProcessorVersion.Name = "txtProcessorVersion";
       this.txtProcessorVersion.Size = new System.Drawing.Size(188, 20);
       this.txtProcessorVersion.TabIndex = 4;
       this.txtProcessorVersion.Tag = "PropertyChange";
       this.txtProcessorVersion.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblPeriod
-      // 
+      //
       this.lblPeriod.AutoSize = true;
       this.lblPeriod.Location = new System.Drawing.Point(13, 45);
       this.lblPeriod.Name = "lblPeriod";
       this.lblPeriod.Size = new System.Drawing.Size(37, 13);
       this.lblPeriod.TabIndex = 23;
       this.lblPeriod.Text = "Period";
-      // 
+      //
       // cboPeriod
-      // 
+      //
       this.cboPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboPeriod.Enabled = false;
       this.cboPeriod.FormattingEnabled = true;
       this.cboPeriod.Items.AddRange(new object[] {
-            "NULL"});
+        "NULL"
+      });
       this.cboPeriod.Location = new System.Drawing.Point(16, 62);
       this.cboPeriod.Name = "cboPeriod";
       this.cboPeriod.Size = new System.Drawing.Size(145, 21);
       this.cboPeriod.TabIndex = 22;
       this.cboPeriod.Tag = "PropertyChange";
       this.cboPeriod.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSave
-      // 
+      //
       this.btnSave.Enabled = false;
       this.btnSave.Location = new System.Drawing.Point(17, 8);
       this.btnSave.Name = "btnSave";
@@ -328,9 +330,9 @@
       this.btnSave.Text = "Save";
       this.btnSave.UseVisualStyleBackColor = true;
       this.btnSave.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Location = new System.Drawing.Point(133, 8);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new System.Drawing.Size(110, 25);
@@ -339,18 +341,18 @@
       this.btnCancel.Text = "Close";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblRunUntilOffsetMinutes
-      // 
+      //
       this.lblRunUntilOffsetMinutes.AutoSize = true;
       this.lblRunUntilOffsetMinutes.Location = new System.Drawing.Point(13, 91);
       this.lblRunUntilOffsetMinutes.Name = "lblRunUntilOffsetMinutes";
       this.lblRunUntilOffsetMinutes.Size = new System.Drawing.Size(122, 13);
       this.lblRunUntilOffsetMinutes.TabIndex = 27;
       this.lblRunUntilOffsetMinutes.Text = "Run Until Offset Minutes";
-      // 
+      //
       // txtRunUntilOffsetMinutes
-      // 
+      //
       this.txtRunUntilOffsetMinutes.Enabled = false;
       this.txtRunUntilOffsetMinutes.Location = new System.Drawing.Point(15, 107);
       this.txtRunUntilOffsetMinutes.Name = "txtRunUntilOffsetMinutes";
@@ -359,9 +361,9 @@
       this.txtRunUntilOffsetMinutes.Tag = "PropertyChange";
       this.txtRunUntilOffsetMinutes.TextChanged += new System.EventHandler(this.Action);
       this.txtRunUntilOffsetMinutes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRunUntilOffsetMinutes_KeyPress);
-      // 
+      //
       // chkTrackHistory
-      // 
+      //
       this.chkTrackHistory.AutoSize = true;
       this.chkTrackHistory.Location = new System.Drawing.Point(740, 89);
       this.chkTrackHistory.Name = "chkTrackHistory";
@@ -372,9 +374,9 @@
       this.chkTrackHistory.Text = "Track History";
       this.chkTrackHistory.UseVisualStyleBackColor = true;
       this.chkTrackHistory.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // btnNewTaskSchedule
-      // 
+      //
       this.btnNewTaskSchedule.Location = new System.Drawing.Point(691, 8);
       this.btnNewTaskSchedule.Name = "btnNewTaskSchedule";
       this.btnNewTaskSchedule.Size = new System.Drawing.Size(138, 25);
@@ -383,9 +385,9 @@
       this.btnNewTaskSchedule.Text = "New Task Schedule";
       this.btnNewTaskSchedule.UseVisualStyleBackColor = true;
       this.btnNewTaskSchedule.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlBottom
-      // 
+      //
       this.pnlBottom.Controls.Add(this.btnSave);
       this.pnlBottom.Controls.Add(this.btnNewTaskSchedule);
       this.pnlBottom.Controls.Add(this.btnCancel);
@@ -394,9 +396,9 @@
       this.pnlBottom.Name = "pnlBottom";
       this.pnlBottom.Size = new System.Drawing.Size(844, 40);
       this.pnlBottom.TabIndex = 31;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.grpBxRunUntilParameters);
       this.pnlTop.Controls.Add(this.chkSuppressNotificationsOnSuccess);
       this.pnlTop.Controls.Add(this.btnViewTaskParameters);
@@ -428,9 +430,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(844, 252);
       this.pnlTop.TabIndex = 32;
-      // 
+      //
       // chkSuppressNotificationsOnSuccess
-      // 
+      //
       this.chkSuppressNotificationsOnSuccess.Location = new System.Drawing.Point(617, 107);
       this.chkSuppressNotificationsOnSuccess.Name = "chkSuppressNotificationsOnSuccess";
       this.chkSuppressNotificationsOnSuccess.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -440,9 +442,9 @@
       this.chkSuppressNotificationsOnSuccess.Text = "Suppress Notifications On Success";
       this.chkSuppressNotificationsOnSuccess.UseVisualStyleBackColor = true;
       this.chkSuppressNotificationsOnSuccess.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // grpBxRunUntilParameters
-      // 
+      //
       this.grpBxRunUntilParameters.Controls.Add(this.cboPeriod);
       this.grpBxRunUntilParameters.Controls.Add(this.cbRunUntilTask);
       this.grpBxRunUntilParameters.Controls.Add(this.cbRunUntilOverride);
@@ -455,9 +457,9 @@
       this.grpBxRunUntilParameters.TabIndex = 31;
       this.grpBxRunUntilParameters.TabStop = false;
       this.grpBxRunUntilParameters.Text = "Run Until Parameters";
-      // 
+      //
       // btnViewTaskParameters
-      // 
+      //
       this.btnViewTaskParameters.Location = new System.Drawing.Point(691, 194);
       this.btnViewTaskParameters.Name = "btnViewTaskParameters";
       this.btnViewTaskParameters.Size = new System.Drawing.Size(138, 36);
@@ -466,81 +468,81 @@
       this.btnViewTaskParameters.Text = "View Task Parameters";
       this.btnViewTaskParameters.UseVisualStyleBackColor = true;
       this.btnViewTaskParameters.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtAssemblyName
-      // 
+      //
       this.txtAssemblyName.Location = new System.Drawing.Point(17, 165);
       this.txtAssemblyName.Name = "txtAssemblyName";
       this.txtAssemblyName.Size = new System.Drawing.Size(188, 20);
       this.txtAssemblyName.TabIndex = 7;
       this.txtAssemblyName.Tag = "PropertyChange";
       this.txtAssemblyName.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblAssemblyName
-      // 
+      //
       this.lblAssemblyName.AutoSize = true;
       this.lblAssemblyName.Location = new System.Drawing.Point(14, 149);
       this.lblAssemblyName.Name = "lblAssemblyName";
       this.lblAssemblyName.Size = new System.Drawing.Size(82, 13);
       this.lblAssemblyName.TabIndex = 14;
       this.lblAssemblyName.Text = "Assembly Name";
-      // 
+      //
       // txtCatalogName
-      // 
+      //
       this.txtCatalogName.Location = new System.Drawing.Point(226, 165);
       this.txtCatalogName.Name = "txtCatalogName";
       this.txtCatalogName.Size = new System.Drawing.Size(188, 20);
       this.txtCatalogName.TabIndex = 8;
       this.txtCatalogName.Tag = "PropertyChange";
       this.txtCatalogName.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblCatalogName
-      // 
+      //
       this.lblCatalogName.AutoSize = true;
       this.lblCatalogName.Location = new System.Drawing.Point(225, 149);
       this.lblCatalogName.Name = "lblCatalogName";
       this.lblCatalogName.Size = new System.Drawing.Size(74, 13);
       this.lblCatalogName.TabIndex = 6;
       this.lblCatalogName.Text = "Catalog Name";
-      // 
+      //
       // txtCatalogEntry
-      // 
+      //
       this.txtCatalogEntry.Location = new System.Drawing.Point(17, 210);
       this.txtCatalogEntry.Name = "txtCatalogEntry";
       this.txtCatalogEntry.Size = new System.Drawing.Size(188, 20);
       this.txtCatalogEntry.TabIndex = 9;
       this.txtCatalogEntry.Tag = "PropertyChange";
       this.txtCatalogEntry.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblCatalogEntry
-      // 
+      //
       this.lblCatalogEntry.AutoSize = true;
       this.lblCatalogEntry.Location = new System.Drawing.Point(17, 194);
       this.lblCatalogEntry.Name = "lblCatalogEntry";
       this.lblCatalogEntry.Size = new System.Drawing.Size(70, 13);
       this.lblCatalogEntry.TabIndex = 6;
       this.lblCatalogEntry.Text = "Catalog Entry";
-      // 
+      //
       // txtObjectTypeName
-      // 
+      //
       this.txtObjectTypeName.Location = new System.Drawing.Point(225, 210);
       this.txtObjectTypeName.Name = "txtObjectTypeName";
       this.txtObjectTypeName.Size = new System.Drawing.Size(370, 20);
       this.txtObjectTypeName.TabIndex = 10;
       this.txtObjectTypeName.Tag = "PropertyChange";
       this.txtObjectTypeName.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblObjectTypeName
-      // 
+      //
       this.lblObjectTypeName.AutoSize = true;
       this.lblObjectTypeName.Location = new System.Drawing.Point(225, 194);
       this.lblObjectTypeName.Name = "lblObjectTypeName";
       this.lblObjectTypeName.Size = new System.Drawing.Size(189, 13);
       this.lblObjectTypeName.TabIndex = 6;
       this.lblObjectTypeName.Text = "Object Type Name (w/full namespace)";
-      // 
+      //
       // frmScheduledTask
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(844, 542);

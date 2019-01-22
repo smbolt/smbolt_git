@@ -8,8 +8,14 @@ namespace Org.Dx.Business.TextProcessing
 {
   public class Token
   {
-    public string Text { get; set; }
-    public bool IsRequired { get; set; }
+    public string Text {
+      get;
+      set;
+    }
+    public bool IsRequired {
+      get;
+      set;
+    }
 
     public Token()
     {

@@ -35,18 +35,18 @@
       this.txtOut = new System.Windows.Forms.TextBox();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnClose);
       this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlTop.Location = new System.Drawing.Point(0, 0);
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1021, 35);
       this.pnlTop.TabIndex = 0;
-      // 
+      //
       // btnClose
-      // 
+      //
       this.btnClose.Location = new System.Drawing.Point(10, 6);
       this.btnClose.Name = "btnClose";
       this.btnClose.Size = new System.Drawing.Size(91, 23);
@@ -54,9 +54,9 @@
       this.btnClose.Text = "Close";
       this.btnClose.UseVisualStyleBackColor = true;
       this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 554);
       this.lblStatus.Name = "lblStatus";
@@ -65,9 +65,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 8F);
       this.txtOut.Location = new System.Drawing.Point(0, 35);
@@ -77,9 +77,9 @@
       this.txtOut.Size = new System.Drawing.Size(1021, 519);
       this.txtOut.TabIndex = 2;
       this.txtOut.WordWrap = false;
-      // 
+      //
       // frmAriesForecastVariables
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1021, 577);

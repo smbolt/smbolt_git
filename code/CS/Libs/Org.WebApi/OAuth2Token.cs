@@ -11,13 +11,34 @@ namespace Org.WebApi
 {
   public class OAuth2Token
   {
-    public string AccessToken { get; set; }
-    public string RefreshToken { get; set; }
-    public string TokenType { get; set; }
-    public string Appcp { get; set; }
-    public string Apicp { get; set; }
-    public string Subdomain { get; set; }
-    public int ExpiresIn { get; set; }
+    public string AccessToken {
+      get;
+      set;
+    }
+    public string RefreshToken {
+      get;
+      set;
+    }
+    public string TokenType {
+      get;
+      set;
+    }
+    public string Appcp {
+      get;
+      set;
+    }
+    public string Apicp {
+      get;
+      set;
+    }
+    public string Subdomain {
+      get;
+      set;
+    }
+    public int ExpiresIn {
+      get;
+      set;
+    }
 
     public OAuth2Token(JObject json)
     {

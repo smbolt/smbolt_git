@@ -21,31 +21,58 @@ namespace Org.GS.Configuration
   public class ConfigUser
   {
     [XMap]
-    public UserType UserType { get; set; }
+    public UserType UserType {
+      get;
+      set;
+    }
 
     [XMap(IsKey = true)]
-    public string UserID { get; set; }
+    public string UserID {
+      get;
+      set;
+    }
 
     [XMap]
-    public string UserName { get; set; }
+    public string UserName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Password { get; set; }
+    public string Password {
+      get;
+      set;
+    }
 
     [XMap]
-    public string FirstName { get; set; }
+    public string FirstName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string LastName { get; set; }
+    public string LastName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string CompanyName { get; set; }
+    public string CompanyName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string DepartmentName { get; set; }
+    public string DepartmentName {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "ConfigGroupAssignment", WrapperElement = "ConfigGroupAssignments")]
-    public ConfigGroupAssignments ConfigGroupAssignments { get; set; }
+    public ConfigGroupAssignments ConfigGroupAssignments {
+      get;
+      set;
+    }
 
     public ConfigUser()
     {
@@ -59,7 +86,7 @@ namespace Org.GS.Configuration
       this.DepartmentName = String.Empty;
       this.ConfigGroupAssignments = new ConfigGroupAssignments();
     }
-    
+
     public bool IsInGroup(string groupID)
     {
       ConfigGroupAssignment group = this.ConfigGroupAssignments.Where(e => e.GroupID == groupID).FirstOrDefault();

@@ -12,8 +12,12 @@ namespace Org.Dx.Business.TextProcessing
   public class ImageRenderListener : IRenderListener
   {
     private Dictionary<string, System.Drawing.Image> _images = new Dictionary<string, System.Drawing.Image>();
-    public Dictionary<string, System.Drawing.Image> Images { get { return _images; } }
-    
+    public Dictionary<string, System.Drawing.Image> Images {
+      get {
+        return _images;
+      }
+    }
+
     public void RenderImage(ImageRenderInfo renderInfo)
     {
       try

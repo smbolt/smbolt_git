@@ -35,9 +35,9 @@
       this.ckCsv = new System.Windows.Forms.CheckBox();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.ckCsv);
       this.pnlTop.Controls.Add(this.btnHide);
       this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -45,9 +45,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1182, 48);
       this.pnlTop.TabIndex = 0;
-      // 
+      //
       // btnHide
-      // 
+      //
       this.btnHide.Location = new System.Drawing.Point(13, 12);
       this.btnHide.Name = "btnHide";
       this.btnHide.Size = new System.Drawing.Size(95, 26);
@@ -55,9 +55,9 @@
       this.btnHide.Text = "Hide";
       this.btnHide.UseVisualStyleBackColor = true;
       this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Lucida Console", 8F);
       this.txtOut.Location = new System.Drawing.Point(0, 48);
@@ -68,9 +68,9 @@
       this.txtOut.Size = new System.Drawing.Size(1182, 633);
       this.txtOut.TabIndex = 1;
       this.txtOut.WordWrap = false;
-      // 
+      //
       // ckCsv
-      // 
+      //
       this.ckCsv.AutoSize = true;
       this.ckCsv.Location = new System.Drawing.Point(133, 17);
       this.ckCsv.Name = "ckCsv";
@@ -79,9 +79,9 @@
       this.ckCsv.Text = "Show as CSV";
       this.ckCsv.UseVisualStyleBackColor = true;
       this.ckCsv.CheckedChanged += new System.EventHandler(this.ckCsv_CheckedChanged);
-      // 
+      //
       // frmDataDisplay
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1182, 681);

@@ -62,7 +62,7 @@ namespace Org.GS.OrgScript.Compilation
 
     GreaterThan, LessThan,
 
-    Spaces, Tab, CarriageReturn, LineFeed, 
+    Spaces, Tab, CarriageReturn, LineFeed,
 
     Text,
     Number

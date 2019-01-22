@@ -74,7 +74,8 @@ namespace Org.OpsManager
                 idInUse = logRepo.InsertAppLogEntity(id, description);
                 break;
 
-              default: return;
+              default:
+                return;
             }
           }
 
@@ -94,7 +95,7 @@ namespace Org.OpsManager
               case IdentifierType.Module:
                 logRepo.UpdateAppLogModule(id, description);
                 break;
-              
+
               case IdentifierType.Event:
                 logRepo.UpdateAppLogEvent(id, description);
                 break;
@@ -159,10 +160,19 @@ namespace Org.OpsManager
 
   public class Identifier
   {
-    public int Id { get; set; }
-    public string Description { get; set; }
-    public IdentifierType IdentifierType { get; set; }
-    
+    public int Id {
+      get;
+      set;
+    }
+    public string Description {
+      get;
+      set;
+    }
+    public IdentifierType IdentifierType {
+      get;
+      set;
+    }
+
     public Identifier(IdentifierType identifierType)
     {
       this.Id = 0;
@@ -184,5 +194,5 @@ namespace Org.OpsManager
     Entity
   }
 
-  
+
 }

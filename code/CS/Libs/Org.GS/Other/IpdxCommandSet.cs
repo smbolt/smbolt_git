@@ -10,10 +10,20 @@ namespace Org.GS
   public class IpdxCommandSet : List<IpdxCommand>
   {
     [XMap(DefaultValue = "0")]
-    public float DurationSeconds { get { return Get_DurationSeconds(); } }
+    public float DurationSeconds {
+      get {
+        return Get_DurationSeconds();
+      }
+    }
 
-    public DateTime BeginDateTime { get; set; }
-    public DateTime EndDateTime { get; set; }
+    public DateTime BeginDateTime {
+      get;
+      set;
+    }
+    public DateTime EndDateTime {
+      get;
+      set;
+    }
 
     public IpdxCommandSet()
     {

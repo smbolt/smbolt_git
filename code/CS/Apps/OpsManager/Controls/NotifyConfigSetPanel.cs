@@ -14,7 +14,10 @@ namespace Org.OpsManager.Controls
 {
   public partial class NotifyConfigSetPanel : BasePanel
   {
-    private NotifyConfigSet NotifyConfigSet { get; set; }
+    private NotifyConfigSet NotifyConfigSet {
+      get;
+      set;
+    }
 
     public NotifyConfigSetPanel(PanelData panelData, ChangeType changeType)
     {
@@ -77,7 +80,7 @@ namespace Org.OpsManager.Controls
           this.NotifyConfigSet.ModifiedOn = DateTime.Now;
 
           using (var notifyRepo = new NotifyRepository(base.ConfigDbSpec))
-            notifyRepo.UpdateNotifyConfigSet(this.NotifyConfigSet);    
+            notifyRepo.UpdateNotifyConfigSet(this.NotifyConfigSet);
         }
         //Insert NotifyConfigSet
         else

@@ -35,7 +35,7 @@ namespace Org.OpsManager
           txtParameterValue.Enabled = false;
         }
       }
-      else 
+      else
       {
         this.Text = "Edit Task Parameter";
         SetTaskParameterData();
@@ -108,7 +108,7 @@ namespace Org.OpsManager
         btnSave.Enabled = false;
       }
     }
-        
+
     private void SetTaskParameterData()
     {
       try

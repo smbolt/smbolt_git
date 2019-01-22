@@ -11,27 +11,65 @@ namespace Org.GS.Database
 {
   public class DbTable
   {
-    public string DatabaseName { get; set; }
-    public string SchemaName { get; set; }
-    public string TableName { get; set; }
-    public string TableNameSansSchema { get { return Get_TableNameSansSchema(); } }
-    public string TableType { get; set; }
-    public DateTime CreateDT { get; set; }
-    public DateTime ModifyDT { get; set; }
+    public string DatabaseName {
+      get;
+      set;
+    }
+    public string SchemaName {
+      get;
+      set;
+    }
+    public string TableName {
+      get;
+      set;
+    }
+    public string TableNameSansSchema {
+      get {
+        return Get_TableNameSansSchema();
+      }
+    }
+    public string TableType {
+      get;
+      set;
+    }
+    public DateTime CreateDT {
+      get;
+      set;
+    }
+    public DateTime ModifyDT {
+      get;
+      set;
+    }
 
-    public DbColumnSet DbColumnSet { get; set; }
-    public DbConstraintSet DbConstraintSet { get; set; }
-    public DbColumn PrimaryKeyColumn { get; set; }
-    public DbColumn IdentityColumn { get; set; }
+    public DbColumnSet DbColumnSet {
+      get;
+      set;
+    }
+    public DbConstraintSet DbConstraintSet {
+      get;
+      set;
+    }
+    public DbColumn PrimaryKeyColumn {
+      get;
+      set;
+    }
+    public DbColumn IdentityColumn {
+      get;
+      set;
+    }
 
     public bool HasPrimaryKeyColumn
     {
-      get { return this.PrimaryKeyColumn == null ? false : true; }
+      get {
+        return this.PrimaryKeyColumn == null ? false : true;
+      }
     }
 
     public bool HasIdentityColumn
     {
-      get { return this.IdentityColumn == null ? false : true; }
+      get {
+        return this.IdentityColumn == null ? false : true;
+      }
     }
 
     public DbTable()
@@ -55,22 +93,22 @@ namespace Org.GS.Database
       this.DbColumnSet = new DbColumnSet();
 
       string sql = "SELECT " +
-                    "  c.[name] AS [Name], " +
-                    "  c.[column_id] AS [ColumnId], " +
-                    "  c.[system_type_id] AS [SystemTypeId], " +
-                    "  c.[user_type_id] AS [UserTypeId], " +
-                    "  c.[max_length] AS [MaxLength], " +
-                    "  c.[precision] AS [Precision], " +
-                    "  c.[scale] AS [Scale], " +
-                    "  c.[is_nullable] AS [IsNullable], " +
-                    "  c.[is_identity] AS [IsIdentity], " +
-                    "  i.[is_primary_key] AS [IsPrimaryKey], " +
-                    "  c.[default_object_id] as [DefaultObjectId] " +
-                    "FROM sys.columns c " +
-                    "LEFT OUTER JOIN sys.index_columns ic ON ic.object_id = c.object_id AND ic.column_id = c.column_id " +
-                    "LEFT OUTER JOIN sys.indexes i on ic.object_id = i.object_id AND ic.index_id = i.index_id " +
-                    "WHERE c.object_id = OBJECT_ID('" + this.TableName + "') " +
-                    "ORDER BY c.column_id ";
+                   "  c.[name] AS [Name], " +
+                   "  c.[column_id] AS [ColumnId], " +
+                   "  c.[system_type_id] AS [SystemTypeId], " +
+                   "  c.[user_type_id] AS [UserTypeId], " +
+                   "  c.[max_length] AS [MaxLength], " +
+                   "  c.[precision] AS [Precision], " +
+                   "  c.[scale] AS [Scale], " +
+                   "  c.[is_nullable] AS [IsNullable], " +
+                   "  c.[is_identity] AS [IsIdentity], " +
+                   "  i.[is_primary_key] AS [IsPrimaryKey], " +
+                   "  c.[default_object_id] as [DefaultObjectId] " +
+                   "FROM sys.columns c " +
+                   "LEFT OUTER JOIN sys.index_columns ic ON ic.object_id = c.object_id AND ic.column_id = c.column_id " +
+                   "LEFT OUTER JOIN sys.indexes i on ic.object_id = i.object_id AND ic.index_id = i.index_id " +
+                   "WHERE c.object_id = OBJECT_ID('" + this.TableName + "') " +
+                   "ORDER BY c.column_id ";
 
 
       SqlDataAdapter da = new SqlDataAdapter(sql, Connection);

@@ -17,11 +17,11 @@ namespace Org.LibTester
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
 
-      #if frmMain
+#if frmMain
       Application.Run(new frmMain());
-      #elif frmMain2
-        Application.Run(new frmMain2());
-      #endif
+#elif frmMain2
+      Application.Run(new frmMain2());
+#endif
     }
   }
 }

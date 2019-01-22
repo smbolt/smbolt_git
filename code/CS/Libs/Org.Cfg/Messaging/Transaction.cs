@@ -9,12 +9,32 @@ namespace Org.Cfg.Messaging
 {
   public class TransactionBase
   {
-    public TransactionHeader TransactionHeader { get; set; }
-    public string Name { get { return this.GetType().Name; } }
-    public string Version { get { return this.Get_Version(); } }
-    public TransactionStatus TransactionStatus { get; set; }
-    public string Message { get; set; }
-    public string Code { get; set; }
+    public TransactionHeader TransactionHeader {
+      get;
+      set;
+    }
+    public string Name {
+      get {
+        return this.GetType().Name;
+      }
+    }
+    public string Version {
+      get {
+        return this.Get_Version();
+      }
+    }
+    public TransactionStatus TransactionStatus {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public string Code {
+      get;
+      set;
+    }
 
     public TransactionBase()
     {

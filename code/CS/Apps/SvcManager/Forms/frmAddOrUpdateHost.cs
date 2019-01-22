@@ -66,7 +66,7 @@ namespace Org.SvcManager
 
         var host = new Host();
         host.HostName = txtHostName.Text;
-        
+
         using (var taskRepo = new TaskRepository(_dbSpec))
         {
           host.HostID = taskRepo.AddHost(host);

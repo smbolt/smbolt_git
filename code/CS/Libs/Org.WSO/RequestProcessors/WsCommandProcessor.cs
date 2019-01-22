@@ -13,7 +13,7 @@ using Org.GS;
 using Org.WSO.Transactions;
 
 namespace Org.WSO
-{  
+{
   [Serializable]
   public class WsCommandProcessor : RequestProcessorBase, IRequestProcessor
   {
@@ -29,7 +29,7 @@ namespace Org.WSO
         DateTime beginRequestDT = DateTime.Now;
         WsCommandResponse commandResponse = new WsCommandResponse();
         WsCommandRequest commandRequest = null;
-        
+
         base.Initialize(MethodBase.GetCurrentMethod());
 
         ObjectFactory2 f = new ObjectFactory2();
@@ -209,7 +209,7 @@ namespace Org.WSO
     private void UpdateSummaryStatus(TransactionStatus commandStatus)
     {
       if (commandStatus != TransactionStatus.Success)
-          _summaryStatus = TransactionStatus.Failed;
+        _summaryStatus = TransactionStatus.Failed;
     }
 
     private TaskResult GetWinServiceInfo(WsCommand command)
@@ -292,8 +292,8 @@ namespace Org.WSO
         TaskResult taskResult = new TaskResult("GetWebServiceInfo");
 
         string webServiceInfo = "Web Service '" + base.ServiceBase.AppName + "' running at URL '" +
-            base.ServiceBase.AbsoluteUri + "' is being hosted by '" + g.AppInfo.AppName + "' application type '" +
-            g.AppInfo.OrgApplicationType.ToString() + "' in module '" + g.AppInfo.ModuleName + "'.";
+                                base.ServiceBase.AbsoluteUri + "' is being hosted by '" + g.AppInfo.AppName + "' application type '" +
+                                g.AppInfo.OrgApplicationType.ToString() + "' in module '" + g.AppInfo.ModuleName + "'.";
 
         return taskResult.Success(webServiceInfo);
       }
@@ -420,44 +420,44 @@ namespace Org.WSO
 
     private void ValidateParms(WsCommand command)
     {
-        switch (command.WsCommandName)
-        {
-          case WsCommandName.StartWinService:
-          case WsCommandName.StopWinService:
-          case WsCommandName.PauseWinService:
-          case WsCommandName.ResumeWinService:
-          case WsCommandName.GetWinServiceStatus:
-          case WsCommandName.GetWinServiceInfo:
-            if (!command.Parms.ContainsKey("WinServiceName"))
-              throw new Exception("Windows Service name was not specified in " + command.WsCommandName.ToString() + " command.");
+      switch (command.WsCommandName)
+      {
+        case WsCommandName.StartWinService:
+        case WsCommandName.StopWinService:
+        case WsCommandName.PauseWinService:
+        case WsCommandName.ResumeWinService:
+        case WsCommandName.GetWinServiceStatus:
+        case WsCommandName.GetWinServiceInfo:
+          if (!command.Parms.ContainsKey("WinServiceName"))
+            throw new Exception("Windows Service name was not specified in " + command.WsCommandName.ToString() + " command.");
 
-            if (command.Parms["WinServiceName"].IsBlank())
-              throw new Exception("Windows Service name specified in " + command.WsCommandName.ToString() + " command is blank.");
-            break;
+          if (command.Parms["WinServiceName"].IsBlank())
+            throw new Exception("Windows Service name specified in " + command.WsCommandName.ToString() + " command is blank.");
+          break;
 
-          case WsCommandName.StartWebSite:
-          case WsCommandName.StopWebSite:
-          case WsCommandName.GetWebSiteStatus:
-          case WsCommandName.GetWebSiteInfo:
-            if (!command.Parms.ContainsKey("WebSiteName"))
-              throw new Exception("Web Site name was not specified in " + command.WsCommandName.ToString() + " command.");
+        case WsCommandName.StartWebSite:
+        case WsCommandName.StopWebSite:
+        case WsCommandName.GetWebSiteStatus:
+        case WsCommandName.GetWebSiteInfo:
+          if (!command.Parms.ContainsKey("WebSiteName"))
+            throw new Exception("Web Site name was not specified in " + command.WsCommandName.ToString() + " command.");
 
-            if (command.Parms["WebSiteName"].IsBlank())
-              throw new Exception("Web Site name specified in " + command.WsCommandName.ToString() + " command is blank.");
-            break;
+          if (command.Parms["WebSiteName"].IsBlank())
+            throw new Exception("Web Site name specified in " + command.WsCommandName.ToString() + " command is blank.");
+          break;
 
-          case WsCommandName.StartAppPool:
-          case WsCommandName.StopAppPool:
-          case WsCommandName.GetAppPoolStatus:
-          case WsCommandName.GetAppPoolInfo:
-            if (!command.Parms.ContainsKey("AppPoolName"))
-              throw new Exception("App Pool name was not specified in " + command.WsCommandName.ToString() + " command.");
+        case WsCommandName.StartAppPool:
+        case WsCommandName.StopAppPool:
+        case WsCommandName.GetAppPoolStatus:
+        case WsCommandName.GetAppPoolInfo:
+          if (!command.Parms.ContainsKey("AppPoolName"))
+            throw new Exception("App Pool name was not specified in " + command.WsCommandName.ToString() + " command.");
 
-            if (command.Parms["AppPoolName"].IsBlank())
-              throw new Exception("App Pool name specified in " + command.WsCommandName.ToString() + " command is blank.");
-            break;
-          
-        }
+          if (command.Parms["AppPoolName"].IsBlank())
+            throw new Exception("App Pool name specified in " + command.WsCommandName.ToString() + " command is blank.");
+          break;
+
+      }
     }
   }
 }

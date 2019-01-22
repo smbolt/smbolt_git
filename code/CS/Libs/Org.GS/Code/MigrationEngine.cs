@@ -13,7 +13,10 @@ namespace Org.GS.Code
   public class MigrationEngine : IDisposable
   {
     private Logger _logger;
-    private ProfileSet _profileSet { get; set; }
+    private ProfileSet _profileSet {
+      get;
+      set;
+    }
     private string fileDeleteMessage = "DELETING FILE ";
 
 

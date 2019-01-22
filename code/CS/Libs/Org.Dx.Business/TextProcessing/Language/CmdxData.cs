@@ -10,15 +10,42 @@ namespace Org.Dx.Business.TextProcessing
 {
   public class CmdxData
   {
-    public string RawText { get; set; }
-    public string TextToFind { get; set; }
-    public int StartPos { get; set; }
-    public bool ExcludeLastToken { get; set; }
-    public bool PositionAtEnd { get; set; }
-    public bool IsRequired { get; set; }
-    public bool IsReportUnit { get; set; }
-    public bool NumericOnly { get; set; }
-    public Cmdx OriginalCmdx { get; set; }
+    public string RawText {
+      get;
+      set;
+    }
+    public string TextToFind {
+      get;
+      set;
+    }
+    public int StartPos {
+      get;
+      set;
+    }
+    public bool ExcludeLastToken {
+      get;
+      set;
+    }
+    public bool PositionAtEnd {
+      get;
+      set;
+    }
+    public bool IsRequired {
+      get;
+      set;
+    }
+    public bool IsReportUnit {
+      get;
+      set;
+    }
+    public bool NumericOnly {
+      get;
+      set;
+    }
+    public Cmdx OriginalCmdx {
+      get;
+      set;
+    }
 
     public CmdxData()
     {

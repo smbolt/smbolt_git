@@ -33,7 +33,7 @@ namespace Org.PdfExtractToolWindows
 
     private bool _workingHere = false;
     private bool _errorOccurred = false;
-    
+
     public TextExtractDesigner()
       : base("TextExtractDesigner")
     {
@@ -97,7 +97,7 @@ namespace Org.PdfExtractToolWindows
       _debugText = text.Clone();
 
       txtTextValue.Text = _debugText.RawText;
-      txtConfig.Text = _debugText.TsdCode; 
+      txtConfig.Text = _debugText.TsdCode;
     }
 
     private void Step()
@@ -225,7 +225,7 @@ namespace Org.PdfExtractToolWindows
           }
           _text.ExtractionErrorReport = sb.ToString();
         }
-        
+
         LoadTextObjectToTreeView(_text, String.Empty, -1);
 
         this.Cursor = Cursors.Default;
@@ -286,7 +286,7 @@ namespace Org.PdfExtractToolWindows
       _selectedTextObject = null;
 
       splitterRight.Panel2Collapsed = true;
-      
+
       InitializeTreeViewImageList();
     }
 
@@ -295,7 +295,7 @@ namespace Org.PdfExtractToolWindows
       if (_text == null)
         return;
 
-      LoadTextObjectToTreeView(_text, String.Empty, -1); 
+      LoadTextObjectToTreeView(_text, String.Empty, -1);
     }
 
     private void ShowOnlyThisNodeType(object sender)
@@ -307,7 +307,7 @@ namespace Org.PdfExtractToolWindows
       if (node == null)
         return;
 
-      string nodeText = node.Text; 
+      string nodeText = node.Text;
 
       int level = 0;
       var theNode = node;
@@ -317,7 +317,7 @@ namespace Org.PdfExtractToolWindows
         theNode = theNode.Parent;
       }
 
-      LoadTextObjectToTreeView(_text, nodeText, level); 
+      LoadTextObjectToTreeView(_text, nodeText, level);
     }
 
     private void LoadTextObjectToTreeView(Text t, string nodeTextToShow, int level)
@@ -329,7 +329,7 @@ namespace Org.PdfExtractToolWindows
       string rootName = "Root";
       if (t.Name.IsNotBlank())
         rootName = t.Name;
-      
+
       TreeNode rootNode = new TreeNode(rootName, 0, 1);
       rootNode.Tag = _text;
       tvDocStructure.Nodes.Add(rootNode);
@@ -338,7 +338,7 @@ namespace Org.PdfExtractToolWindows
       {
         LoadTextObjectToTreeView(childText, rootNode, nodeTextToShow, level);
       }
-      
+
       tvDocStructure.ExpandAll();
 
       TreeNode selectedNode = rootNode;
@@ -347,7 +347,7 @@ namespace Org.PdfExtractToolWindows
 
       tvDocStructure.SelectedNode = selectedNode;
       tvDocStructure.Nodes[0].EnsureVisible();
-      
+
       _loadingTreeView = false;
     }
 
@@ -394,11 +394,11 @@ namespace Org.PdfExtractToolWindows
         var textNormal = (Icon)resourceManager.GetObject("text_normal");
         imgListTreeView.Images.Add("text_normal", textNormal);
         var textSelected = (Icon)resourceManager.GetObject("text_selected");
-        imgListTreeView.Images.Add("text_selectted", textSelected); 
+        imgListTreeView.Images.Add("text_selectted", textSelected);
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to initialize the image list for the tree view.", ex); 
+        throw new Exception("An exception occurred while attempting to initialize the image list for the tree view.", ex);
       }
     }
 
@@ -426,7 +426,7 @@ namespace Org.PdfExtractToolWindows
         switch (text.FileType)
         {
           case FileType.PDF:
-            txtTextValue.Text = text.Report.Replace("SEC_END", "SEC_END\n"); 
+            txtTextValue.Text = text.Report.Replace("SEC_END", "SEC_END\n");
             break;
 
           case FileType.XML:
@@ -465,7 +465,7 @@ namespace Org.PdfExtractToolWindows
 
       RefreshViews(true);
     }
-    
+
     private void tvDocStructure_BeforeSelect(object sender, TreeViewCancelEventArgs e)
     {
       lblTextStructure.Text = String.Empty;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Org.GraphicReports.Business
 {
-	public class WellSet : SortedList<int, Well>
-	{
-	}
+  public class WellSet : SortedList<int, Well>
+  {
+  }
 }

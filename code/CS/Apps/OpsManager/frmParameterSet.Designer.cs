@@ -54,36 +54,36 @@
       this.pnlButtons.SuspendLayout();
       this.pnlParameterSet.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // txtParameterSetName
-      // 
+      //
       this.txtParameterSetName.Location = new System.Drawing.Point(165, 20);
       this.txtParameterSetName.Name = "txtParameterSetName";
       this.txtParameterSetName.Size = new System.Drawing.Size(234, 20);
       this.txtParameterSetName.TabIndex = 1;
       this.txtParameterSetName.Tag = "PropertyChange";
       this.txtParameterSetName.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblParameterSetName
-      // 
+      //
       this.lblParameterSetName.AutoSize = true;
       this.lblParameterSetName.Location = new System.Drawing.Point(51, 23);
       this.lblParameterSetName.Name = "lblParameterSetName";
       this.lblParameterSetName.Size = new System.Drawing.Size(108, 13);
       this.lblParameterSetName.TabIndex = 1;
       this.lblParameterSetName.Text = "Parameter Set Name:";
-      // 
+      //
       // txtParameterValue
-      // 
+      //
       this.txtParameterValue.Location = new System.Drawing.Point(165, 70);
       this.txtParameterValue.Name = "txtParameterValue";
       this.txtParameterValue.Size = new System.Drawing.Size(234, 20);
       this.txtParameterValue.TabIndex = 3;
       this.txtParameterValue.Tag = "PropertyChange";
       this.txtParameterValue.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblParameterName
-      // 
+      //
       this.lblParameterName.AutoSize = true;
       this.lblParameterName.Location = new System.Drawing.Point(70, 47);
       this.lblParameterName.Name = "lblParameterName";
@@ -91,9 +91,9 @@
       this.lblParameterName.TabIndex = 3;
       this.lblParameterName.Text = "Parameter Name:";
       this.lblParameterName.TextAlign = System.Drawing.ContentAlignment.TopRight;
-      // 
+      //
       // lblParameterValue
-      // 
+      //
       this.lblParameterValue.AutoSize = true;
       this.lblParameterValue.Location = new System.Drawing.Point(71, 73);
       this.lblParameterValue.Name = "lblParameterValue";
@@ -101,9 +101,9 @@
       this.lblParameterValue.TabIndex = 4;
       this.lblParameterValue.Text = "Parameter Value:";
       this.lblParameterValue.TextAlign = System.Drawing.ContentAlignment.TopRight;
-      // 
+      //
       // lblDataType
-      // 
+      //
       this.lblDataType.AutoSize = true;
       this.lblDataType.Location = new System.Drawing.Point(99, 99);
       this.lblDataType.Name = "lblDataType";
@@ -111,27 +111,27 @@
       this.lblDataType.TabIndex = 5;
       this.lblDataType.Text = "Data Type:";
       this.lblDataType.TextAlign = System.Drawing.ContentAlignment.TopRight;
-      // 
+      //
       // txtDataType
-      // 
+      //
       this.txtDataType.Location = new System.Drawing.Point(165, 96);
       this.txtDataType.Name = "txtDataType";
       this.txtDataType.Size = new System.Drawing.Size(234, 20);
       this.txtDataType.TabIndex = 4;
       this.txtDataType.Tag = "PropertyChange";
       this.txtDataType.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // txtParameterName
-      // 
+      //
       this.txtParameterName.Location = new System.Drawing.Point(165, 44);
       this.txtParameterName.Name = "txtParameterName";
       this.txtParameterName.Size = new System.Drawing.Size(234, 20);
       this.txtParameterName.TabIndex = 2;
       this.txtParameterName.Tag = "PropertyChange";
       this.txtParameterName.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSave
-      // 
+      //
       this.btnSave.Location = new System.Drawing.Point(3, 8);
       this.btnSave.Name = "btnSave";
       this.btnSave.Size = new System.Drawing.Size(110, 25);
@@ -140,9 +140,9 @@
       this.btnSave.Text = "Save";
       this.btnSave.UseVisualStyleBackColor = true;
       this.btnSave.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Location = new System.Drawing.Point(119, 8);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new System.Drawing.Size(110, 25);
@@ -151,9 +151,9 @@
       this.btnCancel.Text = "Close";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 519);
       this.lblStatus.Name = "lblStatus";
@@ -161,9 +161,9 @@
       this.lblStatus.Size = new System.Drawing.Size(540, 20);
       this.lblStatus.TabIndex = 46;
       this.lblStatus.Text = "Status";
-      // 
+      //
       // gvParametersInSet
-      // 
+      //
       this.gvParametersInSet.AllowUserToAddRows = false;
       this.gvParametersInSet.AllowUserToDeleteRows = false;
       this.gvParametersInSet.AllowUserToResizeRows = false;
@@ -182,34 +182,35 @@
       this.gvParametersInSet.Size = new System.Drawing.Size(540, 315);
       this.gvParametersInSet.TabIndex = 47;
       this.gvParametersInSet.Tag = "";
-      // 
+      //
       // ctxMenuParametersInSet
-      // 
+      //
       this.ctxMenuParametersInSet.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMenuParametersInSetEdit,
-            this.ctxMenuParametersInSetRemove});
+        this.ctxMenuParametersInSetEdit,
+        this.ctxMenuParametersInSetRemove
+      });
       this.ctxMenuParametersInSet.Name = "ctxMenuParametersInSet";
       this.ctxMenuParametersInSet.Size = new System.Drawing.Size(118, 48);
       this.ctxMenuParametersInSet.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenuParametersInSet_Opening);
-      // 
+      //
       // ctxMenuParametersInSetEdit
-      // 
+      //
       this.ctxMenuParametersInSetEdit.Name = "ctxMenuParametersInSetEdit";
       this.ctxMenuParametersInSetEdit.Size = new System.Drawing.Size(117, 22);
       this.ctxMenuParametersInSetEdit.Tag = "Edit";
       this.ctxMenuParametersInSetEdit.Text = "Edit";
       this.ctxMenuParametersInSetEdit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuParametersInSetRemove
-      // 
+      //
       this.ctxMenuParametersInSetRemove.Name = "ctxMenuParametersInSetRemove";
       this.ctxMenuParametersInSetRemove.Size = new System.Drawing.Size(117, 22);
       this.ctxMenuParametersInSetRemove.Tag = "Remove";
       this.ctxMenuParametersInSetRemove.Text = "Remove";
       this.ctxMenuParametersInSetRemove.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnAdd
-      // 
+      //
       this.btnAdd.Enabled = false;
       this.btnAdd.Location = new System.Drawing.Point(203, 122);
       this.btnAdd.Name = "btnAdd";
@@ -219,9 +220,9 @@
       this.btnAdd.Text = "Add";
       this.btnAdd.UseVisualStyleBackColor = true;
       this.btnAdd.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlButtons
-      // 
+      //
       this.pnlButtons.Controls.Add(this.btnSave);
       this.pnlButtons.Controls.Add(this.btnCancel);
       this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -229,9 +230,9 @@
       this.pnlButtons.Name = "pnlButtons";
       this.pnlButtons.Size = new System.Drawing.Size(540, 38);
       this.pnlButtons.TabIndex = 49;
-      // 
+      //
       // btnClear
-      // 
+      //
       this.btnClear.Location = new System.Drawing.Point(304, 122);
       this.btnClear.Name = "btnClear";
       this.btnClear.Size = new System.Drawing.Size(95, 23);
@@ -240,9 +241,9 @@
       this.btnClear.Text = "Clear";
       this.btnClear.UseVisualStyleBackColor = true;
       this.btnClear.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlParameterSet
-      // 
+      //
       this.pnlParameterSet.Controls.Add(this.txtParameterSetName);
       this.pnlParameterSet.Controls.Add(this.lblParameterSetName);
       this.pnlParameterSet.Controls.Add(this.txtParameterName);
@@ -258,9 +259,9 @@
       this.pnlParameterSet.Name = "pnlParameterSet";
       this.pnlParameterSet.Size = new System.Drawing.Size(540, 166);
       this.pnlParameterSet.TabIndex = 52;
-      // 
+      //
       // frmParameterSet
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(540, 539);

@@ -8,7 +8,10 @@ namespace Org.GS
 {
   public class ModelBase
   {
-    public PropertyInfoPairSet PropertyInfoPairSet { get; set; }
+    public PropertyInfoPairSet PropertyInfoPairSet {
+      get;
+      set;
+    }
 
     public ModelBase()
     {

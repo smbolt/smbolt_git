@@ -8,22 +8,25 @@ using Org.GS;
 
 namespace Org.DocGen.DocSpec
 {
-    [Meta(OxName = "i", Abbr = "Italic", AutoMap = true)]
-    public class Italic : DocumentElement
-    {
-        [Meta(XMatch = true)]
-        public bool Val { get; set; }
-
-        public Italic() { }
-
-        public Italic(XElement xml, Doc doc, DocumentElement parent)
-        {
-            base.Initialize(xml, doc, parent);
-
-            if (xml == null)
-                return;
-
-            this.Val = xml.GetRequiredBooleanAttribute("val");
-        }
+  [Meta(OxName = "i", Abbr = "Italic", AutoMap = true)]
+  public class Italic : DocumentElement
+  {
+    [Meta(XMatch = true)]
+    public bool Val {
+      get;
+      set;
     }
+
+    public Italic() { }
+
+    public Italic(XElement xml, Doc doc, DocumentElement parent)
+    {
+      base.Initialize(xml, doc, parent);
+
+      if (xml == null)
+        return;
+
+      this.Val = xml.GetRequiredBooleanAttribute("val");
+    }
+  }
 }

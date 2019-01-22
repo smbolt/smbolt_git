@@ -11,9 +11,15 @@ namespace Org.QB.QBXML
   public class NameFilter
   {
     [XMap (XType = XType.Element)]
-    public MatchCriterion MatchCriterion { get; set; }
+    public MatchCriterion MatchCriterion {
+      get;
+      set;
+    }
 
     [XMap (XType = XType.Element)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
   }
 }

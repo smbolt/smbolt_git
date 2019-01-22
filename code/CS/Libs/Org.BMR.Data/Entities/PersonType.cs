@@ -11,13 +11,19 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonType")]
-    public partial class PersonType
-    {
-        public int PersonTypeId { get; set; }
-        public string PersonTypeValue { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonType")]
+  public partial class PersonType
+  {
+    public int PersonTypeId {
+      get;
+      set;
     }
+    public string PersonTypeValue {
+      get;
+      set;
+    }
+  }
 }

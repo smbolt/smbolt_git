@@ -33,9 +33,9 @@
       this.lblCalendar = new System.Windows.Forms.Label();
       this.timer1 = new System.Windows.Forms.Timer(this.components);
       this.SuspendLayout();
-      // 
+      //
       // lblClock
-      // 
+      //
       this.lblClock.BackColor = System.Drawing.Color.Black;
       this.lblClock.Dock = System.Windows.Forms.DockStyle.Fill;
       this.lblClock.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -48,9 +48,9 @@
       this.lblClock.Text = "12:00:00 PM";
       this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       this.lblClock.Click += new System.EventHandler(this.lblClock_Click);
-      // 
+      //
       // lblCalendar
-      // 
+      //
       this.lblCalendar.BackColor = System.Drawing.Color.Black;
       this.lblCalendar.Dock = System.Windows.Forms.DockStyle.Top;
       this.lblCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -61,13 +61,13 @@
       this.lblCalendar.TabIndex = 0;
       this.lblCalendar.Text = "December 12, 2016";
       this.lblCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      // 
+      //
       // timer1
-      // 
+      //
       this.timer1.Interval = 1000;
-      // 
+      //
       // Form1
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(653, 154);

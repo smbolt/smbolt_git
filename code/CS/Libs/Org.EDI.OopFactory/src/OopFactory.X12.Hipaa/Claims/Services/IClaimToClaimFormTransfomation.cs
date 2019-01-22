@@ -6,8 +6,8 @@ using OopFactory.X12.Hipaa.Claims.Forms;
 
 namespace OopFactory.X12.Hipaa.Claims.Services
 {
-    public interface IClaimToClaimFormTransfomation
-    {
-        List<FormPage> TransformClaimToClaimFormFoXml(Claim claim);
-    }
+  public interface IClaimToClaimFormTransfomation
+  {
+    List<FormPage> TransformClaimToClaimFormFoXml(Claim claim);
+  }
 }

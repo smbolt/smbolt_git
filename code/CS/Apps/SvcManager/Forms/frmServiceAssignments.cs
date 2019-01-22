@@ -26,7 +26,7 @@ namespace Org.SvcManager
     private ServiceSpec _serviceSpec;
 
     private bool _initializationComplete = false;
-    
+
 
     public frmServiceAssignments(ServiceSpec serviceSpec, ConfigDbSpec taskDbSpec)
     {
@@ -71,7 +71,7 @@ namespace Org.SvcManager
           int scheduledTaskId = _gridAssignments.Keys.ElementAt(i);
           if (_gridAssignments[scheduledTaskId])
           {
-            assignedTaskIds.Add(scheduledTaskId); 
+            assignedTaskIds.Add(scheduledTaskId);
           }
         }
 
@@ -82,8 +82,8 @@ namespace Org.SvcManager
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An exception occurrred while attempting to update the task assignments for service '" + 
-                        _serviceSpec.Name + "'." + g.crlf2 + ex.ToReport(), "Manage Service Assignments - Initialization Error", 
+        MessageBox.Show("An exception occurrred while attempting to update the task assignments for service '" +
+                        _serviceSpec.Name + "'." + g.crlf2 + ex.ToReport(), "Manage Service Assignments - Initialization Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
@@ -95,7 +95,7 @@ namespace Org.SvcManager
 
       try
       {
-        int? taskGroupId = null;        
+        int? taskGroupId = null;
 
         if (cboTaskGroup.Text.IsNotBlank())
           taskGroupId = _scheduledTaskGroups[cboTaskGroup.Text].TaskGroupId;
@@ -115,7 +115,7 @@ namespace Org.SvcManager
               scheduledTask.TaskGroupId = taskGroup.TaskGroupId;
               scheduledTask.TaskGroupName = taskGroup.TaskGroupName;
             }
-          }      
+          }
         }
 
         gvTasks.Rows.Clear();
@@ -127,7 +127,7 @@ namespace Org.SvcManager
         {
           bool isAssigned = _taskAssignmentSet.IsTaskAssigned(scheduledTask.TaskName);
           _dbAssignments.Add(scheduledTask.ScheduledTaskId, isAssigned);
-          _gridAssignments.Add(scheduledTask.ScheduledTaskId, isAssigned); 
+          _gridAssignments.Add(scheduledTask.ScheduledTaskId, isAssigned);
 
           if (taskGroupId.HasValue && taskGroupId.Value != scheduledTask.TaskGroupId)
             continue;
@@ -142,7 +142,7 @@ namespace Org.SvcManager
           string startTime = String.Empty;
           string endTime = String.Empty;
           string freq = String.Empty;
-          string runForPeriod = String.Empty;          
+          string runForPeriod = String.Empty;
 
           string isDryRun = String.Empty;
 
@@ -179,12 +179,12 @@ namespace Org.SvcManager
             endTime,
             freq,
             scheduledTask.IsActive ? "Y" : "N",
-            activeScheduleName,            
+            activeScheduleName,
             scheduledTask.ScheduledTaskId);
         }
 
         lblAssignmentSummary.Text = _scheduledTasks.Count.ToString() + " total tasks listed, " + _taskAssignmentSet.Count.ToString() + " tasks assigned, no updates" +
-               (cboTaskGroup.Text.IsBlank() ? String.Empty : ", list is filtered"); 
+                                    (cboTaskGroup.Text.IsBlank() ? String.Empty : ", list is filtered");
       }
       catch (Exception ex)
       {
@@ -267,7 +267,7 @@ namespace Org.SvcManager
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred during the initialization of the Manage Service Assignments form." + g.crlf2 + ex.ToReport(),
-                        "Manage Service Assignments - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Manage Service Assignments - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -379,9 +379,9 @@ namespace Org.SvcManager
 
       btnSave.Enabled = updateCount > 0;
 
-      lblAssignmentSummary.Text = _scheduledTasks.Count.ToString() + " total tasks listed, " + gridAssignmentCount.ToString() + " tasks assigned, " + 
-        (updateCount == 0 ? " no updates" : " " + updateCount.ToString()) + " updates" + 
-       (cboTaskGroup.Text.IsBlank() ? String.Empty : ", list is filtered");
+      lblAssignmentSummary.Text = _scheduledTasks.Count.ToString() + " total tasks listed, " + gridAssignmentCount.ToString() + " tasks assigned, " +
+                                  (updateCount == 0 ? " no updates" : " " + updateCount.ToString()) + " updates" +
+                                  (cboTaskGroup.Text.IsBlank() ? String.Empty : ", list is filtered");
     }
 
     private int CheckForUpdates()

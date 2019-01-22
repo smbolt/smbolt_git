@@ -22,15 +22,32 @@ namespace Org.UI
 
   public class PanelManager
   {
-    public PanelMode PanelMode { get; set; }
-    public PanelState PanelState { get; set; }
-    public Dictionary<string, PanelField> PanelValues { get; set; }
-    public bool IsDirty { get { return Get_IsDirty(); } }
-    public bool IsComplete { get { return Get_IsComplete(); } }
+    public PanelMode PanelMode {
+      get;
+      set;
+    }
+    public PanelState PanelState {
+      get;
+      set;
+    }
+    public Dictionary<string, PanelField> PanelValues {
+      get;
+      set;
+    }
+    public bool IsDirty {
+      get {
+        return Get_IsDirty();
+      }
+    }
+    public bool IsComplete {
+      get {
+        return Get_IsComplete();
+      }
+    }
 
     public PanelManager()
     {
-      this.PanelMode = PanelMode.NotSet; 
+      this.PanelMode = PanelMode.NotSet;
       this.PanelState = PanelState.Pristine;
       this.PanelValues = new Dictionary<string, PanelField>();
     }
@@ -45,12 +62,12 @@ namespace Org.UI
 
     private bool Get_IsDirty()
     {
-      return this.PanelValues.Where(x => x.Value.IsDirty).Count() > 0; 
+      return this.PanelValues.Where(x => x.Value.IsDirty).Count() > 0;
     }
 
     private bool Get_IsComplete()
     {
-      return this.PanelValues.Where(x => !x.Value.IsComplete).Count() == 0; 
+      return this.PanelValues.Where(x => !x.Value.IsComplete).Count() == 0;
     }
   }
 }

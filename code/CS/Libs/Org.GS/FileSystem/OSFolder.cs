@@ -15,32 +15,84 @@ namespace Org.GS
     private static Logger _logger;
     public static SortedList<string, int> Extensions;
 
-    public static int FileCount { get; set; }
-    public static int ProcessedFileCount { get; set; }
-    public static int FolderCount { get; set; }
+    public static int FileCount {
+      get;
+      set;
+    }
+    public static int ProcessedFileCount {
+      get;
+      set;
+    }
+    public static int FolderCount {
+      get;
+      set;
+    }
     public static bool StaticCountersInitialized = InitializeStaticCounters();
 
-    public int? FolderID { get; set; }
-    public int ProjectID { get; set; }
-    public bool IsRootFolder { get; set; }
-    public string RootFolderPath { get; set; }
-    public string FolderName { get; set; }
-    public OSFolder ParentFolder { get; set; }
-    public OSFolder RootFolder { get { return Get_RootFolder(); } }
-    public int DepthFromRoot { get; set; }
-    public OSFolderSet OSFolderSet { get; set; }
-    public OSFileSet OSFileSet { get; set; }
-    public SearchParms SearchParms { get; set; }
+    public int? FolderID {
+      get;
+      set;
+    }
+    public int ProjectID {
+      get;
+      set;
+    }
+    public bool IsRootFolder {
+      get;
+      set;
+    }
+    public string RootFolderPath {
+      get;
+      set;
+    }
+    public string FolderName {
+      get;
+      set;
+    }
+    public OSFolder ParentFolder {
+      get;
+      set;
+    }
+    public OSFolder RootFolder {
+      get {
+        return Get_RootFolder();
+      }
+    }
+    public int DepthFromRoot {
+      get;
+      set;
+    }
+    public OSFolderSet OSFolderSet {
+      get;
+      set;
+    }
+    public OSFileSet OSFileSet {
+      get;
+      set;
+    }
+    public SearchParms SearchParms {
+      get;
+      set;
+    }
     private Dictionary<string, OSFile> _fileList;
-    public Dictionary<string, OSFile> FileList { get { return Get_FileList(); } }
-    public bool IsProcessed { get; set; }
+    public Dictionary<string, OSFile> FileList {
+      get {
+        return Get_FileList();
+      }
+    }
+    public bool IsProcessed {
+      get;
+      set;
+    }
 
     private string _fullPath;
     public string FullPath
     {
-      get { return _fullPath; }
-      set 
-      { 
+      get {
+        return _fullPath;
+      }
+      set
+      {
         _fullPath = value;
         this.FolderName = Path.GetFileName(_fullPath);
       }
@@ -56,7 +108,7 @@ namespace Org.GS
       Initialize();
       this.FullPath = folderPath;
     }
-        
+
     public OSFolder(SearchParms searchParms)
     {
       this.Initialize();
@@ -79,7 +131,7 @@ namespace Org.GS
       this.OSFolderSet = new OSFolderSet();
       this.OSFileSet = new OSFileSet();
       this.SearchParms = new SearchParms();
-      this.IsProcessed = false; 
+      this.IsProcessed = false;
     }
 
     public static void SetLimitReachedFunction(Func<OSFolder, bool, bool> limitReached)
@@ -106,8 +158,8 @@ namespace Org.GS
 
     public void BuildFolderList(OSFolder folder)
     {
-			try
-			{
+      try
+      {
         FolderCount++;
         if (FolderCount % 10 == 0 && this.SearchParms.RootPath.IsNotBlank())
           NotifyHost("FLDR", folder.FolderName.Replace(this.SearchParms.RootPath, String.Empty));
@@ -120,20 +172,20 @@ namespace Org.GS
           {
             bool filesProcessed = FileLimitReached(this.RootFolder, false);
 
-            FileCount = 0; 
+            FileCount = 0;
             if (filesProcessed)
             {
               int foldersToRemove = 0;
               foreach (var fldr in this.RootFolder.OSFolderSet)
               {
                 if (fldr.IsProcessed)
-                  foldersToRemove++; 
+                  foldersToRemove++;
               }
 
               while (foldersToRemove > 0)
               {
                 this.RootFolder.OSFolderSet.RemoveAt(0);
-                foldersToRemove--; 
+                foldersToRemove--;
               }
             }
 
@@ -141,7 +193,7 @@ namespace Org.GS
           }
         }
 
-        string[] subFolders = null; 
+        string[] subFolders = null;
         try
         {
           subFolders = Directory.GetDirectories(folder._fullPath);
@@ -159,17 +211,17 @@ namespace Org.GS
             return;
           }
           else
-            throw new Exception("An exception occurred while building the folder list.", ex); 
+            throw new Exception("An exception occurred while building the folder list.", ex);
         }
 
-				foreach (string subFolder in subFolders)
-				{
+        foreach (string subFolder in subFolders)
+        {
           FolderCount++;
           if (FolderCount % 10 == 0 && this.SearchParms.RootPath.IsNotBlank())
             NotifyHost("FLDR", folder.FolderName.Replace(this.SearchParms.RootPath, String.Empty));
-					if (IncludeFolder(subFolder))
-					{
-            OSFolder f = null; 
+          if (IncludeFolder(subFolder))
+          {
+            OSFolder f = null;
 
             try
             {
@@ -191,34 +243,34 @@ namespace Org.GS
                 throw new Exception("An exception occurred while building the folder list.", ex);
             }
 
-						f.FullPath = subFolder;
+            f.FullPath = subFolder;
             f.ProjectID = folder.ProjectID;
-						f.FolderName = Path.GetFileName(f._fullPath);
-						f.IsRootFolder = false;
-						f.DepthFromRoot = folder.DepthFromRoot + 1;
-						f.RootFolderPath = folder.RootFolderPath;
-						f.ParentFolder = folder;
-						f.SearchParms = folder.SearchParms;
-						folder.OSFolderSet.Add(f);
-						if (folder.SearchParms.ProcessChildFolders)
-							f.BuildFolderList(f);
-					}
-				}
+            f.FolderName = Path.GetFileName(f._fullPath);
+            f.IsRootFolder = false;
+            f.DepthFromRoot = folder.DepthFromRoot + 1;
+            f.RootFolderPath = folder.RootFolderPath;
+            f.ParentFolder = folder;
+            f.SearchParms = folder.SearchParms;
+            folder.OSFolderSet.Add(f);
+            if (folder.SearchParms.ProcessChildFolders)
+              f.BuildFolderList(f);
+          }
+        }
 
-				BuildFileList(folder); 
-			}
-			catch (Exception ex)
-			{
-				if (ex.GetType().Name.Contains("UnauthorizedAccessException"))
-					return;
-				throw new Exception("An exception occurred while attempting to build the folder list.", ex); 
-			}
+        BuildFileList(folder);
+      }
+      catch (Exception ex)
+      {
+        if (ex.GetType().Name.Contains("UnauthorizedAccessException"))
+          return;
+        throw new Exception("An exception occurred while attempting to build the folder list.", ex);
+      }
     }
 
     public bool IncludeFolder(string folderName)
     {
-			if (folderName.ToUpper().Contains("RECYCLE.BIN"))
-				return false; 
+      if (folderName.ToUpper().Contains("RECYCLE.BIN"))
+        return false;
 
       if (this.SearchParms.FolderNameExcludes.Count == 0)
         return true;
@@ -258,7 +310,7 @@ namespace Org.GS
           }
         }
       }
-      
+
       return true;
     }
 
@@ -274,9 +326,9 @@ namespace Org.GS
       foreach (var childFolder in folder.OSFolderSet)
       {
         if (childFolder.OSFolderSet.Count == 0)
-          leafFolders.Add(childFolder.FullPath); 
+          leafFolders.Add(childFolder.FullPath);
         else
-          leafFolders.AddRange(GetLeafFolders(childFolder)); 
+          leafFolders.AddRange(GetLeafFolders(childFolder));
       }
       return leafFolders;
     }
@@ -299,7 +351,7 @@ namespace Org.GS
 
         if (IncludeFile(file))
         {
-          OSFile f = null; 
+          OSFile f = null;
           try
           {
             f = new OSFile(folder);
@@ -364,7 +416,7 @@ namespace Org.GS
       //        OSFile f = new OSFile();
       //        f.FullPath = file;
       //        f.FileName = Path.GetFileName(file);
-      //        f.SetLastChangedDateTime(); 
+      //        f.SetLastChangedDateTime();
       //        folder.OSFileSet.Add(f.FileName, f);
       //        if (!this.SearchParms.SearchResults.OSFileList.ContainsKey(f.FileName.ToLower()))
       //          this.SearchParms.SearchResults.OSFileList.Add(f.FileName.ToLower(), f);
@@ -377,7 +429,7 @@ namespace Org.GS
     public bool IncludeFile(string fileName)
     {
       string fileNameCompare = Path.GetFileNameWithoutExtension(fileName).ToLower().Trim();
-      string extCompare = Path.GetExtension(fileName).Replace(".", String.Empty).ToLower().Trim(); 
+      string extCompare = Path.GetExtension(fileName).Replace(".", String.Empty).ToLower().Trim();
 
       if (extCompare.IsNotBlank() && this.SearchParms.Extensions.Count > 0)
       {
@@ -432,7 +484,7 @@ namespace Org.GS
       }
 
       // if we are including by extension and we want to filter out any files that do not match a file name pattern
-      // if we are including it on this basis, it bypasses the following exclusion logic - for now... 
+      // if we are including it on this basis, it bypasses the following exclusion logic - for now...
       if (this.SearchParms.FileNameIncludes.Count > 0 && this.SearchParms.ExtensionAndFileNameIncludeLogicOp == LogicOp.AND)
       {
         foreach (var fileInclude in this.SearchParms.FileNameIncludes)
@@ -482,7 +534,7 @@ namespace Org.GS
     public string GetFileListFromSearchResults()
     {
       StringBuilder sb = new StringBuilder();
-            
+
       foreach (OSFile f in this.SearchParms.SearchResults.OSFileList.Values)
         sb.Append(PadTo(f.FileName, 30) + "    " + f.FullPath + g.crlf);
 
@@ -495,7 +547,7 @@ namespace Org.GS
 
       while (stringWork.Length < totalLength)
         stringWork += "          ";
-                
+
       return stringWork.Substring(0, totalLength);
     }
 
@@ -537,7 +589,7 @@ namespace Org.GS
     public string GetSearchResults(OSFolder folder)
     {
       StringBuilder sb = new StringBuilder();
-            
+
       bool folderHeaderWritten = false;
 
       foreach (KeyValuePair<string, OSFile> kvp in folder.OSFileSet)
@@ -574,7 +626,7 @@ namespace Org.GS
     public string GetChangedSince(OSFolder folder)
     {
       StringBuilder sb = new StringBuilder();
-            
+
       bool folderHeaderWritten = false;
 
       foreach (KeyValuePair<string, OSFile> kvp in folder.OSFileSet)
@@ -605,7 +657,7 @@ namespace Org.GS
 
       var fileList = new Dictionary<string, OSFile>();
       AddFilesToList(this, fileList);
-      _fileList = fileList; 
+      _fileList = fileList;
       return fileList;
     }
 
@@ -618,7 +670,7 @@ namespace Org.GS
       }
 
       foreach (var childFolder in folder.OSFolderSet)
-        AddFilesToList(childFolder, fileList); 
+        AddFilesToList(childFolder, fileList);
     }
 
     public override string ToString()
@@ -654,7 +706,7 @@ namespace Org.GS
 
       string counts = "[" + FolderCount.ToString("000000") + "|" + FileCount.ToString("000000") + "|" + ProcessedFileCount.ToString("000000") + "]";
 
-      FSNotification(objectType + " " + counts + " " + notificationMessage); 
+      FSNotification(objectType + " " + counts + " " + notificationMessage);
     }
 
     private static bool InitializeStaticCounters()

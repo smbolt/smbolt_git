@@ -8,8 +8,14 @@ namespace Org.GS.OrgScript.Compilation
 {
   public class CompilationResult
   {
-    public Executable Executable { get; private set; }
-    public CompilerMessageSet CompilerMessageSet { get; private set; }
+    public Executable Executable {
+      get;
+      private set;
+    }
+    public CompilerMessageSet CompilerMessageSet {
+      get;
+      private set;
+    }
 
     public CompilationResult()
     {

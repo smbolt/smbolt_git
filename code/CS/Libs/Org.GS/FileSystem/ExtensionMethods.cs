@@ -21,14 +21,14 @@ namespace Org.GS
       if (isDirectory)
       {
         return (isDryRun ? "*DRY-RUN* " : "") +
-          action + " FLDR " +
-          fi.FullName;
+               action + " FLDR " +
+               fi.FullName;
       }
       else
       {
         return (isDryRun ? "*DRY-RUN* " : "") +
-          action + " FILE " + 
-          fi.Name + " (" + fi.Length.ToString("###,###,###,##0") + " bytes)";
+               action + " FILE " +
+               fi.Name + " (" + fi.Length.ToString("###,###,###,##0") + " bytes)";
       }
     }
   }

@@ -15,27 +15,79 @@ namespace Org.Pdf
 {
   public class Page : PObject
   {
-    public PdfPage PdfPage { get; private set; }
-    public int PageNumber { get; private set; }
-    private PdfDictionary _pageDictionary { get { return (PdfDictionary) base.iPdfObject; } }
+    public PdfPage PdfPage {
+      get;
+      private set;
+    }
+    public int PageNumber {
+      get;
+      private set;
+    }
+    private PdfDictionary _pageDictionary {
+      get {
+        return (PdfDictionary) base.iPdfObject;
+      }
+    }
     private int _totalObjectCount;
-    public int TotalObjectCount { get { return _totalObjectCount; } }
+    public int TotalObjectCount {
+      get {
+        return _totalObjectCount;
+      }
+    }
 
     private System.Drawing.RectangleF? _pageSizeRect;
-    public System.Drawing.SizeF PageSizeF { get { return Get_PageSizeF(); } }
-    public System.Drawing.PointF PageLocationF { get { return Get_PageLocationF(); } }
-    public System.Drawing.RectangleF PageRectangleF { get { return Get_PageRectangleF(); } }
+    public System.Drawing.SizeF PageSizeF {
+      get {
+        return Get_PageSizeF();
+      }
+    }
+    public System.Drawing.PointF PageLocationF {
+      get {
+        return Get_PageLocationF();
+      }
+    }
+    public System.Drawing.RectangleF PageRectangleF {
+      get {
+        return Get_PageRectangleF();
+      }
+    }
     private System.Drawing.RectangleF? _artBoxRect;
-    public System.Drawing.SizeF ArtBoxSizeF { get { return Get_ArtBoxSizeF(); } }
-    public System.Drawing.PointF ArtBoxLocationF { get { return Get_ArtBoxLocationF(); } }
-    public System.Drawing.RectangleF ArtBoxRectangleF { get { return Get_ArtBoxRectangleF(); } }
+    public System.Drawing.SizeF ArtBoxSizeF {
+      get {
+        return Get_ArtBoxSizeF();
+      }
+    }
+    public System.Drawing.PointF ArtBoxLocationF {
+      get {
+        return Get_ArtBoxLocationF();
+      }
+    }
+    public System.Drawing.RectangleF ArtBoxRectangleF {
+      get {
+        return Get_ArtBoxRectangleF();
+      }
+    }
 
-    public int PageRotation { get { return this.PdfPage.GetRotation(); } }
-    public string PageRawText { get; set; }
+    public int PageRotation {
+      get {
+        return this.PdfPage.GetRotation();
+      }
+    }
+    public string PageRawText {
+      get;
+      set;
+    }
 
-    public Document Document { get; private set; }
+    public Document Document {
+      get;
+      private set;
+    }
     private List<PObject> _pdfStreamList;
-    public List<PObject> PdfStreamList { get { return _pdfStreamList; } }
+    public List<PObject> PdfStreamList {
+      get {
+        return _pdfStreamList;
+      }
+    }
 
 
     public Page(int pageNumber, PdfPage pdfPage, Document document)
@@ -53,7 +105,7 @@ namespace Org.Pdf
         PdfResources res = this.PdfPage.GetResources();
         var resNames = res.GetResourceNames();
 
-        
+
         var pageKeySet = ((PdfDictionary)base.iPdfObject).KeySet();
 
         foreach (var pageDictKey in pageKeySet)
@@ -79,11 +131,11 @@ namespace Org.Pdf
     public void IncrementObjectCount()
     {
       _totalObjectCount++;
-    }    
+    }
 
     private System.Drawing.SizeF Get_PageSizeF()
     {
-      EnsurePageSize();      
+      EnsurePageSize();
       return new SizeF(_pageSizeRect.Value.Width, _pageSizeRect.Value.Height);
     }
 

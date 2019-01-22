@@ -17,12 +17,12 @@ namespace Org.GS.Configuration
 
 
     public NotifyRepository(ConfigDbSpec configDbSpec)
-		{
-			_configDbSpec = configDbSpec;
-			if (!_configDbSpec.IsReadyToConnect())
-				throw new Exception(configDbSpec + "' is not ready to connect.");
-			_connectionString = _configDbSpec.ConnectionString;
-		}
+    {
+      _configDbSpec = configDbSpec;
+      if (!_configDbSpec.IsReadyToConnect())
+        throw new Exception(configDbSpec + "' is not ready to connect.");
+      _connectionString = _configDbSpec.ConnectionString;
+    }
 
     public NotifyConfigSet GetNotifyConfigSet(int notifyConfigSetId)
     {
@@ -33,12 +33,12 @@ namespace Org.GS.Configuration
         var notifyConfigSet = new NotifyConfigSet();
 
         string sql = " SELECT [NotifyConfigSetID] " + g.crlf +
-                           " ,[Name] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedOn] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedOn] " + g.crlf +
+                     " ,[Name] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
                      " FROM [Notifications].[dbo].[NotifyConfigSet]" + g.crlf +
                      " WHERE [NotifyConfigSetID] = " + notifyConfigSetId;
 
@@ -65,18 +65,22 @@ namespace Org.GS.Configuration
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occured attempting to retrieve the NotifyConfigSet with ID '" + notifyConfigSetId + "'.", ex); 
+        throw new Exception("An exception occured attempting to retrieve the NotifyConfigSet with ID '" + notifyConfigSetId + "'.", ex);
       }
     }
 
     public NotifyConfigSet GetNotifyConfigSet(string name)
     {
-      return GetNotifyConfigSets(new List<string>() { name }, false).FirstOrDefault();
+      return GetNotifyConfigSets(new List<string>() {
+        name
+      }, false).FirstOrDefault();
     }
 
     public NotifyConfigSet GetNotifyConfigSet(string name, bool includeFullHierarchy)
     {
-      return GetNotifyConfigSets(new List<string>() { name }, includeFullHierarchy).FirstOrDefault();
+      return GetNotifyConfigSets(new List<string>() {
+        name
+      }, includeFullHierarchy).FirstOrDefault();
     }
 
     public List<NotifyConfigSet> GetNotifyConfigSets()
@@ -181,7 +185,7 @@ namespace Org.GS.Configuration
                       notifyGroupReference.NotifyGroupName = notifyGroup.Name;
                       notifyGroupReference.IsActive = notifyGroup.IsActive;
                       if (!notifyEvent.Contains(notifyGroupReference))
-                        notifyEvent.Add(notifyGroupReference); 
+                        notifyEvent.Add(notifyGroupReference);
                     }
                   }
                 }
@@ -206,7 +210,7 @@ namespace Org.GS.Configuration
           }
         }
 
-        throw new Exception("An exception occured attempting to retrieve the NotifyConfigSet for names '" + nameList + "'.", ex); 
+        throw new Exception("An exception occured attempting to retrieve the NotifyConfigSet for names '" + nameList + "'.", ex);
       }
     }
 
@@ -237,18 +241,18 @@ namespace Org.GS.Configuration
         var notifyConfig = new NotifyConfig();
 
         string sql = " SELECT [NotifyConfigID] " + g.crlf +
-                           " ,[Name] " + g.crlf +
-                           " ,[SupportEmail] " + g.crlf +
-                           " ,[SupportPhone] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[SendEmail] " + g.crlf +
-                           " ,[SendSms] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedOn] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedOn] " + g.crlf +
-                    " FROM [Notifications].[dbo].[NotifyConfig] " + g.crlf +
-                    " WHERE [NotifyConfigID] = " + notifyConfigId;
+                     " ,[Name] " + g.crlf +
+                     " ,[SupportEmail] " + g.crlf +
+                     " ,[SupportPhone] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[SendEmail] " + g.crlf +
+                     " ,[SendSms] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
+                     " FROM [Notifications].[dbo].[NotifyConfig] " + g.crlf +
+                     " WHERE [NotifyConfigID] = " + notifyConfigId;
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -277,7 +281,7 @@ namespace Org.GS.Configuration
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occured attempting to retrieve the NotifyConfig for ID '" + notifyConfigId + "'.", ex); 
+        throw new Exception("An exception occured attempting to retrieve the NotifyConfig for ID '" + notifyConfigId + "'.", ex);
       }
     }
 
@@ -295,18 +299,18 @@ namespace Org.GS.Configuration
         var notifyConfigs = new List<NotifyConfig>();
 
         string sql = " SELECT [NotifyConfigID] " + g.crlf +
-                           " ,[Name] " + g.crlf +
-                           " ,[SupportEmail] " + g.crlf +
-                           " ,[SupportPhone] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[SendEmail] " + g.crlf +
-                           " ,[SendSms] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedOn] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedOn] " + g.crlf +
-                    " FROM [Notifications].[dbo].[NotifyConfig] " + g.crlf +
-                    " ORDER BY [Name] ";
+                     " ,[Name] " + g.crlf +
+                     " ,[SupportEmail] " + g.crlf +
+                     " ,[SupportPhone] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[SendEmail] " + g.crlf +
+                     " ,[SendSms] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
+                     " FROM [Notifications].[dbo].[NotifyConfig] " + g.crlf +
+                     " ORDER BY [Name] ";
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -404,8 +408,8 @@ namespace Org.GS.Configuration
                      "  nc.ModifiedBy AS ModifiedBy, " + g.crlf +
                      "  nc.ModifiedOn AS ModifiedOn " + g.crlf +
                      "FROM dbo.NotifyConfig nc " + g.crlf +
-                     "INNER JOIN dbo.NotifyConfigXRef x ON x.NotifyConfigID = nc.NotifyConfigID " + g.crlf + 
-                     "WHERE x.NotifyConfigSetID = " + ncs.NotifyConfigSetId.ToString() + " "; 
+                     "INNER JOIN dbo.NotifyConfigXRef x ON x.NotifyConfigID = nc.NotifyConfigID " + g.crlf +
+                     "WHERE x.NotifyConfigSetID = " + ncs.NotifyConfigSetId.ToString() + " ";
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -453,7 +457,7 @@ namespace Org.GS.Configuration
         var nes = new NotifyEventSet();
 
         string sql = "SELECT NotifyEventID AS NotifyEventID, " + g.crlf +
-                     "  NotifyConfigID as NotifyConfigID, " + g.crlf + 
+                     "  NotifyConfigID as NotifyConfigID, " + g.crlf +
                      "  Name AS Name, " + g.crlf +
                      "  IsActive AS IsActive, " + g.crlf +
                      "  DefaultSubject AS DefaultSubject, " + g.crlf +
@@ -509,16 +513,16 @@ namespace Org.GS.Configuration
         var notifyEvent = new NotifyEvent();
 
         string sql = " SELECT [NotifyEventID] " + g.crlf +
-                           " ,[NotifyConfigID] " + g.crlf +
-                           " ,[Name] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[DefaultSubject] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedOn] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedOn] " + g.crlf +
-                    " FROM [Notifications].[dbo].[NotifyEvent] " + g.crlf +
-                    " WHERE [NotifyEventID] = " + eventId;
+                     " ,[NotifyConfigID] " + g.crlf +
+                     " ,[Name] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[DefaultSubject] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
+                     " FROM [Notifications].[dbo].[NotifyEvent] " + g.crlf +
+                     " WHERE [NotifyEventID] = " + eventId;
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -626,13 +630,13 @@ namespace Org.GS.Configuration
         var notifyEventGroup = new NotifyEventGroup();
 
         string sql = " SELECT [NotifyEventGroupID] " + g.crlf +
-                           " ,[NotifyEventID] " + g.crlf +
-                           " ,[NotifyGroupID] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedOn] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedOn] " + g.crlf +
+                     " ,[NotifyEventID] " + g.crlf +
+                     " ,[NotifyGroupID] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
                      " FROM [Notifications].[dbo].[NotifyEventGroup] " + g.crlf +
                      " WHERE [NotifyEventGroupID] = " + notifyEventGroupId;
 
@@ -739,12 +743,12 @@ namespace Org.GS.Configuration
         var notifyGroupSet = new NotifyGroupSet();
 
         string sql = "SELECT ng.NotifyGroupID " + g.crlf +
-                          " ,ng.Name " + g.crlf +
-                          " ,ng.IsActive " + g.crlf +
-                          " ,ng.CreatedBy " + g.crlf +
-                          " ,ng.CreatedOn " + g.crlf +
-                          " ,ng.ModifiedBy " + g.crlf +
-                          " ,ng.ModifiedOn " + g.crlf +
+                     " ,ng.Name " + g.crlf +
+                     " ,ng.IsActive " + g.crlf +
+                     " ,ng.CreatedBy " + g.crlf +
+                     " ,ng.CreatedOn " + g.crlf +
+                     " ,ng.ModifiedBy " + g.crlf +
+                     " ,ng.ModifiedOn " + g.crlf +
                      " FROM [Notifications].[dbo].[NotifyGroup] ng " + g.crlf +
                      " INNER JOIN [Notifications].[dbo].[NotifyEventGroup] neg " + g.crlf +
                      "  ON neg.NotifyGroupID = ng.NotifyGroupID " + g.crlf +
@@ -793,12 +797,12 @@ namespace Org.GS.Configuration
         var notifyGroup = new NotifyGroup();
 
         string sql = " SELECT [NotifyGroupID] " + g.crlf +
-                           " ,[Name] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedOn] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedOn] " + g.crlf +
+                     " ,[Name] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
                      " FROM [Notifications].[dbo].[NotifyGroup] " + g.crlf +
                      " WHERE [NotifyGroupID] = " + groupId;
 
@@ -844,12 +848,12 @@ namespace Org.GS.Configuration
         var notifyGroups = new List<NotifyGroup>();
 
         string sql = "SELECT [NotifyGroupID] " + g.crlf +
-                          " ,[Name] " + g.crlf +
-                          " ,[IsActive] " + g.crlf +
-                          " ,[CreatedBy] " + g.crlf +
-                          " ,[CreatedOn] " + g.crlf +
-                          " ,[ModifiedBy] " + g.crlf +
-                          " ,[ModifiedOn] " + g.crlf +
+                     " ,[Name] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
                      " FROM [Notifications].[dbo].[NotifyGroup] " + g.crlf +
                      " ORDER BY [Name] ";
 
@@ -905,13 +909,13 @@ namespace Org.GS.Configuration
         var notifyPersonGroup = new NotifyPersonGroup();
 
         string sql = " SELECT [NotifyPersonGroupID] " + g.crlf +
-                           " ,[NotifyGroupID] " + g.crlf +
-                           " ,[NotifyPersonID] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedOn] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedOn] " + g.crlf +
+                     " ,[NotifyGroupID] " + g.crlf +
+                     " ,[NotifyPersonID] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
                      " FROM [Notifications].[dbo].[NotifyPersonGroup] " + g.crlf +
                      " WHERE [NotifyPersonGroupId] = " + notifyPersonGroupId;
 
@@ -952,7 +956,7 @@ namespace Org.GS.Configuration
 
         var notifyPersons = new List<NotifyPerson>();
 
-        string sql = "SELECT p.NotifyPersonID AS NotifyPersonID, " + g.crlf +   
+        string sql = "SELECT p.NotifyPersonID AS NotifyPersonID, " + g.crlf +
                      "  p.Name as Name, " + g.crlf +
                      "  p.IsActive AS IsActive, " + g.crlf +
                      "  p.EmailIsActive AS EmailIsActive, " + g.crlf +
@@ -965,7 +969,7 @@ namespace Org.GS.Configuration
                      "  p.ModifiedOn AS ModifiedOn, " + g.crlf +
                      "  g.NotifyPersonGroupID " + g.crlf +
                      "FROM dbo.NotifyPerson p " + g.crlf +
-                     "INNER JOIN dbo.NotifyPersonGroup g ON g.NotifyPersonID = p.NotifyPersonID " + g.crlf + 
+                     "INNER JOIN dbo.NotifyPersonGroup g ON g.NotifyPersonID = p.NotifyPersonID " + g.crlf +
                      "WHERE NotifyGroupID = " + groupId.ToString() + " ";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -1015,16 +1019,16 @@ namespace Org.GS.Configuration
         var notifyPerson = new NotifyPerson();
 
         string sql = " SELECT [NotifyPersonID] " + g.crlf +
-                           " ,[Name] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[EmailIsActive] " + g.crlf +
-                           " ,[EmailAddress] " + g.crlf +
-                           " ,[SmsIsActive] " + g.crlf +
-                           " ,[SmsNumber] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedOn] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedOn] " + g.crlf +
+                     " ,[Name] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[EmailIsActive] " + g.crlf +
+                     " ,[EmailAddress] " + g.crlf +
+                     " ,[SmsIsActive] " + g.crlf +
+                     " ,[SmsNumber] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
                      " FROM [Notifications].[dbo].[NotifyPerson] " + g.crlf +
                      " WHERE [NotifyPersonID] = " + personId;
 
@@ -1039,17 +1043,17 @@ namespace Org.GS.Configuration
             return notifyPerson;
 
           var r = ds.Tables[0].Rows[0];
-            notifyPerson.NotifyPersonId = r["NotifyPersonID"].DbToInt32().Value;
-            notifyPerson.Name = r["Name"].DbToString();
-            notifyPerson.IsActive = r["IsActive"].DbToBoolean().Value;
-            notifyPerson.IsEmailActive = r["EmailIsActive"].DbToBoolean().Value;
-            notifyPerson.EmailAddress = r["EmailAddress"].DbToString();
-            notifyPerson.IsSmsActive = r["SmsIsActive"].DbToBoolean().Value;
-            notifyPerson.SmsNumber = r["SmsNumber"].DbToString();
-            notifyPerson.CreatedBy = r["CreatedBy"].DbToString();
-            notifyPerson.CreatedOn = r["CreatedOn"].DbToDateTime().Value;
-            notifyPerson.ModifiedBy = r["ModifiedBy"].DbToString();
-            notifyPerson.ModifiedOn = r["ModifiedOn"].DbToDateTime();
+          notifyPerson.NotifyPersonId = r["NotifyPersonID"].DbToInt32().Value;
+          notifyPerson.Name = r["Name"].DbToString();
+          notifyPerson.IsActive = r["IsActive"].DbToBoolean().Value;
+          notifyPerson.IsEmailActive = r["EmailIsActive"].DbToBoolean().Value;
+          notifyPerson.EmailAddress = r["EmailAddress"].DbToString();
+          notifyPerson.IsSmsActive = r["SmsIsActive"].DbToBoolean().Value;
+          notifyPerson.SmsNumber = r["SmsNumber"].DbToString();
+          notifyPerson.CreatedBy = r["CreatedBy"].DbToString();
+          notifyPerson.CreatedOn = r["CreatedOn"].DbToDateTime().Value;
+          notifyPerson.ModifiedBy = r["ModifiedBy"].DbToString();
+          notifyPerson.ModifiedOn = r["ModifiedOn"].DbToDateTime();
         }
 
         return notifyPerson;
@@ -1069,16 +1073,16 @@ namespace Org.GS.Configuration
         var notifyPersons = new List<NotifyPerson>();
 
         string sql = " SELECT [NotifyPersonID] " + g.crlf +
-                           " ,[Name] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[EmailIsActive] " + g.crlf +
-                           " ,[EmailAddress] " + g.crlf +
-                           " ,[SmsIsActive] " + g.crlf +
-                           " ,[SmsNumber] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedOn] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedOn] " + g.crlf +
+                     " ,[Name] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[EmailIsActive] " + g.crlf +
+                     " ,[EmailAddress] " + g.crlf +
+                     " ,[SmsIsActive] " + g.crlf +
+                     " ,[SmsNumber] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedOn] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedOn] " + g.crlf +
                      " FROM [Notifications].[dbo].[NotifyPerson] " + g.crlf +
                      " ORDER BY [Name] ";
 
@@ -1291,9 +1295,9 @@ namespace Org.GS.Configuration
         string sql = " INSERT INTO [Notifications].[dbo].[NotifyConfigSet] " + g.crlf +
                      "  ([Name], [IsActive], [CreatedBy], [CreatedOn]) " + g.crlf +
                      "  VALUES ('" + ncs.Name + "'," +
-                                     ncs.IsActive.ToInt32() + "," +
-                               "'" + ncs.CreatedBy + "'," +
-                               "'" + ncs.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
+                     ncs.IsActive.ToInt32() + "," +
+                     "'" + ncs.CreatedBy + "'," +
+                     "'" + ncs.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
 
         using (var cmd = new SqlCommand(sql, _conn))
           ncsId = cmd.ExecuteScalar().ToInt32();
@@ -1317,9 +1321,9 @@ namespace Org.GS.Configuration
         string sql = " INSERT INTO [Notifications].[dbo].[NotifyConfigXRef] " + g.crlf +
                      "  ([NotifyConfigSetID], [NotifyConfigID], [CreatedBy], [CreatedOn]) " + g.crlf +
                      "  VALUES (" + notifyconfigSetId + "," +
-                                    notifyConfigId + "," +
-                               "'" + g.SystemInfo.DomainAndUser + "'," +
-                               "'" + DateTime.Now + "'); " + " SELECT SCOPE_IDENTITY()";
+                     notifyConfigId + "," +
+                     "'" + g.SystemInfo.DomainAndUser + "'," +
+                     "'" + DateTime.Now + "'); " + " SELECT SCOPE_IDENTITY()";
 
         using (var cmd = new SqlCommand(sql, _conn))
           ncXRefId = cmd.ExecuteScalar().ToInt32();
@@ -1344,13 +1348,13 @@ namespace Org.GS.Configuration
         string sql = " INSERT INTO [Notifications].[dbo].[NotifyConfig] " + g.crlf +
                      "  ([Name], [SupportEmail], [SupportPhone], [IsActive], [SendEmail], [SendSms], [CreatedBy], [CreatedOn]) " + g.crlf +
                      "  VALUES ('" + nc.Name + "'," +
-                                    (nc.SupportEmail.IsBlank() ? "NULL" : "'" + nc.SupportEmail + "'") + "," +
-                                    (nc.SupportPhone.IsBlank() ? "NULL" : "'" + nc.SupportPhone + "'") + "," +
-                                     nc.IsActive.ToInt32() + "," +
-                                     nc.SendEmail.ToInt32() + "," +
-                                     nc.SendSms.ToInt32() + "," +
-                               "'" + nc.CreatedBy + "'," +
-                               "'" + nc.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
+                     (nc.SupportEmail.IsBlank() ? "NULL" : "'" + nc.SupportEmail + "'") + "," +
+                     (nc.SupportPhone.IsBlank() ? "NULL" : "'" + nc.SupportPhone + "'") + "," +
+                     nc.IsActive.ToInt32() + "," +
+                     nc.SendEmail.ToInt32() + "," +
+                     nc.SendSms.ToInt32() + "," +
+                     "'" + nc.CreatedBy + "'," +
+                     "'" + nc.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
 
         using (var cmd = new SqlCommand(sql, _conn))
           ncId = cmd.ExecuteScalar().ToInt32();
@@ -1374,11 +1378,11 @@ namespace Org.GS.Configuration
         string sql = " INSERT INTO [Notifications].[dbo].[NotifyEvent] " + g.crlf +
                      "  ([NotifyConfigID], [Name], [IsActive], [DefaultSubject], [CreatedBy], [CreatedOn]) " + g.crlf +
                      "  VALUES (" + ne.NotifyConfigId + "," +
-                              "'" + ne.Name + "'," +
-                                    ne.IsActive.ToInt32() + "," +
-                              "'" + ne.DefaultSubject + "'," +
-                              "'" + ne.CreatedBy + "'," +
-                              "'" + ne.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
+                     "'" + ne.Name + "'," +
+                     ne.IsActive.ToInt32() + "," +
+                     "'" + ne.DefaultSubject + "'," +
+                     "'" + ne.CreatedBy + "'," +
+                     "'" + ne.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
 
         using (var cmd = new SqlCommand(sql, _conn))
           neId = cmd.ExecuteScalar().ToInt32();
@@ -1402,10 +1406,10 @@ namespace Org.GS.Configuration
         string sql = " INSERT INTO [Notifications].[dbo].[NotifyEventGroup] " + g.crlf +
                      "  ([NotifyEventID], [NotifyGroupID], [IsActive], [CreatedBy], [CreatedOn]) " + g.crlf +
                      "  VALUES (" + neg.NotifyEventID + "," +
-                                  + neg.NotifyGroupID + "," +
-                                    neg.IsActive.ToInt32() + "," +
-                              "'" + neg.CreatedBy + "'," +
-                              "'" + neg.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
+                     + neg.NotifyGroupID + "," +
+                     neg.IsActive.ToInt32() + "," +
+                     "'" + neg.CreatedBy + "'," +
+                     "'" + neg.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
 
         using (var cmd = new SqlCommand(sql, _conn))
           negId = cmd.ExecuteScalar().ToInt32();
@@ -1430,9 +1434,9 @@ namespace Org.GS.Configuration
         string sql = " INSERT INTO [Notifications].[dbo].[NotifyGroup] " + g.crlf +
                      "  ([Name], [IsActive], [CreatedBy], [CreatedOn]) " + g.crlf +
                      "  VALUES ('" + ng.Name + "'," +
-                                     ng.IsActive.ToInt32() + "," +
-                               "'" + ng.CreatedBy + "'," +
-                               "'" + ng.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
+                     ng.IsActive.ToInt32() + "," +
+                     "'" + ng.CreatedBy + "'," +
+                     "'" + ng.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
 
         using (var cmd = new SqlCommand(sql, _conn))
           ngId = cmd.ExecuteScalar().ToInt32();
@@ -1456,10 +1460,10 @@ namespace Org.GS.Configuration
         string sql = " INSERT INTO [Notifications].[dbo].[NotifyPersonGroup] " + g.crlf +
                      "  ([NotifyGroupID], [NotifyPersonID], [IsActive], [CreatedBy], [CreatedOn]) " + g.crlf +
                      "  VALUES (" + npg.NotifyGroupId + "," +
-                                  +npg.NotifyPersonId + "," +
-                                    npg.IsActive.ToInt32() + "," +
-                              "'" + npg.CreatedBy + "'," +
-                              "'" + npg.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
+                     +npg.NotifyPersonId + "," +
+                     npg.IsActive.ToInt32() + "," +
+                     "'" + npg.CreatedBy + "'," +
+                     "'" + npg.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
 
         using (var cmd = new SqlCommand(sql, _conn))
           npgId = cmd.ExecuteScalar().ToInt32();
@@ -1484,13 +1488,13 @@ namespace Org.GS.Configuration
         string sql = " INSERT INTO [Notifications].[dbo].[NotifyPerson] " + g.crlf +
                      "  ([Name], [IsActive], [EmailIsActive], [EmailAddress], [SmsIsActive], [SmsNumber], [CreatedBy], [CreatedOn]) " + g.crlf +
                      "  VALUES ('" + np.Name + "'," +
-                                     np.IsActive.ToInt32() + "," +
-                                     np.IsEmailActive.ToInt32() + "," +
-                                    (np.EmailAddress.IsBlank() ? "NULL" : "'" + np.EmailAddress + "'") + "," +
-                                     np.IsSmsActive.ToInt32() + "," +
-                                    (np.SmsNumber.IsBlank() ? "NULL" : "'"  + np.SmsNumber + "'") + "," +
-                               "'" + np.CreatedBy + "'," +
-                               "'" + np.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
+                     np.IsActive.ToInt32() + "," +
+                     np.IsEmailActive.ToInt32() + "," +
+                     (np.EmailAddress.IsBlank() ? "NULL" : "'" + np.EmailAddress + "'") + "," +
+                     np.IsSmsActive.ToInt32() + "," +
+                     (np.SmsNumber.IsBlank() ? "NULL" : "'"  + np.SmsNumber + "'") + "," +
+                     "'" + np.CreatedBy + "'," +
+                     "'" + np.CreatedOn + "'); " + " SELECT SCOPE_IDENTITY()";
 
         using (var cmd = new SqlCommand(sql, _conn))
           npId = cmd.ExecuteScalar().ToInt32();
@@ -1536,7 +1540,7 @@ namespace Org.GS.Configuration
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to delete NotifyConfigXRef between NotifyConfigSetID '" + notifyConfigSetId + 
+        throw new Exception("An exception occurred while attempting to delete NotifyConfigXRef between NotifyConfigSetID '" + notifyConfigSetId +
                             "' and NotifyConfigID '" + notifyConfigId + "'.", ex);
       }
     }

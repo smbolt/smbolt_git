@@ -20,7 +20,7 @@ namespace Org.GS.AppDomainManagement
     public void PlugIn_NotifyMessage(NotifyMessage notifyMessage)
     {
       if (this.NotifyMessage != null)
-        this.NotifyMessage(notifyMessage); 
+        this.NotifyMessage(notifyMessage);
     }
   }
 }

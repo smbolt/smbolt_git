@@ -10,11 +10,13 @@ namespace Org.GS.Controls
 {
   public class ControlSpecBase
   {
-    private string _tag; 
+    private string _tag;
     [XMap]
-    public string Tag 
+    public string Tag
     {
-      get { return this._tag; }
+      get {
+        return this._tag;
+      }
       set
       {
         if (this.Name == null)
@@ -25,22 +27,33 @@ namespace Org.GS.Controls
 
     public string _name;
     [XMap(IsKey=true)]
-    public string Name 
+    public string Name
     {
-      get { return this._name; }
-      set { this._name = value; }
+      get {
+        return this._name;
+      }
+      set {
+        this._name = value;
+      }
     }
 
-    private string _text; 
+    private string _text;
     [XMap]
-    public string Text 
+    public string Text
     {
-      get { return this._text; }
-      set { this._text = value; }
+      get {
+        return this._text;
+      }
+      set {
+        this._text = value;
+      }
     }
 
     [XMap]
-    public virtual ControlType ControlType { get; set; }
+    public virtual ControlType ControlType {
+      get;
+      set;
+    }
 
     public ControlSpecBase()
     {

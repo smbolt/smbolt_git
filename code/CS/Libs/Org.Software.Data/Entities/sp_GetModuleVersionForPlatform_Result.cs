@@ -12,21 +12,54 @@ using Org.GS;
 
 namespace Org.Software.Data.Entities
 {
-    using System;
-    
-    [DbMap(DbElement.StoredProcedure, "Org_Software", "", "sp_GetModuleVersionForPlatform_Result")]
-    public partial class sp_GetModuleVersionForPlatform_Result
-    {
-        public string SoftwareModuleName { get; set; }
-        public string SoftwareModuleTypeName { get; set; }
-        public int SoftwareModuleStatus { get; set; }
-        public string SoftwareVersion { get; set; }
-        public int SoftwareVersionStatus { get; set; }
-        public int SoftwarePlatformId { get; set; }
-        public string SoftwarePlatformString { get; set; }
-        public int SoftwarePlatformStatus { get; set; }
-        public int RepositoryId { get; set; }
-        public string RepositoryRoot { get; set; }
-        public int RepositoryStatus { get; set; }
+  using System;
+
+  [DbMap(DbElement.StoredProcedure, "Org_Software", "", "sp_GetModuleVersionForPlatform_Result")]
+  public partial class sp_GetModuleVersionForPlatform_Result
+  {
+    public string SoftwareModuleName {
+      get;
+      set;
     }
+    public string SoftwareModuleTypeName {
+      get;
+      set;
+    }
+    public int SoftwareModuleStatus {
+      get;
+      set;
+    }
+    public string SoftwareVersion {
+      get;
+      set;
+    }
+    public int SoftwareVersionStatus {
+      get;
+      set;
+    }
+    public int SoftwarePlatformId {
+      get;
+      set;
+    }
+    public string SoftwarePlatformString {
+      get;
+      set;
+    }
+    public int SoftwarePlatformStatus {
+      get;
+      set;
+    }
+    public int RepositoryId {
+      get;
+      set;
+    }
+    public string RepositoryRoot {
+      get;
+      set;
+    }
+    public int RepositoryStatus {
+      get;
+      set;
+    }
+  }
 }

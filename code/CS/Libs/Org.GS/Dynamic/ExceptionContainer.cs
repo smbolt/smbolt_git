@@ -7,13 +7,34 @@ namespace Org.GS
 {
   public class ExceptionContainer
   {
-    public ExceptionContainer Parent { get; set; }
-    public int ExceptionLevel { get; set; }
-    public int ExceptionLevels { get; set; }
-    public Dictionary<string, object> Data { get; set; }
-    public ExceptionContainer InnerException { get; set; }
-    public string Message { get; set; }
-    public string StackTrace { get; set; }
+    public ExceptionContainer Parent {
+      get;
+      set;
+    }
+    public int ExceptionLevel {
+      get;
+      set;
+    }
+    public int ExceptionLevels {
+      get;
+      set;
+    }
+    public Dictionary<string, object> Data {
+      get;
+      set;
+    }
+    public ExceptionContainer InnerException {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public string StackTrace {
+      get;
+      set;
+    }
 
     public ExceptionContainer(Exception ex)
     {

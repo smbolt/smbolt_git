@@ -58,7 +58,7 @@ namespace Org.QB
     {
       try
       {
-        
+
         XmlDocument inputXMLDoc = new XmlDocument();
         inputXMLDoc.AppendChild(inputXMLDoc.CreateXmlDeclaration("1.0", null, null));
         inputXMLDoc.AppendChild(inputXMLDoc.CreateProcessingInstruction("qbxml", "version=\"13.0\""));
@@ -103,7 +103,7 @@ namespace Org.QB
     public void EndSession()
     {
       try
-      {        
+      {
         if (_qbrp == null)
           throw new Exception("The connection to Quickbooks is null.");
 
@@ -144,7 +144,7 @@ namespace Org.QB
       }
       catch (Exception ex)
       {
-       
+
       }
     }
 

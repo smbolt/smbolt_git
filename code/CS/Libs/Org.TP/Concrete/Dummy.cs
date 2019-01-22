@@ -22,7 +22,7 @@ namespace Org.TP
         base.Notify("Dummy task processing starting on thread " + System.Threading.Thread.CurrentThread.ManagedThreadId.ToString() + ".");
 
         taskResult = await TPL.Task.Run<TaskResult>(() =>
-        {          
+        {
           return taskResult.Success();
         });
 
@@ -32,7 +32,7 @@ namespace Org.TP
       }
       catch (Exception ex)
       {
-        return taskResult.Failed("An exception occurred during " + base.TaskRequest.TaskName + " task processing.", ex); 
+        return taskResult.Failed("An exception occurred during " + base.TaskRequest.TaskName + " task processing.", ex);
       }
     }
 

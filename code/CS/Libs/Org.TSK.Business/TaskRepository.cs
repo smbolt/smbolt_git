@@ -44,8 +44,8 @@ namespace Org.TSK.Business
         transBegun = true;
 
         string sql = " SELECT COUNT(ParameterID) AS NameCount " + g.crlf +
-                      " FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
-                      " WHERE [ParameterName] LIKE '" + parmVariable.ParameterName + "'";
+                     " FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
+                     " WHERE [ParameterName] LIKE '" + parmVariable.ParameterName + "'";
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn, trans))
         {
@@ -107,8 +107,8 @@ namespace Org.TSK.Business
         var taskParmList = new List<Org.TSK.Business.Models.TaskParameter>();
 
         string sql = " SELECT COUNT(ParameterSetName) AS NameCount " + g.crlf +
-                      " FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
-                      " WHERE [ParameterSetName] LIKE '" + parameterSet.ParameterSetName + "'";
+                     " FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
+                     " WHERE [ParameterSetName] LIKE '" + parameterSet.ParameterSetName + "'";
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn, trans))
         {
@@ -187,7 +187,7 @@ namespace Org.TSK.Business
               return;
             }
 
-            string sqlGetTask = "SELECT ScheduledTaskID " + g.crlf + 
+            string sqlGetTask = "SELECT ScheduledTaskID " + g.crlf +
                                 "FROM TaskScheduling.dbo.ScheduledTasks " + g.crlf +
                                 "WHERE TaskName LIKE '" + schedTask.TaskName + "' ";
 
@@ -226,26 +226,26 @@ namespace Org.TSK.Business
         else
         {
           string sqlTask = "INSERT INTO [TaskScheduling].[dbo].[ScheduledTasks] ([TaskName], [ProcessorTypeID], [ProcessorName], [ProcessorVersion], " + g.crlf +
-                              "[AssemblyLocation], [StoredProcedureName], [IsActive], [RunUntilTask], [RunUntilPeriodContextID], [RunUntilOverride], " + g.crlf +
-                              "[RunUntilOffsetMinutes], [IsLongRunning], [TrackHistory], [SuppressNotificationsOnSuccess], [ActiveScheduleId], " + g.crlf +
-                              "[CreatedBy], [CreatedDate])" + g.crlf +
-                              "VALUES ('" + schedTask.TaskName.ToString() + "'," + g.crlf +
-                              schedTask.ProcessorTypeId.ToInt32() + "," + g.crlf +
-                              "'" + schedTask.ProcessorName.ToString() + "'," + g.crlf +
-                              "'" + schedTask.ProcessorVersion.ToString() + "'," + g.crlf +
-                              "'" + schedTask.AssemblyLocation.GetStringValueOrNull() + "'," + g.crlf +
-                              "'" + schedTask.StoredProcedureName.GetStringValueOrNull() + "'," + g.crlf +
-                              0 + "," + g.crlf +
-                              schedTask.RunUntilTask.ToInt32() + "," + g.crlf +
-                              (schedTask.RunUntilPeriodContextID.HasValue ? schedTask.RunUntilPeriodContextID.ToString() : "NULL") + "," + g.crlf +
-                              schedTask.RunUntilOverride.ToInt32() + "," + g.crlf +
-                              (schedTask.RunUntilOffsetMinutes.HasValue ? schedTask.RunUntilOffsetMinutes.ToString() : "NULL") + "," + g.crlf +
-                              schedTask.IsLongRunning.ToInt32() + "," + g.crlf +
-                              schedTask.TrackHistory.ToInt32() + "," + g.crlf +
-                              schedTask.SuppressNotificationsOnSuccess.ToInt32() + "," + g.crlf +
-                              schedTask.ActiveScheduleId.ToInt32() + "," + g.crlf +
-                              "'" + g.SystemInfo.DomainAndUser + "'," + g.crlf +
-                              "'" + DateTime.Now + "'); " + " SELECT SCOPE_IDENTITY()";
+                           "[AssemblyLocation], [StoredProcedureName], [IsActive], [RunUntilTask], [RunUntilPeriodContextID], [RunUntilOverride], " + g.crlf +
+                           "[RunUntilOffsetMinutes], [IsLongRunning], [TrackHistory], [SuppressNotificationsOnSuccess], [ActiveScheduleId], " + g.crlf +
+                           "[CreatedBy], [CreatedDate])" + g.crlf +
+                           "VALUES ('" + schedTask.TaskName.ToString() + "'," + g.crlf +
+                           schedTask.ProcessorTypeId.ToInt32() + "," + g.crlf +
+                           "'" + schedTask.ProcessorName.ToString() + "'," + g.crlf +
+                           "'" + schedTask.ProcessorVersion.ToString() + "'," + g.crlf +
+                           "'" + schedTask.AssemblyLocation.GetStringValueOrNull() + "'," + g.crlf +
+                           "'" + schedTask.StoredProcedureName.GetStringValueOrNull() + "'," + g.crlf +
+                           0 + "," + g.crlf +
+                           schedTask.RunUntilTask.ToInt32() + "," + g.crlf +
+                           (schedTask.RunUntilPeriodContextID.HasValue ? schedTask.RunUntilPeriodContextID.ToString() : "NULL") + "," + g.crlf +
+                           schedTask.RunUntilOverride.ToInt32() + "," + g.crlf +
+                           (schedTask.RunUntilOffsetMinutes.HasValue ? schedTask.RunUntilOffsetMinutes.ToString() : "NULL") + "," + g.crlf +
+                           schedTask.IsLongRunning.ToInt32() + "," + g.crlf +
+                           schedTask.TrackHistory.ToInt32() + "," + g.crlf +
+                           schedTask.SuppressNotificationsOnSuccess.ToInt32() + "," + g.crlf +
+                           schedTask.ActiveScheduleId.ToInt32() + "," + g.crlf +
+                           "'" + g.SystemInfo.DomainAndUser + "'," + g.crlf +
+                           "'" + DateTime.Now + "'); " + " SELECT SCOPE_IDENTITY()";
 
 
           using (var cmd = new SqlCommand(sqlTask, _conn, trans))
@@ -257,13 +257,13 @@ namespace Org.TSK.Business
           int scheduleID = 0;
 
           string sqlSchedule = " INSERT INTO [TaskScheduling].[dbo].[TaskSchedules] " + g.crlf +
-                                    " ([ScheduledTaskID], [ScheduleName], [IsActive], " + g.crlf +
-                                     " [CreatedBy], [CreatedDate])" + g.crlf +
-                                  "VALUES (" + taskID + ", " +
-                                  "'" + schedule.ScheduleName + "', " +
-                                        schedule.IsActive.ToInt32() + ", " + g.crlf +
-                                  "'" + schedule.CreatedBy + "', " +
-                                  "'" + schedule.CreatedDate + "'); " + " SELECT SCOPE_IDENTITY()";
+                               " ([ScheduledTaskID], [ScheduleName], [IsActive], " + g.crlf +
+                               " [CreatedBy], [CreatedDate])" + g.crlf +
+                               "VALUES (" + taskID + ", " +
+                               "'" + schedule.ScheduleName + "', " +
+                               schedule.IsActive.ToInt32() + ", " + g.crlf +
+                               "'" + schedule.CreatedBy + "', " +
+                               "'" + schedule.CreatedDate + "'); " + " SELECT SCOPE_IDENTITY()";
 
           using (var cmd = new SqlCommand(sqlSchedule, _conn, trans))
           {
@@ -355,10 +355,10 @@ namespace Org.TSK.Business
         var taskParmSet = new ParmSet();
 
         string sql = "SELECT ParameterID, ScheduledTaskID, ParameterSetName, ParameterName, ParameterValue, DataType, CreatedBy, CreatedDate " + g.crlf +
-                      "FROM dbo.ScheduledTaskParameters " + g.crlf +
-                      "WHERE ScheduledTaskID = " + scheduledTaskId + " " + g.crlf +
-                      "   OR ParameterID < 20000 " + g.crlf +
-                      "ORDER BY ParameterID ";
+                     "FROM dbo.ScheduledTaskParameters " + g.crlf +
+                     "WHERE ScheduledTaskID = " + scheduledTaskId + " " + g.crlf +
+                     "   OR ParameterID < 20000 " + g.crlf +
+                     "ORDER BY ParameterID ";
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
         {
@@ -425,8 +425,8 @@ namespace Org.TSK.Business
                 if (parm.ParameterValue.ToString().Trim().StartsWith("ParmSet="))
                 {
                   string pvsql = "SELECT ParameterID, ScheduledTaskID, ParameterSetName, ParameterName, ParameterValue, DataType, CreatedBy, CreatedDate " + g.crlf +
-                                  "FROM dbo.ScheduledTaskParameters " + g.crlf +
-                                  "WHERE ParameterSetName = " + "'" + setName + "'";
+                                 "FROM dbo.ScheduledTaskParameters " + g.crlf +
+                                 "WHERE ParameterSetName = " + "'" + setName + "'";
 
                   var parmSet = new ParmSet();
                   using (SqlCommand pvcmd = new SqlCommand(pvsql, _conn))
@@ -551,9 +551,9 @@ namespace Org.TSK.Business
 
                                     default:
                                       throw new Exception("Invalid value specified '" + item.ParameterValue + "' for the schedule task parameter named '" +
-                                                            item.ParameterName + "' in parameter set named '" + item.ParameterSetName + "' while attempting to " +
-                                                            "build scheduled task parameters for the scheduled task with ScheduleTaskId = '" +
-                                                            scheduledTaskId.ToString() + ".");
+                                                          item.ParameterName + "' in parameter set named '" + item.ParameterSetName + "' while attempting to " +
+                                                          "build scheduled task parameters for the scheduled task with ScheduleTaskId = '" +
+                                                          scheduledTaskId.ToString() + ".");
                                   }
                                 }
                               }
@@ -636,7 +636,7 @@ namespace Org.TSK.Business
           if (!scheduleOnceNow && (!task.IsActive || !task.ActiveScheduleId.HasValue))
             continue;
 
-          string sql = "SELECT * " + g.crlf + 
+          string sql = "SELECT * " + g.crlf +
                        "FROM [TaskScheduling].[dbo].[TaskSchedules] " + g.crlf +
                        "WHERE TaskScheduleID = " + task.ActiveScheduleId.Value.ToString();
 
@@ -666,7 +666,7 @@ namespace Org.TSK.Business
             reader.Close();
 
             string elementSql = "SELECT * from [TaskScheduling].[dbo].[TaskScheduleElements] " + g.crlf +
-                          "Where TaskScheduleID = " + taskSchedID;
+                                "Where TaskScheduleID = " + taskSchedID;
 
             using (SqlCommand elementCmd = new SqlCommand(elementSql, _conn))
             {
@@ -720,7 +720,7 @@ namespace Org.TSK.Business
                 entity.ModifiedBy = g.SystemInfo.DomainAndUser;
                 entity.ModifiedDate = DateTime.Now;
                 entity.TaskSchedule = task.TaskSchedule;
-                entity.ScheduledTask = task;    
+                entity.ScheduledTask = task;
                 task.TaskSchedule.TaskScheduleElements.Add(entity);
               }
               elementReader.Close();
@@ -798,32 +798,32 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql =
-            "SELECT t.ScheduledTaskID AS ScheduledTaskId " + g.crlf +
-            "		,t.TaskName AS TaskName " + g.crlf +
-            "    , t.ProcessorTypeID AS ProcessorTypeId " + g.crlf +
-            "		,t.ProcessorName AS ProcessorName " + g.crlf +
-            "		,t.ProcessorVersion AS ProcessorVersion " + g.crlf +
-            "		,t.AssemblyLocation AS AssemblyLocation " + g.crlf +
-            "		,t.StoredProcedureName AS StoredProcedureName " + g.crlf +
-            "		,t.AssemblyName AS AssemblyName " + g.crlf +
-            "		,t.CatalogName AS CatalogName " + g.crlf +
-            "		,t.CatalogEntry AS CatalogEntry " + g.crlf +
-            "		,t.ObjectTypeName AS ObjectTypeName " + g.crlf +
-            "		,t.IsActive AS IsActive " + g.crlf +
-            "		,t.RunUntilTask AS RunUntilTask " + g.crlf +
-            "		,t.RunUntilPeriodContextID AS RunUntilPeriodContextID " + g.crlf +
-            "		,t.RunUntilOverride AS RunUntilOverride " + g.crlf +
-            "		,t.RunUntilOffsetMinutes AS RunUntilOffsetMinutes " + g.crlf +
-            "		,t.IsLongRunning AS IsLongRunning " + g.crlf +
-            "		,t.TrackHistory AS TrackHistory " + g.crlf +
-            "		,t.SuppressNotificationsOnSuccess AS SuppressNotificationsOnSuccess " + g.crlf +
-            "		,t.ActiveScheduleID AS ActiveScheduleId " + g.crlf +
-            "		,t.CreatedBy AS CreatedBy " + g.crlf +
-            "		,t.CreatedDate AS CreatedDate " + g.crlf +
-            "		,t.ModifiedBy AS ModifiedBy " + g.crlf +
-            "		,t.ModifiedDate AS ModifiedDate " + g.crlf +
-            "FROM dbo.ScheduledTasks t " +
-            "WHERE t.TaskName = '" + taskName + "' ";
+          "SELECT t.ScheduledTaskID AS ScheduledTaskId " + g.crlf +
+          "		,t.TaskName AS TaskName " + g.crlf +
+          "    , t.ProcessorTypeID AS ProcessorTypeId " + g.crlf +
+          "		,t.ProcessorName AS ProcessorName " + g.crlf +
+          "		,t.ProcessorVersion AS ProcessorVersion " + g.crlf +
+          "		,t.AssemblyLocation AS AssemblyLocation " + g.crlf +
+          "		,t.StoredProcedureName AS StoredProcedureName " + g.crlf +
+          "		,t.AssemblyName AS AssemblyName " + g.crlf +
+          "		,t.CatalogName AS CatalogName " + g.crlf +
+          "		,t.CatalogEntry AS CatalogEntry " + g.crlf +
+          "		,t.ObjectTypeName AS ObjectTypeName " + g.crlf +
+          "		,t.IsActive AS IsActive " + g.crlf +
+          "		,t.RunUntilTask AS RunUntilTask " + g.crlf +
+          "		,t.RunUntilPeriodContextID AS RunUntilPeriodContextID " + g.crlf +
+          "		,t.RunUntilOverride AS RunUntilOverride " + g.crlf +
+          "		,t.RunUntilOffsetMinutes AS RunUntilOffsetMinutes " + g.crlf +
+          "		,t.IsLongRunning AS IsLongRunning " + g.crlf +
+          "		,t.TrackHistory AS TrackHistory " + g.crlf +
+          "		,t.SuppressNotificationsOnSuccess AS SuppressNotificationsOnSuccess " + g.crlf +
+          "		,t.ActiveScheduleID AS ActiveScheduleId " + g.crlf +
+          "		,t.CreatedBy AS CreatedBy " + g.crlf +
+          "		,t.CreatedDate AS CreatedDate " + g.crlf +
+          "		,t.ModifiedBy AS ModifiedBy " + g.crlf +
+          "		,t.ModifiedDate AS ModifiedDate " + g.crlf +
+          "FROM dbo.ScheduledTasks t " +
+          "WHERE t.TaskName = '" + taskName + "' ";
 
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
@@ -984,7 +984,7 @@ namespace Org.TSK.Business
       {
         EnsureConnection();
 
-        bool inProd = _connectionString.Contains("OKC1EDW0001"); 
+        bool inProd = _connectionString.Contains("OKC1EDW0001");
 
         using (SqlCommand cmd = new SqlCommand("dbo.usp_GetScheduledTasks", _conn))
         {
@@ -1170,7 +1170,7 @@ namespace Org.TSK.Business
 
         string sql = "UPDATE TaskScheduling.dbo.ScheduledTasks " + g.crlf +
                      "  SET TaskGroupID = " + (taskGroupId.HasValue ? taskGroupId.ToString() : "NULL") + " " + g.crlf +
-                     "WHERE ScheduledTaskID = " + scheduledTaskId.ToString() + " "; 
+                     "WHERE ScheduledTaskID = " + scheduledTaskId.ToString() + " ";
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -1195,7 +1195,7 @@ namespace Org.TSK.Business
         string sql = "SELECT g.TaskGroupID, " + g.crlf +
                      "  g.TaskGroupName " + g.crlf +
                      "FROM ScheduledTaskGroup g " + g.crlf +
-                     "INNER JOIN ScheduledTasks t ON t.TaskGroupID = g.TaskGroupID " + g.crlf + 
+                     "INNER JOIN ScheduledTasks t ON t.TaskGroupID = g.TaskGroupID " + g.crlf +
                      "WHERE t.ScheduledTaskID = " + scheduledTaskId.ToString() + " ";
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
@@ -1230,7 +1230,7 @@ namespace Org.TSK.Business
 
         string sql = "SELECT g.TaskGroupID, " + g.crlf +
                      "  g.TaskGroupName " + g.crlf +
-                     "FROM ScheduledTaskGroup g "; 
+                     "FROM ScheduledTaskGroup g ";
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
         {
@@ -1246,7 +1246,7 @@ namespace Org.TSK.Business
             if (!taskGroupList.ContainsKey(taskGroup.TaskGroupId))
               taskGroupList.Add(taskGroup.TaskGroupId, taskGroup);
           }
-          
+
           reader.Close();
         }
 
@@ -1265,7 +1265,7 @@ namespace Org.TSK.Business
       try
       {
         EnsureConnection();
-        
+
         string sql = "SELECT t.TaskServiceID AS TaskServiceID, " + g.crlf +
                      "  t.HostID AS HostID, " + g.crlf +
                      "  h.HostName AS HostName, " + g.crlf +
@@ -1319,7 +1319,7 @@ namespace Org.TSK.Business
       try
       {
         var taskAssignmentSet = new MOD.TaskAssignmentSet();
-        
+
         EnsureConnection();
 
         string whereClause = String.Empty;
@@ -1327,21 +1327,21 @@ namespace Org.TSK.Business
           whereClause = "WHERE s.TaskServiceName = '" + taskServiceName + "' " + g.crlf;
 
         string sql = "SELECT a.TaskServiceAssignmentID AS TaskServiceAssignmentID, " + g.crlf +
-                      "  a.TaskServiceID AS TaskServiceID, " + g.crlf +
-                      "  s.TaskServiceName AS TaskServiceName, " + g.crlf +
-                      "  s.HostID AS HostID, " + g.crlf +
-                      "  h.HostName AS HostName, " + g.crlf +
-                      "  a.ScheduledTaskID AS ScheduledTaskID, " + g.crlf +
-                      "  st.TaskName AS TaskName, " + g.crlf +
-                      "  a.IsActive AS IsActive " + g.crlf +
-                      "FROM TaskScheduling.dbo.TaskServiceAssignments a " + g.crlf +
-                      "INNER JOIN TaskScheduling.dbo.TaskServices s " + g.crlf +
-                      "   ON s.TaskServiceID = a.TaskServiceID " + g.crlf +
-                      "INNER JOIN TaskScheduling.dbo.ServiceHosts h " + g.crlf +
-                      "   ON h.HostID = s.HostID " + g.crlf +
-                      "INNER JOIN TaskScheduling.dbo.ScheduledTasks st " + g.crlf +
-                      "   ON st.ScheduledTaskID = a.ScheduledTaskID " + g.crlf +
-                      whereClause;
+                     "  a.TaskServiceID AS TaskServiceID, " + g.crlf +
+                     "  s.TaskServiceName AS TaskServiceName, " + g.crlf +
+                     "  s.HostID AS HostID, " + g.crlf +
+                     "  h.HostName AS HostName, " + g.crlf +
+                     "  a.ScheduledTaskID AS ScheduledTaskID, " + g.crlf +
+                     "  st.TaskName AS TaskName, " + g.crlf +
+                     "  a.IsActive AS IsActive " + g.crlf +
+                     "FROM TaskScheduling.dbo.TaskServiceAssignments a " + g.crlf +
+                     "INNER JOIN TaskScheduling.dbo.TaskServices s " + g.crlf +
+                     "   ON s.TaskServiceID = a.TaskServiceID " + g.crlf +
+                     "INNER JOIN TaskScheduling.dbo.ServiceHosts h " + g.crlf +
+                     "   ON h.HostID = s.HostID " + g.crlf +
+                     "INNER JOIN TaskScheduling.dbo.ScheduledTasks st " + g.crlf +
+                     "   ON st.ScheduledTaskID = a.ScheduledTaskID " + g.crlf +
+                     whereClause;
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
         {
@@ -1378,7 +1378,7 @@ namespace Org.TSK.Business
       try
       {
         var taskAssignmentSet = new MOD.TaskAssignmentSet();
-        
+
         EnsureConnection();
 
         string whereClause = String.Empty;
@@ -1386,21 +1386,21 @@ namespace Org.TSK.Business
           whereClause = "WHERE a.TaskServiceID = " + taskServiceId.Value.ToString() + " " + g.crlf;
 
         string sql = "SELECT a.TaskServiceAssignmentID AS TaskServiceAssignmentID, " + g.crlf +
-                      "  a.TaskServiceID AS TaskServiceID, " + g.crlf +
-                      "  s.TaskServiceName AS TaskServiceName, " + g.crlf +
-                      "  s.HostID AS HostID, " + g.crlf +
-                      "  h.HostName AS HostName, " + g.crlf +
-                      "  a.ScheduledTaskID AS ScheduledTaskID, " + g.crlf +
-                      "  st.TaskName AS TaskName, " + g.crlf +
-                      "  a.IsActive AS IsActive " + g.crlf +
-                      "FROM TaskScheduling.dbo.TaskServiceAssignments a " + g.crlf +
-                      "INNER JOIN TaskScheduling.dbo.TaskServices s " + g.crlf +
-                      "   ON s.TaskServiceID = a.TaskServiceID " + g.crlf +
-                      "INNER JOIN TaskScheduling.dbo.ServiceHosts h " + g.crlf +
-                      "   ON h.HostID = s.HostID " + g.crlf +
-                      "INNER JOIN TaskScheduling.dbo.ScheduledTasks st " + g.crlf +
-                      "   ON st.ScheduledTaskID = a.ScheduledTaskID " + g.crlf +
-                      whereClause;
+                     "  a.TaskServiceID AS TaskServiceID, " + g.crlf +
+                     "  s.TaskServiceName AS TaskServiceName, " + g.crlf +
+                     "  s.HostID AS HostID, " + g.crlf +
+                     "  h.HostName AS HostName, " + g.crlf +
+                     "  a.ScheduledTaskID AS ScheduledTaskID, " + g.crlf +
+                     "  st.TaskName AS TaskName, " + g.crlf +
+                     "  a.IsActive AS IsActive " + g.crlf +
+                     "FROM TaskScheduling.dbo.TaskServiceAssignments a " + g.crlf +
+                     "INNER JOIN TaskScheduling.dbo.TaskServices s " + g.crlf +
+                     "   ON s.TaskServiceID = a.TaskServiceID " + g.crlf +
+                     "INNER JOIN TaskScheduling.dbo.ServiceHosts h " + g.crlf +
+                     "   ON h.HostID = s.HostID " + g.crlf +
+                     "INNER JOIN TaskScheduling.dbo.ScheduledTasks st " + g.crlf +
+                     "   ON st.ScheduledTaskID = a.ScheduledTaskID " + g.crlf +
+                     whereClause;
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
         {
@@ -1441,7 +1441,7 @@ namespace Org.TSK.Business
       {
         EnsureConnection();
 
-        var taskAssignmentSet = GetTaskAssignmentsForTaskId(taskServiceId); 
+        var taskAssignmentSet = GetTaskAssignmentsForTaskId(taskServiceId);
 
         trans = _conn.BeginTransaction();
         transBegun = true;
@@ -1500,7 +1500,7 @@ namespace Org.TSK.Business
         if (transBegun)
           trans.Rollback();
 
-        throw new Exception("An exception occurred while attempting to update the task assignments for TaskService " + taskServiceId.ToString() + ".", ex); 
+        throw new Exception("An exception occurred while attempting to update the task assignments for TaskService " + taskServiceId.ToString() + ".", ex);
       }
     }
 
@@ -1560,9 +1560,9 @@ namespace Org.TSK.Business
                      "  s.WCFServicePort AS WCFServicePort, " + g.crlf +
                      "  s.WCFServiceName AS WCFServiceName " + g.crlf +
                      "FROM TaskScheduling.dbo.TaskServices s " + g.crlf +
-                     "INNER JOIN TaskScheduling.dbo.ServiceHosts h " + g.crlf + 
-                     "   ON s.HostID = h.HostID " + g.crlf + 
-                     "WHERE s.HostID = " + hostID.ToString() + " " + g.crlf + 
+                     "INNER JOIN TaskScheduling.dbo.ServiceHosts h " + g.crlf +
+                     "   ON s.HostID = h.HostID " + g.crlf +
+                     "WHERE s.HostID = " + hostID.ToString() + " " + g.crlf +
                      "ORDER BY TaskServiceName ";
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
@@ -1594,7 +1594,7 @@ namespace Org.TSK.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to build a list of services for host ID " + hostID.ToString() + ".", ex); 
+        throw new Exception("An exception occurred while attempting to build a list of services for host ID " + hostID.ToString() + ".", ex);
       }
     }
 
@@ -1636,19 +1636,19 @@ namespace Org.TSK.Business
         {
           sql = "SELECT s.TaskServiceID AS TaskServiceID, " + g.crlf +
                 "  s.HostID AS HostID, " + g.crlf +
-                "  s.ParentServiceID AS ParentServiceID, " + g.crlf + 
-                "  h.HostName AS HostName, " + g.crlf + 
+                "  s.ParentServiceID AS ParentServiceID, " + g.crlf +
+                "  h.HostName AS HostName, " + g.crlf +
                 "  s.TaskServiceName AS TaskServiceName, " + g.crlf +
                 "  s.ServiceTypeID AS ServiceTypeID, " + g.crlf +
-                "  t.ServiceType AS ServiceType, " + g.crlf + 
+                "  t.ServiceType AS ServiceType, " + g.crlf +
                 "  s.WCFServiceBinding AS WCFServiceBinding, " + g.crlf +
                 "  s.WCFServicePort AS WCFServicePort, " + g.crlf +
                 "  s.WCFServiceName AS WCFServiceName " + g.crlf +
                 "FROM TaskScheduling.dbo.TaskServices s" + g.crlf +
-                "INNER JOIN TaskScheduling.dbo.ServiceHosts h " + g.crlf + 
-                "   ON h.HostID = s.HostID " + g.crlf + 
-                "INNER JOIN TaskScheduling.dbo.ServiceTypes t" + g.crlf + 
-                "   ON t.ServiceTypeID = s.ServiceTypeID " + g.crlf + 
+                "INNER JOIN TaskScheduling.dbo.ServiceHosts h " + g.crlf +
+                "   ON h.HostID = s.HostID " + g.crlf +
+                "INNER JOIN TaskScheduling.dbo.ServiceTypes t" + g.crlf +
+                "   ON t.ServiceTypeID = s.ServiceTypeID " + g.crlf +
                 "WHERE s.HostID = " + host.HostID.ToString() + " ";
 
           using (SqlCommand cmd = new SqlCommand(sql, _conn))
@@ -1729,7 +1729,7 @@ namespace Org.TSK.Business
                      "VALUES " + g.crlf +
                      "( " + g.crlf +
                      "  '" + host.HostName.ToUpper().Trim() + "' " + g.crlf +
-                     "); " + g.crlf + 
+                     "); " + g.crlf +
                      "SELECT SCOPE_IDENTITY(); ";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -1752,23 +1752,23 @@ namespace Org.TSK.Business
         string sql = "INSERT INTO TaskScheduling.dbo.TaskServices " + g.crlf +
                      "( " + g.crlf +
                      "  HostID, " + g.crlf +
-                     "  ParentServiceID, " + g.crlf + 
-                     "  TaskServiceName, " + g.crlf + 
-                     "  ServiceTypeID, " + g.crlf + 
-                     "  WCFServiceBinding, " + g.crlf + 
-                     "  WCFServicePort, " + g.crlf + 
-                     "  WCFServiceName " + g.crlf + 
+                     "  ParentServiceID, " + g.crlf +
+                     "  TaskServiceName, " + g.crlf +
+                     "  ServiceTypeID, " + g.crlf +
+                     "  WCFServiceBinding, " + g.crlf +
+                     "  WCFServicePort, " + g.crlf +
+                     "  WCFServiceName " + g.crlf +
                      ") " + g.crlf +
                      "VALUES " + g.crlf +
                      "( " + g.crlf +
-                     "  " + serviceSpec.ServiceHostID.ToString() + ", " + g.crlf + 
-                     "  " + (serviceSpec.ParentServiceID.HasValue ? serviceSpec.ParentServiceID.ToString() : "NULL") + ", " + g.crlf + 
-                     "  '" + serviceSpec.Name + "', " + g.crlf + 
-                     "  " + Convert.ToInt32(serviceSpec.ServiceType).ToString() + ", " + g.crlf + 
-                     "  " + (serviceSpec.WebServiceBinding == WebServiceBinding.NotSet ? "NULL" : "'" + serviceSpec.WebServiceBinding.ToString() + "'") + ", " + g.crlf + 
-                     "  " + (serviceSpec.WsPort.IsBlank() ? "NULL" : serviceSpec.WsPort.Trim()) + ", " + g.crlf + 
-                     "  " + (serviceSpec.WsServiceName.IsBlank() ? "NULL" : "'" + serviceSpec.WsServiceName.Trim() + "'") + " " + g.crlf + 
-                     "); " + g.crlf + 
+                     "  " + serviceSpec.ServiceHostID.ToString() + ", " + g.crlf +
+                     "  " + (serviceSpec.ParentServiceID.HasValue ? serviceSpec.ParentServiceID.ToString() : "NULL") + ", " + g.crlf +
+                     "  '" + serviceSpec.Name + "', " + g.crlf +
+                     "  " + Convert.ToInt32(serviceSpec.ServiceType).ToString() + ", " + g.crlf +
+                     "  " + (serviceSpec.WebServiceBinding == WebServiceBinding.NotSet ? "NULL" : "'" + serviceSpec.WebServiceBinding.ToString() + "'") + ", " + g.crlf +
+                     "  " + (serviceSpec.WsPort.IsBlank() ? "NULL" : serviceSpec.WsPort.Trim()) + ", " + g.crlf +
+                     "  " + (serviceSpec.WsServiceName.IsBlank() ? "NULL" : "'" + serviceSpec.WsServiceName.Trim() + "'") + " " + g.crlf +
+                     "); " + g.crlf +
                      "SELECT SCOPE_IDENTITY(); ";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -1789,14 +1789,14 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = "UPDATE TaskScheduling.dbo.TaskServices " + g.crlf +
-                     "  SET HostID = " + serviceSpec.ServiceHostID.ToString() + ", " + g.crlf + 
-                     "      ParentServiceID = " + (serviceSpec.ParentServiceID.HasValue ? serviceSpec.ParentServiceID.Value.ToString() : "NULL") + ", " + g.crlf + 
-                     "      TaskServiceName = '" + serviceSpec.Name.Trim() + "', " + g.crlf + 
-                     "      ServiceTypeID = " + Convert.ToInt32(serviceSpec.ServiceType).ToString() + ", " + g.crlf + 
-                     "      WCFServiceBinding = " + (serviceSpec.WebServiceBinding == WebServiceBinding.NotSet ? 
-                                                     "NULL" : "'" + serviceSpec.WebServiceBinding.ToString().Trim() + "'") + ", " + g.crlf + 
-                     "      WCFServicePort = " + (serviceSpec.WsPort.IsBlank() ? "NULL" : serviceSpec.WsPort.Trim()) + ", " + g.crlf + 
-                     "      WCFServiceName = " + (serviceSpec.WsServiceName.IsBlank() ? "NULL" : "'" + serviceSpec.WsServiceName.Trim() + "'") + " " + g.crlf + 
+                     "  SET HostID = " + serviceSpec.ServiceHostID.ToString() + ", " + g.crlf +
+                     "      ParentServiceID = " + (serviceSpec.ParentServiceID.HasValue ? serviceSpec.ParentServiceID.Value.ToString() : "NULL") + ", " + g.crlf +
+                     "      TaskServiceName = '" + serviceSpec.Name.Trim() + "', " + g.crlf +
+                     "      ServiceTypeID = " + Convert.ToInt32(serviceSpec.ServiceType).ToString() + ", " + g.crlf +
+                     "      WCFServiceBinding = " + (serviceSpec.WebServiceBinding == WebServiceBinding.NotSet ?
+                         "NULL" : "'" + serviceSpec.WebServiceBinding.ToString().Trim() + "'") + ", " + g.crlf +
+                     "      WCFServicePort = " + (serviceSpec.WsPort.IsBlank() ? "NULL" : serviceSpec.WsPort.Trim()) + ", " + g.crlf +
+                     "      WCFServiceName = " + (serviceSpec.WsServiceName.IsBlank() ? "NULL" : "'" + serviceSpec.WsServiceName.Trim() + "'") + " " + g.crlf +
                      "WHERE TaskServiceID = " + serviceSpec.TaskServiceID.ToString() + " ";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -1818,20 +1818,20 @@ namespace Org.TSK.Business
 
         string sql = "INSERT INTO TaskScheduling.dbo.ServiceTypes " + g.crlf +
                      "( " + g.crlf +
-                     "  ServiceTypeID, " + g.crlf + 
+                     "  ServiceTypeID, " + g.crlf +
                      "  ServiceType " + g.crlf +
                      ") " + g.crlf +
                      "VALUES " + g.crlf +
                      "( " + g.crlf +
-                     "  1, " + g.crlf + 
+                     "  1, " + g.crlf +
                      "  'WindowsService' " + g.crlf +
                      "), " + g.crlf +
                      "( " + g.crlf +
-                     "  2, " + g.crlf + 
+                     "  2, " + g.crlf +
                      "  'WCFWebService' " + g.crlf +
                      "), " + g.crlf +
                      "( " + g.crlf +
-                     "  3, " + g.crlf + 
+                     "  3, " + g.crlf +
                      "  'WebSite' " + g.crlf +
                      ") ";
 
@@ -1928,13 +1928,13 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = "SELECT [TaskScheduleID] " +
-                           ",[ScheduledTaskID] " +
-                           ",[ScheduleName] " +
-                           ",[IsActive] " +
-                           ",[CreatedBy] " +
-                           ",[CreatedDate] " +
-                           ",[ModifiedBy] " +
-                           ",[ModifiedDate] " +
+                     ",[ScheduledTaskID] " +
+                     ",[ScheduleName] " +
+                     ",[IsActive] " +
+                     ",[CreatedBy] " +
+                     ",[CreatedDate] " +
+                     ",[ModifiedBy] " +
+                     ",[ModifiedDate] " +
                      " FROM [TaskScheduling].[dbo].[TaskSchedules]" +
                      whereClause;
 
@@ -1982,46 +1982,46 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = " SELECT [TaskScheduleElementID] " + g.crlf +
-                           " ,[TaskScheduleID] " + g.crlf +
-                           " ,[IsActive] " + g.crlf +
-                           " ,[TaskScheduleExecutionTypeID] " + g.crlf +
-                           " ,[FrequencySeconds] " + g.crlf +
-                           " ,[IsClockAligned] " + g.crlf +
-                           " ,[ScheduleElementPriority] " + g.crlf +
-                           " ,[StartDate] " + g.crlf +
-                           " ,[StartTime] " + g.crlf +
-                           " ,[EndDate] " + g.crlf +
-                           " ,[EndTime] " + g.crlf +
-                           " ,[IntervalTypeID] " + g.crlf +
-                           " ,[OnSunday] " + g.crlf +
-                           " ,[OnMonday] " + g.crlf +
-                           " ,[OnTuesday] " + g.crlf +
-                           " ,[OnWednesday] " + g.crlf +
-                           " ,[OnThursday] " + g.crlf +
-                           " ,[OnFriday] " + g.crlf +
-                           " ,[OnSaturday] " + g.crlf +
-                           " ,[OnWorkDays] " + g.crlf +
-                           " ,[OnEvenDays] " + g.crlf +
-                           " ,[OnOddDays] " + g.crlf +
-                           " ,[SpecificDays] " + g.crlf +
-                           " ,[ExceptSpecificDays] " + g.crlf +
-                           " ,[First] " + g.crlf +
-                           " ,[Second] " + g.crlf +
-                           " ,[Third] " + g.crlf +
-                           " ,[Fourth] " + g.crlf +
-                           " ,[Fifth] " + g.crlf +
-                           " ,[Last] " + g.crlf +
-                           " ,[Every] " + g.crlf +
-                           " ,[HolidayActionID] " + g.crlf +
-                           " ,[PeriodContextID] " + g.crlf +
-                           " ,[ExecutionLimit] " + g.crlf +
-                           " ,[MaxRunTimeSeconds] " + g.crlf +
-                           " ,[CreatedBy] " + g.crlf +
-                           " ,[CreatedDate] " + g.crlf +
-                           " ,[ModifiedBy] " + g.crlf +
-                           " ,[ModifiedDate] " + g.crlf +
-                       " FROM [TaskScheduling].[dbo].[TaskScheduleElements] " + g.crlf +
-                       " WHERE [TaskScheduleID] = " + taskScheduleId;
+                     " ,[TaskScheduleID] " + g.crlf +
+                     " ,[IsActive] " + g.crlf +
+                     " ,[TaskScheduleExecutionTypeID] " + g.crlf +
+                     " ,[FrequencySeconds] " + g.crlf +
+                     " ,[IsClockAligned] " + g.crlf +
+                     " ,[ScheduleElementPriority] " + g.crlf +
+                     " ,[StartDate] " + g.crlf +
+                     " ,[StartTime] " + g.crlf +
+                     " ,[EndDate] " + g.crlf +
+                     " ,[EndTime] " + g.crlf +
+                     " ,[IntervalTypeID] " + g.crlf +
+                     " ,[OnSunday] " + g.crlf +
+                     " ,[OnMonday] " + g.crlf +
+                     " ,[OnTuesday] " + g.crlf +
+                     " ,[OnWednesday] " + g.crlf +
+                     " ,[OnThursday] " + g.crlf +
+                     " ,[OnFriday] " + g.crlf +
+                     " ,[OnSaturday] " + g.crlf +
+                     " ,[OnWorkDays] " + g.crlf +
+                     " ,[OnEvenDays] " + g.crlf +
+                     " ,[OnOddDays] " + g.crlf +
+                     " ,[SpecificDays] " + g.crlf +
+                     " ,[ExceptSpecificDays] " + g.crlf +
+                     " ,[First] " + g.crlf +
+                     " ,[Second] " + g.crlf +
+                     " ,[Third] " + g.crlf +
+                     " ,[Fourth] " + g.crlf +
+                     " ,[Fifth] " + g.crlf +
+                     " ,[Last] " + g.crlf +
+                     " ,[Every] " + g.crlf +
+                     " ,[HolidayActionID] " + g.crlf +
+                     " ,[PeriodContextID] " + g.crlf +
+                     " ,[ExecutionLimit] " + g.crlf +
+                     " ,[MaxRunTimeSeconds] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedDate] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedDate] " + g.crlf +
+                     " FROM [TaskScheduling].[dbo].[TaskScheduleElements] " + g.crlf +
+                     " WHERE [TaskScheduleID] = " + taskScheduleId;
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -2104,16 +2104,16 @@ namespace Org.TSK.Business
           whereClause = " WHERE [ParameterID] BETWEEN 10001 AND 19999";
 
         string sql = "SELECT [ParameterID] " + g.crlf +
-                          " ,[ScheduledTaskID] " + g.crlf +
-                          " ,[ParameterName] " + g.crlf +
-                          " ,[ParameterValue] " + g.crlf +
-                          " ,[DataType] " + g.crlf +
-                          " ,[CreatedBy] " + g.crlf +
-                          " ,[CreatedDate] " + g.crlf +
-                          " ,[ModifiedBy] " + g.crlf +
-                          " ,[ModifiedDate] " + g.crlf +
-                    " FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
-                    whereClause;
+                     " ,[ScheduledTaskID] " + g.crlf +
+                     " ,[ParameterName] " + g.crlf +
+                     " ,[ParameterValue] " + g.crlf +
+                     " ,[DataType] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedDate] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedDate] " + g.crlf +
+                     " FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
+                     whereClause;
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -2150,7 +2150,7 @@ namespace Org.TSK.Business
         throw new Exception("An exception occurred attempting to get TaskParameters from TaskScheduling Database", ex);
       }
     }
-    
+
     public SortedList<string, MOD.TaskParameterSet> GetParameterSets()
     {
       var set = new MOD.TaskParameterSet();
@@ -2162,14 +2162,14 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = "SELECT [ParameterID] " + g.crlf +
-                          " ,[ParameterSetName] " + g.crlf +
-                          " ,[ParameterName] " + g.crlf +
-                          " ,[ParameterValue] " + g.crlf +
-                          " ,[DataType] " + g.crlf +
-                          " ,[CreatedBy] " + g.crlf +
-                          " ,[CreatedDate] " + g.crlf +
-                          " ,[ModifiedBy] " + g.crlf +
-                          " ,[ModifiedDate] " + g.crlf +
+                     " ,[ParameterSetName] " + g.crlf +
+                     " ,[ParameterName] " + g.crlf +
+                     " ,[ParameterValue] " + g.crlf +
+                     " ,[DataType] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedDate] " + g.crlf +
+                     " ,[ModifiedBy] " + g.crlf +
+                     " ,[ModifiedDate] " + g.crlf +
                      " FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
                      " WHERE [ParameterSetName] IS NOT NULL ";
 
@@ -2268,7 +2268,7 @@ namespace Org.TSK.Business
         throw new Exception("An exception occurred attempting to get TaskParameters from TaskScheduling Database", ex);
       }
     }
-    
+
     public ParmSet ResolveParmSets(ParmSet parmSet)
     {
       try
@@ -2363,32 +2363,32 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = " INSERT INTO [TaskScheduling].[dbo].[ScheduledTasks] " + g.crlf +
-                                " ([TaskName], [ProcessorTypeID], [ProcessorName], [ProcessorVersion], [AssemblyLocation], " + g.crlf +
-                                " [AssemblyName], [CatalogName], [CatalogEntry], [ObjectTypeName], " + g.crlf + 
-                                " [StoredProcedureName], [IsActive], [RunUntilTask], [RunUntilPeriodContextID], " + g.crlf +
-                                " [RunUntilOverride], [RunUntilOffsetMinutes], [IsLongRunning], [TrackHistory], [SuppressNotificationsOnSuccess], " + g.crlf +
-                                " [ActiveScheduleId], [CreatedBy], [CreatedDate]) " + g.crlf +
+                     " ([TaskName], [ProcessorTypeID], [ProcessorName], [ProcessorVersion], [AssemblyLocation], " + g.crlf +
+                     " [AssemblyName], [CatalogName], [CatalogEntry], [ObjectTypeName], " + g.crlf +
+                     " [StoredProcedureName], [IsActive], [RunUntilTask], [RunUntilPeriodContextID], " + g.crlf +
+                     " [RunUntilOverride], [RunUntilOffsetMinutes], [IsLongRunning], [TrackHistory], [SuppressNotificationsOnSuccess], " + g.crlf +
+                     " [ActiveScheduleId], [CreatedBy], [CreatedDate]) " + g.crlf +
                      " VALUES ('" + st.TaskName + "'" +
-                           " ," + st.ProcessorTypeId.ToString() +
-                           " ," + (st.ProcessorName.IsNotBlank() ? "'" + st.ProcessorName + "'" : "NULL") +
-                           " ," + (st.ProcessorVersion.IsNotBlank() ? "'" + st.ProcessorVersion + "'" : "NULL") +
-                           " ," + (st.AssemblyLocation.IsNotBlank() ? "'" + st.AssemblyLocation + "'" : "NULL") +
-                           " ," + (st.AssemblyName.IsNotBlank() ? "'" + st.AssemblyName + "'" : "NULL") +
-                           " ," + (st.CatalogName.IsNotBlank() ? "'" + st.CatalogName + "'" : "NULL") +
-                           " ," + (st.CatalogEntry.IsNotBlank() ? "'" + st.CatalogEntry + "'" : "NULL") +
-                           " ," + (st.ObjectTypeName.IsNotBlank() ? "'" + st.ObjectTypeName + "'" : "NULL") +
-                           " ," + (st.StoredProcedureName.IsNotBlank() ? "'" + st.StoredProcedureName + "'" : "NULL") +
-                           " ," + st.IsActive.ToInt32() +
-                           " ," + st.RunUntilTask.ToInt32() +
-                           " ," + (st.RunUntilPeriodContextID.HasValue ? st.RunUntilPeriodContextID.ToString() : "NULL") + g.crlf +
-                           " ," + st.RunUntilOverride.ToInt32() +
-                           " ," + (st.RunUntilOffsetMinutes.HasValue ? st.RunUntilOffsetMinutes.ToString() : "NULL") +
-                           " ," + st.IsLongRunning.ToInt32() +
-                           " ," + st.TrackHistory.ToInt32() +
-                           " ," + st.SuppressNotificationsOnSuccess.ToInt32() +
-                           " ," + (st.ActiveScheduleId.HasValue ? st.ActiveScheduleId.ToString() : "NULL") +
-                           " ,'" + st.CreatedBy + "'" +
-                           " ,'" + st.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss.fff") + "')";
+                     " ," + st.ProcessorTypeId.ToString() +
+                     " ," + (st.ProcessorName.IsNotBlank() ? "'" + st.ProcessorName + "'" : "NULL") +
+                     " ," + (st.ProcessorVersion.IsNotBlank() ? "'" + st.ProcessorVersion + "'" : "NULL") +
+                     " ," + (st.AssemblyLocation.IsNotBlank() ? "'" + st.AssemblyLocation + "'" : "NULL") +
+                     " ," + (st.AssemblyName.IsNotBlank() ? "'" + st.AssemblyName + "'" : "NULL") +
+                     " ," + (st.CatalogName.IsNotBlank() ? "'" + st.CatalogName + "'" : "NULL") +
+                     " ," + (st.CatalogEntry.IsNotBlank() ? "'" + st.CatalogEntry + "'" : "NULL") +
+                     " ," + (st.ObjectTypeName.IsNotBlank() ? "'" + st.ObjectTypeName + "'" : "NULL") +
+                     " ," + (st.StoredProcedureName.IsNotBlank() ? "'" + st.StoredProcedureName + "'" : "NULL") +
+                     " ," + st.IsActive.ToInt32() +
+                     " ," + st.RunUntilTask.ToInt32() +
+                     " ," + (st.RunUntilPeriodContextID.HasValue ? st.RunUntilPeriodContextID.ToString() : "NULL") + g.crlf +
+                     " ," + st.RunUntilOverride.ToInt32() +
+                     " ," + (st.RunUntilOffsetMinutes.HasValue ? st.RunUntilOffsetMinutes.ToString() : "NULL") +
+                     " ," + st.IsLongRunning.ToInt32() +
+                     " ," + st.TrackHistory.ToInt32() +
+                     " ," + st.SuppressNotificationsOnSuccess.ToInt32() +
+                     " ," + (st.ActiveScheduleId.HasValue ? st.ActiveScheduleId.ToString() : "NULL") +
+                     " ,'" + st.CreatedBy + "'" +
+                     " ,'" + st.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss.fff") + "')";
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -2411,13 +2411,13 @@ namespace Org.TSK.Business
           EnsureConnection();
 
         string sql = " INSERT INTO [TaskScheduling].[dbo].[TaskSchedules] " + g.crlf +
-                                " ([ScheduledTaskID], [ScheduleName], [IsActive], " + g.crlf +
-                                 " [CreatedBy], [CreatedDate]) " + g.crlf +
+                     " ([ScheduledTaskID], [ScheduleName], [IsActive], " + g.crlf +
+                     " [CreatedBy], [CreatedDate]) " + g.crlf +
                      " VALUES (" + ts.ScheduledTaskId.ToString() +
-                           " ,'" + ts.ScheduleName + "'" +
-                           " ," + (ts.IsActive ? "1" : "0") +
-                           " ,'" + ts.CreatedBy + "'" +
-                           " ,'" + ts.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'); " +
+                     " ,'" + ts.ScheduleName + "'" +
+                     " ," + (ts.IsActive ? "1" : "0") +
+                     " ,'" + ts.CreatedBy + "'" +
+                     " ,'" + ts.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'); " +
                      " SELECT SCOPE_IDENTITY(); ";
 
         using (var cmd = new SqlCommand(sql, _conn, trans))
@@ -2473,8 +2473,8 @@ namespace Org.TSK.Business
           EnsureConnection();
 
         string sql = " UPDATE [TaskScheduling].[dbo].[ScheduledTasks] " + g.crlf +
-                        " SET [ActiveScheduleID] = " + (activeScheduleID.HasValue ? activeScheduleID.ToString() : "NULL") + g.crlf +
-                        " WHERE [ScheduledTaskID] = " + scheduledTaskID.ToString();
+                     " SET [ActiveScheduleID] = " + (activeScheduleID.HasValue ? activeScheduleID.ToString() : "NULL") + g.crlf +
+                     " WHERE [ScheduledTaskID] = " + scheduledTaskID.ToString();
 
         using (var cmd = new SqlCommand(sql, _conn, trans))
         {
@@ -2500,49 +2500,49 @@ namespace Org.TSK.Business
           EnsureConnection();
 
         string sql = " INSERT INTO [TaskScheduling].[dbo].[TaskScheduleElements] " + g.crlf +
-                                " ([TaskScheduleID], [IsActive], [TaskScheduleExecutionTypeID], [FrequencySeconds], " + g.crlf +
-                                " [IsClockAligned], [ScheduleElementPriority], [StartDate], [StartTime], " + g.crlf +
-                                " [EndDate], [EndTime], [IntervalTypeID], [OnSunday], [OnMonday], [OnTuesday], [OnWednesday], " + g.crlf +
-                                " [OnThursday], [OnFriday], [OnSaturday], [OnWorkDays], [OnEvenDays], [OnOddDays], " + g.crlf +
-                                " [SpecificDays], [ExceptSpecificDays], [First], [Second], [Third], [Fourth], [Fifth], " + g.crlf +
-                                " [Last], [Every], [HolidayActionID], [PeriodContextID], [ExecutionLimit], [MaxRunTimeSeconds], " + g.crlf +
-                                " [CreatedBy], [CreatedDate]) " + g.crlf +
+                     " ([TaskScheduleID], [IsActive], [TaskScheduleExecutionTypeID], [FrequencySeconds], " + g.crlf +
+                     " [IsClockAligned], [ScheduleElementPriority], [StartDate], [StartTime], " + g.crlf +
+                     " [EndDate], [EndTime], [IntervalTypeID], [OnSunday], [OnMonday], [OnTuesday], [OnWednesday], " + g.crlf +
+                     " [OnThursday], [OnFriday], [OnSaturday], [OnWorkDays], [OnEvenDays], [OnOddDays], " + g.crlf +
+                     " [SpecificDays], [ExceptSpecificDays], [First], [Second], [Third], [Fourth], [Fifth], " + g.crlf +
+                     " [Last], [Every], [HolidayActionID], [PeriodContextID], [ExecutionLimit], [MaxRunTimeSeconds], " + g.crlf +
+                     " [CreatedBy], [CreatedDate]) " + g.crlf +
                      " VALUES (" + tse.TaskScheduleId.ToString() + ", " +
-                                   tse.IsActive.ToInt32() + ", " +
-                                   tse.TaskExecutionType.ToInt32() + ", " +
-                                  (tse.FrequencySeconds.HasValue ? tse.FrequencySeconds.ToString() : "NULL") + ", " +
-                                   tse.IsClockAligned.ToInt32() + ", " +
-                                  (tse.ScheduleElementPriority.HasValue ? tse.ScheduleElementPriority.ToString() : "NULL") + ", " +
-                                  (tse.StartDate.HasValue ? "'" + tse.StartDate.ToDateTime().ToString("yyyy-MM-dd") + "'" : "NULL") + ", " +
-                                  (tse.StartTime.HasValue ? "'" + tse.StartTime.ToString() + "'" : "NULL") + ", " +
-                                  (tse.EndDate.HasValue ? "'" + tse.EndDate.ToDateTime().ToString("yyyy-MM-dd") + "'" : "NULL") + ", " +
-                                  (tse.EndTime.HasValue ? "'" + tse.EndTime.ToString() + "'" : "NULL") + ", " +
-                                  (tse.IntervalType == IntervalType.NotSet ? "NULL" : tse.IntervalType.ToInt32().ToString()) + ", " +
-                                   tse.OnSunday.ToInt32() + ", " +
-                                   tse.OnMonday.ToInt32() + ", " +
-                                   tse.OnTuesday.ToInt32() + ", " +
-                                   tse.OnWednesday.ToInt32() + ", " +
-                                   tse.OnThursday.ToInt32() + ", " +
-                                   tse.OnFriday.ToInt32() + ", " +
-                                   tse.OnSaturday.ToInt32() + ", " +
-                                   tse.OnWorkDays.ToInt32() + ", " +
-                                   tse.OnEvenDays.ToInt32() + ", " +
-                                   tse.OnOddDays.ToInt32() + ", " +
-                                  (tse.SpecificDays.IsBlank() ? "NULL" : "'" + tse.SpecificDays + "'") + ", " +
-                                   tse.ExceptSpecificDays.ToInt32() + ", " +
-                                   tse.First.ToInt32() + ", " +
-                                   tse.Second.ToInt32() + ", " +
-                                   tse.Third.ToInt32() + ", " +
-                                   tse.Fourth.ToInt32() + ", " +
-                                   tse.Fifth.ToInt32() + ", " +
-                                   tse.Last.ToInt32() + ", " +
-                                   tse.Every.ToInt32() + ", " +
-                                  (tse.HolidayActions == HolidayActions.NotSet ? "NULL" : tse.HolidayActions.ToInt32().ToString()) + ", " +
-                                  (tse.PeriodContexts == PeriodContexts.NotSet ? "NULL" : tse.PeriodContexts.ToInt32().ToString()) + ", " +
-                                  (tse.ExecutionLimit.HasValue ? tse.ExecutionLimit.ToString() : "NULL") + ", " +
-                                  (tse.MaxRunTimeSeconds.HasValue ? tse.MaxRunTimeSeconds.ToString() : "NULL") + ", " +
-                                  "'" + tse.CreatedBy + "', " +
-                                  "'" + tse.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss.fff") + "')";
+                     tse.IsActive.ToInt32() + ", " +
+                     tse.TaskExecutionType.ToInt32() + ", " +
+                     (tse.FrequencySeconds.HasValue ? tse.FrequencySeconds.ToString() : "NULL") + ", " +
+                     tse.IsClockAligned.ToInt32() + ", " +
+                     (tse.ScheduleElementPriority.HasValue ? tse.ScheduleElementPriority.ToString() : "NULL") + ", " +
+                     (tse.StartDate.HasValue ? "'" + tse.StartDate.ToDateTime().ToString("yyyy-MM-dd") + "'" : "NULL") + ", " +
+                     (tse.StartTime.HasValue ? "'" + tse.StartTime.ToString() + "'" : "NULL") + ", " +
+                     (tse.EndDate.HasValue ? "'" + tse.EndDate.ToDateTime().ToString("yyyy-MM-dd") + "'" : "NULL") + ", " +
+                     (tse.EndTime.HasValue ? "'" + tse.EndTime.ToString() + "'" : "NULL") + ", " +
+                     (tse.IntervalType == IntervalType.NotSet ? "NULL" : tse.IntervalType.ToInt32().ToString()) + ", " +
+                     tse.OnSunday.ToInt32() + ", " +
+                     tse.OnMonday.ToInt32() + ", " +
+                     tse.OnTuesday.ToInt32() + ", " +
+                     tse.OnWednesday.ToInt32() + ", " +
+                     tse.OnThursday.ToInt32() + ", " +
+                     tse.OnFriday.ToInt32() + ", " +
+                     tse.OnSaturday.ToInt32() + ", " +
+                     tse.OnWorkDays.ToInt32() + ", " +
+                     tse.OnEvenDays.ToInt32() + ", " +
+                     tse.OnOddDays.ToInt32() + ", " +
+                     (tse.SpecificDays.IsBlank() ? "NULL" : "'" + tse.SpecificDays + "'") + ", " +
+                     tse.ExceptSpecificDays.ToInt32() + ", " +
+                     tse.First.ToInt32() + ", " +
+                     tse.Second.ToInt32() + ", " +
+                     tse.Third.ToInt32() + ", " +
+                     tse.Fourth.ToInt32() + ", " +
+                     tse.Fifth.ToInt32() + ", " +
+                     tse.Last.ToInt32() + ", " +
+                     tse.Every.ToInt32() + ", " +
+                     (tse.HolidayActions == HolidayActions.NotSet ? "NULL" : tse.HolidayActions.ToInt32().ToString()) + ", " +
+                     (tse.PeriodContexts == PeriodContexts.NotSet ? "NULL" : tse.PeriodContexts.ToInt32().ToString()) + ", " +
+                     (tse.ExecutionLimit.HasValue ? tse.ExecutionLimit.ToString() : "NULL") + ", " +
+                     (tse.MaxRunTimeSeconds.HasValue ? tse.MaxRunTimeSeconds.ToString() : "NULL") + ", " +
+                     "'" + tse.CreatedBy + "', " +
+                     "'" + tse.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss.fff") + "')";
 
         using (var cmd = new SqlCommand(sql, _conn, trans))
         {
@@ -2593,22 +2593,22 @@ namespace Org.TSK.Business
         tp.ParameterID = GetNextParameterID(tp, trans);
 
         string sql = " INSERT INTO [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
-                                 "([ParameterID] " + g.crlf +
-                                " ,[ScheduledTaskID] " + g.crlf +
-                                " ,[ParameterSetName] " + g.crlf +
-                                " ,[ParameterName] " + g.crlf +
-                                " ,[ParameterValue] " + g.crlf +
-                                " ,[DataType] " + g.crlf +
-                                " ,[CreatedBy] " + g.crlf +
-                                " ,[CreatedDate]) " + g.crlf +
+                     "([ParameterID] " + g.crlf +
+                     " ,[ScheduledTaskID] " + g.crlf +
+                     " ,[ParameterSetName] " + g.crlf +
+                     " ,[ParameterName] " + g.crlf +
+                     " ,[ParameterValue] " + g.crlf +
+                     " ,[DataType] " + g.crlf +
+                     " ,[CreatedBy] " + g.crlf +
+                     " ,[CreatedDate]) " + g.crlf +
                      " VALUES (" + tp.ParameterID.ToString() +
-                            " ," + (tp.ScheduledTaskID.HasValue ? tp.ScheduledTaskID.ToString() : "NULL") +
-                            " ," + (tp.ParameterSetName.IsBlank() ? "NULL" : "'" + tp.ParameterSetName + "'") +
-                            " ,'" + tp.ParameterName + "'" +
-                            " ," + (tp.ParameterValue.IsBlank() ? "NULL" : "'" + tp.ParameterValue + "'") +
-                            " ,'" + tp.DataType + "'" +
-                            " ,'" + tp.CreatedBy + "'" +
-                            " ,'" + tp.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss.fff") + "')";
+                     " ," + (tp.ScheduledTaskID.HasValue ? tp.ScheduledTaskID.ToString() : "NULL") +
+                     " ," + (tp.ParameterSetName.IsBlank() ? "NULL" : "'" + tp.ParameterSetName + "'") +
+                     " ,'" + tp.ParameterName + "'" +
+                     " ," + (tp.ParameterValue.IsBlank() ? "NULL" : "'" + tp.ParameterValue + "'") +
+                     " ,'" + tp.DataType + "'" +
+                     " ,'" + tp.CreatedBy + "'" +
+                     " ,'" + tp.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss.fff") + "')";
 
         using (var cmd = new SqlCommand(sql, _conn, trans))
         {
@@ -2709,10 +2709,10 @@ namespace Org.TSK.Business
           whereClause += "< 20001";
 
         string sql = " SELECT [ParameterID] " + g.crlf +
-                           " ,[ScheduledTaskID] " + g.crlf +
-                           " ,[ParameterSetName] " + g.crlf +
-                       " FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
-                       whereClause;
+                     " ,[ScheduledTaskID] " + g.crlf +
+                     " ,[ParameterSetName] " + g.crlf +
+                     " FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
+                     whereClause;
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn, trans))
         {
@@ -2745,8 +2745,8 @@ namespace Org.TSK.Business
         foreach (var parm in relatedParms)
         {
           string sql = " UPDATE [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
-                          " SET [ParameterID] = " + nextParameterID.ToString() + g.crlf +
-                          " WHERE [ParameterID] = " + parm.ParameterID.ToString();
+                       " SET [ParameterID] = " + nextParameterID.ToString() + g.crlf +
+                       " WHERE [ParameterID] = " + parm.ParameterID.ToString();
 
           using (var cmd = new SqlCommand(sql, _conn, trans))
             cmd.ExecuteNonQuery();
@@ -2769,50 +2769,50 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = " UPDATE [TaskScheduling].[dbo].[ScheduledTasks] " + g.crlf +
-                        " SET [TaskName] = '" + st.TaskName + "'" + g.crlf +
-                           " ,[ProcessorTypeID] = " + st.ProcessorTypeId.ToString() + g.crlf +
-                           " ,[ProcessorName] = " + (st.ProcessorName.IsBlank() ? "NULL" : "'" + st.ProcessorName + "'") + g.crlf +
-                           " ,[ProcessorVersion] = " + (st.ProcessorVersion.IsBlank() ? "NULL" : "'" + st.ProcessorVersion + "'") + g.crlf +
-                           " ,[AssemblyLocation] = " + (st.AssemblyLocation.IsBlank() ? "NULL" : "'" + st.AssemblyLocation + "'") + g.crlf +
-                           " ,[AssemblyName] = " + (st.AssemblyName.IsBlank() ? "NULL" : "'" + st.AssemblyName + "'") + g.crlf +
-                           " ,[CatalogName] = " + (st.CatalogName.IsBlank() ? "NULL" : "'" + st.CatalogName + "'") + g.crlf +
-                           " ,[CatalogEntry] = " + (st.CatalogEntry.IsBlank() ? "NULL" : "'" + st.CatalogEntry + "'") + g.crlf +
-                           " ,[ObjectTypeName] = " + (st.ObjectTypeName.IsBlank() ? "NULL" : "'" + st.ObjectTypeName + "'") + g.crlf +
-                           " ,[StoredProcedureName] = " + (st.StoredProcedureName.IsBlank() ? "NULL" : "'" + st.StoredProcedureName + "'") + g.crlf +
-                           " ,[IsActive] = " + st.IsActive.ToInt32() + g.crlf +
-                           " ,[RunUntilTask] = " + st.RunUntilTask.ToInt32() + g.crlf +
-                           " ,[RunUntilPeriodContextID] = " + (st.RunUntilPeriodContextID.HasValue ? st.RunUntilPeriodContextID.ToString() : "NULL") + g.crlf +
-                           " ,[RunUntilOverride] = " + st.RunUntilOverride.ToInt32() + g.crlf +
-                           " ,[RunUntilOffsetMinutes] = " + (st.RunUntilOffsetMinutes.HasValue ? st.RunUntilOffsetMinutes.ToString() : "NULL") + g.crlf +
-                           " ,[IsLongRunning] = " + st.IsLongRunning.ToInt32() + g.crlf +
-                           " ,[TrackHistory] = " + st.TrackHistory.ToInt32() + g.crlf +
-                           " ,[SuppressNotificationsOnSuccess] = " + st.SuppressNotificationsOnSuccess.ToInt32() + g.crlf +
-                           " ,[ActiveScheduleId] = " + (st.ActiveScheduleId.HasValue ? st.ActiveScheduleId.ToString() : "NULL") + g.crlf +
-                           " ,[ModifiedBy] = " + (st.ModifiedBy.IsBlank() ? "NULL" : "'" + st.ModifiedBy + "'") + g.crlf +
-                           " ,[ModifiedDate] = " + (st.ModifiedDate.HasValue ? "'" + st.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
-                        " WHERE [ScheduledTaskID] = " + st.ScheduledTaskId;
+                     " SET [TaskName] = '" + st.TaskName + "'" + g.crlf +
+                     " ,[ProcessorTypeID] = " + st.ProcessorTypeId.ToString() + g.crlf +
+                     " ,[ProcessorName] = " + (st.ProcessorName.IsBlank() ? "NULL" : "'" + st.ProcessorName + "'") + g.crlf +
+                     " ,[ProcessorVersion] = " + (st.ProcessorVersion.IsBlank() ? "NULL" : "'" + st.ProcessorVersion + "'") + g.crlf +
+                     " ,[AssemblyLocation] = " + (st.AssemblyLocation.IsBlank() ? "NULL" : "'" + st.AssemblyLocation + "'") + g.crlf +
+                     " ,[AssemblyName] = " + (st.AssemblyName.IsBlank() ? "NULL" : "'" + st.AssemblyName + "'") + g.crlf +
+                     " ,[CatalogName] = " + (st.CatalogName.IsBlank() ? "NULL" : "'" + st.CatalogName + "'") + g.crlf +
+                     " ,[CatalogEntry] = " + (st.CatalogEntry.IsBlank() ? "NULL" : "'" + st.CatalogEntry + "'") + g.crlf +
+                     " ,[ObjectTypeName] = " + (st.ObjectTypeName.IsBlank() ? "NULL" : "'" + st.ObjectTypeName + "'") + g.crlf +
+                     " ,[StoredProcedureName] = " + (st.StoredProcedureName.IsBlank() ? "NULL" : "'" + st.StoredProcedureName + "'") + g.crlf +
+                     " ,[IsActive] = " + st.IsActive.ToInt32() + g.crlf +
+                     " ,[RunUntilTask] = " + st.RunUntilTask.ToInt32() + g.crlf +
+                     " ,[RunUntilPeriodContextID] = " + (st.RunUntilPeriodContextID.HasValue ? st.RunUntilPeriodContextID.ToString() : "NULL") + g.crlf +
+                     " ,[RunUntilOverride] = " + st.RunUntilOverride.ToInt32() + g.crlf +
+                     " ,[RunUntilOffsetMinutes] = " + (st.RunUntilOffsetMinutes.HasValue ? st.RunUntilOffsetMinutes.ToString() : "NULL") + g.crlf +
+                     " ,[IsLongRunning] = " + st.IsLongRunning.ToInt32() + g.crlf +
+                     " ,[TrackHistory] = " + st.TrackHistory.ToInt32() + g.crlf +
+                     " ,[SuppressNotificationsOnSuccess] = " + st.SuppressNotificationsOnSuccess.ToInt32() + g.crlf +
+                     " ,[ActiveScheduleId] = " + (st.ActiveScheduleId.HasValue ? st.ActiveScheduleId.ToString() : "NULL") + g.crlf +
+                     " ,[ModifiedBy] = " + (st.ModifiedBy.IsBlank() ? "NULL" : "'" + st.ModifiedBy + "'") + g.crlf +
+                     " ,[ModifiedDate] = " + (st.ModifiedDate.HasValue ? "'" + st.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
+                     " WHERE [ScheduledTaskID] = " + st.ScheduledTaskId;
 
         if (_connectionString.Contains("OKC1EDW0001"))
         {
           sql = " UPDATE [TaskScheduling].[dbo].[ScheduledTasks] " + g.crlf +
-                        " SET [TaskName] = '" + st.TaskName + "'" + g.crlf +
-                           " ,[ProcessorTypeID] = " + st.ProcessorTypeId.ToString() + g.crlf +
-                           " ,[ProcessorName] = " + (st.ProcessorName.IsBlank() ? "NULL" : "'" + st.ProcessorName + "'") + g.crlf +
-                           " ,[ProcessorVersion] = " + (st.ProcessorVersion.IsBlank() ? "NULL" : "'" + st.ProcessorVersion + "'") + g.crlf +
-                           " ,[AssemblyLocation] = " + (st.AssemblyLocation.IsBlank() ? "NULL" : "'" + st.AssemblyLocation + "'") + g.crlf +
-                           " ,[StoredProcedureName] = " + (st.StoredProcedureName.IsBlank() ? "NULL" : "'" + st.StoredProcedureName + "'") + g.crlf +
-                           " ,[IsActive] = " + st.IsActive.ToInt32() + g.crlf +
-                           " ,[RunUntilTask] = " + st.RunUntilTask.ToInt32() + g.crlf +
-                           " ,[RunUntilPeriodContextID] = " + (st.RunUntilPeriodContextID.HasValue ? st.RunUntilPeriodContextID.ToString() : "NULL") + g.crlf +
-                           " ,[RunUntilOverride] = " + st.RunUntilOverride.ToInt32() + g.crlf +
-                           " ,[RunUntilOffsetMinutes] = " + (st.RunUntilOffsetMinutes.HasValue ? st.RunUntilOffsetMinutes.ToString() : "NULL") + g.crlf +
-                           " ,[IsLongRunning] = " + st.IsLongRunning.ToInt32() + g.crlf +
-                           " ,[TrackHistory] = " + st.TrackHistory.ToInt32() + g.crlf +
-                           " ,[SuppressNotificationsOnSuccess] = " + st.SuppressNotificationsOnSuccess.ToInt32() + g.crlf +
-                           " ,[ActiveScheduleId] = " + (st.ActiveScheduleId.HasValue ? st.ActiveScheduleId.ToString() : "NULL") + g.crlf +
-                           " ,[ModifiedBy] = " + (st.ModifiedBy.IsBlank() ? "NULL" : "'" + st.ModifiedBy + "'") + g.crlf +
-                           " ,[ModifiedDate] = " + (st.ModifiedDate.HasValue ? "'" + st.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
-                        " WHERE [ScheduledTaskID] = " + st.ScheduledTaskId;
+                " SET [TaskName] = '" + st.TaskName + "'" + g.crlf +
+                " ,[ProcessorTypeID] = " + st.ProcessorTypeId.ToString() + g.crlf +
+                " ,[ProcessorName] = " + (st.ProcessorName.IsBlank() ? "NULL" : "'" + st.ProcessorName + "'") + g.crlf +
+                " ,[ProcessorVersion] = " + (st.ProcessorVersion.IsBlank() ? "NULL" : "'" + st.ProcessorVersion + "'") + g.crlf +
+                " ,[AssemblyLocation] = " + (st.AssemblyLocation.IsBlank() ? "NULL" : "'" + st.AssemblyLocation + "'") + g.crlf +
+                " ,[StoredProcedureName] = " + (st.StoredProcedureName.IsBlank() ? "NULL" : "'" + st.StoredProcedureName + "'") + g.crlf +
+                " ,[IsActive] = " + st.IsActive.ToInt32() + g.crlf +
+                " ,[RunUntilTask] = " + st.RunUntilTask.ToInt32() + g.crlf +
+                " ,[RunUntilPeriodContextID] = " + (st.RunUntilPeriodContextID.HasValue ? st.RunUntilPeriodContextID.ToString() : "NULL") + g.crlf +
+                " ,[RunUntilOverride] = " + st.RunUntilOverride.ToInt32() + g.crlf +
+                " ,[RunUntilOffsetMinutes] = " + (st.RunUntilOffsetMinutes.HasValue ? st.RunUntilOffsetMinutes.ToString() : "NULL") + g.crlf +
+                " ,[IsLongRunning] = " + st.IsLongRunning.ToInt32() + g.crlf +
+                " ,[TrackHistory] = " + st.TrackHistory.ToInt32() + g.crlf +
+                " ,[SuppressNotificationsOnSuccess] = " + st.SuppressNotificationsOnSuccess.ToInt32() + g.crlf +
+                " ,[ActiveScheduleId] = " + (st.ActiveScheduleId.HasValue ? st.ActiveScheduleId.ToString() : "NULL") + g.crlf +
+                " ,[ModifiedBy] = " + (st.ModifiedBy.IsBlank() ? "NULL" : "'" + st.ModifiedBy + "'") + g.crlf +
+                " ,[ModifiedDate] = " + (st.ModifiedDate.HasValue ? "'" + st.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
+                " WHERE [ScheduledTaskID] = " + st.ScheduledTaskId;
         }
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -2833,12 +2833,12 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = " UPDATE [TaskScheduling].[dbo].[TaskSchedules] " + g.crlf +
-                        " SET [ScheduledTaskID] = " + ts.ScheduledTaskId.ToString() + g.crlf +
-                           " ,[ScheduleName] = '" + ts.ScheduleName + "'" + g.crlf +
-                           " ,[IsActive] = " + (ts.IsActive ? "1" : "0") + g.crlf +
-                           " ,[ModifiedBy] = " + (ts.ModifiedBy.IsBlank() ? "NULL" : "'" + ts.ModifiedBy + "'") + g.crlf +
-                           " ,[ModifiedDate] = " + (ts.ModifiedDate.HasValue ? "'" + ts.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
-                        " WHERE [TaskScheduleID] = " + ts.TaskScheduleId.ToString();
+                     " SET [ScheduledTaskID] = " + ts.ScheduledTaskId.ToString() + g.crlf +
+                     " ,[ScheduleName] = '" + ts.ScheduleName + "'" + g.crlf +
+                     " ,[IsActive] = " + (ts.IsActive ? "1" : "0") + g.crlf +
+                     " ,[ModifiedBy] = " + (ts.ModifiedBy.IsBlank() ? "NULL" : "'" + ts.ModifiedBy + "'") + g.crlf +
+                     " ,[ModifiedDate] = " + (ts.ModifiedDate.HasValue ? "'" + ts.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
+                     " WHERE [TaskScheduleID] = " + ts.TaskScheduleId.ToString();
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -2858,42 +2858,42 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = " UPDATE [TaskScheduling].[dbo].[TaskScheduleElements] " + g.crlf +
-                        " SET [IsActive] = " + (tse.IsActive ? "1" : "0") + g.crlf +
-                          " ,[TaskScheduleExecutionTypeID] = " + tse.TaskExecutionType.ToInt32() + g.crlf +
-                           " ,[FrequencySeconds] = " + (tse.FrequencySeconds.HasValue ? tse.FrequencySeconds.ToString() : "NULL") + g.crlf +
-                           " ,[IsClockAligned] = " + (tse.IsClockAligned ? "1" : "0") + g.crlf +
-                           " ,[ScheduleElementPriority] = " + (tse.ScheduleElementPriority.HasValue ? tse.ScheduleElementPriority.ToString() : "NULL") + g.crlf +
-                           " ,[StartDate] = " + (tse.StartDate.HasValue ? "'" + tse.StartDate.ToString() + "'" : "NULL") + g.crlf +
-                           " ,[StartTime] = " + (tse.StartTime.HasValue ? "'" + tse.StartTime.ToString() + "'" : "NULL") + g.crlf +
-                           " ,[EndDate] = " + (tse.EndDate.HasValue ? "'" + tse.EndDate.ToString() + "'" : "NULL") + g.crlf +
-                           " ,[EndTime] = " + (tse.EndTime.HasValue ? "'" + tse.EndTime.ToString() + "'" : "NULL") + g.crlf +
-                          " ,[IntervalTypeID] = " + (tse.IntervalType == IntervalType.NotSet ? "NULL" : tse.IntervalType.ToInt32().ToString()) + g.crlf +
-                          " ,[OnSunday] = " + tse.OnSunday.ToInt32() + g.crlf +
-                          " ,[OnMonday] = " + tse.OnMonday.ToInt32() + g.crlf +
-                          " ,[OnTuesday] = " + tse.OnTuesday.ToInt32() + g.crlf +
-                          " ,[OnWednesday] = " + tse.OnWednesday.ToInt32() + g.crlf +
-                          " ,[OnThursday] = " + tse.OnThursday.ToInt32() + g.crlf +
-                          " ,[OnFriday] = " + tse.OnFriday.ToInt32() + g.crlf +
-                          " ,[OnSaturday] = " + tse.OnSaturday.ToInt32() + g.crlf +
-                          " ,[OnWorkDays] = " + tse.OnWorkDays.ToInt32() + g.crlf +
-                          " ,[OnEvenDays] = " + tse.OnEvenDays.ToInt32() + g.crlf +
-                          " ,[OnOddDays] = " + tse.OnOddDays.ToInt32() + g.crlf +
-                           " ,[SpecificDays] = " + (tse.SpecificDays.IsBlank() ? "'" + tse.SpecificDays + "'" : "NULL") + g.crlf +
-                          " ,[ExceptSpecificDays] = " + tse.ExceptSpecificDays.ToInt32() + g.crlf +
-                          " ,[First] = " + tse.First.ToInt32() + g.crlf +
-                          " ,[Second] = " + tse.Second.ToInt32() + g.crlf +
-                          " ,[Third] = " + tse.Third.ToInt32() + g.crlf +
-                          " ,[Fourth] = " + tse.Fourth.ToInt32() + g.crlf +
-                          " ,[Fifth] = " + tse.Fifth.ToInt32() + g.crlf +
-                          " ,[Last] = " + tse.Last.ToInt32() + g.crlf +
-                          " ,[Every] = " + tse.Every.ToInt32() + g.crlf +
-                          " ,[HolidayActionID] = " + (tse.HolidayActions == HolidayActions.NotSet ? "NULL" : tse.HolidayActions.ToInt32().ToString()) + g.crlf +
-                          " ,[PeriodContextID] = " + (tse.PeriodContexts == PeriodContexts.NotSet ? "NULL" : tse.PeriodContexts.ToInt32().ToString()) + g.crlf +
-                           " ,[ExecutionLimit] = " + (tse.ExecutionLimit.HasValue ? tse.ExecutionLimit.ToString() : "NULL") + g.crlf +
-                           " ,[MaxRunTimeSeconds] = " + (tse.MaxRunTimeSeconds.HasValue ? tse.MaxRunTimeSeconds.ToString() : "NULL") + g.crlf +
-                           " ,[ModifiedBy] = " + (tse.ModifiedBy.IsBlank() ? "'" + tse.ModifiedBy + "'" : "NULL") + g.crlf +
-                           " ,[ModifiedDate] = " + (tse.ModifiedDate.HasValue ? "'" + tse.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
-                        " WHERE [TaskScheduleElementID] = " + tse.TaskScheduleElementId.ToString();
+                     " SET [IsActive] = " + (tse.IsActive ? "1" : "0") + g.crlf +
+                     " ,[TaskScheduleExecutionTypeID] = " + tse.TaskExecutionType.ToInt32() + g.crlf +
+                     " ,[FrequencySeconds] = " + (tse.FrequencySeconds.HasValue ? tse.FrequencySeconds.ToString() : "NULL") + g.crlf +
+                     " ,[IsClockAligned] = " + (tse.IsClockAligned ? "1" : "0") + g.crlf +
+                     " ,[ScheduleElementPriority] = " + (tse.ScheduleElementPriority.HasValue ? tse.ScheduleElementPriority.ToString() : "NULL") + g.crlf +
+                     " ,[StartDate] = " + (tse.StartDate.HasValue ? "'" + tse.StartDate.ToString() + "'" : "NULL") + g.crlf +
+                     " ,[StartTime] = " + (tse.StartTime.HasValue ? "'" + tse.StartTime.ToString() + "'" : "NULL") + g.crlf +
+                     " ,[EndDate] = " + (tse.EndDate.HasValue ? "'" + tse.EndDate.ToString() + "'" : "NULL") + g.crlf +
+                     " ,[EndTime] = " + (tse.EndTime.HasValue ? "'" + tse.EndTime.ToString() + "'" : "NULL") + g.crlf +
+                     " ,[IntervalTypeID] = " + (tse.IntervalType == IntervalType.NotSet ? "NULL" : tse.IntervalType.ToInt32().ToString()) + g.crlf +
+                     " ,[OnSunday] = " + tse.OnSunday.ToInt32() + g.crlf +
+                     " ,[OnMonday] = " + tse.OnMonday.ToInt32() + g.crlf +
+                     " ,[OnTuesday] = " + tse.OnTuesday.ToInt32() + g.crlf +
+                     " ,[OnWednesday] = " + tse.OnWednesday.ToInt32() + g.crlf +
+                     " ,[OnThursday] = " + tse.OnThursday.ToInt32() + g.crlf +
+                     " ,[OnFriday] = " + tse.OnFriday.ToInt32() + g.crlf +
+                     " ,[OnSaturday] = " + tse.OnSaturday.ToInt32() + g.crlf +
+                     " ,[OnWorkDays] = " + tse.OnWorkDays.ToInt32() + g.crlf +
+                     " ,[OnEvenDays] = " + tse.OnEvenDays.ToInt32() + g.crlf +
+                     " ,[OnOddDays] = " + tse.OnOddDays.ToInt32() + g.crlf +
+                     " ,[SpecificDays] = " + (tse.SpecificDays.IsBlank() ? "'" + tse.SpecificDays + "'" : "NULL") + g.crlf +
+                     " ,[ExceptSpecificDays] = " + tse.ExceptSpecificDays.ToInt32() + g.crlf +
+                     " ,[First] = " + tse.First.ToInt32() + g.crlf +
+                     " ,[Second] = " + tse.Second.ToInt32() + g.crlf +
+                     " ,[Third] = " + tse.Third.ToInt32() + g.crlf +
+                     " ,[Fourth] = " + tse.Fourth.ToInt32() + g.crlf +
+                     " ,[Fifth] = " + tse.Fifth.ToInt32() + g.crlf +
+                     " ,[Last] = " + tse.Last.ToInt32() + g.crlf +
+                     " ,[Every] = " + tse.Every.ToInt32() + g.crlf +
+                     " ,[HolidayActionID] = " + (tse.HolidayActions == HolidayActions.NotSet ? "NULL" : tse.HolidayActions.ToInt32().ToString()) + g.crlf +
+                     " ,[PeriodContextID] = " + (tse.PeriodContexts == PeriodContexts.NotSet ? "NULL" : tse.PeriodContexts.ToInt32().ToString()) + g.crlf +
+                     " ,[ExecutionLimit] = " + (tse.ExecutionLimit.HasValue ? tse.ExecutionLimit.ToString() : "NULL") + g.crlf +
+                     " ,[MaxRunTimeSeconds] = " + (tse.MaxRunTimeSeconds.HasValue ? tse.MaxRunTimeSeconds.ToString() : "NULL") + g.crlf +
+                     " ,[ModifiedBy] = " + (tse.ModifiedBy.IsBlank() ? "'" + tse.ModifiedBy + "'" : "NULL") + g.crlf +
+                     " ,[ModifiedDate] = " + (tse.ModifiedDate.HasValue ? "'" + tse.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
+                     " WHERE [TaskScheduleElementID] = " + tse.TaskScheduleElementId.ToString();
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -2927,14 +2927,14 @@ namespace Org.TSK.Business
           parameterSetNameUpdate = " ,[ParameterSetName] = '" + tp.ParameterSetName.ToString() + "' " + g.crlf;
 
         string sql = " UPDATE [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
-                        " SET [ParameterName] = '" + tp.ParameterName + "'" + g.crlf +
-                              scheduledTaskIdUpdate +
-                              parameterSetNameUpdate +
-                           " ,[ParameterValue] = " + (tp.ParameterValue.IsBlank() ? "NULL" : "'" + tp.ParameterValue + "'") + g.crlf +
-                           " ,[DataType] = '" + tp.DataType + "'" + g.crlf +
-                           " ,[ModifiedBy] = " + (tp.ModifiedBy.IsBlank() ? "NULL" : "'" + tp.ModifiedBy + "'") + g.crlf +
-                           " ,[ModifiedDate] = " + (tp.ModifiedDate.HasValue ? "'" + tp.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
-                        " WHERE [ParameterID] = " + tp.ParameterID.ToString();
+                     " SET [ParameterName] = '" + tp.ParameterName + "'" + g.crlf +
+                     scheduledTaskIdUpdate +
+                     parameterSetNameUpdate +
+                     " ,[ParameterValue] = " + (tp.ParameterValue.IsBlank() ? "NULL" : "'" + tp.ParameterValue + "'") + g.crlf +
+                     " ,[DataType] = '" + tp.DataType + "'" + g.crlf +
+                     " ,[ModifiedBy] = " + (tp.ModifiedBy.IsBlank() ? "NULL" : "'" + tp.ModifiedBy + "'") + g.crlf +
+                     " ,[ModifiedDate] = " + (tp.ModifiedDate.HasValue ? "'" + tp.ModifiedDate.ToDateTime().ToString("yyyy-MM-dd HH:mm:ss.fff") + "'" : "NULL") + g.crlf +
+                     " WHERE [ParameterID] = " + tp.ParameterID.ToString();
 
         using (var cmd = new SqlCommand(sql, _conn, trans))
         {
@@ -2998,7 +2998,7 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = " DELETE FROM [TaskScheduling].[dbo].[ScheduledTasks] " + g.crlf +
-                            " WHERE [ScheduledTaskID] = " + scheduledTaskId.ToString();
+                     " WHERE [ScheduledTaskID] = " + scheduledTaskId.ToString();
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -3044,7 +3044,7 @@ namespace Org.TSK.Business
         foreach (var schedule in schedules.Values)
         {
           DeleteAllTaskScheduleElementsForSchedule(schedule.TaskScheduleId, trans);
-          DeleteTaskSchedule(schedule.TaskScheduleId, trans); 
+          DeleteTaskSchedule(schedule.TaskScheduleId, trans);
         }
       }
       catch (Exception ex)
@@ -3060,7 +3060,7 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = " DELETE FROM [TaskScheduling].[dbo].[TaskScheduleElements] " + g.crlf +
-                            " WHERE [TaskScheduleElementID] = " + taskScheduleElementID.ToString();
+                     " WHERE [TaskScheduleElementID] = " + taskScheduleElementID.ToString();
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -3122,7 +3122,7 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = " DELETE FROM [TaskScheduling].[dbo].[ScheduledTaskParameters] " + g.crlf +
-                            " WHERE [ParameterID] = " + parameterID.ToString();
+                     " WHERE [ParameterID] = " + parameterID.ToString();
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -3138,7 +3138,7 @@ namespace Org.TSK.Business
     public void CopyScheduleAndParameters(int copyFromTaskId,  int copyToTaskId, bool copySchedule, bool copyParameters)
     {
       DateTime copyDateTime = DateTime.Now;
-      SqlTransaction trans = null; 
+      SqlTransaction trans = null;
 
       try
       {
@@ -3149,7 +3149,7 @@ namespace Org.TSK.Business
         if (copyFromTask == null)
           throw new Exception("There is no ScheduledTask for the copyFromTaskId " + copyFromTaskId.ToString() + ".");
 
-        var copyToTask = this.GetScheduledTask(copyToTaskId, false); 
+        var copyToTask = this.GetScheduledTask(copyToTaskId, false);
         if (copyToTask == null)
           throw new Exception("There is no ScheduledTask for the copyToTaskId " + copyToTaskId.ToString() + ".");
 
@@ -3159,7 +3159,7 @@ namespace Org.TSK.Business
 
         if (copySchedule)
         {
-          DeleteAllSchedulesForTask(copyToTaskId, trans); 
+          DeleteAllSchedulesForTask(copyToTaskId, trans);
 
           if (copyFromTask.TaskSchedule != null)
           {
@@ -3182,10 +3182,10 @@ namespace Org.TSK.Business
               element.CreatedDate = copyDateTime;
               element.ModifiedBy = null;
               element.ModifiedDate = null;
-              InsertTaskScheduleElement(element, trans); 
+              InsertTaskScheduleElement(element, trans);
             }
 
-            UpdateActiveScheduleID(scheduleId, copyToTaskId, trans); 
+            UpdateActiveScheduleID(scheduleId, copyToTaskId, trans);
           }
         }
 
@@ -3229,7 +3229,7 @@ namespace Org.TSK.Business
         if (parameterType == null)
           throw new Exception("The value provided as parameterType (which is of type System.Type) is null.");
 
-        
+
         if (parameterType.FullName.Contains("System.Collections.Generic.Dictionary`2"))
           return "Dictionary<string,string>";
 
@@ -3368,7 +3368,7 @@ namespace Org.TSK.Business
 
           runId = cmd.ExecuteScalar().ToInt32();
         }
-          
+
         return runId;
       }
       catch (Exception ex)
@@ -3385,24 +3385,24 @@ namespace Org.TSK.Business
 
         string sql = "DECLARE @PeriodHistoryID int " + g.crlf +
                      "UPDATE [TaskScheduling].[dbo].[RunHistory] " + g.crlf +
-                       " SET @PeriodHistoryID = [PeriodHistoryID], " + g.crlf +
-                           " [ExecutionStatusID] = @ExecutionStatusID, " + g.crlf +
-                           " [RunStatusID] = @RunStatusID, " + g.crlf +
-                           " [RunCode] = @RunCode, " + g.crlf +
-                           " [NoWorkDone] = @NoWorkDone, " + g.crlf +
-                           " [StartDateTime] = @StartDateTime, " + g.crlf +
-                           " [EndDateTime] = @EndDateTime, " + g.crlf +
-                           " [Message] = @Message, " + g.crlf +
-                           " [Int1Label] = @Int1Label, [Int1Value] = @Int1Value, " + g.crlf +
-                           " [Int2Label] = @Int2Label, [Int2Value] = @Int2Value, " + g.crlf +
-                           " [Int3Label] = @Int3Label, [Int3Value] = @Int3Value, " + g.crlf +
-                           " [Int4Label] = @Int4Label, [Int4Value] = @Int4Value, " + g.crlf +
-                           " [Int5Label] = @Int5Label, [Int5Value] = @Int5Value, " + g.crlf +
-                           " [Dec1Label] = @Dec1Label, [Dec1Value] = @Dec1Value, " + g.crlf +
-                           " [Dec2Label] = @Dec2Label, [Dec2Value] = @Dec2Value, " + g.crlf +
-                           " [Dec3Label] = @Dec3Label, [Dec3Value] = @Dec3Value, " + g.crlf +
-                           " [Dec4Label] = @Dec4Label, [Dec4Value] = @Dec4Value, " + g.crlf +
-                           " [Dec5Label] = @Dec5Label, [Dec5Value] = @Dec5Value " + g.crlf +
+                     " SET @PeriodHistoryID = [PeriodHistoryID], " + g.crlf +
+                     " [ExecutionStatusID] = @ExecutionStatusID, " + g.crlf +
+                     " [RunStatusID] = @RunStatusID, " + g.crlf +
+                     " [RunCode] = @RunCode, " + g.crlf +
+                     " [NoWorkDone] = @NoWorkDone, " + g.crlf +
+                     " [StartDateTime] = @StartDateTime, " + g.crlf +
+                     " [EndDateTime] = @EndDateTime, " + g.crlf +
+                     " [Message] = @Message, " + g.crlf +
+                     " [Int1Label] = @Int1Label, [Int1Value] = @Int1Value, " + g.crlf +
+                     " [Int2Label] = @Int2Label, [Int2Value] = @Int2Value, " + g.crlf +
+                     " [Int3Label] = @Int3Label, [Int3Value] = @Int3Value, " + g.crlf +
+                     " [Int4Label] = @Int4Label, [Int4Value] = @Int4Value, " + g.crlf +
+                     " [Int5Label] = @Int5Label, [Int5Value] = @Int5Value, " + g.crlf +
+                     " [Dec1Label] = @Dec1Label, [Dec1Value] = @Dec1Value, " + g.crlf +
+                     " [Dec2Label] = @Dec2Label, [Dec2Value] = @Dec2Value, " + g.crlf +
+                     " [Dec3Label] = @Dec3Label, [Dec3Value] = @Dec3Value, " + g.crlf +
+                     " [Dec4Label] = @Dec4Label, [Dec4Value] = @Dec4Value, " + g.crlf +
+                     " [Dec5Label] = @Dec5Label, [Dec5Value] = @Dec5Value " + g.crlf +
                      " WHERE [RunID] = " + rh.RunId + g.crlf +
 
                      " IF @NoWorkDone = 0 " + g.crlf +
@@ -3410,7 +3410,7 @@ namespace Org.TSK.Business
                      "   UPDATE [TaskScheduling].[dbo].[PeriodHistory] " + g.crlf +
                      "   SET RunForPeriod = 1 " + g.crlf +
                      "   WHERE [PeriodID] = @PeriodHistoryID " + g.crlf +
-                     " END " + 
+                     " END " +
                      " SELECT @PeriodHistoryID ";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -3422,16 +3422,26 @@ namespace Org.TSK.Business
           cmd.Parameters.AddWithValue("@StartDateTime", (object)rh.StartDateTime ?? DBNull.Value);
           cmd.Parameters.AddWithValue("@EndDateTime", (object)rh.EndDateTime ?? DBNull.Value);
           cmd.Parameters.AddWithValue("@Message", (object)rh.Message ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Int1Label", (object)rh.RunStats.Int1Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Int1Value", (object)rh.RunStats.Int1Value ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Int2Label", (object)rh.RunStats.Int2Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Int2Value", (object)rh.RunStats.Int2Value ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Int3Label", (object)rh.RunStats.Int3Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Int3Value", (object)rh.RunStats.Int3Value ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Int4Label", (object)rh.RunStats.Int4Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Int4Value", (object)rh.RunStats.Int4Value ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Int5Label", (object)rh.RunStats.Int5Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Int5Value", (object)rh.RunStats.Int5Value ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Dec1Label", (object)rh.RunStats.Dec1Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Dec1Value", (object)rh.RunStats.Dec1Value ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Dec2Label", (object)rh.RunStats.Dec2Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Dec2Value", (object)rh.RunStats.Dec2Value ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Dec3Label", (object)rh.RunStats.Dec3Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Dec3Value", (object)rh.RunStats.Dec3Value ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Dec4Label", (object)rh.RunStats.Dec4Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Dec4Value", (object)rh.RunStats.Dec4Value ?? DBNull.Value);
-          cmd.Parameters.AddWithValue("@Dec5Label", (object)rh.RunStats.Dec5Label ?? DBNull.Value); cmd.Parameters.AddWithValue("@Dec5Value", (object)rh.RunStats.Dec5Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int1Label", (object)rh.RunStats.Int1Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int1Value", (object)rh.RunStats.Int1Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int2Label", (object)rh.RunStats.Int2Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int2Value", (object)rh.RunStats.Int2Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int3Label", (object)rh.RunStats.Int3Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int3Value", (object)rh.RunStats.Int3Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int4Label", (object)rh.RunStats.Int4Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int4Value", (object)rh.RunStats.Int4Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int5Label", (object)rh.RunStats.Int5Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Int5Value", (object)rh.RunStats.Int5Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec1Label", (object)rh.RunStats.Dec1Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec1Value", (object)rh.RunStats.Dec1Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec2Label", (object)rh.RunStats.Dec2Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec2Value", (object)rh.RunStats.Dec2Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec3Label", (object)rh.RunStats.Dec3Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec3Value", (object)rh.RunStats.Dec3Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec4Label", (object)rh.RunStats.Dec4Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec4Value", (object)rh.RunStats.Dec4Value ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec5Label", (object)rh.RunStats.Dec5Label ?? DBNull.Value);
+          cmd.Parameters.AddWithValue("@Dec5Value", (object)rh.RunStats.Dec5Value ?? DBNull.Value);
 
           cmd.ExecuteNonQuery();
         }
@@ -3451,35 +3461,35 @@ namespace Org.TSK.Business
         var runHistoryList = new List<MOD.RunHistory>();
 
         string sql = " SELECT [RunID] " + g.crlf +
-                           " ,[ScheduledTaskID] " + g.crlf +
-                           " ,[TaskName] " + g.crlf +
-                           " ,[ProcessorName] " + g.crlf +
-                           " ,[ProcessorVersion] " + g.crlf +
-                           " ,[ProcessorTypeID] " + g.crlf +
-                           " ,[ExecutionStatusID] " + g.crlf +
-                           " ,[RunStatusID] " + g.crlf +
-                           " ,[RunCode] " + g.crlf +
-                           " ,[NoWorkDone] " + g.crlf +
-                           " ,[StartDateTime] " + g.crlf +
-                           " ,[EndDateTime] " + g.crlf +
-                           " ,[RunHost] " + g.crlf +
-                           " ,[RunUser] " + g.crlf +
-                           " ,[Message] " + g.crlf +
-                           " ,[RunUntilTask] " + g.crlf +
-                           " ,[RunUntilPeriodContextID] " + g.crlf +
-                           " ,[RunUntilOffsetMinutes] " + g.crlf +
-                           " ,[Int1Label], [Int1Value] " + g.crlf +
-                           " ,[Int2Label], [Int2Value] " + g.crlf +
-                           " ,[Int3Label], [Int3Value] " + g.crlf +
-                           " ,[Int4Label], [Int4Value] " + g.crlf +
-                           " ,[Int5Label], [Int5Value] " + g.crlf +
-                           " ,[Dec1Label], [Dec1Value] " + g.crlf +
-                           " ,[Dec2Label], [Dec2Value] " + g.crlf +
-                           " ,[Dec3Label], [Dec3Value] " + g.crlf +
-                           " ,[Dec4Label], [Dec4Value] " + g.crlf +
-                           " ,[Dec5Label], [Dec5Value] " + g.crlf +
-                       " FROM [TaskScheduling].[dbo].[RunHistory] " + g.crlf +
-                       " WHERE [ScheduledTaskID] = " + taskId;
+                     " ,[ScheduledTaskID] " + g.crlf +
+                     " ,[TaskName] " + g.crlf +
+                     " ,[ProcessorName] " + g.crlf +
+                     " ,[ProcessorVersion] " + g.crlf +
+                     " ,[ProcessorTypeID] " + g.crlf +
+                     " ,[ExecutionStatusID] " + g.crlf +
+                     " ,[RunStatusID] " + g.crlf +
+                     " ,[RunCode] " + g.crlf +
+                     " ,[NoWorkDone] " + g.crlf +
+                     " ,[StartDateTime] " + g.crlf +
+                     " ,[EndDateTime] " + g.crlf +
+                     " ,[RunHost] " + g.crlf +
+                     " ,[RunUser] " + g.crlf +
+                     " ,[Message] " + g.crlf +
+                     " ,[RunUntilTask] " + g.crlf +
+                     " ,[RunUntilPeriodContextID] " + g.crlf +
+                     " ,[RunUntilOffsetMinutes] " + g.crlf +
+                     " ,[Int1Label], [Int1Value] " + g.crlf +
+                     " ,[Int2Label], [Int2Value] " + g.crlf +
+                     " ,[Int3Label], [Int3Value] " + g.crlf +
+                     " ,[Int4Label], [Int4Value] " + g.crlf +
+                     " ,[Int5Label], [Int5Value] " + g.crlf +
+                     " ,[Dec1Label], [Dec1Value] " + g.crlf +
+                     " ,[Dec2Label], [Dec2Value] " + g.crlf +
+                     " ,[Dec3Label], [Dec3Value] " + g.crlf +
+                     " ,[Dec4Label], [Dec4Value] " + g.crlf +
+                     " ,[Dec5Label], [Dec5Value] " + g.crlf +
+                     " FROM [TaskScheduling].[dbo].[RunHistory] " + g.crlf +
+                     " WHERE [ScheduledTaskID] = " + taskId;
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
         {
@@ -3553,11 +3563,11 @@ namespace Org.TSK.Business
         string commaDelimitedTaskIds = String.Join(",", taskIds);
 
         string sql = " SELECT [TaskName], MAX([StartDateTime]) as 'StartDateTime'" + g.crlf +
-                       " FROM [TaskScheduling].[dbo].[RunHistory] " + g.crlf +
-                      " WHERE [NoWorkDone] = 0 " + g.crlf +
-                        " AND [RunStatusID] = 3 " + g.crlf +
-                        " AND [ScheduledTaskID] IN(" + commaDelimitedTaskIds + ")" + g.crlf +
-                   " GROUP BY [TaskName] ";
+                     " FROM [TaskScheduling].[dbo].[RunHistory] " + g.crlf +
+                     " WHERE [NoWorkDone] = 0 " + g.crlf +
+                     " AND [RunStatusID] = 3 " + g.crlf +
+                     " AND [ScheduledTaskID] IN(" + commaDelimitedTaskIds + ")" + g.crlf +
+                     " GROUP BY [TaskName] ";
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
         {
@@ -3607,14 +3617,14 @@ namespace Org.TSK.Business
             mapList.Add(mapName);
           }
           reader.Close();
-        }  
+        }
       }
       catch (Exception ex)
       {
         throw new Exception("An exception occurred attempting to get a list of map names from the database.", ex);
       }
 
-      return mapList; 
+      return mapList;
     }
 
     public string GetTaskName(string mapName)
@@ -3735,8 +3745,8 @@ namespace Org.TSK.Business
         EnsureConnection();
 
         string sql = " UPDATE [TaskScheduling].[dbo].[ScheduledTasks] " + g.crlf +
-                        " SET [RunUntilOverride] = 0 " + g.crlf +
-                      " WHERE [ScheduledTaskID] =  " + taskId;
+                     " SET [RunUntilOverride] = 0 " + g.crlf +
+                     " WHERE [ScheduledTaskID] =  " + taskId;
 
         using (var cmd = new SqlCommand(sql, _conn))
         {
@@ -3767,7 +3777,7 @@ namespace Org.TSK.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to get the value of the parameter '" + parameterName + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to get the value of the parameter '" + parameterName + "'.", ex);
       }
     }
 

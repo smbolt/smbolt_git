@@ -11,15 +11,15 @@ using Org.FSO;
 using Org.GS;
 using Org.GS.Configuration;
 
-namespace Org.FileOrganizer 
+namespace Org.FileOrganizer
 {
-  public partial class frmNewDocType : Form 
+  public partial class frmNewDocType : Form
   {
     private FsoRepository _fsoRepo;
 
     public string NewDocumentType;
-    
-    public frmNewDocType(FsoRepository fsoRepo) 
+
+    public frmNewDocType(FsoRepository fsoRepo)
     {
       InitializeComponent();
 
@@ -42,13 +42,13 @@ namespace Org.FileOrganizer
             txtDocType.Focus();
             return;
           }
-          
+
           InsertNewDocType(txtDocType.Text.Trim());
 
           this.NewDocumentType = txtDocType.Text.Trim();
           this.DialogResult = DialogResult.OK;
-            break;
-        
+          break;
+
 
         case "Cancel":
           this.DialogResult = DialogResult.Cancel;
@@ -63,8 +63,8 @@ namespace Org.FileOrganizer
       {
         var docType = _fsoRepo.GetDocTypeByName(docTypeName);
 
-          if(docType != null)
-            return true;
+        if(docType != null)
+          return true;
 
         return false;
       }
@@ -82,7 +82,7 @@ namespace Org.FileOrganizer
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to insert a new document type with name '" + docTypeName + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to insert a new document type with name '" + docTypeName + "'.", ex);
       }
     }
 
@@ -93,12 +93,12 @@ namespace Org.FileOrganizer
       btnCancel.Enabled = true;
     }
 
-    private void txtDocType_TextChanged(object sender,EventArgs e) 
+    private void txtDocType_TextChanged(object sender,EventArgs e)
     {
       btnOK.Enabled = txtDocType.Text.Length > 0;
     }
 
-    private void btnCancel_Click(object sender,EventArgs e) 
+    private void btnCancel_Click(object sender,EventArgs e)
     {
       this.Close();
     }

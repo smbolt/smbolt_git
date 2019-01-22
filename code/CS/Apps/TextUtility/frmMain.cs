@@ -50,15 +50,27 @@ namespace Org.TextUtility
     TextStyle MaroonStyle = new TextStyle(Brushes.Maroon, null, FontStyle.Regular);
     MarkerStyle SameWordsStyle = new MarkerStyle(new SolidBrush(Color.FromArgb(40, Color.Gray)));
 
-    private Style StringStyle { get; set; }
-    private Style CommentStyle { get; set; }
-    private Style NumberStyle { get; set; }
-    private Style KeywordStyle { get; set; }
+    private Style StringStyle {
+      get;
+      set;
+    }
+    private Style CommentStyle {
+      get;
+      set;
+    }
+    private Style NumberStyle {
+      get;
+      set;
+    }
+    private Style KeywordStyle {
+      get;
+      set;
+    }
 
 
     protected Regex JScriptCommentRegex1,
-                  JScriptCommentRegex2,
-                  JScriptCommentRegex3;
+              JScriptCommentRegex2,
+              JScriptCommentRegex3;
 
     protected Regex JScriptKeywordRegex;
     protected Regex JScriptNumberRegex;
@@ -88,7 +100,7 @@ namespace Org.TextUtility
 
         case "SaveBaseTextAs":
           SaveBaseTextAs();
-          break;        
+          break;
 
         case "ClearBaseText":
           txtBaseText.Text = String.Empty;
@@ -114,7 +126,7 @@ namespace Org.TextUtility
 
         case "SaveQueryAs":
           SaveQueryAs();
-          break;  
+          break;
 
         case "RunQuery":
           LoadWells();
@@ -154,7 +166,7 @@ namespace Org.TextUtility
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while attempting to load the base data file." + g.crlf2 + ex.ToReport(),
-                "Text Utility - File Read Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "Text Utility - File Read Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -208,7 +220,7 @@ namespace Org.TextUtility
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while attempting to load the base data file." + g.crlf2 + ex.ToReport(),
-                "Text Utility - File Read Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "Text Utility - File Read Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -229,7 +241,7 @@ namespace Org.TextUtility
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred while attempting to retrieve wells from the database." + g.crlf2 + ex.ToReport(),
-                       "Text Utility - Well Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "Text Utility - Well Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
       }
     }
@@ -351,13 +363,13 @@ namespace Org.TextUtility
 
           lblCompareTextLines.Text = itemCount.ToString("###,##0") + " lines";
           return String.Empty;
-        }     
+        }
       }
       catch (Exception ex)
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred during the execution of the query." + g.crlf2 + ex.ToReport(),
-                "Text Utility - Error Querying Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "Text Utility - Error Querying Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         return String.Empty;
       }
@@ -375,7 +387,7 @@ namespace Org.TextUtility
         Application.DoEvents();
 
         var sb = new StringBuilder();
-        
+
         var leftLines = txtBaseText.Text.ToLineList();
         var rightLines = txtCompareText.Text.ToLineList();
 
@@ -384,7 +396,7 @@ namespace Org.TextUtility
         int leftLineUnmatchedCount = 0;
         int rightLineUnmatchedCount = 0;
         int matchCount = 0;
-        
+
         for (int i = 0; i < leftLines.Count; i++)
         {
           string leftLine = leftLines.ElementAt(i);
@@ -642,7 +654,7 @@ namespace Org.TextUtility
       else
       {
         cboBaseData.SelectItem(selected);
-      }    
+      }
     }
 
     private void LoadQueriesComboBox(string selected = "")

@@ -14,8 +14,10 @@ namespace Org.QB.QBXML
       {
         switch (transType)
         {
-          case TransactionType.CustomerAddRq: return new CustomerAddRq();
-          case TransactionType.CustomerQueryRq: return new CustomerQueryRq();
+          case TransactionType.CustomerAddRq:
+            return new CustomerAddRq();
+          case TransactionType.CustomerQueryRq:
+            return new CustomerQueryRq();
 
         }
 
@@ -23,7 +25,7 @@ namespace Org.QB.QBXML
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to create an object of type '" + transType + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to create an object of type '" + transType + "'.", ex);
       }
     }
 

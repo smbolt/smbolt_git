@@ -8,11 +8,14 @@ namespace Org.GS.Notifications
 {
   public class EmailNotificationMessage : NotificationMessageBase
   {
-    public bool IsBodyHtml { get; set; }
+    public bool IsBodyHtml {
+      get;
+      set;
+    }
 
     public EmailNotificationMessage()
     {
-      this.IsBodyHtml = false; 
+      this.IsBodyHtml = false;
     }
   }
 }

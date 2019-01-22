@@ -17,8 +17,14 @@ namespace Org.Notify
 
   public class NotifyEventArgs
   {
-    public NotifyEventType NotifyEventType { get; private set; }
-    public bool IsSynchronous { get; private set; }
+    public NotifyEventType NotifyEventType {
+      get;
+      private set;
+    }
+    public bool IsSynchronous {
+      get;
+      private set;
+    }
 
     public NotifyEventArgs(NotifyEventType notifyEventType, bool isSynchronous)
     {

@@ -47,7 +47,7 @@ namespace Org.Software.Tasks.Concrete
       try
       {
         string dbSpecPrefix = g.CI("SoftwareDbSpecPrefix");
-        _configDbSpec = g.GetDbSpec(dbSpecPrefix); 
+        _configDbSpec = g.GetDbSpec(dbSpecPrefix);
 
         using (var repository = new SoftwareDataRepository(_configDbSpec))
         {

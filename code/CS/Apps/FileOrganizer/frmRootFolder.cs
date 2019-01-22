@@ -11,16 +11,16 @@ using Org.FSO;
 using Org.GS;
 using Org.GS.Configuration;
 
-namespace Org.FileOrganizer 
+namespace Org.FileOrganizer
 {
-  public partial class frmRootFolder : Form 
+  public partial class frmRootFolder : Form
   {
     private FsoRepository _fsoRepo;
 
     public string NewRootFolderPath;
     public string NewRootFolderName;
 
-    public frmRootFolder(FsoRepository fsoRepo) 
+    public frmRootFolder(FsoRepository fsoRepo)
     {
       InitializeComponent();
 
@@ -37,12 +37,12 @@ namespace Org.FileOrganizer
         case "OK":
           if(txtRootFolderName.Text.Length < 1)
           {
-            MessageBox.Show("You must choose a root folder before you Click the OK button.", 
+            MessageBox.Show("You must choose a root folder before you Click the OK button.",
                             "Please choose a valid root folder.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
           }
           if(txtRootFolderPath.Text.Length < 1)
           {
-            MessageBox.Show("You must choose a root folder name before you Click the OK button.", 
+            MessageBox.Show("You must choose a root folder name before you Click the OK button.",
                             "Please choose a valid root folder name.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
           }
 
@@ -67,9 +67,9 @@ namespace Org.FileOrganizer
       }
     }
 
-    private void btnBrowseForRootFolder_Click(object sender,EventArgs e) 
+    private void btnBrowseForRootFolder_Click(object sender,EventArgs e)
     {
-      FolderBrowserDialog fd = new FolderBrowserDialog();      
+      FolderBrowserDialog fd = new FolderBrowserDialog();
       if(fd.ShowDialog() == DialogResult.OK)
       {
         txtRootFolderPath.Text = fd.SelectedPath;
@@ -85,7 +85,7 @@ namespace Org.FileOrganizer
       btnCancel.Enabled = true;
     }
 
-    private void btnCancel_Click(object sender,EventArgs e) 
+    private void btnCancel_Click(object sender,EventArgs e)
     {
       this.Close();
     }

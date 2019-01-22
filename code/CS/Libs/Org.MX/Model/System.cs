@@ -9,36 +9,56 @@ namespace Org.MX.Model
     [EntityMap]
     public int SystemID
     {
-      get { return base.ID; }
-      set { base.ID = value; }
+      get {
+        return base.ID;
+      }
+      set {
+        base.ID = value;
+      }
     }
 
     [EntityMap(Sequencer = true)]
     public int SystemCode
     {
-      get { return base.Code; }
-      set { base.Code = value; }
+      get {
+        return base.Code;
+      }
+      set {
+        base.Code = value;
+      }
     }
 
     [EntityMap]
     public string SystemName
     {
-      get { return base.Name; }
-      set { base.Name = value; }
+      get {
+        return base.Name;
+      }
+      set {
+        base.Name = value;
+      }
     }
 
     [EntityMap]
     public string SystemDesc
     {
-      get { return base.Description; }
-      set { base.Description = value; }
+      get {
+        return base.Description;
+      }
+      set {
+        base.Description = value;
+      }
     }
 
     [EntityMap]
     public new bool IsActive
     {
-      get { return base.IsActive; }
-      set { base.IsActive = value; }
+      get {
+        return base.IsActive;
+      }
+      set {
+        base.IsActive = value;
+      }
     }
 
 

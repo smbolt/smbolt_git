@@ -2,12 +2,12 @@
 {
   partial class TextExtractDesigner
   {
-    /// <summary> 
+    /// <summary>
     /// Required designer variable.
     /// </summary>
     private System.ComponentModel.IContainer components = null;
 
-    /// <summary> 
+    /// <summary>
     /// Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -23,8 +23,8 @@
 
     #region Component Designer generated code
 
-    /// <summary> 
-    /// Required method for Designer support - do not modify 
+    /// <summary>
+    /// Required method for Designer support - do not modify
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent()
@@ -77,40 +77,40 @@
       this.pnlTextExtractDesignerTop.SuspendLayout();
       this.pnlBackground.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // pnlBottom
-      // 
+      //
       this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.pnlBottom.Location = new System.Drawing.Point(0, 1197);
       this.pnlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pnlBottom.Name = "pnlBottom";
       this.pnlBottom.Size = new System.Drawing.Size(1866, 15);
       this.pnlBottom.TabIndex = 1;
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
       this.splitterMain.Location = new System.Drawing.Point(0, 0);
       this.splitterMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.splitterMain.Name = "splitterMain";
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.tvDocStructure);
       this.splitterMain.Panel1.Controls.Add(this.pnlTreeViewTop);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.splitterRight);
       this.splitterMain.Panel2.Controls.Add(this.pnlDesignerMainTop);
       this.splitterMain.Size = new System.Drawing.Size(1860, 1111);
       this.splitterMain.SplitterDistance = 251;
       this.splitterMain.TabIndex = 2;
-      // 
+      //
       // tvDocStructure
-      // 
+      //
       this.tvDocStructure.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvDocStructure.ContextMenuStrip = this.ctxMenuTreeView;
       this.tvDocStructure.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -125,84 +125,85 @@
       this.tvDocStructure.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvDocStructure_BeforeSelect);
       this.tvDocStructure.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvDocStructure_AfterSelect);
       this.tvDocStructure.Click += new System.EventHandler(this.tvDocStructure_Click);
-      // 
+      //
       // ctxMenuTreeView
-      // 
+      //
       this.ctxMenuTreeView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMenuTreeViewShowAllNodes,
-            this.ctxMenuTreeViewShowOnlyThisNodeType,
-            this.ctxMenuTreeViewEditConfig,
-            this.ctxMenuTreeViewRefresh});
+        this.ctxMenuTreeViewShowAllNodes,
+        this.ctxMenuTreeViewShowOnlyThisNodeType,
+        this.ctxMenuTreeViewEditConfig,
+        this.ctxMenuTreeViewRefresh
+      });
       this.ctxMenuTreeView.Name = "ctxMenuTreeView";
       this.ctxMenuTreeView.Size = new System.Drawing.Size(217, 114);
-      // 
+      //
       // ctxMenuTreeViewShowAllNodes
-      // 
+      //
       this.ctxMenuTreeViewShowAllNodes.Name = "ctxMenuTreeViewShowAllNodes";
       this.ctxMenuTreeViewShowAllNodes.Size = new System.Drawing.Size(216, 22);
       this.ctxMenuTreeViewShowAllNodes.Tag = "ShowAllNodes";
       this.ctxMenuTreeViewShowAllNodes.Text = "Show &All Nodes";
       this.ctxMenuTreeViewShowAllNodes.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuTreeViewShowOnlyThisNodeType
-      // 
+      //
       this.ctxMenuTreeViewShowOnlyThisNodeType.Name = "ctxMenuTreeViewShowOnlyThisNodeType";
       this.ctxMenuTreeViewShowOnlyThisNodeType.Size = new System.Drawing.Size(216, 22);
       this.ctxMenuTreeViewShowOnlyThisNodeType.Tag = "ShowOnlyThisNodeType";
       this.ctxMenuTreeViewShowOnlyThisNodeType.Text = "Show Only This Node Type";
       this.ctxMenuTreeViewShowOnlyThisNodeType.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuTreeViewEditConfig
-      // 
+      //
       this.ctxMenuTreeViewEditConfig.Name = "ctxMenuTreeViewEditConfig";
       this.ctxMenuTreeViewEditConfig.Size = new System.Drawing.Size(216, 22);
       this.ctxMenuTreeViewEditConfig.Tag = "EditConfig";
       this.ctxMenuTreeViewEditConfig.Text = "&Edit Config";
       this.ctxMenuTreeViewEditConfig.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuTreeViewRefresh
-      // 
+      //
       this.ctxMenuTreeViewRefresh.Name = "ctxMenuTreeViewRefresh";
       this.ctxMenuTreeViewRefresh.Size = new System.Drawing.Size(216, 22);
       this.ctxMenuTreeViewRefresh.Tag = "Refresh";
       this.ctxMenuTreeViewRefresh.Text = "&Refresh";
       this.ctxMenuTreeViewRefresh.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // imgListTreeView
-      // 
+      //
       this.imgListTreeView.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
       this.imgListTreeView.ImageSize = new System.Drawing.Size(16, 16);
       this.imgListTreeView.TransparentColor = System.Drawing.Color.Transparent;
-      // 
+      //
       // pnlTreeViewTop
-      // 
+      //
       this.pnlTreeViewTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlTreeViewTop.Location = new System.Drawing.Point(0, 0);
       this.pnlTreeViewTop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pnlTreeViewTop.Name = "pnlTreeViewTop";
       this.pnlTreeViewTop.Size = new System.Drawing.Size(249, 62);
       this.pnlTreeViewTop.TabIndex = 3;
-      // 
+      //
       // splitterRight
-      // 
+      //
       this.splitterRight.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterRight.Location = new System.Drawing.Point(0, 62);
       this.splitterRight.Name = "splitterRight";
       this.splitterRight.Orientation = System.Windows.Forms.Orientation.Horizontal;
-      // 
+      //
       // splitterRight.Panel1
-      // 
+      //
       this.splitterRight.Panel1.Controls.Add(this.txtTextValue);
-      // 
+      //
       // splitterRight.Panel2
-      // 
+      //
       this.splitterRight.Panel2.Controls.Add(this.splitterRightBottom);
       this.splitterRight.Size = new System.Drawing.Size(1603, 1047);
       this.splitterRight.SplitterDistance = 523;
       this.splitterRight.TabIndex = 5;
-      // 
+      //
       // txtTextValue
-      // 
+      //
       this.txtTextValue.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -213,7 +214,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtTextValue.AutoScrollMinSize = new System.Drawing.Size(53, 13);
       this.txtTextValue.BackBrush = null;
       this.txtTextValue.CharHeight = 13;
@@ -232,29 +234,29 @@
       this.txtTextValue.Size = new System.Drawing.Size(1603, 523);
       this.txtTextValue.TabIndex = 4;
       this.txtTextValue.Zoom = 100;
-      // 
+      //
       // splitterRightBottom
-      // 
+      //
       this.splitterRightBottom.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterRightBottom.Location = new System.Drawing.Point(0, 0);
       this.splitterRightBottom.Name = "splitterRightBottom";
       this.splitterRightBottom.Orientation = System.Windows.Forms.Orientation.Horizontal;
-      // 
+      //
       // splitterRightBottom.Panel1
-      // 
+      //
       this.splitterRightBottom.Panel1.Controls.Add(this.txtConfig);
       this.splitterRightBottom.Panel1.Controls.Add(this.pnlConfigTop);
-      // 
+      //
       // splitterRightBottom.Panel2
-      // 
+      //
       this.splitterRightBottom.Panel2.Controls.Add(this.txtExtract);
       this.splitterRightBottom.Panel2.Controls.Add(this.pnlExtractTop);
       this.splitterRightBottom.Size = new System.Drawing.Size(1603, 520);
       this.splitterRightBottom.SplitterDistance = 292;
       this.splitterRightBottom.TabIndex = 0;
-      // 
+      //
       // txtConfig
-      // 
+      //
       this.txtConfig.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -265,7 +267,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtConfig.AutoScrollMinSize = new System.Drawing.Size(53, 13);
       this.txtConfig.BackBrush = null;
       this.txtConfig.CharHeight = 13;
@@ -284,17 +287,17 @@
       this.txtConfig.Size = new System.Drawing.Size(1603, 264);
       this.txtConfig.TabIndex = 5;
       this.txtConfig.Zoom = 100;
-      // 
+      //
       // pnlConfigTop
-      // 
+      //
       this.pnlConfigTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlConfigTop.Location = new System.Drawing.Point(0, 0);
       this.pnlConfigTop.Name = "pnlConfigTop";
       this.pnlConfigTop.Size = new System.Drawing.Size(1603, 28);
       this.pnlConfigTop.TabIndex = 0;
-      // 
+      //
       // txtExtract
-      // 
+      //
       this.txtExtract.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -305,7 +308,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtExtract.AutoScrollMinSize = new System.Drawing.Size(2, 13);
       this.txtExtract.BackBrush = null;
       this.txtExtract.CharHeight = 13;
@@ -324,17 +328,17 @@
       this.txtExtract.Size = new System.Drawing.Size(1603, 196);
       this.txtExtract.TabIndex = 5;
       this.txtExtract.Zoom = 100;
-      // 
+      //
       // pnlExtractTop
-      // 
+      //
       this.pnlExtractTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlExtractTop.Location = new System.Drawing.Point(0, 0);
       this.pnlExtractTop.Name = "pnlExtractTop";
       this.pnlExtractTop.Size = new System.Drawing.Size(1603, 28);
       this.pnlExtractTop.TabIndex = 1;
-      // 
+      //
       // pnlDesignerMainTop
-      // 
+      //
       this.pnlDesignerMainTop.Controls.Add(this.lblTextStructure);
       this.pnlDesignerMainTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlDesignerMainTop.Location = new System.Drawing.Point(0, 0);
@@ -342,9 +346,9 @@
       this.pnlDesignerMainTop.Name = "pnlDesignerMainTop";
       this.pnlDesignerMainTop.Size = new System.Drawing.Size(1603, 62);
       this.pnlDesignerMainTop.TabIndex = 3;
-      // 
+      //
       // lblTextStructure
-      // 
+      //
       this.lblTextStructure.AutoSize = true;
       this.lblTextStructure.Location = new System.Drawing.Point(26, 20);
       this.lblTextStructure.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -352,9 +356,9 @@
       this.lblTextStructure.Size = new System.Drawing.Size(109, 20);
       this.lblTextStructure.TabIndex = 0;
       this.lblTextStructure.Text = "Text Structure";
-      // 
+      //
       // pnlTextExtractDesignerTop
-      // 
+      //
       this.pnlTextExtractDesignerTop.Controls.Add(this.ckRunExtract);
       this.pnlTextExtractDesignerTop.Controls.Add(this.btnInit);
       this.pnlTextExtractDesignerTop.Controls.Add(this.btnRun);
@@ -367,9 +371,9 @@
       this.pnlTextExtractDesignerTop.Name = "pnlTextExtractDesignerTop";
       this.pnlTextExtractDesignerTop.Size = new System.Drawing.Size(1866, 46);
       this.pnlTextExtractDesignerTop.TabIndex = 3;
-      // 
+      //
       // ckRunExtract
-      // 
+      //
       this.ckRunExtract.AutoSize = true;
       this.ckRunExtract.Location = new System.Drawing.Point(873, 11);
       this.ckRunExtract.Name = "ckRunExtract";
@@ -377,9 +381,9 @@
       this.ckRunExtract.TabIndex = 2;
       this.ckRunExtract.Text = "Run Extract";
       this.ckRunExtract.UseVisualStyleBackColor = true;
-      // 
+      //
       // btnInit
-      // 
+      //
       this.btnInit.Location = new System.Drawing.Point(530, 6);
       this.btnInit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.btnInit.Name = "btnInit";
@@ -389,9 +393,9 @@
       this.btnInit.Text = "Init";
       this.btnInit.UseVisualStyleBackColor = true;
       this.btnInit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRun
-      // 
+      //
       this.btnRun.Location = new System.Drawing.Point(736, 6);
       this.btnRun.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.btnRun.Name = "btnRun";
@@ -401,9 +405,9 @@
       this.btnRun.Text = "Run";
       this.btnRun.UseVisualStyleBackColor = true;
       this.btnRun.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnStep
-      // 
+      //
       this.btnStep.Location = new System.Drawing.Point(633, 6);
       this.btnStep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.btnStep.Name = "btnStep";
@@ -413,9 +417,9 @@
       this.btnStep.Text = "Step";
       this.btnStep.UseVisualStyleBackColor = true;
       this.btnStep.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnWorkHere
-      // 
+      //
       this.btnWorkHere.Location = new System.Drawing.Point(281, 5);
       this.btnWorkHere.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.btnWorkHere.Name = "btnWorkHere";
@@ -425,9 +429,9 @@
       this.btnWorkHere.Text = "Work Here";
       this.btnWorkHere.UseVisualStyleBackColor = true;
       this.btnWorkHere.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnReprocess
-      // 
+      //
       this.btnReprocess.Location = new System.Drawing.Point(14, 5);
       this.btnReprocess.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.btnReprocess.Name = "btnReprocess";
@@ -437,9 +441,9 @@
       this.btnReprocess.Text = "Reprocess";
       this.btnReprocess.UseVisualStyleBackColor = true;
       this.btnReprocess.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlBackground
-      // 
+      //
       this.pnlBackground.Controls.Add(this.splitterMain);
       this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlBackground.Location = new System.Drawing.Point(0, 86);
@@ -448,9 +452,9 @@
       this.pnlBackground.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
       this.pnlBackground.Size = new System.Drawing.Size(1866, 1111);
       this.pnlBackground.TabIndex = 4;
-      // 
+      //
       // TextExtractDesigner
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.pnlBackground);
@@ -495,7 +499,7 @@
     private System.Windows.Forms.TreeView tvDocStructure;
     private System.Windows.Forms.Panel pnlTreeViewTop;
     private System.Windows.Forms.Panel pnlTextExtractDesignerTop;
-		private System.Windows.Forms.Panel pnlBackground;
+    private System.Windows.Forms.Panel pnlBackground;
     private System.Windows.Forms.ImageList imgListTreeView;
     private System.Windows.Forms.Button btnReprocess;
     private System.Windows.Forms.ContextMenuStrip ctxMenuTreeView;
@@ -503,9 +507,9 @@
     private System.Windows.Forms.ToolStripMenuItem ctxMenuTreeViewRefresh;
     private System.Windows.Forms.Panel pnlDesignerMainTop;
     private FastColoredTextBoxNS.FastColoredTextBox txtTextValue;
-		private System.Windows.Forms.Label lblTextStructure;
-		private System.Windows.Forms.ToolStripMenuItem ctxMenuTreeViewShowAllNodes;
-		private System.Windows.Forms.ToolStripMenuItem ctxMenuTreeViewShowOnlyThisNodeType;
+    private System.Windows.Forms.Label lblTextStructure;
+    private System.Windows.Forms.ToolStripMenuItem ctxMenuTreeViewShowAllNodes;
+    private System.Windows.Forms.ToolStripMenuItem ctxMenuTreeViewShowOnlyThisNodeType;
     private System.Windows.Forms.SplitContainer splitterRight;
     private System.Windows.Forms.SplitContainer splitterRightBottom;
     private FastColoredTextBoxNS.FastColoredTextBox txtConfig;

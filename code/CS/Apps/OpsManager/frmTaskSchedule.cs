@@ -85,7 +85,7 @@ namespace Org.OpsManager
 
       if (_opsData.Environment == "Prod")
         result = MessageBox.Show("Apply these changes to the TaskSchedules table in the Task Scheduling database?",
-                                            "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                 "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
       if (result == DialogResult.Yes)
       {
         if (_isNewSchedule)
@@ -95,7 +95,7 @@ namespace Org.OpsManager
         }
         else
         {
-          
+
           _opsData.CurrentTaskSchedule.TaskScheduleId = _opsData.CurrentTaskSchedule.TaskScheduleId;
           _opsData.CurrentTaskSchedule.ModifiedBy = g.SystemInfo.DomainAndUser;
           _opsData.CurrentTaskSchedule.ModifiedDate = DateTime.Now;
@@ -203,8 +203,8 @@ namespace Org.OpsManager
       if (_isInitLoad)
         return;
 
-      if ((txtScheduleName.Text.Trim() != _opsData.CurrentTaskSchedule.ScheduleName 
-              && txtScheduleName.Text.IsNotBlank())
+      if ((txtScheduleName.Text.Trim() != _opsData.CurrentTaskSchedule.ScheduleName
+           && txtScheduleName.Text.IsNotBlank())
           ||
           cbIsActive.Checked != _opsData.CurrentTaskSchedule.IsActive)
         btnSave.Enabled = true;

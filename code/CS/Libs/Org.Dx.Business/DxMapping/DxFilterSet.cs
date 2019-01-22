@@ -6,15 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using Org.GS;
 
-namespace Org.Dx.Business 
+namespace Org.Dx.Business
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
   [XMap(CollectionElements = "DxFilter", XType = XType.Element)]
   public class DxFilterSet : List<DxFilter>
   {
-    public DxFilter SheetFilter { get { return this.Where(f => f.FilterType == FilterType.SheetFilter).FirstOrDefault(); } }
+    public DxFilter SheetFilter {
+      get {
+        return this.Where(f => f.FilterType == FilterType.SheetFilter).FirstOrDefault();
+      }
+    }
 
-    public string Report { get { return Get_Report(); } }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public void AutoInit()
     {
@@ -62,7 +70,7 @@ namespace Org.Dx.Business
               if (sheetName.StartsWith("!"))
               {
                 negateAction = true;
-                sheetName = sheetName.Substring(1); 
+                sheetName = sheetName.Substring(1);
               }
 
               if (sheetName == "*")
@@ -83,19 +91,19 @@ namespace Org.Dx.Business
                 }
               }
             }
-            break; 
+            break;
 
           case FilterMethod.SheetFilterCellValues:
+          {
+            foreach (var filterCellValue in filter.SheetFormatArray)
             {
-              foreach (var filterCellValue in filter.SheetFormatArray)
-              {
-                
-              }
-
 
             }
 
-            break; 
+
+          }
+
+          break;
         }
       }
 
@@ -138,7 +146,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to determine whether a DxRow should be included.", ex); 
+        throw new Exception("An exception occurred while attempting to determine whether a DxRow should be included.", ex);
       }
     }
 
@@ -219,7 +227,7 @@ namespace Org.Dx.Business
         throw new Exception("An error occurred applying a map filter to a source row set.", ex);
       }
     }
-    
+
     private DxFilterSet GetSheetFilters()
     {
       var filterSet = new DxFilterSet();
@@ -227,7 +235,7 @@ namespace Org.Dx.Business
       foreach(var filter in this)
       {
         if (filter.FilterMethod.ToString().StartsWith("SheetFilter"))
-          filterSet.Add(filter); 
+          filterSet.Add(filter);
       }
 
       return filterSet;
@@ -240,7 +248,7 @@ namespace Org.Dx.Business
       foreach(var filter in this)
       {
         if (filter.FilterMethod.ToString().StartsWith("RowFilter"))
-          filterSet.Add(filter); 
+          filterSet.Add(filter);
       }
 
       return filterSet;

@@ -10,23 +10,35 @@ namespace Org.RPT
   public class ReportObjectSize
   {
     [XMap]
-    public float Width { get; set; }
+    public float Width {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public float Height { get; set; }
+    public float Height {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Fixed")]
-    public HeightSizeMode HeightSizeMode { get; set; }
+    public HeightSizeMode HeightSizeMode {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Full")]
-    public WidthSizeMode WidthSizeMode { get; set; }
+    public WidthSizeMode WidthSizeMode {
+      get;
+      set;
+    }
 
     public ReportObjectSize()
     {
       this.Width = 0.0F;
       this.Height = 0.0F;
       this.HeightSizeMode = HeightSizeMode.Fixed;
-      this.WidthSizeMode = WidthSizeMode.Full; 
+      this.WidthSizeMode = WidthSizeMode.Full;
     }
   }
 }

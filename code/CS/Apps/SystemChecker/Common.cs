@@ -62,7 +62,7 @@ namespace SystemChecker
 
     public static bool IsNotBlank(this string value)
     {
-      return !IsBlank(value); 
+      return !IsBlank(value);
     }
 
     public static bool IsNumeric(this string value)
@@ -82,7 +82,7 @@ namespace SystemChecker
 
     public static bool IsNotNumeric(this string value)
     {
-      return !IsNumeric(value); 
+      return !IsNumeric(value);
     }
 
     public static int ToInt32(this string value)

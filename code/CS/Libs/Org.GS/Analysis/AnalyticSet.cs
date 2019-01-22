@@ -47,8 +47,8 @@ namespace Org.GS.Analysis
         int colNbr = kvp.Key;
         int density = kvp.Value;
         float percent = (float) density / this.Values.Count * 100f;
-        sbColDensity.Append(colNbr.ToString("000") + " - " + Analytic.ColumnNames[colNbr].PadTo(30) + "  " + 
-                            density.ToString("###,##0").PadToJustifyRight(7) + "    " + 
+        sbColDensity.Append(colNbr.ToString("000") + " - " + Analytic.ColumnNames[colNbr].PadTo(30) + "  " +
+                            density.ToString("###,##0").PadToJustifyRight(7) + "    " +
                             percent.ToString("#0.0000").PadToJustifyRight(7) + "%" + g.crlf);
       }
 

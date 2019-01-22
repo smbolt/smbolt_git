@@ -39,13 +39,17 @@ namespace Org.GS
     public static char[] CloseBracket = new char[] { ']' };
     public static char[] FSlashOrCloseBracket = new char[] { '/', ']' };
     public static char[] SlashDelimiter = new char[] { '\\', '/' };
-    public static char[] NewLineReplacementCharacters = new char[] { '\xA4' }; 
+    public static char[] NewLineReplacementCharacters = new char[] { '\xA4' };
     public static char CopyrightCharacter = '\u00A9';
     public static char TabReplacementCharacter = '\u00B1';
     public static char NewLineReplacementCharacter = '\xA4';
     public static char NewLineCharacter = '\n';
     public static char CarriageReturnCharacter = '\r';
     public static string[] ConditionRelOps = new string[] { "!=", ">=", "<=", "=", ">", "<" };
-    public static string Copyright { get { return CopyrightCharacter.ToString(); } }
+    public static string Copyright {
+      get {
+        return CopyrightCharacter.ToString();
+      }
+    }
   }
 }

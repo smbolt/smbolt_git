@@ -13,17 +13,51 @@ namespace Org.MX.Model
   {
     private ConfigDbSpec _configDbSpec;
 
-    public MetricObjectSet<MetricEnvironment> MetricEnvironmentSet { get; private set; }
-    public MetricObjectSet<Interval> IntervalSet { get; private set; }
-    public MetricObjectSet<Location> LocationSet { get; private set; }
-    public MetricObjectSet<MeasuredValueType> MeasuredValueTypeSet { get; private set; }
-    public MetricObjectSet<MetricApp> MetricAppSet { get; private set; }
-    public MetricObjectSet<MetricState> MetricStateSet { get; private set; }
-    public MetricObjectSet<MetricType> MetricTypeSet { get; private set; }
-    public MetricObjectSet<MetricValueType> MetricValueTypeSet { get; private set; }
-    public MetricObjectSet<Server> ServerSet { get; private set; }
-    public MetricObjectSet<System> SystemSet { get; private set; }
-    public string Report { get { return Get_Report(); } }
+    public MetricObjectSet<MetricEnvironment> MetricEnvironmentSet {
+      get;
+      private set;
+    }
+    public MetricObjectSet<Interval> IntervalSet {
+      get;
+      private set;
+    }
+    public MetricObjectSet<Location> LocationSet {
+      get;
+      private set;
+    }
+    public MetricObjectSet<MeasuredValueType> MeasuredValueTypeSet {
+      get;
+      private set;
+    }
+    public MetricObjectSet<MetricApp> MetricAppSet {
+      get;
+      private set;
+    }
+    public MetricObjectSet<MetricState> MetricStateSet {
+      get;
+      private set;
+    }
+    public MetricObjectSet<MetricType> MetricTypeSet {
+      get;
+      private set;
+    }
+    public MetricObjectSet<MetricValueType> MetricValueTypeSet {
+      get;
+      private set;
+    }
+    public MetricObjectSet<Server> ServerSet {
+      get;
+      private set;
+    }
+    public MetricObjectSet<System> SystemSet {
+      get;
+      private set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public MetricData(ConfigDbSpec configDbSpec)
     {

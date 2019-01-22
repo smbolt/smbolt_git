@@ -12,7 +12,10 @@ namespace Org.WSO.Transactions
   public class WsCommandSet : List<WsCommand>
   {
     [XMap(DefaultValue = "0")]
-    public float DurationSeconds { get; set; }
+    public float DurationSeconds {
+      get;
+      set;
+    }
 
     public WsCommandSet()
     {

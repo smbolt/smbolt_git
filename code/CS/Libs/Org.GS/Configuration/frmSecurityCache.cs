@@ -62,10 +62,10 @@ namespace Org.GS.Configuration
     private void btnCancel_Click(object sender, EventArgs e)
     {
       if (MessageBox.Show("Are you sure you do not want to establish the temporary security cache?" + g.crlf2 +
-            "This program is having trouble accessing Active Directory in order to establish security group membership for this user, " +
-            "without which this program may not be able to run." + g.crlf2 +
-            "Click 'Yes' to cancel or 'No' to return to the form and select security group membership for this user.", "Confirm Cancel",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                          "This program is having trouble accessing Active Directory in order to establish security group membership for this user, " +
+                          "without which this program may not be able to run." + g.crlf2 +
+                          "Click 'Yes' to cancel or 'No' to return to the form and select security group membership for this user.", "Confirm Cancel",
+                          MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
       {
         this.DialogResult = DialogResult.Cancel;
         this.Close();
@@ -104,7 +104,7 @@ namespace Org.GS.Configuration
 
       string folderName = Path.GetDirectoryName(_path);
       if (!Directory.Exists(folderName))
-          Directory.CreateDirectory(folderName);
+        Directory.CreateDirectory(folderName);
 
       File.WriteAllText(_path, encryptedCache);
 

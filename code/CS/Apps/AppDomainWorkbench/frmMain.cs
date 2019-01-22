@@ -93,7 +93,7 @@ namespace AppDomainWorkbench
       {
         if (tvMain.SelectedNode == null || tvMain.SelectedNode.Tag == null)
           return;
-        
+
         var objDesc = tvMain.SelectedNode.Tag as AppDomainObjectDescriptor;
         if (objDesc == null)
           return;
@@ -119,7 +119,7 @@ namespace AppDomainWorkbench
       {
         if (cboTasks.Text.IsBlank())
           return;
-        
+
         string taskToRun = _taskConfiguration[cboTasks.Text];
 
         string[] tokens = taskToRun.Split(Constants.PipeDelimiter, StringSplitOptions.RemoveEmptyEntries);
@@ -130,8 +130,8 @@ namespace AppDomainWorkbench
         string objectTypeName = tokens[3];
         string objectRegistryName = tokens[4];
 
-        var taskRequest = BuildTaskRequest(); 
-     
+        var taskRequest = BuildTaskRequest();
+
         var appDomainSetUp = new AppDomainSetup();
         appDomainSetUp.ApplicationBase = g.CI("$COMPONENTCATALOG$") + @"\" + catalogEntry + @"\1.0.0.0";
         var appDomainObjectDescriptor = new AppDomainObjectDescriptor(appDomainName, objectRegistryName, assemblyName, objectTypeName, appDomainSetUp);
@@ -155,13 +155,13 @@ namespace AppDomainWorkbench
 
         txtMain.Text = "Task is processing";
         Application.DoEvents();
-;
+        ;
 
 
         LoadTreeView();
 
         // this was working but not handling the "Task" across boundary
-        //txtMain.Text = await plugIn.ProcessTask(); 
+        //txtMain.Text = await plugIn.ProcessTask();
 
 
         cboTasks.SelectedIndex = -1;
@@ -217,15 +217,17 @@ namespace AppDomainWorkbench
         })));
       }
     }
-    
+
     private TaskRequest BuildTaskRequest()
     {
       TaskRequest taskRequest = new TaskRequest(0, "Dummy", "DummyPlugIn", "1.0.0.0", 1, TaskRequestType.ScheduledTask,
-        new ParmSet() { new Parm("Key1", "Value1") }, DateTime.Now, false, false, (int?)null, (int?)null, false);
+      new ParmSet() {
+        new Parm("Key1", "Value1")
+      }, DateTime.Now, false, false, (int?)null, (int?)null, false);
 
       return taskRequest;
     }
-    
+
     private void LoadTreeView(string selectedName = "")
     {
       this.Cursor = Cursors.WaitCursor;
@@ -275,7 +277,7 @@ namespace AppDomainWorkbench
         {
           var regObjectNode = new TreeNode(registeredObject.Value.ObjectRegistryName, 2, 3);
           regObjectNode.Tag = registeredObject.Value;
-          treeNode.Nodes.Add(regObjectNode); 
+          treeNode.Nodes.Add(regObjectNode);
         }
       }
 
@@ -354,7 +356,7 @@ namespace AppDomainWorkbench
                         "AppDomain Manager - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
-    
+
     private void InitializeTreeViewImageList()
     {
       try
@@ -418,14 +420,14 @@ namespace AppDomainWorkbench
         if (objDesc != null)
         {
           var appDomainUtility = (IAppDomainUtility)(objDesc.AppDomain.CreateInstanceAndUnwrap("Org.GS", "Org.GS.AppDomainManagement.AppDomainUtility"));
-          txtMain.Text = "Component Name    : " + objDesc.ObjectRegistryName + " running in AppDomain:" + g.crlf2 + appDomainUtility.GetAssemblyReport(); 
+          txtMain.Text = "Component Name    : " + objDesc.ObjectRegistryName + " running in AppDomain:" + g.crlf2 + appDomainUtility.GetAssemblyReport();
         }
       }
       catch (Exception ex)
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred during program TreeView selection change handler and the " +
-                        "subsequent attempt to build the AppDomain assembly report." + g.crlf2 + ex.ToReport(), 
+                        "subsequent attempt to build the AppDomain assembly report." + g.crlf2 + ex.ToReport(),
                         "AppDomain Manager - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
       }

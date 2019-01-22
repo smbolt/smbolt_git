@@ -25,7 +25,7 @@ namespace Org.ControlTest
 
     private void InitializeForm()
     {
-      fctxtMain.Text = File.ReadAllText(_filePath); 
+      fctxtMain.Text = File.ReadAllText(_filePath);
     }
 
     public string GetText()
@@ -44,7 +44,7 @@ namespace Org.ControlTest
       {
         case FastColoredTextBoxNS.FCTBAction.CustomAction1:
           if (this.ConfigFormAction != null)
-            this.ConfigFormAction("SaveAndDisplay"); 
+            this.ConfigFormAction("SaveAndDisplay");
           break;
       }
     }

@@ -9,51 +9,174 @@ namespace Org.Terminal.BMS
 {
   public class Bms_DFHMDF : Bms_BASE
   {
-    public string Name { get; set; }
-    public int PosLine { get; private set; }
-    public int PosColumn { get; private set; }
-    public bool AttrbProt { get; private set; }
-    public bool AttrbNum { get; private set; }
-    public bool AttrbBright { get; private set; }
-    public bool AttrbDark { get; private set; }
-    public bool AttrbDet { get; private set; }
-    public bool AttrbIC { get; private set; }
-    public bool AttrbFSET { get; private set; }
-    public int Length { get; private set; }
-    public int? MaxSize { get; private set; }
-    public int? MaxOccurs { get; private set; }
-    public int InitUnderlineChar { get; private set; }
-    public string Init { get; private set; }
-    public bool UseInit { get; private set; }
-    public string Fill { get; private set; }
-    public bool UseFill { get; private set; }
-    public string HexInit { get; private set; }
-    public bool UseHexInit { get; private set; }
-    public string GInit { get; private set; }
-    public bool UseGInit { get; private set; }
-    public string GrpName { get; private set; }
-    public int Occurs { get; private set; }
-    public string PicIn { get; private set; }
-    public string PicOut { get; private set; }
-    public string SkipTo { get; private set; }
-    
+    public string Name {
+      get;
+      set;
+    }
+    public int PosLine {
+      get;
+      private set;
+    }
+    public int PosColumn {
+      get;
+      private set;
+    }
+    public bool AttrbProt {
+      get;
+      private set;
+    }
+    public bool AttrbNum {
+      get;
+      private set;
+    }
+    public bool AttrbBright {
+      get;
+      private set;
+    }
+    public bool AttrbDark {
+      get;
+      private set;
+    }
+    public bool AttrbDet {
+      get;
+      private set;
+    }
+    public bool AttrbIC {
+      get;
+      private set;
+    }
+    public bool AttrbFSET {
+      get;
+      private set;
+    }
+    public int Length {
+      get;
+      private set;
+    }
+    public int? MaxSize {
+      get;
+      private set;
+    }
+    public int? MaxOccurs {
+      get;
+      private set;
+    }
+    public int InitUnderlineChar {
+      get;
+      private set;
+    }
+    public string Init {
+      get;
+      private set;
+    }
+    public bool UseInit {
+      get;
+      private set;
+    }
+    public string Fill {
+      get;
+      private set;
+    }
+    public bool UseFill {
+      get;
+      private set;
+    }
+    public string HexInit {
+      get;
+      private set;
+    }
+    public bool UseHexInit {
+      get;
+      private set;
+    }
+    public string GInit {
+      get;
+      private set;
+    }
+    public bool UseGInit {
+      get;
+      private set;
+    }
+    public string GrpName {
+      get;
+      private set;
+    }
+    public int Occurs {
+      get;
+      private set;
+    }
+    public string PicIn {
+      get;
+      private set;
+    }
+    public string PicOut {
+      get;
+      private set;
+    }
+    public string SkipTo {
+      get;
+      private set;
+    }
 
-    public bool OutlineBox { get; private set; }
-    public bool OutlineTop { get; private set; }
-    public bool OutlineRight { get; private set; }
-    public bool OutlineBottom { get; private set; }
-    public bool OutlineLeft { get; private set; }
-    public bool Underline { get; set; }
 
-    private List<string> _attrb { get; set; }
+    public bool OutlineBox {
+      get;
+      private set;
+    }
+    public bool OutlineTop {
+      get;
+      private set;
+    }
+    public bool OutlineRight {
+      get;
+      private set;
+    }
+    public bool OutlineBottom {
+      get;
+      private set;
+    }
+    public bool OutlineLeft {
+      get;
+      private set;
+    }
+    public bool Underline {
+      get;
+      set;
+    }
 
-    public DFH_COLOR DFH_COLOR { get; private set; }
-    public DFH_HILIGHT DFH_HILIGHT { get; private set; }
-    public DFH_PS DFH_PS { get; private set; }
-    public DFH_TRANSP DFH_TRANSP { get; private set; }
-    public DFHMDF_CASE DFHMDF_CASE { get; private set; }
-    public DFHMDF_HFLEX DFHMDF_HFLEX { get; private set; }
-    public DFHMDF_VFLEX DFHMDF_VFLEX { get; private set; }
+    private List<string> _attrb {
+      get;
+      set;
+    }
+
+    public DFH_COLOR DFH_COLOR {
+      get;
+      private set;
+    }
+    public DFH_HILIGHT DFH_HILIGHT {
+      get;
+      private set;
+    }
+    public DFH_PS DFH_PS {
+      get;
+      private set;
+    }
+    public DFH_TRANSP DFH_TRANSP {
+      get;
+      private set;
+    }
+    public DFHMDF_CASE DFHMDF_CASE {
+      get;
+      private set;
+    }
+    public DFHMDF_HFLEX DFHMDF_HFLEX {
+      get;
+      private set;
+    }
+    public DFHMDF_VFLEX DFHMDF_VFLEX {
+      get;
+      private set;
+    }
 
     public Bms_DFHMDF(BmsStatement bmsStatement)
       : base(bmsStatement)
@@ -68,7 +191,7 @@ namespace Org.Terminal.BMS
     {
       try
       {
-        int apostCount = 0; 
+        int apostCount = 0;
 
         string[] remainingTokens = base.BmsStatement.RemainingText.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
@@ -374,7 +497,7 @@ namespace Org.Terminal.BMS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to populate the Bms_DFHMDF object from the macro value '" + base.BmsStatement.BmsStatementText + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to populate the Bms_DFHMDF object from the macro value '" + base.BmsStatement.BmsStatementText + "'.", ex);
       }
     }
 
@@ -431,7 +554,7 @@ namespace Org.Terminal.BMS
           case "IC":
           case "FSET":
             continue;
-            
+
           default:
             // add error and continue
             return false;
@@ -472,7 +595,7 @@ namespace Org.Terminal.BMS
     {
       var clone = new Bms_DFHMDF(this.BmsStatement.CloneForVFLEX(lineNumber));
 
-      return clone; 
+      return clone;
     }
   }
 }

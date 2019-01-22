@@ -13,14 +13,14 @@ namespace Org.WSO
     public event Action<WsCommandSet> ServiceCommand;
 
     public OrgServiceHost(Type serviceType, params Uri[] baseAddresses)
-    : base(serviceType, baseAddresses) { }
+      : base(serviceType, baseAddresses) { }
 
     public void FireServiceCommandEvent(WsCommandSet commandSet)
     {
       if (ServiceCommand == null)
         return;
 
-      ServiceCommand(commandSet); 
+      ServiceCommand(commandSet);
     }
   }
 }

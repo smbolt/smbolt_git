@@ -12,36 +12,90 @@ namespace Org.GS.Configuration
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
   public class ConfigNotifySpec : ConfigObjectBase
   {
-    [OrgConfigItem] public NotifyConfigMode NotifyConfigMode { get; set; }
-    [OrgConfigItem] public string NotifyConfigSetName { get; set; }
-    [OrgConfigItem] public string NotifyDbSpecPrefix { get; set; }
-    [OrgConfigItem] public string NotifyDefaultEventName { get; set; }
-    [OrgConfigItem] public bool NotifyOnGetTasks { get; set; }
-    [OrgConfigItem] public bool NotifyOnNoWorkDone { get; set; }
+    [OrgConfigItem] public NotifyConfigMode NotifyConfigMode {
+      get;
+      set;
+    }
+    [OrgConfigItem] public string NotifyConfigSetName {
+      get;
+      set;
+    }
+    [OrgConfigItem] public string NotifyDbSpecPrefix {
+      get;
+      set;
+    }
+    [OrgConfigItem] public string NotifyDefaultEventName {
+      get;
+      set;
+    }
+    [OrgConfigItem] public bool NotifyOnGetTasks {
+      get;
+      set;
+    }
+    [OrgConfigItem] public bool NotifyOnNoWorkDone {
+      get;
+      set;
+    }
 
-    public NotifyConfigMode OriginalNotifyConfigMode { get; set; }
-    public string OriginalNotifyConfigSetName { get; set; }
-    public string OriginalNotifyDbSpecPrefix { get; set; }
-    public string OriginalNotifyDefaultEventName { get; set; }
-    public bool OriginalNotifyOnGetTasks { get; set; }
-    public bool OriginalNotifyOnNoWorkDone { get; set; }
+    public NotifyConfigMode OriginalNotifyConfigMode {
+      get;
+      set;
+    }
+    public string OriginalNotifyConfigSetName {
+      get;
+      set;
+    }
+    public string OriginalNotifyDbSpecPrefix {
+      get;
+      set;
+    }
+    public string OriginalNotifyDefaultEventName {
+      get;
+      set;
+    }
+    public bool OriginalNotifyOnGetTasks {
+      get;
+      set;
+    }
+    public bool OriginalNotifyOnNoWorkDone {
+      get;
+      set;
+    }
 
-    public NotifyConfigMode VerifiedNotifyConfigMode { get; set; }
-    public string VerifiedNotifyConfigSetName { get; set; }
-    public string VerifiedNotifyDbSpecPrefix { get; set; }
-    public string VerifiedNotifyDefaultEventName { get; set; }
-    public bool VerifiedNotifyOnGetTasks { get; set; }
-    public bool VerifiedNotifyOnNoWorkDone { get; set; }         
+    public NotifyConfigMode VerifiedNotifyConfigMode {
+      get;
+      set;
+    }
+    public string VerifiedNotifyConfigSetName {
+      get;
+      set;
+    }
+    public string VerifiedNotifyDbSpecPrefix {
+      get;
+      set;
+    }
+    public string VerifiedNotifyDefaultEventName {
+      get;
+      set;
+    }
+    public bool VerifiedNotifyOnGetTasks {
+      get;
+      set;
+    }
+    public bool VerifiedNotifyOnNoWorkDone {
+      get;
+      set;
+    }
 
     public ConfigNotifySpec(string namingPrefix)
       :base (namingPrefix)
     {
       Initialize();
-    } 
+    }
 
     public ConfigNotifySpec()
     {
-      Initialize(); 
+      Initialize();
     }
 
     private void Initialize()
@@ -50,16 +104,16 @@ namespace Org.GS.Configuration
       this.NotifyConfigSetName = String.Empty;
       this.NotifyDbSpecPrefix = String.Empty;
       this.NotifyDefaultEventName = "Default";
-      this.NotifyOnGetTasks = false; 
+      this.NotifyOnGetTasks = false;
       this.NotifyOnNoWorkDone = false;
 
       SetVerifiedProperties();
-      SetOriginalProperties(); 
+      SetOriginalProperties();
     }
 
     public bool CanAdvance()
     {
-      return true; 
+      return true;
     }
 
     public string GetDescriptionString()
@@ -75,7 +129,7 @@ namespace Org.GS.Configuration
 
     public void SetAsVerified()
     {
-      SetVerifiedProperties(); 
+      SetVerifiedProperties();
     }
 
     public void SetVerifiedProperties()
@@ -101,14 +155,14 @@ namespace Org.GS.Configuration
     public bool IsObjectUpdated()
     {
       if (this.NotifyConfigMode == this.OriginalNotifyConfigMode &&
-          this.NotifyConfigSetName == this.OriginalNotifyConfigSetName && 
+          this.NotifyConfigSetName == this.OriginalNotifyConfigSetName &&
           this.NotifyDbSpecPrefix == this.OriginalNotifyDbSpecPrefix &&
           this.NotifyDefaultEventName == this.NotifyDefaultEventName &&
           this.NotifyOnGetTasks == this.OriginalNotifyOnGetTasks &&
           this.NotifyOnNoWorkDone == this.OriginalNotifyOnNoWorkDone)
         return false;
 
-      return true; 
+      return true;
     }
   }
 }

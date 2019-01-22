@@ -10,18 +10,24 @@ namespace Org.Diff.Model
     /// <summary>
     /// The chunked peices of the old text
     /// </summary>
-    public string[] PiecesOld { get; }
+    public string[] PiecesOld {
+      get;
+    }
 
     /// <summary>
     /// The chunked peices of the new text
     /// </summary>
-    public string[] PiecesNew { get; }
+    public string[] PiecesNew {
+      get;
+    }
 
 
     /// <summary>
     /// A collection of DiffBlocks which details deletions and insertions
     /// </summary>
-    public IList<DiffBlock> DiffBlocks { get; }
+    public IList<DiffBlock> DiffBlocks {
+      get;
+    }
 
     public DiffResult(string[] peicesOld, string[] piecesNew, IList<DiffBlock> blocks)
     {

@@ -11,21 +11,33 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "EmailAddressType")]
-    public partial class EmailAddressType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "EmailAddressType")]
+  public partial class EmailAddressType
+  {
+    public EmailAddressType()
     {
-        public EmailAddressType()
-        {
-            this.PersonEmailAddresses = new HashSet<PersonEmailAddress>();
-        }
-    
-        public string EmailAddressTypeCode { get; set; }
-        public string EmailAddressTypeValue { get; set; }
-        public string EmailAddressTypeDesc { get; set; }
-    
-        public virtual ICollection<PersonEmailAddress> PersonEmailAddresses { get; set; }
+      this.PersonEmailAddresses = new HashSet<PersonEmailAddress>();
     }
+
+    public string EmailAddressTypeCode {
+      get;
+      set;
+    }
+    public string EmailAddressTypeValue {
+      get;
+      set;
+    }
+    public string EmailAddressTypeDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<PersonEmailAddress> PersonEmailAddresses {
+      get;
+      set;
+    }
+  }
 }

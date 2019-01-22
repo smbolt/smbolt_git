@@ -9,11 +9,14 @@ namespace Org.GS.Performance
   [XMap(XType=XType.Element, CollectionElements="Counter")]
   public class CounterSet : SortedList<string, Counter>
   {
-    public bool IsLoaded { get; set; }
+    public bool IsLoaded {
+      get;
+      set;
+    }
 
     public CounterSet()
     {
-        this.IsLoaded = false;
+      this.IsLoaded = false;
     }
 
     public string GetKeyForCounterName(string counterNameIn)
@@ -28,20 +31,20 @@ namespace Org.GS.Performance
         string[] keyParts = counterNameIn.Split(new char[] { ']' }, StringSplitOptions.RemoveEmptyEntries);
 
         if (keyParts.Length != 2)
-          throw new Exception("Invalid counter name encountered '" + counterNameIn + "'."); 
+          throw new Exception("Invalid counter name encountered '" + counterNameIn + "'.");
 
         instanceName = keyParts[0].Replace("[", String.Empty).Trim();
         if (instanceName.IsBlank())
-          throw new Exception("Invalid counter name encountered '" + counterNameIn + "' - blank instance name."); 
+          throw new Exception("Invalid counter name encountered '" + counterNameIn + "' - blank instance name.");
 
-        counterName = keyParts[1].Trim(); 
+        counterName = keyParts[1].Trim();
 
         if (counterName.IsBlank())
-          throw new Exception("Invalid counter name encountered '" + counterNameIn + "'."); 
+          throw new Exception("Invalid counter name encountered '" + counterNameIn + "'.");
       }
       else
       {
-        counterName = counterNameIn;  
+        counterName = counterNameIn;
       }
 
       foreach (Counter c in this.Values)
@@ -52,7 +55,7 @@ namespace Org.GS.Performance
           {
             if (c.InstanceName == instanceName)
             {
-                return c.Key; 
+              return c.Key;
             }
           }
           else
@@ -62,7 +65,7 @@ namespace Org.GS.Performance
         }
       }
 
-      throw new Exception("Could not locate counter '" + counterNameIn + "' in CounterSet."); 
+      throw new Exception("Could not locate counter '" + counterNameIn + "' in CounterSet.");
     }
   }
 }

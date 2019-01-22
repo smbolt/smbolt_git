@@ -17,8 +17,12 @@ namespace Org.WS
 {
   public class MainWebService : ServiceBase, ISimpleService
   {
-    public static event EventHandler<WsTransaction> TransactionReceived;  
-    public override int EntityId { get { return 305; } }
+    public static event EventHandler<WsTransaction> TransactionReceived;
+    public override int EntityId {
+      get {
+        return 305;
+      }
+    }
 
     public MainWebService()
     {

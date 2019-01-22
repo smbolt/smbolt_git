@@ -47,35 +47,37 @@
       this.pnlTop.SuspendLayout();
       this.pnlMain.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1000, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 662);
       this.lblStatus.Name = "lblStatus";
@@ -84,9 +86,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.ckTwoLevel);
       this.pnlTop.Controls.Add(this.ckUseModuleSet);
       this.pnlTop.Controls.Add(this.lblPath);
@@ -98,9 +100,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1000, 65);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // btnExploreMEF
-      // 
+      //
       this.btnExploreMEF.Location = new System.Drawing.Point(657, 13);
       this.btnExploreMEF.Name = "btnExploreMEF";
       this.btnExploreMEF.Size = new System.Drawing.Size(96, 23);
@@ -109,18 +111,18 @@
       this.btnExploreMEF.Text = "Explore MEF Components";
       this.btnExploreMEF.UseVisualStyleBackColor = true;
       this.btnExploreMEF.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlMain
-      // 
+      //
       this.pnlMain.Controls.Add(this.txtOut);
       this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlMain.Location = new System.Drawing.Point(0, 89);
       this.pnlMain.Name = "pnlMain";
       this.pnlMain.Size = new System.Drawing.Size(1000, 573);
       this.pnlMain.TabIndex = 3;
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtOut.Location = new System.Drawing.Point(0, 0);
@@ -129,27 +131,27 @@
       this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtOut.Size = new System.Drawing.Size(1000, 573);
       this.txtOut.TabIndex = 0;
-      // 
+      //
       // cboFolders
-      // 
+      //
       this.cboFolders.FormattingEnabled = true;
       this.cboFolders.Location = new System.Drawing.Point(48, 14);
       this.cboFolders.Name = "cboFolders";
       this.cboFolders.Size = new System.Drawing.Size(536, 21);
       this.cboFolders.TabIndex = 1;
       this.cboFolders.SelectedIndexChanged += new System.EventHandler(this.cboFolders_SelectedIndexChanged);
-      // 
+      //
       // lblPath
-      // 
+      //
       this.lblPath.AutoSize = true;
       this.lblPath.Location = new System.Drawing.Point(13, 16);
       this.lblPath.Name = "lblPath";
       this.lblPath.Size = new System.Drawing.Size(29, 13);
       this.lblPath.TabIndex = 2;
       this.lblPath.Text = "Path";
-      // 
+      //
       // btnBrowse
-      // 
+      //
       this.btnBrowse.Location = new System.Drawing.Point(590, 13);
       this.btnBrowse.Name = "btnBrowse";
       this.btnBrowse.Size = new System.Drawing.Size(61, 23);
@@ -158,9 +160,9 @@
       this.btnBrowse.Text = "Browse...";
       this.btnBrowse.UseVisualStyleBackColor = true;
       this.btnBrowse.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ckUseModuleSet
-      // 
+      //
       this.ckUseModuleSet.AutoSize = true;
       this.ckUseModuleSet.Location = new System.Drawing.Point(51, 39);
       this.ckUseModuleSet.Name = "ckUseModuleSet";
@@ -168,9 +170,9 @@
       this.ckUseModuleSet.TabIndex = 3;
       this.ckUseModuleSet.Text = "Use ModuleSet";
       this.ckUseModuleSet.UseVisualStyleBackColor = true;
-      // 
+      //
       // ckTwoLevel
-      // 
+      //
       this.ckTwoLevel.AutoSize = true;
       this.ckTwoLevel.Location = new System.Drawing.Point(166, 39);
       this.ckTwoLevel.Name = "ckTwoLevel";
@@ -178,9 +180,9 @@
       this.ckTwoLevel.TabIndex = 3;
       this.ckTwoLevel.Text = "Two Level";
       this.ckTwoLevel.UseVisualStyleBackColor = true;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1000, 685);

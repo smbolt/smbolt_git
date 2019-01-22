@@ -9,7 +9,7 @@ namespace Org.OpsManager.Controls
 {
   public class PanelFactory
   {
-    
+
     public BasePanel CreatePanel(PanelData panelData, ChangeType changeType)
     {
       BasePanel panel;
@@ -35,7 +35,7 @@ namespace Org.OpsManager.Controls
           panel = new NotifyPersonPanel(panelData, changeType);
           break;
 
-        default: 
+        default:
           panel = new BasePanel();
           break;
       }

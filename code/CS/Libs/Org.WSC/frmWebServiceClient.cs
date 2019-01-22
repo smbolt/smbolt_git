@@ -52,6 +52,6 @@ namespace Org.WSC
     private void InitializeForm()
     {
 
-    }  
+    }
   }
 }

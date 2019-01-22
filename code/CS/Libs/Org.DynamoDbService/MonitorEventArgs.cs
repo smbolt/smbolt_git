@@ -8,8 +8,14 @@ namespace Org.DynamoDbService
 {
   public class MonitorEventArgs
   {
-    public DynamoDbServiceState DynamoDbServiceState { get; set; }
-    public string Message { get; set; }
+    public DynamoDbServiceState DynamoDbServiceState {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
 
     public MonitorEventArgs(DynamoDbServiceState dynamoDbServiceState, string message)
     {

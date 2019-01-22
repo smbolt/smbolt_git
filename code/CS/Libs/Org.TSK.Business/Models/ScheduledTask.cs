@@ -14,42 +14,151 @@ namespace Org.TSK.Business.Models
   public class ScheduledTask
   {
     private ConfigDbSpec _configDbSpec;
-    public int ScheduledTaskId { get; set; }
-    public string TaskName { get; set; }
-    public int? TaskGroupId { get; set; }
-    public string TaskGroupName { get; set; }
-    public int ProcessorTypeId { get; set; }
-    public string ProcessorName { get; set; }
-    public string ProcessorVersion { get; set; }
-    public DateTime BaseDateTime { get; set; }
-    public bool IsManaged { get; set; }
-    public Nullable<int> TaskNumber { get; set; }
-    public string AssemblyName { get; set; }
-    public string AssemblyLocation { get; set; }
-    public string CatalogName { get; set; }
-    public string CatalogEntry { get; set; }
-    public string ObjectTypeName { get; set; }
-    public string ClassName { get; set; }
-    public string StoredProcedureName { get; set; }
-    public bool IsActive { get; set; }
-    public bool RunUntilTask { get; set; }
-    public bool RunUntilOverride { get; set; }
-    public int? RunUntilPeriodContextID { get; set; }
-    public int? RunUntilOffsetMinutes { get; set; }
-    public bool IsLongRunning { get; set; }
-    public bool TrackHistory { get; set; }
-    public bool SuppressNotificationsOnSuccess { get; set; }
-    public int? ActiveScheduleId { get; set; }
-    public string CreatedBy { get; set; }
-    public DateTime CreatedDate { get; set; }
-    public string ModifiedBy { get; set; }
-    public DateTime? ModifiedDate { get; set; }
-    public TimeIntervalSet RunUntilExclusionIntervals { get; set; }
-    public ScheduledRunSet ScheduledRunSet { get; set; }
-    public TaskSchedule TaskSchedule { get; set; }
-    public ParmSet ParmSet { get; set; }
-    public TaskAssignmentSet TaskAssignmentSet { get; set; }
-    public CurrentPeriod CurrentPeriod { get { return Get_CurrentPeriod(); } }
+    public int ScheduledTaskId {
+      get;
+      set;
+    }
+    public string TaskName {
+      get;
+      set;
+    }
+    public int? TaskGroupId {
+      get;
+      set;
+    }
+    public string TaskGroupName {
+      get;
+      set;
+    }
+    public int ProcessorTypeId {
+      get;
+      set;
+    }
+    public string ProcessorName {
+      get;
+      set;
+    }
+    public string ProcessorVersion {
+      get;
+      set;
+    }
+    public DateTime BaseDateTime {
+      get;
+      set;
+    }
+    public bool IsManaged {
+      get;
+      set;
+    }
+    public Nullable<int> TaskNumber {
+      get;
+      set;
+    }
+    public string AssemblyName {
+      get;
+      set;
+    }
+    public string AssemblyLocation {
+      get;
+      set;
+    }
+    public string CatalogName {
+      get;
+      set;
+    }
+    public string CatalogEntry {
+      get;
+      set;
+    }
+    public string ObjectTypeName {
+      get;
+      set;
+    }
+    public string ClassName {
+      get;
+      set;
+    }
+    public string StoredProcedureName {
+      get;
+      set;
+    }
+    public bool IsActive {
+      get;
+      set;
+    }
+    public bool RunUntilTask {
+      get;
+      set;
+    }
+    public bool RunUntilOverride {
+      get;
+      set;
+    }
+    public int? RunUntilPeriodContextID {
+      get;
+      set;
+    }
+    public int? RunUntilOffsetMinutes {
+      get;
+      set;
+    }
+    public bool IsLongRunning {
+      get;
+      set;
+    }
+    public bool TrackHistory {
+      get;
+      set;
+    }
+    public bool SuppressNotificationsOnSuccess {
+      get;
+      set;
+    }
+    public int? ActiveScheduleId {
+      get;
+      set;
+    }
+    public string CreatedBy {
+      get;
+      set;
+    }
+    public DateTime CreatedDate {
+      get;
+      set;
+    }
+    public string ModifiedBy {
+      get;
+      set;
+    }
+    public DateTime? ModifiedDate {
+      get;
+      set;
+    }
+    public TimeIntervalSet RunUntilExclusionIntervals {
+      get;
+      set;
+    }
+    public ScheduledRunSet ScheduledRunSet {
+      get;
+      set;
+    }
+    public TaskSchedule TaskSchedule {
+      get;
+      set;
+    }
+    public ParmSet ParmSet {
+      get;
+      set;
+    }
+    public TaskAssignmentSet TaskAssignmentSet {
+      get;
+      set;
+    }
+    public CurrentPeriod CurrentPeriod {
+      get {
+        return Get_CurrentPeriod();
+      }
+    }
 
     public ScheduledTask()
     {
@@ -62,7 +171,7 @@ namespace Org.TSK.Business.Models
       _configDbSpec = configDbSpec;
       DateTime bdtWork = baseDateTime.AddSeconds(1);
 
-      this.BaseDateTime = new DateTime(bdtWork.Year, bdtWork.Month, bdtWork.Day, bdtWork.Hour, bdtWork.Minute, bdtWork.Second); 
+      this.BaseDateTime = new DateTime(bdtWork.Year, bdtWork.Month, bdtWork.Day, bdtWork.Hour, bdtWork.Minute, bdtWork.Second);
       //this.Load(scheduledTask);
       this.ScheduledRunSet = null;
     }
@@ -71,7 +180,7 @@ namespace Org.TSK.Business.Models
       _configDbSpec = configDbSpec;
       DateTime bdtWork = baseDateTime.AddSeconds(1);
 
-      this.BaseDateTime = new DateTime(bdtWork.Year, bdtWork.Month, bdtWork.Day, bdtWork.Hour, bdtWork.Minute, bdtWork.Second); 
+      this.BaseDateTime = new DateTime(bdtWork.Year, bdtWork.Month, bdtWork.Day, bdtWork.Hour, bdtWork.Minute, bdtWork.Second);
       this.ScheduledRunSet = null;
       this.ModifiedDate = DateTime.MinValue;
     }
@@ -80,7 +189,7 @@ namespace Org.TSK.Business.Models
     {
       DateTime bdtWork = baseDateTime.AddSeconds(1);
 
-      this.BaseDateTime = new DateTime(bdtWork.Year, bdtWork.Month, bdtWork.Day, bdtWork.Hour, bdtWork.Minute, bdtWork.Second); 
+      this.BaseDateTime = new DateTime(bdtWork.Year, bdtWork.Month, bdtWork.Day, bdtWork.Hour, bdtWork.Minute, bdtWork.Second);
       this.Load(taskConfig);
       this.ScheduledRunSet = null;
     }
@@ -104,7 +213,7 @@ namespace Org.TSK.Business.Models
           if (scheduleOnceNow)
           {
             scheduledRun = new ScheduledRun(this, this.TaskSchedule, e, DateTime.Now.AddSeconds(5), ScheduledRunType.RunOnFrequency);
-            runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun); 
+            runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun);
             continue;
           }
 
@@ -115,7 +224,7 @@ namespace Org.TSK.Business.Models
               foreach (var runDateTime in scheduleRunDateTimes)
               {
                 scheduledRun = new ScheduledRun(this, this.TaskSchedule, e, runDateTime, ScheduledRunType.RunOnFrequency);
-                runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun); 
+                runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun);
               }
               break;
 
@@ -132,7 +241,7 @@ namespace Org.TSK.Business.Models
             case TaskExecutionType.RunImmediateAndOnFrequency:
               // Add the RunImmediate ScheduledRun
               scheduledRun = new ScheduledRun(this, this.TaskSchedule, e, this.BaseDateTime, ScheduledRunType.RunImmediate);
-              runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun); 
+              runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun);
 
               // Add the OnFrequency ScheduledRuns
               scheduleRunDateTimes.AddRange(sdc.GetScheduleOnFrequency(intervalStart, intervalEnd, this.RunUntilExclusionIntervals, this.RunUntilOverride, true));
@@ -141,7 +250,7 @@ namespace Org.TSK.Business.Models
                 scheduledRun = new ScheduledRun(this, this.TaskSchedule, e, runDateTime, ScheduledRunType.RunOnFrequency);
                 if (!runSet.ContainsKey(scheduledRun.ScheduledRunDateTime))
                 {
-                  runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun); 
+                  runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun);
                 }
               }
               break;
@@ -153,7 +262,7 @@ namespace Org.TSK.Business.Models
                 // Add the RunAt ScheduledRun
                 if (!e.StartDateTime.HasValue)
                   throw new Exception("RunAt task does not have valid StartDateTime property in Task '" + this.TaskName + ", " +
-                                        "Schedule '" + this.TaskSchedule.ScheduleName + "', ScheduleElementId '" + e.TaskScheduleElementId.ToString() + "'.");
+                                      "Schedule '" + this.TaskSchedule.ScheduleName + "', ScheduleElementId '" + e.TaskScheduleElementId.ToString() + "'.");
                 scheduledRun = new ScheduledRun(this, this.TaskSchedule, e, e.StartDateTime.Value, ScheduledRunType.RunAt);
                 runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun);
                 e.RunAtHasBeenScheduled = true;
@@ -183,7 +292,7 @@ namespace Org.TSK.Business.Models
               {
                 scheduledRun = new ScheduledRun(this, this.TaskSchedule, e, runDateTime, ScheduledRunType.RunOnFrequency);
                 if (!runSet.ContainsKey(scheduledRun.ScheduledRunDateTime))
-                  runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun); 
+                  runSet.Add(scheduledRun.ScheduledRunDateTime, scheduledRun);
               }
 
               e.RunAtHasBeenScheduled = true;
@@ -206,7 +315,7 @@ namespace Org.TSK.Business.Models
       catch (Exception ex)
       {
         string msg = ex.Message;
-        throw new Exception("An exception occurred attempting to build the ScheduleRunSet for task '" + this.TaskName + "'.", ex); 
+        throw new Exception("An exception occurred attempting to build the ScheduleRunSet for task '" + this.TaskName + "'.", ex);
       }
     }
 
@@ -260,13 +369,13 @@ namespace Org.TSK.Business.Models
       //  if (parm.ParameterValue != null && parm.ParameterValue.ToString().IsNotBlank())
       //  {
       //    if (parm.ParameterValue.ToString().Trim().StartsWith("ParmSet="))
-      //      parmSetsToAdd.Add(parm.ParameterValue.ToString().Trim().Replace("ParmSet=", String.Empty)); 
+      //      parmSetsToAdd.Add(parm.ParameterValue.ToString().Trim().Replace("ParmSet=", String.Empty));
       //  }
       //  parm.ParameterType = scheduledTaskParameter.DataType.ToType();
       //  //if (parm.ParameterType == null && scheduledTaskParameter.DataType.IsNotBlank())
       //  //  parm.ParameterType
 
-      //  this.ParmSet.Add(parm); 
+      //  this.ParmSet.Add(parm);
       //}
 
       //if (parmSetsToAdd.Count > 0)
@@ -287,7 +396,7 @@ namespace Org.TSK.Business.Models
       //      bool getSimpleItem = false;
       //      bool buildComplexObject = false;
       //      object complexObject = null;
-      //      Type complexType = null; 
+      //      Type complexType = null;
 
       //      if (parmSetName.Contains("."))
       //      {
@@ -337,12 +446,12 @@ namespace Org.TSK.Business.Models
       //            case "Dictionary`2":
       //              Dictionary<string, string> dict = (Dictionary<string, string>) complexObject;
       //              if (!dict.ContainsKey(parm.ParameterName))
-      //                dict.Add(parm.ParameterName, parm.ParameterValue); 
+      //                dict.Add(parm.ParameterName, parm.ParameterValue);
       //              break;
 
       //            case "List`1":
       //              List<string> list = (List<string>)complexObject;
-      //              list.Add(parm.ParameterValue); 
+      //              list.Add(parm.ParameterValue);
       //              break;
 
       //            case "ConfigDbSpec":
@@ -380,7 +489,7 @@ namespace Org.TSK.Business.Models
       //                    throw new Exception("Invalid value specified '" + parm.ParameterValue + "' for the schedule task parameter named '" +
       //                                         parm.ParameterName + "' in parameter set named '" + parm.ParameterSetName + "' while attempting to " +
       //                                         "build scheduled task parameters for the scheduled task named '" + t.TaskName + "' (ScheduleTaskId = '" +
-      //                                         t.ScheduledTaskId.ToString() + "."); 
+      //                                         t.ScheduledTaskId.ToString() + ".");
       //                }
 
       //              }
@@ -397,7 +506,7 @@ namespace Org.TSK.Business.Models
       //        setParm.ParameterName = parm.ParameterName;
       //        setParm.ParameterValue = parm.ParameterValue;
       //        setParm.ParameterType = parm.DataType.ToType();
-      //        this.ParmSet.Add(setParm); 
+      //        this.ParmSet.Add(setParm);
       //      }
 
       //      if (buildComplexObject)
@@ -424,7 +533,7 @@ namespace Org.TSK.Business.Models
       //    taskScheduleElement.TaskScheduleElementId = e.TaskScheduleElementId;
       //    taskScheduleElement.TaskScheduleId = e.TaskScheduleId;
       //    taskScheduleElement.IsActive = e.IsActive;
-      //    taskScheduleElement.TaskExecutionType = g.ToEnum<TaskExecutionType>(e.TaskScheduleExecutionTypeId, TaskExecutionType.NotSet); 
+      //    taskScheduleElement.TaskExecutionType = g.ToEnum<TaskExecutionType>(e.TaskScheduleExecutionTypeId, TaskExecutionType.NotSet);
       //    taskScheduleElement.FrequencySeconds = e.FrequencySeconds;
       //    taskScheduleElement.IsClockAligned = e.IsClockAligned;
       //    taskScheduleElement.ScheduleElementPriority = e.ScheduleElementPriority;
@@ -432,7 +541,7 @@ namespace Org.TSK.Business.Models
       //    taskScheduleElement.StartTime = e.StartTime;
       //    taskScheduleElement.EndDate = e.EndDate;
       //    taskScheduleElement.EndTime = e.EndTime;
-      //    taskScheduleElement.IntervalType = g.ToEnum<IntervalType>(e.IntervalTypeId, IntervalType.NotSet); 
+      //    taskScheduleElement.IntervalType = g.ToEnum<IntervalType>(e.IntervalTypeId, IntervalType.NotSet);
       //    taskScheduleElement.OnSunday = e.OnSunday;
       //    taskScheduleElement.OnMonday = e.OnMonday;
       //    taskScheduleElement.OnTuesday = e.OnTuesday;
@@ -453,16 +562,16 @@ namespace Org.TSK.Business.Models
       //    taskScheduleElement.Last = e.Last;
       //    taskScheduleElement.Every = e.Every;
       //    taskScheduleElement.HolidayActions = g.ToEnum<HolidayActions>(e.HolidayActionId.Value, HolidayActions.NotSet);
-      //    taskScheduleElement.PeriodContexts = g.ToEnum<PeriodContexts>(e.PeriodContextId, PeriodContexts.NotSet); 
+      //    taskScheduleElement.PeriodContexts = g.ToEnum<PeriodContexts>(e.PeriodContextId, PeriodContexts.NotSet);
       //    taskScheduleElement.MaxExecutions = e.ExecutionLimit;
       //    taskScheduleElement.MaxRunTimeSeconds = e.MaxRunTimeSeconds;
-      //    taskSchedule.TaskScheduleElements.Add(taskScheduleElement); 
+      //    taskSchedule.TaskScheduleElements.Add(taskScheduleElement);
       //  }
 
       //  this.TaskSchedule = taskSchedule;
       //}
-    }  
-    
+    }
+
     private void Load(TaskConfig t)
     {
       this.ScheduledTaskId = 0;
@@ -493,15 +602,15 @@ namespace Org.TSK.Business.Models
         parm.ParameterSetName = "Default";
         parm.ParameterName = taskParm.Key;
         parm.ParameterValue = taskParm.Value;
-        parm.ParameterType = typeof(System.String); 
-        this.ParmSet.Add(parm); 
+        parm.ParameterType = typeof(System.String);
+        this.ParmSet.Add(parm);
       }
 
       this.TaskSchedule = new TaskSchedule();
       this.TaskSchedule.TaskScheduleId = 1;
       this.TaskSchedule.ScheduleName = "Default";
       this.TaskSchedule.ScheduleNumber = 1;
-      this.TaskSchedule = this.TaskSchedule; 
+      this.TaskSchedule = this.TaskSchedule;
 
       foreach (var schedElement in t.TaskSchedule)
       {
@@ -530,7 +639,7 @@ namespace Org.TSK.Business.Models
         foreach (char c in weekdayControl)
         {
           if (c != 'T' && c != 'F')
-            throw new Exception("Invalid WeekdayControl value in TaskCalendar for task '" + this.TaskName + "': " + weekdayControl + 
+            throw new Exception("Invalid WeekdayControl value in TaskCalendar for task '" + this.TaskName + "': " + weekdayControl +
                                 " - valid values are 'T' and 'F' for each of the 7 week days.");
         }
 
@@ -549,7 +658,7 @@ namespace Org.TSK.Business.Models
         foreach (char c in ordinalControl)
         {
           if (c != 'T' && c != 'F')
-            throw new Exception("Invalid OrdinalControl value in TaskCalendar for task '" + this.TaskName + "': " + ordinalControl + 
+            throw new Exception("Invalid OrdinalControl value in TaskCalendar for task '" + this.TaskName + "': " + ordinalControl +
                                 " - valid values are 'T' and 'F' for each of the 11 values.");
         }
 
@@ -570,7 +679,7 @@ namespace Org.TSK.Business.Models
         taskScheduleElement.PeriodContexts = schedElement.TaskCalendar.PeriodContexts;
         taskScheduleElement.MaxExecutions = schedElement.RunControl.MaxExecutions;
         taskScheduleElement.MaxRunTimeSeconds = schedElement.RunControl.MaxRunTimeSeconds;
-        this.TaskSchedule.TaskScheduleElements.Add(taskScheduleElement); 
+        this.TaskSchedule.TaskScheduleElements.Add(taskScheduleElement);
       }
     }
 
@@ -591,7 +700,7 @@ namespace Org.TSK.Business.Models
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurrred attempting to build the CurrentPeriod object for the scheduled task named '" + this.TaskName + "'.", ex); 
+        throw new Exception("An exception occurrred attempting to build the CurrentPeriod object for the scheduled task named '" + this.TaskName + "'.", ex);
       }
     }
   }

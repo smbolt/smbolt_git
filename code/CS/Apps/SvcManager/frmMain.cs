@@ -125,7 +125,7 @@ namespace Org.SvcManager
       {
         using (var fManageHosts = new frmManageHosts(_selectedEnvironment.Name, _taskDbSpec))
         {
-          fManageHosts.ShowDialog(); 
+          fManageHosts.ShowDialog();
         }
       }
       catch (Exception ex)
@@ -141,7 +141,7 @@ namespace Org.SvcManager
       {
         using (var fTaskServices = new frmTaskServices(_taskProdDbSpec, _taskTestDbSpec))
         {
-          fTaskServices.ShowDialog(); 
+          fTaskServices.ShowDialog();
         }
       }
       catch (Exception ex)
@@ -205,8 +205,8 @@ namespace Org.SvcManager
             _selectedServiceType = ServiceType.WCFWebService;
           }
 
-          using (var fAddOrUpdateWCFService = new frmAddOrUpdateWCFService(existingServiceSpec, _selectedEnvironment, _selectedServiceHost, 
-                     _selectedServiceType, _selectedWCFHostingModel, _taskDbSpec, parentServiceSpec, isNew))
+          using (var fAddOrUpdateWCFService = new frmAddOrUpdateWCFService(existingServiceSpec, _selectedEnvironment, _selectedServiceHost,
+              _selectedServiceType, _selectedWCFHostingModel, _taskDbSpec, parentServiceSpec, isNew))
           {
             if (fAddOrUpdateWCFService.ShowDialog() == DialogResult.OK)
             {
@@ -233,7 +233,7 @@ namespace Org.SvcManager
       {
         using (var fServiceAssignments = new frmServiceAssignments(_selectedServiceSpec, _taskDbSpec))
         {
-          fServiceAssignments.ShowDialog(); 
+          fServiceAssignments.ShowDialog();
         }
       }
       catch (Exception ex)
@@ -321,7 +321,7 @@ namespace Org.SvcManager
               }
             }
           }
-          
+
           var wcfsvcsNode = new TreeNode("WCF Web Services", 8, 9);
           wcfsvcsNode.Tag = "WCF Web Services";
           parentNode.Nodes.Add(wcfsvcsNode);
@@ -333,7 +333,7 @@ namespace Org.SvcManager
               var wcfsvcNode = new TreeNode(serviceSpec.Name + " (" + serviceSpec.WsPort + ")", 8, 9);
               wcfsvcNode.Tag = serviceSpec;
               wcfsvcsNode.Nodes.Add(wcfsvcNode);
-            }              
+            }
           }
           break;
       }
@@ -393,7 +393,7 @@ namespace Org.SvcManager
         foreach (var env in serviceEnvironmentSet.Values)
         {
           var dbSpec = env.Name == "Prod" ? _taskProdDbSpec : _taskTestDbSpec;
-          
+
           using (var taskRepo = new TaskRepository(dbSpec))
           {
             env.ServiceHostSet = taskRepo.GetServiceHostSet(env);
@@ -404,7 +404,7 @@ namespace Org.SvcManager
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to build the ServiceEnvironmentSet from the database.", ex); 
+        throw new Exception("An exception occurred while attempting to build the ServiceEnvironmentSet from the database.", ex);
       }
     }
 
@@ -431,7 +431,7 @@ namespace Org.SvcManager
 
       try
       {
-        a = new a();        
+        a = new a();
       }
       catch (Exception ex)
       {
@@ -451,7 +451,7 @@ namespace Org.SvcManager
         ctxMnuTreeViewDeleteWCFWebService.Enabled = false;
 
         _taskProdDbSpec = g.GetDbSpec("TaskProd");
-        _taskTestDbSpec = g.GetDbSpec("TaskTest"); 
+        _taskTestDbSpec = g.GetDbSpec("TaskTest");
 
         int formHorizontalSize = g.GetCI("MainFormHorizontalSize").ToInt32OrDefault(90);
         int formVerticalSize = g.GetCI("MainFormVerticalSize").ToInt32OrDefault(90);
@@ -485,7 +485,7 @@ namespace Org.SvcManager
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred during application initialization." + g.crlf2 + ex.ToReport(),
-                        g.AppInfo.AppName + " - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        g.AppInfo.AppName + " - Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -703,7 +703,7 @@ namespace Org.SvcManager
     public static bool IsEquivalent(this XElement xml, XElement xmlCompare)
     {
 
-      // Elements also have values in some cases, though we don't use them much.  Any values that "are" the child elements 
+      // Elements also have values in some cases, though we don't use them much.  Any values that "are" the child elements
       // will be taken care of below.  But some Elements have "text based values" such as in  <AnElement>ElementValue</AnExement>.
       // When no "text-based" value exists, the "value" of the XElement will be a blank string.
       if (xml.Value != xmlCompare.Value)
@@ -720,7 +720,7 @@ namespace Org.SvcManager
         if (attr.Value != compareAttr.Value)
           return false;
       }
-      
+
       // Now we loop through the child elements and find out of the xmlCompare "parent" element also
       // contains the like-named child.  If it does not, we return false, if it does, we simply return the
       // result of any lower level recursions based on the child elements compares.  Grandchildren, great-grandchildren, etc.

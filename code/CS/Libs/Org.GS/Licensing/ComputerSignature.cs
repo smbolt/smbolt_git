@@ -8,14 +8,38 @@ namespace Org.GS.Licensing
 {
   public class ComputerSignature
   {
-    public string Version { get; set; }
-    public DateTime SignatureDateTime { get; set; }
-    public string ComputerName { get; set; }
-    public string Baseboard_SerialNumber { get; set; }
-    public string Cpu_ProcessorID { get; set; }
-    public string DiskDrive_SerialNumber { get; set; }
-    public string SystemEnclosure_SerialNumber { get; set; }
-    public string System_MakeModelType { get; set; }
+    public string Version {
+      get;
+      set;
+    }
+    public DateTime SignatureDateTime {
+      get;
+      set;
+    }
+    public string ComputerName {
+      get;
+      set;
+    }
+    public string Baseboard_SerialNumber {
+      get;
+      set;
+    }
+    public string Cpu_ProcessorID {
+      get;
+      set;
+    }
+    public string DiskDrive_SerialNumber {
+      get;
+      set;
+    }
+    public string SystemEnclosure_SerialNumber {
+      get;
+      set;
+    }
+    public string System_MakeModelType {
+      get;
+      set;
+    }
 
     public ComputerSignature()
     {

@@ -12,18 +12,39 @@ namespace Org.GS.Configuration
   [XMap(XType = XType.Element, CollectionElements = "NotifyPerson")]
   public class NotifyGroup : List<NotifyPerson>
   {
-    public int NotifyGroupId { get; set; }
+    public int NotifyGroupId {
+      get;
+      set;
+    }
 
     [XMap(Name = "Name", IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(Name = "IsActive", DefaultValue = "True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
-    public string CreatedBy { get; set; }
-    public DateTime CreatedOn { get; set; }
-    public string ModifiedBy { get; set; }
-    public DateTime? ModifiedOn { get; set; }
+    public string CreatedBy {
+      get;
+      set;
+    }
+    public DateTime CreatedOn {
+      get;
+      set;
+    }
+    public string ModifiedBy {
+      get;
+      set;
+    }
+    public DateTime? ModifiedOn {
+      get;
+      set;
+    }
 
     public NotifyGroup()
     {

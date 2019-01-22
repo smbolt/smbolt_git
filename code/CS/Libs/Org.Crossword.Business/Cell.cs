@@ -9,11 +9,27 @@ namespace Org.Crossword.Business
 {
   public class Cell
   {
-    public int X { get; set; }
-    public int Y { get; set; }
-    public string Solution { get; set; }
-    public int? Number { get; set; }
-    public bool HasNumber { get { return this.Number.HasValue; } }
+    public int X {
+      get;
+      set;
+    }
+    public int Y {
+      get;
+      set;
+    }
+    public string Solution {
+      get;
+      set;
+    }
+    public int? Number {
+      get;
+      set;
+    }
+    public bool HasNumber {
+      get {
+        return this.Number.HasValue;
+      }
+    }
 
     public Cell()
     {

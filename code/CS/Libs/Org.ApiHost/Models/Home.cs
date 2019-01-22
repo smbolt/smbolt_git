@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Org.ApiHost.Models
 {
-    public class Home
-    {
-        public string AppName { get; set; }
+  public class Home
+  {
+    public string AppName {
+      get;
+      set;
     }
+  }
 }

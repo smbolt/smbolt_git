@@ -36,7 +36,7 @@ namespace Org.VSTS
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to establish a connection to VSTS at '" +
-          _vssConnectionUri + "'.", ex);
+                            _vssConnectionUri + "'.", ex);
       }
     }
 
@@ -84,15 +84,15 @@ namespace Org.VSTS
         using (var client = new System.Net.Http.HttpClient())
         {
           client.DefaultRequestHeaders.Accept.Add(
-              new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
           client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
               Convert.ToBase64String(
-                  System.Text.ASCIIEncoding.ASCII.GetBytes(
-                      string.Format("{0}:{1}", "", _personalAccessToken))));
+                System.Text.ASCIIEncoding.ASCII.GetBytes(
+                  string.Format("{0}:{1}", "", _personalAccessToken))));
 
           using (System.Net.Http.HttpResponseMessage response = await client.GetAsync(
-                      "https://gulfportenergy.visualstudio.com/DefaultCollection/_apis/projects"))
+                   "https://gulfportenergy.visualstudio.com/DefaultCollection/_apis/projects"))
           {
             response.EnsureSuccessStatusCode();
             var resultValue = await response.Content.ReadAsStringAsync().ContinueWith(r =>

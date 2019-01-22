@@ -11,20 +11,44 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonPhoneNumber")]
-    public partial class PersonPhoneNumber
-    {
-        public int PersonId { get; set; }
-        public int PhoneNumberId { get; set; }
-        public string PhoneNumberTypeCode { get; set; }
-        public int StatusId { get; set; }
-        public string PrivacyStatusCode { get; set; }
-    
-        public virtual PhoneNumberType PhoneNumberType { get; set; }
-        public virtual PrivacyStatu PrivacyStatu { get; set; }
-        public virtual Status Status { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonPhoneNumber")]
+  public partial class PersonPhoneNumber
+  {
+    public int PersonId {
+      get;
+      set;
     }
+    public int PhoneNumberId {
+      get;
+      set;
+    }
+    public string PhoneNumberTypeCode {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+    public string PrivacyStatusCode {
+      get;
+      set;
+    }
+
+    public virtual PhoneNumberType PhoneNumberType {
+      get;
+      set;
+    }
+    public virtual PrivacyStatu PrivacyStatu {
+      get;
+      set;
+    }
+    public virtual Status Status {
+      get;
+      set;
+    }
+  }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Org.Cfg
 {
-	public class COSet : Dictionary<string, CO>
-	{
-	}
+  public class COSet : Dictionary<string, CO>
+  {
+  }
 }

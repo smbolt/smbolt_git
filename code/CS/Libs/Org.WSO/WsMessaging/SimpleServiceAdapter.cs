@@ -23,7 +23,7 @@ namespace Org.WSO
         int hours = 0;
         int minutes = sendTimeoutSeconds / 60;
         int seconds = sendTimeoutSeconds % 60;
-        httpBinding.SendTimeout = new System.TimeSpan(hours, minutes, seconds); 
+        httpBinding.SendTimeout = new System.TimeSpan(hours, minutes, seconds);
       }
 
       EndpointAddress endpointAddress = new EndpointAddress(endpoint);
@@ -35,7 +35,7 @@ namespace Org.WSO
     }
 
     public void SendMessageOneWay(string message, string endpoint)
-    {            
+    {
       BasicHttpBinding httpBinding = new BasicHttpBinding();
 
       httpBinding.MaxReceivedMessageSize = 33554432;
@@ -44,7 +44,7 @@ namespace Org.WSO
       httpBinding.ReaderQuotas.MaxBytesPerRead = 65536;
       httpBinding.ReaderQuotas.MaxArrayLength = 65536;
 
-      EndpointAddress endpointAddress = new EndpointAddress(endpoint);           
+      EndpointAddress endpointAddress = new EndpointAddress(endpoint);
 
       ISimpleServiceOneWay logging = new ChannelFactory<ISimpleServiceOneWay>(httpBinding, endpointAddress).CreateChannel();
       logging.SendMessageOneWay(message);
@@ -63,10 +63,10 @@ namespace Org.WSO
       NetTcpBinding tcpBinding = new NetTcpBinding();
       tcpBinding.ReaderQuotas = quotas;
       tcpBinding.MaxReceivedMessageSize = 33554432;
-      tcpBinding.MaxBufferSize = 33554432;         
+      tcpBinding.MaxBufferSize = 33554432;
 
-      EndpointAddress endpointAddress = new EndpointAddress(endpoint);            
-            
+      EndpointAddress endpointAddress = new EndpointAddress(endpoint);
+
       ISimpleService logging = new ChannelFactory<ISimpleService>(tcpBinding, endpointAddress).CreateChannel();
       string response = logging.SendMessage(message);
       ((IChannel)logging).Close();

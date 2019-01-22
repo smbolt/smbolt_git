@@ -7,8 +7,14 @@ namespace Org.GS.Logging
 {
   public class Message
   {
-    public string Code { get; set; }
-    public string Text { get; set; }
+    public string Code {
+      get;
+      set;
+    }
+    public string Text {
+      get;
+      set;
+    }
 
     public Message()
     {

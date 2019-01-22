@@ -14,20 +14,38 @@ namespace Org.Dx.Business
   public class DxRegionRow : Dictionary<string, DxMapItem>
   {
     [XMap(IsKey = true)]
-    public string Cond { get; set; }
+    public string Cond {
+      get;
+      set;
+    }
 
     [XMap (DefaultValue = "DefaultToRegion")]
-    public DxRegionExtractMethod DxRegionExtractMethod { get; set; }    
+    public DxRegionExtractMethod DxRegionExtractMethod {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Include { get; set; }
+    public string Include {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool Optional { get; set; }
+    public bool Optional {
+      get;
+      set;
+    }
 
-    public CellDefinition RegionRowDefinition { get; set; }
+    public CellDefinition RegionRowDefinition {
+      get;
+      set;
+    }
 
-    public DxRegion DxRegion { get; set; }
+    public DxRegion DxRegion {
+      get;
+      set;
+    }
 
     public DxRegionRow()
     {

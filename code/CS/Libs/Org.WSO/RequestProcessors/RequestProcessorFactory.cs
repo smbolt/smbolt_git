@@ -18,15 +18,19 @@ namespace Org.WSO.RequestProcessors
   [Export(typeof(IRequestProcessorFactory))]
   [ExportMetadata("Name", "WsoRequestProcessorFactory")]
   [ExportMetadata("Version", "1.0.0.0")]
-  [ExportMetadata("Processors", 
-                  "PingProcessor_1.0.0.0 " + 
-                  "ServiceEngineCommandProcessor_1.0.0.0 " + 
+  [ExportMetadata("Processors",
+                  "PingProcessor_1.0.0.0 " +
+                  "ServiceEngineCommandProcessor_1.0.0.0 " +
                   "WsCommandProcessor_1.0.0.0 "
-                  )]
+                 )]
   [Serializable]
   public class RequestProcessorFactory : MarshalBase, IRequestProcessorFactory, IDisposable
   {
-    public string Name { get { return "WsoRequestProcessorFactory"; } }
+    public string Name {
+      get {
+        return "WsoRequestProcessorFactory";
+      }
+    }
 
     public RequestProcessorFactory()
     {
@@ -48,14 +52,14 @@ namespace Org.WSO.RequestProcessors
           return new WsCommandProcessor();
       }
 
-      throw new Exception("Invalid request processor name and version requested '" + nameAndVersion + "'."); 
+      throw new Exception("Invalid request processor name and version requested '" + nameAndVersion + "'.");
     }
 
     ~RequestProcessorFactory()
     {
-      Dispose(); 
-    }  
-  
+      Dispose();
+    }
+
     public void Dispose()
     {
       g.LogToMemory("RequestProcessorFactory Destructor");

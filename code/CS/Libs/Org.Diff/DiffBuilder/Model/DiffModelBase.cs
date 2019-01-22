@@ -8,8 +8,14 @@ namespace Org.Diff.DiffBuilder.Model
 {
   public class DiffModelBase
   {
-    public FileCompareStatus FileCompareStatus { get; set; }
-    public string FileCompareReport { get; set; }
+    public FileCompareStatus FileCompareStatus {
+      get;
+      set;
+    }
+    public string FileCompareReport {
+      get;
+      set;
+    }
 
     public DiffModelBase()
     {

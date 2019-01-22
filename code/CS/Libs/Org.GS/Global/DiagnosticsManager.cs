@@ -13,7 +13,9 @@ namespace Org.GS
 
     public DiagnosticsMode DiagnosticsMode
     {
-      get { return Get_DiagnosticsMode(); }
+      get {
+        return Get_DiagnosticsMode();
+      }
     }
 
     public DiagnosticsManager()
@@ -22,7 +24,7 @@ namespace Org.GS
       _majorProcessDiagnosticsMode = DiagnosticsMode.None;
       _minorProcessDiagnosticsMode = DiagnosticsMode.None;
     }
-        
+
     private DiagnosticsMode Get_DiagnosticsMode()
     {
       int diagnosticsMode = Convert.ToInt32(DiagnosticsMode.None);

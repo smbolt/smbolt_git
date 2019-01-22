@@ -93,7 +93,7 @@ namespace Org.QuickbooksWorkbench
         this.Cursor = Cursors.WaitCursor;
 
         _qbx.BeginSession();
-        
+
 
         txtOut.Text = "Begin Session";
         this.Cursor = Cursors.Default;
@@ -180,8 +180,12 @@ namespace Org.QuickbooksWorkbench
 
           customerAdd.Name = "Stephen Bolt";
           customerAdd.IsActive = true;
-          customerAdd.ClassRef = new Ref() { ListID = "ClassRef", FullName = "ClassRefName" };
-          customerAdd.ParentRef = new Ref() { ListID = "ParentRef", FullName = "ParentRefName" };
+          customerAdd.ClassRef = new Ref() {
+            ListID = "ClassRef", FullName = "ClassRefName"
+          };
+          customerAdd.ParentRef = new Ref() {
+            ListID = "ParentRef", FullName = "ParentRefName"
+          };
           customerAdd.CompanyName = "ADSDI LLC";
           customerAdd.Salutation = "Mr.";
           customerAdd.FirstName = "Stephen";
@@ -192,10 +196,10 @@ namespace Org.QuickbooksWorkbench
           {
             Addr1 = "10313 S. Trafalgar Dr.",
             Addr2 = "Test Addr2",
-            Addr3 = "Test Addr3", 
+            Addr3 = "Test Addr3",
             Addr4 = "Test Addr4",
             Addr5 = "Test Addr5",
-            City = "Oklahoma City", 
+            City = "Oklahoma City",
             State = "Oklahoma",
             PostalCode = "73139",
             Country = "USA",
@@ -235,25 +239,47 @@ namespace Org.QuickbooksWorkbench
           customerAdd.Contact = "Steve";
           customerAdd.AltContact = "Robyn";
           customerAdd.AdditionalContactRefList = new AdditionalContactRefList();
-          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() { ContactName = "AddlContactName1", ContactValue = "Value1" });
-          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() { ContactName = "AddlContactName2", ContactValue = "Value2" });
-          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() { ContactName = "AddlContactName3", ContactValue = "Value3" });
-          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() { ContactName = "AddlContactName4", ContactValue = "Value4" });
-          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() { ContactName = "AddlContactName5", ContactValue = "Value5" });
+          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() {
+            ContactName = "AddlContactName1", ContactValue = "Value1"
+          });
+          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() {
+            ContactName = "AddlContactName2", ContactValue = "Value2"
+          });
+          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() {
+            ContactName = "AddlContactName3", ContactValue = "Value3"
+          });
+          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() {
+            ContactName = "AddlContactName4", ContactValue = "Value4"
+          });
+          customerAdd.AdditionalContactRefList.Add(new AdditionalContactRef() {
+            ContactName = "AddlContactName5", ContactValue = "Value5"
+          });
 
           // add some contacts in the contacts list
 
-          customerAdd.CustomerTypeRef = new Ref() { ListID = "CustomerTypeRef", FullName = "CustomerTypeRefName" };
-          customerAdd.TermsRef = new Ref() { ListID = "TermsRef", FullName = "TermsRefName" };
-          customerAdd.SalesRepRef = new Ref() { ListID = "SalesRepRef", FullName = "SalesRepRefName" };
+          customerAdd.CustomerTypeRef = new Ref() {
+            ListID = "CustomerTypeRef", FullName = "CustomerTypeRefName"
+          };
+          customerAdd.TermsRef = new Ref() {
+            ListID = "TermsRef", FullName = "TermsRefName"
+          };
+          customerAdd.SalesRepRef = new Ref() {
+            ListID = "SalesRepRef", FullName = "SalesRepRefName"
+          };
           customerAdd.OpenBalance = 555.55m;
           customerAdd.OpenBalanceDate = DateTime.Now;
-          customerAdd.SalesTaxCodeRef = new Ref() { ListID = "SalesTaxCodeRef", FullName = "SalesTaxCodeRefName" };
-          customerAdd.ItemSalesTaxRef = new Ref() { ListID = "ItemSalesTaxeRef", FullName = "ItemSalesTaxRefName" };
+          customerAdd.SalesTaxCodeRef = new Ref() {
+            ListID = "SalesTaxCodeRef", FullName = "SalesTaxCodeRefName"
+          };
+          customerAdd.ItemSalesTaxRef = new Ref() {
+            ListID = "ItemSalesTaxeRef", FullName = "ItemSalesTaxRefName"
+          };
           customerAdd.ResaleNumber = "ResaleNumber";
           customerAdd.AccountNumber = "Account12345";
           customerAdd.CreditLimit = 2000.00m;
-          customerAdd.PreferredPaymentMethodRef = new Ref() { ListID = "PreferredPaymentMethodRef", FullName = "PreferredPaymentMethodefName" };
+          customerAdd.PreferredPaymentMethodRef = new Ref() {
+            ListID = "PreferredPaymentMethodRef", FullName = "PreferredPaymentMethodefName"
+          };
           customerAdd.CreditCardInfo = new CreditCardInfo()
           {
             CreditCardNumber = "1234-5678-8765-4321",
@@ -268,15 +294,21 @@ namespace Org.QuickbooksWorkbench
           customerAdd.JobProjectedEndDate = new DateTime(2030, 12, 31);
           customerAdd.JobEndDate = new DateTime(2015, 1, 30);
           customerAdd.JobDesc = "Systems Architect";
-          customerAdd.JobTypeRef = new Ref() { ListID = "JobTypeRef", FullName = "JobTypeRefName" };
+          customerAdd.JobTypeRef = new Ref() {
+            ListID = "JobTypeRef", FullName = "JobTypeRefName"
+          };
           customerAdd.Notes = "Notes about the customer";
 
           // add some additional notes (list)
 
           customerAdd.PreferredDeliveryMethod = DeliveryMethod.Email;
-          customerAdd.PriceLevelRef = new Ref() { ListID = "PriceLevelRef", FullName = "PriceLevelRefName" };
+          customerAdd.PriceLevelRef = new Ref() {
+            ListID = "PriceLevelRef", FullName = "PriceLevelRefName"
+          };
           customerAdd.ExternalGUID = "ABCD-123456-654321-DCBA";
-          customerAdd.CurrencyRef = new Ref() { ListID = "CurrencyRef", FullName = "CurrencyRefName" };
+          customerAdd.CurrencyRef = new Ref() {
+            ListID = "CurrencyRef", FullName = "CurrencyRefName"
+          };
 
           customerAddRq.CustomerAdd = customerAdd;
 
@@ -307,7 +339,9 @@ namespace Org.QuickbooksWorkbench
         using (var factory = new QBXmlFactory())
         {
           var customerQueryRq = factory.Create(TransactionType.CustomerQueryRq) as CustomerQueryRq;
-          customerQueryRq.NameFilter = new NameFilter() { MatchCriterion = MatchCriterion.Contains, Name = "Test" };
+          customerQueryRq.NameFilter = new NameFilter() {
+            MatchCriterion = MatchCriterion.Contains, Name = "Test"
+          };
 
 
           req.QBXMLMsgsRq.Add(customerQueryRq);

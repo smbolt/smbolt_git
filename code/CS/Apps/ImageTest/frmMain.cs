@@ -34,7 +34,7 @@ namespace Org.ImageTest
     private int _orgId;
     private int _selectedTagId;
     private CountingRepository _countingRepo;
-    
+
     private TagSet _tagSet;
     private TagMatchSet _tagMatchSet;
 
@@ -118,10 +118,10 @@ namespace Org.ImageTest
         sb.Append(kvpScoredMatch.Key.ToString("000.0000000") + "  " +
                   kvpScoredMatch.Value.TagId.ToString("000000") + "  " +
                   kvpScoredMatch.Value.TagMatchTokens.PadTo(55) + "      " +
-                  _tagSet[kvpScoredMatch.Value.TagId].TagValue + g.crlf); 
+                  _tagSet[kvpScoredMatch.Value.TagId].TagValue + g.crlf);
       }
 
-      var duration = "Scoring Duration: " + ms.ToString("##0.0000000") + "   tags: " + tagCount.ToString(); 
+      var duration = "Scoring Duration: " + ms.ToString("##0.0000000") + "   tags: " + tagCount.ToString();
 
       txtComputedScores.Text = duration + g.crlf + sb.ToString();
     }
@@ -205,7 +205,7 @@ namespace Org.ImageTest
         if (newTagMatchId > 0)
           MessageBox.Show("TagMatch added.", "ImageTest");
         else
-          MessageBox.Show("TagMatch already exists.", "ImageTest"); 
+          MessageBox.Show("TagMatch already exists.", "ImageTest");
       }
       catch (Exception ex)
       {
@@ -262,7 +262,7 @@ namespace Org.ImageTest
             imgEngine.ClipImages(_currentFmtFolder, _imgFmt);
           }
 
-       
+
           LoadImages();
         }
 
@@ -340,7 +340,7 @@ namespace Org.ImageTest
       lbTags.Items.Clear();
       foreach (var tag in _tagSet.Values)
       {
-        lbTags.Items.Add(tag.TagValue); 
+        lbTags.Items.Add(tag.TagValue);
       }
     }
 

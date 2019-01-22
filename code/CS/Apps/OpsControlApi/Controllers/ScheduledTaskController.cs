@@ -30,13 +30,13 @@ namespace OpsControlApi.Controllers
       {
         using (var svc = new ScheduledTaskService(base.WebContext, this))
         {
-          return svc.GetScheduledTasks(--base.Page * base.PerPage, base.PerPage, base.Sort).ToApiResult(this); 
+          return svc.GetScheduledTasks(--base.Page * base.PerPage, base.PerPage, base.Sort).ToApiResult(this);
         }
       }
       catch (Exception ex)
       {
         return this.ToExceptionApiResult("An exception occurred attempting to retrieve operators (page=" + page.ToString() + ", perPage=" + perPage.ToString() +
-          " in OperatorController.Get", "4999", ex);
+                                         " in OperatorController.Get", "4999", ex);
       }
     }
 

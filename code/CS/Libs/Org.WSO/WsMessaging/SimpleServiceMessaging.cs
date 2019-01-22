@@ -42,8 +42,8 @@ namespace Org.WSO
       {
         //if (ServiceHelper.ServiceBase != null)
         //    ServiceHelper.SendAlert(ServiceHelper.ServiceBase.AppName, "SimpleServiceMessaging", "SendMessage", "0004", "103", "Sending Trans " + transactionType + ".", ex);
-          WsMessage errorMessage = MessageFactory.CreateErrorMessageOnSendError(sendMessage, ex);
-          errorMessage.MessageHeader.SenderReceiveDateTime = MessageFactory.GetWebServiceDateTime();
+        WsMessage errorMessage = MessageFactory.CreateErrorMessageOnSendError(sendMessage, ex);
+        errorMessage.MessageHeader.SenderReceiveDateTime = MessageFactory.GetWebServiceDateTime();
         return errorMessage;
       }
     }
@@ -65,10 +65,10 @@ namespace Org.WSO
       }
       catch// (System.ServiceModel.EndpointNotFoundException enfx)
       {
-          //if (ServiceHelper.ServiceBase == null)
-          //    ServiceHelper.SendAlert(G.ConfigName, "SimpleServiceMessaging", "SendMessageOneWay", "0001", "101", "Sending Trans " + transactionType + ".", enfx);
-          //else
-          //    ServiceHelper.SendAlert(ServiceHelper.ServiceBase.AppName, "SimpleServiceMessaging", "SendMessageOneWay", "0001", "101", "Sending Trans " + transactionType + ".", enfx);
+        //if (ServiceHelper.ServiceBase == null)
+        //    ServiceHelper.SendAlert(G.ConfigName, "SimpleServiceMessaging", "SendMessageOneWay", "0001", "101", "Sending Trans " + transactionType + ".", enfx);
+        //else
+        //    ServiceHelper.SendAlert(ServiceHelper.ServiceBase.AppName, "SimpleServiceMessaging", "SendMessageOneWay", "0001", "101", "Sending Trans " + transactionType + ".", enfx);
       }
       //catch// (Exception ex)
       //{

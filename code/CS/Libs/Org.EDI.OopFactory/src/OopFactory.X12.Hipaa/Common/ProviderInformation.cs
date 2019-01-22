@@ -6,13 +6,19 @@ using System.Xml.Serialization;
 
 namespace OopFactory.X12.Hipaa.Common
 {
-    public class ProviderInformation : Identification
-    {
-        [XmlAttribute]
-        public string ProviderCode { get; set; }
-
-        [XmlAttribute]
-        public string ProviderDescription { get; set; }
-
+  public class ProviderInformation : Identification
+  {
+    [XmlAttribute]
+    public string ProviderCode {
+      get;
+      set;
     }
+
+    [XmlAttribute]
+    public string ProviderDescription {
+      get;
+      set;
+    }
+
+  }
 }

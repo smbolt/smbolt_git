@@ -8,10 +8,22 @@ namespace Org.WebApi
 {
   public class WebClientSecurity
   {
-    public List<string> LoggedInUserGroups { get; set; }
-    public List<string> LoggedInUserFunctions { get; set; }
-    public string DomainUserName { get; set; }
-    public List<WebClientSecurity> SecurityAll { get; set; }
+    public List<string> LoggedInUserGroups {
+      get;
+      set;
+    }
+    public List<string> LoggedInUserFunctions {
+      get;
+      set;
+    }
+    public string DomainUserName {
+      get;
+      set;
+    }
+    public List<WebClientSecurity> SecurityAll {
+      get;
+      set;
+    }
 
     public WebClientSecurity()
     {

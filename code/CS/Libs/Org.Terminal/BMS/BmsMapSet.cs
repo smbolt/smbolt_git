@@ -8,7 +8,10 @@ namespace Org.Terminal.BMS
 {
   public class BmsMapSet : Dictionary<string, BmsMap>
   {
-    public Bms_DFHMSD Bms_DFHMSD { get; set; }
+    public Bms_DFHMSD Bms_DFHMSD {
+      get;
+      set;
+    }
 
     public BmsMapSet()
     {

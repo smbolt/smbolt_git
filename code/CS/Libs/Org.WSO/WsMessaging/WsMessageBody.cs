@@ -10,8 +10,12 @@ namespace Org.WSO
     private WsTransaction _transaction;
     public WsTransaction Transaction
     {
-      get { return _transaction; }
-      set { _transaction = value; }
+      get {
+        return _transaction;
+      }
+      set {
+        _transaction = value;
+      }
     }
 
     public WsMessageBody()

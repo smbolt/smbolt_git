@@ -7,9 +7,9 @@ using Org.GS;
 
 namespace Org.Dx.Business.TextProcessing
 {
-	public class SearchText
-	{
-		private string _text;
+  public class SearchText
+  {
+    private string _text;
     private int _parmIndex;
     private string[] _parms;
     private int[] _startPos;
@@ -17,16 +17,16 @@ namespace Org.Dx.Business.TextProcessing
     private bool _atStartOfLine;
     private bool _atEndOfLine;
 
-		public SearchText(string text, string[] parms, bool atStartOfLine = false, bool atEndOfLine = false)
-		{
-			_text = text;
-			_parms = parms;
-			_parmIndex = 0;
-			_startPos = new int[parms.Length];
-			_endPos = new int[parms.Length];
+    public SearchText(string text, string[] parms, bool atStartOfLine = false, bool atEndOfLine = false)
+    {
+      _text = text;
+      _parms = parms;
+      _parmIndex = 0;
+      _startPos = new int[parms.Length];
+      _endPos = new int[parms.Length];
       _atStartOfLine = atStartOfLine;
       _atEndOfLine = atEndOfLine;
-		}
+    }
 
     public string GetFirstMatchingString(int startPosition)
     {
@@ -147,8 +147,8 @@ namespace Org.Dx.Business.TextProcessing
 
         string locatedString = textToSearch.Substring(start, textLength);
 
-        // Now we need to determine if the located string is specified to be adjacent to the start of the line 
-        // or adjacent to the the end of the line. 
+        // Now we need to determine if the located string is specified to be adjacent to the start of the line
+        // or adjacent to the the end of the line.
 
         // If the string is specified to be adjacent to the start of the line and there are one or more tokens
         // before it in the line, then we have failed to find the token adjacent to the start of the line.
@@ -185,6 +185,6 @@ namespace Org.Dx.Business.TextProcessing
       }
     }
 
-   
-	}
+
+  }
 }

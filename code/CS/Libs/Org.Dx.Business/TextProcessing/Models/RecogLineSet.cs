@@ -9,7 +9,7 @@ using Org.GS;
 namespace Org.Dx.Business.TextProcessing
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element, CollectionElements = "RecogLine", WrapperElement = "RecogLineSet")] 
+  [XMap(XType = XType.Element, CollectionElements = "RecogLine", WrapperElement = "RecogLineSet")]
   public class RecogLineSet : List<RecogLine>
   {
   }

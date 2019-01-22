@@ -11,23 +11,56 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonEmailAddress")]
-    public partial class PersonEmailAddress
-    {
-        public int PersonEmailAddressId { get; set; }
-        public int PersonId { get; set; }
-        public int EmailAddressId { get; set; }
-        public string EmailAddressTypeCode { get; set; }
-        public int EmailAddressStatusId { get; set; }
-        public string PrivacyStatusCode { get; set; }
-    
-        public virtual EmailAddress EmailAddress { get; set; }
-        public virtual EmailAddressStatu EmailAddressStatu { get; set; }
-        public virtual EmailAddressType EmailAddressType { get; set; }
-        public virtual PrivacyStatu PrivacyStatu { get; set; }
-        public virtual Person Person { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonEmailAddress")]
+  public partial class PersonEmailAddress
+  {
+    public int PersonEmailAddressId {
+      get;
+      set;
     }
+    public int PersonId {
+      get;
+      set;
+    }
+    public int EmailAddressId {
+      get;
+      set;
+    }
+    public string EmailAddressTypeCode {
+      get;
+      set;
+    }
+    public int EmailAddressStatusId {
+      get;
+      set;
+    }
+    public string PrivacyStatusCode {
+      get;
+      set;
+    }
+
+    public virtual EmailAddress EmailAddress {
+      get;
+      set;
+    }
+    public virtual EmailAddressStatu EmailAddressStatu {
+      get;
+      set;
+    }
+    public virtual EmailAddressType EmailAddressType {
+      get;
+      set;
+    }
+    public virtual PrivacyStatu PrivacyStatu {
+      get;
+      set;
+    }
+    public virtual Person Person {
+      get;
+      set;
+    }
+  }
 }

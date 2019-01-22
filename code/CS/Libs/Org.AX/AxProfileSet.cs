@@ -13,8 +13,11 @@ namespace Org.AX
   public class AxProfileSet : Dictionary<string, AxProfile>
   {
     [XMap(XType = XType.Element, WrapperElement = "VariableSet", CollectionElements = "Variable", UseKeyValue = true)]
-    public VariableSet VariableSet { get; set; }
-    
+    public VariableSet VariableSet {
+      get;
+      set;
+    }
+
     public AxProfileSet()
     {
       this.VariableSet = new VariableSet();

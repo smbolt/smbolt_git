@@ -16,8 +16,10 @@ namespace Org.SoftwareUpdates
     private SoftwareUpdateErrorAction _errorAction;
     public SoftwareUpdateErrorAction ErrorAction
     {
-      get { return _errorAction; }
-    }    
+      get {
+        return _errorAction;
+      }
+    }
 
     public frmUpdateError(SoftwareUpdateError error)
     {
@@ -58,19 +60,19 @@ namespace Org.SoftwareUpdates
 
         case "Disable software update checks for today":
           _errorAction = SoftwareUpdateErrorAction.DisableCheckingToday;
-          lblActionExplanation.Text = "This program will not check for software updates again today.  " + 
+          lblActionExplanation.Text = "This program will not check for software updates again today.  " +
                                       "Use the configuration wizard to change settings for software updates.";
           break;
 
         case "Disable software update checks for 2 days":
           _errorAction = SoftwareUpdateErrorAction.DisableChecking2Days;
-          lblActionExplanation.Text = "This program will not check for software updates again today and tomorrow.  " + 
+          lblActionExplanation.Text = "This program will not check for software updates again today and tomorrow.  " +
                                       "Use the configuration wizard to change settings for software updates.";
           break;
 
         case "Disable software update checks for 1 week":
           _errorAction = SoftwareUpdateErrorAction.DisableChecking1Week;
-          lblActionExplanation.Text = "This program will not check for software updates until after 1 week has passed.  " + 
+          lblActionExplanation.Text = "This program will not check for software updates until after 1 week has passed.  " +
                                       "Use the configuration wizard to change settings for software updates.";
           break;
 

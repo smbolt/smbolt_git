@@ -45,9 +45,9 @@
       this.pnlTop.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.gvTasks)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // lblEnvironment
-      // 
+      //
       this.lblEnvironment.AutoSize = true;
       this.lblEnvironment.Location = new System.Drawing.Point(9, 10);
       this.lblEnvironment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -55,9 +55,9 @@
       this.lblEnvironment.Size = new System.Drawing.Size(69, 13);
       this.lblEnvironment.TabIndex = 0;
       this.lblEnvironment.Text = "Environment:";
-      // 
+      //
       // lblEnvironmentValue
-      // 
+      //
       this.lblEnvironmentValue.AutoSize = true;
       this.lblEnvironmentValue.Location = new System.Drawing.Point(91, 10);
       this.lblEnvironmentValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -65,9 +65,9 @@
       this.lblEnvironmentValue.Size = new System.Drawing.Size(28, 13);
       this.lblEnvironmentValue.TabIndex = 0;
       this.lblEnvironmentValue.Text = "Test";
-      // 
+      //
       // lblHost
-      // 
+      //
       this.lblHost.AutoSize = true;
       this.lblHost.Location = new System.Drawing.Point(9, 27);
       this.lblHost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -75,9 +75,9 @@
       this.lblHost.Size = new System.Drawing.Size(32, 13);
       this.lblHost.TabIndex = 0;
       this.lblHost.Text = "Host:";
-      // 
+      //
       // lblHostValue
-      // 
+      //
       this.lblHostValue.AutoSize = true;
       this.lblHostValue.Location = new System.Drawing.Point(91, 27);
       this.lblHostValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -85,9 +85,9 @@
       this.lblHostValue.Size = new System.Drawing.Size(85, 13);
       this.lblHostValue.TabIndex = 0;
       this.lblHostValue.Text = "OKC1EDW1001";
-      // 
+      //
       // lblServiceName
-      // 
+      //
       this.lblServiceName.AutoSize = true;
       this.lblServiceName.Location = new System.Drawing.Point(9, 44);
       this.lblServiceName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -95,9 +95,9 @@
       this.lblServiceName.Size = new System.Drawing.Size(77, 13);
       this.lblServiceName.TabIndex = 0;
       this.lblServiceName.Text = "Service Name:";
-      // 
+      //
       // lblServiceNameValue
-      // 
+      //
       this.lblServiceNameValue.AutoSize = true;
       this.lblServiceNameValue.Location = new System.Drawing.Point(91, 44);
       this.lblServiceNameValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -105,9 +105,9 @@
       this.lblServiceNameValue.Size = new System.Drawing.Size(94, 13);
       this.lblServiceNameValue.TabIndex = 0;
       this.lblServiceNameValue.Text = "GPTaskService01";
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.lblAssignmentSummary);
       this.pnlTop.Controls.Add(this.cboTaskGroup);
       this.pnlTop.Controls.Add(this.btnClose);
@@ -125,9 +125,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(775, 94);
       this.pnlTop.TabIndex = 1;
-      // 
+      //
       // cboTaskGroup
-      // 
+      //
       this.cboTaskGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboTaskGroup.FormattingEnabled = true;
       this.cboTaskGroup.Location = new System.Drawing.Point(217, 38);
@@ -136,9 +136,9 @@
       this.cboTaskGroup.Size = new System.Drawing.Size(256, 21);
       this.cboTaskGroup.TabIndex = 3;
       this.cboTaskGroup.SelectedIndexChanged += new System.EventHandler(this.cboTaskGroup_SelectedIndexChanged);
-      // 
+      //
       // btnClose
-      // 
+      //
       this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnClose.Location = new System.Drawing.Point(641, 36);
       this.btnClose.Margin = new System.Windows.Forms.Padding(2);
@@ -149,9 +149,9 @@
       this.btnClose.Text = "Close";
       this.btnClose.UseVisualStyleBackColor = true;
       this.btnClose.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSave
-      // 
+      //
       this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnSave.Location = new System.Drawing.Point(641, 6);
       this.btnSave.Margin = new System.Windows.Forms.Padding(2);
@@ -162,9 +162,9 @@
       this.btnSave.Text = "Save";
       this.btnSave.UseVisualStyleBackColor = true;
       this.btnSave.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblTaskGroupFilter
-      // 
+      //
       this.lblTaskGroupFilter.AutoSize = true;
       this.lblTaskGroupFilter.Location = new System.Drawing.Point(214, 23);
       this.lblTaskGroupFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -172,9 +172,9 @@
       this.lblTaskGroupFilter.Size = new System.Drawing.Size(88, 13);
       this.lblTaskGroupFilter.TabIndex = 0;
       this.lblTaskGroupFilter.Text = "Task Group Filter";
-      // 
+      //
       // gvTasks
-      // 
+      //
       this.gvTasks.AllowUserToAddRows = false;
       this.gvTasks.AllowUserToDeleteRows = false;
       this.gvTasks.AllowUserToResizeRows = false;
@@ -193,18 +193,18 @@
       this.gvTasks.TabIndex = 6;
       this.gvTasks.Tag = "EditScheduledTask";
       this.gvTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTasks_CellContentClick);
-      // 
+      //
       // lblAssignmentSummary
-      // 
+      //
       this.lblAssignmentSummary.AutoSize = true;
       this.lblAssignmentSummary.Location = new System.Drawing.Point(13, 75);
       this.lblAssignmentSummary.Name = "lblAssignmentSummary";
       this.lblAssignmentSummary.Size = new System.Drawing.Size(169, 13);
       this.lblAssignmentSummary.TabIndex = 4;
       this.lblAssignmentSummary.Text = "0 tasks of 0 assigned (no updates)";
-      // 
+      //
       // frmServiceAssignments
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(775, 483);

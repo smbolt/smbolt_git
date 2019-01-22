@@ -10,30 +10,42 @@ using Org.GS;
 namespace Org.GraphicReports.Business
 {
   public class Rig
-	{
-		public string Name { get; set; }
-		public PadSet PadSet { get; set; }
-		public RigSet RigSet { get; set; }
+  {
+    public string Name {
+      get;
+      set;
+    }
+    public PadSet PadSet {
+      get;
+      set;
+    }
+    public RigSet RigSet {
+      get;
+      set;
+    }
     private Calendar _calendar;
 
-    public Font RigNameFont { get; set; }
+    public Font RigNameFont {
+      get;
+      set;
+    }
     private float _rigColumnWidth;
     private float _rigRowHeight;
     private float _ch;
     private float _cw;
 
-		public Rig(RigSet rigSet)
+    public Rig(RigSet rigSet)
     {
       this.RigNameFont = new Font("Calibri", 10.0F);
-			this.Name = String.Empty;
-			this.PadSet = new PadSet();
-			this.RigSet = rigSet;
+      this.Name = String.Empty;
+      this.PadSet = new PadSet();
+      this.RigSet = rigSet;
       _rigColumnWidth = rigSet.RigColumnWidth;
       _rigRowHeight = rigSet.RigRowHeight;
       _ch = rigSet.ClientHeight;
       _cw = rigSet.ClientWidth;
       _calendar = rigSet.Calendar;
-		}
+    }
 
     public Rig GetForDateSpan(DateSpan dateSpan)
     {
@@ -81,5 +93,5 @@ namespace Org.GraphicReports.Business
         }
       }
     }
-	}
+  }
 }

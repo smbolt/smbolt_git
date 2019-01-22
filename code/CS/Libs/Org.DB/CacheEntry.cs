@@ -9,15 +9,24 @@ namespace Org.DB
 {
   public class CacheEntry
   {
-    public string ModelName { get; set; }
-    public SortedList<string, ModelBase> ModelSet { get; set; }
-    public DateTime? CreatedAt { get; set; }
+    public string ModelName {
+      get;
+      set;
+    }
+    public SortedList<string, ModelBase> ModelSet {
+      get;
+      set;
+    }
+    public DateTime? CreatedAt {
+      get;
+      set;
+    }
 
     public CacheEntry()
     {
       this.ModelName = String.Empty;
       this.ModelSet = new SortedList<string, ModelBase>();
-      this.CreatedAt = (DateTime?)null; 
+      this.CreatedAt = (DateTime?)null;
     }
   }
 
@@ -34,7 +43,7 @@ namespace Org.DB
       {
         if (!model.PropertyInfoPairSet.ContainsKey(fieldName))
           throw new Exception("PropertyInfoPairSet for model '" + cacheEntry.ModelName + "' does not contain an entry for " +
-                              "field named '" + fieldName + " - cannot create ValueList."); 
+                              "field named '" + fieldName + " - cannot create ValueList.");
         PropertyInfoPair pip = model.PropertyInfoPairSet[fieldName];
         object value = pip.ModelPropertyInfo.GetValue(model);
         if (value != null)

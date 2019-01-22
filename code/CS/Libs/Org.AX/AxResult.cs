@@ -10,18 +10,52 @@ namespace Org.AX
 {
   public class AxResult
   {
-    public bool HasRun { get; set; }
-    public bool IsDryRun { get; set; }
-    public string ReportBase { get; set; }
-    public List<WebSite> WebSitesAffected { get; set; }
-    public List<WinService> WinServicesAffected { get; set; }
-    public List<AppPool> AppPoolsAffected { get; set; }
-    public List<OSFile> FilesCopied { get; set; }
-    public List<OSFile> FilesMoved { get; set; }
-    public List<OSFile> FilesDeleted { get; set; }
-    private AxAction _parent { get; set; }
+    public bool HasRun {
+      get;
+      set;
+    }
+    public bool IsDryRun {
+      get;
+      set;
+    }
+    public string ReportBase {
+      get;
+      set;
+    }
+    public List<WebSite> WebSitesAffected {
+      get;
+      set;
+    }
+    public List<WinService> WinServicesAffected {
+      get;
+      set;
+    }
+    public List<AppPool> AppPoolsAffected {
+      get;
+      set;
+    }
+    public List<OSFile> FilesCopied {
+      get;
+      set;
+    }
+    public List<OSFile> FilesMoved {
+      get;
+      set;
+    }
+    public List<OSFile> FilesDeleted {
+      get;
+      set;
+    }
+    private AxAction _parent {
+      get;
+      set;
+    }
 
-    public string AxActionReport { get { return Get_AxActionReport(); } }
+    public string AxActionReport {
+      get {
+        return Get_AxActionReport();
+      }
+    }
 
     public AxResult(AxAction parent)
     {

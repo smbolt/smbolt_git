@@ -7,36 +7,63 @@ using System.Threading.Tasks;
 using Org.GS;
 
 namespace Org.Dx.Business
-{ 
+{
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
   [XMap(CollectionElements = "DxMapItem", XType = XType.Element, WrapperElement = "DxMapItemSet")]
   public class DxMap
   {
     [XMap(IsRequired = true, IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public DxMapType DxMapType { get; set; }
+    public DxMapType DxMapType {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "PerUnit")]
-    public MapTiming MapTiming { get; set; }
+    public MapTiming MapTiming {
+      get;
+      set;
+    }
 
     [XMap]
-    public string DataSource { get; set; }
+    public string DataSource {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "None")]
-    public SheetControl SheetControl { get; set;}
+    public SheetControl SheetControl {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, WrapperElement = "DxFilterSet", CollectionElements = "DxFilter")]
-    public DxFilterSet DxFilterSet { get; set; }
+    public DxFilterSet DxFilterSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, WrapperElement = "DxMapItemSet", CollectionElements = "DxMapItem")]
-    public DxMapItemSet DxMapItemSet { get; set; }
+    public DxMapItemSet DxMapItemSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, WrapperElement = "DxRegionSet", CollectionElements = "DxRegion")]
-    public DxRegionSet DxRegionSet { get; set; }
+    public DxRegionSet DxRegionSet {
+      get;
+      set;
+    }
 
-    public ColumnIndexMap ColumnIndexMap { get; set; }
+    public ColumnIndexMap ColumnIndexMap {
+      get;
+      set;
+    }
 
     public DxMap()
     {
@@ -87,7 +114,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to validate the DxWorkbook.", ex); 
+        throw new Exception("An exception occurred while attempting to validate the DxWorkbook.", ex);
       }
     }
 

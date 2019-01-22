@@ -37,16 +37,28 @@ namespace NameTags
         string objType = "Unknown Type";
         switch (kvpObj.Value.Type)
         {
-          case Enums.ObjectType.TextObject: objType = "Text object"; break;
-          case Enums.ObjectType.GraphicsObject: objType = "Graphics object"; break;
-          case Enums.ObjectType.RectangleObject: objType = "Rectangle object"; break;
-          case Enums.ObjectType.EllipseObject: objType = "Ellipse object"; break;
-          case Enums.ObjectType.DiplomaPicture: objType = "Diploma picture"; break;
-          default: objType = "Unknown object type"; break;
+          case Enums.ObjectType.TextObject:
+            objType = "Text object";
+            break;
+          case Enums.ObjectType.GraphicsObject:
+            objType = "Graphics object";
+            break;
+          case Enums.ObjectType.RectangleObject:
+            objType = "Rectangle object";
+            break;
+          case Enums.ObjectType.EllipseObject:
+            objType = "Ellipse object";
+            break;
+          case Enums.ObjectType.DiplomaPicture:
+            objType = "Diploma picture";
+            break;
+          default:
+            objType = "Unknown object type";
+            break;
         }
 
         cboDrawingObjects.Items.Add(kvpObj.Value.Name +
-            " - " + objType);
+                                    " - " + objType);
       }
 
 
@@ -83,12 +95,24 @@ namespace NameTags
       dgvProperties.Rows[rowIndex].Cells[0].Value = "Type";
       switch (obj.Type)
       {
-        case Enums.ObjectType.TextObject: dgvProperties.Rows[rowIndex].Cells[1].Value = "Text object"; break;
-        case Enums.ObjectType.GraphicsObject: dgvProperties.Rows[rowIndex].Cells[1].Value = "Graphics object"; break;
-        case Enums.ObjectType.RectangleObject: dgvProperties.Rows[rowIndex].Cells[1].Value = "Rectangle object"; break;
-        case Enums.ObjectType.EllipseObject: dgvProperties.Rows[rowIndex].Cells[1].Value = "Ellipse object"; break;
-        case Enums.ObjectType.DiplomaPicture: dgvProperties.Rows[rowIndex].Cells[1].Value = "Diploma picture"; break;
-        default: dgvProperties.Rows[rowIndex].Cells[1].Value = "Unknown object type"; break;
+        case Enums.ObjectType.TextObject:
+          dgvProperties.Rows[rowIndex].Cells[1].Value = "Text object";
+          break;
+        case Enums.ObjectType.GraphicsObject:
+          dgvProperties.Rows[rowIndex].Cells[1].Value = "Graphics object";
+          break;
+        case Enums.ObjectType.RectangleObject:
+          dgvProperties.Rows[rowIndex].Cells[1].Value = "Rectangle object";
+          break;
+        case Enums.ObjectType.EllipseObject:
+          dgvProperties.Rows[rowIndex].Cells[1].Value = "Ellipse object";
+          break;
+        case Enums.ObjectType.DiplomaPicture:
+          dgvProperties.Rows[rowIndex].Cells[1].Value = "Diploma picture";
+          break;
+        default:
+          dgvProperties.Rows[rowIndex].Cells[1].Value = "Unknown object type";
+          break;
       }
 
       rowIndex++;
@@ -120,7 +144,7 @@ namespace NameTags
         return;
 
       string objName = s[0].Trim();
-            
+
       int objKey = GetObjectKeyByName(objName);
 
       _objSet.DeselectAll();
@@ -145,8 +169,8 @@ namespace NameTags
     private void SetComboBoxValueByObjectName(string objName)
     {
       char[] delim = new char[] { '-' };
-    for (int i = 0; i < cboDrawingObjects.Items.Count; i++)
-    {
+      for (int i = 0; i < cboDrawingObjects.Items.Count; i++)
+      {
         string[] s = cboDrawingObjects.Items[i].ToString().Trim().Split(delim);
         if (s.Length > 1)
         {
@@ -174,11 +198,21 @@ namespace NameTags
 
       switch (propertyName)
       {
-        case "Name": _objSet[objKey].Name = propertyValue; break;
-        case "Text": _objSet[objKey].Text = propertyValue; break;
-        case "Type": _objSet[objKey].Type = GetObjectType(propertyValue); break;
-        case "Graphics Path": _objSet[objKey].GraphicsPath = propertyValue; break;
-        case "Font Size": _objSet[objKey].SetFontSize(propertyValue.ToFloat()); break;
+        case "Name":
+          _objSet[objKey].Name = propertyValue;
+          break;
+        case "Text":
+          _objSet[objKey].Text = propertyValue;
+          break;
+        case "Type":
+          _objSet[objKey].Type = GetObjectType(propertyValue);
+          break;
+        case "Graphics Path":
+          _objSet[objKey].GraphicsPath = propertyValue;
+          break;
+        case "Font Size":
+          _objSet[objKey].SetFontSize(propertyValue.ToFloat());
+          break;
       }
 
       IsCellEditingInProgress = false;
@@ -192,10 +226,18 @@ namespace NameTags
 
       switch (typeString)
       {
-        case "Text object": objectType = Enums.ObjectType.TextObject; break;
-        case "Rectangle object": objectType = Enums.ObjectType.RectangleObject; break;
-        case "Ellipse object": objectType = Enums.ObjectType.EllipseObject; break;
-        case "Diploma picture": objectType = Enums.ObjectType.DiplomaPicture; break;
+        case "Text object":
+          objectType = Enums.ObjectType.TextObject;
+          break;
+        case "Rectangle object":
+          objectType = Enums.ObjectType.RectangleObject;
+          break;
+        case "Ellipse object":
+          objectType = Enums.ObjectType.EllipseObject;
+          break;
+        case "Diploma picture":
+          objectType = Enums.ObjectType.DiplomaPicture;
+          break;
       }
 
       return objectType;
@@ -215,10 +257,18 @@ namespace NameTags
 
         switch (propertyName)
         {
-          case "Name": _objSet[objKey].Name = propertyValue; break;
-          case "Text": _objSet[objKey].Text = propertyValue; break;
-          case "Type": _objSet[objKey].Type = GetObjectType(propertyValue); break;
-          case "Graphics Path": _objSet[objKey].GraphicsPath = propertyValue; break;
+          case "Name":
+            _objSet[objKey].Name = propertyValue;
+            break;
+          case "Text":
+            _objSet[objKey].Text = propertyValue;
+            break;
+          case "Type":
+            _objSet[objKey].Type = GetObjectType(propertyValue);
+            break;
+          case "Graphics Path":
+            _objSet[objKey].GraphicsPath = propertyValue;
+            break;
         }
 
         IsCellEditingInProgress = false;

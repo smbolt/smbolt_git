@@ -12,19 +12,31 @@ namespace Org.RPT
   public class ReportObjectSet : Dictionary<string, ReportObject>
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
 
-    public ReportObject Parent { get; set; }
-    public ReportDef RDef { get; set; }
-    public int Level { get; set; }
+    public ReportObject Parent {
+      get;
+      set;
+    }
+    public ReportDef RDef {
+      get;
+      set;
+    }
+    public int Level {
+      get;
+      set;
+    }
 
     public ReportObjectSet()
     {
       this.Name = String.Empty;
       this.Parent = null;
       this.RDef = null;
-      this.Level = 0; 
+      this.Level = 0;
     }
 
     public void LoadData(ReportData _reportData)
@@ -46,7 +58,7 @@ namespace Org.RPT
 
                 default:
                   if (_reportData.ContainsKey(dataSource))
-                    ro.ReportText.Text = _reportData[dataSource]; 
+                    ro.ReportText.Text = _reportData[dataSource];
                   break;
 
               }
@@ -56,7 +68,7 @@ namespace Org.RPT
         }
 
         if (ro.ReportObjectSet != null)
-          ro.ReportObjectSet.LoadData(_reportData); 
+          ro.ReportObjectSet.LoadData(_reportData);
       }
     }
 

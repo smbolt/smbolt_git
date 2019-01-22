@@ -4,7 +4,9 @@ namespace Org.Diff.DiffBuilder.Model
 {
   public class DiffPaneModel : DiffModelBase
   {
-    public List<DiffPiece> Lines { get; }
+    public List<DiffPiece> Lines {
+      get;
+    }
 
     public DiffPaneModel()
     {

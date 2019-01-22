@@ -17,16 +17,46 @@ namespace Org.WebApi.ApiManagement
 
   public class ApiResult
   {
-    public string ApiStatus { get; set; }
-    public string Code { get; set; }
-    public string Data { get; set; }
-    public string Message { get; set; }
-    public string LongMessage { get; set; }
-    public string Token { get; set; }
-    public PagingControl PagingControl { get; set; }
-    public int UserId { get; set; }
-    public string UserName { get; set; }
-    public object ResponseData { get; set; }
+    public string ApiStatus {
+      get;
+      set;
+    }
+    public string Code {
+      get;
+      set;
+    }
+    public string Data {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public string LongMessage {
+      get;
+      set;
+    }
+    public string Token {
+      get;
+      set;
+    }
+    public PagingControl PagingControl {
+      get;
+      set;
+    }
+    public int UserId {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public object ResponseData {
+      get;
+      set;
+    }
 
     public ApiResult()
     {

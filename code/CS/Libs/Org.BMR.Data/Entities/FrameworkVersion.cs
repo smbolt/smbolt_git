@@ -11,19 +11,40 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "FrameworkVersion")]
-    public partial class FrameworkVersion
-    {
-        public int FrameworkVersionId { get; set; }
-        public string FrameworkVersionString { get; set; }
-        public string Version { get; set; }
-        public string VersionNum { get; set; }
-        public string ServicePackString { get; set; }
-        public int StatusId { get; set; }
-    
-        public virtual Status Status { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "FrameworkVersion")]
+  public partial class FrameworkVersion
+  {
+    public int FrameworkVersionId {
+      get;
+      set;
     }
+    public string FrameworkVersionString {
+      get;
+      set;
+    }
+    public string Version {
+      get;
+      set;
+    }
+    public string VersionNum {
+      get;
+      set;
+    }
+    public string ServicePackString {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+
+    public virtual Status Status {
+      get;
+      set;
+    }
+  }
 }

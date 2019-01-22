@@ -14,53 +14,112 @@ namespace Org.GS.Configuration
   public class ConfigSecurity
   {
     [XMap(DefaultValue="0")]
-    public int PasswordMinLth { get; set; }
+    public int PasswordMinLth {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="0")]
-    public int PasswordMaxLth { get; set; }
+    public int PasswordMaxLth {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool PasswordReqMixCase { get; set; }
+    public bool PasswordReqMixCase {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool PasswordReqNbr { get; set; }
+    public bool PasswordReqNbr {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool PasswordReqChgOnFirstUse { get; set; }
+    public bool PasswordReqChgOnFirstUse {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="0")]
-    public int PasswordReqChgFreq { get; set; }
+    public int PasswordReqChgFreq {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "ConfigUser", WrapperElement = "ConfigUserSet")]
-    public ConfigUserSet ConfigUserSet { get; set; }
+    public ConfigUserSet ConfigUserSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "ConfigGroup", WrapperElement = "ConfigGroupSet")]
-    public ConfigGroupSet ConfigGroupSet { get; set; }
+    public ConfigGroupSet ConfigGroupSet {
+      get;
+      set;
+    }
 
-    public string LoggedInUser { get; set; }
-    public bool IsLoggedIn { get; set; }
-    public int UserId { get; set; }
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public string SecurityToken { get; set; }
-    public ConfigGroupSet LoggedInUserGroups { get; set; }
-    public List<string> LoggedInUserAllowedFunctions { get; set; }
-    public SecurityModel SecurityModel { get; set; }
+    public string LoggedInUser {
+      get;
+      set;
+    }
+    public bool IsLoggedIn {
+      get;
+      set;
+    }
+    public int UserId {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public string Password {
+      get;
+      set;
+    }
+    public string SecurityToken {
+      get;
+      set;
+    }
+    public ConfigGroupSet LoggedInUserGroups {
+      get;
+      set;
+    }
+    public List<string> LoggedInUserAllowedFunctions {
+      get;
+      set;
+    }
+    public SecurityModel SecurityModel {
+      get;
+      set;
+    }
 
     private bool _userFunctionsAlreadySet;
     private bool _groupMembershipAlreadySet;
 
     private bool _inClientAdminMode;
-    public bool InClientAdminMode { get { return _inClientAdminMode; } }
+    public bool InClientAdminMode {
+      get {
+        return _inClientAdminMode;
+      }
+    }
     private bool _inOrgAdminMode;
-    public bool InOrgAdminMode { get { return _inOrgAdminMode; } }
+    public bool InOrgAdminMode {
+      get {
+        return _inOrgAdminMode;
+      }
+    }
 
     public ConfigSecurity()
     {
       this.LoggedInUser = String.Empty;
       this.IsLoggedIn = false;
       this.UserName = String.Empty;
-      this.UserId = -1; 
+      this.UserId = -1;
       this.Password = String.Empty;
       this.SecurityToken = String.Empty;
       this.LoggedInUserGroups = new ConfigGroupSet();
@@ -153,7 +212,7 @@ namespace Org.GS.Configuration
       }
 
       if (this.PasswordReqNbr && !g.IncludesNumber(password))
-          throw new Exception("Password must contain at least one number.");
+        throw new Exception("Password must contain at least one number.");
 
       if (this.PasswordReqMixCase)
       {
@@ -190,7 +249,7 @@ namespace Org.GS.Configuration
         catch (Exception ex)
         {
           throw new Exception("An exception occurred attemptoing to set group membership for user in 'ConfigSecurity.SetGroupMembershipForUser' " +
-                              "for user '" + userName + "'.", ex); 
+                              "for user '" + userName + "'.", ex);
         }
         finally
         {
@@ -240,10 +299,10 @@ namespace Org.GS.Configuration
                 foreach (int i in role.InheritedRolesList)
                 {
                   ProgramRole inheritedRole = programFunctionControl.ProgramRoleSet[i];
-                  AddInheritedFunctions(inheritedRole, this.LoggedInUserAllowedFunctions, 
+                  AddInheritedFunctions(inheritedRole, this.LoggedInUserAllowedFunctions,
                                         programFunctionControl.ProgramRoleSet, programFunctionControl.ProgramFunctionSet);
                 }
-                
+
                 _userFunctionsAlreadySet = true;
               }
             }
@@ -293,14 +352,14 @@ namespace Org.GS.Configuration
 
       sb.Append("User:" + g.crlf + "  " + this.LoggedInUser + g.crlf);
 
-      sb.Append(g.crlf2); 
+      sb.Append(g.crlf2);
       sb.Append("Groups:");
       foreach (ConfigGroup gp in this.LoggedInUserGroups.Values)
       {
         sb.Append(g.crlf + "  " + gp.GroupName);
       }
 
-      sb.Append(g.crlf2); 
+      sb.Append(g.crlf2);
       sb.Append("Program Functions:");
       foreach (string function in this.LoggedInUserAllowedFunctions)
       {
@@ -312,7 +371,7 @@ namespace Org.GS.Configuration
 
     public bool AllowFunctionForUser(string requestedFunction)
     {
-      return this.LoggedInUserAllowedFunctions.Contains(requestedFunction); 
+      return this.LoggedInUserAllowedFunctions.Contains(requestedFunction);
     }
 
     public List<string> GetGroupsAllowedFunction(string programFunction)

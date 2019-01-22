@@ -28,7 +28,10 @@ namespace Org.GS
 
   public static class XmlMapper
   {
-    public static SortedList<string, Type> Types { get; set; }
+    public static SortedList<string, Type> Types {
+      get;
+      set;
+    }
     private static List<Assembly> _assemblies = new List<Assembly>();
     private static List<Assembly> _loadedAssemblies = new List<Assembly>();
 
@@ -41,8 +44,8 @@ namespace Org.GS
     {
       if (!_assemblies.Contains(assembly))
       {
-        _assemblies.Add(assembly); 
-        AugmentTypes(assembly); 
+        _assemblies.Add(assembly);
+        AugmentTypes(assembly);
         return true;
       }
       return false;
@@ -55,19 +58,19 @@ namespace Org.GS
 
       Assembly thisAssembly = Assembly.GetExecutingAssembly();
       if (!_assemblies.Contains(thisAssembly))
-        _assemblies.Add(thisAssembly); 
+        _assemblies.Add(thisAssembly);
 
       foreach(var assembly in _assemblies)
       {
         if (!_loadedAssemblies.Contains(assembly))
         {
-          AugmentTypes(assembly); 
+          AugmentTypes(assembly);
         }
       }
-    }    
+    }
 
     private static void AugmentTypes(Assembly assembly)
-    {    
+    {
       if (!_loadedAssemblies.Contains(assembly))
       {
         List<Type> types = assembly.GetTypes().ToList();
@@ -87,7 +90,7 @@ namespace Org.GS
           }
         }
 
-        _loadedAssemblies.Add(assembly); 
+        _loadedAssemblies.Add(assembly);
       }
     }
 

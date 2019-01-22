@@ -14,8 +14,14 @@ namespace Org.OpsManager.Controls
 {
   public partial class NotifyGroupPanel : BasePanel
   {
-    private NotifyGroup NotifyGroup { get; set; }
-    private NotifyEventGroup NotifyEventGroup { get; set; }
+    private NotifyGroup NotifyGroup {
+      get;
+      set;
+    }
+    private NotifyEventGroup NotifyEventGroup {
+      get;
+      set;
+    }
 
     public NotifyGroupPanel(PanelData panelData, ChangeType changeType)
     {
@@ -130,11 +136,11 @@ namespace Org.OpsManager.Controls
               this.NotifyEventGroup.NotifyEventGroupID = notifyRepo.InsertNotifyEventGroup(this.NotifyEventGroup);
 
             base.FireNotifyInsert(new NotifyChangeResult(base.NotifyType, this.NotifyGroup.NotifyGroupId, this.NotifyGroup.Name, this.NotifyEventGroup.NotifyEventID,
-                                                         this.NotifyEventGroup.NotifyEventGroupID));
+                                  this.NotifyEventGroup.NotifyEventGroupID));
           }
           else
             base.FireNotifyInsert(new NotifyChangeResult(base.NotifyType, this.NotifyGroup.NotifyGroupId, this.NotifyGroup.Name));
-        } 
+        }
       }
       catch (Exception ex)
       {
@@ -161,12 +167,13 @@ namespace Org.OpsManager.Controls
               }
               break;
 
-            case NodeType.Reference: 
-              notifyRepo.DeleteNotifyEventGroup(this.NotifyEventGroup.NotifyEventGroupID); 
+            case NodeType.Reference:
+              notifyRepo.DeleteNotifyEventGroup(this.NotifyEventGroup.NotifyEventGroupID);
               base.FireNotifyDelete(new NotifyChangeResult(base.NotifyType, this.NotifyGroup.NotifyGroupId, this.NotifyGroup.Name, this.NotifyEventGroup.NotifyEventID,
-                                                              this.NotifyEventGroup.NotifyEventGroupID));
+                                    this.NotifyEventGroup.NotifyEventGroupID));
               break;
-            default: return;
+            default:
+              return;
           }
         }
       }

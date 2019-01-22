@@ -10,26 +10,76 @@ namespace Org.GS.Database
 {
   public class DbColumn
   {
-    public DbTable Table { get; set; }
-    public DbEntityBase Row { get; set; }
-    public string Name { get; set; }
-    public DbType DbType { get; set; }
-    public int ColumnId { get; set; }
-    public int SystemTypeId { get; set; }
-    public int UserTypeId { get; set; }
-    public int MaxLength { get; set; }
-    public int Precision { get; set; }
-    public int Scale { get; set; }
-    public bool IsNullable { get; set; }
-    public bool IsNullInDB { get; set; }
-    public bool IsIdentity { get; set; }
-    public bool IsPrimaryKey { get; set; }
-    public bool IsSequencer { get; set; }
-    public bool HasDefaultValue { get; set; }
+    public DbTable Table {
+      get;
+      set;
+    }
+    public DbEntityBase Row {
+      get;
+      set;
+    }
+    public string Name {
+      get;
+      set;
+    }
+    public DbType DbType {
+      get;
+      set;
+    }
+    public int ColumnId {
+      get;
+      set;
+    }
+    public int SystemTypeId {
+      get;
+      set;
+    }
+    public int UserTypeId {
+      get;
+      set;
+    }
+    public int MaxLength {
+      get;
+      set;
+    }
+    public int Precision {
+      get;
+      set;
+    }
+    public int Scale {
+      get;
+      set;
+    }
+    public bool IsNullable {
+      get;
+      set;
+    }
+    public bool IsNullInDB {
+      get;
+      set;
+    }
+    public bool IsIdentity {
+      get;
+      set;
+    }
+    public bool IsPrimaryKey {
+      get;
+      set;
+    }
+    public bool IsSequencer {
+      get;
+      set;
+    }
+    public bool HasDefaultValue {
+      get;
+      set;
+    }
 
     public bool IsUpdated
     {
-      get { return this.IsColumnUpdated(); }
+      get {
+        return this.IsColumnUpdated();
+      }
     }
 
 

@@ -15,15 +15,35 @@ namespace Org.GraphicReports
     private string _text;
 
     private string _stringToDraw;
-    public string StringToDraw { get { return _stringToDraw; } }
+    public string StringToDraw {
+      get {
+        return _stringToDraw;
+      }
+    }
 
     private RectangleF _stringRectangleF;
-    public RectangleF StringRectangleF { get { return _stringRectangleF; } }
-    public Rectangle StringRectangle { get { return _stringRectangleF.ToRectangle(); } }
+    public RectangleF StringRectangleF {
+      get {
+        return _stringRectangleF;
+      }
+    }
+    public Rectangle StringRectangle {
+      get {
+        return _stringRectangleF.ToRectangle();
+      }
+    }
 
     private PointF _drawingPointF;
-    public PointF DrawingPointF { get { return _drawingPointF; } }
-    public Point DrawingPoint { get { return _drawingPointF.ToPoint(); } }
+    public PointF DrawingPointF {
+      get {
+        return _drawingPointF;
+      }
+    }
+    public Point DrawingPoint {
+      get {
+        return _drawingPointF.ToPoint();
+      }
+    }
 
     public StringSizer(Graphics gx, PointF origin, RectangleF drawingRectangle, Font font, string text)
     {
@@ -39,7 +59,7 @@ namespace Org.GraphicReports
 
       float maxWidth = drawingRectangle.Width - 6;
       var tm = gx.MeasureString(_stringToDraw, font);
-      var stringSize = new SizeF(tm.Width, tm.Height); 
+      var stringSize = new SizeF(tm.Width, tm.Height);
 
       if (tm.Width > maxWidth)
       {
@@ -55,7 +75,7 @@ namespace Org.GraphicReports
             if (tm.Width <= maxWidth)
             {
               _stringToDraw = ellipsisString;
-              stringSize = new SizeF(tm.Width, tm.Height); 
+              stringSize = new SizeF(tm.Width, tm.Height);
             }
           }
           else
@@ -64,7 +84,7 @@ namespace Org.GraphicReports
             tm = gx.MeasureString(ellipsisString, font);
             if (tm.Width <= maxWidth)
             {
-              stringSize = new SizeF(tm.Width, tm.Height); 
+              stringSize = new SizeF(tm.Width, tm.Height);
             }
           }
         }
@@ -74,7 +94,7 @@ namespace Org.GraphicReports
       float yOffset = _drawingRectangle.Height / 2 - stringSize.Height / 2;
 
       _stringRectangleF = new RectangleF(new PointF(xOffset, yOffset), stringSize);
-      _drawingPointF = new PointF(origin.X + xOffset, origin.Y + yOffset); 
+      _drawingPointF = new PointF(origin.X + xOffset, origin.Y + yOffset);
     }
   }
 }

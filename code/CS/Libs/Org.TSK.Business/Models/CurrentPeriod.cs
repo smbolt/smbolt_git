@@ -11,10 +11,18 @@ namespace Org.TSK.Business.Models
   public class CurrentPeriod
   {
     private DateTime? _startDateTime;
-    public DateTime? StartDateTime { get { return _startDateTime; } }
+    public DateTime? StartDateTime {
+      get {
+        return _startDateTime;
+      }
+    }
 
     private DateTime? _endDateTime;
-    public DateTime? EndDateTime { get { return _endDateTime; } }
+    public DateTime? EndDateTime {
+      get {
+        return _endDateTime;
+      }
+    }
 
     public CurrentPeriod(PeriodContexts periodContext, int offsetMinutes)
     {
@@ -59,7 +67,7 @@ namespace Org.TSK.Business.Models
             var d = now;
             while (now < _startDateTime)
             {
-              d = d.AddMonths(-3); 
+              d = d.AddMonths(-3);
               _startDateTime = d.ToBeginOfQuarter().AddMinutes(offsetMinutes);
               _endDateTime = d.ToEndOfQuarter().AddMinutes(offsetMinutes);
             }
@@ -164,7 +172,7 @@ namespace Org.TSK.Business.Models
 
         default:
           throw new Exception("An invalid value was passed to the CurrentPeriod constructor in the 'periodContext' parameter. The value received is '" +
-                              periodContext.ToString() + "'."); 
+                              periodContext.ToString() + "'.");
       }
     }
   }

@@ -8,9 +8,18 @@ namespace Org.Pdf
 {
   public class PdfImageDecodeParms
   {
-    public int Columns { get; private set; }
-    public int Rows { get; private set; }
-    public int K { get; private set; }
+    public int Columns {
+      get;
+      private set;
+    }
+    public int Rows {
+      get;
+      private set;
+    }
+    public int K {
+      get;
+      private set;
+    }
 
     public PdfImageDecodeParms(int columns, int rows, int k)
     {

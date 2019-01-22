@@ -13,15 +13,15 @@ namespace Org.WSO
   [ExportMetadata("Name", "Org.WSO.MessageFactory")]
   [ExportMetadata("Version", "1.0.0.0")]
   [ExportMetadata("Transactions",
-                  "Ping_1.0.0.0 " + 
-                  "GetAssemblyReport_1.0.0.0 " + 
-                  "GetRunningTasksReport_1.0.0.0 " + 
+                  "Ping_1.0.0.0 " +
+                  "GetAssemblyReport_1.0.0.0 " +
+                  "GetRunningTasksReport_1.0.0.0 " +
                   "WsCommand_1.0.0.0 " +
                   "Transaction2_1.0.0.0 "
-                  )]
+                 )]
   public class MessageFactory : MessageFactoryBase, IMessageFactory
   {
-    public MessageFactory(){}
+    public MessageFactory() {}
 
     public WsMessage CreateRequestMessage(WsParms wsParms)
     {
@@ -39,11 +39,11 @@ namespace Org.WSO
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to create the request message.", ex); 
+        throw new Exception("An exception occurred attempting to create the request message.", ex);
       }
     }
 
   }
 
-  
+
 }

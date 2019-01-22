@@ -12,20 +12,62 @@ namespace Org.OpsManager
 {
   public class OpsData
   {
-    public Dictionary<int, string> AppLogEntities { get; set; }
-    public Dictionary<int, string> AppLogModules { get; set; }
-    public Dictionary<int, string> AppLogEvents { get; set; }
-    public GridViewSet GridViewSet { get; set; }
-    public ConfigDbSpec TasksDbSpec { get; set; }
-    public ConfigDbSpec LoggingDbSpec { get; set; }
-    public ConfigDbSpec NotifyDbSpec { get; set; }
-    public ConfigWsSpec OpsMgmt01WsSpec { get; set; }
-    public string Environment { get; set; }
-    public ScheduledTask CurrentScheduledTask { get; set; }
-    public tsk.TaskSchedule CurrentTaskSchedule { get; set; }
-    public tsk.TaskScheduleElement CurrentScheduleElement { get; set; }
-    public TaskParameter CurrentTaskParameter { get; set; }
-    public TaskParameterSet CurrentTaskParameterSet { get; set; }
+    public Dictionary<int, string> AppLogEntities {
+      get;
+      set;
+    }
+    public Dictionary<int, string> AppLogModules {
+      get;
+      set;
+    }
+    public Dictionary<int, string> AppLogEvents {
+      get;
+      set;
+    }
+    public GridViewSet GridViewSet {
+      get;
+      set;
+    }
+    public ConfigDbSpec TasksDbSpec {
+      get;
+      set;
+    }
+    public ConfigDbSpec LoggingDbSpec {
+      get;
+      set;
+    }
+    public ConfigDbSpec NotifyDbSpec {
+      get;
+      set;
+    }
+    public ConfigWsSpec OpsMgmt01WsSpec {
+      get;
+      set;
+    }
+    public string Environment {
+      get;
+      set;
+    }
+    public ScheduledTask CurrentScheduledTask {
+      get;
+      set;
+    }
+    public tsk.TaskSchedule CurrentTaskSchedule {
+      get;
+      set;
+    }
+    public tsk.TaskScheduleElement CurrentScheduleElement {
+      get;
+      set;
+    }
+    public TaskParameter CurrentTaskParameter {
+      get;
+      set;
+    }
+    public TaskParameterSet CurrentTaskParameterSet {
+      get;
+      set;
+    }
 
     public OpsData()
     {

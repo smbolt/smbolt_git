@@ -12,19 +12,34 @@ namespace Org.WSO.Transactions
   public class TransactionBase
   {
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Version { get; set; }
+    public string Version {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "NotSet", Name = "TransactionStatus")]
-    public TransactionStatus TransactionStatus { get; set; }
+    public TransactionStatus TransactionStatus {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "")]
-    public string Message { get; set; }
+    public string Message {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "")]
-    public string Code { get; set; }
+    public string Code {
+      get;
+      set;
+    }
 
     public TransactionBase()
     {
@@ -37,7 +52,7 @@ namespace Org.WSO.Transactions
 
     public void AutoInit()
     {
-      this.Name = this.GetType().Name; 
+      this.Name = this.GetType().Name;
     }
   }
 
@@ -46,35 +61,35 @@ namespace Org.WSO.Transactions
     public static SpParmSet GetSpParms(this TransactionBase trans, List<string> parms)
     {
       if (parms == null)
-        throw new Exception("No list of stored procedure parameters was provided to the GetSpParms extension method."); 
+        throw new Exception("No list of stored procedure parameters was provided to the GetSpParms extension method.");
 
       var spParms = new SpParmSet();
 
-      Type transType = trans.GetType();           
+      Type transType = trans.GetType();
 
       for (int i = 0; i < parms.Count; i++)
       {
-        string propertyName = parms.ElementAt(i); 
+        string propertyName = parms.ElementAt(i);
         string parmPropertyName = propertyName;
         string objectPropertyName = propertyName;
 
         if (propertyName.Contains(":"))
         {
-          string[] tokens = propertyName.ToTokenArray(Constants.ColonDelimiter); 
+          string[] tokens = propertyName.ToTokenArray(Constants.ColonDelimiter);
           if (tokens.Length != 2)
-            throw new Exception("Invalid property name format set to GetSpParms extension method '" + propertyName + "'."); 
+            throw new Exception("Invalid property name format set to GetSpParms extension method '" + propertyName + "'.");
           parmPropertyName = tokens[0];
           objectPropertyName = tokens[1];
         }
 
-        var pi = transType.GetProperty(objectPropertyName); 
+        var pi = transType.GetProperty(objectPropertyName);
         if (pi == null)
-          throw new Exception("No property named '" + objectPropertyName + "' exists in type '" + transType.FullName + "', cannot create " + 
+          throw new Exception("No property named '" + objectPropertyName + "' exists in type '" + transType.FullName + "', cannot create " +
                               "stored procedure parameters from transaction object.");
 
-        var propertyValue = pi.GetValue(trans); 
-        var spParm = new SpParm(parmPropertyName, propertyValue); 
-        spParms.Add(spParm); 
+        var propertyValue = pi.GetValue(trans);
+        var spParm = new SpParm(parmPropertyName, propertyValue);
+        spParms.Add(spParm);
       }
 
       return spParms;

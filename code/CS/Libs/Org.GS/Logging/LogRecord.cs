@@ -7,32 +7,107 @@ using System.Xml.Linq;
 namespace Org.GS.Logging
 {
   public class LogRecord
-  { 
-    public long LogId { get; set; }
-    public DateTime LogDateTime { get; set; }
-    public LogSeverity SeverityCode { get; set; }
-    public string Message { get; set; }
-    public int ModuleId { get; set; }
-    public int EventCode { get; set; }
-    public string SessionId { get; set; }
-    public int OrgId { get; set; }
-    public int AccountId { get; set; }
-    public int EntityId { get; set; }
-    public int? RunId { get; set; }
-    public string UserName { get; set; }
-    public string ClientHost { get; set; }
-    public string ClientIp { get; set; }
-    public string ClientUser { get; set; }
-    public string ClientApplication { get; set; }
-    public string ClientApplicationVersion { get; set; }
-    public string TransactionName { get; set; }
-    public int LogWriteAttempt { get; set; }
-    public bool NotificationSent { get; set; }
-    public TimeSpan LogWriteWait { get; set; }
-    public Exception Exception { get; set; }
-    public LogDetailType LogDetailType { get; set; }
-    public string LogDetail { get; set; }
-    public LogDetailSet LogDetailSet { get; set; }
+  {
+    public long LogId {
+      get;
+      set;
+    }
+    public DateTime LogDateTime {
+      get;
+      set;
+    }
+    public LogSeverity SeverityCode {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public int ModuleId {
+      get;
+      set;
+    }
+    public int EventCode {
+      get;
+      set;
+    }
+    public string SessionId {
+      get;
+      set;
+    }
+    public int OrgId {
+      get;
+      set;
+    }
+    public int AccountId {
+      get;
+      set;
+    }
+    public int EntityId {
+      get;
+      set;
+    }
+    public int? RunId {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public string ClientHost {
+      get;
+      set;
+    }
+    public string ClientIp {
+      get;
+      set;
+    }
+    public string ClientUser {
+      get;
+      set;
+    }
+    public string ClientApplication {
+      get;
+      set;
+    }
+    public string ClientApplicationVersion {
+      get;
+      set;
+    }
+    public string TransactionName {
+      get;
+      set;
+    }
+    public int LogWriteAttempt {
+      get;
+      set;
+    }
+    public bool NotificationSent {
+      get;
+      set;
+    }
+    public TimeSpan LogWriteWait {
+      get;
+      set;
+    }
+    public Exception Exception {
+      get;
+      set;
+    }
+    public LogDetailType LogDetailType {
+      get;
+      set;
+    }
+    public string LogDetail {
+      get;
+      set;
+    }
+    public LogDetailSet LogDetailSet {
+      get;
+      set;
+    }
 
     public LogRecord()
     {
@@ -47,11 +122,11 @@ namespace Org.GS.Logging
       this.Message = String.Empty;
       this.ModuleId = 0;
       this.EventCode = 0;
-      this.SessionId = null; 
+      this.SessionId = null;
       this.OrgId = 0;
       this.AccountId = 0;
       this.EntityId = 0;
-      this.RunId = null; 
+      this.RunId = null;
       this.UserName = String.Empty;
       this.ClientHost = String.Empty;
       this.ClientIp = String.Empty;
@@ -177,35 +252,35 @@ namespace Org.GS.Logging
           logDetail.LogDetailType = LogDetailType.EXCP;
           this.LogDetailSet.Add(this.LogDetailSet.Count, logDetail);
         }
-        this.Exception = null; 
+        this.Exception = null;
       }
     }
-        
+
     public string GetLogEntry()
     {
       StringBuilder sb = new StringBuilder();
 
       sb.Append(this.LogDateTime.ToString("yyyyMMdd-HHmmss.fff") + " " +
-      this.SeverityCode.ToString() + " " +
-      this.OrgId.ToString("00000000") + " " +
-      this.AccountId.ToString("0000000") + " " +
-      this.EntityId.ToString("00000000") + " " +
-      this.ModuleId.ToString("0000") + " " +
-      this.EventCode.ToString("00000") + " " + 
-      this.LogWriteAttempt.ToString("00") + " " + 
-			this.LogWriteWait.ToString(@"ss\.ffff") + " " +
-      this.Message + g.crlf);
+                this.SeverityCode.ToString() + " " +
+                this.OrgId.ToString("00000000") + " " +
+                this.AccountId.ToString("0000000") + " " +
+                this.EntityId.ToString("00000000") + " " +
+                this.ModuleId.ToString("0000") + " " +
+                this.EventCode.ToString("00000") + " " +
+                this.LogWriteAttempt.ToString("00") + " " +
+                this.LogWriteWait.ToString(@"ss\.ffff") + " " +
+                this.Message + g.crlf);
 
       if (this.Exception != null)
       {
-          sb.Append(g.BlankString(9) + "EXCEPTION:" + this.Exception.ToReport() + g.crlf);
+        sb.Append(g.BlankString(9) + "EXCEPTION:" + this.Exception.ToReport() + g.crlf);
       }
 
       if (this.LogDetailSet.Count > 0)
       {
         foreach (LogDetail ld in this.LogDetailSet.Values)
         {
-            sb.Append(g.BlankString(9) + "DT" + ld.LogDetailId.ToString() + "(" + ld.LogDetailType.ToString() + ") " + ld.DetailData + g.crlf); 
+          sb.Append(g.BlankString(9) + "DT" + ld.LogDetailId.ToString() + "(" + ld.LogDetailType.ToString() + ") " + ld.DetailData + g.crlf);
         }
       }
       string logEntryString = sb.ToString();

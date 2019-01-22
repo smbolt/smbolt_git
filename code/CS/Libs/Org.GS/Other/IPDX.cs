@@ -16,14 +16,16 @@ namespace Org.GS
     private static string _testProperty;
     public static string TestProperty
     {
-      get { return _testProperty; }
-      set 
+      get {
+        return _testProperty;
+      }
+      set
       {
         if (Monitor.TryEnter(TestProperty_LockObject, 100))
         {
           try
           {
-            _testProperty = value; 
+            _testProperty = value;
           }
           finally
           {
@@ -31,14 +33,14 @@ namespace Org.GS
           }
         }
 
-        _testProperty = value; 
+        _testProperty = value;
       }
     }
 
     public static void SendIpdxData(IpdxMessage message)
     {
       if (FireIpdxEvent == null)
-          return;
+        return;
 
       FireIpdxEvent(message);
     }

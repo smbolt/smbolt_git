@@ -43,35 +43,37 @@
       this.mnuMain.SuspendLayout();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(956, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 612);
       this.lblStatus.Name = "lblStatus";
@@ -79,9 +81,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnClearDisplay);
       this.pnlTop.Controls.Add(this.btnStop);
       this.pnlTop.Controls.Add(this.btnResume);
@@ -92,9 +94,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(956, 52);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // btnStop
-      // 
+      //
       this.btnStop.Location = new System.Drawing.Point(236, 8);
       this.btnStop.Name = "btnStop";
       this.btnStop.Size = new System.Drawing.Size(75, 37);
@@ -103,9 +105,9 @@
       this.btnStop.Text = "Stop";
       this.btnStop.UseVisualStyleBackColor = true;
       this.btnStop.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnResume
-      // 
+      //
       this.btnResume.Location = new System.Drawing.Point(159, 8);
       this.btnResume.Name = "btnResume";
       this.btnResume.Size = new System.Drawing.Size(75, 37);
@@ -114,9 +116,9 @@
       this.btnResume.Text = "Resume";
       this.btnResume.UseVisualStyleBackColor = true;
       this.btnResume.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnPause
-      // 
+      //
       this.btnPause.Location = new System.Drawing.Point(82, 8);
       this.btnPause.Name = "btnPause";
       this.btnPause.Size = new System.Drawing.Size(75, 37);
@@ -125,9 +127,9 @@
       this.btnPause.Text = "Pause";
       this.btnPause.UseVisualStyleBackColor = true;
       this.btnPause.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnStart
-      // 
+      //
       this.btnStart.Location = new System.Drawing.Point(5, 8);
       this.btnStart.Name = "btnStart";
       this.btnStart.Size = new System.Drawing.Size(75, 37);
@@ -136,9 +138,9 @@
       this.btnStart.Text = "Start";
       this.btnStart.UseVisualStyleBackColor = true;
       this.btnStart.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,9 +150,9 @@
       this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtOut.Size = new System.Drawing.Size(956, 536);
       this.txtOut.TabIndex = 10;
-      // 
+      //
       // btnClearDisplay
-      // 
+      //
       this.btnClearDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnClearDisplay.Location = new System.Drawing.Point(841, 8);
       this.btnClearDisplay.Name = "btnClearDisplay";
@@ -160,9 +162,9 @@
       this.btnClearDisplay.Text = "Clear Display";
       this.btnClearDisplay.UseVisualStyleBackColor = true;
       this.btnClearDisplay.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(964, 635);

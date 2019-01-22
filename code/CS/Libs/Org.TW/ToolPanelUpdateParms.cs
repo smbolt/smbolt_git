@@ -10,12 +10,30 @@ namespace Org.TW
 {
   public class ToolPanelUpdateParms
   {
-    public TextConfigType TextConfigType { get; set; }
-    public string ConfigFileFullPath { get; set; }
-    public string ToolPanelName { get; set; }
-    public string Command { get; set; }
-    public string ConfigFullXmlPath { get; set; }
-    public bool SuppressSwitchToErrorTab { get; set; }
+    public TextConfigType TextConfigType {
+      get;
+      set;
+    }
+    public string ConfigFileFullPath {
+      get;
+      set;
+    }
+    public string ToolPanelName {
+      get;
+      set;
+    }
+    public string Command {
+      get;
+      set;
+    }
+    public string ConfigFullXmlPath {
+      get;
+      set;
+    }
+    public bool SuppressSwitchToErrorTab {
+      get;
+      set;
+    }
 
     public ToolPanelUpdateParms()
     {

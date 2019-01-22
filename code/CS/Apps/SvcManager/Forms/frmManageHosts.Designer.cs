@@ -38,27 +38,27 @@
       this.pnlTop.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.gvHosts)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // lblEnvironment
-      // 
+      //
       this.lblEnvironment.AutoSize = true;
       this.lblEnvironment.Location = new System.Drawing.Point(12, 16);
       this.lblEnvironment.Name = "lblEnvironment";
       this.lblEnvironment.Size = new System.Drawing.Size(102, 20);
       this.lblEnvironment.TabIndex = 0;
       this.lblEnvironment.Text = "Environment:";
-      // 
+      //
       // lblEnvironmentValue
-      // 
+      //
       this.lblEnvironmentValue.AutoSize = true;
       this.lblEnvironmentValue.Location = new System.Drawing.Point(133, 16);
       this.lblEnvironmentValue.Name = "lblEnvironmentValue";
       this.lblEnvironmentValue.Size = new System.Drawing.Size(42, 20);
       this.lblEnvironmentValue.TabIndex = 0;
       this.lblEnvironmentValue.Text = "Prod";
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnAddNewHost);
       this.pnlTop.Controls.Add(this.btnClose);
       this.pnlTop.Controls.Add(this.lblEnvironment);
@@ -68,9 +68,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(642, 127);
       this.pnlTop.TabIndex = 1;
-      // 
+      //
       // btnAddNewHost
-      // 
+      //
       this.btnAddNewHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnAddNewHost.Location = new System.Drawing.Point(440, 16);
       this.btnAddNewHost.Name = "btnAddNewHost";
@@ -80,9 +80,9 @@
       this.btnAddNewHost.Text = "Add New Host";
       this.btnAddNewHost.UseVisualStyleBackColor = true;
       this.btnAddNewHost.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnClose
-      // 
+      //
       this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnClose.Location = new System.Drawing.Point(440, 68);
       this.btnClose.Name = "btnClose";
@@ -92,9 +92,9 @@
       this.btnClose.Text = "Close";
       this.btnClose.UseVisualStyleBackColor = true;
       this.btnClose.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // gvHosts
-      // 
+      //
       this.gvHosts.AllowUserToAddRows = false;
       this.gvHosts.AllowUserToDeleteRows = false;
       this.gvHosts.AllowUserToResizeRows = false;
@@ -113,9 +113,9 @@
       this.gvHosts.Size = new System.Drawing.Size(642, 283);
       this.gvHosts.TabIndex = 8;
       this.gvHosts.Tag = "EditScheduledTask";
-      // 
+      //
       // frmManageHosts
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(654, 416);

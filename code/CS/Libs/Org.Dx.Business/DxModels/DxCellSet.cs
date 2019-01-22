@@ -10,15 +10,34 @@ namespace Org.Dx.Business
   public class DxCellSet : Node
   {
     private int? _lastUsedColumnIndex;
-    public int LastUsedColumnIndex { get { return _lastUsedColumnIndex.HasValue ? _lastUsedColumnIndex.Value : -1; } }
+    public int LastUsedColumnIndex {
+      get {
+        return _lastUsedColumnIndex.HasValue ? _lastUsedColumnIndex.Value : -1;
+      }
+    }
 
     private int? _rowIndex;
-    public int RowIndex { get { return _rowIndex.HasValue ? _rowIndex.Value : -1; } }
+    public int RowIndex {
+      get {
+        return _rowIndex.HasValue ? _rowIndex.Value : -1;
+      }
+    }
 
-    public DxRowSet DxRowSet { get; set; }
-    public string RowValues { get { return Get_RowValues(); } }
+    public DxRowSet DxRowSet {
+      get;
+      set;
+    }
+    public string RowValues {
+      get {
+        return Get_RowValues();
+      }
+    }
 
-    public bool HasContent { get { return Get_HasContent(); } }
+    public bool HasContent {
+      get {
+        return Get_HasContent();
+      }
+    }
 
     private Dictionary<string, DxCell> _namedCells;
 
@@ -49,13 +68,13 @@ namespace Org.Dx.Business
         throw new Exception("The column index " + columnIndex.ToString() + " already exists in the DxCellSet.");
 
       if (_rowIndex.HasValue && dxCell.RowIndex != _rowIndex.Value)
-          throw new Exception("The row index of the cell being added which is '" + dxCell.RowIndex.ToString() + "' is not the same as the existing row index " +
+        throw new Exception("The row index of the cell being added which is '" + dxCell.RowIndex.ToString() + "' is not the same as the existing row index " +
                             "for this DxCellSet (row) which is '" + _rowIndex.Value.ToString() + "'.");
 
       dxCell.DxCellSet = this;
-      
+
       if (!_rowIndex.HasValue)
-        _rowIndex = dxCell.RowIndex; 
+        _rowIndex = dxCell.RowIndex;
 
       string cellName = dxCell.Name == null ? String.Empty : dxCell.Name.Trim();
 
@@ -218,13 +237,20 @@ namespace Org.Dx.Business
 
         switch (typeName)
         {
-          case "String": return cell.ValueOrDefault.DbToString();
-          case "DateTime": return cell.ValueOrDefault.DbToDateTime().Value;
-          case "DateTime?": return cell.ValueOrDefault.DbToDateTime();
-          case "Decimal": return cell.ValueOrDefault.DbToDecimal().Value;
-          case "Decimal?": return cell.ValueOrDefault.DbToDecimal();
-          case "Int32": return cell.ValueOrDefault.DbToInt32().Value;
-          case "Int32?": return cell.ValueOrDefault.DbToInt32();
+          case "String":
+            return cell.ValueOrDefault.DbToString();
+          case "DateTime":
+            return cell.ValueOrDefault.DbToDateTime().Value;
+          case "DateTime?":
+            return cell.ValueOrDefault.DbToDateTime();
+          case "Decimal":
+            return cell.ValueOrDefault.DbToDecimal().Value;
+          case "Decimal?":
+            return cell.ValueOrDefault.DbToDecimal();
+          case "Int32":
+            return cell.ValueOrDefault.DbToInt32().Value;
+          case "Int32?":
+            return cell.ValueOrDefault.DbToInt32();
           default:
             throw new Exception("Data type '" + typeName + "' is not yet implemented in DxCellSet.CellValue.");
         }
@@ -414,7 +440,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred in the EnsureIntegrity method of the DxCellSet.", ex); 
+        throw new Exception("An exception occurred in the EnsureIntegrity method of the DxCellSet.", ex);
       }
     }
 
@@ -548,7 +574,7 @@ namespace Org.Dx.Business
     public string Get_VerticalReport()
     {
       StringBuilder sb = new StringBuilder();
-      sb.Append("Col   Value" + g.crlf); 
+      sb.Append("Col   Value" + g.crlf);
 
 
       int columnIndex = -1;

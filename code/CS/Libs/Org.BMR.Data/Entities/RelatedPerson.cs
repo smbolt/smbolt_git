@@ -11,21 +11,48 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "RelatedPerson")]
-    public partial class RelatedPerson
-    {
-        public int PersonId { get; set; }
-        public int RelatedPersonId { get; set; }
-        public string RelationshipTypeCode { get; set; }
-        public Nullable<System.DateTime> RelationshipBeginDateTime { get; set; }
-        public Nullable<System.DateTime> RelationshipEndDateTime { get; set; }
-        public int StatusId { get; set; }
-    
-        public virtual RelationshipType RelationshipType { get; set; }
-        public virtual Person Person { get; set; }
-        public virtual Person Person1 { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "RelatedPerson")]
+  public partial class RelatedPerson
+  {
+    public int PersonId {
+      get;
+      set;
     }
+    public int RelatedPersonId {
+      get;
+      set;
+    }
+    public string RelationshipTypeCode {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> RelationshipBeginDateTime {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> RelationshipEndDateTime {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+
+    public virtual RelationshipType RelationshipType {
+      get;
+      set;
+    }
+    public virtual Person Person {
+      get;
+      set;
+    }
+    public virtual Person Person1 {
+      get;
+      set;
+    }
+  }
 }

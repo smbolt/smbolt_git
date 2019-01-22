@@ -8,23 +8,65 @@ namespace Org.GS.Security
 {
   public class ClientHash
   {
-    public bool IsValid { get; set; }
-    public string AppCodeName { get; set; }
-    public string AppName { get; set; }
-    public string Product { get; set; }
-    public string CookieEnabled { get; set; }
-    public string Language { get; set; }
-    public string Vendor { get; set; }
-    public string Platform { get; set; }
-    public string UserAgent { get; set; }
-    public string InputEncoding { get; set; }
-    public string DefaultCharSet { get; set; }
-    public string HashString { get; set; }
-    public bool ExceptionOccurred { get; set; }
-    public Exception Exception { get; set; }
+    public bool IsValid {
+      get;
+      set;
+    }
+    public string AppCodeName {
+      get;
+      set;
+    }
+    public string AppName {
+      get;
+      set;
+    }
+    public string Product {
+      get;
+      set;
+    }
+    public string CookieEnabled {
+      get;
+      set;
+    }
+    public string Language {
+      get;
+      set;
+    }
+    public string Vendor {
+      get;
+      set;
+    }
+    public string Platform {
+      get;
+      set;
+    }
+    public string UserAgent {
+      get;
+      set;
+    }
+    public string InputEncoding {
+      get;
+      set;
+    }
+    public string DefaultCharSet {
+      get;
+      set;
+    }
+    public string HashString {
+      get;
+      set;
+    }
+    public bool ExceptionOccurred {
+      get;
+      set;
+    }
+    public Exception Exception {
+      get;
+      set;
+    }
 
     public ClientHash()
-    {     
+    {
       this.IsValid = false;
       this.AppCodeName = String.Empty;
       this.AppName = String.Empty;
@@ -37,7 +79,7 @@ namespace Org.GS.Security
       this.InputEncoding = String.Empty;
       this.DefaultCharSet = String.Empty;
       this.HashString = String.Empty;
-      this.ExceptionOccurred = false; 
+      this.ExceptionOccurred = false;
       this.Exception = null;
     }
 

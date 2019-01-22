@@ -8,11 +8,26 @@ namespace Org.GS.Security
 {
   public class SecurityGroup
   {
-    public string LogicalGroupName { get; set; }
-    public List<string> IncludeGroups { get; set; }
-    public List<string> ExcludeGroups { get; set; }
-    public List<string> IncludeUsers { get; set; }
-    public List<string> ExcludeUsers { get; set; }
+    public string LogicalGroupName {
+      get;
+      set;
+    }
+    public List<string> IncludeGroups {
+      get;
+      set;
+    }
+    public List<string> ExcludeGroups {
+      get;
+      set;
+    }
+    public List<string> IncludeUsers {
+      get;
+      set;
+    }
+    public List<string> ExcludeUsers {
+      get;
+      set;
+    }
 
     public SecurityGroup(string logicalGroupName)
     {

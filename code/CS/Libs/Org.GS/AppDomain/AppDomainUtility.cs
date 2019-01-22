@@ -10,7 +10,11 @@ namespace Org.GS.AppDomainManagement
 {
   public class AppDomainUtility : MarshalByRefObject, IAppDomainUtility, IDisposable
   {
-    public string AppDomainFriendlyName { get { return AppDomain.CurrentDomain.FriendlyName; } }
+    public string AppDomainFriendlyName {
+      get {
+        return AppDomain.CurrentDomain.FriendlyName;
+      }
+    }
 
     public AppDomainUtility()
     {
@@ -32,7 +36,7 @@ namespace Org.GS.AppDomainManagement
         sb.Append("Parent            : " + parentFriendlyName + g.crlf);
         sb.Append("Base Directory    : " + currentAppDomain.BaseDirectory + g.crlf2);
 
-        var assemblies = AppDomain.CurrentDomain.GetAssemblies(); 
+        var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
         if (assemblies != null)
         {
@@ -49,7 +53,7 @@ namespace Org.GS.AppDomainManagement
                               "Code Base         : " + codeBase + g.crlf +
                               "Location          : " + location + g.crlf +
                               "Image             : " + image + g.crlf2;
-            sb.Append(results);            
+            sb.Append(results);
           }
         }
 
@@ -66,11 +70,11 @@ namespace Org.GS.AppDomainManagement
     {
       try
       {
-        return AssemblyHelper.GetRootAssembly(); 
+        return AssemblyHelper.GetRootAssembly();
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to return the Org Framework 'Root' assembly loaded in the current AppDomain " + 
+        throw new Exception("An exception occurred while attempting to return the Org Framework 'Root' assembly loaded in the current AppDomain " +
                             "named '" + AppDomain.CurrentDomain.FriendlyName + "'.", ex);
       }
 

@@ -44,7 +44,7 @@ namespace Org.EditorToolWindows
               lblScreenLines.Text = scr.CapacityNumberOfLinesHigh.ToString("000");
               lblScreenCols.Text = scr.CapacityNumberOfCharsWide.ToString("000");
               lblPaddingValue.Text = "T:" + scr.TopPadding.ToString("00") + "  R:" + scr.RightPadding.ToString("00") +
-                                   "  B:" + scr.BottomPadding.ToString("00") + "  L:" + scr.LeftPadding.ToString("00");
+                                     "  B:" + scr.BottomPadding.ToString("00") + "  L:" + scr.LeftPadding.ToString("00");
               lblClientSize.Text = "W:" + scr.Size.Width.ToString("0000") + "  H:" + scr.Size.Height.ToString("0000");
 
               string focusedControl = lblControlNameValue.Text.DbToString();
@@ -93,7 +93,7 @@ namespace Org.EditorToolWindows
           lblScreenLines.Text = scr.CapacityNumberOfLinesHigh.ToString("000");
           lblScreenCols.Text = scr.CapacityNumberOfCharsWide.ToString("000");
           lblPaddingValue.Text = "T:" + scr.TopPadding.ToString("00") + "  R:" + scr.RightPadding.ToString("00") +
-                               "  B:" + scr.BottomPadding.ToString("00") + "  L:" + scr.LeftPadding.ToString("00");
+                                 "  B:" + scr.BottomPadding.ToString("00") + "  L:" + scr.LeftPadding.ToString("00");
           lblClientSize.Text = "W:" + scr.Size.Width.ToString("0000") + "  H:" + scr.Size.Height.ToString("0000");
 
           Application.DoEvents();

@@ -2,11 +2,11 @@ using System.Web.Mvc;
 
 namespace NetMvcCharts.Controllers
 {
-    public class PiestubController : Controller
+  public class PiestubController : Controller
+  {
+    public ActionResult Index()
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-	}
+      return View();
+    }
+  }
 }

@@ -1,33 +1,33 @@
 ﻿namespace Org.XmlUtility
 {
-    partial class frmMain
+  partial class frmMain
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
       this.mnuMain = new System.Windows.Forms.MenuStrip();
       this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,35 +57,37 @@
       this.tabPageXml.SuspendLayout();
       this.tabPageResults.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1254, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 699);
       this.lblStatus.Name = "lblStatus";
@@ -94,9 +96,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.cboXPathExpression);
       this.pnlTop.Controls.Add(this.btnDeleteFromList);
       this.pnlTop.Controls.Add(this.btnAddToList);
@@ -113,9 +115,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1254, 101);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // btnBack
-      // 
+      //
       this.btnBack.Location = new System.Drawing.Point(721, 64);
       this.btnBack.Name = "btnBack";
       this.btnBack.Size = new System.Drawing.Size(84, 22);
@@ -124,9 +126,9 @@
       this.btnBack.Text = "Back";
       this.btnBack.UseVisualStyleBackColor = true;
       this.btnBack.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRunQuery
-      // 
+      //
       this.btnRunQuery.Location = new System.Drawing.Point(634, 64);
       this.btnRunQuery.Name = "btnRunQuery";
       this.btnRunQuery.Size = new System.Drawing.Size(84, 22);
@@ -135,9 +137,9 @@
       this.btnRunQuery.Text = "Run Query";
       this.btnRunQuery.UseVisualStyleBackColor = true;
       this.btnRunQuery.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnClearXml
-      // 
+      //
       this.btnClearXml.Location = new System.Drawing.Point(807, 21);
       this.btnClearXml.Name = "btnClearXml";
       this.btnClearXml.Size = new System.Drawing.Size(84, 22);
@@ -146,9 +148,9 @@
       this.btnClearXml.Text = "Clear XML";
       this.btnClearXml.UseVisualStyleBackColor = true;
       this.btnClearXml.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnLoadFile
-      // 
+      //
       this.btnLoadFile.Location = new System.Drawing.Point(721, 21);
       this.btnLoadFile.Name = "btnLoadFile";
       this.btnLoadFile.Size = new System.Drawing.Size(84, 22);
@@ -157,9 +159,9 @@
       this.btnLoadFile.Text = "LoadFile";
       this.btnLoadFile.UseVisualStyleBackColor = true;
       this.btnLoadFile.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnBrowse
-      // 
+      //
       this.btnBrowse.Location = new System.Drawing.Point(634, 21);
       this.btnBrowse.Name = "btnBrowse";
       this.btnBrowse.Size = new System.Drawing.Size(84, 22);
@@ -168,35 +170,35 @@
       this.btnBrowse.Text = "Browse";
       this.btnBrowse.UseVisualStyleBackColor = true;
       this.btnBrowse.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblXPathExpression
-      // 
+      //
       this.lblXPathExpression.AutoSize = true;
       this.lblXPathExpression.Location = new System.Drawing.Point(13, 49);
       this.lblXPathExpression.Name = "lblXPathExpression";
       this.lblXPathExpression.Size = new System.Drawing.Size(90, 13);
       this.lblXPathExpression.TabIndex = 0;
       this.lblXPathExpression.Text = "XPath Expression";
-      // 
+      //
       // txtXmlFile
-      // 
+      //
       this.txtXmlFile.Location = new System.Drawing.Point(12, 22);
       this.txtXmlFile.Name = "txtXmlFile";
       this.txtXmlFile.Size = new System.Drawing.Size(620, 20);
       this.txtXmlFile.TabIndex = 1;
       this.txtXmlFile.TextChanged += new System.EventHandler(this.txtXmlFile_TextChanged);
-      // 
+      //
       // lblXmlFile
-      // 
+      //
       this.lblXmlFile.AutoSize = true;
       this.lblXmlFile.Location = new System.Drawing.Point(13, 6);
       this.lblXmlFile.Name = "lblXmlFile";
       this.lblXmlFile.Size = new System.Drawing.Size(48, 13);
       this.lblXmlFile.TabIndex = 0;
       this.lblXmlFile.Text = "XML File";
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageXml);
       this.tabMain.Controls.Add(this.tabPageResults);
       this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -207,9 +209,9 @@
       this.tabMain.Size = new System.Drawing.Size(1254, 574);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 3;
-      // 
+      //
       // tabPageXml
-      // 
+      //
       this.tabPageXml.Controls.Add(this.tvXml);
       this.tabPageXml.Location = new System.Drawing.Point(4, 22);
       this.tabPageXml.Name = "tabPageXml";
@@ -218,9 +220,9 @@
       this.tabPageXml.TabIndex = 0;
       this.tabPageXml.Text = "XML";
       this.tabPageXml.UseVisualStyleBackColor = true;
-      // 
+      //
       // tvXml
-      // 
+      //
       this.tvXml.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvXml.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tvXml.Font = new System.Drawing.Font("Consolas", 8F);
@@ -228,9 +230,9 @@
       this.tvXml.Name = "tvXml";
       this.tvXml.Size = new System.Drawing.Size(1240, 542);
       this.tvXml.TabIndex = 1;
-      // 
+      //
       // tabPageResults
-      // 
+      //
       this.tabPageResults.Controls.Add(this.txtResults);
       this.tabPageResults.Location = new System.Drawing.Point(4, 22);
       this.tabPageResults.Name = "tabPageResults";
@@ -239,9 +241,9 @@
       this.tabPageResults.TabIndex = 1;
       this.tabPageResults.Text = "Results";
       this.tabPageResults.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtResults
-      // 
+      //
       this.txtResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtResults.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtResults.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,17 +253,17 @@
       this.txtResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtResults.Size = new System.Drawing.Size(1080, 542);
       this.txtResults.TabIndex = 0;
-      // 
+      //
       // cboXPathExpression
-      // 
+      //
       this.cboXPathExpression.FormattingEnabled = true;
       this.cboXPathExpression.Location = new System.Drawing.Point(12, 64);
       this.cboXPathExpression.Name = "cboXPathExpression";
       this.cboXPathExpression.Size = new System.Drawing.Size(620, 21);
       this.cboXPathExpression.TabIndex = 3;
-      // 
+      //
       // btnAddToList
-      // 
+      //
       this.btnAddToList.Location = new System.Drawing.Point(807, 64);
       this.btnAddToList.Name = "btnAddToList";
       this.btnAddToList.Size = new System.Drawing.Size(84, 22);
@@ -270,9 +272,9 @@
       this.btnAddToList.Text = "Add To List";
       this.btnAddToList.UseVisualStyleBackColor = true;
       this.btnAddToList.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnDeleteFromList
-      // 
+      //
       this.btnDeleteFromList.Location = new System.Drawing.Point(893, 64);
       this.btnDeleteFromList.Name = "btnDeleteFromList";
       this.btnDeleteFromList.Size = new System.Drawing.Size(97, 22);
@@ -281,9 +283,9 @@
       this.btnDeleteFromList.Text = "Delete From List";
       this.btnDeleteFromList.UseVisualStyleBackColor = true;
       this.btnDeleteFromList.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1254, 722);
@@ -307,7 +309,7 @@
       this.ResumeLayout(false);
       this.PerformLayout();
 
-        }
+    }
 
     #endregion
 

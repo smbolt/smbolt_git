@@ -14,62 +14,102 @@ namespace Org.TW.ToolPanels
   {
     public string Source
     {
-      get { return lblSource.Text; }
-      set { lblSource.Text = value; }
+      get {
+        return lblSource.Text;
+      }
+      set {
+        lblSource.Text = value;
+      }
     }
 
     public string MousePos
     {
-      get { return lblMousePosValue.Text; }
-      set { lblMousePosValue.Text = value; }
+      get {
+        return lblMousePosValue.Text;
+      }
+      set {
+        lblMousePosValue.Text = value;
+      }
     }
 
     public string MouseRaw
     {
-      get { return lblMouseRawValue.Text; }
-      set { lblMouseRawValue.Text = value; }
+      get {
+        return lblMouseRawValue.Text;
+      }
+      set {
+        lblMouseRawValue.Text = value;
+      }
     }
 
     public string Color
     {
-      get { return lblColorValue.Text; }
-      set { lblColorValue.Text = value; }
+      get {
+        return lblColorValue.Text;
+      }
+      set {
+        lblColorValue.Text = value;
+      }
     }
 
     public string ElementName
     {
-      get { return lblNameValue.Text; }
-      set { lblNameValue.Text = value; }
+      get {
+        return lblNameValue.Text;
+      }
+      set {
+        lblNameValue.Text = value;
+      }
     }
 
     public string ElementTag
     {
-      get { return lblTagValue.Text; }
-      set { lblTagValue.Text = value; }
+      get {
+        return lblTagValue.Text;
+      }
+      set {
+        lblTagValue.Text = value;
+      }
     }
 
     public string ElementType
     {
-      get { return lblTypeValue.Text; }
-      set { lblTypeValue.Text = value; }
+      get {
+        return lblTypeValue.Text;
+      }
+      set {
+        lblTypeValue.Text = value;
+      }
     }
 
     public string Level
     {
-      get { return lblLevelValue.Text; }
-      set { lblLevelValue.Text = value; }
+      get {
+        return lblLevelValue.Text;
+      }
+      set {
+        lblLevelValue.Text = value;
+      }
     }
 
     public string Offset
     {
-      get { return lblOffsetValue.Text; }
-      set { lblOffsetValue.Text = value; }
+      get {
+        return lblOffsetValue.Text;
+      }
+      set {
+        lblOffsetValue.Text = value;
+      }
     }
 
     public string ElementSize
     {
-      get { return lblSizeValue.Text; }
-      set { lblSizeValue.Text = value; }
+      get {
+        return lblSizeValue.Text;
+      }
+      set {
+        lblSizeValue.Text = value;
+      }
     }
 
 

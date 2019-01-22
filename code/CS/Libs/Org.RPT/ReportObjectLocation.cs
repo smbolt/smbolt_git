@@ -10,16 +10,28 @@ namespace Org.RPT
   public class ReportObjectLocation
   {
     [XMap(DefaultValue = "")]
-    public string ColRef { get; set; }
+    public string ColRef {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public float Left { get; set; }
+    public float Left {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public float Top { get; set; }
+    public float Top {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Relative")]
-    public HeightMode HeightMode { get; set; }
+    public HeightMode HeightMode {
+      get;
+      set;
+    }
 
     public ReportObjectLocation()
     {

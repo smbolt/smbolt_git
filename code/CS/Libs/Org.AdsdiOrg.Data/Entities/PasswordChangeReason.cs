@@ -11,20 +11,29 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PasswordChangeReason")]
-    public partial class PasswordChangeReason
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PasswordChangeReason")]
+  public partial class PasswordChangeReason
+  {
+    public PasswordChangeReason()
     {
-        public PasswordChangeReason()
-        {
-            this.PasswordChangeHistories = new HashSet<PasswordChangeHistory>();
-        }
-    
-        public int PasswordChangeReasonCode { get; set; }
-        public string PasswordChangeReasonValue { get; set; }
-    
-        public virtual ICollection<PasswordChangeHistory> PasswordChangeHistories { get; set; }
+      this.PasswordChangeHistories = new HashSet<PasswordChangeHistory>();
     }
+
+    public int PasswordChangeReasonCode {
+      get;
+      set;
+    }
+    public string PasswordChangeReasonValue {
+      get;
+      set;
+    }
+
+    public virtual ICollection<PasswordChangeHistory> PasswordChangeHistories {
+      get;
+      set;
+    }
+  }
 }

@@ -14,10 +14,22 @@ namespace Org.WSO.Transactions
   [Serializable]
   public class ResultsSet : SerializableObject
   {
-    public string StringProperty { get; set; }
-    public int IntegerProperty { get; set; }
-    public DateTime DateTimeProperty { get; set; }
-    public decimal DecimalProperty { get; set; }
+    public string StringProperty {
+      get;
+      set;
+    }
+    public int IntegerProperty {
+      get;
+      set;
+    }
+    public DateTime DateTimeProperty {
+      get;
+      set;
+    }
+    public decimal DecimalProperty {
+      get;
+      set;
+    }
 
     public override string Serialize()
     {

@@ -7,22 +7,30 @@ using System.Threading.Tasks;
 using Org.GS;
 using Org.Dx.Business.TextProcessing;
 
-namespace Org.Dx.Business 
+namespace Org.Dx.Business
 {
   public class MapEngine : IDisposable
   {
     private Dictionary<string, DxWorkbook> _dxWorkbookVersions;
-    public Dictionary<string, DxWorkbook> DxWorkbookVersions { get { return _dxWorkbookVersions; } }
+    public Dictionary<string, DxWorkbook> DxWorkbookVersions {
+      get {
+        return _dxWorkbookVersions;
+      }
+    }
 
     private DxWorkbook _originalWorkbook;
-    public DxWorkbook OriginalWorkbook { get { return _originalWorkbook; } }
+    public DxWorkbook OriginalWorkbook {
+      get {
+        return _originalWorkbook;
+      }
+    }
 
     private DxWorkbook _currWb;
     private DxMapSet _mapSet;
 
     public static Dictionary<string, string> GlobalVariables;
     public static Dictionary<string, string> LocalVariables;
-    
+
     public MapEngine()
     {
       _dxWorkbookVersions = new Dictionary<string, DxWorkbook>();
@@ -45,7 +53,9 @@ namespace Org.Dx.Business
         InitializeMapping(srcWb, mapSet);
         return Run();
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to map the source workbook to the destination workbook.", ex);
@@ -95,7 +105,7 @@ namespace Org.Dx.Business
       _currWb = _originalWorkbook;
       _mapSet.Validate();
     }
-       
+
     public static void AddVariable(DxMapItem dxMapItem, string variableName, string variableValue)
     {
       try
@@ -105,7 +115,7 @@ namespace Org.Dx.Business
 
         if (variableName.IsBlank())
           throw new Exception("Variable name cannot be blank - DxMapItem is '" + dxMapItem.Report + "'.");
-            
+
         switch (variableType)
         {
           case VariableType.Global:
@@ -175,7 +185,7 @@ namespace Org.Dx.Business
 
       if (GlobalVariables.ContainsKey(variableName))
         return GlobalVariables[variableName];
-      
+
       return String.Empty;
     }
 

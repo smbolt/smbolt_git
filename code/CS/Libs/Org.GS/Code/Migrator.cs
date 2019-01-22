@@ -46,7 +46,7 @@ namespace Org.GS.Code
       }
       else
       {
-        Console.WriteLine("Destination directory '" + path + "' does not exist - nothing to delete"); 
+        Console.WriteLine("Destination directory '" + path + "' does not exist - nothing to delete");
       }
 
       return migrationResult;
@@ -150,7 +150,7 @@ namespace Org.GS.Code
           case InclusionResult.ExcludedBySpec:
           case InclusionResult.IncludedExtensionExclusionSpec:
           case InclusionResult.ExcludedByExtension:
-            // get a report written here... 
+            // get a report written here...
             migrationResult.FilesToBeExcluded++;
             if (!reportOnly)
               migrationResult.FilesExcluded++;

@@ -40,53 +40,55 @@
       this.mnuMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtCode)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1276, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileSave,
-            this.mnuFileSaveAs,
-            this.mnuFileClose});
+        this.mnuFileSave,
+        this.mnuFileSaveAs,
+        this.mnuFileClose
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileSave
-      // 
+      //
       this.mnuFileSave.Name = "mnuFileSave";
       this.mnuFileSave.Size = new System.Drawing.Size(114, 22);
       this.mnuFileSave.Tag = "Save";
       this.mnuFileSave.Text = "&Save";
       this.mnuFileSave.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuFileSaveAs
-      // 
+      //
       this.mnuFileSaveAs.Name = "mnuFileSaveAs";
       this.mnuFileSaveAs.Size = new System.Drawing.Size(114, 22);
       this.mnuFileSaveAs.Tag = "SaveAs";
       this.mnuFileSaveAs.Text = "Save &As";
       this.mnuFileSaveAs.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuFileClose
-      // 
+      //
       this.mnuFileClose.Name = "mnuFileClose";
       this.mnuFileClose.Size = new System.Drawing.Size(114, 22);
       this.mnuFileClose.Tag = "Close";
       this.mnuFileClose.Text = "&Close";
       this.mnuFileClose.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 930);
       this.lblStatus.Name = "lblStatus";
@@ -95,9 +97,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // txtCode
-      // 
+      //
       this.txtCode.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -108,9 +110,10 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtCode.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\n^\\s*(case|default)\\s*[^:]*(" +
-    "?<range>:)\\s*(?<range>[^;]+);\n";
+                                             "?<range>:)\\s*(?<range>[^;]+);\n";
       this.txtCode.AutoScrollMinSize = new System.Drawing.Size(27, 14);
       this.txtCode.BackBrush = null;
       this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -136,9 +139,9 @@
       this.txtCode.TabIndex = 2;
       this.txtCode.Zoom = 100;
       this.txtCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCode_KeyUp);
-      // 
+      //
       // frmCode
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1276, 950);

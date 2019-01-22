@@ -18,31 +18,73 @@ namespace Org.BMR.ApiModels
 
   public class PagingControl
   {
-    public bool IsPaging { get; set; }
-    public int TotalEntityCount { get; set; }
-    public int SubsetEntityCount { get; set; }
+    public bool IsPaging {
+      get;
+      set;
+    }
+    public int TotalEntityCount {
+      get;
+      set;
+    }
+    public int SubsetEntityCount {
+      get;
+      set;
+    }
 
     public PagingControl()
     {
       this.IsPaging = false;
       this.TotalEntityCount = 0;
-      this.SubsetEntityCount = 0; 
+      this.SubsetEntityCount = 0;
     }
   }
 
   public class ApiResult
   {
-    public string ApiStatus { get; set; }
-    public string Code { get; set; }
-    public string Message { get; set; }
-    public string LongMessage { get; set; }
-    public string Token { get; set; }
-    public string TokenDebug { get; set; }
-    public PagingControl PagingControl { get; set; }
-    public int OrganizationId { get; set; }
-    public int AccountId { get; set; }
-    public string UserName { get; set; }
-    public object ResponseData { get; set; }
+    public string ApiStatus {
+      get;
+      set;
+    }
+    public string Code {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public string LongMessage {
+      get;
+      set;
+    }
+    public string Token {
+      get;
+      set;
+    }
+    public string TokenDebug {
+      get;
+      set;
+    }
+    public PagingControl PagingControl {
+      get;
+      set;
+    }
+    public int OrganizationId {
+      get;
+      set;
+    }
+    public int AccountId {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public object ResponseData {
+      get;
+      set;
+    }
 
     public ApiResult()
     {
@@ -80,7 +122,7 @@ namespace Org.BMR.ApiModels
       this.TokenDebug = String.Empty;
       this.PagingControl = new PagingControl();
       this.OrganizationId = -1;
-      this.AccountId = -1; 
+      this.AccountId = -1;
       this.UserName = String.Empty;
       this.ResponseData = null;
     }

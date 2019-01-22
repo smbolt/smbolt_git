@@ -17,7 +17,7 @@ namespace Org.DB
         return connStringName;
 
       if (_map.ContainsKey(g.SystemInfo.ComputerName))
-        return connStringName + "_" + _map[g.SystemInfo.ComputerName]; 
+        return connStringName + "_" + _map[g.SystemInfo.ComputerName];
 
       return connStringName;
     }

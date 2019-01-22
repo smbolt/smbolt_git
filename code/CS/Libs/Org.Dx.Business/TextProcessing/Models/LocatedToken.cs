@@ -9,23 +9,80 @@ namespace Org.Dx.Business.TextProcessing
 {
   public class LocatedToken
   {
-    public string RawText { get; private set; }
-    public int InitialPosition { get; private set; }
-    public int CurrentPosition { get; private set; }
-    public string TokenText { get; private set; }
-    public bool TokenLocated { get; private set; }
-    public int TokenBeginPosition { get; private set; }
-    public int TokenEndPosition { get; private set; }
-    public string AreaOfCurrPos { get { return Get_AreaOfCurrPos(); } }
+    public string RawText {
+      get;
+      private set;
+    }
+    public int InitialPosition {
+      get;
+      private set;
+    }
+    public int CurrentPosition {
+      get;
+      private set;
+    }
+    public string TokenText {
+      get;
+      private set;
+    }
+    public bool TokenLocated {
+      get;
+      private set;
+    }
+    public int TokenBeginPosition {
+      get;
+      private set;
+    }
+    public int TokenEndPosition {
+      get;
+      private set;
+    }
+    public string AreaOfCurrPos {
+      get {
+        return Get_AreaOfCurrPos();
+      }
+    }
 
-    public int TokenLength { get { return this.TokenText == null ? 0 : this.TokenText.Length; } }
-    public int TokenTrimmedLength { get { return this.TokenText == null ? 0 : this.TokenText.Trim().Length; } }
-    public bool MoreTextForward { get { return Get_MoreTextForward(); } }
-    public bool MoreTextBackward { get { return Get_MoreTextBackward(); } }
-    public bool IsPrecededByABlank { get { return Get_IsPrecededByABlank(); } }
-    public bool IsPrecededByANewLine { get { return Get_IsPrecededByANewLine(); } }
-    public bool IsFollowedByABlank { get { return Get_IsFollowedByABlank(); } }
-    public bool IsFollowedByANewLine { get { return Get_IsFollowedByANewLine(); } }
+    public int TokenLength {
+      get {
+        return this.TokenText == null ? 0 : this.TokenText.Length;
+      }
+    }
+    public int TokenTrimmedLength {
+      get {
+        return this.TokenText == null ? 0 : this.TokenText.Trim().Length;
+      }
+    }
+    public bool MoreTextForward {
+      get {
+        return Get_MoreTextForward();
+      }
+    }
+    public bool MoreTextBackward {
+      get {
+        return Get_MoreTextBackward();
+      }
+    }
+    public bool IsPrecededByABlank {
+      get {
+        return Get_IsPrecededByABlank();
+      }
+    }
+    public bool IsPrecededByANewLine {
+      get {
+        return Get_IsPrecededByANewLine();
+      }
+    }
+    public bool IsFollowedByABlank {
+      get {
+        return Get_IsFollowedByABlank();
+      }
+    }
+    public bool IsFollowedByANewLine {
+      get {
+        return Get_IsFollowedByANewLine();
+      }
+    }
     private OptionsList _extractOptions;
 
     private TokenSearchCriteria _tsc;
@@ -114,10 +171,10 @@ namespace Org.Dx.Business.TextProcessing
                   break; ;
                 }
               }
-              
+
               tokenLength = -1;
 
-              // If we found a blank character or new line prior to reaching the end of the raw text, then move backward one 
+              // If we found a blank character or new line prior to reaching the end of the raw text, then move backward one
               // one character to the actual ending of the token - else, the token ends at the end of the raw text.
               if (_ptr < this.RawText.Length - 1)
                 _ptr--;
@@ -169,7 +226,7 @@ namespace Org.Dx.Business.TextProcessing
 
               tokenLength = -1;
 
-              // If we found a blank character or new line prior to reaching the beginning of the raw text, then move forward  
+              // If we found a blank character or new line prior to reaching the beginning of the raw text, then move forward
               // one character to the actual beginning of the token - else, the token begins at the beginning of the raw text.
               if (_ptr > 0)
                 _ptr++;
@@ -193,10 +250,12 @@ namespace Org.Dx.Business.TextProcessing
         }
 
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(192, this, ex); 
+        throw new CxException(192, this, ex);
       }
     }
 
@@ -222,7 +281,7 @@ namespace Org.Dx.Business.TextProcessing
         string returnValue = String.Empty;
         string tk = String.Empty;
 
-        var tns = new TextNodeSpec(_tsc.BeforeToken);         
+        var tns = new TextNodeSpec(_tsc.BeforeToken);
 
         // if no text beyond current position, just return with token not located
         if (_ptr >= this.RawText.LastIndex())
@@ -282,7 +341,9 @@ namespace Org.Dx.Business.TextProcessing
           this.TokenEndPosition = this.TokenBeginPosition + returnValue.Length - 1;
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to locate a token within a text string.", ex);

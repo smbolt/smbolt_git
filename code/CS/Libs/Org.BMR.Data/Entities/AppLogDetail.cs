@@ -11,19 +11,40 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "AppLogDetail")]
-    public partial class AppLogDetail
-    {
-        public int LogDetailId { get; set; }
-        public long LogId { get; set; }
-        public string AppLogDetailTypeCode { get; set; }
-        public string LogDetail { get; set; }
-        public int SetId { get; set; }
-    
-        public virtual AppLogDetailType AppLogDetailType { get; set; }
-        public virtual AppLog AppLog { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "AppLogDetail")]
+  public partial class AppLogDetail
+  {
+    public int LogDetailId {
+      get;
+      set;
     }
+    public long LogId {
+      get;
+      set;
+    }
+    public string AppLogDetailTypeCode {
+      get;
+      set;
+    }
+    public string LogDetail {
+      get;
+      set;
+    }
+    public int SetId {
+      get;
+      set;
+    }
+
+    public virtual AppLogDetailType AppLogDetailType {
+      get;
+      set;
+    }
+    public virtual AppLog AppLog {
+      get;
+      set;
+    }
+  }
 }

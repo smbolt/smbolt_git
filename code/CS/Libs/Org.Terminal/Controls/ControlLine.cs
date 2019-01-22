@@ -8,8 +8,16 @@ namespace Org.Terminal.Controls
 {
   public class ControlLine : List<MFBase>
   {
-    public bool IncludesHFlexControls { get { return Get_IncludesHFlexControls(); } }
-    public bool IncludesVFlexControls { get { return Get_IncludesVFlexControls(); } }
+    public bool IncludesHFlexControls {
+      get {
+        return Get_IncludesHFlexControls();
+      }
+    }
+    public bool IncludesVFlexControls {
+      get {
+        return Get_IncludesVFlexControls();
+      }
+    }
 
     private bool Get_IncludesHFlexControls()
     {

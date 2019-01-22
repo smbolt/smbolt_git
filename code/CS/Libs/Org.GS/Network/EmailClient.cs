@@ -31,7 +31,7 @@ namespace Org.GS.Network
 
           mailMsg.From = new MailAddress(emailMessage.FromAddress);
           mailMsg.Subject = emailMessage.Subject;
-          mailMsg.Body = emailMessage.Body;                    
+          mailMsg.Body = emailMessage.Body;
 
           SmtpClient smtpClient = new SmtpClient(smtpSpec.SmtpServer, Int32.Parse(smtpSpec.SmtpPort));
 

@@ -13,13 +13,22 @@ namespace Org.GS.ServiceManagement
   public class ServiceEnvironment : ServiceObject
   {
     [XMap(IsRequired = true, IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool IsProductionEnvironment { get; set; }
+    public bool IsProductionEnvironment {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "ServiceHost", WrapperElement = "ServiceHostSet")]
-    public ServiceHostSet ServiceHostSet { get; set; }
+    public ServiceHostSet ServiceHostSet {
+      get;
+      set;
+    }
 
     public ServiceEnvironment()
     {

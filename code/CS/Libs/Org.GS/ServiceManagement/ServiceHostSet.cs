@@ -13,6 +13,9 @@ namespace Org.GS.ServiceManagement
   public class ServiceHostSet : Dictionary<string, ServiceHost>
   {
     [XMap(XType = XType.Element, MyParent = true, Name = "ParentServiceEnvironment")]
-    public ServiceEnvironment ParentServiceEnvironment { get; set; }
+    public ServiceEnvironment ParentServiceEnvironment {
+      get;
+      set;
+    }
   }
 }

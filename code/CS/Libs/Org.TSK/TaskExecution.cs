@@ -9,13 +9,35 @@ namespace Org.TSK
 {
   public class TaskExecution
   {
-    public DateTime TimePlacedInQueue { get; set; }
-    public DateTime TimeDispatched { get; set; }
-    public DateTime TimeCompleted { get; set; }
-    public DateTime PreviousTimePlacedInQueue { get; set; }
-    public DateTime NextTimerTarget { get; set; }
-    public int AlignmentAdjustment { get; set; }
-    public string Key { get { return Get_Key(); } }
+    public DateTime TimePlacedInQueue {
+      get;
+      set;
+    }
+    public DateTime TimeDispatched {
+      get;
+      set;
+    }
+    public DateTime TimeCompleted {
+      get;
+      set;
+    }
+    public DateTime PreviousTimePlacedInQueue {
+      get;
+      set;
+    }
+    public DateTime NextTimerTarget {
+      get;
+      set;
+    }
+    public int AlignmentAdjustment {
+      get;
+      set;
+    }
+    public string Key {
+      get {
+        return Get_Key();
+      }
+    }
 
     public TaskExecution(DateTime timePlacedInQueue)
     {

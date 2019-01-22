@@ -9,30 +9,51 @@ using Org.GS;
 namespace Org.Dx.Business.TextProcessing
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
+  [XMap(XType = XType.Element)]
   public class FormatSpec
   {
     [XMap(IsKey = true)]
-    public string Name { get; set;}
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="True")]
-    public string Desc { get; set; }
+    public string Desc {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Vendor { get; set; }
+    public string Vendor {
+      get;
+      set;
+    }
 
     [XMap(Name = "Type")]
-    public FormatSpecType FormatSpecType { get; set; }
+    public FormatSpecType FormatSpecType {
+      get;
+      set;
+    }
 
     [XMap]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "RecogSpec", WrapperElement = "RecogSpecSet")]
-    public RecogSpecSet RecogSpecSet { get; set; }
-    
+    public RecogSpecSet RecogSpecSet {
+      get;
+      set;
+    }
+
 
     [XMap(XType = XType.Element)]
-    public DataMapSet DataMapSet { get; set; }
+    public DataMapSet DataMapSet {
+      get;
+      set;
+    }
 
     public FormatSpec()
     {
@@ -60,11 +81,11 @@ namespace Org.Dx.Business.TextProcessing
       // 4.  May want to consider specific offsets from a given location, requiring a particular character or word
       // 5.  May want to consider data patterns
       // 6.  May want to consider "queries" based on entity identification (probably for extaction purposes)
-      //  
+      //
 
       foreach (var recogSpec in this.RecogSpecSet.Values)
       {
-        prevIdx = 0; 
+        prevIdx = 0;
         foreach (var recogLine in recogSpec.RecogLineSet)
         {
           if (recogLine.Use.Contains("R"))

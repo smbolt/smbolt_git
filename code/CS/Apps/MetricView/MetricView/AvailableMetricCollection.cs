@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Teleflora.Operations.MetricView
 {
-    public class AvailableMetricCollection : SortedList<string, AvailableMetric>
-    {
-    }
+  public class AvailableMetricCollection : SortedList<string, AvailableMetric>
+  {
+  }
 }

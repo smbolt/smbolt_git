@@ -8,8 +8,8 @@ using System.Net;
 using System.IO;
 
 namespace Org.GS.Network
-{   
-    
+{
+
   public enum ResourceScope
   {
     RESOURCE_CONNECTED = 1,
@@ -88,15 +88,21 @@ namespace Org.GS.Network
     private bool _cancel = false;
     public bool Cancel
     {
-      get { return _cancel; }
-      set { _cancel = value; }
+      get {
+        return _cancel;
+      }
+      set {
+        _cancel = value;
+      }
     }
 
     private ArrayList _aData = new ArrayList();
 
     public int Count
     {
-      get { return _aData.Count; }
+      get {
+        return _aData.Count;
+      }
     }
 
     private int depth = 0;
@@ -106,11 +112,11 @@ namespace Org.GS.Network
     }
 
     public ArrayList DiscoverNetwork(ResourceScope scope, ResourceType type, ResourceUsage usage, ResourceDisplayType displayType)
-	  {
-		  NETRESOURCE pRsrc = new NETRESOURCE();
-		  EnumerateServers(pRsrc, scope, type, usage, displayType);
-        return _aData;
-	  }
+    {
+      NETRESOURCE pRsrc = new NETRESOURCE();
+      EnumerateServers(pRsrc, scope, type, usage, displayType);
+      return _aData;
+    }
 
     private void EnumerateServers(NETRESOURCE pRsrc, ResourceScope scope, ResourceType type, ResourceUsage usage, ResourceDisplayType displayType)
     {

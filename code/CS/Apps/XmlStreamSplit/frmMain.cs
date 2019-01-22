@@ -151,7 +151,7 @@ namespace Org.XmlStreamSplit
       try
       {
         this.Cursor = Cursors.WaitCursor;
-        
+
         switch (action)
         {
           case "ShowFirstSegment":
@@ -168,7 +168,7 @@ namespace Org.XmlStreamSplit
             break;
         }
 
-        txtOut.Text = GetTextSegment();          
+        txtOut.Text = GetTextSegment();
 
         this.Cursor = Cursors.Default;
       }
@@ -344,8 +344,8 @@ namespace Org.XmlStreamSplit
       {
 
 
-      }    
-      
+      }
+
 
       //return t;
     }
@@ -463,7 +463,7 @@ namespace Org.XmlStreamSplit
         var sw = new StreamWriter(@"\\gulfport.net\data\Data Management\WellEz\Imports\XMLFiles\DrillingCostSubItem(3).xml");
 
         using (var sr = new StreamReader(@"\\gulfport.net\data\Data Management\WellEz\Imports\XMLFiles\DrillingCostSubItem(2).xml"))
-        {         
+        {
 
           while (!sr.EndOfStream)
           {
@@ -486,7 +486,7 @@ namespace Org.XmlStreamSplit
 
 
 
-            
+
 
 
             if (lineNumber > 1490500)
@@ -503,7 +503,7 @@ namespace Org.XmlStreamSplit
                   sr.Close();
                   return;
                 }
-                else 
+                else
                 {
                   string line = sr.ReadLine();
                   sb.Append(lineNumber.ToString("###,###,##0") + "  " + line + g.crlf);
@@ -549,7 +549,7 @@ namespace Org.XmlStreamSplit
         if (g.AppConfig.IsUpdated)
         {
           switch (MessageBox.Show("Do you want to save your configuration changes?" + g.crlf2 + "(Last file processed)",
-                              g.AppInfo.AppName + " - Save Configuration Changes?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                                  g.AppInfo.AppName + " - Save Configuration Changes?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
           {
             case DialogResult.Yes:
               g.AppConfig.Save();

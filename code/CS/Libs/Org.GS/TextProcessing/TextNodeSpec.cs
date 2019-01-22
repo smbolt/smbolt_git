@@ -11,43 +11,133 @@ namespace Org.GS
   {
     private string _originalValue;
     private string _rawValue;
-    public string RawValue { get { return _rawValue; } }
+    public string RawValue {
+      get {
+        return _rawValue;
+      }
+    }
 
     // data elements derived from the comparison value
-    public DataTypeSpec DataTypeSpec { get; private set; }
-    public List<TextDetailSpec> DetailSpecs { get; private set; }
-    public List<DetailSpecSwitch> DetailSpecSwitches { get; private set; }
-    public bool DetailSpecified { get { return this.DetailSpecs != null && this.DetailSpecs.Count > 0; } }
-    public List<bool> DetailSpecResults { get; set; }
-    
-    public bool IsNegated { get; private set; }
-    public bool UseRegex { get; private set; }
-    public bool UseOrLogic { get; private set; }
-    public bool CaseSensitive { get; private set; }
-    public bool SuppressCondenseAndTrim { get; private set; }
-    public bool IsValueProvider { get; set; }
-    
-    public decimal? NumericValue { get; set; }
-    public decimal? HighNumericValue { get; set; }
-    public decimal? LowNumericValue { get; set; }
-    public string StringValue { get; set; }
-    public string HighStringValue { get; set; }
-    public string LowStringValue { get; set; }
-    public DateTime? DateValue { get; set; }
-    public DateTime? HighDateValue { get; set; }
-    public DateTime? LowDateValue { get; set; }
-    public string TransformSpec { get; set; }
-    public string FormatSpec { get; set; }
-    public string SplitSpec { get; set; }
-    public bool IsOptional { get; set; }
-    public string ProcessedValue { get; set; }
+    public DataTypeSpec DataTypeSpec {
+      get;
+      private set;
+    }
+    public List<TextDetailSpec> DetailSpecs {
+      get;
+      private set;
+    }
+    public List<DetailSpecSwitch> DetailSpecSwitches {
+      get;
+      private set;
+    }
+    public bool DetailSpecified {
+      get {
+        return this.DetailSpecs != null && this.DetailSpecs.Count > 0;
+      }
+    }
+    public List<bool> DetailSpecResults {
+      get;
+      set;
+    }
 
-    public Dictionary<string, string> GlobalVariables { get; set; }
-    public Dictionary<string, string> LocalVariables { get; set; }
-    
-    public string Report { get { return Get_Report(); } }
+    public bool IsNegated {
+      get;
+      private set;
+    }
+    public bool UseRegex {
+      get;
+      private set;
+    }
+    public bool UseOrLogic {
+      get;
+      private set;
+    }
+    public bool CaseSensitive {
+      get;
+      private set;
+    }
+    public bool SuppressCondenseAndTrim {
+      get;
+      private set;
+    }
+    public bool IsValueProvider {
+      get;
+      set;
+    }
+
+    public decimal? NumericValue {
+      get;
+      set;
+    }
+    public decimal? HighNumericValue {
+      get;
+      set;
+    }
+    public decimal? LowNumericValue {
+      get;
+      set;
+    }
+    public string StringValue {
+      get;
+      set;
+    }
+    public string HighStringValue {
+      get;
+      set;
+    }
+    public string LowStringValue {
+      get;
+      set;
+    }
+    public DateTime? DateValue {
+      get;
+      set;
+    }
+    public DateTime? HighDateValue {
+      get;
+      set;
+    }
+    public DateTime? LowDateValue {
+      get;
+      set;
+    }
+    public string TransformSpec {
+      get;
+      set;
+    }
+    public string FormatSpec {
+      get;
+      set;
+    }
+    public string SplitSpec {
+      get;
+      set;
+    }
+    public bool IsOptional {
+      get;
+      set;
+    }
+    public string ProcessedValue {
+      get;
+      set;
+    }
+
+    public Dictionary<string, string> GlobalVariables {
+      get;
+      set;
+    }
+    public Dictionary<string, string> LocalVariables {
+      get;
+      set;
+    }
+
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
     private bool _isBracketed;
-    
+
     public TextNodeSpec(string rawValue)
     {
       try
@@ -77,11 +167,16 @@ namespace Org.GS
 
         switch (this.DataTypeSpec)
         {
-          case DataTypeSpec.Integer: return this.IntegerTokenMatch(token);
-          case DataTypeSpec.Decimal: return this.DecimalTokenMatch(token);
-          case DataTypeSpec.DecimalWithRequiredDecimalPoint: return this.DecimalTokenMatch(token, true);
-          case DataTypeSpec.Date: return this.DateTokenMatch(token);
-          case DataTypeSpec.String: return this.StringTokenMatch(token);
+          case DataTypeSpec.Integer:
+            return this.IntegerTokenMatch(token);
+          case DataTypeSpec.Decimal:
+            return this.DecimalTokenMatch(token);
+          case DataTypeSpec.DecimalWithRequiredDecimalPoint:
+            return this.DecimalTokenMatch(token, true);
+          case DataTypeSpec.Date:
+            return this.DateTokenMatch(token);
+          case DataTypeSpec.String:
+            return this.StringTokenMatch(token);
 
           default:
             throw new NotImplementedException("The TextNodeSpec TokenMatch method is not implemented for DataTypeSpec = " + this.DataTypeSpec.ToString() + ".");
@@ -129,19 +224,19 @@ namespace Org.GS
           _rawValue = ProcessSwitches(_rawValue);
         }
 
-        // If there is left over data, that's a problem... 
+        // If there is left over data, that's a problem...
         if (_rawValue.IsNotBlank())
           throw new Exception("The text not comparision specifier has left over text in it after the removal of all expected elements. The remaining text is '" +
                               _rawValue + "'. The TextNodeSpec object dump follows: " + g.crlf + this.Report);
 
         // The detail specifications (essentially the parameter values for the switches) get processed after
-        // all switches are processed.  Because some switches have broad effect (such as 'lit' which suppresses 
+        // all switches are processed.  Because some switches have broad effect (such as 'lit' which suppresses
         // trimming and condensing text), processing the detail specificaitons must wait until all switches are loaded.
         ProcessDetailSpecs();
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to initialize the TextNodeSpec object from raw value '" + RawValue + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to initialize the TextNodeSpec object from raw value '" + RawValue + "'.", ex);
       }
     }
 
@@ -149,9 +244,9 @@ namespace Org.GS
     {
       if (s.IsBlank())
         throw new Exception("The data type of the text comparision value cannot be determined from a blank or null string.");
-  
+
       s = s.Trim();
-      
+
       int startType = s.ToLower().IndexOf("/type:");
       if (startType != -1)
       {
@@ -213,10 +308,10 @@ namespace Org.GS
       s = s.Trim();
 
       if (!s.Contains("/"))
-        return s; 
+        return s;
 
       string doubleSlashReplacement = "\xA4\xA4";
-      s = s.Replace("//", doubleSlashReplacement);      
+      s = s.Replace("//", doubleSlashReplacement);
 
       if (!s.StartsWith("/"))
         throw new Exception("The value of the detail specification must begin with a forward slash (/) - found '" + s + "'.");
@@ -228,7 +323,7 @@ namespace Org.GS
       string remainingValue = posNextSlash > -1 ? s.Substring(posNextSlash).Trim() : String.Empty;
 
       detailSpecText = detailSpecText.Replace(doubleSlashReplacement, "/");
-      remainingValue = remainingValue.Replace(doubleSlashReplacement, "//"); 
+      remainingValue = remainingValue.Replace(doubleSlashReplacement, "//");
 
       if (detailSpecText.ToLower().StartsWith("/fmt:"))
       {
@@ -262,10 +357,10 @@ namespace Org.GS
       {
         case "int":
           return DataTypeSpec.Integer;
-          
+
         case "dec":
           return DataTypeSpec.DecimalWithRequiredDecimalPoint;
-          
+
         case "decn":
           return DataTypeSpec.Decimal;
 
@@ -409,7 +504,7 @@ namespace Org.GS
               {
                 case DataTypeSpec.String:
                   if (this.StringValue.IsBlank())
-                  this.StringValue = spec.StringValue;
+                    this.StringValue = spec.StringValue;
                   break;
               }
 
@@ -449,7 +544,7 @@ namespace Org.GS
       {
         if (this.DetailSpecs.Count <= 1)
           return;
-        
+
         if (!UseOrLogic)
         {
           bool gtAndLt = DetailSpecSwitches.Contains(DetailSpecSwitch.ValueGreaterThan) && DetailSpecSwitches.Contains(DetailSpecSwitch.ValueLessThan);
@@ -477,7 +572,7 @@ namespace Org.GS
 
           bool ltAndE = DetailSpecSwitches.Contains(DetailSpecSwitch.ValueLessThan) && DetailSpecSwitches.Contains(DetailSpecSwitch.ValueEquals);
           if (ltAndE)
-            throw new Exception("An illogical condition exists, you cannot have 2 conditions where a value is 'less than' and it is also 'equal to'.");                  
+            throw new Exception("An illogical condition exists, you cannot have 2 conditions where a value is 'less than' and it is also 'equal to'.");
         }
         if (UseOrLogic)
         {
@@ -507,7 +602,7 @@ namespace Org.GS
                               "the TextNodeSpec except that it may be preceded by an exclaimation mark for negation.");
         if (closeBracketPos != s.Length - 1)
           throw new Exception("Invalid use of brackets in TextNodeSpec '" + _originalValue + "' - the close bracket, if used, must be the last character in " +
-                               "the TextNodeSpec.");
+                              "the TextNodeSpec.");
 
       }
     }

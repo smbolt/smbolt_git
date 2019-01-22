@@ -8,14 +8,20 @@ using System.Reflection;
 namespace Org.GS.Configuration
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(CollectionElements = "CI", XType = XType.Element)] 
+  [XMap(CollectionElements = "CI", XType = XType.Element)]
   public class CIGroup : Dictionary<string, CI>
   {
     [XMap(MyParent = true)]
-    public CISet CISet { get; set; }
+    public CISet CISet {
+      get;
+      set;
+    }
 
     [XMap(IsKey=true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
 
     [XParm(Name = "parent", ParmSource = XParmSource.Parent)]

@@ -68,7 +68,7 @@ namespace Org.PdfTextExtract
           toolWindow.WindowLocation.Location = toolWindowLocation;
           toolWindowLocation.Offset(25, 25);
           uiState.UIWindowSet.Add(name, toolWindow);
-        }      
+        }
       }
 
       if (isConfigChanged)

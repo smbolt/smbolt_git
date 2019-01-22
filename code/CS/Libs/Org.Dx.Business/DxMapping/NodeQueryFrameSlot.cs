@@ -9,17 +9,54 @@ namespace Org.Dx.Business
 {
   public class NodeQueryFrameSlot
   {
-    public int Fx { get; set; } // the Frame Index (Fx) is used to reference the Frame Slot within the Frame
-    public int Nx { get; set; } // the Node Index (Nx) is used to relate the Frame Slot to the Nodes collection of the Frame
-    public int Qx { get; set; } // the Query Index (Qx) is used to relate the Frame Slot to the NodeQueryElements collection of the Frame
+    public int Fx {
+      get;  // the Frame Index (Fx) is used to reference the Frame Slot within the Frame
+      set;
+    }
+    public int Nx {
+      get;  // the Node Index (Nx) is used to relate the Frame Slot to the Nodes collection of the Frame
+      set;
+    }
+    public int Qx {
+      get;  // the Query Index (Qx) is used to relate the Frame Slot to the NodeQueryElements collection of the Frame
+      set;
+    }
     private NodeQueryFrame _f;
-    public string Report { get { return Get_Report(); } }
-    public string NodeText { get { return Get_NodeText(); } }
-    public string QueryText { get { return Get_QueryText(); } }
-    public bool HasNode { get { return Get_HasNode(); } }
-    public bool HasQuery { get { return Get_HasQuery(); } }
-    public Node N { get { return Get_Node(); } }
-    public NodeQueryElement Q { get { return Get_Query(); } }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
+    public string NodeText {
+      get {
+        return Get_NodeText();
+      }
+    }
+    public string QueryText {
+      get {
+        return Get_QueryText();
+      }
+    }
+    public bool HasNode {
+      get {
+        return Get_HasNode();
+      }
+    }
+    public bool HasQuery {
+      get {
+        return Get_HasQuery();
+      }
+    }
+    public Node N {
+      get {
+        return Get_Node();
+      }
+    }
+    public NodeQueryElement Q {
+      get {
+        return Get_Query();
+      }
+    }
 
     public NodeQueryFrameSlot(NodeQueryFrame f, int frameIndex, int nodeIndex, int queryIndex)
     {

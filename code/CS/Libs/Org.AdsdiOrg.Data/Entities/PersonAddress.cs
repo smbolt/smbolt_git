@@ -11,22 +11,52 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonAddress")]
-    public partial class PersonAddress
-    {
-        public int PersonId { get; set; }
-        public int AddressId { get; set; }
-        public string AddressTypeCode { get; set; }
-        public int StatusId { get; set; }
-        public bool IsPrimaryAddress { get; set; }
-        public int Seq { get; set; }
-        public string PrivacyStatusCode { get; set; }
-    
-        public virtual AddressType AddressType { get; set; }
-        public virtual PrivacyStatu PrivacyStatu { get; set; }
-        public virtual Status Status { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonAddress")]
+  public partial class PersonAddress
+  {
+    public int PersonId {
+      get;
+      set;
     }
+    public int AddressId {
+      get;
+      set;
+    }
+    public string AddressTypeCode {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+    public bool IsPrimaryAddress {
+      get;
+      set;
+    }
+    public int Seq {
+      get;
+      set;
+    }
+    public string PrivacyStatusCode {
+      get;
+      set;
+    }
+
+    public virtual AddressType AddressType {
+      get;
+      set;
+    }
+    public virtual PrivacyStatu PrivacyStatu {
+      get;
+      set;
+    }
+    public virtual Status Status {
+      get;
+      set;
+    }
+  }
 }

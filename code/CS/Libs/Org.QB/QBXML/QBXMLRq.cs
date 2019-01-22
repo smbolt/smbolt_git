@@ -11,7 +11,10 @@ namespace Org.QB.QBXML
   public class QBXMLRq
   {
     [XMap (XType = XType.Element)]
-    public QBXMLMsgsRq QBXMLMsgsRq { get; set; }
+    public QBXMLMsgsRq QBXMLMsgsRq {
+      get;
+      set;
+    }
 
     public QBXMLRq()
     {

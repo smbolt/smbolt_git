@@ -92,8 +92,8 @@ namespace Org.XmlUtility
             break;
 
           default:
-            MessageBox.Show("An unexpected result was returned from running the XPath query." + g.crlf2 + 
-                            "Return type is '" + r.GetType().Name + "'" + g.crlf2 + 
+            MessageBox.Show("An unexpected result was returned from running the XPath query." + g.crlf2 +
+                            "Return type is '" + r.GetType().Name + "'" + g.crlf2 +
                             "Object is '" + r.ToString() + "'.",
                             g.AppInfo.AppName + " - XPath Query Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -124,7 +124,7 @@ namespace Org.XmlUtility
         }
 
         _xml = xml.ToXElement();
-        _originalXml = XElement.Parse(_xml.ToString()); 
+        _originalXml = XElement.Parse(_xml.ToString());
 
         LoadTreeView(_xml);
       }
@@ -199,14 +199,14 @@ namespace Org.XmlUtility
           if (childNode.NodeType == System.Xml.XmlNodeType.Text)
           {
             var textElement = new XElement("Text", ((XText)childNode).Value);
-            LoadTreeView(textElement, rootNode, 0); 
+            LoadTreeView(textElement, rootNode, 0);
           }
         }
 
         tvXml.EndUpdate();
         tvXml.ExpandAll();
-        rootNode.EnsureVisible(); 
-        tvXml.Visible = true; 
+        rootNode.EnsureVisible();
+        tvXml.Visible = true;
 
         Application.DoEvents();
 
@@ -243,7 +243,7 @@ namespace Org.XmlUtility
       if (!_xpathExpressions.Contains(cboXPathExpression.Text))
       {
         _xpathExpressions.Add(cboXPathExpression.Text);
-        cboXPathExpression.LoadItems(_xpathExpressions); 
+        cboXPathExpression.LoadItems(_xpathExpressions);
       }
     }
 
@@ -252,7 +252,7 @@ namespace Org.XmlUtility
       if (_xpathExpressions.Contains(cboXPathExpression.Text))
       {
         _xpathExpressions.Remove(cboXPathExpression.Text);
-        cboXPathExpression.LoadItems(_xpathExpressions); 
+        cboXPathExpression.LoadItems(_xpathExpressions);
       }
     }
 

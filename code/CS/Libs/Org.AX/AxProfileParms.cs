@@ -9,13 +9,19 @@ namespace Org.AX
 {
   public class AxProfileParms
   {
-    public bool IsDryRun { get; set; }
-    public ParmSet ParmSet { get; set; }
+    public bool IsDryRun {
+      get;
+      set;
+    }
+    public ParmSet ParmSet {
+      get;
+      set;
+    }
 
     public AxProfileParms()
     {
       this.IsDryRun = false;
-      this.ParmSet = new ParmSet(); 
+      this.ParmSet = new ParmSet();
     }
   }
 }

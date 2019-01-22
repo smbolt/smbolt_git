@@ -22,11 +22,13 @@ namespace Org.FTW.Forms
 
     public Panel DockPanel
     {
-      get { return this.pnlMain; }
+      get {
+        return this.pnlMain;
+      }
     }
 
     public frmToolWindowParent _parent;
-    private ToolPanelBase _toolPanel; 
+    private ToolPanelBase _toolPanel;
     public bool active = false;
     private bool IsTimeToClose = false;
     private const int WM_ACTIVATE = 0x006;
@@ -35,7 +37,7 @@ namespace Org.FTW.Forms
     private const int MF_STRING = 0x0;
     private const int MF_BYPOSITION = 0x400;
     private const int WM_SYSCOMMAND = 0x112;
-		private const int WM_NCLBUTTONDBLCLK = 0x0A3;
+    private const int WM_NCLBUTTONDBLCLK = 0x0A3;
     private int SYSMENU_DOCK_ID = 0x1;
     private System.Timers.Timer _moveTimer;
 
@@ -59,7 +61,7 @@ namespace Org.FTW.Forms
 
     [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
     private static extern int GetMenuItemCount(IntPtr hMenu);
-    
+
     public frmToolWindowBase()
     {
     }
@@ -94,10 +96,10 @@ namespace Org.FTW.Forms
       {
         EnsureToolPanel();
 
-				if (_toolPanel != null)
-				{
-					_toolPanel.NotifyHost(_toolPanel, ToolPanelHostCommand.Dock);
-				}
+        if (_toolPanel != null)
+        {
+          _toolPanel.NotifyHost(_toolPanel, ToolPanelHostCommand.Dock);
+        }
 
         return;
       }
@@ -105,17 +107,17 @@ namespace Org.FTW.Forms
       if (_parent == null)
         return;
 
-			if (m.Msg == WM_NCLBUTTONDBLCLK)
-			{
-				EnsureToolPanel();
+      if (m.Msg == WM_NCLBUTTONDBLCLK)
+      {
+        EnsureToolPanel();
 
-				if (_toolPanel != null)
-				{
-					_toolPanel.NotifyHost(_toolPanel, ToolPanelHostCommand.Dock);
-				}
+        if (_toolPanel != null)
+        {
+          _toolPanel.NotifyHost(_toolPanel, ToolPanelHostCommand.Dock);
+        }
 
-				return;
-			}
+        return;
+      }
 
       if (m.Msg != WM_NCACTIVATE)
         return;
@@ -132,23 +134,23 @@ namespace Org.FTW.Forms
           {
             _parent.active = true;
             SendMessage(_parent.Handle, WM_NCACTIVATE, 1, IntPtr.Zero);
-            //Console.WriteLine("Activate A " + _parent.Tag.ToString()); 
+            //Console.WriteLine("Activate A " + _parent.Tag.ToString());
           }
         }
         else
         {
-          //Console.WriteLine("FromParentOrPeer False"); 
+          //Console.WriteLine("FromParentOrPeer False");
           if (this.active == true)
           {
             this.active = false;
             SendMessage(this.Handle, WM_NCACTIVATE, 0, IntPtr.Zero);
-            //Console.WriteLine("Deactivate B " + this.Tag.ToString()); 
+            //Console.WriteLine("Deactivate B " + this.Tag.ToString());
           }
           if (_parent.active == true)
           {
             _parent.active = false;
             SendMessage(_parent.Handle, WM_NCACTIVATE, 0, IntPtr.Zero);
-            //Console.WriteLine("Deactivate B " + _parent.Tag.ToString()); 
+            //Console.WriteLine("Deactivate B " + _parent.Tag.ToString());
           }
         }
       }
@@ -158,13 +160,13 @@ namespace Org.FTW.Forms
         {
           this.active = true;
           SendMessage(this.Handle, WM_NCACTIVATE, 1, IntPtr.Zero);
-          //Console.WriteLine("Activate C " + this.Tag.ToString()); 
+          //Console.WriteLine("Activate C " + this.Tag.ToString());
         }
         if (_parent.active == false)
         {
           _parent.active = true;
           SendMessage(_parent.Handle, WM_NCACTIVATE, 1, IntPtr.Zero);
-          //Console.WriteLine("Activate C " + _parent.Tag.ToString()); 
+          //Console.WriteLine("Activate C " + _parent.Tag.ToString());
         }
       }
 
@@ -173,13 +175,13 @@ namespace Org.FTW.Forms
     protected void base_Activated(object sender, EventArgs e)
     {
       active = true;
-      //Console.WriteLine("ActivatedEvent D " + this.Tag.ToString()); 
+      //Console.WriteLine("ActivatedEvent D " + this.Tag.ToString());
     }
 
     protected void base_Deactivate(object sender, EventArgs e)
     {
       active = false;
-      //Console.WriteLine("DeactivatedEvent D " + this.Tag.ToString()); 
+      //Console.WriteLine("DeactivatedEvent D " + this.Tag.ToString());
     }
 
     public void MarkTimeToClose()
@@ -224,8 +226,8 @@ namespace Org.FTW.Forms
     private void MoveTimer_Elapsed(object sender, ElapsedEventArgs e)
     {
       _moveTimer.Enabled = false;
-			if (this.ToolAction != null)
-				this.ToolAction(new ToolActionEventArgs(this, ToolActionEvent.ToolWindowMoved));
+      if (this.ToolAction != null)
+        this.ToolAction(new ToolActionEventArgs(this, ToolActionEvent.ToolWindowMoved));
     }
 
     private void base_ResizeEnd(object sender, EventArgs e)
@@ -269,6 +271,6 @@ namespace Org.FTW.Forms
 
       _toolPanel = (ToolPanelBase)o;
     }
-		
+
   }
 }

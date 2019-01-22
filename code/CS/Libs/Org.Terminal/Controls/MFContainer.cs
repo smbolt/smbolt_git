@@ -19,26 +19,86 @@ namespace Org.Terminal.Controls
 
     private ControlManager _controlManager;
 
-    public List<TextBlock> TextLines { get { return Get_TextLines(); } } 
+    public List<TextBlock> TextLines {
+      get {
+        return Get_TextLines();
+      }
+    }
 
-    public Font MainTextFont { get; private set; }
-    public Color MainTextDefaultColor { get; private set; }
-    public Brush MainTextDefaultBrush { get; private set; }
-    public Size CharSize { get; private set; }
-    public int CharWidth { get { return this.CharSize.Width; } }
-    public int LineHeight { get { return this.CharSize.Height; } }
-    public int CapacityNumberOfLinesHigh { get { return Get_CapacityNumberOfLinesHigh(); } } 
-    public int CapacityNumberOfCharsWide { get { return Get_CapacityNumberOfCharsWide(); } } 
-    public int TopPadding { get; private set; }
-    public int RightPadding { get; private set; }
-    public int BottomPadding { get; private set; }
-    public int LeftPadding { get; private set; }
-    public int CharTopPadding { get; private set; }
-    public int CharLeftPadding { get; private set; }
+    public Font MainTextFont {
+      get;
+      private set;
+    }
+    public Color MainTextDefaultColor {
+      get;
+      private set;
+    }
+    public Brush MainTextDefaultBrush {
+      get;
+      private set;
+    }
+    public Size CharSize {
+      get;
+      private set;
+    }
+    public int CharWidth {
+      get {
+        return this.CharSize.Width;
+      }
+    }
+    public int LineHeight {
+      get {
+        return this.CharSize.Height;
+      }
+    }
+    public int CapacityNumberOfLinesHigh {
+      get {
+        return Get_CapacityNumberOfLinesHigh();
+      }
+    }
+    public int CapacityNumberOfCharsWide {
+      get {
+        return Get_CapacityNumberOfCharsWide();
+      }
+    }
+    public int TopPadding {
+      get;
+      private set;
+    }
+    public int RightPadding {
+      get;
+      private set;
+    }
+    public int BottomPadding {
+      get;
+      private set;
+    }
+    public int LeftPadding {
+      get;
+      private set;
+    }
+    public int CharTopPadding {
+      get;
+      private set;
+    }
+    public int CharLeftPadding {
+      get;
+      private set;
+    }
 
-    public bool DrawMetrics { get; set; }
-    public bool IsReadyForSizeManagement { get; set; }
-    public bool ContainsVFlexControl { get { return _controlManager == null ? false : _controlManager.ContainsVFlexControl; } } 
+    public bool DrawMetrics {
+      get;
+      set;
+    }
+    public bool IsReadyForSizeManagement {
+      get;
+      set;
+    }
+    public bool ContainsVFlexControl {
+      get {
+        return _controlManager == null ? false : _controlManager.ContainsVFlexControl;
+      }
+    }
 
     private int _prevLinesHigh;
     private int _prevCharsWide;
@@ -113,7 +173,7 @@ namespace Org.Terminal.Controls
         c.BackgroundBrush = backgroundBrush;
       }
       DrawAll();
-      this.Invalidate(); 
+      this.Invalidate();
     }
 
     public void LayoutControls()
@@ -124,7 +184,7 @@ namespace Org.Terminal.Controls
         // PUSH THE DETAILED PROCESSING INTO THE MFCONTAINER OBJECT (RENAME THE OBJECT)
         // MAKE MFCONTAINER (ABSTRACTING CONTROL MANAGER) ABLE TO DO THINGS LIKE "REMOVE VFLEX-CREATED LINES"
         // MAKE IT SMART ENOUGH TO ONLY REMOVE THOSE THAT ARE GETTING SQUEEZED OUT...  OR MAYBE JUST SET THEM ASIDE
-        // LIKE A "SAVED ROW"... 
+        // LIKE A "SAVED ROW"...
         // QUICKLY RENUMBER / PUSH DOWN/UP THE VFLEX-MOVED CONTROLS
         // WHAT ABOUT TAGGING THOSE (LOGICALLY) THAT NEED TO BE MOVED SO THEY DON'T HAVE TO BE DISCOVERED.
 
@@ -144,7 +204,7 @@ namespace Org.Terminal.Controls
 
         if (vFlexLine != null)
         {
-          // figure out what to remove and what to add if anything... 
+          // figure out what to remove and what to add if anything...
           // rather than removing all and replacing what's needed.
 
           ClearControlLines();
@@ -166,7 +226,7 @@ namespace Org.Terminal.Controls
           }
 
           int vFlexLineNumber = vFlexLine[0].OrigLine;
-          int nextLineNumber = GetNextLineNumber(vFlexLineNumber); 
+          int nextLineNumber = GetNextLineNumber(vFlexLineNumber);
 
           if (nextLineNumber > -1)
           {
@@ -247,7 +307,7 @@ namespace Org.Terminal.Controls
                 int rightMost = line.GetRightMostPlacement(tb.CurrLth);
                 if (rightMost == -1)
                   throw new Exception("Cannot place text block control named " + tb.Name + " on line " + tb.CurrLine.ToString() + ".");
-                tb.FieldSpec.CurrCol = rightMost + 1; 
+                tb.FieldSpec.CurrCol = rightMost + 1;
                 tb.IsPlaced = true;
                 line.MarkAsOccupied(tb.CurrCol - 1, tb.CurrLth, tb.LineItem);
                 int x = this.LeftPadding + ((tb.FieldSpec.CurrCol - 1) * this.CharSize.Width);
@@ -308,7 +368,7 @@ namespace Org.Terminal.Controls
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while laying out the controls in the MFContainer.", ex); 
+        throw new Exception("An exception occurred while laying out the controls in the MFContainer.", ex);
       }
     }
 
@@ -317,7 +377,7 @@ namespace Org.Terminal.Controls
       if (_controlManager == null)
         return;
 
-      _controlManager.ClearControlLineSet(); 
+      _controlManager.ClearControlLineSet();
     }
 
     private void RemoveVFlexCreatedControls()
@@ -341,7 +401,7 @@ namespace Org.Terminal.Controls
     private int GetNextLineNumber(int vFlexLineNumber)
     {
       if (_controlManager == null || _controlManager.ControlLineSet == null || _controlManager.ControlLineSet.Count == 0)
-        return -1; 
+        return -1;
 
       int nextLineNumber = -1;
       foreach (int lineNbr in _controlManager.ControlLineSet.Keys)
@@ -364,7 +424,7 @@ namespace Org.Terminal.Controls
       foreach (var controlLine in _controlManager.ControlLineSet.Values)
       {
         foreach(TextBlock tb in controlLine)
-          tb.IsPlaced = false; 
+          tb.IsPlaced = false;
       }
     }
 
@@ -375,12 +435,12 @@ namespace Org.Terminal.Controls
         foreach (var tb in this.Controls.OfType<TextBlock>())
         {
           tb.ClearBitmap();
-          tb.Draw(); 
+          tb.Draw();
         }
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while drawing the controls in the MFContainer.", ex); 
+        throw new Exception("An exception occurred while drawing the controls in the MFContainer.", ex);
       }
     }
 
@@ -415,7 +475,7 @@ namespace Org.Terminal.Controls
       this.MainTextDefaultBrush = new SolidBrush(this.MainTextDefaultColor);
 
       _prevLinesHigh = 0;
-      _prevCharsWide = 0; 
+      _prevCharsWide = 0;
 
     }
 
@@ -424,7 +484,7 @@ namespace Org.Terminal.Controls
       if (!e.Control.GetType().IsSubclassOf(typeof(MFBase)))
         return;
 
-      _controlManager.AddControl((MFBase)e.Control); 
+      _controlManager.AddControl((MFBase)e.Control);
     }
 
     private void MFContainer_ControlRemoved(object sender, ControlEventArgs e)
@@ -432,13 +492,13 @@ namespace Org.Terminal.Controls
       if (!e.Control.GetType().IsSubclassOf(typeof(MFBase)))
         return;
 
-      _controlManager.RemoveControl((MFBase)e.Control); 
+      _controlManager.RemoveControl((MFBase)e.Control);
     }
 
     public void ClearControls()
     {
       if (_controlManager != null)
-        _controlManager.ClearControls(); 
+        _controlManager.ClearControls();
     }
 
     public void ProcessTabKey(TextBlock currTb, bool shiftKey)
@@ -470,7 +530,7 @@ namespace Org.Terminal.Controls
 
       if (currTb == null)
         return;
-      
+
       TextBlock nextControl = null;
       string controlType = String.Empty;
 
@@ -501,12 +561,12 @@ namespace Org.Terminal.Controls
 
     private void MFContainer_Resize(object sender, EventArgs e)
     {
-      CheckScreenLayout(); 
+      CheckScreenLayout();
     }
 
     public void MainFormResizeEnd()
     {
-      CheckScreenLayout(true); 
+      CheckScreenLayout(true);
     }
 
     private void CheckScreenLayout(bool forceLayout = false)
@@ -545,7 +605,7 @@ namespace Org.Terminal.Controls
       this.DrawAll();
       this.Invalidate();
     }
-    
+
     protected override void OnPaint(PaintEventArgs e)
     {
       base.OnPaint(e);
@@ -559,7 +619,7 @@ namespace Org.Terminal.Controls
           return;
       }
 
-      // Manage this through a floating tool window... 
+      // Manage this through a floating tool window...
       // Don't need the docking stuff...
       // Might be able to leverage the message loop access...
 
@@ -601,7 +661,7 @@ namespace Org.Terminal.Controls
       if (this.CharWidth < 0 || this.Size.Width < 0)
         return 0;
 
-      return Convert.ToInt32((this.Size.Width - (this.LeftPadding + this.RightPadding)) / this.CharWidth); 
+      return Convert.ToInt32((this.Size.Width - (this.LeftPadding + this.RightPadding)) / this.CharWidth);
     }
   }
 }

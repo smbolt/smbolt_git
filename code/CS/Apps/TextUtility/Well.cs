@@ -8,14 +8,38 @@ namespace Org.TextUtility
 {
   public class Well
   {
-    public string WellName { get; set; }
-    public int GPWellNo { get; set; }
-    public string Active { get; set; }
-    public string Operated { get; set; }
-    public string CountyName { get; set; }
-    public string StateName { get; set; }
-    public string FieldName { get; set; }
-    public string API { get; set; }
+    public string WellName {
+      get;
+      set;
+    }
+    public int GPWellNo {
+      get;
+      set;
+    }
+    public string Active {
+      get;
+      set;
+    }
+    public string Operated {
+      get;
+      set;
+    }
+    public string CountyName {
+      get;
+      set;
+    }
+    public string StateName {
+      get;
+      set;
+    }
+    public string FieldName {
+      get;
+      set;
+    }
+    public string API {
+      get;
+      set;
+    }
 
     public Well()
     {

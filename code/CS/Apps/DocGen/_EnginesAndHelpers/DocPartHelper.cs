@@ -24,8 +24,8 @@ using Org.GS;
 
 namespace Org.DocGen
 {
-    public static class DocPartHelper
-    {
+  public static class DocPartHelper
+  {
     //    private static object GenerateStyleDefinitionsPart1Content_LockObject = new object();
     //    public static void GenerateStyleDefinitionsPart1Content(StyleDefinitionsPart styleDefinitionsPart1)
     //    {
@@ -2657,5 +2657,5 @@ namespace Org.DocGen
     //        }
     //    }
 
-    }
+  }
 }

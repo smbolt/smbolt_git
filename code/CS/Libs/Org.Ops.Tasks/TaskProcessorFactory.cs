@@ -19,7 +19,7 @@ namespace Org.Ops.Tasks
                   "OverdueTaskAcknowledgementMonitor_1.0.0.0 " +
                   "StatementEmailMonitor_1.0.0.0 " +
                   "TaskScheduler_1.0.0.0"
-                  )]
+                 )]
 
   public class TaskProcessorFactory : ITaskProcessorFactory, IDisposable
   {

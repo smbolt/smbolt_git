@@ -9,36 +9,58 @@ namespace Org.MX.Model
     [EntityMap]
     public int ServerID
     {
-      get { return base.ID; }
-      set { base.ID = value; }
+      get {
+        return base.ID;
+      }
+      set {
+        base.ID = value;
+      }
     }
 
     [EntityMap(Sequencer = true)]
     public int ServerCode
     {
-      get { return base.Code; }
-      set { base.Code = value; }
+      get {
+        return base.Code;
+      }
+      set {
+        base.Code = value;
+      }
     }
 
     [EntityMap]
     public string ServerName
     {
-      get { return base.Name; }
-      set { base.Name = value; }
+      get {
+        return base.Name;
+      }
+      set {
+        base.Name = value;
+      }
     }
 
     [EntityMap]
     public string ServerDesc
     {
-      get { return base.Description; }
-      set { base.Description = value; }
+      get {
+        return base.Description;
+      }
+      set {
+        base.Description = value;
+      }
     }
 
     [EntityMap]
-    public int ServerTypeID { get; set; }
+    public int ServerTypeID {
+      get;
+      set;
+    }
 
     [EntityMap]
-    public int LocationID { get; set; }
+    public int LocationID {
+      get;
+      set;
+    }
 
     public Server() : base(0, 0, String.Empty, String.Empty)
     {

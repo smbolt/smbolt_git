@@ -11,18 +11,36 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "OrgPersonType")]
-    public partial class OrgPersonType
-    {
-        public int OrgPersonTypeId { get; set; }
-        public int OrgId { get; set; }
-        public string OrgPersonTypeAbbr { get; set; }
-        public string OrgPersonTypeValue { get; set; }
-        public string OrgPersonTypeDesc { get; set; }
-    
-        public virtual Organization Organization { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "OrgPersonType")]
+  public partial class OrgPersonType
+  {
+    public int OrgPersonTypeId {
+      get;
+      set;
     }
+    public int OrgId {
+      get;
+      set;
+    }
+    public string OrgPersonTypeAbbr {
+      get;
+      set;
+    }
+    public string OrgPersonTypeValue {
+      get;
+      set;
+    }
+    public string OrgPersonTypeDesc {
+      get;
+      set;
+    }
+
+    public virtual Organization Organization {
+      get;
+      set;
+    }
+  }
 }

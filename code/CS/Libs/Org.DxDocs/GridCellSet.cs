@@ -11,8 +11,14 @@ namespace Org.DxDocs
   public class GridCellSet
   {
     private Worksheet _ws;
-    public int RowCount { get; private set; }
-    public int ColumnCount { get; private set; }
+    public int RowCount {
+      get;
+      private set;
+    }
+    public int ColumnCount {
+      get;
+      private set;
+    }
     private int _startRow;
     private int _endRow;
     private int _startCol;
@@ -20,7 +26,9 @@ namespace Org.DxDocs
 
     public List<object[]> Rows
     {
-      get { return Get_Rows(); }
+      get {
+        return Get_Rows();
+      }
     }
 
     private object[,] _cells = null;
@@ -44,7 +52,7 @@ namespace Org.DxDocs
       if (this.RowCount <= row || this.ColumnCount <= col)
         return null;
 
-      return new GridCell(row, col, _cells[row, col]); 
+      return new GridCell(row, col, _cells[row, col]);
     }
 
     private List<object[]> Get_Rows()
@@ -56,7 +64,7 @@ namespace Org.DxDocs
         var row = new object[this.ColumnCount];
         for (int c = 0; c < ColumnCount; c++)
         {
-          row[c] = _cells[r, c];        
+          row[c] = _cells[r, c];
         }
         rows.Add(row);
       }

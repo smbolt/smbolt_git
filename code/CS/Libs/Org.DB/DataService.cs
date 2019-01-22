@@ -38,7 +38,7 @@ namespace Org.DB
       catch (Exception ex)
       {
         throw new Exception("Failed to connect - Inner exception message is:" +
-            g.crlf2 + ex.Message, ex);
+                            g.crlf2 + ex.Message, ex);
       }
     }
   }

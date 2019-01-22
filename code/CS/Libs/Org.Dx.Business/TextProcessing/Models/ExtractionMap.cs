@@ -12,16 +12,28 @@ namespace Org.Dx.Business.TextProcessing
   public class ExtractionMap
   {
     [XMap]
-    public ExtractionUnit ExtractionUnit { get; set; }
+    public ExtractionUnit ExtractionUnit {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Prefix { get; set; }
+    public string Prefix {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Suffix { get; set; }
+    public string Suffix {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "ExtractSection", WrapperElement="ExtractSectionSet")]
-    public ExtractSectionSet ExtractSectionSet { get; set; }
+    public ExtractSectionSet ExtractSectionSet {
+      get;
+      set;
+    }
 
     public ExtractionMap()
     {

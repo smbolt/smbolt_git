@@ -11,29 +11,62 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "AccountPolicy")]
-    public partial class AccountPolicy
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "AccountPolicy")]
+  public partial class AccountPolicy
+  {
+    public AccountPolicy()
     {
-        public AccountPolicy()
-        {
-            this.Accounts = new HashSet<Account>();
-            this.AccountTypes = new HashSet<AccountType>();
-        }
-    
-        public int AccountPolicyId { get; set; }
-        public string AccountPolicyName { get; set; }
-        public int PasswordMinLength { get; set; }
-        public int PasswordMaxLength { get; set; }
-        public bool PasswordRequireSpecialChar { get; set; }
-        public bool PasswordRequireMixedCase { get; set; }
-        public bool PasswordRequireNumber { get; set; }
-        public Nullable<int> PasswordChangeDays { get; set; }
-        public Nullable<int> LockoutAttempts { get; set; }
-    
-        public virtual ICollection<Account> Accounts { get; set; }
-        public virtual ICollection<AccountType> AccountTypes { get; set; }
+      this.Accounts = new HashSet<Account>();
+      this.AccountTypes = new HashSet<AccountType>();
     }
+
+    public int AccountPolicyId {
+      get;
+      set;
+    }
+    public string AccountPolicyName {
+      get;
+      set;
+    }
+    public int PasswordMinLength {
+      get;
+      set;
+    }
+    public int PasswordMaxLength {
+      get;
+      set;
+    }
+    public bool PasswordRequireSpecialChar {
+      get;
+      set;
+    }
+    public bool PasswordRequireMixedCase {
+      get;
+      set;
+    }
+    public bool PasswordRequireNumber {
+      get;
+      set;
+    }
+    public Nullable<int> PasswordChangeDays {
+      get;
+      set;
+    }
+    public Nullable<int> LockoutAttempts {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Account> Accounts {
+      get;
+      set;
+    }
+    public virtual ICollection<AccountType> AccountTypes {
+      get;
+      set;
+    }
+  }
 }

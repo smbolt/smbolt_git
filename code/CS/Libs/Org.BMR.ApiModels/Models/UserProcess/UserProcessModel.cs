@@ -8,10 +8,22 @@ namespace Org.BMR.ApiModels
 {
   public class UserProcessModel : ApiModelBase
   {
-    public string ProcessName { get; set; }
-    public string SubProcessName { get; set; }
-    public int SubProcessStep { get; set; }
-    public int ProcessEntityId { get; set; }
+    public string ProcessName {
+      get;
+      set;
+    }
+    public string SubProcessName {
+      get;
+      set;
+    }
+    public int SubProcessStep {
+      get;
+      set;
+    }
+    public int ProcessEntityId {
+      get;
+      set;
+    }
 
     public UserProcessModel()
     {

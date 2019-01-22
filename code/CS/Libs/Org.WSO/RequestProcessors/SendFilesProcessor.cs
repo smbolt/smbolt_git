@@ -22,16 +22,16 @@ namespace Org.WSO
       SendFilesRequest sendFilesRequest = f.Deserialize(base.TransactionEngine.TransactionBody) as SendFilesRequest;
 
       int filesStored = 0;
-      string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssfff"); 
+      string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
 
       string fileStore = g.AppDataPath + @"\Imports";
       foreach (FileObject fo in sendFilesRequest.FileObjects)
       {
-          string fileName = Path.GetFileName(fo.FileName);
-          string fileData = Encoding.UTF8.GetString(Convert.FromBase64String(fo.Data));
-          //File.WriteAllText(fileStore + @"\" + timestamp + "-" + fileName, fileData);
-          File.WriteAllText(fileStore + @"\" + fileName, fileData);
-          filesStored++; 
+        string fileName = Path.GetFileName(fo.FileName);
+        string fileData = Encoding.UTF8.GetString(Convert.FromBase64String(fo.Data));
+        //File.WriteAllText(fileStore + @"\" + timestamp + "-" + fileName, fileData);
+        File.WriteAllText(fileStore + @"\" + fileName, fileData);
+        filesStored++;
       }
 
       SendFilesResponse sendFilesResponse = new SendFilesResponse();

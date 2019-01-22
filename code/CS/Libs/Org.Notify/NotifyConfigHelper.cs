@@ -65,7 +65,7 @@ namespace Org.Notify
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to get the NotifyConfigs from the database.", ex); 
+        throw new Exception("An exception occurred while attempting to get the NotifyConfigs from the database.", ex);
       }
     }
 
@@ -77,7 +77,7 @@ namespace Org.Notify
     private static ConfigDbSpec GetNotifyConfigDbSpec()
     {
       string prefix = g.CI("NotifyDbSpecPrefix");
-      return g.GetDbSpec(prefix); 
+      return g.GetDbSpec(prefix);
     }
   }
 }

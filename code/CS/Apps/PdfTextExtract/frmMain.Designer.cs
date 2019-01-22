@@ -99,9 +99,9 @@
       this.tabPageTextExtractResults.SuspendLayout();
       this.tabPageTextExtractErrors.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.ckSuppressSections);
       this.pnlTop.Controls.Add(this.ckKeepBreakpointEnabled);
       this.pnlTop.Controls.Add(this.ckBreakpointEnabled);
@@ -112,9 +112,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1244, 34);
       this.pnlTop.TabIndex = 1;
-      // 
+      //
       // ckSuppressSections
-      // 
+      //
       this.ckSuppressSections.AutoSize = true;
       this.ckSuppressSections.Location = new System.Drawing.Point(855, 9);
       this.ckSuppressSections.Name = "ckSuppressSections";
@@ -122,9 +122,9 @@
       this.ckSuppressSections.TabIndex = 3;
       this.ckSuppressSections.Text = "Suppress Extract By Section";
       this.ckSuppressSections.UseVisualStyleBackColor = true;
-      // 
+      //
       // ckKeepBreakpointEnabled
-      // 
+      //
       this.ckKeepBreakpointEnabled.AutoSize = true;
       this.ckKeepBreakpointEnabled.Location = new System.Drawing.Point(702, 10);
       this.ckKeepBreakpointEnabled.Name = "ckKeepBreakpointEnabled";
@@ -134,9 +134,9 @@
       this.ckKeepBreakpointEnabled.Text = "Keep Breakpoint Enabled";
       this.ckKeepBreakpointEnabled.UseVisualStyleBackColor = true;
       this.ckKeepBreakpointEnabled.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // ckBreakpointEnabled
-      // 
+      //
       this.ckBreakpointEnabled.AutoSize = true;
       this.ckBreakpointEnabled.Location = new System.Drawing.Point(576, 10);
       this.ckBreakpointEnabled.Name = "ckBreakpointEnabled";
@@ -146,9 +146,9 @@
       this.ckBreakpointEnabled.Text = "Breakpoint Enabled";
       this.ckBreakpointEnabled.UseVisualStyleBackColor = true;
       this.ckBreakpointEnabled.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // btnReloadFormats
-      // 
+      //
       this.btnReloadFormats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
       this.btnReloadFormats.Location = new System.Drawing.Point(18, 5);
       this.btnReloadFormats.Margin = new System.Windows.Forms.Padding(2);
@@ -159,44 +159,44 @@
       this.btnReloadFormats.Text = "Reload Formats";
       this.btnReloadFormats.UseVisualStyleBackColor = true;
       this.btnReloadFormats.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblFileNameFilters
-      // 
+      //
       this.lblFileNameFilters.AutoSize = true;
       this.lblFileNameFilters.Location = new System.Drawing.Point(18, 42);
       this.lblFileNameFilters.Name = "lblFileNameFilters";
       this.lblFileNameFilters.Size = new System.Drawing.Size(84, 13);
       this.lblFileNameFilters.TabIndex = 2;
       this.lblFileNameFilters.Text = "File Name Filters";
-      // 
+      //
       // lblFolder
-      // 
+      //
       this.lblFolder.AutoSize = true;
       this.lblFolder.Location = new System.Drawing.Point(18, 19);
       this.lblFolder.Name = "lblFolder";
       this.lblFolder.Size = new System.Drawing.Size(62, 13);
       this.lblFolder.TabIndex = 2;
       this.lblFolder.Text = "Root Folder";
-      // 
+      //
       // cboFileNameFilters
-      // 
+      //
       this.cboFileNameFilters.FormattingEnabled = true;
       this.cboFileNameFilters.Location = new System.Drawing.Point(108, 38);
       this.cboFileNameFilters.Name = "cboFileNameFilters";
       this.cboFileNameFilters.Size = new System.Drawing.Size(589, 21);
       this.cboFileNameFilters.TabIndex = 1;
-      // 
+      //
       // cboRootFolder
-      // 
+      //
       this.cboRootFolder.FormattingEnabled = true;
       this.cboRootFolder.Location = new System.Drawing.Point(108, 15);
       this.cboRootFolder.Name = "cboRootFolder";
       this.cboRootFolder.Size = new System.Drawing.Size(589, 21);
       this.cboRootFolder.TabIndex = 1;
       this.cboRootFolder.SelectedIndexChanged += new System.EventHandler(this.cboRootFolder_SelectedIndexChanged);
-      // 
+      //
       // btnLoadFiles
-      // 
+      //
       this.btnLoadFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
       this.btnLoadFiles.Location = new System.Drawing.Point(702, 14);
       this.btnLoadFiles.Margin = new System.Windows.Forms.Padding(2);
@@ -207,55 +207,58 @@
       this.btnLoadFiles.Text = "Load Files";
       this.btnLoadFiles.UseVisualStyleBackColor = true;
       this.btnLoadFiles.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile,
-            this.mnuToolWindows});
+        this.mnuFile,
+        this.mnuToolWindows
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
       this.mnuMain.Size = new System.Drawing.Size(1244, 24);
       this.mnuMain.TabIndex = 2;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileSaveAs,
-            this.mnuFileExit});
+        this.mnuFileSaveAs,
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 22);
       this.mnuFile.Tag = "";
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuToolWindows
-      // 
+      //
       this.mnuToolWindows.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuToolWindowsToggleTreeView});
+        this.mnuToolWindowsToggleTreeView
+      });
       this.mnuToolWindows.Name = "mnuToolWindows";
       this.mnuToolWindows.Size = new System.Drawing.Size(94, 22);
       this.mnuToolWindows.Text = "Tool Windows";
-      // 
+      //
       // mnuToolWindowsToggleTreeView
-      // 
+      //
       this.mnuToolWindowsToggleTreeView.Name = "mnuToolWindowsToggleTreeView";
       this.mnuToolWindowsToggleTreeView.Size = new System.Drawing.Size(160, 22);
       this.mnuToolWindowsToggleTreeView.Tag = "TW_Float_TextExtractDesigner";
       this.mnuToolWindowsToggleTreeView.Text = "Toggle TreeView";
       this.mnuToolWindowsToggleTreeView.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPagePdfFiles);
       this.tabMain.Controls.Add(this.tabPagePdfViewer);
       this.tabMain.Controls.Add(this.tabPageRawExtractedText);
@@ -275,9 +278,9 @@
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 3;
       this.tabMain.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tabMain_MouseDoubleClick);
-      // 
+      //
       // tabPagePdfFiles
-      // 
+      //
       this.tabPagePdfFiles.Controls.Add(this.splitterPdfFiles);
       this.tabPagePdfFiles.Controls.Add(this.pnlFilesTop);
       this.tabPagePdfFiles.Location = new System.Drawing.Point(4, 22);
@@ -287,31 +290,31 @@
       this.tabPagePdfFiles.Tag = "TabPage_PdfFiles";
       this.tabPagePdfFiles.Text = "PDF Files";
       this.tabPagePdfFiles.UseVisualStyleBackColor = true;
-      // 
+      //
       // splitterPdfFiles
-      // 
+      //
       this.splitterPdfFiles.BackColor = System.Drawing.SystemColors.Control;
       this.splitterPdfFiles.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterPdfFiles.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
       this.splitterPdfFiles.Location = new System.Drawing.Point(0, 95);
       this.splitterPdfFiles.Name = "splitterPdfFiles";
-      // 
+      //
       // splitterPdfFiles.Panel1
-      // 
+      //
       this.splitterPdfFiles.Panel1.Controls.Add(this.ckListFormats);
       this.splitterPdfFiles.Panel1.Controls.Add(this.pnlPdfFiltersTop);
-      // 
+      //
       // splitterPdfFiles.Panel2
-      // 
+      //
       this.splitterPdfFiles.Panel2.Controls.Add(this.gvFiles);
       this.splitterPdfFiles.Panel2.Controls.Add(this.lblPdfFiles);
       this.splitterPdfFiles.Size = new System.Drawing.Size(1236, 476);
       this.splitterPdfFiles.SplitterDistance = 180;
       this.splitterPdfFiles.SplitterWidth = 3;
       this.splitterPdfFiles.TabIndex = 9;
-      // 
+      //
       // ckListFormats
-      // 
+      //
       this.ckListFormats.CheckOnClick = true;
       this.ckListFormats.Dock = System.Windows.Forms.DockStyle.Fill;
       this.ckListFormats.FormattingEnabled = true;
@@ -322,9 +325,9 @@
       this.ckListFormats.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ckListFormats_ItemCheck);
       this.ckListFormats.SelectedIndexChanged += new System.EventHandler(this.FormatControls_Changed);
       this.ckListFormats.SelectedValueChanged += new System.EventHandler(this.FormatControls_Changed);
-      // 
+      //
       // pnlPdfFiltersTop
-      // 
+      //
       this.pnlPdfFiltersTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.pnlPdfFiltersTop.Controls.Add(this.ckUndefinedOnly);
       this.pnlPdfFiltersTop.Controls.Add(this.ckUseFormatFilters);
@@ -333,9 +336,9 @@
       this.pnlPdfFiltersTop.Name = "pnlPdfFiltersTop";
       this.pnlPdfFiltersTop.Size = new System.Drawing.Size(180, 23);
       this.pnlPdfFiltersTop.TabIndex = 9;
-      // 
+      //
       // ckUndefinedOnly
-      // 
+      //
       this.ckUndefinedOnly.AutoSize = true;
       this.ckUndefinedOnly.Dock = System.Windows.Forms.DockStyle.Right;
       this.ckUndefinedOnly.Location = new System.Drawing.Point(91, 0);
@@ -346,9 +349,9 @@
       this.ckUndefinedOnly.Text = "UNDEF Only";
       this.ckUndefinedOnly.UseVisualStyleBackColor = true;
       this.ckUndefinedOnly.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // ckUseFormatFilters
-      // 
+      //
       this.ckUseFormatFilters.AutoSize = true;
       this.ckUseFormatFilters.Checked = true;
       this.ckUseFormatFilters.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -361,9 +364,9 @@
       this.ckUseFormatFilters.Text = "Use Filters";
       this.ckUseFormatFilters.UseVisualStyleBackColor = true;
       this.ckUseFormatFilters.CheckedChanged += new System.EventHandler(this.FormatControls_Changed);
-      // 
+      //
       // gvFiles
-      // 
+      //
       this.gvFiles.AllowUserToAddRows = false;
       this.gvFiles.AllowUserToDeleteRows = false;
       this.gvFiles.AllowUserToResizeRows = false;
@@ -385,25 +388,26 @@
       this.gvFiles.SelectionChanged += new System.EventHandler(this.gvFiles_SelectionChanged);
       this.gvFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gvFiles_MouseDown);
       this.gvFiles.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gvFiles_MouseUp);
-      // 
+      //
       // ctxMnuFileGrid
-      // 
+      //
       this.ctxMnuFileGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMnuFileGridProcessFiles});
+        this.ctxMnuFileGridProcessFiles
+      });
       this.ctxMnuFileGrid.Name = "ctxMnuFileGrid";
       this.ctxMnuFileGrid.Size = new System.Drawing.Size(136, 26);
       this.ctxMnuFileGrid.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMnuFileGrid_Opening);
-      // 
+      //
       // ctxMnuFileGridProcessFiles
-      // 
+      //
       this.ctxMnuFileGridProcessFiles.Name = "ctxMnuFileGridProcessFiles";
       this.ctxMnuFileGridProcessFiles.Size = new System.Drawing.Size(135, 22);
       this.ctxMnuFileGridProcessFiles.Tag = "ProcessFile";
       this.ctxMnuFileGridProcessFiles.Text = "&Process File";
       this.ctxMnuFileGridProcessFiles.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblPdfFiles
-      // 
+      //
       this.lblPdfFiles.BackColor = System.Drawing.SystemColors.Control;
       this.lblPdfFiles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.lblPdfFiles.Dock = System.Windows.Forms.DockStyle.Top;
@@ -414,9 +418,9 @@
       this.lblPdfFiles.TabIndex = 8;
       this.lblPdfFiles.Text = "Files located in selected path";
       this.lblPdfFiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlFilesTop
-      // 
+      //
       this.pnlFilesTop.BackColor = System.Drawing.SystemColors.Control;
       this.pnlFilesTop.Controls.Add(this.lblFileNameFilters);
       this.pnlFilesTop.Controls.Add(this.lblFolder);
@@ -432,9 +436,9 @@
       this.pnlFilesTop.Name = "pnlFilesTop";
       this.pnlFilesTop.Size = new System.Drawing.Size(1236, 95);
       this.pnlFilesTop.TabIndex = 1;
-      // 
+      //
       // btnLoadDxWorkbook
-      // 
+      //
       this.btnLoadDxWorkbook.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
       this.btnLoadDxWorkbook.Location = new System.Drawing.Point(1018, 14);
       this.btnLoadDxWorkbook.Margin = new System.Windows.Forms.Padding(2);
@@ -445,9 +449,9 @@
       this.btnLoadDxWorkbook.Text = "Load DxWorkbook";
       this.btnLoadDxWorkbook.UseVisualStyleBackColor = true;
       this.btnLoadDxWorkbook.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnDefineTextStructure
-      // 
+      //
       this.btnDefineTextStructure.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
       this.btnDefineTextStructure.Location = new System.Drawing.Point(881, 37);
       this.btnDefineTextStructure.Margin = new System.Windows.Forms.Padding(2);
@@ -458,9 +462,9 @@
       this.btnDefineTextStructure.Text = "Define Text Structure";
       this.btnDefineTextStructure.UseVisualStyleBackColor = true;
       this.btnDefineTextStructure.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRecognizeFormats
-      // 
+      //
       this.btnRecognizeFormats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
       this.btnRecognizeFormats.Location = new System.Drawing.Point(881, 14);
       this.btnRecognizeFormats.Margin = new System.Windows.Forms.Padding(2);
@@ -471,9 +475,9 @@
       this.btnRecognizeFormats.Text = "Recognize Formats";
       this.btnRecognizeFormats.UseVisualStyleBackColor = true;
       this.btnRecognizeFormats.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnFilterList
-      // 
+      //
       this.btnFilterList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
       this.btnFilterList.Location = new System.Drawing.Point(702, 37);
       this.btnFilterList.Margin = new System.Windows.Forms.Padding(2);
@@ -484,9 +488,9 @@
       this.btnFilterList.Text = "Filter List";
       this.btnFilterList.UseVisualStyleBackColor = true;
       this.btnFilterList.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // tabPagePdfViewer
-      // 
+      //
       this.tabPagePdfViewer.Controls.Add(this.pnlPdfViewerDockingTarget);
       this.tabPagePdfViewer.Location = new System.Drawing.Point(4, 22);
       this.tabPagePdfViewer.Margin = new System.Windows.Forms.Padding(2);
@@ -497,9 +501,9 @@
       this.tabPagePdfViewer.Tag = "TabPage_PdfViewer";
       this.tabPagePdfViewer.Text = "PDF Viewer";
       this.tabPagePdfViewer.UseVisualStyleBackColor = true;
-      // 
+      //
       // pnlPdfViewerDockingTarget
-      // 
+      //
       this.pnlPdfViewerDockingTarget.BackColor = System.Drawing.SystemColors.Control;
       this.pnlPdfViewerDockingTarget.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlPdfViewerDockingTarget.Location = new System.Drawing.Point(2, 2);
@@ -507,9 +511,9 @@
       this.pnlPdfViewerDockingTarget.Size = new System.Drawing.Size(1232, 567);
       this.pnlPdfViewerDockingTarget.TabIndex = 5;
       this.pnlPdfViewerDockingTarget.Tag = "DockTarget_PdfViewer";
-      // 
+      //
       // tabPageRawExtractedText
-      // 
+      //
       this.tabPageRawExtractedText.Controls.Add(this.pnlRawTextExtractDockingTarget);
       this.tabPageRawExtractedText.Location = new System.Drawing.Point(4, 22);
       this.tabPageRawExtractedText.Margin = new System.Windows.Forms.Padding(2);
@@ -520,9 +524,9 @@
       this.tabPageRawExtractedText.Tag = "TabPage_RawExtractedText";
       this.tabPageRawExtractedText.Text = "Raw Extracted Text";
       this.tabPageRawExtractedText.UseVisualStyleBackColor = true;
-      // 
+      //
       // pnlRawTextExtractDockingTarget
-      // 
+      //
       this.pnlRawTextExtractDockingTarget.BackColor = System.Drawing.SystemColors.Control;
       this.pnlRawTextExtractDockingTarget.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlRawTextExtractDockingTarget.Location = new System.Drawing.Point(2, 2);
@@ -530,9 +534,9 @@
       this.pnlRawTextExtractDockingTarget.Size = new System.Drawing.Size(1232, 567);
       this.pnlRawTextExtractDockingTarget.TabIndex = 5;
       this.pnlRawTextExtractDockingTarget.Tag = "DockTarget_RawExtractedText";
-      // 
+      //
       // tabPageFormatRecognition
-      // 
+      //
       this.tabPageFormatRecognition.Controls.Add(this.pnlFormatRecognitionDockingTarget);
       this.tabPageFormatRecognition.Location = new System.Drawing.Point(4, 22);
       this.tabPageFormatRecognition.Name = "tabPageFormatRecognition";
@@ -541,9 +545,9 @@
       this.tabPageFormatRecognition.Tag = "TabPage_FormatRecognition";
       this.tabPageFormatRecognition.Text = "Format Recognition";
       this.tabPageFormatRecognition.UseVisualStyleBackColor = true;
-      // 
+      //
       // pnlFormatRecognitionDockingTarget
-      // 
+      //
       this.pnlFormatRecognitionDockingTarget.BackColor = System.Drawing.SystemColors.Control;
       this.pnlFormatRecognitionDockingTarget.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlFormatRecognitionDockingTarget.Location = new System.Drawing.Point(0, 0);
@@ -551,9 +555,9 @@
       this.pnlFormatRecognitionDockingTarget.Size = new System.Drawing.Size(1236, 571);
       this.pnlFormatRecognitionDockingTarget.TabIndex = 6;
       this.pnlFormatRecognitionDockingTarget.Tag = "DockTarget_FormatRecognition";
-      // 
+      //
       // tabPageConfigEdit
-      // 
+      //
       this.tabPageConfigEdit.Controls.Add(this.pnlConfigEditorDockingTarget);
       this.tabPageConfigEdit.Location = new System.Drawing.Point(4, 22);
       this.tabPageConfigEdit.Margin = new System.Windows.Forms.Padding(2);
@@ -564,9 +568,9 @@
       this.tabPageConfigEdit.Text = "Configuration Editor";
       this.tabPageConfigEdit.ToolTipText = "TabPage_ConfigEdit";
       this.tabPageConfigEdit.UseVisualStyleBackColor = true;
-      // 
+      //
       // pnlConfigEditorDockingTarget
-      // 
+      //
       this.pnlConfigEditorDockingTarget.BackColor = System.Drawing.SystemColors.Control;
       this.pnlConfigEditorDockingTarget.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlConfigEditorDockingTarget.Location = new System.Drawing.Point(0, 0);
@@ -574,9 +578,9 @@
       this.pnlConfigEditorDockingTarget.Size = new System.Drawing.Size(1236, 571);
       this.pnlConfigEditorDockingTarget.TabIndex = 7;
       this.pnlConfigEditorDockingTarget.Tag = "DockTarget_ConfigEdit";
-      // 
+      //
       // tabPageTextExtractDesigner
-      // 
+      //
       this.tabPageTextExtractDesigner.Controls.Add(this.pnlTextExtractDesignerDockingTarget);
       this.tabPageTextExtractDesigner.Location = new System.Drawing.Point(4, 22);
       this.tabPageTextExtractDesigner.Name = "tabPageTextExtractDesigner";
@@ -585,9 +589,9 @@
       this.tabPageTextExtractDesigner.Tag = "TabPage_TextExtractDesigner";
       this.tabPageTextExtractDesigner.Text = "Text Extract Designer";
       this.tabPageTextExtractDesigner.UseVisualStyleBackColor = true;
-      // 
+      //
       // pnlTextExtractDesignerDockingTarget
-      // 
+      //
       this.pnlTextExtractDesignerDockingTarget.BackColor = System.Drawing.SystemColors.Control;
       this.pnlTextExtractDesignerDockingTarget.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlTextExtractDesignerDockingTarget.Location = new System.Drawing.Point(0, 0);
@@ -595,9 +599,9 @@
       this.pnlTextExtractDesignerDockingTarget.Size = new System.Drawing.Size(1236, 571);
       this.pnlTextExtractDesignerDockingTarget.TabIndex = 4;
       this.pnlTextExtractDesignerDockingTarget.Tag = "DockTarget_TextExtractDesigner";
-      // 
+      //
       // tabPageTextExtractResults
-      // 
+      //
       this.tabPageTextExtractResults.Controls.Add(this.pnlTextExtractResultsDockingTarget);
       this.tabPageTextExtractResults.Location = new System.Drawing.Point(4, 22);
       this.tabPageTextExtractResults.Margin = new System.Windows.Forms.Padding(2);
@@ -607,9 +611,9 @@
       this.tabPageTextExtractResults.Tag = "TabPage_TextExtractResults";
       this.tabPageTextExtractResults.Text = "Text Extract Results";
       this.tabPageTextExtractResults.UseVisualStyleBackColor = true;
-      // 
+      //
       // pnlTextExtractResultsDockingTarget
-      // 
+      //
       this.pnlTextExtractResultsDockingTarget.BackColor = System.Drawing.SystemColors.Control;
       this.pnlTextExtractResultsDockingTarget.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlTextExtractResultsDockingTarget.Location = new System.Drawing.Point(0, 0);
@@ -617,9 +621,9 @@
       this.pnlTextExtractResultsDockingTarget.Size = new System.Drawing.Size(1236, 571);
       this.pnlTextExtractResultsDockingTarget.TabIndex = 5;
       this.pnlTextExtractResultsDockingTarget.Tag = "DockTarget_TextExtractResults";
-      // 
+      //
       // tabPageTextExtractErrors
-      // 
+      //
       this.tabPageTextExtractErrors.Controls.Add(this.pnlTextExtractErrorsDockingTarget);
       this.tabPageTextExtractErrors.Location = new System.Drawing.Point(4, 22);
       this.tabPageTextExtractErrors.Name = "tabPageTextExtractErrors";
@@ -628,9 +632,9 @@
       this.tabPageTextExtractErrors.Tag = "TabPage_TextExtractErrors";
       this.tabPageTextExtractErrors.Text = "Text Extract Errors";
       this.tabPageTextExtractErrors.UseVisualStyleBackColor = true;
-      // 
+      //
       // pnlTextExtractErrorsDockingTarget
-      // 
+      //
       this.pnlTextExtractErrorsDockingTarget.BackColor = System.Drawing.SystemColors.Control;
       this.pnlTextExtractErrorsDockingTarget.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlTextExtractErrorsDockingTarget.Location = new System.Drawing.Point(0, 0);
@@ -638,9 +642,9 @@
       this.pnlTextExtractErrorsDockingTarget.Size = new System.Drawing.Size(1236, 571);
       this.pnlTextExtractErrorsDockingTarget.TabIndex = 6;
       this.pnlTextExtractErrorsDockingTarget.Tag = "DockTarget_TextExtractErrors";
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
       this.lblStatus.Location = new System.Drawing.Point(0, 655);
@@ -651,17 +655,17 @@
       this.lblStatus.TabIndex = 4;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // mnuFileSaveAs
-      // 
+      //
       this.mnuFileSaveAs.Name = "mnuFileSaveAs";
       this.mnuFileSaveAs.Size = new System.Drawing.Size(152, 22);
       this.mnuFileSaveAs.Tag = "SaveAs";
       this.mnuFileSaveAs.Text = "Save &As";
       this.mnuFileSaveAs.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1244, 679);
@@ -737,19 +741,19 @@
     private System.Windows.Forms.Panel pnlTextExtractDesignerDockingTarget;
     private System.Windows.Forms.ToolStripMenuItem mnuToolWindows;
     private System.Windows.Forms.ToolStripMenuItem mnuToolWindowsToggleTreeView;
-		private System.Windows.Forms.Panel pnlPdfViewerDockingTarget;
-		private System.Windows.Forms.Panel pnlRawTextExtractDockingTarget;
+    private System.Windows.Forms.Panel pnlPdfViewerDockingTarget;
+    private System.Windows.Forms.Panel pnlRawTextExtractDockingTarget;
     private System.Windows.Forms.CheckBox ckUndefinedOnly;
     private System.Windows.Forms.Button btnDefineTextStructure;
     private System.Windows.Forms.TabPage tabPageConfigEdit;
     private System.Windows.Forms.Panel pnlFormatRecognitionDockingTarget;
     private System.Windows.Forms.Panel pnlConfigEditorDockingTarget;
-		private System.Windows.Forms.ContextMenuStrip ctxMnuFileGrid;
-		private System.Windows.Forms.ToolStripMenuItem ctxMnuFileGridProcessFiles;
+    private System.Windows.Forms.ContextMenuStrip ctxMnuFileGrid;
+    private System.Windows.Forms.ToolStripMenuItem ctxMnuFileGridProcessFiles;
     private System.Windows.Forms.TabPage tabPageTextExtractResults;
     private System.Windows.Forms.Panel pnlTextExtractResultsDockingTarget;
-		private System.Windows.Forms.CheckBox ckKeepBreakpointEnabled;
-		private System.Windows.Forms.CheckBox ckBreakpointEnabled;
+    private System.Windows.Forms.CheckBox ckKeepBreakpointEnabled;
+    private System.Windows.Forms.CheckBox ckBreakpointEnabled;
     private System.Windows.Forms.Button btnLoadDxWorkbook;
     private System.Windows.Forms.CheckBox ckSuppressSections;
     private System.Windows.Forms.TabPage tabPageTextExtractErrors;

@@ -11,9 +11,15 @@ namespace Org.QB.QBXML
   public class AdditionalContactRef
   {
     [XMap(XType = XType.Element)]
-    public string ContactName { get; set; }
+    public string ContactName {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string ContactValue { get; set; }
+    public string ContactValue {
+      get;
+      set;
+    }
   }
 }

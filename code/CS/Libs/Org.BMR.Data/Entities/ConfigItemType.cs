@@ -11,20 +11,29 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "ConfigItemType")]
-    public partial class ConfigItemType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "ConfigItemType")]
+  public partial class ConfigItemType
+  {
+    public ConfigItemType()
     {
-        public ConfigItemType()
-        {
-            this.ConfigItems = new HashSet<ConfigItem>();
-        }
-    
-        public string ConfigItemTypeCode { get; set; }
-        public string ConfigItemTypeValue { get; set; }
-    
-        public virtual ICollection<ConfigItem> ConfigItems { get; set; }
+      this.ConfigItems = new HashSet<ConfigItem>();
     }
+
+    public string ConfigItemTypeCode {
+      get;
+      set;
+    }
+    public string ConfigItemTypeValue {
+      get;
+      set;
+    }
+
+    public virtual ICollection<ConfigItem> ConfigItems {
+      get;
+      set;
+    }
+  }
 }

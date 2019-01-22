@@ -12,70 +12,87 @@ using Org.GS;
 
 namespace Org.TsoControls.Controls
 {
-	public partial class EditText : PanelControlBase
-	{
-		private PanelLineElement _pe;
-		
-		public new string Text
-		{
-			get { return txt.Text; }
-			set { txt.Text = value; }
-		}
+  public partial class EditText : PanelControlBase
+  {
+    private PanelLineElement _pe;
 
-		public new string Name
-		{
-			get { return txt.Name; }
-			set
-			{
-				txt.Name = value;
-				base.Name = value;
-			}
-		}
+    public new string Text
+    {
+      get {
+        return txt.Text;
+      }
+      set {
+        txt.Text = value;
+      }
+    }
 
-		public int SelectionStart
-		{
-			get { return txt.SelectionStart; }
-			set { txt.SelectionStart = value; }
-		}
+    public new string Name
+    {
+      get {
+        return txt.Name;
+      }
+      set
+      {
+        txt.Name = value;
+        base.Name = value;
+      }
+    }
 
-		public new Color ForeColor
-		{
-			get { return txt.ForeColor; }
-			set { txt.ForeColor = value; }
-		}
+    public int SelectionStart
+    {
+      get {
+        return txt.SelectionStart;
+      }
+      set {
+        txt.SelectionStart = value;
+      }
+    }
 
-		public EditLine ParentLine { get; private set; }
+    public new Color ForeColor
+    {
+      get {
+        return txt.ForeColor;
+      }
+      set {
+        txt.ForeColor = value;
+      }
+    }
 
-		public EditText(PanelLineElement pe, EditLine parentLine)
-		{
-			InitializeComponent();
-			this.ParentLine = parentLine;
-			_pe = pe;
+    public EditLine ParentLine {
+      get;
+      private set;
+    }
 
-			Initialize();
-		}
+    public EditText(PanelLineElement pe, EditLine parentLine)
+    {
+      InitializeComponent();
+      this.ParentLine = parentLine;
+      _pe = pe;
 
-		private void Initialize()
-		{
-			this.Name = _pe.Name; 
-			this.Text = _pe.Text;
-			this.Width = _pe.Width * 13;
+      Initialize();
+    }
 
-			switch (_pe.Role)
-			{
-				case PanelLineElementRole.LineNumber:
-					this.Text = "000000";
-					break;
+    private void Initialize()
+    {
+      this.Name = _pe.Name;
+      this.Text = _pe.Text;
+      this.Width = _pe.Width * 13;
 
-				case PanelLineElementRole.LineText:
-					this.Text = "TEST TEXT";
-					break;
+      switch (_pe.Role)
+      {
+        case PanelLineElementRole.LineNumber:
+          this.Text = "000000";
+          break;
 
-				case PanelLineElementRole.LineLabel:
-					this.Text = "TSOISPF ";
-					break;
-			}
-		}
+        case PanelLineElementRole.LineText:
+          this.Text = "TEST TEXT";
+          break;
 
-	}
+        case PanelLineElementRole.LineLabel:
+          this.Text = "TSOISPF ";
+          break;
+      }
+    }
+
+  }
 }

@@ -16,20 +16,47 @@ namespace Org.FTP
     Terminated,
     Completed,
     Error
-  }    
+  }
 
   public class FtpProgress
   {
-    public FtpStatus FtpStatus { get; set; }
-    public long TotalBytes { get; set; }
-    public long BytesTransferred { get; set; }
-    public long BytesRemaining { get; set; }
-    public decimal PercentageComplete { get; set; }
-    public DateTime StartDT { get; set; }
-    public DateTime FinishDT { get; set; }
-    public TimeSpan Duration { get; set; }
-    public ConfigFtpSpec ConfigFtpSpec { get; set; }
-        
+    public FtpStatus FtpStatus {
+      get;
+      set;
+    }
+    public long TotalBytes {
+      get;
+      set;
+    }
+    public long BytesTransferred {
+      get;
+      set;
+    }
+    public long BytesRemaining {
+      get;
+      set;
+    }
+    public decimal PercentageComplete {
+      get;
+      set;
+    }
+    public DateTime StartDT {
+      get;
+      set;
+    }
+    public DateTime FinishDT {
+      get;
+      set;
+    }
+    public TimeSpan Duration {
+      get;
+      set;
+    }
+    public ConfigFtpSpec ConfigFtpSpec {
+      get;
+      set;
+    }
+
 
     public FtpProgress()
     {
@@ -41,7 +68,7 @@ namespace Org.FTP
       StartDT = DateTime.MinValue;
       FinishDT = DateTime.MinValue;
       Duration = TimeSpan.MinValue;
-      ConfigFtpSpec = null; 
+      ConfigFtpSpec = null;
     }
 
     public int GetCompletionPercentage()
@@ -55,7 +82,9 @@ namespace Org.FTP
 
         return (int)pct;
       }
-      catch { return 0; }
+      catch {
+        return 0;
+      }
     }
 
     public string GetCompletionPercentageString()

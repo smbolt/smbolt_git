@@ -11,20 +11,29 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "ProductCategory")]
-    public partial class ProductCategory
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "ProductCategory")]
+  public partial class ProductCategory
+  {
+    public ProductCategory()
     {
-        public ProductCategory()
-        {
-            this.Products = new HashSet<Product>();
-        }
-    
-        public string ProductCategoryCode { get; set; }
-        public string ProductCategoryDesc { get; set; }
-    
-        public virtual ICollection<Product> Products { get; set; }
+      this.Products = new HashSet<Product>();
     }
+
+    public string ProductCategoryCode {
+      get;
+      set;
+    }
+    public string ProductCategoryDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Product> Products {
+      get;
+      set;
+    }
+  }
 }

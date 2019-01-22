@@ -38,9 +38,9 @@
       this.pnlTop.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.gvTaskServices)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnAddNew);
       this.pnlTop.Controls.Add(this.btnClose);
       this.pnlTop.Controls.Add(this.cboEnvironment);
@@ -50,9 +50,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(879, 88);
       this.pnlTop.TabIndex = 0;
-      // 
+      //
       // btnClose
-      // 
+      //
       this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnClose.Location = new System.Drawing.Point(670, 24);
       this.btnClose.Name = "btnClose";
@@ -62,31 +62,32 @@
       this.btnClose.Text = "Close";
       this.btnClose.UseVisualStyleBackColor = true;
       this.btnClose.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // cboEnvironment
-      // 
+      //
       this.cboEnvironment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboEnvironment.FormattingEnabled = true;
       this.cboEnvironment.Items.AddRange(new object[] {
-            "Test",
-            "Prod"});
+        "Test",
+        "Prod"
+      });
       this.cboEnvironment.Location = new System.Drawing.Point(13, 37);
       this.cboEnvironment.Name = "cboEnvironment";
       this.cboEnvironment.Size = new System.Drawing.Size(262, 28);
       this.cboEnvironment.TabIndex = 1;
       this.cboEnvironment.SelectedIndexChanged += new System.EventHandler(this.cboEnvironment_SelectedIndexChanged);
-      // 
+      //
       // lblEnvironment
-      // 
+      //
       this.lblEnvironment.AutoSize = true;
       this.lblEnvironment.Location = new System.Drawing.Point(13, 13);
       this.lblEnvironment.Name = "lblEnvironment";
       this.lblEnvironment.Size = new System.Drawing.Size(98, 20);
       this.lblEnvironment.TabIndex = 0;
       this.lblEnvironment.Text = "Environment";
-      // 
+      //
       // gvTaskServices
-      // 
+      //
       this.gvTaskServices.AllowUserToAddRows = false;
       this.gvTaskServices.AllowUserToDeleteRows = false;
       this.gvTaskServices.AllowUserToResizeRows = false;
@@ -105,9 +106,9 @@
       this.gvTaskServices.Size = new System.Drawing.Size(879, 528);
       this.gvTaskServices.TabIndex = 7;
       this.gvTaskServices.Tag = "EditScheduledTask";
-      // 
+      //
       // btnAddNew
-      // 
+      //
       this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnAddNew.Location = new System.Drawing.Point(474, 24);
       this.btnAddNew.Name = "btnAddNew";
@@ -117,9 +118,9 @@
       this.btnAddNew.Text = "Add New";
       this.btnAddNew.UseVisualStyleBackColor = true;
       this.btnAddNew.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmTaskServices
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(879, 616);

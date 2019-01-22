@@ -20,24 +20,39 @@ namespace Org.GS
 
   public enum WinServiceCommand
   {
-    Start, 
+    Start,
     Stop
   }
-    
+
   [Serializable()]
   [XMap(XType = XType.Element)]
   public class WinService
   {
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
     [XMap]
-    public string MachineName { get; set; }
+    public string MachineName {
+      get;
+      set;
+    }
     [XMap]
-    public WinServiceStatus WinServiceStatus { get; set; }
+    public WinServiceStatus WinServiceStatus {
+      get;
+      set;
+    }
     [XMap]
-    public bool CanPauseAndContinue { get; set; }
+    public bool CanPauseAndContinue {
+      get;
+      set;
+    }
     [XMap]
-    public bool CanStop { get; set; }
+    public bool CanStop {
+      get;
+      set;
+    }
 
 
     public WinService()

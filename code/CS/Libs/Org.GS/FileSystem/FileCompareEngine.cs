@@ -74,7 +74,7 @@ namespace Org.GS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to get a to compare files and (if they are not matching) generate a difference " + 
+        throw new Exception("An exception occurred while attempting to get a to compare files and (if they are not matching) generate a difference " +
                             "report for base file '" + baseFile + "' and compare file '" + compareFile + "'.", ex);
       }
     }
@@ -83,23 +83,39 @@ namespace Org.GS
     {
       switch (code)
       {
-        case 0: return "Success";
-        case 1: return "Binary same";
-        case 2: return "Rules-based same";
-        case 11: return "Binary differences";
-        case 12: return "Similar";
-        case 13: return "Rules-based differences";
-        case 14: return "Conflicts detected";
-        case 100: return "Unknown error";
-        case 101: return "Conflicts detected, merge output not written";
-        case 102: return "BComp.exe unable to wait until BCompare.exe finishes";
-        case 103: return "Bcomp.exe cannot find Bcompare.exe";
-        case 104: return "Trial period expired";
-        case 105: return "Error loading script";
-        case 106: return "Script syntax error";
-        case 107: return "Script failed to load folders or files";
+        case 0:
+          return "Success";
+        case 1:
+          return "Binary same";
+        case 2:
+          return "Rules-based same";
+        case 11:
+          return "Binary differences";
+        case 12:
+          return "Similar";
+        case 13:
+          return "Rules-based differences";
+        case 14:
+          return "Conflicts detected";
+        case 100:
+          return "Unknown error";
+        case 101:
+          return "Conflicts detected, merge output not written";
+        case 102:
+          return "BComp.exe unable to wait until BCompare.exe finishes";
+        case 103:
+          return "Bcomp.exe cannot find Bcompare.exe";
+        case 104:
+          return "Trial period expired";
+        case 105:
+          return "Error loading script";
+        case 106:
+          return "Script syntax error";
+        case 107:
+          return "Script failed to load folders or files";
 
-        default: return "Unidentified code:" + code.ToString();
+        default:
+          return "Unidentified code:" + code.ToString();
       }
     }
 

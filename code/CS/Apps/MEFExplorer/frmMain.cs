@@ -78,7 +78,7 @@ namespace Org.MEFExplorer
       cboFolders.Items.Add(selectedPath);
       List<string> subDirectories = Directory.GetDirectories(selectedPath).ToList();
       foreach (string subDirectory in subDirectories)
-        cboFolders.Items.Add(subDirectory);  
+        cboFolders.Items.Add(subDirectory);
     }
 
     private void ExploreMEF()
@@ -101,7 +101,7 @@ namespace Org.MEFExplorer
 
       try
       {
-        _container.ComposeParts(this); 
+        _container.ComposeParts(this);
       }
       catch (CompositionException ex)
       {
@@ -130,7 +130,7 @@ namespace Org.MEFExplorer
           var exportingMemberInfo = ReflectionModelServices.GetExportingMember(exportDef);
           string exportDefName = exportDef.ToString();
           sb.Append(g.crlf + "    Export Def " + exportDefNbr.ToString() + "  " + exportDefName + g.crlf);
-          sb.Append("    Contract Name : " + exportDef.ContractName + g.crlf); 
+          sb.Append("    Contract Name : " + exportDef.ContractName + g.crlf);
 
           var accessors = exportingMemberInfo.GetAccessors();
           int accessorsCount = accessors.Count();
@@ -141,7 +141,7 @@ namespace Org.MEFExplorer
           {
             accessorNbr++;
             string accessorName = accessor.Name;
-            sb.Append("    Accessor " + accessorNbr.ToString() + "  " + accessorName + g.crlf); 
+            sb.Append("    Accessor " + accessorNbr.ToString() + "  " + accessorName + g.crlf);
 
             var module = accessor.Module;
             string fullyQualifiedName = module.FullyQualifiedName;
@@ -160,7 +160,7 @@ namespace Org.MEFExplorer
           }
         }
 
-        sb.Append(g.crlf); 
+        sb.Append(g.crlf);
       }
 
 
@@ -198,7 +198,7 @@ namespace Org.MEFExplorer
         if (path.IsBlank())
           path = defaultPath;
 
-        LoadFolders(path); 
+        LoadFolders(path);
       }
       catch (Exception ex)
       {

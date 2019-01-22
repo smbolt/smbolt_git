@@ -12,23 +12,23 @@ namespace Org.EdiWorkbench
   public partial class frmDisplay : Form
   {
 
-      public frmDisplay()
-      {
-          InitializeComponent();
-      }
+    public frmDisplay()
+    {
+      InitializeComponent();
+    }
 
-      public void SetText(string text)
-      {
-          rtxtDisplay.Text = text;
-          rtxtDisplay.SelectionStart = 0;
-          rtxtDisplay.SelectionLength = 0;
+    public void SetText(string text)
+    {
+      rtxtDisplay.Text = text;
+      rtxtDisplay.SelectionStart = 0;
+      rtxtDisplay.SelectionLength = 0;
 
-          Application.DoEvents();
-      }
+      Application.DoEvents();
+    }
 
-      public void Clear()
-      {
-          rtxtDisplay.Clear();
-      }
+    public void Clear()
+    {
+      rtxtDisplay.Clear();
+    }
   }
 }

@@ -9,8 +9,14 @@ namespace Org.Terminal.BMS
 {
   public class Parenthetical
   {
-    public string Name { get; set; }
-    public List<string> Parms { get; set; }
+    public string Name {
+      get;
+      set;
+    }
+    public List<string> Parms {
+      get;
+      set;
+    }
 
     public Parenthetical(string name, string parms)
     {

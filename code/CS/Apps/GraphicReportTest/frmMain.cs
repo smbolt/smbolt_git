@@ -76,26 +76,26 @@ namespace Org.GraphicReportTest
 
         txtReport.Text = _rptRigSet.GetReport();
 
-				_reportParms = new ReportParms();
-				_reportParms.PageOrientation = PageOrientation.Landscape;
-				pbReport.Size = _reportParms.ActualPageSize.ToSize();
-				pnlShadow.Size = pbReport.Size;
+        _reportParms = new ReportParms();
+        _reportParms.PageOrientation = PageOrientation.Landscape;
+        pbReport.Size = _reportParms.ActualPageSize.ToSize();
+        pnlShadow.Size = pbReport.Size;
 
-				using (var gx = pbReport.CreateGraphics())
-				{
-					using (var reportEngine = new GraphicalReportEngine(_reportParms))
-					{
-						var reportImageSet = reportEngine.ProduceReport(null);
-						if (reportImageSet.Count > 0)
-						{
-							var reportImage = reportImageSet.Values.First();
-							Image img = reportImage.Image;
-							gx.DrawImage(reportImage.Image, new Point(0, 0)); 
-						}
-					}
-				}
+        using (var gx = pbReport.CreateGraphics())
+        {
+          using (var reportEngine = new GraphicalReportEngine(_reportParms))
+          {
+            var reportImageSet = reportEngine.ProduceReport(null);
+            if (reportImageSet.Count > 0)
+            {
+              var reportImage = reportImageSet.Values.First();
+              Image img = reportImage.Image;
+              gx.DrawImage(reportImage.Image, new Point(0, 0));
+            }
+          }
+        }
 
-				tabMain.SelectedTab = tabPageReport;
+        tabMain.SelectedTab = tabPageReport;
       }
       catch (Exception ex)
       {
@@ -112,7 +112,7 @@ namespace Org.GraphicReportTest
       gx.Clear(Color.White);
       Application.DoEvents();
       gx.Dispose();
-      System.Threading.Thread.Sleep(40); 
+      System.Threading.Thread.Sleep(40);
 
       pbReport.Size = _reportParms.ActualPageSize.ToSize();
       pnlShadow.Size = pbReport.Size;
@@ -120,104 +120,104 @@ namespace Org.GraphicReportTest
       pbReport.Invalidate();
     }
 
-		private RigSet GetRigSet(string fullFilePath)
-		{
-			try
-			{
-				int pad9Number = 9000000;
+    private RigSet GetRigSet(string fullFilePath)
+    {
+      try
+      {
+        int pad9Number = 9000000;
 
 
         var rigSet = new RigSet(_reportParms);
 
-				string line = null;
-				Rig rig = null;
-				Pad pad = null;
+        string line = null;
+        Rig rig = null;
+        Pad pad = null;
 
-				using (var sr = new StreamReader(fullFilePath))
-				{
-					while ((line = sr.ReadLine()) != null)
-					{
-						if (line != null)
-						{
-							string[] tokens = line.Split(Constants.CommaDelimiter);
+        using (var sr = new StreamReader(fullFilePath))
+        {
+          while ((line = sr.ReadLine()) != null)
+          {
+            if (line != null)
+            {
+              string[] tokens = line.Split(Constants.CommaDelimiter);
 
-							if (tokens[0] == "Rig")
-								continue;
+              if (tokens[0] == "Rig")
+                continue;
 
-							string rigName = tokens[0].Trim();
+              string rigName = tokens[0].Trim();
 
-							if (rigName == "0" || rigName.IsBlank())
-								continue;
+              if (rigName == "0" || rigName.IsBlank())
+                continue;
 
-							if (!rigSet.ContainsKey(rigName))
-							{
-								rig = new Rig(rigSet);
-								rig.Name = rigName;
-								rigSet.Add(rig.Name, rig);
-							}
+              if (!rigSet.ContainsKey(rigName))
+              {
+                rig = new Rig(rigSet);
+                rig.Name = rigName;
+                rigSet.Add(rig.Name, rig);
+              }
 
-							rig = rigSet[rigName];
+              rig = rigSet[rigName];
 
-							string padNumber = tokens[1];
-							int padNbr = -1;
-							if (padNumber.IsNumeric() && padNumber.ToInt32() > 0)
-								padNbr = padNumber.ToInt32();
+              string padNumber = tokens[1];
+              int padNbr = -1;
+              if (padNumber.IsNumeric() && padNumber.ToInt32() > 0)
+                padNbr = padNumber.ToInt32();
 
-							if (padNbr < 1)
-								continue;
+              if (padNbr < 1)
+                continue;
 
-							if (padNbr == 9)
-							{
-								padNbr = pad9Number++;
-							}
+              if (padNbr == 9)
+              {
+                padNbr = pad9Number++;
+              }
 
-							if (!rig.PadSet.ContainsKey(padNbr))
-							{
-								pad = new Pad(rig);
-								pad.PadNumber = padNbr;
-								pad.PadName = tokens[2].Trim();
-								rig.PadSet.Add(pad.PadNumber, pad);
-							}
+              if (!rig.PadSet.ContainsKey(padNbr))
+              {
+                pad = new Pad(rig);
+                pad.PadNumber = padNbr;
+                pad.PadName = tokens[2].Trim();
+                rig.PadSet.Add(pad.PadNumber, pad);
+              }
 
-							pad = rig.PadSet[padNbr];
+              pad = rig.PadSet[padNbr];
 
-							int wellPtr = 9;
+              int wellPtr = 9;
 
-							for (int i = 0; i < 6; i++)
-							{
-								int wellNumber = tokens[wellPtr].ToInt32();
-								if (wellNumber > 0)
-								{
-									var well = new Well(pad);
-									well.WellNumber = wellNumber;
-									well.WellName = tokens[wellPtr - 6].Trim();
-									well.SpudDate = tokens[wellPtr + 6].ToDateTime();
-									well.CompletionDate = tokens[wellPtr + 12].ToDateTime();
-									well.UnitNumber = tokens[wellPtr + 34].ToInt32();
-									well.UnitName = tokens[wellPtr + 40].Trim();
-									well.WellOrdinal = i + 1;
+              for (int i = 0; i < 6; i++)
+              {
+                int wellNumber = tokens[wellPtr].ToInt32();
+                if (wellNumber > 0)
+                {
+                  var well = new Well(pad);
+                  well.WellNumber = wellNumber;
+                  well.WellName = tokens[wellPtr - 6].Trim();
+                  well.SpudDate = tokens[wellPtr + 6].ToDateTime();
+                  well.CompletionDate = tokens[wellPtr + 12].ToDateTime();
+                  well.UnitNumber = tokens[wellPtr + 34].ToInt32();
+                  well.UnitName = tokens[wellPtr + 40].Trim();
+                  well.WellOrdinal = i + 1;
 
-									if (pad.WellSet.ContainsKey(well.WellOrdinal))
-									{
-										string what = "what";
-									}
+                  if (pad.WellSet.ContainsKey(well.WellOrdinal))
+                  {
+                    string what = "what";
+                  }
 
-									pad.WellSet.Add(well.WellOrdinal, well);
-								}
-								wellPtr++;
-							}
-						}
-					}
-					sr.Close();
-				}
+                  pad.WellSet.Add(well.WellOrdinal, well);
+                }
+                wellPtr++;
+              }
+            }
+          }
+          sr.Close();
+        }
 
-				return rigSet;
-			}
-			catch (Exception ex)
-			{
-				throw new Exception("An exception occurred attempting to create the RigSet.", ex); 
-			}
-		}
+        return rigSet;
+      }
+      catch (Exception ex)
+      {
+        throw new Exception("An exception occurred attempting to create the RigSet.", ex);
+      }
+    }
 
     private void GetRigSetForSpan()
     {
@@ -233,25 +233,25 @@ namespace Org.GraphicReportTest
     {
       //var wb = Utility.GetWorkbook(fullFilePath);
 
-			DxWorkbook wb = new DxWorkbook();
-			wb.FilePath = fullFilePath;
+      DxWorkbook wb = new DxWorkbook();
+      wb.FilePath = fullFilePath;
 
 
-			string line = null;
+      string line = null;
 
-			using (var sr = new StreamReader(fullFilePath))
-			{
-				while ((line = sr.ReadLine()) != null)
-				{
-					if (line != null)
-					{
-						string[] tokens = line.Split(Constants.CommaDelimiter); 
+      using (var sr = new StreamReader(fullFilePath))
+      {
+        while ((line = sr.ReadLine()) != null)
+        {
+          if (line != null)
+          {
+            string[] tokens = line.Split(Constants.CommaDelimiter);
 
 
-					}
-				}
-				sr.Close();
-			}
+          }
+        }
+        sr.Close();
+      }
 
 
       return wb;
@@ -326,7 +326,7 @@ namespace Org.GraphicReportTest
           _reportEndDate = g.CI("ReportEndDate").CCYYMMDDToDateTime();
           dtpStartDate.Value = _reportStartDate;
           dtpEndDate.Value = _reportEndDate;
-          _reportParms.DateSpan = new DateSpan(_reportStartDate, _reportEndDate); 
+          _reportParms.DateSpan = new DateSpan(_reportStartDate, _reportEndDate);
         }
 
         _initialReportName = g.CI("InitialReportName");
@@ -414,7 +414,7 @@ namespace Org.GraphicReportTest
       catch(Exception ex)
       {
         MessageBox.Show("An exception occurred attempting to draw the report." + g.crlf2 + ex.ToReport(), "Graphics Report Test - Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 

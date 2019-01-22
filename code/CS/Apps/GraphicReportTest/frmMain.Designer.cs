@@ -62,35 +62,37 @@
       this.tabPageReportData.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtReport)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1365, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 735);
       this.lblStatus.Name = "lblStatus";
@@ -99,9 +101,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTopControl
-      // 
+      //
       this.pnlTopControl.Controls.Add(this.dtpEndDate);
       this.pnlTopControl.Controls.Add(this.dtpStartDate);
       this.pnlTopControl.Controls.Add(this.txtFilePath);
@@ -117,33 +119,33 @@
       this.pnlTopControl.Name = "pnlTopControl";
       this.pnlTopControl.Size = new System.Drawing.Size(1365, 98);
       this.pnlTopControl.TabIndex = 2;
-      // 
+      //
       // dtpEndDate
-      // 
+      //
       this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
       this.dtpEndDate.Location = new System.Drawing.Point(562, 69);
       this.dtpEndDate.Name = "dtpEndDate";
       this.dtpEndDate.Size = new System.Drawing.Size(86, 20);
       this.dtpEndDate.TabIndex = 4;
-      // 
+      //
       // dtpStartDate
-      // 
+      //
       this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
       this.dtpStartDate.Location = new System.Drawing.Point(470, 69);
       this.dtpStartDate.Name = "dtpStartDate";
       this.dtpStartDate.Size = new System.Drawing.Size(86, 20);
       this.dtpStartDate.TabIndex = 4;
-      // 
+      //
       // txtFilePath
-      // 
+      //
       this.txtFilePath.Location = new System.Drawing.Point(90, 39);
       this.txtFilePath.Name = "txtFilePath";
       this.txtFilePath.Size = new System.Drawing.Size(795, 20);
       this.txtFilePath.TabIndex = 3;
       this.txtFilePath.TextChanged += new System.EventHandler(this.txtFilePath_TextChanged);
-      // 
+      //
       // btnBrowse
-      // 
+      //
       this.btnBrowse.Location = new System.Drawing.Point(891, 37);
       this.btnBrowse.Name = "btnBrowse";
       this.btnBrowse.Size = new System.Drawing.Size(65, 22);
@@ -152,9 +154,9 @@
       this.btnBrowse.Text = "Browse...";
       this.btnBrowse.UseVisualStyleBackColor = true;
       this.btnBrowse.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnGetRigSetForSpan
-      // 
+      //
       this.btnGetRigSetForSpan.Location = new System.Drawing.Point(329, 67);
       this.btnGetRigSetForSpan.Name = "btnGetRigSetForSpan";
       this.btnGetRigSetForSpan.Size = new System.Drawing.Size(129, 23);
@@ -163,9 +165,9 @@
       this.btnGetRigSetForSpan.Text = "Get RigSet for Span";
       this.btnGetRigSetForSpan.UseVisualStyleBackColor = true;
       this.btnGetRigSetForSpan.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRunReport
-      // 
+      //
       this.btnRunReport.Location = new System.Drawing.Point(329, 9);
       this.btnRunReport.Name = "btnRunReport";
       this.btnRunReport.Size = new System.Drawing.Size(112, 23);
@@ -174,27 +176,27 @@
       this.btnRunReport.Text = "Run Report";
       this.btnRunReport.UseVisualStyleBackColor = true;
       this.btnRunReport.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblLocateFile
-      // 
+      //
       this.lblLocateFile.AutoSize = true;
       this.lblLocateFile.Location = new System.Drawing.Point(12, 42);
       this.lblLocateFile.Name = "lblLocateFile";
       this.lblLocateFile.Size = new System.Drawing.Size(49, 13);
       this.lblLocateFile.TabIndex = 1;
       this.lblLocateFile.Text = "Data File";
-      // 
+      //
       // lblSelectReport
-      // 
+      //
       this.lblSelectReport.AutoSize = true;
       this.lblSelectReport.Location = new System.Drawing.Point(12, 13);
       this.lblSelectReport.Name = "lblSelectReport";
       this.lblSelectReport.Size = new System.Drawing.Size(72, 13);
       this.lblSelectReport.TabIndex = 1;
       this.lblSelectReport.Text = "Select Report";
-      // 
+      //
       // cboReports
-      // 
+      //
       this.cboReports.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboReports.FormattingEnabled = true;
       this.cboReports.Location = new System.Drawing.Point(90, 10);
@@ -202,9 +204,9 @@
       this.cboReports.Size = new System.Drawing.Size(233, 21);
       this.cboReports.TabIndex = 0;
       this.cboReports.SelectedIndexChanged += new System.EventHandler(this.cboReports_SelectedIndexChanged);
-      // 
+      //
       // pnlMain
-      // 
+      //
       this.pnlMain.AutoScroll = true;
       this.pnlMain.BackColor = System.Drawing.SystemColors.AppWorkspace;
       this.pnlMain.Controls.Add(this.pbReport);
@@ -214,9 +216,9 @@
       this.pnlMain.Name = "pnlMain";
       this.pnlMain.Size = new System.Drawing.Size(1351, 581);
       this.pnlMain.TabIndex = 3;
-      // 
+      //
       // pbReport
-      // 
+      //
       this.pbReport.BackColor = System.Drawing.Color.White;
       this.pbReport.Location = new System.Drawing.Point(20, 20);
       this.pbReport.Name = "pbReport";
@@ -224,23 +226,23 @@
       this.pbReport.TabIndex = 0;
       this.pbReport.TabStop = false;
       this.pbReport.Paint += new System.Windows.Forms.PaintEventHandler(this.pbReport_Paint);
-      // 
+      //
       // pnlShadow
-      // 
+      //
       this.pnlShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
       this.pnlShadow.ForeColor = System.Drawing.Color.Black;
       this.pnlShadow.Location = new System.Drawing.Point(24, 24);
       this.pnlShadow.Name = "pnlShadow";
       this.pnlShadow.Size = new System.Drawing.Size(1280, 470);
       this.pnlShadow.TabIndex = 1;
-      // 
+      //
       // dlgFileOpen
-      // 
+      //
       this.dlgFileOpen.InitialDirectory = "C:\\";
       this.dlgFileOpen.Title = "Locate Report Data File...";
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageReport);
       this.tabMain.Controls.Add(this.tabPageReportData);
       this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -251,9 +253,9 @@
       this.tabMain.Size = new System.Drawing.Size(1365, 613);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 4;
-      // 
+      //
       // tabPageReport
-      // 
+      //
       this.tabPageReport.Controls.Add(this.pnlMain);
       this.tabPageReport.Location = new System.Drawing.Point(4, 22);
       this.tabPageReport.Name = "tabPageReport";
@@ -262,9 +264,9 @@
       this.tabPageReport.TabIndex = 0;
       this.tabPageReport.Text = "Report";
       this.tabPageReport.UseVisualStyleBackColor = true;
-      // 
+      //
       // tabPageReportData
-      // 
+      //
       this.tabPageReportData.Controls.Add(this.txtReport);
       this.tabPageReportData.Location = new System.Drawing.Point(4, 22);
       this.tabPageReportData.Name = "tabPageReportData";
@@ -273,9 +275,9 @@
       this.tabPageReportData.TabIndex = 1;
       this.tabPageReportData.Text = "Data";
       this.tabPageReportData.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtReport
-      // 
+      //
       this.txtReport.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -286,7 +288,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtReport.AutoScrollMinSize = new System.Drawing.Size(2, 13);
       this.txtReport.BackBrush = null;
       this.txtReport.CharHeight = 13;
@@ -304,9 +307,9 @@
       this.txtReport.Size = new System.Drawing.Size(1351, 581);
       this.txtReport.TabIndex = 0;
       this.txtReport.Zoom = 100;
-      // 
+      //
       // btnRefreshReport
-      // 
+      //
       this.btnRefreshReport.Location = new System.Drawing.Point(447, 9);
       this.btnRefreshReport.Name = "btnRefreshReport";
       this.btnRefreshReport.Size = new System.Drawing.Size(112, 23);
@@ -315,9 +318,9 @@
       this.btnRefreshReport.Text = "Refresh Report";
       this.btnRefreshReport.UseVisualStyleBackColor = true;
       this.btnRefreshReport.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1365, 758);
@@ -361,11 +364,11 @@
     private System.Windows.Forms.Panel pnlMain;
     private System.Windows.Forms.PictureBox pbReport;
     private System.Windows.Forms.OpenFileDialog dlgFileOpen;
-		private System.Windows.Forms.TabControl tabMain;
-		private System.Windows.Forms.TabPage tabPageReport;
-		private System.Windows.Forms.TabPage tabPageReportData;
-		private FastColoredTextBoxNS.FastColoredTextBox txtReport;
-		private System.Windows.Forms.Panel pnlShadow;
+    private System.Windows.Forms.TabControl tabMain;
+    private System.Windows.Forms.TabPage tabPageReport;
+    private System.Windows.Forms.TabPage tabPageReportData;
+    private FastColoredTextBoxNS.FastColoredTextBox txtReport;
+    private System.Windows.Forms.Panel pnlShadow;
     private System.Windows.Forms.DateTimePicker dtpEndDate;
     private System.Windows.Forms.DateTimePicker dtpStartDate;
     private System.Windows.Forms.Button btnGetRigSetForSpan;

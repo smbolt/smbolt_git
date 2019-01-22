@@ -35,9 +35,9 @@
       this.btnCancel = new System.Windows.Forms.Button();
       this.lblScheduleTask = new System.Windows.Forms.Label();
       this.SuspendLayout();
-      // 
+      //
       // cboScheduledTasks
-      // 
+      //
       this.cboScheduledTasks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboScheduledTasks.FormattingEnabled = true;
       this.cboScheduledTasks.Location = new System.Drawing.Point(21, 32);
@@ -46,9 +46,9 @@
       this.cboScheduledTasks.Size = new System.Drawing.Size(299, 21);
       this.cboScheduledTasks.TabIndex = 0;
       this.cboScheduledTasks.SelectedIndexChanged += new System.EventHandler(this.cboScheduledTasks_SelectedIndexChanged);
-      // 
+      //
       // ckCopySchedule
-      // 
+      //
       this.ckCopySchedule.AutoSize = true;
       this.ckCopySchedule.Checked = true;
       this.ckCopySchedule.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -60,9 +60,9 @@
       this.ckCopySchedule.Text = "Copy Schedule";
       this.ckCopySchedule.UseVisualStyleBackColor = true;
       this.ckCopySchedule.CheckedChanged += new System.EventHandler(this.CheckedChanged);
-      // 
+      //
       // ckCopyParameters
-      // 
+      //
       this.ckCopyParameters.AutoSize = true;
       this.ckCopyParameters.Checked = true;
       this.ckCopyParameters.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -74,9 +74,9 @@
       this.ckCopyParameters.Text = "Copy Parameters";
       this.ckCopyParameters.UseVisualStyleBackColor = true;
       this.ckCopyParameters.CheckedChanged += new System.EventHandler(this.CheckedChanged);
-      // 
+      //
       // btnOK
-      // 
+      //
       this.btnOK.Location = new System.Drawing.Point(21, 110);
       this.btnOK.Margin = new System.Windows.Forms.Padding(2);
       this.btnOK.Name = "btnOK";
@@ -86,9 +86,9 @@
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
       this.btnOK.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Location = new System.Drawing.Point(201, 110);
       this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
       this.btnCancel.Name = "btnCancel";
@@ -98,9 +98,9 @@
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblScheduleTask
-      // 
+      //
       this.lblScheduleTask.AutoSize = true;
       this.lblScheduleTask.Location = new System.Drawing.Point(21, 15);
       this.lblScheduleTask.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -108,9 +108,9 @@
       this.lblScheduleTask.Size = new System.Drawing.Size(139, 13);
       this.lblScheduleTask.TabIndex = 3;
       this.lblScheduleTask.Text = "Select the task to copy from";
-      // 
+      //
       // frmScheduledTaskList
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(341, 157);

@@ -20,14 +20,17 @@ namespace Org.Software.Tasks.Concrete
   [Export(typeof(IRequestProcessorFactory))]
   [ExportMetadata("Name", "SoftwareUpdates")]
   [ExportMetadata("Version", "1.0.0.0")]
-  [ExportMetadata("Processors", 
-                  "CheckForUpdatesProcessor_1.0.0.0 " + 
-                  "DownloadSoftwareProcessor_1.0.0.0 " + 
+  [ExportMetadata("Processors",
+                  "CheckForUpdatesProcessor_1.0.0.0 " +
+                  "DownloadSoftwareProcessor_1.0.0.0 " +
                   "GetFrameworkVersionsProcessor_1.0.0.0 "
-                  )]
+                 )]
   public class RequestProcessorFactory : IRequestProcessorFactory, IDisposable
   {
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     public RequestProcessorFactory()
     {
@@ -50,14 +53,14 @@ namespace Org.Software.Tasks.Concrete
           return new GetFrameworkVersionsProcessor();
       }
 
-      throw new Exception("Invalid request processor name and version requested '" + nameAndVersion + "'."); 
+      throw new Exception("Invalid request processor name and version requested '" + nameAndVersion + "'.");
     }
 
     ~RequestProcessorFactory()
     {
-      Dispose(); 
-    }  
-  
+      Dispose();
+    }
+
     public void Dispose()
     {
       g.LogToMemory("RequestProcessorFactory Destructor");

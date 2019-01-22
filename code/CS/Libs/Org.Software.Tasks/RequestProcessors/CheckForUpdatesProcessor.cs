@@ -19,13 +19,13 @@ using Org.GS.Configuration;
 namespace Org.Software.Tasks.Concrete
 {
   public class CheckForUpdatesProcessor : RequestProcessorBase, IRequestProcessor, IDisposable
-  { 
+  {
     public static bool _isMapped = false;
     public ConfigDbSpec _configDbSpec;
 
     public CheckForUpdatesProcessor()
     {
-      g.LogToMemory("CheckForUpdatesProcessor Created"); 
+      g.LogToMemory("CheckForUpdatesProcessor Created");
       if (!_isMapped)
       {
         if (XmlMapper.AddAssembly(Assembly.GetExecutingAssembly()))
@@ -36,23 +36,23 @@ namespace Org.Software.Tasks.Concrete
 
     public override XElement ProcessRequest()
     {
-      base.Initialize(MethodBase.GetCurrentMethod());      
-      XmlMapper.AddAssembly(Assembly.GetExecutingAssembly()); 
-      base.TransactionEngine.MessageHeader.AddPerfInfoEntry("Start of ProcessRequest");       
+      base.Initialize(MethodBase.GetCurrentMethod());
+      XmlMapper.AddAssembly(Assembly.GetExecutingAssembly());
+      base.TransactionEngine.MessageHeader.AddPerfInfoEntry("Start of ProcessRequest");
       var f = new ObjectFactory2();
       CheckForUpdatesRequest request = f.Deserialize(base.TransactionEngine.TransactionBody) as CheckForUpdatesRequest;
       CheckForUpdatesResponse response = new CheckForUpdatesResponse();
       response.CurrentVersion = request.CurrentVersion;
-      XElement transactionBody = null; 
+      XElement transactionBody = null;
 
       try
       {
         string dbSpecPrefix = g.CI("SoftwareDbSpecPrefix");
-        _configDbSpec = g.GetDbSpec(dbSpecPrefix); 
+        _configDbSpec = g.GetDbSpec(dbSpecPrefix);
 
         using (var repository = new SoftwareDataRepository(_configDbSpec))
         {
-          var softwareUpdatesForModuleVersion = repository.GetSoftwareUpdatesForModuleVersion(request.ModuleCode, request.CurrentVersion); 
+          var softwareUpdatesForModuleVersion = repository.GetSoftwareUpdatesForModuleVersion(request.ModuleCode, request.CurrentVersion);
           var updateForModuleVersion = GetUpdateForModuleVersion(softwareUpdatesForModuleVersion, request);
 
           if (updateForModuleVersion == null)
@@ -66,7 +66,7 @@ namespace Org.Software.Tasks.Concrete
             response.UpgradeAvailable = true;
             response.UpgradeRequired = false;
             response.UpgradeVersion = updateForModuleVersion.VersionValue;
-            response.PlatformString = updateForModuleVersion.SoftwarePlatformString; 
+            response.PlatformString = updateForModuleVersion.SoftwarePlatformString;
           }
 
           //IList<Bus.SoftwareModule> softwareModules = repository.GetList<Bus.SoftwareModule>("SoftwareModuleName");
@@ -97,13 +97,13 @@ namespace Org.Software.Tasks.Concrete
     {
       Dictionary<int, SoftwareUpdatesForModuleVersion> softwareUpdates = new Dictionary<int, SoftwareUpdatesForModuleVersion>();
       foreach(var softwareUpdate in list)
-        softwareUpdates.Add(softwareUpdates.Count, softwareUpdate); 
+        softwareUpdates.Add(softwareUpdates.Count, softwareUpdate);
 
       List<int> keysToRemove = new List<int>();
-      string requestOsToken = request.CurrentPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(0); 
-      string requestBitsToken = request.CurrentPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(1); 
-      string requestSpToken = request.CurrentPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(2);  
-      string requestFxToken = request.CurrentPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(3); 
+      string requestOsToken = request.CurrentPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(0);
+      string requestBitsToken = request.CurrentPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(1);
+      string requestSpToken = request.CurrentPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(2);
+      string requestFxToken = request.CurrentPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(3);
 
       if (requestOsToken.IsNotBlank())
         requestOsToken = requestOsToken.ToUpper();
@@ -118,19 +118,19 @@ namespace Org.Software.Tasks.Concrete
       foreach(var kvp in softwareUpdates)
       {
         string itemPlatformString = kvp.Value.SoftwarePlatformString;
-        string osToken = itemPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(0); 
+        string osToken = itemPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(0);
         if (osToken.IsNotBlank())
         {
           if (osToken.ToUpper() != requestOsToken)
-            keysToRemove.Add(kvp.Key); 
+            keysToRemove.Add(kvp.Key);
         }
       }
 
       foreach(int keyToRemove in keysToRemove)
-        softwareUpdates.Remove(keyToRemove); 
+        softwareUpdates.Remove(keyToRemove);
 
       if (softwareUpdates.Count == 0)
-        return null; 
+        return null;
 
       // reinitialize and remove elements based on os bits
       keysToRemove.Clear();
@@ -138,20 +138,20 @@ namespace Org.Software.Tasks.Concrete
       foreach(var kvp in softwareUpdates)
       {
         string itemPlatformString = kvp.Value.SoftwarePlatformString;
-        string bitsToken = itemPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(1); 
+        string bitsToken = itemPlatformString.ToTokenArray(Constants.CaretDelimiter).ElementAtOrDefault(1);
         if (bitsToken.IsNotBlank())
         {
           bitsToken = bitsToken.ToUpper();
           if (bitsToken != requestBitsToken && bitsToken != "#")
-            keysToRemove.Add(kvp.Key); 
+            keysToRemove.Add(kvp.Key);
         }
       }
 
       foreach(int keyToRemove in keysToRemove)
-        softwareUpdates.Remove(keyToRemove); 
+        softwareUpdates.Remove(keyToRemove);
 
       if (softwareUpdates.Count == 0)
-        return null; 
+        return null;
 
       // reinitialize and remove elements based on service pack
       keysToRemove.Clear();
@@ -164,15 +164,15 @@ namespace Org.Software.Tasks.Concrete
         {
           spToken = spToken.ToUpper();
           if (spToken != requestSpToken && spToken != "#")
-            keysToRemove.Add(kvp.Key); 
+            keysToRemove.Add(kvp.Key);
         }
       }
 
       foreach(int keyToRemove in keysToRemove)
-        softwareUpdates.Remove(keyToRemove); 
+        softwareUpdates.Remove(keyToRemove);
 
       if (softwareUpdates.Count == 0)
-        return null; 
+        return null;
 
       // reinitialize and remove elements based on .net framework version
       keysToRemove.Clear();
@@ -185,12 +185,12 @@ namespace Org.Software.Tasks.Concrete
         {
           fxToken = fxToken.ToUpper();
           if (fxToken != requestFxToken && fxToken != "#")
-            keysToRemove.Add(kvp.Key); 
+            keysToRemove.Add(kvp.Key);
         }
       }
 
       foreach(int keyToRemove in keysToRemove)
-        softwareUpdates.Remove(keyToRemove); 
+        softwareUpdates.Remove(keyToRemove);
 
       if (softwareUpdates.Count == 0)
         return null;
@@ -200,8 +200,8 @@ namespace Org.Software.Tasks.Concrete
 
     ~CheckForUpdatesProcessor()
     {
-      g.LogToMemory("CheckForUpdatesProcessor Destructor"); 
-      Dispose(false); 
-    }    
+      g.LogToMemory("CheckForUpdatesProcessor Destructor");
+      Dispose(false);
+    }
   }
 }

@@ -9,39 +9,47 @@ using Org.GS;
 namespace Org.Dx.Business
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(CollectionElements = "DxWorksheet", XType = XType.Element)] 
+  [XMap(CollectionElements = "DxWorksheet", XType = XType.Element)]
   public class DxWorksheet : DxRowSet
   {
     [XMap(IsKey = true)]
     public new string WorksheetName
     {
-      get { return base.WorksheetName; }
-      set { base.WorksheetName = value; }
+      get {
+        return base.WorksheetName;
+      }
+      set {
+        base.WorksheetName = value;
+      }
     }
 
     [XMap(DefaultValue = "False")]
     public override bool IsHidden
     {
-      get { return base.IsHidden; }
-      set { base.IsHidden = value; }
+      get {
+        return base.IsHidden;
+      }
+      set {
+        base.IsHidden = value;
+      }
     }
 
     [XMap(XType = XType.Element)]
     public XElement DxCellArray
     {
-      get 
-      { 
-        return Get_DxCellArray(); 
+      get
+      {
+        return Get_DxCellArray();
       }
-      set 
-      { 
+      set
+      {
         Set_DxCellArray(value);
         this.Initialize();
       }
     }
-    
+
     [XParm(ParmSource = XParmSource.Parent, Name = "parent")]
-    public DxWorksheet(DxWorkbook parent = null) 
+    public DxWorksheet(DxWorkbook parent = null)
     {
       this.DxObject = this;
       this.DxWorkbook = parent;
@@ -74,7 +82,7 @@ namespace Org.Dx.Business
         this.Rows.Add(rowIndex, dxRow);
       }
     }
-    
+
     public void AutoInit()
     {
       base.Initialize();
@@ -89,7 +97,7 @@ namespace Org.Dx.Business
       {
         for(int r = 0; r < this.Rows.Count; r++)
         {
-          var row = this.Rows.ElementAt(r).Value; 
+          var row = this.Rows.ElementAt(r).Value;
           for (int c = 0; c < row.Cells.Count; c++)
           {
             var cell = row.Cells.ElementAt(c).Value;
@@ -125,7 +133,7 @@ namespace Org.Dx.Business
     public void ReplaceWorksheet(DxRowSet rowSet)
     {
       this.Rows.Clear();
-      
+
       foreach (var row in rowSet.Rows)
       {
         this.Rows.Add (row.Key, row.Value);
@@ -136,7 +144,7 @@ namespace Org.Dx.Business
     {
       try
       {
-        var clone = new DxWorksheet(cloneWbParent, this.RowCount, this.ColumnCount);    
+        var clone = new DxWorksheet(cloneWbParent, this.RowCount, this.ColumnCount);
 
         clone.IsHidden = this.IsHidden;
         foreach (var kvpRow in this.Rows)

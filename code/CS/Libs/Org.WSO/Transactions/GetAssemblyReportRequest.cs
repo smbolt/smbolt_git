@@ -13,7 +13,10 @@ namespace Org.WSO.Transactions
   public class GetAssemblyReportRequest : TransactionBase
   {
     [XMap]
-    public bool IncludeAllAssemblies { get; set; }
+    public bool IncludeAllAssemblies {
+      get;
+      set;
+    }
 
     public GetAssemblyReportRequest()
     {

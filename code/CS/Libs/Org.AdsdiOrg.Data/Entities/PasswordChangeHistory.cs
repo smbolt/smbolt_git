@@ -11,23 +11,56 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PasswordChangeHistory")]
-    public partial class PasswordChangeHistory
-    {
-        public int PasswordChangeId { get; set; }
-        public System.DateTime CreateDateTime { get; set; }
-        public System.DateTime PasswordChangeRequiredDate { get; set; }
-        public int PasswordChangeReasonCode { get; set; }
-        public string PasswordChangeVerificationCode { get; set; }
-        public int StatusId { get; set; }
-        public Nullable<System.DateTime> NotificationSentDateTime { get; set; }
-        public Nullable<System.DateTime> PasswordChangeAttemptDateTime { get; set; }
-        public Nullable<System.DateTime> PasswordChangedDateTime { get; set; }
-    
-        public virtual PasswordChangeReason PasswordChangeReason { get; set; }
-        public virtual Status Status { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PasswordChangeHistory")]
+  public partial class PasswordChangeHistory
+  {
+    public int PasswordChangeId {
+      get;
+      set;
     }
+    public System.DateTime CreateDateTime {
+      get;
+      set;
+    }
+    public System.DateTime PasswordChangeRequiredDate {
+      get;
+      set;
+    }
+    public int PasswordChangeReasonCode {
+      get;
+      set;
+    }
+    public string PasswordChangeVerificationCode {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> NotificationSentDateTime {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> PasswordChangeAttemptDateTime {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> PasswordChangedDateTime {
+      get;
+      set;
+    }
+
+    public virtual PasswordChangeReason PasswordChangeReason {
+      get;
+      set;
+    }
+    public virtual Status Status {
+      get;
+      set;
+    }
+  }
 }

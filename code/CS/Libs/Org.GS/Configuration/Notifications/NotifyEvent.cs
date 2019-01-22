@@ -11,23 +11,50 @@ namespace Org.GS.Configuration
   [XMap(XType = XType.Element, CollectionElements = "NotifyGroupReference")]
   public class NotifyEvent : List<NotifyGroupReference>
   {
-    public int NotifyEventId { get; set; }
-    public int NotifyConfigId { get; set; }
+    public int NotifyEventId {
+      get;
+      set;
+    }
+    public int NotifyConfigId {
+      get;
+      set;
+    }
 
     [XMap(Name = "Name", IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(Name = "IsActive")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap]
-    public string DefaultSubject { get; set; }
+    public string DefaultSubject {
+      get;
+      set;
+    }
 
-    public string CreatedBy { get; set; }
-    public DateTime CreatedOn { get; set; }
-    public string ModifiedBy { get; set; }
-    public DateTime? ModifiedOn { get; set; }
-        
+    public string CreatedBy {
+      get;
+      set;
+    }
+    public DateTime CreatedOn {
+      get;
+      set;
+    }
+    public string ModifiedBy {
+      get;
+      set;
+    }
+    public DateTime? ModifiedOn {
+      get;
+      set;
+    }
+
     public NotifyEvent()
     {
       this.NotifyEventId = 0;

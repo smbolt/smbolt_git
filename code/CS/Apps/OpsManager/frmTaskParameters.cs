@@ -161,7 +161,7 @@ namespace Org.OpsManager
 
       if (_opsData.Environment == "Prod")
         result = MessageBox.Show("Are you sure you want to permanently delete Task Parameter with ID: " + parameterID.ToString() +
-                                      " from the Task Scheduling Database?", "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                 " from the Task Scheduling Database?", "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
       if (result == DialogResult.Yes)
       {
         using (var repo = new TaskRepository(_opsData.TasksDbSpec))
@@ -231,7 +231,7 @@ namespace Org.OpsManager
       {
         gvParametersInSet.Rows.Clear();
         string parameterSetName = gvParameterSets.SelectedCells[0].Value.ToString();
-        
+
         foreach (var taskParameter in _parameterSets[parameterSetName].TaskParameters)
         {
           gvParametersInSet.Rows.Add(taskParameter.ParameterID, taskParameter.ParameterName, taskParameter.ParameterValue, taskParameter.DataType);
@@ -318,7 +318,7 @@ namespace Org.OpsManager
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An exception occurred attempting to migrate parameter set '" + gvParameterSets.SelectedRows[0].Cells[0].Value.ToString() + 
+        MessageBox.Show("An exception occurred attempting to migrate parameter set '" + gvParameterSets.SelectedRows[0].Cells[0].Value.ToString() +
                         "'." + g.crlf2 + ex.ToReport(), "OpsManager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
@@ -356,7 +356,7 @@ namespace Org.OpsManager
       if (ctxMenu.Name == "ctxMenuTaskParameters")
       {
         gridview = gvTaskParameters;
-        
+
         ToolStripMenuItem menuItem = new ToolStripMenuItem();
         menuItem.Visible = true;
         ctxMenu.Items.Clear();
@@ -364,7 +364,7 @@ namespace Org.OpsManager
         {
           menuItem.Name = "ctxMenuTaskParametersDelete";
           menuItem.Text = "Delete";
-          menuItem.Tag = "DeleteTaskParameter";     
+          menuItem.Tag = "DeleteTaskParameter";
         }
         else
         {

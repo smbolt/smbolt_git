@@ -67,35 +67,37 @@
       this.tabPageImages.SuspendLayout();
       this.tabPageTagMatch.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1003, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 718);
       this.lblStatus.Name = "lblStatus";
@@ -104,9 +106,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.ckComputeScores);
       this.pnlTop.Controls.Add(this.btnPrev);
       this.pnlTop.Controls.Add(this.btnNext);
@@ -117,9 +119,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1003, 37);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // btnPrev
-      // 
+      //
       this.btnPrev.Location = new System.Drawing.Point(279, 7);
       this.btnPrev.Name = "btnPrev";
       this.btnPrev.Size = new System.Drawing.Size(75, 23);
@@ -128,9 +130,9 @@
       this.btnPrev.Text = "<= Prev";
       this.btnPrev.UseVisualStyleBackColor = true;
       this.btnPrev.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnNext
-      // 
+      //
       this.btnNext.Location = new System.Drawing.Point(360, 7);
       this.btnNext.Name = "btnNext";
       this.btnNext.Size = new System.Drawing.Size(75, 23);
@@ -139,9 +141,9 @@
       this.btnNext.Text = "Next =>";
       this.btnNext.UseVisualStyleBackColor = true;
       this.btnNext.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // cboImage
-      // 
+      //
       this.cboImage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboImage.FormattingEnabled = true;
       this.cboImage.Location = new System.Drawing.Point(106, 8);
@@ -149,9 +151,9 @@
       this.cboImage.Size = new System.Drawing.Size(168, 21);
       this.cboImage.TabIndex = 1;
       this.cboImage.SelectedIndexChanged += new System.EventHandler(this.cboImage_SelectedIndexChanged);
-      // 
+      //
       // btnGetText
-      // 
+      //
       this.btnGetText.Location = new System.Drawing.Point(6, 7);
       this.btnGetText.Name = "btnGetText";
       this.btnGetText.Size = new System.Drawing.Size(95, 23);
@@ -160,9 +162,9 @@
       this.btnGetText.Text = "Get OCR Text";
       this.btnGetText.UseVisualStyleBackColor = true;
       this.btnGetText.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblOcr
-      // 
+      //
       this.lblOcr.BackColor = System.Drawing.Color.White;
       this.lblOcr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.lblOcr.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,9 +176,9 @@
       this.lblOcr.Text = "OCR";
       this.lblOcr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.lblOcr.TextChanged += new System.EventHandler(this.MatchElementsTextChanged);
-      // 
+      //
       // pnlMain
-      // 
+      //
       this.pnlMain.BackColor = System.Drawing.SystemColors.Control;
       this.pnlMain.Controls.Add(this.txtComputedScores);
       this.pnlMain.Controls.Add(this.lblOcr);
@@ -192,18 +194,18 @@
       this.pnlMain.Name = "pnlMain";
       this.pnlMain.Size = new System.Drawing.Size(989, 625);
       this.pnlMain.TabIndex = 3;
-      // 
+      //
       // lblQuickenTags
-      // 
+      //
       this.lblQuickenTags.AutoSize = true;
       this.lblQuickenTags.Location = new System.Drawing.Point(524, 12);
       this.lblQuickenTags.Name = "lblQuickenTags";
       this.lblQuickenTags.Size = new System.Drawing.Size(74, 13);
       this.lblQuickenTags.TabIndex = 2;
       this.lblQuickenTags.Text = "Quicken Tags";
-      // 
+      //
       // btnMatchOcrTextToTag
-      // 
+      //
       this.btnMatchOcrTextToTag.Location = new System.Drawing.Point(12, 326);
       this.btnMatchOcrTextToTag.Name = "btnMatchOcrTextToTag";
       this.btnMatchOcrTextToTag.Size = new System.Drawing.Size(168, 23);
@@ -212,45 +214,45 @@
       this.btnMatchOcrTextToTag.Text = "Match OCR Text toTag";
       this.btnMatchOcrTextToTag.UseVisualStyleBackColor = true;
       this.btnMatchOcrTextToTag.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lbTags
-      // 
+      //
       this.lbTags.FormattingEnabled = true;
       this.lbTags.Location = new System.Drawing.Point(527, 30);
       this.lbTags.Name = "lbTags";
       this.lbTags.Size = new System.Drawing.Size(411, 251);
       this.lbTags.TabIndex = 1;
       this.lbTags.SelectedIndexChanged += new System.EventHandler(this.MatchElementsTextChanged);
-      // 
+      //
       // pbMain
-      // 
+      //
       this.pbMain.BackColor = System.Drawing.Color.White;
       this.pbMain.Location = new System.Drawing.Point(12, 30);
       this.pbMain.Name = "pbMain";
       this.pbMain.Size = new System.Drawing.Size(495, 244);
       this.pbMain.TabIndex = 0;
       this.pbMain.TabStop = false;
-      // 
+      //
       // lblClippedCheckImage
-      // 
+      //
       this.lblClippedCheckImage.AutoSize = true;
       this.lblClippedCheckImage.Location = new System.Drawing.Point(12, 12);
       this.lblClippedCheckImage.Name = "lblClippedCheckImage";
       this.lblClippedCheckImage.Size = new System.Drawing.Size(108, 13);
       this.lblClippedCheckImage.TabIndex = 2;
       this.lblClippedCheckImage.Text = "Clipped Check Image";
-      // 
+      //
       // lblTagId
-      // 
+      //
       this.lblTagId.Location = new System.Drawing.Point(833, 12);
       this.lblTagId.Name = "lblTagId";
       this.lblTagId.Size = new System.Drawing.Size(105, 15);
       this.lblTagId.TabIndex = 2;
       this.lblTagId.Text = "TagID:";
       this.lblTagId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageImages);
       this.tabMain.Controls.Add(this.tabPageTagMatch);
       this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -261,9 +263,9 @@
       this.tabMain.Size = new System.Drawing.Size(1003, 657);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 4;
-      // 
+      //
       // tabPageImages
-      // 
+      //
       this.tabPageImages.Controls.Add(this.pnlMain);
       this.tabPageImages.Location = new System.Drawing.Point(4, 22);
       this.tabPageImages.Name = "tabPageImages";
@@ -272,9 +274,9 @@
       this.tabPageImages.TabIndex = 0;
       this.tabPageImages.Text = "Images";
       this.tabPageImages.UseVisualStyleBackColor = true;
-      // 
+      //
       // tabPageTagMatch
-      // 
+      //
       this.tabPageTagMatch.Controls.Add(this.txtMatchOut);
       this.tabPageTagMatch.Controls.Add(this.lblScores);
       this.tabPageTagMatch.Controls.Add(this.lblQuickenTag);
@@ -289,50 +291,50 @@
       this.tabPageTagMatch.TabIndex = 1;
       this.tabPageTagMatch.Text = "Tag Matching";
       this.tabPageTagMatch.UseVisualStyleBackColor = true;
-      // 
+      //
       // lblScores
-      // 
+      //
       this.lblScores.AutoSize = true;
       this.lblScores.Location = new System.Drawing.Point(697, 86);
       this.lblScores.Name = "lblScores";
       this.lblScores.Size = new System.Drawing.Size(38, 13);
       this.lblScores.TabIndex = 10;
       this.lblScores.Text = "Score:";
-      // 
+      //
       // lblQuickenTag
-      // 
+      //
       this.lblQuickenTag.AutoSize = true;
       this.lblQuickenTag.Location = new System.Drawing.Point(19, 20);
       this.lblQuickenTag.Name = "lblQuickenTag";
       this.lblQuickenTag.Size = new System.Drawing.Size(69, 13);
       this.lblQuickenTag.TabIndex = 11;
       this.lblQuickenTag.Text = "Quicken Tag";
-      // 
+      //
       // lblOcrText
-      // 
+      //
       this.lblOcrText.AutoSize = true;
       this.lblOcrText.Location = new System.Drawing.Point(19, 67);
       this.lblOcrText.Name = "lblOcrText";
       this.lblOcrText.Size = new System.Drawing.Size(56, 13);
       this.lblOcrText.TabIndex = 12;
       this.lblOcrText.Text = "From OCR";
-      // 
+      //
       // txtOcrMatch
-      // 
+      //
       this.txtOcrMatch.Location = new System.Drawing.Point(19, 83);
       this.txtOcrMatch.Name = "txtOcrMatch";
       this.txtOcrMatch.Size = new System.Drawing.Size(534, 20);
       this.txtOcrMatch.TabIndex = 9;
-      // 
+      //
       // txtQuickenTag
-      // 
+      //
       this.txtQuickenTag.Location = new System.Drawing.Point(19, 36);
       this.txtQuickenTag.Name = "txtQuickenTag";
       this.txtQuickenTag.Size = new System.Drawing.Size(534, 20);
       this.txtQuickenTag.TabIndex = 8;
-      // 
+      //
       // btnComputeScores
-      // 
+      //
       this.btnComputeScores.Location = new System.Drawing.Point(559, 81);
       this.btnComputeScores.Name = "btnComputeScores";
       this.btnComputeScores.Size = new System.Drawing.Size(129, 23);
@@ -341,12 +343,12 @@
       this.btnComputeScores.Text = "Compute Scores";
       this.btnComputeScores.UseVisualStyleBackColor = true;
       this.btnComputeScores.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtMatchOut
-      // 
-      this.txtMatchOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      //
+      this.txtMatchOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                                 | System.Windows.Forms.AnchorStyles.Left)
+                                 | System.Windows.Forms.AnchorStyles.Right)));
       this.txtMatchOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtMatchOut.Location = new System.Drawing.Point(8, 132);
       this.txtMatchOut.Multiline = true;
@@ -354,9 +356,9 @@
       this.txtMatchOut.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtMatchOut.Size = new System.Drawing.Size(979, 496);
       this.txtMatchOut.TabIndex = 13;
-      // 
+      //
       // btnComputeMatchScores
-      // 
+      //
       this.btnComputeMatchScores.Location = new System.Drawing.Point(186, 326);
       this.btnComputeMatchScores.Name = "btnComputeMatchScores";
       this.btnComputeMatchScores.Size = new System.Drawing.Size(168, 23);
@@ -365,12 +367,12 @@
       this.btnComputeMatchScores.Text = "Compute Match Scores";
       this.btnComputeMatchScores.UseVisualStyleBackColor = true;
       this.btnComputeMatchScores.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtComputedScores
-      // 
-      this.txtComputedScores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      //
+      this.txtComputedScores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                                       | System.Windows.Forms.AnchorStyles.Left)
+                                       | System.Windows.Forms.AnchorStyles.Right)));
       this.txtComputedScores.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtComputedScores.Location = new System.Drawing.Point(12, 355);
       this.txtComputedScores.Multiline = true;
@@ -378,9 +380,9 @@
       this.txtComputedScores.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtComputedScores.Size = new System.Drawing.Size(961, 267);
       this.txtComputedScores.TabIndex = 14;
-      // 
+      //
       // ckComputeScores
-      // 
+      //
       this.ckComputeScores.AutoSize = true;
       this.ckComputeScores.Checked = true;
       this.ckComputeScores.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -390,9 +392,9 @@
       this.ckComputeScores.TabIndex = 3;
       this.ckComputeScores.Text = "Compute Scores";
       this.ckComputeScores.UseVisualStyleBackColor = true;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1003, 741);
@@ -430,10 +432,10 @@
     private System.Windows.Forms.Panel pnlTop;
     private System.Windows.Forms.Panel pnlMain;
     private System.Windows.Forms.PictureBox pbMain;
-		private System.Windows.Forms.ComboBox cboImage;
-		private System.Windows.Forms.Button btnPrev;
-		private System.Windows.Forms.Button btnNext;
-		private System.Windows.Forms.Button btnGetText;
+    private System.Windows.Forms.ComboBox cboImage;
+    private System.Windows.Forms.Button btnPrev;
+    private System.Windows.Forms.Button btnNext;
+    private System.Windows.Forms.Button btnGetText;
     private System.Windows.Forms.Label lblOcr;
     private System.Windows.Forms.Label lblQuickenTags;
     private System.Windows.Forms.ListBox lbTags;

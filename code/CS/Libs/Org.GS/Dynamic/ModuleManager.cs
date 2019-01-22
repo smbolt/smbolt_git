@@ -11,19 +11,33 @@ namespace Org.GS.Dynamic
 {
   public class ModuleManager
   {
-    public Module EntryModule { get; set; } 
-    public string RuntimePath { get; set; }
-    public string RepositoryPath { get; set; }
-    public ModuleSet ModulesInRepository { get; set; }
+    public Module EntryModule {
+      get;
+      set;
+    }
+    public string RuntimePath {
+      get;
+      set;
+    }
+    public string RepositoryPath {
+      get;
+      set;
+    }
+    public ModuleSet ModulesInRepository {
+      get;
+      set;
+    }
 
     private string _mainModule;
-    public string MainModule 
+    public string MainModule
     {
-      get { return this._mainModule; }
+      get {
+        return this._mainModule;
+      }
       set
       {
-          this._mainModule = value;
-          MarkMainModule();
+        this._mainModule = value;
+        MarkMainModule();
       }
     }
 
@@ -49,7 +63,7 @@ namespace Org.GS.Dynamic
       List<string> moduleFolders = Directory.GetDirectories(this.RepositoryPath).ToList();
       foreach(string moduleFolder in moduleFolders)
       {
-        List<string> versionFolders = Directory.GetDirectories(moduleFolder).ToList();                
+        List<string> versionFolders = Directory.GetDirectories(moduleFolder).ToList();
         foreach (string versionFolder in versionFolders)
         {
           int position = 0;
@@ -72,7 +86,7 @@ namespace Org.GS.Dynamic
         }
       }
 
-      return moduleSet; 
+      return moduleSet;
     }
 
     private void MarkMainModule()
@@ -81,6 +95,6 @@ namespace Org.GS.Dynamic
         throw new Exception("Invalid mainModule specified '" + this._mainModule + "' - not found in module repository.");
 
       this.ModulesInRepository.MainModule = this._mainModule;
-    }      
+    }
   }
 }

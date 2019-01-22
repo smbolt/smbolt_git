@@ -11,22 +11,52 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "SoftwareVersion")]
-    public partial class SoftwareVersion
-    {
-        public int SoftwareVersionId { get; set; }
-        public int SoftwareModuleId { get; set; }
-        public string SoftwareVersion1 { get; set; }
-        public int SoftwarePlatformId { get; set; }
-        public int StatusId { get; set; }
-        public int RepositoryId { get; set; }
-    
-        public virtual SoftwareModule SoftwareModule { get; set; }
-        public virtual SoftwarePlatform SoftwarePlatform { get; set; }
-        public virtual SoftwareRepository SoftwareRepository { get; set; }
-        public virtual Status Status { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "SoftwareVersion")]
+  public partial class SoftwareVersion
+  {
+    public int SoftwareVersionId {
+      get;
+      set;
     }
+    public int SoftwareModuleId {
+      get;
+      set;
+    }
+    public string SoftwareVersion1 {
+      get;
+      set;
+    }
+    public int SoftwarePlatformId {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+    public int RepositoryId {
+      get;
+      set;
+    }
+
+    public virtual SoftwareModule SoftwareModule {
+      get;
+      set;
+    }
+    public virtual SoftwarePlatform SoftwarePlatform {
+      get;
+      set;
+    }
+    public virtual SoftwareRepository SoftwareRepository {
+      get;
+      set;
+    }
+    public virtual Status Status {
+      get;
+      set;
+    }
+  }
 }

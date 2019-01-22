@@ -10,15 +10,21 @@ namespace Org.RPT
   public class ReportColumn
   {
     [XMap(IsKey = true, IsRequired = true)]
-    public string ColumnId { get; set; }
+    public string ColumnId {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public int ColumnPos { get; set; }
+    public int ColumnPos {
+      get;
+      set;
+    }
 
     public ReportColumn()
     {
       this.ColumnId = String.Empty;
-      this.ColumnPos = 0; 
+      this.ColumnPos = 0;
     }
   }
 }

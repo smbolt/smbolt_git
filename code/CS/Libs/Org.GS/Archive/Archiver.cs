@@ -26,8 +26,8 @@ namespace Org.GS
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to create archive file from contents of directory '" + 
-                            sourceDirectory + "'.  Target file to create is '" + targetPath + "'.", ex); 
+        throw new Exception("An exception occurred attempting to create archive file from contents of directory '" +
+                            sourceDirectory + "'.  Target file to create is '" + targetPath + "'.", ex);
       }
     }
 
@@ -43,7 +43,7 @@ namespace Org.GS
       catch(Exception ex)
       {
         throw(new Exception("An exception occurred during the archival extract process.", ex));
-      }          
+      }
     }
 
     //public FileSystemItem ProcessArchive(string path)

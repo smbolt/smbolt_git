@@ -11,24 +11,60 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "AccountLoginToken")]
-    public partial class AccountLoginToken
-    {
-        public long AccountLoginTokenId { get; set; }
-        public int AccountId { get; set; }
-        public string Token { get; set; }
-        public System.DateTime TokenCreateDateTime { get; set; }
-        public System.DateTime TokenExpireDateTime { get; set; }
-        public int TokenStatusId { get; set; }
-        public string IpAddress { get; set; }
-        public int TimesUsed { get; set; }
-        public string ClientHash { get; set; }
-        public Nullable<System.DateTime> LoggedOutDateTime { get; set; }
-    
-        public virtual AccountTokenStatu AccountTokenStatu { get; set; }
-        public virtual Account Account { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "AccountLoginToken")]
+  public partial class AccountLoginToken
+  {
+    public long AccountLoginTokenId {
+      get;
+      set;
     }
+    public int AccountId {
+      get;
+      set;
+    }
+    public string Token {
+      get;
+      set;
+    }
+    public System.DateTime TokenCreateDateTime {
+      get;
+      set;
+    }
+    public System.DateTime TokenExpireDateTime {
+      get;
+      set;
+    }
+    public int TokenStatusId {
+      get;
+      set;
+    }
+    public string IpAddress {
+      get;
+      set;
+    }
+    public int TimesUsed {
+      get;
+      set;
+    }
+    public string ClientHash {
+      get;
+      set;
+    }
+    public Nullable<System.DateTime> LoggedOutDateTime {
+      get;
+      set;
+    }
+
+    public virtual AccountTokenStatu AccountTokenStatu {
+      get;
+      set;
+    }
+    public virtual Account Account {
+      get;
+      set;
+    }
+  }
 }

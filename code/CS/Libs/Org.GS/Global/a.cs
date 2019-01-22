@@ -16,9 +16,13 @@ namespace Org.GS
     private Logger Logger;
     private bool _deferEstablishLogContext = false;
     private bool _initializationBegun = false;
-    private string[] _args = new string[] { }; 
+    private string[] _args = new string[] { };
     private string _memoryLog = String.Empty;
-    public string MemoryLog { get { return _memoryLog; } }
+    public string MemoryLog {
+      get {
+        return _memoryLog;
+      }
+    }
 
     public string _appConfigSuffix;
 
@@ -27,7 +31,7 @@ namespace Org.GS
       get
       {
         if (this.Logger == null)
-            return String.Empty;
+          return String.Empty;
         return this.Logger.LogFilePath;
       }
     }
@@ -36,7 +40,7 @@ namespace Org.GS
     {
       Initialize();
     }
-    
+
     public a(bool deferEstablishLogContext, bool runFsActions)
     {
       _deferEstablishLogContext = deferEstablishLogContext;
@@ -144,7 +148,7 @@ namespace Org.GS
 
         StartupLogging.WriteStartupLog("In a.Initialize 5");
 
-        StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName + "' is starting up.  In a.Initialize."); 
+        StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName + "' is starting up.  In a.Initialize.");
 
         string vaultPath = g.ResourcePath + @"\config.bin";
         if (File.Exists(vaultPath) && !g.IsVaultLoadedFromFile)
@@ -173,7 +177,7 @@ namespace Org.GS
           if (logSpec.LogDbSpecPrefix.IsNotBlank())
           {
             var logDbSpec = g.GetDbSpec(logSpec.LogDbSpecPrefix);
-            LogContext.LogConfigDbSpec = logDbSpec; 
+            LogContext.LogConfigDbSpec = logDbSpec;
           }
         }
 
@@ -198,9 +202,9 @@ namespace Org.GS
 
         StartupLogging.WriteStartupLog("In a.Initialize 7");
 
-        this.UpdateLicenseStatus(); 
+        this.UpdateLicenseStatus();
 
-        g.DiagnosticsManager.SetRunUnitDiagnosticsMode(g.ToEnum<DiagnosticsMode>(g.AppConfig.GetCI("RunUnitDiagnosticsMode"), DiagnosticsMode.None)); 
+        g.DiagnosticsManager.SetRunUnitDiagnosticsMode(g.ToEnum<DiagnosticsMode>(g.AppConfig.GetCI("RunUnitDiagnosticsMode"), DiagnosticsMode.None));
 
         if (g.IsModuleHost && !g.IsModuleConfigLoaded)
         {
@@ -237,7 +241,7 @@ namespace Org.GS
       {
         g.LogToMemory("Exception occurred in Initialize method of 'a' object." + g.crlf + "Exception Report:" + g.crlf + ex.ToReport());
         _memoryLog = g.MemoryLog;
-        throw new Exception("An error occurred during the Initialize method of the 'a' (application object).", ex); 
+        throw new Exception("An error occurred during the Initialize method of the 'a' (application object).", ex);
       }
     }
 
@@ -358,7 +362,7 @@ namespace Org.GS
     {
       this.Logger.ClearLogFile();
     }
-    
+
     private void AssertAppDataStructure(string appDataPath)
     {
       appDataPath = appDataPath.Replace("/", "\\");
@@ -371,7 +375,7 @@ namespace Org.GS
       for (int i = programDataNodes.Length; i < nodes.Length; i++)
       {
         if (nodes[i] == "AppData")
-            appDataParentPath = path;
+          appDataParentPath = path;
 
         path = path + @"\" + nodes[i];
 
@@ -418,7 +422,7 @@ namespace Org.GS
       g.MEFCatalog = g.AppDataPath + @"\MEFCatalog";
 
       if (File.Exists(g.MEFCatalog))
-        File.Delete(g.MEFCatalog); 
+        File.Delete(g.MEFCatalog);
 
       if (!Directory.Exists(g.MEFCatalog))
         Directory.CreateDirectory(g.MEFCatalog);
@@ -461,24 +465,24 @@ namespace Org.GS
             if (DateTime.Now > expiringDate)
             {
               g.AppInfo.LicenseStatus = LicenseStatus.ExpiringSoon;
-              g.AppInfo.LicenseRemainingDays = (g.AppInfo.FreeUntil - DateTime.Now).Days; 
+              g.AppInfo.LicenseRemainingDays = (g.AppInfo.FreeUntil - DateTime.Now).Days;
             }
-            return; 
+            return;
           }
 
-          g.AppInfo.LicenseStatus = LicenseStatus.Expired; 
+          g.AppInfo.LicenseStatus = LicenseStatus.Expired;
           break;
-                    
+
         default:
           g.AppInfo.LicenseStatus = LicenseStatus.Perpetual;
-          return; 
+          return;
       }
     }
 
     private int? GetModuleId()
     {
       string executablePath = AppDomain.CurrentDomain.BaseDirectory.ToLower();
-      
+
       if (executablePath.Contains(@"\gptaskservice"))
       {
         int beg = executablePath.IndexOf(@"\gptaskservice");
@@ -487,16 +491,26 @@ namespace Org.GS
 
         switch (serviceName)
         {
-          case "gptaskservice01": return 2601;
-          case "gptaskservice02": return 2602;
-          case "gptaskservice03": return 2603;
-          case "gptaskservice04": return 2604;
-          case "gptaskservice05": return 2605;
-          case "gptaskservice06": return 2606;
-          case "gptaskservice07": return 2607;
-          case "gptaskservice08": return 2608;
-          case "gptaskservice09": return 2609;
-          case "gptaskservice10": return 2610;
+          case "gptaskservice01":
+            return 2601;
+          case "gptaskservice02":
+            return 2602;
+          case "gptaskservice03":
+            return 2603;
+          case "gptaskservice04":
+            return 2604;
+          case "gptaskservice05":
+            return 2605;
+          case "gptaskservice06":
+            return 2606;
+          case "gptaskservice07":
+            return 2607;
+          case "gptaskservice08":
+            return 2608;
+          case "gptaskservice09":
+            return 2609;
+          case "gptaskservice10":
+            return 2610;
         }
       }
 

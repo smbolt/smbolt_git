@@ -8,11 +8,26 @@ namespace Org.Crossword.Business
 {
   public class Clue
   {
-    public int WordId { get; set; }
-    public int Number { get; set; }
-    public int Format { get; set; }
-    public string Phrase { get; set; }
-    public Direction Direction { get; set; }
+    public int WordId {
+      get;
+      set;
+    }
+    public int Number {
+      get;
+      set;
+    }
+    public int Format {
+      get;
+      set;
+    }
+    public string Phrase {
+      get;
+      set;
+    }
+    public Direction Direction {
+      get;
+      set;
+    }
 
     public Clue(int wordId, int number, int format, string phrase, Direction direction)
     {

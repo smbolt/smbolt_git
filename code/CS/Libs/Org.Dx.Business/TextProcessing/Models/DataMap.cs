@@ -14,24 +14,43 @@ namespace Org.Dx.Business.TextProcessing
   public class DataMap
   {
     [XMap(IsRequired = true)]
-    public string TextLocation { get; set; }
+    public string TextLocation {
+      get;
+      set;
+    }
 
     //[XMap(XType = XType.Element, IsRequired = true)]
     //public LevelIndex LevelIndex { get; set; }
 
     [XMap(IsRequired = true)]
-    public string TokenIndex { get; set; }
+    public string TokenIndex {
+      get;
+      set;
+    }
 
     [XMap(Name = "ExpectedTokenTypes")]
-    public string ExpectedTokenTypesString { get; set; }
+    public string ExpectedTokenTypesString {
+      get;
+      set;
+    }
 
-    private Dictionary<int, string> ExpectedTokenTypes { get { return LoadExpectedTokenTypes(); } }
+    private Dictionary<int, string> ExpectedTokenTypes {
+      get {
+        return LoadExpectedTokenTypes();
+      }
+    }
 
     [XMap(IsRequired = true)]
-    public string DataName { get; set; }
+    public string DataName {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public string DBDataType { get; set; }
+    public string DBDataType {
+      get;
+      set;
+    }
 
     private Text _text;
     private RecogSpecSet _recogSpecSet;

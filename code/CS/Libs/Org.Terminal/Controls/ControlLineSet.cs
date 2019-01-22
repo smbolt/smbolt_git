@@ -8,7 +8,11 @@ namespace Org.Terminal.Controls
 {
   public class ControlLineSet : SortedList<int, ControlLine>
   {
-    public int LastLine { get { return Get_LastLine(); } }
+    public int LastLine {
+      get {
+        return Get_LastLine();
+      }
+    }
 
     private int Get_LastLine()
     {

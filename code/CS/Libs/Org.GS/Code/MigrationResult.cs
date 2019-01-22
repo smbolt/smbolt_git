@@ -8,20 +8,62 @@ namespace Org.GS.Code
 {
   public class MigrationResult
   {
-    public int SourceFolders { get; set; }
-    public int SourceFiles { get; set; }
-    public int DestFoldersToBeDeleted { get; set; }
-    public int DestFoldersDeleted { get; set; }
-    public int DestFilesToBeDeleted { get; set; }
-    public int DestFilesDeleted { get; set; }
-    public int DestFoldersToBeCreated { get; set; }
-    public int DestFoldersCreated { get; set; }
-    public int FilesToBeCopied { get; set; }
-    public int FilesCopied { get; set; }
-    public int FilesToBeReplaced { get; set; }
-    public int FilesReplaced { get; set; }
-    public int FilesToBeExcluded { get; set; }
-    public int FilesExcluded { get; set; }
+    public int SourceFolders {
+      get;
+      set;
+    }
+    public int SourceFiles {
+      get;
+      set;
+    }
+    public int DestFoldersToBeDeleted {
+      get;
+      set;
+    }
+    public int DestFoldersDeleted {
+      get;
+      set;
+    }
+    public int DestFilesToBeDeleted {
+      get;
+      set;
+    }
+    public int DestFilesDeleted {
+      get;
+      set;
+    }
+    public int DestFoldersToBeCreated {
+      get;
+      set;
+    }
+    public int DestFoldersCreated {
+      get;
+      set;
+    }
+    public int FilesToBeCopied {
+      get;
+      set;
+    }
+    public int FilesCopied {
+      get;
+      set;
+    }
+    public int FilesToBeReplaced {
+      get;
+      set;
+    }
+    public int FilesReplaced {
+      get;
+      set;
+    }
+    public int FilesToBeExcluded {
+      get;
+      set;
+    }
+    public int FilesExcluded {
+      get;
+      set;
+    }
 
     public MigrationResult()
     {
@@ -29,7 +71,7 @@ namespace Org.GS.Code
       this.SourceFiles = 0;
       this.DestFoldersToBeDeleted = 0;
       this.DestFoldersDeleted = 0;
-      this.DestFilesToBeDeleted = 0; 
+      this.DestFilesToBeDeleted = 0;
       this.DestFilesDeleted = 0;
       this.DestFoldersToBeDeleted = 0;
       this.DestFoldersCreated = 0;

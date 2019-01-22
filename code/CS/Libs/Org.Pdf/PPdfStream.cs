@@ -15,8 +15,14 @@ namespace Org.Pdf
 {
   public class PPdfStream : PObject
   {
-    public int CompressionLevel { get; private set; }
-    public int Length { get; private set; }
+    public int CompressionLevel {
+      get;
+      private set;
+    }
+    public int Length {
+      get;
+      private set;
+    }
     private PdfStream _pdfStream;
 
     public PPdfStream(Document document, string name, PdfObject pdfObject, PObject parent = null, bool isPage = false)
@@ -44,7 +50,7 @@ namespace Org.Pdf
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred in the PPdfStream constructor.", ex); 
+        throw new Exception("An exception occurred in the PPdfStream constructor.", ex);
       }
     }
   }

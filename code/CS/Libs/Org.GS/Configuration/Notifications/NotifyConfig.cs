@@ -12,51 +12,118 @@ namespace Org.GS.Configuration
   [XMap(XType = XType.Element)]
   public class NotifyConfig
   {
-    public AppConfig AppConfig { get; set; }
-    public ProgramConfig ProgramConfig { get; set; }
-    public NotifyConfigSet NotifyConfigSet { get; set; }
+    public AppConfig AppConfig {
+      get;
+      set;
+    }
+    public ProgramConfig ProgramConfig {
+      get;
+      set;
+    }
+    public NotifyConfigSet NotifyConfigSet {
+      get;
+      set;
+    }
 
-    public int NotifyConfigId { get; set; }
+    public int NotifyConfigId {
+      get;
+      set;
+    }
 
     [XMap(IsKey = true, IsRequired = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap]
-    public string SupportEmail { get; set; }
+    public string SupportEmail {
+      get;
+      set;
+    }
 
     [XMap]
-    public string SupportPhone { get; set; }
+    public string SupportPhone {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="True")]
-    public bool SendEmail { get; set; }
+    public bool SendEmail {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool SendSms { get; set; }
+    public bool SendSms {
+      get;
+      set;
+    }
 
-    public string CreatedBy { get; set; }
-    public DateTime CreatedOn { get; set; }
-    public string ModifiedBy { get; set; }
-    public DateTime? ModifiedOn { get; set; }
+    public string CreatedBy {
+      get;
+      set;
+    }
+    public DateTime CreatedOn {
+      get;
+      set;
+    }
+    public string ModifiedBy {
+      get;
+      set;
+    }
+    public DateTime? ModifiedOn {
+      get;
+      set;
+    }
 
 
     [XMap(XType = XType.Element, CollectionElements = "SmtpProfile")]
-    public SmtpProfileSet SmtpProfileSet { get; set; }
+    public SmtpProfileSet SmtpProfileSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "NotifyGroup", WrapperElement = "NotifyGroupSet")]
-    public NotifyGroupSet NotifyGroupSet { get; set; }
+    public NotifyGroupSet NotifyGroupSet {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "NotifyEvent", WrapperElement = "NotifyEventSet")]
-    public NotifyEventSet NotifyEventSet { get; set; }
+    public NotifyEventSet NotifyEventSet {
+      get;
+      set;
+    }
 
     public Dictionary<int, NotifyEventGroup> NotifyEventGroups;
-    public List<int> NotifyEventGroupsIds { get { return Get_NotifyEventGroupIds(); } }
+    public List<int> NotifyEventGroupsIds {
+      get {
+        return Get_NotifyEventGroupIds();
+      }
+    }
 
-    public bool IsEmpty { get { return this.IsThisEmpty(); } }
-    public int TotalActiveEmailAddresses { get { return Get_TotalActiveEmailAddresses(); } }
-    public int TotalActiveSmsNumbers { get { return Get_TotalActiveSmsNumbers(); } }
+    public bool IsEmpty {
+      get {
+        return this.IsThisEmpty();
+      }
+    }
+    public int TotalActiveEmailAddresses {
+      get {
+        return Get_TotalActiveEmailAddresses();
+      }
+    }
+    public int TotalActiveSmsNumbers {
+      get {
+        return Get_TotalActiveSmsNumbers();
+      }
+    }
 
     [XParm(Name = "parent", ParmSource = XParmSource.Parent)]
     public NotifyConfig(NotifyConfigSet parent)
@@ -122,7 +189,7 @@ namespace Org.GS.Configuration
       if (this.NotifyEventSet.Count > 0)
         return false;
 
-      return true;            
+      return true;
     }
 
     private List<int> Get_NotifyEventGroupIds()
@@ -179,11 +246,11 @@ namespace Org.GS.Configuration
     {
       StringBuilder sb = new StringBuilder();
       sb.Append("Notify Config: " + this.Name + g.crlf +
-                  "  Support Email: " + this.SupportEmail + g.crlf +
-                  "  Support Phone: " + this.SupportPhone + g.crlf +
-                  "  Is Active:     " + this.IsActive + g.crlf +
-                  "  Send Email:    " + this.SendEmail + g.crlf +
-                  "  Send SMS:      " + this.SendSms + g.crlf2);
+                "  Support Email: " + this.SupportEmail + g.crlf +
+                "  Support Phone: " + this.SupportPhone + g.crlf +
+                "  Is Active:     " + this.IsActive + g.crlf +
+                "  Send Email:    " + this.SendEmail + g.crlf +
+                "  Send SMS:      " + this.SendSms + g.crlf2);
       foreach (NotifyEvent notifyEvent in this.NotifyEventSet.Values)
       {
         sb.Append("  Notify Event: " + notifyEvent.Name + g.crlf +

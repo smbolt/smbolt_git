@@ -7,8 +7,14 @@ namespace Org.WSO
 {
   public class WsPerformanceInfo
   {
-    public DateTime DateTime { get; set; }
-    public string Label { get; set; }
+    public DateTime DateTime {
+      get;
+      set;
+    }
+    public string Label {
+      get;
+      set;
+    }
 
 
     public WsPerformanceInfo()

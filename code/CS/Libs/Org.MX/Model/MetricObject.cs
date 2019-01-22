@@ -9,12 +9,31 @@ namespace Org.MX.Model
 {
   public class MetricObject
   {
-    public int ID { get; set; }
-    public int Code { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public bool IsActive { get; set; }
-    public string Report { get { return Get_Report(); } }
+    public int ID {
+      get;
+      set;
+    }
+    public int Code {
+      get;
+      set;
+    }
+    public string Name {
+      get;
+      set;
+    }
+    public string Description {
+      get;
+      set;
+    }
+    public bool IsActive {
+      get;
+      set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public MetricObject(int id, int code, string name, string description = "", bool isActive = true)
     {

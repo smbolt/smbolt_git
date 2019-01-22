@@ -9,7 +9,11 @@ namespace Org.MX.Model
 {
   public class MetricObjectSet<T> : SortedList<int, T>
   {
-    public string Report { get { return Get_Report(); } }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     private string Get_Report()
     {

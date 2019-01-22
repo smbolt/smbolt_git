@@ -8,10 +8,22 @@ namespace Org.GraphicReports
 {
   public class ReportDiagnostics
   {
-    public bool DiagnosticsActive { get; set; }
-    public bool ShowMargins { get; set; }
-    public bool ShowGrid { get; set; }
-    public bool ShowDiagInfo { get; set; }
+    public bool DiagnosticsActive {
+      get;
+      set;
+    }
+    public bool ShowMargins {
+      get;
+      set;
+    }
+    public bool ShowGrid {
+      get;
+      set;
+    }
+    public bool ShowDiagInfo {
+      get;
+      set;
+    }
 
     public ReportDiagnostics()
     {

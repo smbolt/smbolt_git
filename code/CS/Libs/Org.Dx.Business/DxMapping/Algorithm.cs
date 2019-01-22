@@ -10,9 +10,19 @@ namespace Org.Dx.Business
   public class Algorithm
   {
     private string _rawSpec;
-    public AlgorithmType AlgorithmType { get; set; }
-    public string AlgorithmSpec { get; set; }
-    public string Report { get { return Get_Report(); } }
+    public AlgorithmType AlgorithmType {
+      get;
+      set;
+    }
+    public string AlgorithmSpec {
+      get;
+      set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public Algorithm(string rawSpec)
     {
@@ -41,7 +51,7 @@ namespace Org.Dx.Business
         algorithmType = _rawSpec.Substring(0, pos);
         algorithmRawSpec = _rawSpec.Substring(pos);
       }
-      
+
 
       this.AlgorithmType = g.ToEnum<AlgorithmType>(algorithmType, AlgorithmType.NotSet);
 

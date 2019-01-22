@@ -86,35 +86,37 @@
       ((System.ComponentModel.ISupportInitialize)(this.gvColumns)).BeginInit();
       this.ctxMenuGrid.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1393, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 768);
       this.lblStatus.Name = "lblStatus";
@@ -123,29 +125,29 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // splitterMain
-      // 
+      //
       this.splitterMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.splitterMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterMain.Location = new System.Drawing.Point(4, 84);
       this.splitterMain.Name = "splitterMain";
-      // 
+      //
       // splitterMain.Panel1
-      // 
+      //
       this.splitterMain.Panel1.Controls.Add(this.tvSolutions);
       this.splitterMain.Panel1.Controls.Add(this.pnlTreeViewBottom);
       this.splitterMain.Panel1.Controls.Add(this.pnlTreeViewTop);
-      // 
+      //
       // splitterMain.Panel2
-      // 
+      //
       this.splitterMain.Panel2.Controls.Add(this.tabMain);
       this.splitterMain.Size = new System.Drawing.Size(1393, 684);
       this.splitterMain.SplitterDistance = 337;
       this.splitterMain.TabIndex = 2;
-      // 
+      //
       // tvSolutions
-      // 
+      //
       this.tvSolutions.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.tvSolutions.ContextMenuStrip = this.ctxMenuSolution;
       this.tvSolutions.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -158,129 +160,130 @@
       this.tvSolutions.TabIndex = 2;
       this.tvSolutions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvSolutions_AfterSelect);
       this.tvSolutions.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tvSolutions_MouseDown);
-      // 
+      //
       // ctxMenuSolution
-      // 
+      //
       this.ctxMenuSolution.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMenuSolutionRefresh,
-            this.ctxMenuSolutionAddSolution,
-            this.ctxMenuSolutionAddLogicalTable,
-            this.ctxMenuSolutionUpdateSolution,
-            this.ctxMenuSolutionDeleteSolution,
-            this.ctxMenuSolutionAddColumn,
-            this.ctxMenuSolutionUpdateLogicalTable,
-            this.ctxMenuSolutionDeleteLogicalTable,
-            this.ctxMenuSolutionUpdateColumn,
-            this.ctxMenuSolutionDeleteColumn});
+        this.ctxMenuSolutionRefresh,
+        this.ctxMenuSolutionAddSolution,
+        this.ctxMenuSolutionAddLogicalTable,
+        this.ctxMenuSolutionUpdateSolution,
+        this.ctxMenuSolutionDeleteSolution,
+        this.ctxMenuSolutionAddColumn,
+        this.ctxMenuSolutionUpdateLogicalTable,
+        this.ctxMenuSolutionDeleteLogicalTable,
+        this.ctxMenuSolutionUpdateColumn,
+        this.ctxMenuSolutionDeleteColumn
+      });
       this.ctxMenuSolution.Name = "ctxMenuSolution";
       this.ctxMenuSolution.Size = new System.Drawing.Size(185, 224);
       this.ctxMenuSolution.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenuSolution_Opening);
-      // 
+      //
       // ctxMenuSolutionRefresh
-      // 
+      //
       this.ctxMenuSolutionRefresh.Name = "ctxMenuSolutionRefresh";
       this.ctxMenuSolutionRefresh.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionRefresh.Tag = "Refresh";
       this.ctxMenuSolutionRefresh.Text = "Refresh";
       this.ctxMenuSolutionRefresh.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuSolutionAddSolution
-      // 
+      //
       this.ctxMenuSolutionAddSolution.Name = "ctxMenuSolutionAddSolution";
       this.ctxMenuSolutionAddSolution.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionAddSolution.Tag = "AddSolution";
       this.ctxMenuSolutionAddSolution.Text = "Add Solution";
       this.ctxMenuSolutionAddSolution.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuSolutionAddLogicalTable
-      // 
+      //
       this.ctxMenuSolutionAddLogicalTable.Name = "ctxMenuSolutionAddLogicalTable";
       this.ctxMenuSolutionAddLogicalTable.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionAddLogicalTable.Tag = "AddLogicalTable";
       this.ctxMenuSolutionAddLogicalTable.Text = "Add Logical Table";
       this.ctxMenuSolutionAddLogicalTable.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuSolutionUpdateSolution
-      // 
+      //
       this.ctxMenuSolutionUpdateSolution.Name = "ctxMenuSolutionUpdateSolution";
       this.ctxMenuSolutionUpdateSolution.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionUpdateSolution.Tag = "UpdateSolution";
       this.ctxMenuSolutionUpdateSolution.Text = "Update Solution";
       this.ctxMenuSolutionUpdateSolution.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuSolutionDeleteSolution
-      // 
+      //
       this.ctxMenuSolutionDeleteSolution.Name = "ctxMenuSolutionDeleteSolution";
       this.ctxMenuSolutionDeleteSolution.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionDeleteSolution.Tag = "DeleteSolution";
       this.ctxMenuSolutionDeleteSolution.Text = "Delete Solution";
       this.ctxMenuSolutionDeleteSolution.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuSolutionAddColumn
-      // 
+      //
       this.ctxMenuSolutionAddColumn.Name = "ctxMenuSolutionAddColumn";
       this.ctxMenuSolutionAddColumn.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionAddColumn.Tag = "AddColumn";
       this.ctxMenuSolutionAddColumn.Text = "Add Column";
       this.ctxMenuSolutionAddColumn.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuSolutionUpdateLogicalTable
-      // 
+      //
       this.ctxMenuSolutionUpdateLogicalTable.Name = "ctxMenuSolutionUpdateLogicalTable";
       this.ctxMenuSolutionUpdateLogicalTable.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionUpdateLogicalTable.Tag = "UpdateLogicalTable";
       this.ctxMenuSolutionUpdateLogicalTable.Text = "Update Logical Table";
       this.ctxMenuSolutionUpdateLogicalTable.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuSolutionDeleteLogicalTable
-      // 
+      //
       this.ctxMenuSolutionDeleteLogicalTable.Name = "ctxMenuSolutionDeleteLogicalTable";
       this.ctxMenuSolutionDeleteLogicalTable.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionDeleteLogicalTable.Tag = "DeleteLogicalTable";
       this.ctxMenuSolutionDeleteLogicalTable.Text = "Delete Logical Table";
       this.ctxMenuSolutionDeleteLogicalTable.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuSolutionUpdateColumn
-      // 
+      //
       this.ctxMenuSolutionUpdateColumn.Name = "ctxMenuSolutionUpdateColumn";
       this.ctxMenuSolutionUpdateColumn.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionUpdateColumn.Tag = "UpdateColumn";
       this.ctxMenuSolutionUpdateColumn.Text = "Update Column";
       this.ctxMenuSolutionUpdateColumn.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuSolutionDeleteColumn
-      // 
+      //
       this.ctxMenuSolutionDeleteColumn.Name = "ctxMenuSolutionDeleteColumn";
       this.ctxMenuSolutionDeleteColumn.Size = new System.Drawing.Size(184, 22);
       this.ctxMenuSolutionDeleteColumn.Tag = "DeleteColumn";
       this.ctxMenuSolutionDeleteColumn.Text = "Delete Column";
       this.ctxMenuSolutionDeleteColumn.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // imgListTreeView
-      // 
+      //
       this.imgListTreeView.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
       this.imgListTreeView.ImageSize = new System.Drawing.Size(16, 16);
       this.imgListTreeView.TransparentColor = System.Drawing.Color.Transparent;
-      // 
+      //
       // pnlTreeViewBottom
-      // 
+      //
       this.pnlTreeViewBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.pnlTreeViewBottom.Location = new System.Drawing.Point(0, 650);
       this.pnlTreeViewBottom.Name = "pnlTreeViewBottom";
       this.pnlTreeViewBottom.Size = new System.Drawing.Size(335, 32);
       this.pnlTreeViewBottom.TabIndex = 1;
-      // 
+      //
       // pnlTreeViewTop
-      // 
+      //
       this.pnlTreeViewTop.Controls.Add(this.lblTreeViewTop);
       this.pnlTreeViewTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlTreeViewTop.Location = new System.Drawing.Point(0, 0);
       this.pnlTreeViewTop.Name = "pnlTreeViewTop";
       this.pnlTreeViewTop.Size = new System.Drawing.Size(335, 35);
       this.pnlTreeViewTop.TabIndex = 0;
-      // 
+      //
       // lblTreeViewTop
-      // 
+      //
       this.lblTreeViewTop.BackColor = System.Drawing.Color.SteelBlue;
       this.lblTreeViewTop.Dock = System.Windows.Forms.DockStyle.Fill;
       this.lblTreeViewTop.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -291,12 +294,12 @@
       this.lblTreeViewTop.TabIndex = 0;
       this.lblTreeViewTop.Text = "SDX Solutions";
       this.lblTreeViewTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      // 
+      //
       // tabMain
-      // 
-      this.tabMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      //
+      this.tabMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                             | System.Windows.Forms.AnchorStyles.Left)
+                             | System.Windows.Forms.AnchorStyles.Right)));
       this.tabMain.Controls.Add(this.tabPageDesign);
       this.tabMain.Controls.Add(this.tabPageLoad);
       this.tabMain.Controls.Add(this.tabPageExtract);
@@ -306,9 +309,9 @@
       this.tabMain.SelectedIndex = 0;
       this.tabMain.Size = new System.Drawing.Size(1067, 698);
       this.tabMain.TabIndex = 2;
-      // 
+      //
       // tabPageDesign
-      // 
+      //
       this.tabPageDesign.Controls.Add(this.splitterDesign);
       this.tabPageDesign.Location = new System.Drawing.Point(4, 5);
       this.tabPageDesign.Name = "tabPageDesign";
@@ -316,34 +319,34 @@
       this.tabPageDesign.Size = new System.Drawing.Size(1059, 689);
       this.tabPageDesign.TabIndex = 0;
       this.tabPageDesign.UseVisualStyleBackColor = true;
-      // 
+      //
       // splitterDesign
-      // 
+      //
       this.splitterDesign.Dock = System.Windows.Forms.DockStyle.Fill;
       this.splitterDesign.Location = new System.Drawing.Point(3, 3);
       this.splitterDesign.Name = "splitterDesign";
       this.splitterDesign.Orientation = System.Windows.Forms.Orientation.Horizontal;
-      // 
+      //
       // splitterDesign.Panel1
-      // 
+      //
       this.splitterDesign.Panel1.Controls.Add(this.gvColumns);
       this.splitterDesign.Panel1.Controls.Add(this.pnlDesignColumnsTop);
       this.splitterDesign.Panel2Collapsed = true;
       this.splitterDesign.Size = new System.Drawing.Size(1053, 683);
       this.splitterDesign.SplitterDistance = 643;
       this.splitterDesign.TabIndex = 1;
-      // 
+      //
       // pnlDesignColumnsTop
-      // 
+      //
       this.pnlDesignColumnsTop.Controls.Add(this.lblDesignColumns);
       this.pnlDesignColumnsTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlDesignColumnsTop.Location = new System.Drawing.Point(0, 0);
       this.pnlDesignColumnsTop.Name = "pnlDesignColumnsTop";
       this.pnlDesignColumnsTop.Size = new System.Drawing.Size(1053, 32);
       this.pnlDesignColumnsTop.TabIndex = 1;
-      // 
+      //
       // lblDesignColumns
-      // 
+      //
       this.lblDesignColumns.BackColor = System.Drawing.Color.SteelBlue;
       this.lblDesignColumns.Dock = System.Windows.Forms.DockStyle.Fill;
       this.lblDesignColumns.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -354,26 +357,26 @@
       this.lblDesignColumns.TabIndex = 1;
       this.lblDesignColumns.Text = "Logical Table Design";
       this.lblDesignColumns.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      // 
+      //
       // tabPageLoad
-      // 
+      //
       this.tabPageLoad.Location = new System.Drawing.Point(4, 5);
       this.tabPageLoad.Name = "tabPageLoad";
       this.tabPageLoad.Padding = new System.Windows.Forms.Padding(3);
       this.tabPageLoad.Size = new System.Drawing.Size(1059, 689);
       this.tabPageLoad.TabIndex = 1;
       this.tabPageLoad.UseVisualStyleBackColor = true;
-      // 
+      //
       // tabPageExtract
-      // 
+      //
       this.tabPageExtract.Location = new System.Drawing.Point(4, 5);
       this.tabPageExtract.Name = "tabPageExtract";
       this.tabPageExtract.Size = new System.Drawing.Size(1059, 689);
       this.tabPageExtract.TabIndex = 2;
       this.tabPageExtract.UseVisualStyleBackColor = true;
-      // 
+      //
       // pnlToolBar
-      // 
+      //
       this.pnlToolBar.Controls.Add(this.lblMode);
       this.pnlToolBar.Controls.Add(this.cboMode);
       this.pnlToolBar.Controls.Add(this.lblEnvironment);
@@ -383,18 +386,18 @@
       this.pnlToolBar.Name = "pnlToolBar";
       this.pnlToolBar.Size = new System.Drawing.Size(1393, 60);
       this.pnlToolBar.TabIndex = 3;
-      // 
+      //
       // lblMode
-      // 
+      //
       this.lblMode.AutoSize = true;
       this.lblMode.Location = new System.Drawing.Point(160, 11);
       this.lblMode.Name = "lblMode";
       this.lblMode.Size = new System.Drawing.Size(34, 13);
       this.lblMode.TabIndex = 1;
       this.lblMode.Text = "Mode";
-      // 
+      //
       // cboMode
-      // 
+      //
       this.cboMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboMode.FormattingEnabled = true;
       this.cboMode.Location = new System.Drawing.Point(160, 27);
@@ -402,18 +405,18 @@
       this.cboMode.Size = new System.Drawing.Size(128, 21);
       this.cboMode.TabIndex = 0;
       this.cboMode.SelectedIndexChanged += new System.EventHandler(this.cboMode_SelectedIndexChanged);
-      // 
+      //
       // lblEnvironment
-      // 
+      //
       this.lblEnvironment.AutoSize = true;
       this.lblEnvironment.Location = new System.Drawing.Point(12, 11);
       this.lblEnvironment.Name = "lblEnvironment";
       this.lblEnvironment.Size = new System.Drawing.Size(66, 13);
       this.lblEnvironment.TabIndex = 1;
       this.lblEnvironment.Text = "Environment";
-      // 
+      //
       // cboEnvironment
-      // 
+      //
       this.cboEnvironment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboEnvironment.FormattingEnabled = true;
       this.cboEnvironment.Location = new System.Drawing.Point(12, 27);
@@ -421,9 +424,9 @@
       this.cboEnvironment.Size = new System.Drawing.Size(128, 21);
       this.cboEnvironment.TabIndex = 0;
       this.cboEnvironment.SelectedIndexChanged += new System.EventHandler(this.cboEnvironment_SelectedIndexChanged);
-      // 
+      //
       // gvColumns
-      // 
+      //
       this.gvColumns.AllowUserToAddRows = false;
       this.gvColumns.AllowUserToDeleteRows = false;
       this.gvColumns.AllowUserToResizeRows = false;
@@ -449,52 +452,53 @@
       this.gvColumns.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvColumns_CellMouseDown);
       this.gvColumns.SelectionChanged += new System.EventHandler(this.gvColumns_SelectionChanged);
       this.gvColumns.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gvColumns_MouseDown);
-      // 
+      //
       // ctxMenuGrid
-      // 
+      //
       this.ctxMenuGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMenuGridAddColumn,
-            this.ctxMenuGridUpdateColumn,
-            this.ctxMenuGridDeleteColumn,
-            this.ctxMenuGridReorderColumns});
+        this.ctxMenuGridAddColumn,
+        this.ctxMenuGridUpdateColumn,
+        this.ctxMenuGridDeleteColumn,
+        this.ctxMenuGridReorderColumns
+      });
       this.ctxMenuGrid.Name = "ctxMenuGrid";
       this.ctxMenuGrid.Size = new System.Drawing.Size(167, 92);
       this.ctxMenuGrid.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenuGrid_Opening);
-      // 
+      //
       // ctxMenuGridUpdateColumn
-      // 
+      //
       this.ctxMenuGridUpdateColumn.Name = "ctxMenuGridUpdateColumn";
       this.ctxMenuGridUpdateColumn.Size = new System.Drawing.Size(166, 22);
       this.ctxMenuGridUpdateColumn.Tag = "UpdateColumn";
       this.ctxMenuGridUpdateColumn.Text = "Update Column";
       this.ctxMenuGridUpdateColumn.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuGridDeleteColumn
-      // 
+      //
       this.ctxMenuGridDeleteColumn.Name = "ctxMenuGridDeleteColumn";
       this.ctxMenuGridDeleteColumn.Size = new System.Drawing.Size(166, 22);
       this.ctxMenuGridDeleteColumn.Tag = "DeleteColumn";
       this.ctxMenuGridDeleteColumn.Text = "Delete Column";
       this.ctxMenuGridDeleteColumn.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuGridAddColumn
-      // 
+      //
       this.ctxMenuGridAddColumn.Name = "ctxMenuGridAddColumn";
       this.ctxMenuGridAddColumn.Size = new System.Drawing.Size(166, 22);
       this.ctxMenuGridAddColumn.Tag = "AddColumn";
       this.ctxMenuGridAddColumn.Text = "Add Column";
       this.ctxMenuGridAddColumn.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuGridReorderColumns
-      // 
+      //
       this.ctxMenuGridReorderColumns.Name = "ctxMenuGridReorderColumns";
       this.ctxMenuGridReorderColumns.Size = new System.Drawing.Size(166, 22);
       this.ctxMenuGridReorderColumns.Tag = "ReorderColumns";
       this.ctxMenuGridReorderColumns.Text = "Reorder Columns";
       this.ctxMenuGridReorderColumns.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1401, 796);

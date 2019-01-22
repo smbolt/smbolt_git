@@ -27,7 +27,7 @@ namespace Org.AppConfigManager
       InitializeForm();
     }
 
-    
+
     private void Action(object sender, EventArgs e)
     {
       this.Cursor = Cursors.WaitCursor;
@@ -89,8 +89,8 @@ namespace Org.AppConfigManager
       catch (Exception ex)
       {
         txtOutput.Text = "An exception occurred during the initialization of the application object." + g.crlf2 +
-                        "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
-                        "Exception Report:" + g.crlf + ex.ToReport();
+                         "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
+                         "Exception Report:" + g.crlf + ex.ToReport();
         tabMain.SelectedTab = tabPageOutput;
         return;
       }
@@ -99,30 +99,30 @@ namespace Org.AppConfigManager
       txtMemoryLogCount.Enabled = ckStopAtMemoryLogCount.Checked;
 
       this.Size = new Size(Screen.PrimaryScreen.Bounds.Width * formHorizontalSize / 100,
-                      Screen.PrimaryScreen.Bounds.Height * formVerticalSize / 100);
+                           Screen.PrimaryScreen.Bounds.Height * formVerticalSize / 100);
       this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Width / 2,
                                 Screen.PrimaryScreen.Bounds.Height / 2 - this.Height / 2);
-      _bcExePath = g.CI("BCExePath"); 
+      _bcExePath = g.CI("BCExePath");
     }
 
     private void LoadOriginalFile()
-    {            
+    {
       this.Cursor = Cursors.WaitCursor;
 
       string compareFolder = g.ExportsPath;
       string originalFilePath = compareFolder + @"\originalFile.xml";
       var originalXml = XElement.Parse(File.ReadAllText(originalFilePath));
-      File.WriteAllText(originalFilePath, originalXml.ToString());      
+      File.WriteAllText(originalFilePath, originalXml.ToString());
       txtOriginalFile.Text = File.ReadAllText(originalFilePath);
       txtOriginalFile.SelectionStart = 0;
-      txtOriginalFile.SelectionLength = 0; 
+      txtOriginalFile.SelectionLength = 0;
       tabMain.SelectedTab = tabPageOriginalFile;
 
       this.Cursor = Cursors.Default;
     }
 
     private void LoadCompareFile()
-    {            
+    {
       this.Cursor = Cursors.WaitCursor;
 
       string compareFolder = g.ExportsPath;
@@ -131,7 +131,7 @@ namespace Org.AppConfigManager
       File.WriteAllText(compareFilePath, compareXml.ToString());
       txtCompareFile.Text = File.ReadAllText(compareFilePath);
       txtCompareFile.SelectionStart = 0;
-      txtCompareFile.SelectionLength = 0; 
+      txtCompareFile.SelectionLength = 0;
 
       tabMain.SelectedTab = tabPageCompareFile;
 
@@ -139,27 +139,27 @@ namespace Org.AppConfigManager
     }
 
     private void SaveOriginalFile()
-    {            
+    {
       this.Cursor = Cursors.WaitCursor;
 
       string compareFolder = g.ExportsPath;
       string originalFilePath = compareFolder + @"\originalFile.xml";
       var xml = XElement.Parse(txtOriginalFile.Text);
       File.WriteAllText(originalFilePath, xml.ToString());
-      txtOriginalFile.Text = File.ReadAllText(originalFilePath); 
+      txtOriginalFile.Text = File.ReadAllText(originalFilePath);
 
       this.Cursor = Cursors.Default;
     }
 
     private void SaveCompareFile()
-    {            
+    {
       this.Cursor = Cursors.WaitCursor;
 
       string compareFolder = g.ExportsPath;
       string compareFilePath = compareFolder + @"\compareFile.xml";
       var xml = XElement.Parse(txtCompareFile.Text);
       File.WriteAllText(compareFilePath, xml.ToString());
-      txtCompareFile.Text = File.ReadAllText(compareFilePath); 
+      txtCompareFile.Text = File.ReadAllText(compareFilePath);
 
       this.Cursor = Cursors.Default;
     }
@@ -172,7 +172,7 @@ namespace Org.AppConfigManager
       {
         g.ClearMemoryLog();
 
-        g.AppConfig.ReloadFromFile(); 
+        g.AppConfig.ReloadFromFile();
 
         browserCompare.Navigate("about:blank");
         Application.DoEvents();
@@ -186,17 +186,17 @@ namespace Org.AppConfigManager
 
         File.WriteAllText(originalFilePath, XElement.Parse(txtOriginalFile.Text).ToString());
         File.WriteAllText(compareFilePath, XElement.Parse(txtCompareFile.Text).ToString());
-        
+
         string compareFileFullPath = compareFolder + @"\" + "compareResults.html";
         string bcScriptsPath = g.ImportsPath + @"\bcscriptHtml.txt";
 
         ProcessParms processParms = new ProcessParms();
         processParms.ExecutablePath = _bcExePath;
-        processParms.Args = new string[] {  
+        processParms.Args = new string[] {
           "/silent",
           "@" + bcScriptsPath,
           originalFilePath,
-          compareFilePath, 
+          compareFilePath,
           compareFileFullPath
         };
 
@@ -212,8 +212,8 @@ namespace Org.AppConfigManager
       catch (Exception ex)
       {
         txtOutput.Text = "An exception occurred during the comparision of xml files." + g.crlf2 +
-                        "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
-                        "Exception Report:" + g.crlf + ex.ToReport();
+                         "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
+                         "Exception Report:" + g.crlf + ex.ToReport();
         tabMain.SelectedTab = tabPageOutput;
         return;
       }
@@ -229,7 +229,7 @@ namespace Org.AppConfigManager
       {
         g.ClearMemoryLog();
 
-        g.AppConfig.ReloadFromFile(); 
+        g.AppConfig.ReloadFromFile();
 
         browserCompare.Navigate("about:blank");
         Application.DoEvents();
@@ -242,7 +242,7 @@ namespace Org.AppConfigManager
         string compareFilePath = compareFolder + @"\compareFile.cmp";
 
         File.WriteAllText(originalFilePath, XElement.Parse(txtOriginalFile.Text).ToString());
-        
+
         var f = new ObjectFactory2();
 
         var o = f.Deserialize(XElement.Parse(txtOriginalFile.Text));
@@ -254,11 +254,11 @@ namespace Org.AppConfigManager
 
         ProcessParms processParms = new ProcessParms();
         processParms.ExecutablePath = _bcExePath;
-        processParms.Args = new string[] {  
+        processParms.Args = new string[] {
           "/silent",
           "@" + bcScriptsPath,
           originalFilePath,
-          compareFilePath, 
+          compareFilePath,
           compareFileFullPath
         };
 
@@ -282,8 +282,8 @@ namespace Org.AppConfigManager
       catch (Exception ex)
       {
         txtOutput.Text = "An exception occurred during the comparision of xml files." + g.crlf2 +
-                        "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
-                        "Exception Report:" + g.crlf + ex.ToReport();
+                         "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
+                         "Exception Report:" + g.crlf + ex.ToReport();
         tabMain.SelectedTab = tabPageOutput;
         return;
       }
@@ -342,8 +342,8 @@ namespace Org.AppConfigManager
       catch (Exception ex)
       {
         txtOutput.Text = "An exception occurred during the comparision of xml files." + g.crlf2 +
-                        "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
-                        "Exception Report:" + g.crlf + ex.ToReport();
+                         "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
+                         "Exception Report:" + g.crlf + ex.ToReport();
         tabMain.SelectedTab = tabPageOutput;
         return;
       }
@@ -361,13 +361,13 @@ namespace Org.AppConfigManager
         appConfig.LoadFromString(txtOriginalFile.Text);
 
         MessageBox.Show("The original file text successfully deserialized into the AppConfig object.", "AppConfigManager - Success",
-                         MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
       catch (Exception ex)
       {
         txtOutput.Text = "An exception occurred attempting to deserialize the original file to AppConfig." + g.crlf2 +
-                        "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
-                        "Exception Report:" + g.crlf + ex.ToReport();
+                         "Memory Log:" + g.crlf + g.MemoryLog + g.crlf2 +
+                         "Exception Report:" + g.crlf + ex.ToReport();
         tabMain.SelectedTab = tabPageOutput;
         return;
 
@@ -376,10 +376,10 @@ namespace Org.AppConfigManager
 
     private void UpdateHtmlFonts(string path)
     {
-        string htmlText = File.ReadAllText(path);
-        htmlText = htmlText.Replace("body { font-family: sans-serif; font-size: 11pt;", "body { font-family: lucida console; font-size: 8pt;");
-        htmlText = htmlText.Replace("monospace; font-size: 10pt; }", "lucida console; font-size: 8pt; }");
-        File.WriteAllText(path, htmlText); 
+      string htmlText = File.ReadAllText(path);
+      htmlText = htmlText.Replace("body { font-family: sans-serif; font-size: 11pt;", "body { font-family: lucida console; font-size: 8pt;");
+      htmlText = htmlText.Replace("monospace; font-size: 10pt; }", "lucida console; font-size: 8pt; }");
+      File.WriteAllText(path, htmlText);
     }
 
     private void TestMemoryLog()
@@ -389,7 +389,7 @@ namespace Org.AppConfigManager
 
       for (int i = 0; i < 50000; i++)
       {
-        g.LogToMemory("abcdefghijklmnopqrstuvwxy"); 
+        g.LogToMemory("abcdefghijklmnopqrstuvwxy");
       }
 
       txtOriginalFile.Text = g.MemoryLog;

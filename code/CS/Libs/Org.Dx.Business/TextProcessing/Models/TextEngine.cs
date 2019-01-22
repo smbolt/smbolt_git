@@ -10,7 +10,11 @@ namespace Org.Dx.Business.TextProcessing
   public class TextEngine : IDisposable
   {
     private SortedList<string, string> _sortedTextLines;
-    public SortedList<string, string> SortedTextLines { get { return _sortedTextLines; } }
+    public SortedList<string, string> SortedTextLines {
+      get {
+        return _sortedTextLines;
+      }
+    }
 
     public TextEngine()
     {
@@ -25,7 +29,7 @@ namespace Org.Dx.Business.TextProcessing
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to create sorted text patterns from the lines of text.", ex); 
+        throw new Exception("An exception occurred while attempting to create sorted text patterns from the lines of text.", ex);
       }
     }
 
@@ -34,7 +38,7 @@ namespace Org.Dx.Business.TextProcessing
       _sortedTextLines = new SortedList<string,string>();
       string txt1 = text.Replace("\r\n", "\n");
       string[] lines = txt1.Split(Constants.NewLineDelimiter, StringSplitOptions.RemoveEmptyEntries);
-      
+
       for (int i = 0; i < lines.Length; i++)
       {
         string condensedText = lines[i].CondenseText();
@@ -54,11 +58,11 @@ namespace Org.Dx.Business.TextProcessing
 
         int seq = 0;
         string keyText = condensedText.PadToLength(64);
-        string key = keyText + "-" + seq.ToString("00000"); 
+        string key = keyText + "-" + seq.ToString("00000");
         while (_sortedTextLines.ContainsKey(key))
         {
           seq++;
-          key = keyText + "-" + seq.ToString("00000"); 
+          key = keyText + "-" + seq.ToString("00000");
         }
         _sortedTextLines.Add(key, i.ToString("00000") + "-" + lines[i].Trim());
       }
@@ -88,9 +92,11 @@ namespace Org.Dx.Business.TextProcessing
       foreach (var kvp in multipleOccurrenceCounter)
       {
         if (!highestOccurrrences.ContainsKey(kvp.Value))
-          highestOccurrrences.Add(kvp.Value, new List<string>() { kvp.Key });
+          highestOccurrrences.Add(kvp.Value, new List<string>() {
+          kvp.Key
+        });
         else
-          highestOccurrrences[kvp.Value].Add(kvp.Key); 
+          highestOccurrrences[kvp.Value].Add(kvp.Key);
       }
 
 
@@ -115,7 +121,7 @@ namespace Org.Dx.Business.TextProcessing
 
 
       // not sure if we need this next block of code??
-      
+
       int indexOfMax = -1;
       int maxOccurs = 0;
       for(int i = 0; i < sortedCounter.Count; i++)
@@ -155,7 +161,7 @@ namespace Org.Dx.Business.TextProcessing
           }
         }
       }
-      
+
       foreach (var kvpOccurrence in orderedLines)
       {
         if (sb.Length > 0)

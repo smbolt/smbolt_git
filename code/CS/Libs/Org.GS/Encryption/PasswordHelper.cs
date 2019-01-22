@@ -32,7 +32,7 @@ namespace Org.GS.Encryption
           Monitor.Exit(HashPassword_LockObject);
         }
       }
-            
+
       return hashedPassword;
     }
   }

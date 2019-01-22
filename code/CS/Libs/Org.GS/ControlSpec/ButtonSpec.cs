@@ -11,7 +11,10 @@ namespace Org.GS.Controls
   public class ButtonSpec : ControlSpecBase
   {
     [XMap]
-    public override ControlType ControlType { get; set; }
+    public override ControlType ControlType {
+      get;
+      set;
+    }
 
     public ButtonSpec()
     {

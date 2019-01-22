@@ -33,9 +33,9 @@ namespace Org.Dx.Business
 
             if (dxRegion == null)
               throw new Exception("DxRegion '" + regionName + "' not found.");
-            
+
             var regions = dxRegion.GetRegions(ws);
-            
+
             foreach (var region in regions)
             {
               var regionWs = new DxWorksheet(base.TargetWorkbook, region);

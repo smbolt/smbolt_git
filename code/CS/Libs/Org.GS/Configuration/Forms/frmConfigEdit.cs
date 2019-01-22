@@ -133,12 +133,12 @@ namespace Org.GS.Configuration
       if (_currentImage != _originalImage)
       {
         if (MessageBox.Show("The AppConfig file has been modified." + g.crlf2 + "Do you want to save your changes?", "Save changes?",
-                        MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                            MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
           return false;
 
 
         SaveFile();
-        return true; 
+        return true;
       }
 
       return true;
@@ -164,11 +164,11 @@ namespace Org.GS.Configuration
         _originalImage = _currentImage;
         this.Text = "AppConfig Editor - (unchanged)";
         lblStatus.Text = "File is unchanged.";
-        MessageBox.Show("AppConfig file successfully saved.", "AppConfig File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+        MessageBox.Show("AppConfig file successfully saved.", "AppConfig File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An exception occurred attempting to save the AppConfig file to the path'" + encryptedFilePath + "'." + g.crlf2 + 
+        MessageBox.Show("An exception occurred attempting to save the AppConfig file to the path'" + encryptedFilePath + "'." + g.crlf2 +
                         "Exception Message: " + g.crlf2 + ex.Message, "Error Saving AppConfig File",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
       }

@@ -8,7 +8,7 @@ using Org.WSO;
 using Org.WSO.Transactions;
 
 namespace Org.Software.Tasks.Transactions
-{  
+{
   public enum ResponseType
   {
     NotSet,
@@ -24,23 +24,50 @@ namespace Org.Software.Tasks.Transactions
   public class DownloadSoftwareResponse : TransactionBase
   {
     [XMap]
-    public ResponseType ResponseType { get; set; }
+    public ResponseType ResponseType {
+      get;
+      set;
+    }
     [XMap]
-    public string UpgradeVersion { get; set; }
+    public string UpgradeVersion {
+      get;
+      set;
+    }
     [XMap]
-    public string UpgradePlatformString { get; set; }
+    public string UpgradePlatformString {
+      get;
+      set;
+    }
     [XMap]
-    public int SegmentNumber { get; set; }
+    public int SegmentNumber {
+      get;
+      set;
+    }
     [XMap]
-    public int TotalSegments { get; set; }
+    public int TotalSegments {
+      get;
+      set;
+    }
     [XMap]
-    public int RemainingSegments { get; set; }
+    public int RemainingSegments {
+      get;
+      set;
+    }
     [XMap]
-    public int TotalFileSize { get; set; }
+    public int TotalFileSize {
+      get;
+      set;
+    }
     [XMap]
-    public int SegmentSize { get; set; }
+    public int SegmentSize {
+      get;
+      set;
+    }
     [XMap]
-    public string SegmentData { get; set; }
+    public string SegmentData {
+      get;
+      set;
+    }
 
     public DownloadSoftwareResponse()
     {

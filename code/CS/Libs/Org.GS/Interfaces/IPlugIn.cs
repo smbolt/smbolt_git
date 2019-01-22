@@ -10,10 +10,15 @@ namespace Org.GS.PlugIn
 {
   public interface IPlugIn
   {
-    int EntityId { get; }
+    int EntityId {
+      get;
+    }
     event Action<NotifyMessage> NotifyMessage;
     event Action<ProgressMessage> ProgressUpdate;
-    TaskRequest TaskRequest { get; set; }
+    TaskRequest TaskRequest {
+      get;
+      set;
+    }
     string Identify();
     TaskResult ProcessTask();
   }

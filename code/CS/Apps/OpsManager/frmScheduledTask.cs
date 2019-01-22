@@ -89,7 +89,7 @@ namespace Org.OpsManager
 
       if (_opsData.Environment == "Prod")
         result = MessageBox.Show("Save these changes to the ScheduledTasks table in the Task Scheduling database?",
-                                            "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                 "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
       if (result == DialogResult.No)
         return;
 
@@ -108,18 +108,18 @@ namespace Org.OpsManager
 
       if (_isNewTask)
       {
-         _opsData.CurrentScheduledTask.CreatedBy = g.SystemInfo.DomainAndUser;
-         _opsData.CurrentScheduledTask.CreatedDate = DateTime.Now;
+        _opsData.CurrentScheduledTask.CreatedBy = g.SystemInfo.DomainAndUser;
+        _opsData.CurrentScheduledTask.CreatedDate = DateTime.Now;
       }
       else
       {
-         _opsData.CurrentScheduledTask.ScheduledTaskId = _opsData.CurrentScheduledTask.ScheduledTaskId;
-         _opsData.CurrentScheduledTask.ModifiedBy = g.SystemInfo.DomainAndUser;
-         _opsData.CurrentScheduledTask.ModifiedDate = DateTime.Now;
+        _opsData.CurrentScheduledTask.ScheduledTaskId = _opsData.CurrentScheduledTask.ScheduledTaskId;
+        _opsData.CurrentScheduledTask.ModifiedBy = g.SystemInfo.DomainAndUser;
+        _opsData.CurrentScheduledTask.ModifiedDate = DateTime.Now;
       }
 
       _opsData.CurrentScheduledTask.TaskName = txtTaskName.Text;
-      _opsData.CurrentScheduledTask.ProcessorTypeId = (int) g.ToEnum<ProcessorType>(cboProcessorType.Text, ProcessorType.NotSet); 
+      _opsData.CurrentScheduledTask.ProcessorTypeId = (int) g.ToEnum<ProcessorType>(cboProcessorType.Text, ProcessorType.NotSet);
       _opsData.CurrentScheduledTask.ProcessorName = txtProcessorName.Text.GetStringValueOrNull();
       _opsData.CurrentScheduledTask.ProcessorVersion = txtProcessorVersion.Text.GetStringValueOrNull();
       _opsData.CurrentScheduledTask.AssemblyLocation = txtAssemblyLocation.Text.GetStringValueOrNull();
@@ -137,7 +137,7 @@ namespace Org.OpsManager
       _opsData.CurrentScheduledTask.TrackHistory = chkTrackHistory.Checked;
       _opsData.CurrentScheduledTask.SuppressNotificationsOnSuccess = chkSuppressNotificationsOnSuccess.Checked;
       _opsData.CurrentScheduledTask.ActiveScheduleId = userDefinedActiveScheduleID;
-        
+
 
       using (var repo = new TaskRepository(_opsData.TasksDbSpec))
       {
@@ -184,7 +184,7 @@ namespace Org.OpsManager
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while attempting to edit the selected scheduled task." + g.crlf2 + ex.ToReport(),
-                        "Ops Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Ops Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -195,7 +195,7 @@ namespace Org.OpsManager
 
       if (_opsData.Environment == "Prod")
         result = MessageBox.Show("Are you sure you want to permanently delete Task Schedule with ID: " + scheduleID.ToString() +
-                                            " from the Task Scheduling Database?", "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                 " from the Task Scheduling Database?", "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
       if (result == DialogResult.Yes)
       {
         using (var repo = new TaskRepository(_opsData.TasksDbSpec))

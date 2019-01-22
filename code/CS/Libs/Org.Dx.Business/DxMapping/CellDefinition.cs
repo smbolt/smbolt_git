@@ -7,15 +7,33 @@ using System.Threading.Tasks;
 using Org.GS;
 
 namespace Org.Dx.Business
-{ 
-  public class CellDefinition 
+{
+  public class CellDefinition
   {
-    public int Column { get; private set; }
-    public int Row { get; private set; }
-    public int OffSet { get; private set; }
-    public RelOp RelOp { get; private set; }    
-    public string CompareValue { get; private set; }
-    public bool IsCellLocated { get; private set; }
+    public int Column {
+      get;
+      private set;
+    }
+    public int Row {
+      get;
+      private set;
+    }
+    public int OffSet {
+      get;
+      private set;
+    }
+    public RelOp RelOp {
+      get;
+      private set;
+    }
+    public string CompareValue {
+      get;
+      private set;
+    }
+    public bool IsCellLocated {
+      get;
+      private set;
+    }
 
     public CellDefinition(string definition)
     {
@@ -23,7 +41,7 @@ namespace Org.Dx.Business
 
       if (definition.IsBlank())
         throw new Exception("While constructing a Cell Definition, the definition string was blank or null.");
-      
+
       try
       {
         string[] tokens = definition.SplitRelation();
@@ -73,8 +91,8 @@ namespace Org.Dx.Business
     public void SetCell(DxRowSet rs, string offset = null)
     {
       if (rs == null  || rs.Rows.Count == 0)
-        throw new Exception("The DxRowSet passed to this method was null or contained zero rows.");      
-      
+        throw new Exception("The DxRowSet passed to this method was null or contained zero rows.");
+
       try
       {
         foreach (var row in rs.Rows)

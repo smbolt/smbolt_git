@@ -74,7 +74,7 @@ namespace Org.FTP
           ftpProgress.BytesTransferred += totalBytesTransferred;
           ftpProgress.ConfigFtpSpec = _configFtpSpec;
           if (FtpNotification != null)
-              FtpNotification(ftpProgress);
+            FtpNotification(ftpProgress);
         }
         stream.Close();
 
@@ -90,7 +90,7 @@ namespace Org.FTP
 
         foreach (var file in remoteFiles)
         {
-          folder.FileSystemItemSet.Add(file); 
+          folder.FileSystemItemSet.Add(file);
           file.Parent = folder;
         }
 
@@ -109,10 +109,10 @@ namespace Org.FTP
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to process a GetDirectoryList FTP function. " + 
-                            "The remote directory being processed is '" + remoteDirectory + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to process a GetDirectoryList FTP function. " +
+                            "The remote directory being processed is '" + remoteDirectory + "'.", ex);
       }
-    }    
+    }
 
     //public void DownloadFile(FtpParms parms)
     //{
@@ -198,20 +198,34 @@ namespace Org.FTP
     {
       switch (ftpMethod)
       {
-        case "APPE": return "Append File";
-        case "DELE": return "Delete File";
-        case "RETR": return "Download File";
-        case "MDTM": return "Get Time Stamp";
-        case "SIZE": return "Get File Size";
-        case "NLST": return "List Directory";
-        case "LIST": return "List Directory Details";
-        case "MKD":  return "Make Directory";
-        case "PWD":  return "Print Working Directory";
-        case "RMD":  return "Remove Directory";
-        case "RENAME": return "Rename";
-        case "STOR": return "Upload File";
-        case "STOU": return "Upload File with Unique Name";
-        default: return "Unknown";
+        case "APPE":
+          return "Append File";
+        case "DELE":
+          return "Delete File";
+        case "RETR":
+          return "Download File";
+        case "MDTM":
+          return "Get Time Stamp";
+        case "SIZE":
+          return "Get File Size";
+        case "NLST":
+          return "List Directory";
+        case "LIST":
+          return "List Directory Details";
+        case "MKD":
+          return "Make Directory";
+        case "PWD":
+          return "Print Working Directory";
+        case "RMD":
+          return "Remove Directory";
+        case "RENAME":
+          return "Rename";
+        case "STOR":
+          return "Upload File";
+        case "STOU":
+          return "Upload File with Unique Name";
+        default:
+          return "Unknown";
       }
     }
 

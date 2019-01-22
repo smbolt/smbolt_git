@@ -8,16 +8,22 @@ using Org.GS;
 
 namespace Org.ApiClient
 {
-    public class ApiClientState
-    {
-        public DiscoveryResponseWrapper DiscoveryResponseWrapper { get; set; }
-        public TokenResponseWrapper TokenResponseWrapper { get; set; }
-
-        public ApiClientState()
-        {
-            this.DiscoveryResponseWrapper = new DiscoveryResponseWrapper();
-            this.TokenResponseWrapper = new TokenResponseWrapper();
-
-        }
+  public class ApiClientState
+  {
+    public DiscoveryResponseWrapper DiscoveryResponseWrapper {
+      get;
+      set;
     }
+    public TokenResponseWrapper TokenResponseWrapper {
+      get;
+      set;
+    }
+
+    public ApiClientState()
+    {
+      this.DiscoveryResponseWrapper = new DiscoveryResponseWrapper();
+      this.TokenResponseWrapper = new TokenResponseWrapper();
+
+    }
+  }
 }

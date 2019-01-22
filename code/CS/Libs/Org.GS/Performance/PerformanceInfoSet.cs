@@ -28,13 +28,13 @@ namespace Org.GS
           priorDt = pi.DateTime;
         TimeSpan ts = pi.DateTime - priorDt;
         sb.Append(timeStamp + "    " + ts.TotalSeconds.ToString("000") + "." + ts.Milliseconds.ToString("000") +
-          "    " + pi.Label + g.crlf);
+                  "    " + pi.Label + g.crlf);
         priorDt = pi.DateTime;
       }
 
       TimeSpan tsAll = piLast.DateTime - piFirst.DateTime;
       sb.Append(g.crlf + "                       " + tsAll.TotalSeconds.ToString("000") + "." + tsAll.Milliseconds.ToString("000") +
-        "    Total Elapsed Time" + g.crlf);
+                "    Total Elapsed Time" + g.crlf);
 
       string report = sb.ToString();
       return report;

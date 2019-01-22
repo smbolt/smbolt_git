@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Org.GS 
+namespace Org.GS
 {
   public class TextNodeSet : Dictionary<int, TextNode>
   {

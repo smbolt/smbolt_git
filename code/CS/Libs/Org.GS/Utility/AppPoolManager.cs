@@ -7,7 +7,7 @@ using System.DirectoryServices;
 using System.Management;
 using System.Threading;
 
-namespace Org.GS 
+namespace Org.GS
 {
   [Serializable]
   public class AppPoolManager : IDisposable

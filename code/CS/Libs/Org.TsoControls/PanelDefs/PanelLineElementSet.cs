@@ -7,8 +7,8 @@ using Org.GS;
 
 namespace Org.TsoControls.PanelDefs
 {
-	[XMap(XType=XType.Element, CollectionElements = "PanelLine", WrapperElement = "PanelLineElementSet")]
-	public class PanelLineElementSet : List<PanelLineElement>
-	{
-	}
+  [XMap(XType=XType.Element, CollectionElements = "PanelLine", WrapperElement = "PanelLineElementSet")]
+  public class PanelLineElementSet : List<PanelLineElement>
+  {
+  }
 }

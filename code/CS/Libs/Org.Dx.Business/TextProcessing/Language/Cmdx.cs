@@ -21,87 +21,372 @@ namespace Org.Dx.Business.TextProcessing
     private Cmd _cmd;
 
     private string[] _parms;
-    internal string[] Parms { get { return _parms == null ? new string[0] : _parms; } }
+    internal string[] Parms {
+      get {
+        return _parms == null ? new string[0] : _parms;
+      }
+    }
 
-    public bool HasNoParms { get { return this.Parms == null || this.Parms.Length == 0; } }
-    public string ParmString { get { return Get_ParmString(); } }
-    public int ParmCount { get { return this.Parms == null ? 0 : this.Parms.Length; } }
-    public bool UsePriorEnd { get { return Get_UsePriorEnd(); } }
-    public TokenSearchCriteria TokenSearchCriteria { get { return Get_TokenSearchCriteria(); } }
+    public bool HasNoParms {
+      get {
+        return this.Parms == null || this.Parms.Length == 0;
+      }
+    }
+    public string ParmString {
+      get {
+        return Get_ParmString();
+      }
+    }
+    public int ParmCount {
+      get {
+        return this.Parms == null ? 0 : this.Parms.Length;
+      }
+    }
+    public bool UsePriorEnd {
+      get {
+        return Get_UsePriorEnd();
+      }
+    }
+    public TokenSearchCriteria TokenSearchCriteria {
+      get {
+        return Get_TokenSearchCriteria();
+      }
+    }
 
-    public string TextToFind { get { return Get_TextToFind(); } }
-    public bool PositionAtEnd { get { return Get_PositionAtEnd(); } }
-    public bool IsRequired { get { return Get_IsRequired(); } }
-    public bool Trim { get { return Get_Trim(); } }
-    public string DataName { get { return Get_DataName(); } }
-    public string VariableName { get { return Get_VariableName(); } }
-    public int StartPosition { get { return Get_StartPosition(); } }
-    public string Zap { get { return Get_Zap(); } }
-    public int UnitCount { get { return Get_UnitCount(); } }
-    public TextUnit TextUnit { get { return Get_TextUnit(); } }
-    public PositionAt PositionAt { get { return Get_PositionAt(); } }
-    public TruncateDirection TruncateDirection { get { return Get_TruncateDirection(); } }
-    public string Pattern { get { return Get_Pattern(); } }
-    public string Range { get { return Get_Range(); } }
-    public Direction Direction { get { return Get_Direction(); } }
-    public string HelperFunction { get { return Get_HelperFunction(); } }
-    public int MinimumTokens { get { return Get_MinimumTokens(); } }
-    public string BeforeToken { get { return Get_BeforeToken(); } }
-    public string AfterToken { get { return Get_AfterToken(); } }
-    public bool Join { get { return Get_Join(); } }
-    public string TextToReplace { get { return Get_TextToReplace(); } }
-    public string ReplacementText { get { return Get_ReplacementText(); } }
-    public bool IsCaseSensitive { get { return Get_IsCaseSensitive(); } }
-    public bool IsTsdElement { get { return Get_IsTsdElement(); } }
-    public int TokenOffset { get { return Get_TokenOffset(); } }
-    public int RunLimit { get { return Get_RunLimit(); } }
-    public bool RunAsStructureCommand { get { return Get_RunAsStructureCommand(); } }
-    public string SubCommandVerb { get { return Get_SubCommandVerb(); } }
-    public string FullSubCommand { get { return Get_FullSubCommand(); } }
-    public string Regex { get; set; }
-    public bool RegexExists { get { return this.Regex.IsNotBlank(); } }
+    public string TextToFind {
+      get {
+        return Get_TextToFind();
+      }
+    }
+    public bool PositionAtEnd {
+      get {
+        return Get_PositionAtEnd();
+      }
+    }
+    public bool IsRequired {
+      get {
+        return Get_IsRequired();
+      }
+    }
+    public bool Trim {
+      get {
+        return Get_Trim();
+      }
+    }
+    public string DataName {
+      get {
+        return Get_DataName();
+      }
+    }
+    public string VariableName {
+      get {
+        return Get_VariableName();
+      }
+    }
+    public int StartPosition {
+      get {
+        return Get_StartPosition();
+      }
+    }
+    public string Zap {
+      get {
+        return Get_Zap();
+      }
+    }
+    public int UnitCount {
+      get {
+        return Get_UnitCount();
+      }
+    }
+    public TextUnit TextUnit {
+      get {
+        return Get_TextUnit();
+      }
+    }
+    public PositionAt PositionAt {
+      get {
+        return Get_PositionAt();
+      }
+    }
+    public TruncateDirection TruncateDirection {
+      get {
+        return Get_TruncateDirection();
+      }
+    }
+    public string Pattern {
+      get {
+        return Get_Pattern();
+      }
+    }
+    public string Range {
+      get {
+        return Get_Range();
+      }
+    }
+    public Direction Direction {
+      get {
+        return Get_Direction();
+      }
+    }
+    public string HelperFunction {
+      get {
+        return Get_HelperFunction();
+      }
+    }
+    public int MinimumTokens {
+      get {
+        return Get_MinimumTokens();
+      }
+    }
+    public string BeforeToken {
+      get {
+        return Get_BeforeToken();
+      }
+    }
+    public string AfterToken {
+      get {
+        return Get_AfterToken();
+      }
+    }
+    public bool Join {
+      get {
+        return Get_Join();
+      }
+    }
+    public string TextToReplace {
+      get {
+        return Get_TextToReplace();
+      }
+    }
+    public string ReplacementText {
+      get {
+        return Get_ReplacementText();
+      }
+    }
+    public bool IsCaseSensitive {
+      get {
+        return Get_IsCaseSensitive();
+      }
+    }
+    public bool IsTsdElement {
+      get {
+        return Get_IsTsdElement();
+      }
+    }
+    public int TokenOffset {
+      get {
+        return Get_TokenOffset();
+      }
+    }
+    public int RunLimit {
+      get {
+        return Get_RunLimit();
+      }
+    }
+    public bool RunAsStructureCommand {
+      get {
+        return Get_RunAsStructureCommand();
+      }
+    }
+    public string SubCommandVerb {
+      get {
+        return Get_SubCommandVerb();
+      }
+    }
+    public string FullSubCommand {
+      get {
+        return Get_FullSubCommand();
+      }
+    }
+    public string Regex {
+      get;
+      set;
+    }
+    public bool RegexExists {
+      get {
+        return this.Regex.IsNotBlank();
+      }
+    }
 
 
-    public string DefaultValue { get { return Get_DefaultValue(); } }
-    public bool IsUnique { get { return Get_IsUnique(); } }
-    public bool OrEnd { get { return Get_OrEnd(); } }
-    public string SpecialRoutine { get { return Get_SpecialRoutine(); } }
-    public bool NumericOnly { get { return Get_NumericOnly(); } }
-    public bool AdvanceToEol { get { return Get_AdvanceToEol(); } }
-    public string DataType { get { return Get_DataType(); } }
-    public string DataFormat { get { return Get_DataFormat(); } }
-    public string Math { get { return Get_Math(); } }
-    public bool MathIsDone { get; set; }
-    public string TokenType { get { return Get_TokenType(); } }
-    public int NumberOfTokens { get { return Get_NumberOfTokens(); } }
-    public string[] TokenTypes { get { return Get_TokenTypes(); } }
-    public bool RemoveStoredToken { get { return Get_RemoveStoredToken(); } }
-    public int StoredTokenIndex { get { return Get_StoredTokenIndex(); } }
-    public int StoredTokenCount { get { return Get_StoredTokenCount(); } }
-    public int TokensRequired { get { return Get_TokensRequired(); } }
-    public List<Token> TokensToRemove { get { return Get_TokensToRemove(); } }
-    public int RowIndex { get { return Get_RowIndex(); } }
-    public string LiteralToken { get { return Get_LiteralToken(); } }
-    public string Condition { get { return Get_Condition(); } }
-    public bool ActiveToRun { get; set; }
-    public bool Execute { get { return Get_Execute(); } }
-    public string PeerCellName { get { return Get_PeerCellName(); } }
-    public string ReportUnit { get { return Get_ReportUnit(); } }
-    public string Command { get { return Get_Command(); } }
-    public int PositionAdjust { get { return Get_PositionAdjust(); } }
-    public bool IsProcessingReportUnit { get; set; }
+    public string DefaultValue {
+      get {
+        return Get_DefaultValue();
+      }
+    }
+    public bool IsUnique {
+      get {
+        return Get_IsUnique();
+      }
+    }
+    public bool OrEnd {
+      get {
+        return Get_OrEnd();
+      }
+    }
+    public string SpecialRoutine {
+      get {
+        return Get_SpecialRoutine();
+      }
+    }
+    public bool NumericOnly {
+      get {
+        return Get_NumericOnly();
+      }
+    }
+    public bool AdvanceToEol {
+      get {
+        return Get_AdvanceToEol();
+      }
+    }
+    public string DataType {
+      get {
+        return Get_DataType();
+      }
+    }
+    public string DataFormat {
+      get {
+        return Get_DataFormat();
+      }
+    }
+    public string Math {
+      get {
+        return Get_Math();
+      }
+    }
+    public bool MathIsDone {
+      get;
+      set;
+    }
+    public string TokenType {
+      get {
+        return Get_TokenType();
+      }
+    }
+    public int NumberOfTokens {
+      get {
+        return Get_NumberOfTokens();
+      }
+    }
+    public string[] TokenTypes {
+      get {
+        return Get_TokenTypes();
+      }
+    }
+    public bool RemoveStoredToken {
+      get {
+        return Get_RemoveStoredToken();
+      }
+    }
+    public int StoredTokenIndex {
+      get {
+        return Get_StoredTokenIndex();
+      }
+    }
+    public int StoredTokenCount {
+      get {
+        return Get_StoredTokenCount();
+      }
+    }
+    public int TokensRequired {
+      get {
+        return Get_TokensRequired();
+      }
+    }
+    public List<Token> TokensToRemove {
+      get {
+        return Get_TokensToRemove();
+      }
+    }
+    public int RowIndex {
+      get {
+        return Get_RowIndex();
+      }
+    }
+    public string LiteralToken {
+      get {
+        return Get_LiteralToken();
+      }
+    }
+    public string Condition {
+      get {
+        return Get_Condition();
+      }
+    }
+    public bool ActiveToRun {
+      get;
+      set;
+    }
+    public bool Execute {
+      get {
+        return Get_Execute();
+      }
+    }
+    public string PeerCellName {
+      get {
+        return Get_PeerCellName();
+      }
+    }
+    public string ReportUnit {
+      get {
+        return Get_ReportUnit();
+      }
+    }
+    public string Command {
+      get {
+        return Get_Command();
+      }
+    }
+    public int PositionAdjust {
+      get {
+        return Get_PositionAdjust();
+      }
+    }
+    public bool IsProcessingReportUnit {
+      get;
+      set;
+    }
 
-    public string Code { get; private set; }
+    public string Code {
+      get;
+      private set;
+    }
     public Verb _verb;
-    public Verb Verb { get { return _verb; } }
-    public bool IsCommentedOut { get; set; }
-    public bool IsBreakPoint { get; set; }
+    public Verb Verb {
+      get {
+        return _verb;
+      }
+    }
+    public bool IsCommentedOut {
+      get;
+      set;
+    }
+    public bool IsBreakPoint {
+      get;
+      set;
+    }
 
-    public bool Break { get; set; }
-    public Text Text { get; set; }
-    public int LineNumber { get; set; }
-    public Tsd Parent { get; set; }
-    public ExtractSpec ExtractSpec { get { return Get_ExtractSpec(); } }
+    public bool Break {
+      get;
+      set;
+    }
+    public Text Text {
+      get;
+      set;
+    }
+    public int LineNumber {
+      get;
+      set;
+    }
+    public Tsd Parent {
+      get;
+      set;
+    }
+    public ExtractSpec ExtractSpec {
+      get {
+        return Get_ExtractSpec();
+      }
+    }
 
     public Cmdx(Cmd cmd)
     {
@@ -109,7 +394,7 @@ namespace Org.Dx.Business.TextProcessing
       this.MathIsDone = false;
       Compile();
     }
-    
+
     private void Compile()
     {
       this.Break = _cmd.Break;
@@ -131,10 +416,12 @@ namespace Org.Dx.Business.TextProcessing
         _verb = Get_Verb();
         PopulateParms();
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(2, new object[] { this, ex }); 
+        throw new CxException(2, new object[] { this, ex });
       }
     }
 
@@ -159,7 +446,7 @@ namespace Org.Dx.Business.TextProcessing
           if (endPos == -1)
             throw new Exception("Could not find the ending of the regular expression '$]' in the Cmdx with code '" + this.Code + "'.");
           this.Regex = this.Code.Substring(ptr + 1, endPos - ptr);
-          this.Code = this.Code.Replace(this.Regex, "#REGEX#"); 
+          this.Code = this.Code.Replace(this.Regex, "#REGEX#");
         }
 
 
@@ -176,15 +463,15 @@ namespace Org.Dx.Business.TextProcessing
               string parm = _parms[i];
               if (parm.StartsWith("'") && parm.EndsWith("'"))
               {
-                _parms[i] = parm.Substring(1, parm.Length - 2); 
+                _parms[i] = parm.Substring(1, parm.Length - 2);
               }
               else
               {
-                _parms[i] = _parms[i].Trim(); 
+                _parms[i] = _parms[i].Trim();
               }
             }
             else
-              _parms[i] = _parms[i].Trim(); 
+              _parms[i] = _parms[i].Trim();
           }
           else
           {
@@ -194,8 +481,8 @@ namespace Org.Dx.Business.TextProcessing
       }
       catch(Exception ex)
       {
-        throw new CxException(5, new object[] { this, ex }); 
-      } 
+        throw new CxException(5, new object[] { this, ex });
+      }
     }
 
     private bool Get_IsTsdElement()
@@ -206,7 +493,7 @@ namespace Org.Dx.Business.TextProcessing
       if (this.ParmCount < 2)
         return false;
 
-      return this.Parms[1].Trim().ToLower() == "tsd"; 
+      return this.Parms[1].Trim().ToLower() == "tsd";
     }
 
     private int Get_TokenOffset()
@@ -226,7 +513,7 @@ namespace Org.Dx.Business.TextProcessing
             negator = -1;
             tokenOffset = tokenOffset.Substring(1);
           }
-          
+
           if (tokenOffset.IsNumeric())
             return tokenOffset.ToInt32() * negator;
         }
@@ -265,7 +552,7 @@ namespace Org.Dx.Business.TextProcessing
 
     private bool Get_RemoveStoredToken()
     {
-      return !this.Parms.ContainsEntry("retain"); 
+      return !this.Parms.ContainsEntry("retain");
     }
 
     private bool Get_PositionAtEnd()
@@ -335,7 +622,7 @@ namespace Org.Dx.Business.TextProcessing
 
         return true;
       }
-      
+
       if (this.HasNoParms)
         return false;
 
@@ -420,7 +707,7 @@ namespace Org.Dx.Business.TextProcessing
             int adjustment = newLinePos - this.Text.BegPos;
             if (adjustment < 1)
               return 0;
-            return adjustment; 
+            return adjustment;
           }
         }
       }
@@ -462,7 +749,7 @@ namespace Org.Dx.Business.TextProcessing
 
       return String.Empty;
     }
-    
+
     private int Get_NumberOfTokens()
     {
       switch (this.Verb)
@@ -499,20 +786,20 @@ namespace Org.Dx.Business.TextProcessing
             return nbrTokens.ToInt32();
           }
           break;
-          
+
       }
 
       return -1;
     }
-    
+
     private string[] Get_TokenTypes()
     {
       switch (this.Verb)
-      {        case Verb.ExtractNextTokens:
+      { case Verb.ExtractNextTokens:
         case Verb.ExtractPriorTokensOfType:
           this.AssertParmCount(3);
           string tokenTypes = this.Parms[2];
-          return tokenTypes.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries); 
+          return tokenTypes.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
       }
 
       return new string[0];
@@ -551,7 +838,7 @@ namespace Org.Dx.Business.TextProcessing
     private bool Get_Execute()
     {
       if (this.RunLimit > -1 && _cmd.RunCount >= this.RunLimit)
-        return false;  
+        return false;
 
       if (this.Verb == TextProcessing.Verb.SetTsdCondition)
         return true;
@@ -590,7 +877,7 @@ namespace Org.Dx.Business.TextProcessing
 
       //if ((t.LocalVariables == null || t.LocalVariables.Count == 0) && (Text.GlobalVariables == null || Text.GlobalVariables.Count == 0))
       //  return true;
-      
+
       //string[] condTokens = condition.Split(Constants.EqualsDelimiter, StringSplitOptions.RemoveEmptyEntries);
       //if (condTokens.Length != 2)
       //  return true;
@@ -601,7 +888,7 @@ namespace Org.Dx.Business.TextProcessing
       //if (variableName.StartsWith("!"))
       //{
       //  isNegated = true;
-      //  variableName = variableName.Substring(1); 
+      //  variableName = variableName.Substring(1);
       //}
 
       //string variableValue = String.Empty;
@@ -678,7 +965,7 @@ namespace Org.Dx.Business.TextProcessing
       var rightOperandType = GetOperandType(rightOperand);
 
       if (leftOperandType == OperandType.Literal)
-        leftOperand = leftOperand.Substring(1, leftOperand.Length - 2); 
+        leftOperand = leftOperand.Substring(1, leftOperand.Length - 2);
 
       if (rightOperandType == OperandType.Literal)
         rightOperand = rightOperand.Substring(1, rightOperand.Length - 2);
@@ -705,12 +992,12 @@ namespace Org.Dx.Business.TextProcessing
           {
             if (leftOperandValue.ToString().IsDecimal(true))
             {
-              leftOperandValue = leftOperandValue.ToString().ToDecimal(); 
+              leftOperandValue = leftOperandValue.ToString().ToDecimal();
               leftOperandType = OperandType.Decimal;
             }
           }
         }
-        
+
         if (leftOperandValue.ToString().IsDecimal())
         {
           decimal leftDec = leftOperandValue.ToDecimal();
@@ -718,17 +1005,23 @@ namespace Org.Dx.Business.TextProcessing
 
           switch (relOp)
           {
-            case "=": return leftDec == rightDec;
-            case "!=": return leftDec != rightDec;
-            case ">": return leftDec > rightDec;
-            case "<": return leftDec < rightDec;
-            case ">=": return leftDec >= rightDec;
-            case "<=": return leftDec <= rightDec;
+            case "=":
+              return leftDec == rightDec;
+            case "!=":
+              return leftDec != rightDec;
+            case ">":
+              return leftDec > rightDec;
+            case "<":
+              return leftDec < rightDec;
+            case ">=":
+              return leftDec >= rightDec;
+            case "<=":
+              return leftDec <= rightDec;
           }
         }
 
         throw new Exception ("Left operand type is '" + leftOperandType.ToString() + "' and right operand type is '" + rightOperandType.ToString() + "' " +
-                              "and the left operand '" + leftOperand + "' cannot be coerced to a numeric type.");
+                             "and the left operand '" + leftOperand + "' cannot be coerced to a numeric type.");
       }
 
       // all comparisions are based on the value we are comparing (the left operand)
@@ -745,12 +1038,18 @@ namespace Org.Dx.Business.TextProcessing
               int result = leftOperandValue.ToString().CompareTo(rightOperandValue.ToString());
               switch (relOp)
               {
-                case "=": return result == 0;
-                case "!=": return result != 0;
-                case ">": return result > 0;
-                case ">=": return !(result < 0);
-                case "<": return result < 0;
-                case "<=": return !(result > 0);
+                case "=":
+                  return result == 0;
+                case "!=":
+                  return result != 0;
+                case ">":
+                  return result > 0;
+                case ">=":
+                  return !(result < 0);
+                case "<":
+                  return result < 0;
+                case "<=":
+                  return !(result > 0);
               }
               return false;
           }
@@ -765,18 +1064,18 @@ namespace Org.Dx.Business.TextProcessing
             case OperandType.Decimal:
             case OperandType.Integer:
               throw new Exception("We should never get to this point - if we do, find out why.");
-              //rightDecimalValue = rightOperandValue.ToString().ToDecimal();
+            //rightDecimalValue = rightOperandValue.ToString().ToDecimal();
 
-              //switch (relOp)
-              //{
-              //  case "=": return leftDecimalValue == rightDecimalValue;
-              //  case "!=": return leftDecimalValue != rightDecimalValue;
-              //  case ">": return leftDecimalValue > rightDecimalValue;
-              //  case ">=": return leftDecimalValue >= rightDecimalValue;
-              //  case "<": return leftDecimalValue < rightDecimalValue;
-              //  case "<=": return leftDecimalValue <= rightDecimalValue;
-              //}
-              //return false;
+            //switch (relOp)
+            //{
+            //  case "=": return leftDecimalValue == rightDecimalValue;
+            //  case "!=": return leftDecimalValue != rightDecimalValue;
+            //  case ">": return leftDecimalValue > rightDecimalValue;
+            //  case ">=": return leftDecimalValue >= rightDecimalValue;
+            //  case "<": return leftDecimalValue < rightDecimalValue;
+            //  case "<=": return leftDecimalValue <= rightDecimalValue;
+            //}
+            //return false;
 
             default: // ( right is literal or variable)
               if (rightOperandValue.ToString().IsDecimal()) // integer or decimal literals will pass this test
@@ -784,15 +1083,21 @@ namespace Org.Dx.Business.TextProcessing
                 rightDecimalValue = rightOperandValue.ToString().ToDecimal();
                 switch (relOp)
                 {
-                  case "=": return leftDecimalValue == rightDecimalValue;
-                  case "!=": return leftDecimalValue != rightDecimalValue;
-                  case ">": return leftDecimalValue > rightDecimalValue;
-                  case ">=": return leftDecimalValue >= rightDecimalValue;
-                  case "<": return leftDecimalValue < rightDecimalValue;
-                  case "<=": return leftDecimalValue <= rightDecimalValue;
+                  case "=":
+                    return leftDecimalValue == rightDecimalValue;
+                  case "!=":
+                    return leftDecimalValue != rightDecimalValue;
+                  case ">":
+                    return leftDecimalValue > rightDecimalValue;
+                  case ">=":
+                    return leftDecimalValue >= rightDecimalValue;
+                  case "<":
+                    return leftDecimalValue < rightDecimalValue;
+                  case "<=":
+                    return leftDecimalValue <= rightDecimalValue;
                 }
               }
-                
+
               return false; // can't compare - return false;
           }
       }
@@ -813,7 +1118,7 @@ namespace Org.Dx.Business.TextProcessing
       bool negated = false;
       if (varEx.StartsWith("!"))
       {
-        negated = true; 
+        negated = true;
         varEx = varEx.Substring(1);
       }
 
@@ -826,7 +1131,7 @@ namespace Org.Dx.Business.TextProcessing
         if (negated)
           return !variableValue.ToBoolean();
         else
-          return variableValue.ToBoolean(); 
+          return variableValue.ToBoolean();
       }
 
       if (Text.GlobalVariables.ContainsKey(varEx))
@@ -839,7 +1144,7 @@ namespace Org.Dx.Business.TextProcessing
       }
 
       if (negated)
-        return true; 
+        return true;
 
       return false;
     }
@@ -871,9 +1176,12 @@ namespace Org.Dx.Business.TextProcessing
       {
         switch (operandType)
         {
-          case OperandType.Literal: return operand;
-          case OperandType.Integer: return operand.ToInt32();
-          case OperandType.Decimal: return operand.ToDecimal();
+          case OperandType.Literal:
+            return operand;
+          case OperandType.Integer:
+            return operand.ToInt32();
+          case OperandType.Decimal:
+            return operand.ToDecimal();
         }
 
         // default is OperandType.Variable
@@ -886,9 +1194,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return null;
       }
-      catch 
-      { 
-        return String.Empty; 
+      catch
+      {
+        return String.Empty;
       }
     }
 
@@ -930,17 +1238,19 @@ namespace Org.Dx.Business.TextProcessing
             string parm2 = this.Parms[1].Trim();
             if (parm2.ToLower().StartsWith("lit["))
             {
-              tsc.LiteralValue = parm2.GetTextBetween(Constants.OpenBracket, Constants.CloseBracket).Trim(); 
+              tsc.LiteralValue = parm2.GetTextBetween(Constants.OpenBracket, Constants.CloseBracket).Trim();
             }
           }
         }
-        
+
         return tsc;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(119, this, ex); 
+        throw new CxException(119, this, ex);
       }
     }
 
@@ -950,14 +1260,22 @@ namespace Org.Dx.Business.TextProcessing
 
       switch (dataType)
       {
-        case "dec": return TextProcessing.DataType.Decimal;
-        case "decn": return TextProcessing.DataType.DecimalPeriodOptional;
-        case "int": return TextProcessing.DataType.Integer;
-        case "pct": return TextProcessing.DataType.Percentage;
-        case "pctn": return TextProcessing.DataType.PercentagePeriodOptional;
-        case "date": return TextProcessing.DataType.Date;
-        case "mm/yyyy": return TextProcessing.DataType.MMYYYY;
-        case "time": return TextProcessing.DataType.Time;
+        case "dec":
+          return TextProcessing.DataType.Decimal;
+        case "decn":
+          return TextProcessing.DataType.DecimalPeriodOptional;
+        case "int":
+          return TextProcessing.DataType.Integer;
+        case "pct":
+          return TextProcessing.DataType.Percentage;
+        case "pctn":
+          return TextProcessing.DataType.PercentagePeriodOptional;
+        case "date":
+          return TextProcessing.DataType.Date;
+        case "mm/yyyy":
+          return TextProcessing.DataType.MMYYYY;
+        case "time":
+          return TextProcessing.DataType.Time;
       }
 
       return TextProcessing.DataType.String;
@@ -1005,7 +1323,7 @@ namespace Org.Dx.Business.TextProcessing
               string parm = this.Parms[i].Trim();
               // strip off anything after an open bracket if there is text before the open bracket
               if (parm.Contains("[") && !parm.StartsWith("["))
-                parm = parm.Substring(0, parm.IndexOf("[")); 
+                parm = parm.Substring(0, parm.IndexOf("["));
               if (parm.ToLower().In("stored,opt,join,extractvalue,extracttoeol,lit,trim,find,expression,var"))
                 continue;
               if (parm.ToLower().StartsWithIn("cond=,before="))
@@ -1020,13 +1338,15 @@ namespace Org.Dx.Business.TextProcessing
           case Verb.ExtractStoredTokenBefore:
             this.AssertParmCount(2);
             string tokenToFind = this.Parms[1].Trim();
-            return tokenToFind; 
+            return tokenToFind;
 
           default:
             return String.Empty;
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(140, new object[] { this, ex });
@@ -1045,8 +1365,8 @@ namespace Org.Dx.Business.TextProcessing
           return pos.ToInt32();
 
         // use current position
-        if (pos == "*") 
-          return -1;  
+        if (pos == "*")
+          return -1;
 
         throw new CxException(183, this);
       }
@@ -1081,7 +1401,9 @@ namespace Org.Dx.Business.TextProcessing
         }
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(141, this, ex);
@@ -1108,7 +1430,9 @@ namespace Org.Dx.Business.TextProcessing
         }
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(143, this, ex);
@@ -1178,7 +1502,9 @@ namespace Org.Dx.Business.TextProcessing
             return String.Empty;
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(9, new object[] { this, ex });
@@ -1205,7 +1531,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return -1;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(9, new object[] { this, ex });
@@ -1228,7 +1556,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(146, new object[] { this, ex });
@@ -1249,7 +1579,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(147, new object[] { this, ex });
@@ -1271,7 +1603,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(148, new object[] { this, ex });
@@ -1304,7 +1638,9 @@ namespace Org.Dx.Business.TextProcessing
             return dataType;
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(10, new object[] { this, ex });
@@ -1361,7 +1697,9 @@ namespace Org.Dx.Business.TextProcessing
             return String.Empty;
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(11, new object[] { this, ex });
@@ -1398,7 +1736,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(122, this, ex);
@@ -1435,7 +1775,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(138, this, ex);
@@ -1455,12 +1797,14 @@ namespace Org.Dx.Business.TextProcessing
         if (this.Verb == Verb.SetTextPosition)
         {
           if (this.ParmCount < 4)
-            throw new CxException(111, this); 
+            throw new CxException(111, this);
 
           switch(this.Parms[0].ToLower().Trim())
           {
-            case "back": return Direction.Prev;
-            case "next": return Direction.Next;
+            case "back":
+              return Direction.Prev;
+            case "next":
+              return Direction.Next;
             default:
               throw new CxException(112, this);
           }
@@ -1481,7 +1825,9 @@ namespace Org.Dx.Business.TextProcessing
         // default is next (forward)
         return Direction.Next;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(86, new object[] { this, ex });
@@ -1503,10 +1849,12 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(127, this, ex); 
+        throw new CxException(127, this, ex);
       }
     }
 
@@ -1536,10 +1884,12 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(141, this, ex); 
+        throw new CxException(141, this, ex);
       }
     }
 
@@ -1569,10 +1919,12 @@ namespace Org.Dx.Business.TextProcessing
 
         return String.Empty;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(141, this, ex); 
+        throw new CxException(141, this, ex);
       }
     }
 
@@ -1591,10 +1943,12 @@ namespace Org.Dx.Business.TextProcessing
 
         return false;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(140, this, ex); 
+        throw new CxException(140, this, ex);
       }
     }
 
@@ -1618,10 +1972,12 @@ namespace Org.Dx.Business.TextProcessing
 
         return -1;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(129, this, ex); 
+        throw new CxException(129, this, ex);
       }
     }
 
@@ -1643,15 +1999,17 @@ namespace Org.Dx.Business.TextProcessing
           if (!this.Parms[1].IsInteger())
             throw new CxException(117, this);
 
-          return this.Parms[1].ToInt32(); 
+          return this.Parms[1].ToInt32();
         }
 
         throw new CxException(115, this);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(113, this, ex); 
+        throw new CxException(113, this, ex);
       }
     }
 
@@ -1672,20 +2030,25 @@ namespace Org.Dx.Business.TextProcessing
 
           switch (this.Parms[2].ToLower().Trim())
           {
-            case "character": return TextUnit.Character;
-            case "token": return TextUnit.Token;
-            case "line": return TextUnit.Line;
+            case "character":
+              return TextUnit.Character;
+            case "token":
+              return TextUnit.Token;
+            case "line":
+              return TextUnit.Line;
             default:
-              throw new CxException(118, this); 
+              throw new CxException(118, this);
           }
         }
 
         throw new CxException(116, this);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(114, this, ex); 
+        throw new CxException(114, this, ex);
       }
     }
 
@@ -1708,21 +2071,27 @@ namespace Org.Dx.Business.TextProcessing
 
           switch (this.Parms[3].ToLower().Trim())
           {
-            case "start": return PositionAt.Start;
-            case "end": return PositionAt.End;
-            case "before": return PositionAt.Before;
-            case "after": return PositionAt.After;
+            case "start":
+              return PositionAt.Start;
+            case "end":
+              return PositionAt.End;
+            case "before":
+              return PositionAt.Before;
+            case "after":
+              return PositionAt.After;
             default:
-              throw new CxException(120, this); 
+              throw new CxException(120, this);
           }
         }
 
         throw new CxException(116, this);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(114, this, ex); 
+        throw new CxException(114, this, ex);
       }
     }
 
@@ -1738,16 +2107,20 @@ namespace Org.Dx.Business.TextProcessing
 
         switch (this.Parms[2].ToLower().Trim())
         {
-          case "before": return TruncateDirection.Before;
-          case "after": return TruncateDirection.After;
+          case "before":
+            return TruncateDirection.Before;
+          case "after":
+            return TruncateDirection.After;
         }
 
         throw new CxException(185, this);
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(186, this, ex); 
+        throw new CxException(186, this, ex);
       }
     }
 
@@ -1786,7 +2159,7 @@ namespace Org.Dx.Business.TextProcessing
             parm = this.Parms[1].ToLower().Trim();
 
             if (parm.StartsWith("cond="))
-              return 0; 
+              return 0;
 
             if (parm == "last")
               return 99999;
@@ -1823,7 +2196,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return -1;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(12, new object[] { this, ex });
@@ -1847,7 +2222,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return -1;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(12, new object[] { this, ex });
@@ -1874,7 +2251,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return -1;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(12, new object[] { this, ex });
@@ -1923,7 +2302,9 @@ namespace Org.Dx.Business.TextProcessing
             return tokenType;
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(13, new object[] { this, ex } );
@@ -1951,7 +2332,9 @@ namespace Org.Dx.Business.TextProcessing
             return String.Empty;
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(14, new object[] { this, ex });
@@ -1979,7 +2362,9 @@ namespace Org.Dx.Business.TextProcessing
             return String.Empty;
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(14, new object[] { this, ex });
@@ -2016,13 +2401,15 @@ namespace Org.Dx.Business.TextProcessing
             }
             break;
         }
-        
+
         return tokensToRemove;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
-        throw new CxException(79, new object[] { this, ex }); 
+        throw new CxException(79, new object[] { this, ex });
       }
     }
 
@@ -2038,7 +2425,9 @@ namespace Org.Dx.Business.TextProcessing
 
         return _verb;
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(6, new object[] {_cmd, ex });
@@ -2050,17 +2439,17 @@ namespace Org.Dx.Business.TextProcessing
       try
       {
         if (this.Parent == null)
-          throw new CxException(163, this); 
+          throw new CxException(163, this);
 
         if (this.ParmCount < 1)
-          throw new CxException(161, this); 
+          throw new CxException(161, this);
 
         string condition = this.Parms[0].Trim();
 
         if (condition.ToLower() == "off")
         {
           this.Parent.Condition = String.Empty;
-          return; 
+          return;
         }
 
         string onOff = "on";
@@ -2081,7 +2470,9 @@ namespace Org.Dx.Business.TextProcessing
             break;
         }
       }
-      catch (CxException) { throw; }
+      catch (CxException) {
+        throw;
+      }
       catch (Exception ex)
       {
         throw new CxException(160, this, ex);
@@ -2136,10 +2527,10 @@ namespace Org.Dx.Business.TextProcessing
       Tsd tsdParent = this.Parent;
 
       if (tsdParent.ExtractSpec != null)
-        return tsdParent.ExtractSpec; 
+        return tsdParent.ExtractSpec;
 
       while (tsdParent != null)
-      { 
+      {
         if (tsdParent.Parent != null)
           tsdParent = tsdParent.Parent;
 
@@ -2147,7 +2538,7 @@ namespace Org.Dx.Business.TextProcessing
           return tsdParent.ExtractSpec;
       }
 
-      return null; 
+      return null;
     }
   }
 
@@ -2171,7 +2562,7 @@ namespace Org.Dx.Business.TextProcessing
     {
       if (value.IsBlank())
         return false;
-      
+
       string subCommandVerb = value.GetTextBefore(Constants.OpenBracket).ToLower();
 
       switch (subCommandVerb)
@@ -2184,7 +2575,8 @@ namespace Org.Dx.Business.TextProcessing
         case "find":
         case "stored":
         case "var":
-        case "lit": return true;
+        case "lit":
+          return true;
       }
 
       return false;
@@ -2198,7 +2590,7 @@ namespace Org.Dx.Business.TextProcessing
         parmCount = cmdx.Parms.Length;
 
       if (cmdx.Parms.Length < count)
-        throw new CxException(15, new object[] { cmdx, count }); 
+        throw new CxException(15, new object[] { cmdx, count });
     }
 
     public static void AssertValidDataFormat(this string dataFormat, Cmdx cmdx, bool allowBlank = true)
@@ -2217,7 +2609,7 @@ namespace Org.Dx.Business.TextProcessing
           return;
       }
 
-      throw new CxException(22, new object[] { cmdx, dataFormat, allowBlank }); 
+      throw new CxException(22, new object[] { cmdx, dataFormat, allowBlank });
     }
 
   }

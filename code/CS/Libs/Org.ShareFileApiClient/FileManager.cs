@@ -23,7 +23,11 @@ namespace Org.ShareFileApiClient
     private Logger _logger;
 
     private bool _authenticationSuccessful = false;
-    public bool AuthenticationSuccessful { get { return _authenticationSuccessful; } }
+    public bool AuthenticationSuccessful {
+      get {
+        return _authenticationSuccessful;
+      }
+    }
 
     public FileManager(ApiParms apiParms, Logger logger, bool isDryRun = false)
     {
@@ -62,19 +66,19 @@ namespace Org.ShareFileApiClient
       while (!_authenticationSuccessful && remainingAuthRetries > 0)
       {
         remainingAuthRetries--;
-        _logger.Log("Authentication request in progress - remaining retries is " + remainingAuthRetries.ToString() + ".", 6133); 
+        _logger.Log("Authentication request in progress - remaining retries is " + remainingAuthRetries.ToString() + ".", 6133);
 
         _authenticationSuccessful = _apiClient.Authenticate(authParms);
 
         if (_authenticationSuccessful)
         {
-          _logger.Log("Authentication was successful.", 6132); 
+          _logger.Log("Authentication was successful.", 6132);
           return;
         }
 
         _logger.Log("Authentication failed due to timeout - remaining retries is " + remainingAuthRetries.ToString() + ".", 6131);
 
-        // sleep the main thread no more than 5 seconds at a time... 
+        // sleep the main thread no more than 5 seconds at a time...
         int remainingWaitSeconds = _apiParms.AuthRetryWaitIntervalSeconds;
         while (remainingWaitSeconds > 0)
         {
@@ -87,7 +91,7 @@ namespace Org.ShareFileApiClient
       {
         _logger.Log(LogSeverity.SEVR, "Authentication failed due to timeout - all " + _apiParms.AuthRetryLimit.ToString() + " retries have been exhausted.", 6128);
 
-        throw new Exception("The authentication was not successful.  Max authentication retries is " + _apiParms.AuthRetryLimit.ToString() + " and " + 
+        throw new Exception("The authentication was not successful.  Max authentication retries is " + _apiParms.AuthRetryLimit.ToString() + " and " +
                             "interval between retries is " + _apiParms.AuthRetryWaitIntervalSeconds.ToString() + " seconds. Remaining retries is " +
                             remainingAuthRetries.ToString() + ".");
       }
@@ -104,10 +108,10 @@ namespace Org.ShareFileApiClient
           var sfFolder = new SFFolder(parentFolder);
           sfFolder.Id = folder.Id;
           sfFolder.Name = folder.Name;
-          return sfFolder; 
+          return sfFolder;
         }
 
-        return null; 
+        return null;
       }
       catch (Exception ex)
       {
@@ -163,7 +167,7 @@ namespace Org.ShareFileApiClient
                 folderName = sfFolder.Name + "(" + seq.ToString() + ")";
                 seq++;
               }
-              fc.SFFolderSet.Add(folderName, sfFolder); 
+              fc.SFFolderSet.Add(folderName, sfFolder);
             }
             else
             {
@@ -178,15 +182,15 @@ namespace Org.ShareFileApiClient
                 fileName = file.Name + "(" + seq.ToString() + ")";
                 seq++;
               }
-              fc.SFFileSet.Add(fileName, sfFile); 
+              fc.SFFileSet.Add(fileName, sfFile);
             }
           }
 
           return fc;
         }
-        
+
         throw new Exception("The TaskResult returned from the apiClient on the GetFolderContents call had a TaskResultStatus of '" + taskResult.TaskResultStatus.ToString() + "." +
-                            "The NotificationMessage property value is '" + taskResult.NotificationMessage + "'."); 
+                            "The NotificationMessage property value is '" + taskResult.NotificationMessage + "'.");
       }
       catch (Exception ex)
       {
@@ -298,12 +302,12 @@ namespace Org.ShareFileApiClient
           ShareFile.Api.Models.Item folder = subTaskResult.Object as ShareFile.Api.Models.Item;
           List<string> filePaths = Directory.GetFiles(localFolder, _apiParms.FolderFilter).ToList();
 
-          SendMessageToHost("Files to upload: " + filePaths.Count.ToString() + "."); 
+          SendMessageToHost("Files to upload: " + filePaths.Count.ToString() + ".");
 
           foreach (string filePath in filePaths)
           {
             FileInfo fi = new FileInfo(filePath);
-            var fileTaskResult = new TaskResult("FileUpload"); 
+            var fileTaskResult = new TaskResult("FileUpload");
             if (fi.Length <= _apiParms.MaxUploadSize)
             {
               SendMessageToHost("Uploading file: " + fi.Name + " (" + fi.Length.ToString("###,###,##0") + " bytes)");
@@ -329,9 +333,9 @@ namespace Org.ShareFileApiClient
               else
               {
                 if (!_isDryRun)
-                  File.Delete(filePath); 
+                  File.Delete(filePath);
               }
-              taskResult.TaskResultSet.Add(taskResult.TaskResultSet.Count, subTaskResult); 
+              taskResult.TaskResultSet.Add(taskResult.TaskResultSet.Count, subTaskResult);
             }
             else
             {
@@ -340,27 +344,26 @@ namespace Org.ShareFileApiClient
                                        "which exceeds the file size limit of " + _apiParms.MaxUploadSize.ToString("###,###,##0") + " bytes.";
               fileTaskResult.Object = fi;
               fileTaskResult.Code = 144;
-              taskResult.TaskResultSet.Add(taskResult.TaskResultSet.Count, fileTaskResult); 
+              taskResult.TaskResultSet.Add(taskResult.TaskResultSet.Count, fileTaskResult);
             }
           }
 
           int failedCount = 0;
-          int successCount = 0; 
+          int successCount = 0;
           foreach (var childTaskResult in taskResult.TaskResultSet.Values)
           {
             if (childTaskResult.TaskResultStatus == TaskResultStatus.Success)
               successCount++;
             else
-              failedCount++; 
+              failedCount++;
           }
 
           if (failedCount == 0)
             taskResult.TaskResultStatus = TaskResultStatus.Success;
+          else if (successCount == 0)
+            taskResult.TaskResultStatus = TaskResultStatus.Failed;
           else
-            if (successCount == 0)
-              taskResult.TaskResultStatus = TaskResultStatus.Failed;
-            else
-              taskResult.TaskResultStatus = TaskResultStatus.Warning;
+            taskResult.TaskResultStatus = TaskResultStatus.Warning;
 
           taskResult.EndDateTime = DateTime.Now;
           return taskResult;
@@ -386,12 +389,12 @@ namespace Org.ShareFileApiClient
         maxDownloadCount = 999;
 
       bool fileSizeExceeded = false;
-      
+
       try
       {
-        string specifiedFileName = GetSpecifiedFileName(cfgDownloadFileName); 
+        string specifiedFileName = GetSpecifiedFileName(cfgDownloadFileName);
 
-        string archiveFolderId = String.Empty;        
+        string archiveFolderId = String.Empty;
 
         if (_apiParms.ArchiveRemoteFiles)
         {
@@ -404,14 +407,14 @@ namespace Org.ShareFileApiClient
           else
           {
             // didn't find folder or an exception occurred...
-            // may want to augment message to have better higher-level context (Code is 172), maybe override... 
+            // may want to augment message to have better higher-level context (Code is 172), maybe override...
             return archiveFolderTaskResult;
           }
         }
 
         var subTaskResult = _apiClient.GetFolderById(_apiParms.RootFolderId, _apiParms.RemoteTargetFolder);
         if (subTaskResult.TaskResultStatus == TaskResultStatus.Success)
-        {          
+        {
           ShareFile.Api.Models.Item folder = subTaskResult.Object as ShareFile.Api.Models.Item;
           subTaskResult = _apiClient.GetFolderContents(folder.Id);
           if (subTaskResult.TaskResultStatus == TaskResultStatus.Success)
@@ -451,7 +454,7 @@ namespace Org.ShareFileApiClient
                 TaskResult downloadTaskResult = new TaskResult("DownloadFile");
 
                 // have we already exceeded the maximum count of files to download?
-                // this is a Warning... 
+                // this is a Warning...
                 if (downloadCount >= maxDownloadCount)
                 {
                   downloadTaskResult.TaskResultStatus = TaskResultStatus.Warning;
@@ -467,7 +470,7 @@ namespace Org.ShareFileApiClient
                 // commit to downloading...
                 downloadCount++;
 
-                SendMessageToHost("Downloading file " + downloadCount.ToString() + " of " + totalFilesToDownload.ToString()); 
+                SendMessageToHost("Downloading file " + downloadCount.ToString() + " of " + totalFilesToDownload.ToString());
 
                 string fileId = file.Id;
                 string fileName = file.FileName;
@@ -490,7 +493,7 @@ namespace Org.ShareFileApiClient
                   {
                     downloadTaskResult.TaskResultStatus = TaskResultStatus.Failed;
                     downloadTaskResult.EndDateTime = DateTime.Now;
-                    downloadTaskResult.Message = "Local file name '" + downloadFileName + "' already exists and this program is configured to " + 
+                    downloadTaskResult.Message = "Local file name '" + downloadFileName + "' already exists and this program is configured to " +
                                                  "not overwrite existing files and not update the file name with a sequence number.  The remote file " +
                                                  "will not be downloaded.";
                     taskResult.TaskResultSet.Add(taskResult.TaskResultSet.Count, downloadTaskResult);
@@ -523,7 +526,7 @@ namespace Org.ShareFileApiClient
                       downloadFileName = folderName + @"\" + seqFileName + ext;
                     }
                   }
-                }   
+                }
 
                 // if the file is too big - this is an error
                 if (fileBytes > _apiParms.MaxDownloadSize)
@@ -566,7 +569,7 @@ namespace Org.ShareFileApiClient
             {
               taskResult.Code = 4;
               taskResult.TaskResultStatus = TaskResultStatus.Warning;
-              taskResult.Message = "Remote file '" + remoteFileName + "' does not exist."; 
+              taskResult.Message = "Remote file '" + remoteFileName + "' does not exist.";
             }
             else
             {
@@ -605,10 +608,10 @@ namespace Org.ShareFileApiClient
         if (specFileName.Contains("@CCYYMMDD@"))
         {
           string ccyymmdd = DateTime.Now.ToString("yyyyMMdd");
-          return specFileName.Replace("@CCYYMMDD@", ccyymmdd); 
+          return specFileName.Replace("@CCYYMMDD@", ccyymmdd);
         }
 
-        throw new Exception("Handling of file name pattern '" + specFileName + "' not yet implemented."); 
+        throw new Exception("Handling of file name pattern '" + specFileName + "' not yet implemented.");
       }
 
       return specFileName;
@@ -618,7 +621,7 @@ namespace Org.ShareFileApiClient
     {
       if (this.ProgressMessage != null)
       {
-        ProgressMessage(message); 
+        ProgressMessage(message);
       }
     }
 

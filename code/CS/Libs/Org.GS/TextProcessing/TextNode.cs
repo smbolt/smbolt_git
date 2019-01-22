@@ -7,11 +7,20 @@ using System.Threading.Tasks;
 
 namespace Org.GS
 {
-  public class TextNode 
+  public class TextNode
   {
-    public string Key { get; set; }
-    public string Text { get; set; }
-    public bool ExpectedOutcome { get; set; }
+    public string Key {
+      get;
+      set;
+    }
+    public string Text {
+      get;
+      set;
+    }
+    public bool ExpectedOutcome {
+      get;
+      set;
+    }
 
     public TextNode()
     {
@@ -40,7 +49,7 @@ namespace Org.GS
 
     //public TextNodeSet GetSpecificTextNodeSet(string[] textNodes, List<string> testSets, List<string> tests, Dictionary<string, string> testItems)
     //{
-      
+
     //  foreach (var node in textNodes)
     //  {
     //    string[] tokens = node.Split(Constants.WhiteSpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);

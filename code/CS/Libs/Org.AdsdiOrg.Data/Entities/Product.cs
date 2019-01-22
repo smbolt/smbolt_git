@@ -11,28 +11,58 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Product")]
-    public partial class Product
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Product")]
+  public partial class Product
+  {
+    public Product()
     {
-        public Product()
-        {
-            this.OrderDetails = new HashSet<OrderDetail>();
-            this.Services = new HashSet<Service>();
-        }
-    
-        public int ProductId { get; set; }
-        public string ProductCategoryCode { get; set; }
-        public string ProductDescription { get; set; }
-        public int StatusId { get; set; }
-        public decimal Price { get; set; }
-        public decimal Cost { get; set; }
-    
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual ProductCategory ProductCategory { get; set; }
-        public virtual Status Status { get; set; }
-        public virtual ICollection<Service> Services { get; set; }
+      this.OrderDetails = new HashSet<OrderDetail>();
+      this.Services = new HashSet<Service>();
     }
+
+    public int ProductId {
+      get;
+      set;
+    }
+    public string ProductCategoryCode {
+      get;
+      set;
+    }
+    public string ProductDescription {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+    public decimal Price {
+      get;
+      set;
+    }
+    public decimal Cost {
+      get;
+      set;
+    }
+
+    public virtual ICollection<OrderDetail> OrderDetails {
+      get;
+      set;
+    }
+    public virtual ProductCategory ProductCategory {
+      get;
+      set;
+    }
+    public virtual Status Status {
+      get;
+      set;
+    }
+    public virtual ICollection<Service> Services {
+      get;
+      set;
+    }
+  }
 }

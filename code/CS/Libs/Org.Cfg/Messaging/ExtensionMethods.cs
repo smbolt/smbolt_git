@@ -11,7 +11,7 @@ namespace Org.Cfg.Messaging
     public static DateTime? ToLocalDateTime(this MessageDateTime mdt)
     {
       if (mdt == null || !mdt.DateTime.HasValue)
-        return (DateTime?)null;           
+        return (DateTime?)null;
 
       TimeZoneInfo tzLocal = TimeZoneInfo.Local;
       return TimeZoneInfo.ConvertTime(mdt.DateTime.Value, mdt.TimeZoneInfo, TimeZoneInfo.Local);

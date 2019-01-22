@@ -12,13 +12,22 @@ namespace Org.GS.Configuration
   public class TaskParm
   {
     [XMap(Name = "K", IsKey = true)]
-    public string Key { get; set; }
+    public string Key {
+      get;
+      set;
+    }
 
     [XMap(Name = "V", DefaultValue = "")]
-    public string Value { get; set; }
+    public string Value {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "System.String")]
-    public Type DataType { get; set; }
+    public Type DataType {
+      get;
+      set;
+    }
 
     public TaskParm()
     {

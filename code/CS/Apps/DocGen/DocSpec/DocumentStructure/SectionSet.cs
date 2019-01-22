@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Org.DocGen.DocSpec
 {
-    public class SectionSet : Dictionary<string, Section>
-    {
-    }
+  public class SectionSet : Dictionary<string, Section>
+  {
+  }
 }

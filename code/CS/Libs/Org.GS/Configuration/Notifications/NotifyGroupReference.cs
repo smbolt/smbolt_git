@@ -11,10 +11,16 @@ namespace Org.GS
   public class NotifyGroupReference
   {
     [XMap(Name = "Name")]
-    public string NotifyGroupName { get; set; }
+    public string NotifyGroupName {
+      get;
+      set;
+    }
 
     [XMap(Name = "IsActive")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     public NotifyGroupReference()
     {

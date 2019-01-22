@@ -10,7 +10,11 @@ namespace Org.GS
   [Serializable]
   public class ParmSet : List<Parm>
   {
-    public string ParmsReport { get { return Get_ParmsReport(); } }
+    public string ParmsReport {
+      get {
+        return Get_ParmsReport();
+      }
+    }
 
     public bool ParmExists(string parmName)
     {
@@ -31,7 +35,7 @@ namespace Org.GS
       if (parmName.IsBlank())
         throw new Exception("The parmName parameter value cannot be blank or null.");
 
-      this.AddParm(parmName, (object)parmValue); 
+      this.AddParm(parmName, (object)parmValue);
     }
 
     public void AddParm(string parmName, object parmValue)
@@ -76,7 +80,7 @@ namespace Org.GS
     public void SetParmValue(string parmName, object parmValue)
     {
       if (parmName.IsBlank())
-        return; 
+        return;
 
       var parm = this.Where(p => p.ParameterName == parmName).FirstOrDefault();
 
@@ -86,7 +90,7 @@ namespace Org.GS
       }
       else
       {
-        this.AddParm(parmName, parmValue); 
+        this.AddParm(parmName, parmValue);
       }
     }
 
@@ -99,7 +103,7 @@ namespace Org.GS
     {
       // if we find a match that is not pointing to a "ParmSet", then we return it.
       foreach (var parm in this)
-      {        
+      {
         if (parm.ParameterType == typeof(System.String) && parm.ParameterValue != null && parm.ParameterValue.ToString().StartsWith("ParmSet="))
           continue;
 
@@ -109,7 +113,7 @@ namespace Org.GS
 
       // otherwise we use any match we can find
       foreach (var parm in this)
-      {        
+      {
         if (parm.ParameterName == parmName)
           return parm.ParameterValue;
       }
@@ -140,7 +144,7 @@ namespace Org.GS
                   (parm.ScheduledTaskId.HasValue ? parm.ScheduledTaskId.Value.ToString("0000") : "NULL") + "   " +
                   parm.ParameterSetName.PadTo(30) +
                   parm.ParameterName.PadTo(40) +
-                  ParmValueReport(parm.ParameterValue) + g.crlf); 
+                  ParmValueReport(parm.ParameterValue) + g.crlf);
       }
 
       sb.Append("TOTAL PARM CONT: " + totalParms.ToString() + g.crlf);
@@ -170,7 +174,7 @@ namespace Org.GS
           case "ConfigWsSpec":
             var wsSpec = (ConfigWsSpec)parmValue;
             return wsSpec.WebServiceEndpoint;
-      }
+        }
 
         return parmValue.ToString();
       }

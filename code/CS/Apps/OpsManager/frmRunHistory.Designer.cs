@@ -49,9 +49,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.gvRunHistory)).BeginInit();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 776);
       this.lblStatus.Name = "lblStatus";
@@ -59,9 +59,9 @@
       this.lblStatus.TabIndex = 17;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // btnBack
-      // 
+      //
       this.btnBack.Location = new System.Drawing.Point(1171, 6);
       this.btnBack.Name = "btnBack";
       this.btnBack.Size = new System.Drawing.Size(100, 23);
@@ -70,62 +70,64 @@
       this.btnBack.Text = "Back";
       this.btnBack.UseVisualStyleBackColor = true;
       this.btnBack.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlBottom
-      // 
+      //
       this.pnlBottom.Controls.Add(this.btnBack);
       this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.pnlBottom.Location = new System.Drawing.Point(0, 744);
       this.pnlBottom.Name = "pnlBottom";
       this.pnlBottom.Size = new System.Drawing.Size(1525, 32);
       this.pnlBottom.TabIndex = 26;
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1525, 24);
       this.mnuMain.TabIndex = 28;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // runHistorySplitter
-      // 
+      //
       this.runHistorySplitter.Dock = System.Windows.Forms.DockStyle.Fill;
       this.runHistorySplitter.Location = new System.Drawing.Point(0, 124);
       this.runHistorySplitter.Name = "runHistorySplitter";
       this.runHistorySplitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
-      // 
+      //
       // runHistorySplitter.Panel1
-      // 
+      //
       this.runHistorySplitter.Panel1.Controls.Add(this.gvRunHistory);
-      // 
+      //
       // runHistorySplitter.Panel2
-      // 
+      //
       this.runHistorySplitter.Panel2.Controls.Add(this.txtLogDetails);
       this.runHistorySplitter.Size = new System.Drawing.Size(1525, 620);
       this.runHistorySplitter.SplitterDistance = 476;
       this.runHistorySplitter.TabIndex = 29;
-      // 
+      //
       // gvRunHistory
-      // 
+      //
       this.gvRunHistory.AllowUserToAddRows = false;
       this.gvRunHistory.AllowUserToDeleteRows = false;
       this.gvRunHistory.AllowUserToResizeRows = false;
@@ -144,9 +146,9 @@
       this.gvRunHistory.TabIndex = 8;
       this.gvRunHistory.Tag = "RunHistoryChange";
       this.gvRunHistory.SelectionChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // txtLogDetails
-      // 
+      //
       this.txtLogDetails.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtLogDetails.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtLogDetails.Location = new System.Drawing.Point(0, 0);
@@ -157,18 +159,18 @@
       this.txtLogDetails.Size = new System.Drawing.Size(1525, 140);
       this.txtLogDetails.TabIndex = 9;
       this.txtLogDetails.WordWrap = false;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnRefreshRunHistory);
       this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlTop.Location = new System.Drawing.Point(0, 24);
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1525, 100);
       this.pnlTop.TabIndex = 30;
-      // 
+      //
       // btnRefreshRunHistory
-      // 
+      //
       this.btnRefreshRunHistory.Location = new System.Drawing.Point(1154, 27);
       this.btnRefreshRunHistory.Name = "btnRefreshRunHistory";
       this.btnRefreshRunHistory.Size = new System.Drawing.Size(117, 37);
@@ -177,9 +179,9 @@
       this.btnRefreshRunHistory.Text = "Refresh Run History";
       this.btnRefreshRunHistory.UseVisualStyleBackColor = true;
       this.btnRefreshRunHistory.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmRunHistory
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1525, 796);

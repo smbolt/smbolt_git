@@ -9,22 +9,74 @@ namespace Org.Finance.Business
 {
   public class Transaction
   {
-    public int Id { get; set; }
-    public DateTime TransactionDate { get; set; }
-    public int Year { get { return this.TransactionDate.Year; } }
-    public int Month { get { return this.TransactionDate.Month; } }
-    public int Day { get { return this.TransactionDate.Day; } }
-    public DebitCredit DebitCredit { get; set; }
-    public int TransTypeId { get; set; }
-    public decimal Amount { get; set; }
-    public decimal Balance { get; set; }
-    public bool IsActive { get; set; }
-    public int CategoryId { get; set; }
-    public int PayeeId { get; set; }
-    public string Description { get; set; }
-    public string OrigDescription { get; set; }
-    public string Comment { get; set; }
-    public string Report { get { return Get_Report(); } }
+    public int Id {
+      get;
+      set;
+    }
+    public DateTime TransactionDate {
+      get;
+      set;
+    }
+    public int Year {
+      get {
+        return this.TransactionDate.Year;
+      }
+    }
+    public int Month {
+      get {
+        return this.TransactionDate.Month;
+      }
+    }
+    public int Day {
+      get {
+        return this.TransactionDate.Day;
+      }
+    }
+    public DebitCredit DebitCredit {
+      get;
+      set;
+    }
+    public int TransTypeId {
+      get;
+      set;
+    }
+    public decimal Amount {
+      get;
+      set;
+    }
+    public decimal Balance {
+      get;
+      set;
+    }
+    public bool IsActive {
+      get;
+      set;
+    }
+    public int CategoryId {
+      get;
+      set;
+    }
+    public int PayeeId {
+      get;
+      set;
+    }
+    public string Description {
+      get;
+      set;
+    }
+    public string OrigDescription {
+      get;
+      set;
+    }
+    public string Comment {
+      get;
+      set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public Transaction()
     {
@@ -64,9 +116,9 @@ namespace Org.Finance.Business
 
     private string Get_Report()
     {
-      return this.TransactionDate.ToString("yyyy-MM-dd") + "  " + this.DebitCredit.ToString() + "  " + 
-        this.Amount.ToString("###,##0.00") + g.crlf +
-        this.Description + g.crlf + this.Comment;
+      return this.TransactionDate.ToString("yyyy-MM-dd") + "  " + this.DebitCredit.ToString() + "  " +
+             this.Amount.ToString("###,##0.00") + g.crlf +
+             this.Description + g.crlf + this.Comment;
     }
 
     public Transaction Clone()

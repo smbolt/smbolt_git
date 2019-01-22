@@ -41,7 +41,7 @@ namespace ShareFileUtility
     private static bool _inWaitMode = false;
     private static bool _overrideWaitMode = false;
     private static int _fileCount = 0;
-    private static int _folderCount = 0; 
+    private static int _folderCount = 0;
     private static long _totalBytes = 0;
     private static bool _sendNotifications = false;
     private static SmtpParms _smtpParms;
@@ -75,7 +75,7 @@ namespace ShareFileUtility
       if (taskResult.TaskResultStatus != TaskResultStatus.Success)
       {
         _finalNotificationsInProgress = true;
-        ReportInitializationError(taskResult); 
+        ReportInitializationError(taskResult);
         return taskResult.Code;
       }
 
@@ -146,14 +146,14 @@ namespace ShareFileUtility
 
       _finalNotificationsInProgress = true;
       if (!taskResult.NotificationsSent && _notifyConfig != null)
-        ProcessNotifications(taskResult); 
+        ProcessNotifications(taskResult);
 
       DisplaySummary();
 
       if (_notificationsInProgress)
       {
         if (!_inSilentMode)
-          Console.WriteLine("Waiting for notifications to complete..."); 
+          Console.WriteLine("Waiting for notifications to complete...");
 
         int spinCount = 0;
         while (_notificationsInProgress && _notificationCompletionLimit > 0)
@@ -163,10 +163,18 @@ namespace ShareFileUtility
             spinCount++;
             switch (spinCount % 4)
             {
-              case 0: Console.Write("/"); break;
-              case 1: Console.Write("-"); break;
-              case 2: Console.Write("\\"); break;
-              case 3: Console.Write("|"); break;
+              case 0:
+                Console.Write("/");
+                break;
+              case 1:
+                Console.Write("-");
+                break;
+              case 2:
+                Console.Write("\\");
+                break;
+              case 3:
+                Console.Write("|");
+                break;
             }
             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
           }
@@ -176,7 +184,7 @@ namespace ShareFileUtility
       }
 
       if (_overrideWaitMode && !_inWaitMode)
-        _inWaitMode = true; 
+        _inWaitMode = true;
 
       if (_programMode != ProgramMode.UploadWatchFolder)
         _logger.Log("Program " + _programName + " terminating with return code " + _returnCode.ToString() + ".");
@@ -185,7 +193,7 @@ namespace ShareFileUtility
       {
         if (_programMode == ProgramMode.UploadWatchFolder)
         {
-          Console.WriteLine(g.crlf + "ShareFileUtility is watching for files..."); 
+          Console.WriteLine(g.crlf + "ShareFileUtility is watching for files...");
           Console.WriteLine("Press any key to stop watching and end program." + g.crlf + "***");
           Console.ReadLine();
           DisplaySummary();
@@ -207,29 +215,29 @@ namespace ShareFileUtility
     private static void DisplaySummary()
     {
       if (_inSilentMode)
-         return;
+        return;
 
       if (_programMode == ProgramMode.UploadWatchFolder || _programMode == ProgramMode.EditConfig ||
           _programMode == ProgramMode.HelpMode || _programMode == ProgramMode.TestNotifications)
         return;
 
       Console.WriteLine(g.crlf + "Run Summary");
-      _logger.Log("Run Summary"); 
+      _logger.Log("Run Summary");
 
       switch (_programMode)
       {
         case ProgramMode.UploadSingleFile:
         case ProgramMode.UploadByFolder:
         case ProgramMode.UploadWatchFolder:
-          Console.WriteLine("Total files uploaded: " + _fileCount.ToString("###,##0")); 
+          Console.WriteLine("Total files uploaded: " + _fileCount.ToString("###,##0"));
           Console.WriteLine("Total bytes uploaded: " + _totalBytes.ToString("###,###,###,##0"));
           _logger.Log("Total files uploaded: " + _fileCount.ToString("###,##0"));
-          _logger.Log("Total bytes uploaded: " + _totalBytes.ToString("###,###,###,##0")); 
+          _logger.Log("Total bytes uploaded: " + _totalBytes.ToString("###,###,###,##0"));
           break;
 
         case ProgramMode.ListRemoteFolder:
-          Console.WriteLine("Total folders in remote folder: " + _folderCount.ToString("###,##0")); 
-          Console.WriteLine("Total files in remote folder: " + _fileCount.ToString("###,##0")); 
+          Console.WriteLine("Total folders in remote folder: " + _folderCount.ToString("###,##0"));
+          Console.WriteLine("Total files in remote folder: " + _fileCount.ToString("###,##0"));
           Console.WriteLine("Total bytes in remote folder: " + _totalBytes.ToString("###,###,###,##0"));
           _logger.Log("Total folders in remote folder: " + _folderCount.ToString("###,##0"));
           _logger.Log("Total files in remote folder: " + _fileCount.ToString("###,##0"));
@@ -238,7 +246,7 @@ namespace ShareFileUtility
 
         case ProgramMode.ClearRemoteFolder:
           Console.WriteLine("Total folders not deleted: " + _folderCount.ToString("###,##0"));
-          Console.WriteLine("Total files deleted: " + _fileCount.ToString("###,##0"));  
+          Console.WriteLine("Total files deleted: " + _fileCount.ToString("###,##0"));
           Console.WriteLine("Total bytes deleted: " + _totalBytes.ToString("###,###,###,##0"));
           _logger.Log("Total folders not deleted: " + _folderCount.ToString("###,##0"));
           _logger.Log("Total files deleted: " + _fileCount.ToString("###,##0"));
@@ -246,7 +254,7 @@ namespace ShareFileUtility
           break;
 
         case ProgramMode.DeleteRemoteFile:
-          Console.WriteLine("Total files deleted: " + _fileCount.ToString("###,##0"));  
+          Console.WriteLine("Total files deleted: " + _fileCount.ToString("###,##0"));
           Console.WriteLine("Total bytes deleted: " + _totalBytes.ToString("###,###,###,##0"));
           _logger.Log("Total files deleted: " + _fileCount.ToString("###,##0"));
           _logger.Log("Total bytes deleted: " + _totalBytes.ToString("###,###,###,##0"));
@@ -273,7 +281,7 @@ namespace ShareFileUtility
       {
         bool taskRunning = true;
 
-        methodName = method.Method.Name; 
+        methodName = method.Method.Name;
 
         Task.Run<TaskResult>(() => method(parm)).ContinueWith(r =>
         {
@@ -289,7 +297,7 @@ namespace ShareFileUtility
           }
 
           if (runNotifications && _notifyConfig != null)
-            ProcessNotifications(taskResult); 
+            ProcessNotifications(taskResult);
         });
 
         int spinCount = 0;
@@ -300,10 +308,18 @@ namespace ShareFileUtility
             spinCount++;
             switch (spinCount % 4)
             {
-              case 0: Console.Write("/"); break;
-              case 1: Console.Write("-"); break;
-              case 2: Console.Write("\\"); break;
-              case 3: Console.Write("|"); break;
+              case 0:
+                Console.Write("/");
+                break;
+              case 1:
+                Console.Write("-");
+                break;
+              case 2:
+                Console.Write("\\");
+                break;
+              case 3:
+                Console.Write("|");
+                break;
             }
             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
           }
@@ -325,7 +341,7 @@ namespace ShareFileUtility
 
     private static TaskResult ListRemoteFolder(string dummy)
     {
-      TaskResult taskResult = new TaskResult("ListRemoteFolder"); 
+      TaskResult taskResult = new TaskResult("ListRemoteFolder");
 
       try
       {
@@ -335,9 +351,9 @@ namespace ShareFileUtility
           string remoteFolder = _apiParms.RootFolderId;
           if (_apiParms.RemoteTargetFolder.IsNotBlank())
             remoteFolder += "/" + _apiParms.RemoteTargetFolder;
-          _logger.Log("Remote folder is '" + remoteFolder + "'"); 
+          _logger.Log("Remote folder is '" + remoteFolder + "'");
           if (!_inSilentMode)
-            Console.WriteLine("Remote folder is '" + remoteFolder + "'"); 
+            Console.WriteLine("Remote folder is '" + remoteFolder + "'");
 
           taskResult = fm.ListRemoteFolder();
           switch (taskResult.TaskResultStatus)
@@ -373,7 +389,7 @@ namespace ShareFileUtility
 
             default:
               LogAndShowMessageOnConsole(taskResult);
-              return taskResult; 
+              return taskResult;
           }
         }
       }
@@ -399,7 +415,7 @@ namespace ShareFileUtility
             remoteFolder += "/" + _apiParms.RemoteTargetFolder;
           _logger.Log("Remote folder is '" + remoteFolder + "'");
           if (!_inSilentMode)
-            Console.WriteLine("Remote folder is '" + remoteFolder + "'"); 
+            Console.WriteLine("Remote folder is '" + remoteFolder + "'");
 
           taskResult = fm.ClearRemoteFolder();
           switch (taskResult.TaskResultStatus)
@@ -416,11 +432,11 @@ namespace ShareFileUtility
                   if (file.__type == "ShareFile.Api.Models.File")
                     fileCount++;
                   else
-                    folderCount++; 
+                    folderCount++;
                 }
 
                 LogAndShowMessageOnConsole("Folder Contents (" + fileCount.ToString() + " files) deleted" + g.crlf +
-                                         "Folder Contents (" + folderCount.ToString() + " folders) not deleted", !_inSilentMode);
+                                           "Folder Contents (" + folderCount.ToString() + " folders) not deleted", !_inSilentMode);
               }
 
               _fileCount = 0;
@@ -466,7 +482,7 @@ namespace ShareFileUtility
 
     private static TaskResult DeleteRemoteFile(string dummy)
     {
-      TaskResult taskResult = new TaskResult("DeleteRemoteFile"); 
+      TaskResult taskResult = new TaskResult("DeleteRemoteFile");
 
       try
       {
@@ -478,7 +494,7 @@ namespace ShareFileUtility
             remoteFolder += "/" + _apiParms.RemoteTargetFolder;
           _logger.Log("Remote folder is '" + remoteFolder + "'");
           if (!_inSilentMode)
-            Console.WriteLine("Remote folder is '" + remoteFolder + "'"); 
+            Console.WriteLine("Remote folder is '" + remoteFolder + "'");
 
           taskResult = fm.DeleteRemoteFile(_remoteFileName);
           switch (taskResult.TaskResultStatus)
@@ -509,14 +525,14 @@ namespace ShareFileUtility
       catch (Exception ex)
       {
         taskResult.Failed("Error occurred running DeleteRemoteFile.", 313, ex);
-        LogAndShowMessageOnConsole(taskResult); 
+        LogAndShowMessageOnConsole(taskResult);
         return taskResult;
       }
     }
 
     private static TaskResult UploadSingleFile(string fileName)
     {
-      TaskResult taskResult = new TaskResult("UploadSingleFile"); 
+      TaskResult taskResult = new TaskResult("UploadSingleFile");
 
       try
       {
@@ -549,13 +565,13 @@ namespace ShareFileUtility
         _fileCount++;
 
         LogAndShowMessageOnConsole(_fileCount.ToString("000") + " Name: " + fileName + g.crlf +
-                                 _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0"), !_inSilentMode); 
+                                   _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0"), !_inSilentMode);
 
         if (fi.Length > _apiParms.MaxUploadSize)
         {
           taskResult.Failed(_fileCount.ToString("000") + " ERROR - File size of " + fi.Length.ToString("###,###,##0") + " bytes exceeds the maximum size allowed which is " +
-                                _apiParms.MaxUploadSize.ToString("###,###,##0") + " bytes.", 142);
-          LogAndShowMessageOnConsole(taskResult); 
+                            _apiParms.MaxUploadSize.ToString("###,###,##0") + " bytes.", 142);
+          LogAndShowMessageOnConsole(taskResult);
           return taskResult;
         }
 
@@ -568,12 +584,12 @@ namespace ShareFileUtility
           {
             case TaskResultStatus.Success:
               _totalBytes += fi.Length;
-              LogAndShowMessageOnConsole(_fileCount.ToString("000") + " Result: Upload successful - duration was " + taskResult.DurationString + " seconds", !_inSilentMode); 
+              LogAndShowMessageOnConsole(_fileCount.ToString("000") + " Result: Upload successful - duration was " + taskResult.DurationString + " seconds", !_inSilentMode);
               return taskResult;
 
             default:
               _fileCount = _fileCount > 0 ? _fileCount - 1: 0;
-              LogAndShowMessageOnConsole(taskResult); 
+              LogAndShowMessageOnConsole(taskResult);
               return taskResult;
           }
         }
@@ -588,7 +604,7 @@ namespace ShareFileUtility
 
     private static TaskResult UploadByFolder(string folderPath)
     {
-      TaskResult taskResult = new TaskResult("UploadByFolder"); 
+      TaskResult taskResult = new TaskResult("UploadByFolder");
 
       try
       {
@@ -627,13 +643,13 @@ namespace ShareFileUtility
             case TaskResultStatus.Success:
               foreach (var childTaskResult in taskResult.TaskResultSet.Values)
               {
-                FileInfo fi = (FileInfo)childTaskResult.Object; 
+                FileInfo fi = (FileInfo)childTaskResult.Object;
                 _fileCount++;
                 _totalBytes += fi.Length;
 
                 LogAndShowMessageOnConsole(g.crlf + _fileCount.ToString("000") + " Name: " + fi.FullName + g.crlf +
-                                         _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
-                                         _fileCount.ToString("000") + " Result: Upload successful - duration was " + childTaskResult.DurationString + " seconds", !_inSilentMode);
+                                           _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
+                                           _fileCount.ToString("000") + " Result: Upload successful - duration was " + childTaskResult.DurationString + " seconds", !_inSilentMode);
               }
               return taskResult;
 
@@ -648,7 +664,7 @@ namespace ShareFileUtility
                 if (childTaskResult.TaskResultStatus != TaskResultStatus.Success)
                   result = "*** FAILED *** " + childTaskResult.Message + " (code " + childTaskResult.Code + ")";
 
-                LogAndShowMessageOnConsole(g.crlf + _fileCount.ToString("000") + " Name: " + fi.FullName + g.crlf + 
+                LogAndShowMessageOnConsole(g.crlf + _fileCount.ToString("000") + " Name: " + fi.FullName + g.crlf +
                                            _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
                                            _fileCount.ToString("000") + " Result: " + result, true);
 
@@ -656,7 +672,7 @@ namespace ShareFileUtility
               return taskResult.SetCode(308);
 
             default:
-              LogAndShowMessageOnConsole(taskResult); 
+              LogAndShowMessageOnConsole(taskResult);
               return taskResult;
           }
         }
@@ -664,14 +680,14 @@ namespace ShareFileUtility
       catch (Exception ex)
       {
         taskResult.Failed(_errorMessages[309].Replace("@FolderPath@", folderPath), 309, ex);
-        LogAndShowMessageOnConsole(taskResult); 
+        LogAndShowMessageOnConsole(taskResult);
         return taskResult;
       }
     }
 
     private static TaskResult WatchFolder(string watchFolderPath)
     {
-      TaskResult taskResult = new TaskResult("WatchFolder"); 
+      TaskResult taskResult = new TaskResult("WatchFolder");
 
       try
       {
@@ -680,7 +696,7 @@ namespace ShareFileUtility
           remoteFolder += "/" + _apiParms.RemoteTargetFolder;
 
         LogAndShowMessageOnConsole("Remote folder is '" + remoteFolder + "'" + g.crlf +
-                                   "Watching local folder '" + watchFolderPath + "'.", !_inSilentMode); 
+                                   "Watching local folder '" + watchFolderPath + "'.", !_inSilentMode);
 
         _inWaitMode = true;
         _watcher = new FileSystemWatcher();
@@ -701,7 +717,7 @@ namespace ShareFileUtility
 
     private static void _watcher_Created(object sender, FileSystemEventArgs e)
     {
-      TaskResult taskResult = new TaskResult("WatchFolder"); 
+      TaskResult taskResult = new TaskResult("WatchFolder");
 
       try
       {
@@ -711,7 +727,7 @@ namespace ShareFileUtility
           taskResult.Failed("FILE EXCLUDED FROM UPLOAD DUE TO SIZE" + g.crlf +
                             "File '" + e.Name + "' exclude because its size " + fi.Length.ToString("###,###,##0") + " exceeds " +
                             "the max allowed size of " + _apiParms.MaxUploadSize.ToString("###,###,##0") + ".", 155);
-          LogAndShowMessageOnConsole(taskResult); 
+          LogAndShowMessageOnConsole(taskResult);
           return;
         }
 
@@ -720,12 +736,12 @@ namespace ShareFileUtility
         taskResult = UploadSingleFile(e.FullPath);
 
         LogAndShowMessageOnConsole(taskResult);
-        
+
         // need to do this here as this TaskResult is not returned into the main line logic, but just created in this event handler.
         if (_notifyConfig != null)
-          ProcessNotifications(taskResult); 
+          ProcessNotifications(taskResult);
 
-        Console.WriteLine("Press any key to stop watching and end program..."); 
+        Console.WriteLine("Press any key to stop watching and end program...");
       }
       catch (Exception ex)
       {
@@ -737,7 +753,7 @@ namespace ShareFileUtility
     private static TaskResult DownloadFiles(string dummy)
     {
       TaskResult taskResult = new TaskResult("DownloadFiles");
-      
+
       try
       {
         string remoteFolder = _apiParms.RootFolderId;
@@ -747,7 +763,7 @@ namespace ShareFileUtility
         LogAndShowMessageOnConsole("Remote folder is '" + remoteFolder + "'", !_inSilentMode);
 
         _fileCount = 0;
-        _totalBytes = 0; 
+        _totalBytes = 0;
 
         using (var fm = new FileManager(_apiParms))
         {
@@ -814,8 +830,8 @@ namespace ShareFileUtility
                   _totalBytes += fi.Length;
 
                   resultsMessage = g.crlf + _fileCount.ToString("000") + " Name: " + fi.FullName + g.crlf +
-                                          _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
-                                          _fileCount.ToString("000") + " Result: Download successful - duration was " + childTaskResult.DurationString + " seconds" + g.crlf;
+                                   _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
+                                   _fileCount.ToString("000") + " Result: Download successful - duration was " + childTaskResult.DurationString + " seconds" + g.crlf;
 
                   if (_apiParms.ArchiveRemoteFiles)
                   {
@@ -831,10 +847,10 @@ namespace ShareFileUtility
                     else
                       resultsMessage += _fileCount.ToString("000") + " Original remote file delete error: " + remoteFileDeleteError;
                   }
-                  
-                  summaryMessage.Append(resultsMessage); 
 
-                  LogAndShowMessageOnConsole(resultsMessage, !_inSilentMode); 
+                  summaryMessage.Append(resultsMessage);
+
+                  LogAndShowMessageOnConsole(resultsMessage, !_inSilentMode);
                 }
                 else // failures and warnings
                 {
@@ -845,9 +861,9 @@ namespace ShareFileUtility
                     _totalBytes += fi.Length;
 
                     resultsMessage = g.crlf + _fileCount.ToString("000") + " Name: " + fi.FullName + g.crlf +
-                                            "Existing file of the same name was overwritten." + g.crlf +
-                                            _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
-                                            _fileCount.ToString("000") + " Result: Download successful - duration was " + childTaskResult.DurationString + " seconds" + g.crlf;
+                                     "Existing file of the same name was overwritten." + g.crlf +
+                                     _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
+                                     _fileCount.ToString("000") + " Result: Download successful - duration was " + childTaskResult.DurationString + " seconds" + g.crlf;
 
                     if (_apiParms.ArchiveRemoteFiles)
                     {
@@ -871,9 +887,9 @@ namespace ShareFileUtility
                   else
                   {
                     resultsMessage = g.crlf + "*** Child Task " + childTaskResult.TaskResultStatus.ToString() + "***" + g.crlf +
-                                        "Code: " + childTaskResult.Code.ToString("0000") + g.crlf +
-                                        "Message: " + childTaskResult.Message + g.crlf;
-                    summaryMessage.Append(resultsMessage); 
+                                     "Code: " + childTaskResult.Code.ToString("0000") + g.crlf +
+                                     "Message: " + childTaskResult.Message + g.crlf;
+                    summaryMessage.Append(resultsMessage);
                   }
 
                   taskResult.SetCode(148);
@@ -885,15 +901,15 @@ namespace ShareFileUtility
               string statsMessage = "Total files downloaded: " + _fileCount.ToString() + g.crlf +
                                     "Total bytes downloaded: " + _totalBytes.ToString("###,###,##0") + g.crlf;
 
-              taskResult.TotalEntityCount = _fileCount; 
+              taskResult.TotalEntityCount = _fileCount;
               taskResult.Message = statsMessage + summaryMessage.ToString();
 
-              LogAndShowMessageOnConsole(g.crlf + "Download operation completed in " + taskResult.Duration + " seconds", !_inSilentMode); 
+              LogAndShowMessageOnConsole(g.crlf + "Download operation completed in " + taskResult.Duration + " seconds", !_inSilentMode);
 
               return taskResult;
 
             default: // download failed
-              LogAndShowMessageOnConsole(taskResult); 
+              LogAndShowMessageOnConsole(taskResult);
               return taskResult;
           }
         }
@@ -938,7 +954,7 @@ namespace ShareFileUtility
           LogAndShowMessageOnConsole(taskResult);
         });
 
-        return 0; 
+        return 0;
       }
       catch (Exception ex)
       {
@@ -988,7 +1004,7 @@ namespace ShareFileUtility
       if (!_inSilentMode)
         Console.WriteLine(message);
 
-      _logger.Log(message); 
+      _logger.Log(message);
     }
 
     private static ApiParms GetApiParms()
@@ -1024,7 +1040,7 @@ namespace ShareFileUtility
       apiParms.FolderFilter = g.CI("FolderFilter");
       if (apiParms.FolderFilter.IsBlank())
         apiParms.FolderFilter = "*.*";
-      apiParms.ArchiveFolder = g.CI("ArchiveFolder"); 
+      apiParms.ArchiveFolder = g.CI("ArchiveFolder");
       return apiParms;
     }
 
@@ -1042,13 +1058,13 @@ namespace ShareFileUtility
       {
         taskResult.Failed("An exception occurred running 'EditConfigFile'.", 311, ex);
         LogAndShowMessageOnConsole(taskResult);
-        return taskResult; 
+        return taskResult;
       }
     }
 
     private static TaskResult InitializeProgram(string[] args)
     {
-      var taskResult = new TaskResult("Initialization"); 
+      var taskResult = new TaskResult("Initialization");
 
       try
       {
@@ -1075,10 +1091,10 @@ namespace ShareFileUtility
           }
         }
 
-        _notificationCompletionLimit = g.CI("NotificationCompletionLimit").ToInt32OrDefault(15000); 
+        _notificationCompletionLimit = g.CI("NotificationCompletionLimit").ToInt32OrDefault(15000);
 
         _downloadFileName = g.CI("DownloadFileName");
-        _downloadOpts = g.ToEnum<FileProcessingOptions>(g.CI("DownloadOptions"), FileProcessingOptions.SequenceDuplicates); 
+        _downloadOpts = g.ToEnum<FileProcessingOptions>(g.CI("DownloadOptions"), FileProcessingOptions.SequenceDuplicates);
 
         if (_commandLine.IsNotBlank())
           args = GetArgsFromCommandLine(_commandLine);
@@ -1093,7 +1109,7 @@ namespace ShareFileUtility
 
     private static TaskResult ParseCommandTokens(string[] args)
     {
-      var taskResult = new TaskResult("Initialization"); 
+      var taskResult = new TaskResult("Initialization");
 
       if (args.Length == 0)
       {
@@ -1113,15 +1129,15 @@ namespace ShareFileUtility
         _inSilentMode = true;
 
       // turn off silent mode when it makes no sense
-      if (_programMode == ProgramMode.HelpMode || 
+      if (_programMode == ProgramMode.HelpMode ||
           _programMode == ProgramMode.EditConfig ||
           _programMode == ProgramMode.ListRemoteFolder)
         _inSilentMode = false;
 
       if (!_inSilentMode)
-        Console.WriteLine("ShareFileUtility is starting up."); 
+        Console.WriteLine("ShareFileUtility is starting up.");
 
-      if (_programMode == ProgramMode.HelpMode || 
+      if (_programMode == ProgramMode.HelpMode ||
           _programMode == ProgramMode.EditConfig ||
           _programMode == ProgramMode.ListRemoteFolder ||
           _programMode == ProgramMode.ClearRemoteFolder)
@@ -1140,7 +1156,7 @@ namespace ShareFileUtility
             return taskResult.Failed(_errorMessages[103], 103);
 
           case ProgramMode.UploadWatchFolder:
-            return taskResult.Failed(_errorMessages[104], 104); 
+            return taskResult.Failed(_errorMessages[104], 104);
         }
       }
 
@@ -1179,7 +1195,7 @@ namespace ShareFileUtility
           case ProgramMode.UploadSingleFile:
             if (!File.Exists(inputValue))
               return taskResult.Failed(_errorMessages[108].Replace("@InputValue", inputValue), 108);
- 
+
             _inputFilePath = inputValue;
             break;
 
@@ -1219,7 +1235,7 @@ namespace ShareFileUtility
           }
           catch (Exception ex)
           {
-            return taskResult.Failed(_errorMessages[112].Replace("@OutputValue@", outputValue), 112, ex); 
+            return taskResult.Failed(_errorMessages[112].Replace("@OutputValue@", outputValue), 112, ex);
           }
         }
         _outputFolderPath = outputValue;
@@ -1295,7 +1311,7 @@ namespace ShareFileUtility
         _archiveFolderPath = archiveValue;
       }
 
-      // for testing notifications... 
+      // for testing notifications...
 
       // if we don't have -e to indicate the name of the event that notifications will be tested for
       if (!args.Contains("-e") && _programMode == ProgramMode.TestNotifications)
@@ -1357,16 +1373,26 @@ namespace ShareFileUtility
     {
       switch (modeSwitch.ToLower())
       {
-        case "-help": return ProgramMode.HelpMode;
-        case "-editconfig": return ProgramMode.EditConfig;
-        case "-uploadsinglefile": return ProgramMode.UploadSingleFile;
-        case "-uploadbyfolder": return ProgramMode.UploadByFolder;
-        case "-uploadwatchfolder": return ProgramMode.UploadWatchFolder;
-        case "-listremotefolder": return ProgramMode.ListRemoteFolder;
-        case "-clearremotefolder": return ProgramMode.ClearRemoteFolder;
-        case "-deleteremotefile": return ProgramMode.DeleteRemoteFile;
-        case "-downloadfiles": return ProgramMode.DownloadFiles;
-        case "-testnotifications": return ProgramMode.TestNotifications;
+        case "-help":
+          return ProgramMode.HelpMode;
+        case "-editconfig":
+          return ProgramMode.EditConfig;
+        case "-uploadsinglefile":
+          return ProgramMode.UploadSingleFile;
+        case "-uploadbyfolder":
+          return ProgramMode.UploadByFolder;
+        case "-uploadwatchfolder":
+          return ProgramMode.UploadWatchFolder;
+        case "-listremotefolder":
+          return ProgramMode.ListRemoteFolder;
+        case "-clearremotefolder":
+          return ProgramMode.ClearRemoteFolder;
+        case "-deleteremotefile":
+          return ProgramMode.DeleteRemoteFile;
+        case "-downloadfiles":
+          return ProgramMode.DownloadFiles;
+        case "-testnotifications":
+          return ProgramMode.TestNotifications;
       }
 
       return ProgramMode.Invalid;
@@ -1406,10 +1432,18 @@ namespace ShareFileUtility
             spinCount++;
             switch (spinCount % 4)
             {
-              case 0: Console.Write("/"); break;
-              case 1: Console.Write("-"); break;
-              case 2: Console.Write("\\"); break;
-              case 3: Console.Write("|"); break;
+              case 0:
+                Console.Write("/");
+                break;
+              case 1:
+                Console.Write("-");
+                break;
+              case 2:
+                Console.Write("\\");
+                break;
+              case 3:
+                Console.Write("|");
+                break;
             }
             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
           }
@@ -1432,7 +1466,7 @@ namespace ShareFileUtility
 
       _inWaitMode = true;
 
-      return new TaskResult("DisplayHelpInfo", String.Empty, true); 
+      return new TaskResult("DisplayHelpInfo", String.Empty, true);
     }
 
     private static void LogAndShowMessageOnConsole(TaskResult taskResult)
@@ -1448,11 +1482,11 @@ namespace ShareFileUtility
         if (taskResult.TaskResultStatus == TaskResultStatus.Failed)
           Console.WriteLine(g.crlf + "*** ERROR ***" + g.crlf);
         else
-          Console.WriteLine(g.crlf + "*** WARNING ***" + g.crlf); 
+          Console.WriteLine(g.crlf + "*** WARNING ***" + g.crlf);
       }
 
-      Console.Write("Task: " + taskResult.TaskName + g.crlf + 
-                    "Code: " + taskResult.Code.ToString() + g.crlf + 
+      Console.Write("Task: " + taskResult.TaskName + g.crlf +
+                    "Code: " + taskResult.Code.ToString() + g.crlf +
                     "Message: " + taskResult.Message + g.crlf);
 
       if (taskResult.Exception != null)
@@ -1460,7 +1494,7 @@ namespace ShareFileUtility
 
       if (taskResult.FullErrorDetail.IsNotBlank())
         Console.Write("Full Error Detail: " + taskResult.FullErrorDetail);
-      Console.WriteLine(g.crlf); 
+      Console.WriteLine(g.crlf);
     }
 
     private static void LogAndShowMessageOnConsole(string message, bool writeToConsole)
@@ -1475,77 +1509,77 @@ namespace ShareFileUtility
       _errorMessages = new Dictionary<int, string>();
 
       _errorMessages.Add(101, "ShareFileUtility could not determine the requested mode of operation." + g.crlf +
-                              "The first command line parameter must be one of the following: " + g.crlf +
-                              "  '-help'   to display usage information and instructions" + g.crlf +
-                              "  '-editConfig'   to edit the AppConfig file" + g.crlf +
-                              "  '-uploadSingleFile'   to upload a single file" + g.crlf +
-                              "  '-uploadFolder'  to upload all files in a single folder" + g.crlf +
-                              "  '-uploadFolderWatch'  to watch folder for files and upload them upon arrival" + g.crlf +
-                              "  '-listRemoteFolder'  to list contents of remote folder" + g.crlf +
-                              "  '-clearRemoteFolder'  to clear contents of remote folder" + g.crlf +
-                              "  '-deleteRemoteFile'  to delete a specific remote file" + g.crlf +
-                              "  '-downloadFiles'   to download files from the online folder" + g.crlf2 +
-                              "  '-testNotifications'   to test notifications" + g.crlf2 +
-                              "See 'readme.html' in the program directory for help.");
+                         "The first command line parameter must be one of the following: " + g.crlf +
+                         "  '-help'   to display usage information and instructions" + g.crlf +
+                         "  '-editConfig'   to edit the AppConfig file" + g.crlf +
+                         "  '-uploadSingleFile'   to upload a single file" + g.crlf +
+                         "  '-uploadFolder'  to upload all files in a single folder" + g.crlf +
+                         "  '-uploadFolderWatch'  to watch folder for files and upload them upon arrival" + g.crlf +
+                         "  '-listRemoteFolder'  to list contents of remote folder" + g.crlf +
+                         "  '-clearRemoteFolder'  to clear contents of remote folder" + g.crlf +
+                         "  '-deleteRemoteFile'  to delete a specific remote file" + g.crlf +
+                         "  '-downloadFiles'   to download files from the online folder" + g.crlf2 +
+                         "  '-testNotifications'   to test notifications" + g.crlf2 +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(102, "The ShareFileUtility command line must include an '-i' switch to specify the input file to be uploaded." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(103, "The ShareFileUtility command line must include an '-i' switch to specify the input folder of files to be uploaded." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(104, "The ShareFileUtility command line must include an '-i' switch to specify the input folder to watch for files to be uploaded." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(105, "The ShareFileUtility command line must include an '-o' switch to specify the output folder location." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(106, "The ShareFileUtility command line must include the input file name immediately following the '-i' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(107, "The ShareFileUtility command line must include the input folder name immediately following the '-i' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(108, "The ShareFileUtility command line parameter immediately following the '-i' switch must be a valid input file name." + g.crlf +
-                              "The value '@InputValue@' does not correspond to a valid file name." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "The value '@InputValue@' does not correspond to a valid file name." + g.crlf +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(109, "The ShareFileUtility command line parameter immediately following the '-i' switch must be a valid input folder name." + g.crlf +
-                              "The value '@InputValue@' does not correspond to a valid folder name." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "The value '@InputValue@' does not correspond to a valid folder name." + g.crlf +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(110, "The ShareFileUtility command line must include the output file name immediately following the '-o' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(111, "The ShareFileUtility command line parameter immediately following the '-o' switch must be a valid output folder path name (whether or not it exists)." + g.crlf +
-                              "The value '@OutputValue@' does not correspond to a valid folder path name." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "The value '@OutputValue@' does not correspond to a valid folder path name." + g.crlf +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(112, "The ShareFileUtility program is unable to create the non-existent output folder at '@OutputValue@'.");
 
       _errorMessages.Add(113, "The ShareFileUtility command line must include an '-f' switch to specify the remote file name to be deleted." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(114, "The ShareFileUtility command line must include the remote file name to be downloaded immediately following the '-f' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(115, "The ShareFileUtility command line must include the remote file name to be deleted immediately following the '-f' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(116, "The ShareFileUtility command line must include the archive folder name immediately following the '-a' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(117, "The ShareFileUtility program is unable to create the non-existent archive folder at '@ArchiveValue@'.");
 
       _errorMessages.Add(118, "The ShareFileUtility command line must include an '-e' switch to specify the name of the event for which notifications will be tested." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(119, "The ShareFileUtility command line must include the name of the event to be use for testing notifications immediately following the '-e' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(120, "The ShareFileUtility command line parameter immediately following the '-a' switch must be a valid output folder path name (whether or not it exists)." + g.crlf +
-                          "The value '@ArchiveValue@' does not correspond to a valid folder path name." + g.crlf +
-                          "See 'readme.html' in the program directory for help.");
+                         "The value '@ArchiveValue@' does not correspond to a valid folder path name." + g.crlf +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(143, "An exception occurred attempting to create the ArchiveFolder '@ArchiveFolder@'.");
       _errorMessages.Add(145, "An exception occurred while attempting to establish the FileSystemWatcher to watch folder '@WatchFolderPath@' for new files.");

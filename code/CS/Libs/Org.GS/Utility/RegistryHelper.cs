@@ -36,7 +36,7 @@ namespace Org.GS
     {
       RegistryKey regKey = GetRegistyKey(hive, key);
       if (regKey == null)
-          return false;
+        return false;
 
       string[] valueNames = GetValueNames(hive, key);
       foreach (string name in valueNames)
@@ -147,7 +147,7 @@ namespace Org.GS
           }
         }
 
-                
+
       }
       return returnVal;
     }
@@ -197,7 +197,7 @@ namespace Org.GS
     }
 
     public static void CreateSubKey(RegistryHive hive, string key)
-    {           
+    {
       switch (hive)
       {
         case RegistryHive.HKEY_CURRENT_USER:
@@ -207,18 +207,18 @@ namespace Org.GS
           Registry.ClassesRoot.CreateSubKey(key);
           break;
         case RegistryHive.HKEY_CURRENT_CONFIG:
-          Registry.CurrentConfig.CreateSubKey(key);   
-          break; 
+          Registry.CurrentConfig.CreateSubKey(key);
+          break;
         case RegistryHive.HKEY_LOCAL_MACHINE:
-          Registry.LocalMachine.CreateSubKey(key); 
+          Registry.LocalMachine.CreateSubKey(key);
           break;
       }
     }
 
     public static void DeleteSubKey(RegistryHive hive, string key)
-    {    
-      RegistryKey regKey = null;    
-   
+    {
+      RegistryKey regKey = null;
+
       regKey = RegistryHelper.GetRegistyKey(hive, key);
       if (regKey == null)
         return;

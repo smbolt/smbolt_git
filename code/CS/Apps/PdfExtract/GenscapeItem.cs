@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Org.GS;
 
-namespace Org.PdfExtract 
+namespace Org.PdfExtract
 {
   public enum PipeType
   {
@@ -21,18 +21,49 @@ namespace Org.PdfExtract
   }
 
 
-  public class GenscapeItem 
+  public class GenscapeItem
   {
-    public string LocationName { get; set; }
-    public string LocationID { get; set; }
-    public string ColumnIndex { get; set; }
-    public string PipeName { get; set; }
-    public PipeType PipeType { get; set; }
-    public float PipeCapacity { get; set; }
-    public DateTime ValueDate { get; set; }
-    public float Value { get; set; }
-    public float Capacity { get; set; }
-    public string Key { get { return Get_Key(); } }
+    public string LocationName {
+      get;
+      set;
+    }
+    public string LocationID {
+      get;
+      set;
+    }
+    public string ColumnIndex {
+      get;
+      set;
+    }
+    public string PipeName {
+      get;
+      set;
+    }
+    public PipeType PipeType {
+      get;
+      set;
+    }
+    public float PipeCapacity {
+      get;
+      set;
+    }
+    public DateTime ValueDate {
+      get;
+      set;
+    }
+    public float Value {
+      get;
+      set;
+    }
+    public float Capacity {
+      get;
+      set;
+    }
+    public string Key {
+      get {
+        return Get_Key();
+      }
+    }
 
     public GenscapeItem()
     {
@@ -74,13 +105,13 @@ namespace Org.PdfExtract
     public string ToReport()
     {
       return this.Key + " " +
-        this.LocationID + " " +
-        this.LocationName.PadTo(25) + " " +
-        this.PipeType.ToString().PadTo(15) + " " +
-        this.PipeName.PadTo(35) + " " + 
-        this.ValueDate.ToString("yyyyMMdd") + " " +
-        this.ColumnIndex + " " +
-        this.Value.ToString("###,##0.00").PadToJustifyRight(10) + g.crlf;
+             this.LocationID + " " +
+             this.LocationName.PadTo(25) + " " +
+             this.PipeType.ToString().PadTo(15) + " " +
+             this.PipeName.PadTo(35) + " " +
+             this.ValueDate.ToString("yyyyMMdd") + " " +
+             this.ColumnIndex + " " +
+             this.Value.ToString("###,##0.00").PadToJustifyRight(10) + g.crlf;
     }
   }
 }

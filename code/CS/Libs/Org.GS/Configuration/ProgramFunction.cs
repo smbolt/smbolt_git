@@ -12,10 +12,16 @@ namespace Org.GS.Configuration
   public class ProgramFunction
   {
     [XMap(IsRequired = true, IsExplicit = true, IsKey = true)]
-    public int FunctionNumber { get; set; }
+    public int FunctionNumber {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, IsExplicit = true)]
-    public string FunctionName { get; set; }
+    public string FunctionName {
+      get;
+      set;
+    }
 
     public ProgramFunction()
     {

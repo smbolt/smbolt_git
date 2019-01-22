@@ -19,8 +19,12 @@ namespace Org.GS
     private static int _timeCheckIntervalSeconds = 3600;
     public static int TimeCheckIntervalSeconds
     {
-      get { return _timeCheckIntervalSeconds; }
-      set { _timeCheckIntervalSeconds = value; }
+      get {
+        return _timeCheckIntervalSeconds;
+      }
+      set {
+        _timeCheckIntervalSeconds = value;
+      }
     }
 
     public static DateTime GetTime()
@@ -114,7 +118,7 @@ namespace Org.GS
 
       }
     }
-        
+
     public static TaskResult PingHost(TaskResult taskResult, string address, int timeout)
     {
       IPAddress ipAddress = DnsResolveAddress(address);
@@ -133,9 +137,9 @@ namespace Org.GS
       switch (reply.Status)
       {
         case IPStatus.Success:
-              taskResult.TaskResultStatus = TaskResultStatus.Success;
-              taskResult.Data = reply.RoundtripTime.ToString("######0");
-              break;
+          taskResult.TaskResultStatus = TaskResultStatus.Success;
+          taskResult.Data = reply.RoundtripTime.ToString("######0");
+          break;
 
         case IPStatus.TimedOut:
           taskResult.TaskResultStatus = TaskResultStatus.Failed;
@@ -150,7 +154,7 @@ namespace Org.GS
 
       return taskResult;
     }
-        
+
     public static string GetCurrentIpAddress()
     {
       string hostname = Dns.GetHostName();
@@ -300,7 +304,7 @@ namespace Org.GS
           taskResult.Message = "Network ping of host '" + ipAddress + "' at IP address '" + ipAddress.ToString() + "' failed due for reason '" + reply.Status.ToString() + "'.";
           break;
       }
- 
+
       return taskResult;
     }
   }

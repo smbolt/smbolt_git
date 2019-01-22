@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Org.Dx.Business.TextProcessing;
 using Org.GS;
- 
+
 namespace Org.Dx.Business
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
@@ -14,79 +14,188 @@ namespace Org.Dx.Business
   public class DxMapItem
   {
     [XMap(IsKey = true, IsRequired = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Src { get; set; }
+    public string Src {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Dest { get; set; }
+    public string Dest {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "String")]
-    public DataType DataType { get; set; }
+    public DataType DataType {
+      get;
+      set;
+    }
 
-    public DxDataType DxDataType { get; set; }
+    public DxDataType DxDataType {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool DebugBreak { get; set; }
+    public bool DebugBreak {
+      get;
+      set;
+    }
 
     [XMap]
-    public string DefaultValue { get; set; }
+    public string DefaultValue {
+      get;
+      set;
+    }
 
     [XMap]
-    public string PluggedValue { get; set; }
- 
+    public string PluggedValue {
+      get;
+      set;
+    }
+
     [XMap]
-    public string Cond { get; set; }
- 
+    public string Cond {
+      get;
+      set;
+    }
+
     [XMap]
-    public string MapCommand { get; set; }
+    public string MapCommand {
+      get;
+      set;
+    }
 
     private string _nodeQuery;
 
     private DxCell _srcCell;
-    public DxCell SrcCell { get { return Get_SrcCell(); } }
-    public string SrcCellValue { get { return Get_SrcCellValue(); } }
+    public DxCell SrcCell {
+      get {
+        return Get_SrcCell();
+      }
+    }
+    public string SrcCellValue {
+      get {
+        return Get_SrcCellValue();
+      }
+    }
 
-    public List<string> DetailSwitches { get; set; }
-    public string DetailSwitchString { get { return Get_DetailSwitchString(); } }
+    public List<string> DetailSwitches {
+      get;
+      set;
+    }
+    public string DetailSwitchString {
+      get {
+        return Get_DetailSwitchString();
+      }
+    }
 
-    public bool CreatesVariable { get { return Get_CreatesVariable(); } }
+    public bool CreatesVariable {
+      get {
+        return Get_CreatesVariable();
+      }
+    }
 
-    public string TranslateSpec { get; private set; }
-    public bool TranslateValue { get { return this.TranslateSpec.IsNotBlank(); } }
+    public string TranslateSpec {
+      get;
+      private set;
+    }
+    public bool TranslateValue {
+      get {
+        return this.TranslateSpec.IsNotBlank();
+      }
+    }
 
-    public string FormatSpec { get; private set; }
-    public bool FormatResult { get { return this.FormatSpec.IsNotBlank(); } }
+    public string FormatSpec {
+      get;
+      private set;
+    }
+    public bool FormatResult {
+      get {
+        return this.FormatSpec.IsNotBlank();
+      }
+    }
 
     private int? _srcSheet;
-    public int SrcSheet { get { return Get_SrcSheet(); } }
+    public int SrcSheet {
+      get {
+        return Get_SrcSheet();
+      }
+    }
 
     private int? _srcRow;
-    public int SrcRow { get { return Get_SrcRow(); } }
+    public int SrcRow {
+      get {
+        return Get_SrcRow();
+      }
+    }
 
     private int? _srcCol;
-    public int SrcCol { get { return Get_SrcCol(); } }
+    public int SrcCol {
+      get {
+        return Get_SrcCol();
+      }
+    }
 
     private int? _destSheet;
-    public int DestSheet { get { return Get_DestSheet(); } }
+    public int DestSheet {
+      get {
+        return Get_DestSheet();
+      }
+    }
 
     private int? _destRow;
-    public int DestRow { get { return Get_DestRow(); } }
+    public int DestRow {
+      get {
+        return Get_DestRow();
+      }
+    }
 
     private int? _destCol;
-    public int DestCol { get { return Get_DestCol(); } }
+    public int DestCol {
+      get {
+        return Get_DestCol();
+      }
+    }
 
-    public DxMap DxMap { get; set; }
+    public DxMap DxMap {
+      get;
+      set;
+    }
 
-    public string Report { get { return Get_Report(); } }
- 
-    public Object DxObject { get; set; }
-    public int SheetIndex { get; set; }
-    public int SrcRowIndex { get; set; }
-    public int DestRowIndex { get; set; }
-    public int ColIndex { get; set; }
-     
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
+
+    public Object DxObject {
+      get;
+      set;
+    }
+    public int SheetIndex {
+      get;
+      set;
+    }
+    public int SrcRowIndex {
+      get;
+      set;
+    }
+    public int DestRowIndex {
+      get;
+      set;
+    }
+    public int ColIndex {
+      get;
+      set;
+    }
+
     public DxMapItem()
     {
       _srcSheet = null;
@@ -101,7 +210,7 @@ namespace Org.Dx.Business
       this.Cond = String.Empty;
       this.DetailSwitches = new List<string>();
     }
- 
+
     public void AutoInit()
     {
       if (this.Src == null)
@@ -153,7 +262,7 @@ namespace Org.Dx.Business
 
       return false;
     }
- 
+
     private int Get_SrcSheet()
     {
       if (!_srcSheet.HasValue)
@@ -193,7 +302,7 @@ namespace Org.Dx.Business
 
       return _destRow.Value;
     }
- 
+
     private int Get_DestCol()
     {
       if (!_destCol.HasValue)
@@ -221,7 +330,7 @@ namespace Org.Dx.Business
                               "found '" + this.Src + "' on DxMapItem '" + this.Report + "'.");
 
         if (tokens[0] != "*")
-          throw new Exception("The first token in the DxMapItem.Src property (indicating the sheet index) should always be an asterisk - found '" + 
+          throw new Exception("The first token in the DxMapItem.Src property (indicating the sheet index) should always be an asterisk - found '" +
                               this.Src + "' on DxMapItem '" + this.Report + "'.");
 
         _srcSheet = -1;
@@ -259,7 +368,7 @@ namespace Org.Dx.Business
         {
           if (_srcSheet.Value != -1 || _srcRow.Value == -1 || _srcCol.Value == -1)
             throw new Exception("On SheetToSheet maps, the source sheet index must be -1 (current sheet), the source row index must be a valid row index " +
-                                "and the source column index must be a valid column index - found source sheet index " + _srcSheet.Value.ToString() + 
+                                "and the source column index must be a valid column index - found source sheet index " + _srcSheet.Value.ToString() +
                                 "and source row index " + _srcRow.Value.ToString() + " and source column index " + _srcCol.Value.ToString() + " for DxMapItem " +
                                 this.Report + ".");
         }
@@ -361,7 +470,7 @@ namespace Org.Dx.Business
 
         if (colIndexDetermined)
           throw new Exception("The column index has already been determined using the DxMapItem.Name property '" + this.Name + "' " +
-                              "and the ColumnIndexMap, therefore the specification of the column index in the Dest property '" + 
+                              "and the ColumnIndexMap, therefore the specification of the column index in the Dest property '" +
                               this.Dest + "' is redundant.");
 
         _destCol = tokens[2].DbToInt32();
@@ -412,7 +521,7 @@ namespace Org.Dx.Business
           _srcCell.DxMapItem = this;
           return _srcCell;
         }
-    
+
         // The Source indexes (sheet, row and column) are set in the SetSrcIndices method.
         // Any invalid indices will throw an exception in that method. Therefore the indices
         // can be counted on to be valid after the method is called.
@@ -436,7 +545,7 @@ namespace Org.Dx.Business
               _srcCell = null;
               return _srcCell;
             }
-            
+
             var srcCell = srcRow.Cells.Values.ElementAtOrDefault(this.SrcCol);
 
             if (srcCell == null)
@@ -447,13 +556,13 @@ namespace Org.Dx.Business
 
             _srcCell = srcCell;
             _srcCell.DxMapItem = this;
-            return _srcCell;  
+            return _srcCell;
 
           case "DxRow":
           case "DxCellSet":
             var sourceRow = (DxRow)this.DxObject;
             var sourceCell = sourceRow.Cells.Values.ElementAtOrDefault(this.SrcCol);
-          
+
             if (sourceCell == null)
             {
               _srcCell = null;
@@ -495,7 +604,7 @@ namespace Org.Dx.Business
           if (cellValue.IsBlank())
             throw new Exception("The source value is blank but the data is required for DxMapItem '" + this.Report + "'.");
         }
-        else 
+        else
         {
           var tns = new TextNodeSpec(this.DetailSwitchString);
           tns.GlobalVariables = MapEngine.GlobalVariables;
@@ -537,7 +646,7 @@ namespace Org.Dx.Business
 
       return remainder;
     }
-        
+
     private string Get_Report()
     {
       return "DxMapItem: Name " + this.Name + " Src: " + this.Src + " Dst: " + this.Dest + " Cond: " + this.Cond;

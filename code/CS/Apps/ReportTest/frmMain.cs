@@ -28,7 +28,7 @@ namespace Org.ReportTest
       string action = g.GetActionFromEvent(sender);
 
       switch (action)
-      {  
+      {
 
 
         case "Exit":

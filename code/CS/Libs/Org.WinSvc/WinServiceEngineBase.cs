@@ -27,60 +27,155 @@ namespace Org.WinSvc
 
     public event Action<IpdxMessage> NotifyHost;
 
-    public string ServiceName { get; set; }
-    public string EngineName { get; set; }
-    public int EntityId { get; set; }
-    public WinServiceState WinServiceState { get; set; }
-    public bool RunningAsService { get { return this.WinServiceParms.IsRunningAsWindowsService; } }
-    public bool IsSuspended { get; set; }
-    public bool IsSuspendedReported { get; set; }
-    public bool RefreshTaskList { get; set; }
-    public bool RefreshTaskRequests { get; set; }
-    public bool NotifyOnTaskRefresh { get; set; }
-    public ITaskDispatcher TaskDispatcher { get; set; }
-    public TaskRequestSet TaskRequests { get; set; }
-    public int TasksProcessed { get; set; }
-    protected string OverrideEnvironment { get; set; }
-    
+    public string ServiceName {
+      get;
+      set;
+    }
+    public string EngineName {
+      get;
+      set;
+    }
+    public int EntityId {
+      get;
+      set;
+    }
+    public WinServiceState WinServiceState {
+      get;
+      set;
+    }
+    public bool RunningAsService {
+      get {
+        return this.WinServiceParms.IsRunningAsWindowsService;
+      }
+    }
+    public bool IsSuspended {
+      get;
+      set;
+    }
+    public bool IsSuspendedReported {
+      get;
+      set;
+    }
+    public bool RefreshTaskList {
+      get;
+      set;
+    }
+    public bool RefreshTaskRequests {
+      get;
+      set;
+    }
+    public bool NotifyOnTaskRefresh {
+      get;
+      set;
+    }
+    public ITaskDispatcher TaskDispatcher {
+      get;
+      set;
+    }
+    public TaskRequestSet TaskRequests {
+      get;
+      set;
+    }
+    public int TasksProcessed {
+      get;
+      set;
+    }
+    protected string OverrideEnvironment {
+      get;
+      set;
+    }
+
     private bool _getNextTaskNow = false;
     private object GetNextTaskNow_LockObject = new object();
-    public bool GetNextTaskNow 
+    public bool GetNextTaskNow
     {
-      get { return Get_GetNextTaskNowValue(); }
-      set { Set_GetNextTaskNowValue(value); }
+      get {
+        return Get_GetNextTaskNowValue();
+      }
+      set {
+        Set_GetNextTaskNowValue(value);
+      }
     }
 
     #endregion
 
-    public TPL.Task ProcessTasksThread { get; set; }
-    public CancellationTokenSource ProcessTasks_CancellationTokenSource { get; set; }
-    public ManualResetEvent ProcessTasks_ResetEvent { get; set; }
-    public bool ProcessTaskHasBeenStopped { get; set; }
-    public TPL.Task MonitorMainLoopThread { get; set; }
-    public CancellationTokenSource MonitorMainLoop_CancellationTokenSource { get; set; }
-    public ManualResetEvent MonitorMainLoop_ResetEvent { get; set; }
+    public TPL.Task ProcessTasksThread {
+      get;
+      set;
+    }
+    public CancellationTokenSource ProcessTasks_CancellationTokenSource {
+      get;
+      set;
+    }
+    public ManualResetEvent ProcessTasks_ResetEvent {
+      get;
+      set;
+    }
+    public bool ProcessTaskHasBeenStopped {
+      get;
+      set;
+    }
+    public TPL.Task MonitorMainLoopThread {
+      get;
+      set;
+    }
+    public CancellationTokenSource MonitorMainLoop_CancellationTokenSource {
+      get;
+      set;
+    }
+    public ManualResetEvent MonitorMainLoop_ResetEvent {
+      get;
+      set;
+    }
 
     private a a;
     private static Func<WsCommand, TaskResult> SuperMethods;
-    protected Dictionary<string, string> DevComputers { get; set; }
-    protected Dictionary<string, string> DevUsers { get; set; }
-    protected string DomainAndComputer { get; set; }
+    protected Dictionary<string, string> DevComputers {
+      get;
+      set;
+    }
+    protected Dictionary<string, string> DevUsers {
+      get;
+      set;
+    }
+    protected string DomainAndComputer {
+      get;
+      set;
+    }
 
-    public bool ScheduleOnceNow { get; set; }
-    public string TaskToRun { get; set; }
-    public bool IsDryRun { get; set; }
-    public bool SuppressNotifications { get; set; }
-    public Dictionary<string, string> OverrideParms { get; set; }
-    public EngineMonitorParms EngineMonitorParms { get; set; }
+    public bool ScheduleOnceNow {
+      get;
+      set;
+    }
+    public string TaskToRun {
+      get;
+      set;
+    }
+    public bool IsDryRun {
+      get;
+      set;
+    }
+    public bool SuppressNotifications {
+      get;
+      set;
+    }
+    public Dictionary<string, string> OverrideParms {
+      get;
+      set;
+    }
+    public EngineMonitorParms EngineMonitorParms {
+      get;
+      set;
+    }
 
-    public string DefaultNotifyEventName 
-    { 
-      get 
+    public string DefaultNotifyEventName
+    {
+      get
       {
         if (_configNotifySpec == null || _configNotifySpec.NotifyDefaultEventName.IsBlank())
           return String.Empty;
         return _configNotifySpec.NotifyDefaultEventName;
-      } 
+      }
     }
 
     public bool NotifyOnGetTasks
@@ -89,13 +184,19 @@ namespace Org.WinSvc
       {
         if (_configNotifySpec == null)
           return false;
-        return _configNotifySpec.NotifyOnGetTasks; 
+        return _configNotifySpec.NotifyOnGetTasks;
       }
     }
 
-    protected WinServiceParms WinServiceParms { get; set; }
+    protected WinServiceParms WinServiceParms {
+      get;
+      set;
+    }
     protected Logger Logger;
-    protected ServiceHost ServiceHost { get; set; }
+    protected ServiceHost ServiceHost {
+      get;
+      set;
+    }
 
     private ConfigSmtpSpec _configSmtpSpec;
     private SmtpParms _smtpParms;
@@ -192,16 +293,26 @@ namespace Org.WinSvc
 
         switch (serviceName)
         {
-          case "gptaskservice01": return 2601;
-          case "gptaskservice02": return 2602;
-          case "gptaskservice03": return 2603;
-          case "gptaskservice04": return 2604;
-          case "gptaskservice05": return 2605;
-          case "gptaskservice06": return 2606;
-          case "gptaskservice07": return 2607;
-          case "gptaskservice08": return 2608;
-          case "gptaskservice09": return 2609;
-          case "gptaskservice10": return 2610;
+          case "gptaskservice01":
+            return 2601;
+          case "gptaskservice02":
+            return 2602;
+          case "gptaskservice03":
+            return 2603;
+          case "gptaskservice04":
+            return 2604;
+          case "gptaskservice05":
+            return 2605;
+          case "gptaskservice06":
+            return 2606;
+          case "gptaskservice07":
+            return 2607;
+          case "gptaskservice08":
+            return 2608;
+          case "gptaskservice09":
+            return 2609;
+          case "gptaskservice10":
+            return 2610;
         }
       }
 
@@ -269,7 +380,7 @@ namespace Org.WinSvc
           this.ServiceHost.Open();
 
           StartupLogging.WriteStartupLog("In WinServiceEngineBase.StartWebService - Just after to call of Open method on _serviceHost - status of host is '"
-              + this.ServiceHost.State.ToString() + "'.");
+                                         + this.ServiceHost.State.ToString() + "'.");
 
           this.Logger.Log("WinService web service has been opened and its status is '" + this.ServiceHost.State.ToString() + "'.", 6042);
           this.Logger.Log("WinServiceEngineBase.StartWebService Method completed successfully.", 6043);
@@ -406,7 +517,9 @@ namespace Org.WinSvc
     {
       if (notifyMessage == null)
         return;
-      TPL.Task.Run(() => { this.ProcessNotifications(notifyMessage.Subject, notifyMessage.Message, notifyMessage.EventName); });
+      TPL.Task.Run(() => {
+        this.ProcessNotifications(notifyMessage.Subject, notifyMessage.Message, notifyMessage.EventName);
+      });
     }
 
     private XElement MessageProcessor(WsMessage receivedMessage, Org.WSO.ServiceBase serviceBase)
@@ -542,7 +655,7 @@ namespace Org.WinSvc
       });
     }
 
-    public void DummyEventHandler(TaskResult taskResult) { } 
+    public void DummyEventHandler(TaskResult taskResult) { }
 
     protected void InitializeBase()
     {
@@ -570,7 +683,7 @@ namespace Org.WinSvc
             g.AppConfig.Variables["DB_SERVER"] = selectedDbServer;
           }
         }
-        
+
         DevComputers = g.GetDictionary("DevComputers");
         DevUsers = g.GetDictionary("DevUsers");
         DomainAndComputer = g.SystemInfo.DomainAndComputer;
@@ -602,7 +715,7 @@ namespace Org.WinSvc
           this.WinServiceParms.WindowsServiceName = g.CI("WindowsServiceName");
           this.WinServiceParms.EntityId = g.CI("EntityId").ToInt32OrDefault(0);
           this.WinServiceParms.ConfigLogSpecPrefix = g.CI("ConfigLogSpecPrefix").OrDefault("Default");
-          this.WinServiceParms.ConfigNotifySpecPrefix = g.CI("ConfigNotifySpecPrefix").OrDefault("Default"); 
+          this.WinServiceParms.ConfigNotifySpecPrefix = g.CI("ConfigNotifySpecPrefix").OrDefault("Default");
           this.WinServiceParms.MaxWaitIntervalMilliseconds = g.CI("MaxWaitIntervalMilliseconds").ToInt32();
           this.WinServiceParms.InDiagnosticsMode = g.CI("InDiagnosticsMode").ToBoolean();
           this.WinServiceParms.SuppressNonErrorOutput = g.CI("SuppressNonErrorOutput").ToBoolean();
@@ -612,7 +725,7 @@ namespace Org.WinSvc
 
         this.EngineMonitorParms = GetEngineMonitorParms();
 
-        _configNotifySpec = g.GetNotifySpec(this.WinServiceParms.ConfigNotifySpecPrefix); 
+        _configNotifySpec = g.GetNotifySpec(this.WinServiceParms.ConfigNotifySpecPrefix);
 
         StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName + "' POINT 3.  In WinServiceEngineBase.InitializeBase.");
 
@@ -622,24 +735,24 @@ namespace Org.WinSvc
           _notifyDbSpec = g.GetDbSpec(_configNotifySpec.NotifyDbSpecPrefix);
           if (!_notifyDbSpec.IsReadyToConnect())
             throw new Exception("The NotifyConfigDbSpec is not ready to connect to the database - connection string prefix is '" + this.WinServiceParms.ConfigNotifySpecPrefix + ".");
-          NotifyConfigHelper.SetNotifyConfigDbSpec(_notifyDbSpec); 
+          NotifyConfigHelper.SetNotifyConfigDbSpec(_notifyDbSpec);
           _notifyConfigs = NotifyConfigHelper.GetNotifyConfigs(_configNotifySpec.NotifyConfigMode);
         }
         else
         {
-          _notifyConfigs = NotifyConfigHelper.GetNotifyConfigs(_configNotifySpec.NotifyConfigMode); 
+          _notifyConfigs = NotifyConfigHelper.GetNotifyConfigs(_configNotifySpec.NotifyConfigMode);
         }
 
         StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName + "' POINT 4.  In WinServiceEngineBase.InitializeBase.");
 
         this.IsSuspended = false;
         this.IsSuspendedReported = false;
-        
+
         StartupLogging.WriteStartupLog(g.AppInfo.OrgApplicationType.ToString() + " '" + g.AppInfo.AppName + "' POINT 5.  Successful completion of WinServiceEngineBase.InitializeBase.");
       }
       catch (Exception ex)
       {
-        HandleExceptions("An exception occurred during WinServiceEngineBase initialization.", ex, 6027, true, true, true, true); 
+        HandleExceptions("An exception occurred during WinServiceEngineBase initialization.", ex, 6027, true, true, true, true);
       }
     }
 
@@ -713,13 +826,15 @@ namespace Org.WinSvc
         var notification = new Notification(errorEventName, notifyConfigSet, exception);
 
         if (notification.NotificationStatus != NotificationStatus.ReadyToSend)
-          // do we do any logging here - might just be no configurations 
+          // do we do any logging here - might just be no configurations
           return;
 
         using (var notifyEngine = new NotifyEngine(notifyConfigSet, _smtpParms))
         {
           notifyEngine.NotifyAction += _notificationsManager.NotifyActionHandler;
-          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => { NotificationsAsyncComplete(r); });
+          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => {
+            NotificationsAsyncComplete(r);
+          });
         }
       }
       catch (Exception ex)
@@ -758,13 +873,15 @@ namespace Org.WinSvc
         var notification = new Notification(eventName, notifyConfigSet, message);
 
         if (notification.NotificationStatus != NotificationStatus.ReadyToSend)
-          // do we do any logging here - might just be no configurations 
+          // do we do any logging here - might just be no configurations
           return;
 
         using (var notifyEngine = new NotifyEngine(notifyConfigSet, _smtpParms))
         {
           notifyEngine.NotifyAction += _notificationsManager.NotifyActionHandler;
-          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => { NotificationsAsyncComplete(r); });
+          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => {
+            NotificationsAsyncComplete(r);
+          });
         }
       }
       catch (Exception ex)
@@ -806,13 +923,15 @@ namespace Org.WinSvc
         using (var notifyEngine = new NotifyEngine(notifyConfigSet, _smtpParms))
         {
           notifyEngine.NotifyAction += _notificationsManager.NotifyActionHandler;
-          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => { NotificationsAsyncComplete(r); });
+          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => {
+            NotificationsAsyncComplete(r);
+          });
         }
       }
       catch (Exception ex)
       {
         this.Logger.Log(LogSeverity.WARN, "An exception occurred while attempting to process a notification with subject '" + subject + "' " +
-                   "message '" + message.PadTo(100).Trim() + "' for notification event name '" + notifyEventName + "'.", 6015, ex);
+                        "message '" + message.PadTo(100).Trim() + "' for notification event name '" + notifyEventName + "'.", 6015, ex);
       }
     }
 
@@ -856,13 +975,15 @@ namespace Org.WinSvc
         var notification = new Notification(taskResult, notifyConfigSet);
 
         if (notification.NotificationStatus != NotificationStatus.ReadyToSend)
-          // do we do any logging here - might just be no configurations 
+          // do we do any logging here - might just be no configurations
           return;
 
         using (var notifyEngine = new NotifyEngine(notifyConfigSet, _smtpParms))
         {
           notifyEngine.NotifyAction += _notificationsManager.NotifyActionHandler;
-          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => { NotificationsAsyncComplete(r); });
+          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => {
+            NotificationsAsyncComplete(r);
+          });
         }
       }
       catch (Exception ex)
@@ -889,7 +1010,7 @@ namespace Org.WinSvc
 
               foreach (var childTaskResult in taskResult.TaskResultSet.Values)
               {
-                
+
               }
 
 
@@ -921,7 +1042,7 @@ namespace Org.WinSvc
           break;
       }
     }
-    
+
     protected void IPDX_EventHandler(IpdxMessage message)
     {
       switch (message.Recipient)
@@ -941,7 +1062,7 @@ namespace Org.WinSvc
                       string serviceCommand = command.Parms["ServiceCommand"];
                       if (SuperMethods != null)
                       {
-                        TaskResult superTaskResult = null; 
+                        TaskResult superTaskResult = null;
 
                         switch (serviceCommand)
                         {

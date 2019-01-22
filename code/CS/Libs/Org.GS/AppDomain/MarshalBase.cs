@@ -12,22 +12,34 @@ namespace Org.GS.AppDomainManagement
     private static TimeSpan _initialLeaseTime = TimeSpan.FromMinutes(75);
     public static TimeSpan InitialLeaseTime
     {
-      get { return _initialLeaseTime; }
-      set { _initialLeaseTime = value; }
+      get {
+        return _initialLeaseTime;
+      }
+      set {
+        _initialLeaseTime = value;
+      }
     }
 
     private static TimeSpan _renewOnCallTime = TimeSpan.FromMinutes(75);
     public static TimeSpan RenewOnCallTime
     {
-      get { return _renewOnCallTime; }
-      set { _renewOnCallTime = value; }
+      get {
+        return _renewOnCallTime;
+      }
+      set {
+        _renewOnCallTime = value;
+      }
     }
 
     private static TimeSpan _sponsorshipTimeOut = TimeSpan.FromMinutes(2);
     public static TimeSpan SponsorshipTimeout
     {
-      get { return _sponsorshipTimeOut; }
-      set { _sponsorshipTimeOut = value; }
+      get {
+        return _sponsorshipTimeOut;
+      }
+      set {
+        _sponsorshipTimeOut = value;
+      }
     }
 
     private ILease _lease;

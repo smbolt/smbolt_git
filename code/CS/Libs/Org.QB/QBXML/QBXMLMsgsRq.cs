@@ -11,7 +11,11 @@ namespace Org.QB.QBXML
   public class QBXMLMsgsRq
   {
     [XMap (XType = XType.Element)]
-    public List<QbXmlBase> RqList { get { return _rqList; } }
+    public List<QbXmlBase> RqList {
+      get {
+        return _rqList;
+      }
+    }
     private List<QbXmlBase> _rqList;
 
     public QBXMLMsgsRq()

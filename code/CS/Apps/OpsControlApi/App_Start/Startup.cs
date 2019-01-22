@@ -17,7 +17,7 @@ namespace Org.OpsControlApi
       ConnStringManager.Load(WebConfigurationManager.AppSettings["connStringMap"]);
 
       string taskDbPrefix = g.CI("TasksDbPrefix");
-      ScheduledTaskService.ConfigDbSpec = g.GetDbSpec(taskDbPrefix); 
+      ScheduledTaskService.ConfigDbSpec = g.GetDbSpec(taskDbPrefix);
     }
   }
 }

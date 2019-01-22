@@ -12,7 +12,7 @@ namespace Org.WSO
   public class MessageFactoryBase : IDisposable
   {
     public ObjectFactory2 ObjectFactory;
-    public MessageFactoryBase() 
+    public MessageFactoryBase()
     {
       this.ObjectFactory = new ObjectFactory2();
     }
@@ -35,7 +35,7 @@ namespace Org.WSO
           transBase = Build_ServiceEngineCommandRequest(wsParms);
           break;
       }
-    
+
       if (transBase == null)
         return null;
 
@@ -54,7 +54,7 @@ namespace Org.WSO
       }
 
       transBase.Name = wsParms.TransactionName;
-      transBase.Version = wsParms.TransactionVersion; 
+      transBase.Version = wsParms.TransactionVersion;
       return transBase;
     }
 
@@ -110,7 +110,7 @@ namespace Org.WSO
       message.TransactionHeader.TransactionStatus = TransactionStatus.InitialRequest;
       return message;
     }
-    
+
     public static WsHost GetWebServiceHost()
     {
       WsHost host = new WsHost();

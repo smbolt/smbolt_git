@@ -8,9 +8,18 @@ namespace Org.GS.OrgScript.Compilation
 {
   public class CompilerConfig
   {
-    public int TargetRawLength { get; set; }
-    public bool InDebugMode { get; set; }
-    public bool RunParallel { get; set; }
+    public int TargetRawLength {
+      get;
+      set;
+    }
+    public bool InDebugMode {
+      get;
+      set;
+    }
+    public bool RunParallel {
+      get;
+      set;
+    }
 
 
     public CompilerConfig()

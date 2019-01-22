@@ -32,29 +32,59 @@ namespace Org.DB
     private static bool _isInitialized = false;
     public static bool IsInitialized
     {
-      get { return _isInitialized; }
+      get {
+        return _isInitialized;
+      }
     }
 
     private static bool _isLoaded = false;
     public static bool IsLoaded
     {
-      get { return _isLoaded; }
+      get {
+        return _isLoaded;
+      }
     }
 
     private static string _dbReport = String.Empty;
     public static string DbReport
     {
-      get { return _dbReport; }
+      get {
+        return _dbReport;
+      }
     }
 
-    public static string DbCodeGenNamespace { get; set; }
-    public static string SqlInstanceName { get; set; }
-    public static string DatabaseName { get; set; }
-    public static DbTypeSet DbTypeSet { get; set; }
-    public static DbTableSet DbTableSet { get; set; }
-    public static DbConstraintSet DbConstraintSet { get; set; }
-    public static Type[] Types { get; set; }
-    public static string CurrentQuery { get; set; }
+    public static string DbCodeGenNamespace {
+      get;
+      set;
+    }
+    public static string SqlInstanceName {
+      get;
+      set;
+    }
+    public static string DatabaseName {
+      get;
+      set;
+    }
+    public static DbTypeSet DbTypeSet {
+      get;
+      set;
+    }
+    public static DbTableSet DbTableSet {
+      get;
+      set;
+    }
+    public static DbConstraintSet DbConstraintSet {
+      get;
+      set;
+    }
+    public static Type[] Types {
+      get;
+      set;
+    }
+    public static string CurrentQuery {
+      get;
+      set;
+    }
 
     public static bool Initialize()
     {
@@ -86,9 +116,9 @@ namespace Org.DB
       DbTableSet ts = new DbTableSet();
 
       string sql = "SELECT " +
-                    "  [value] AS [Value] " +
-                    "FROM sys.extended_properties " +
-                    "WHERE [name] = 'DbCodeGenNamespace' ";
+                   "  [value] AS [Value] " +
+                   "FROM sys.extended_properties " +
+                   "WHERE [name] = 'DbCodeGenNamespace' ";
 
       SqlInstanceName = conn.DataSource;
       DatabaseName = conn.Database;
@@ -151,14 +181,14 @@ namespace Org.DB
       DbTableSet ts = new DbTableSet();
 
       string sql = "SELECT " +
-                    "  s.[name] AS [Schema], " +
-                    "  t.[name] AS [Name], " +
-                    "  [type] AS [Type], " +
-                    "  [create_date] AS [CreateDate], " +
-                    "  [modify_date] AS [ModifyDate] " +
-                    "FROM sys.tables t " +
-                    "INNER JOIN sys.schemas s ON t.schema_id = s.schema_id " +
-                    "ORDER BY name ";
+                   "  s.[name] AS [Schema], " +
+                   "  t.[name] AS [Name], " +
+                   "  [type] AS [Type], " +
+                   "  [create_date] AS [CreateDate], " +
+                   "  [modify_date] AS [ModifyDate] " +
+                   "FROM sys.tables t " +
+                   "INNER JOIN sys.schemas s ON t.schema_id = s.schema_id " +
+                   "ORDER BY name ";
 
       SqlDataAdapter da = new SqlDataAdapter(sql, conn);
       DataSet ds = new DataSet();
@@ -228,21 +258,21 @@ namespace Org.DB
       DbConstraintSet cs = new DbConstraintSet();
 
       string sql = "SELECT " +
-                    "  KU.CONSTRAINT_CATALOG as [ConstraintCatalog], " +
-                    "  KU.CONSTRAINT_SCHEMA as [ConstraintSchema], " +
-                    "  KU.CONSTRAINT_NAME as [ConstraintName], " +
-                    "  KU.TABLE_CATALOG as [TableCatalog], " +
-                    "  KU.TABLE_SCHEMA as [TableSchema], " +
-                    "  KU.TABLE_NAME as [TableName], " +
-                    "  TC.CONSTRAINT_TYPE as [ConstraintType], " +
-                    "  KU.COLUMN_NAME as [ColumnName], " +
-                    "  KU.ORDINAL_POSITION as [OrdinalPosition] " +
-                    "FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS TC " +
-                    "  INNER JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KU " +
-                    "    ON TC.CONSTRAINT_NAME = KU.CONSTRAINT_NAME " +
-                    "ORDER BY " +
-                    "[TableName], " +
-                    "[OrdinalPosition] ";
+                   "  KU.CONSTRAINT_CATALOG as [ConstraintCatalog], " +
+                   "  KU.CONSTRAINT_SCHEMA as [ConstraintSchema], " +
+                   "  KU.CONSTRAINT_NAME as [ConstraintName], " +
+                   "  KU.TABLE_CATALOG as [TableCatalog], " +
+                   "  KU.TABLE_SCHEMA as [TableSchema], " +
+                   "  KU.TABLE_NAME as [TableName], " +
+                   "  TC.CONSTRAINT_TYPE as [ConstraintType], " +
+                   "  KU.COLUMN_NAME as [ColumnName], " +
+                   "  KU.ORDINAL_POSITION as [OrdinalPosition] " +
+                   "FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS TC " +
+                   "  INNER JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KU " +
+                   "    ON TC.CONSTRAINT_NAME = KU.CONSTRAINT_NAME " +
+                   "ORDER BY " +
+                   "[TableName], " +
+                   "[OrdinalPosition] ";
 
 
       SqlDataAdapter da = new SqlDataAdapter(sql, conn);
@@ -337,7 +367,7 @@ namespace Org.DB
           columnElement.Add(new XElement("DataType", c.DbType.SqlDbType.ToString()));
           columnElement.Add(new XElement("Nullable", c.IsNullable.ToString()));
           columnElement.Add(new XElement("IsIdentity", c.IsIdentity.ToString()));
-          columnElement.Add(new XElement("IsPrimaryKey", c.IsPrimaryKey.ToString())); 
+          columnElement.Add(new XElement("IsPrimaryKey", c.IsPrimaryKey.ToString()));
           columnElement.Add(new XElement("Precision", c.Precision.ToString()));
           columnElement.Add(new XElement("Scale", c.Scale.ToString()));
           columnElement.Add(new XElement("SystemTypeId", c.SystemTypeId.ToString()));
@@ -480,8 +510,8 @@ namespace Org.DB
         DbTable t = ts[tableName];
 
         if (t == null)
-          return "Table '" + tableName + "' not found in TableSet."; 
-      
+          return "Table '" + tableName + "' not found in TableSet.";
+
         sb.Append(BuildBasicClassStart(t));
         sb.Append(GenerateBasicPropertiesFromColumns(t.DbColumnSet));
         sb.Append("  }" + _db.nl2);
@@ -495,9 +525,9 @@ namespace Org.DB
       string classStart = String.Empty;
 
       classStart =
-          "    [IsDbTable]" + _db.nl +
-          "    [ObjectMapPrefix(\"DB\")]" + _db.nl +
-          "    public class " + t.TableNameSansSchema + " : DbEntityBase, IDisposable" + _db.nl + "    {" + _db.nl;
+        "    [IsDbTable]" + _db.nl +
+        "    [ObjectMapPrefix(\"DB\")]" + _db.nl +
+        "    public class " + t.TableNameSansSchema + " : DbEntityBase, IDisposable" + _db.nl + "    {" + _db.nl;
 
       return classStart;
     }
@@ -507,8 +537,8 @@ namespace Org.DB
       string classStart = String.Empty;
 
       classStart =
-          "  [DbMap(DbElement.Model, \"" + t.DatabaseName + "\", \"" + t.SchemaName + "\", \"" + t.TableNameSansSchema + "\")]" + g.crlf + 
-          "  public class " + t.TableNameSansSchema + " : ModelBase" + _db.nl + "  {" + _db.nl;
+        "  [DbMap(DbElement.Model, \"" + t.DatabaseName + "\", \"" + t.SchemaName + "\", \"" + t.TableNameSansSchema + "\")]" + g.crlf +
+        "  public class " + t.TableNameSansSchema + " : ModelBase" + _db.nl + "  {" + _db.nl;
 
       return classStart;
     }
@@ -516,19 +546,19 @@ namespace Org.DB
     private static string BuildConstructors(DbTable t)
     {
       string method =
-             "        public " + t.TableName + "()" + _db.nl +
-             "        {" + _db.nl +
-             "        }" + _db.nl2 +
+        "        public " + t.TableName + "()" + _db.nl +
+        "        {" + _db.nl +
+        "        }" + _db.nl2 +
 
-             "        public " + t.TableName + "(object source)" + _db.nl +
-             "        {" + _db.nl +
-             "            base.MapFromObject(source, String.Empty);" + _db.nl +
-             "        }" + _db.nl2 +
+        "        public " + t.TableName + "(object source)" + _db.nl +
+        "        {" + _db.nl +
+        "            base.MapFromObject(source, String.Empty);" + _db.nl +
+        "        }" + _db.nl2 +
 
-             "        public " + t.TableName + "(object source, string context)" + _db.nl +
-             "        {" + _db.nl +
-             "            base.MapFromObject(source, context);" + _db.nl +
-             "        }" + _db.nl;
+        "        public " + t.TableName + "(object source, string context)" + _db.nl +
+        "        {" + _db.nl +
+        "            base.MapFromObject(source, context);" + _db.nl +
+        "        }" + _db.nl;
 
       return method;
     }
@@ -583,21 +613,21 @@ namespace Org.DB
           code = privateField +
                  originalField +
                  attr + start + type + "? " + c.Name + _db.nl +
-                "        {" + _db.nl +
-                "            get" + _db.nl +
-                "            {" + _db.nl +
-                "                if (" + pfn + ".HasValue)" + _db.nl +
-                "                    return " + pfn + ".Value;" + _db.nl +
-                "                else" + _db.nl +
-                "                    return null;" + _db.nl +
-                "            }" + _db.nl +
-                "            set" + _db.nl +
-                "            {" + _db.nl +
-                "               " + pfn + " = value;" + _db.nl +
-                "                if (this.IsLoadingForUpdate)" + _db.nl +
-                "                    " + ofn + " = value;" + _db.nl +
-                "            }" + _db.nl +
-                "        }" + _db.nl2;
+                 "        {" + _db.nl +
+                 "            get" + _db.nl +
+                 "            {" + _db.nl +
+                 "                if (" + pfn + ".HasValue)" + _db.nl +
+                 "                    return " + pfn + ".Value;" + _db.nl +
+                 "                else" + _db.nl +
+                 "                    return null;" + _db.nl +
+                 "            }" + _db.nl +
+                 "            set" + _db.nl +
+                 "            {" + _db.nl +
+                 "               " + pfn + " = value;" + _db.nl +
+                 "                if (this.IsLoadingForUpdate)" + _db.nl +
+                 "                    " + ofn + " = value;" + _db.nl +
+                 "            }" + _db.nl +
+                 "        }" + _db.nl2;
         }
         else
         {
@@ -607,8 +637,8 @@ namespace Org.DB
           code = privateField +
                  originalField +
                  attr + start + type + " " + c.Name + _db.nl +
-                "        {" + _db.nl +
-                "            get { return " + pfn + "; }" + _db.nl;
+                 "        {" + _db.nl +
+                 "            get { return " + pfn + "; }" + _db.nl;
 
           if (type == "string" && c.MaxLength > 0)
           {
@@ -679,9 +709,9 @@ namespace Org.DB
         if (c.Name == c.Table.TableNameSansSchema)
           columnName += "1";
 
-        string attribute = "    [DbMap(DbElement.Column, \"" + c.Table.DatabaseName  + "\", \"" + c.Table.SchemaName + 
-          "\", \"" + c.Table.TableNameSansSchema + "\", \"" + c.Name + "\", " + (c.IsNullable ? "true" : "false") + ", " + 
-          (c.IsPrimaryKey ? "true" : "false") + ", " + (c.IsIdentity ? "true": "false") + ")]"; 
+        string attribute = "    [DbMap(DbElement.Column, \"" + c.Table.DatabaseName  + "\", \"" + c.Table.SchemaName +
+                           "\", \"" + c.Table.TableNameSansSchema + "\", \"" + c.Name + "\", " + (c.IsNullable ? "true" : "false") + ", " +
+                           (c.IsPrimaryKey ? "true" : "false") + ", " + (c.IsIdentity ? "true": "false") + ")]";
         if (columnCount > 0)
           attribute = g.crlf + attribute;
 
@@ -697,7 +727,7 @@ namespace Org.DB
         }
 
         sb.Append(code);
-        columnCount++; 
+        columnCount++;
       }
 
       return sb.ToString();
@@ -707,35 +737,64 @@ namespace Org.DB
     {
       switch (type)
       {
-        case SqlDbType.Image: return "Image";
-        case SqlDbType.Text: return "string";
-        case SqlDbType.UniqueIdentifier: return "Guid";
-        case SqlDbType.Date: return "DateTime";
-        case SqlDbType.DateTimeOffset: return "TimeSpan";
-        case SqlDbType.TinyInt: return "int";
-        case SqlDbType.SmallInt: return "int";
-        case SqlDbType.Int: return "int";
-        case SqlDbType.SmallDateTime: return "DateTime";
-        case SqlDbType.Real: return "float";
-        case SqlDbType.Money: return "decimal";
-        case SqlDbType.DateTime: return "DateTime";
-        case SqlDbType.DateTime2: return "DateTime";
-        case SqlDbType.Time: return "TimeSpan";
-        case SqlDbType.Float: return "float";
-        case SqlDbType.Variant: return "object";
-        case SqlDbType.NText: return "string";
-        case SqlDbType.Bit: return "bool";
-        case SqlDbType.Decimal: return "decimal";
-        case SqlDbType.SmallMoney: return "decimal";
-        case SqlDbType.BigInt: return "long";
-        case SqlDbType.VarBinary: return "byte[]";
-        case SqlDbType.VarChar: return "string";
-        case SqlDbType.Binary: return "byte[]";
-        case SqlDbType.Char: return "string";
-        case SqlDbType.Timestamp: return "byte[]";
-        case SqlDbType.NVarChar: return "string";
-        case SqlDbType.NChar: return "string";
-        case SqlDbType.Xml: return "XElement";
+        case SqlDbType.Image:
+          return "Image";
+        case SqlDbType.Text:
+          return "string";
+        case SqlDbType.UniqueIdentifier:
+          return "Guid";
+        case SqlDbType.Date:
+          return "DateTime";
+        case SqlDbType.DateTimeOffset:
+          return "TimeSpan";
+        case SqlDbType.TinyInt:
+          return "int";
+        case SqlDbType.SmallInt:
+          return "int";
+        case SqlDbType.Int:
+          return "int";
+        case SqlDbType.SmallDateTime:
+          return "DateTime";
+        case SqlDbType.Real:
+          return "float";
+        case SqlDbType.Money:
+          return "decimal";
+        case SqlDbType.DateTime:
+          return "DateTime";
+        case SqlDbType.DateTime2:
+          return "DateTime";
+        case SqlDbType.Time:
+          return "TimeSpan";
+        case SqlDbType.Float:
+          return "float";
+        case SqlDbType.Variant:
+          return "object";
+        case SqlDbType.NText:
+          return "string";
+        case SqlDbType.Bit:
+          return "bool";
+        case SqlDbType.Decimal:
+          return "decimal";
+        case SqlDbType.SmallMoney:
+          return "decimal";
+        case SqlDbType.BigInt:
+          return "long";
+        case SqlDbType.VarBinary:
+          return "byte[]";
+        case SqlDbType.VarChar:
+          return "string";
+        case SqlDbType.Binary:
+          return "byte[]";
+        case SqlDbType.Char:
+          return "string";
+        case SqlDbType.Timestamp:
+          return "byte[]";
+        case SqlDbType.NVarChar:
+          return "string";
+        case SqlDbType.NChar:
+          return "string";
+        case SqlDbType.Xml:
+          return "XElement";
       }
 
       return "object";
@@ -1344,16 +1403,23 @@ namespace Org.DB
     private bool isDisposed = false;
     internal DbFunction DbFunction;
 
-    public SqlConnection Connection { get; set; }
+    public SqlConnection Connection {
+      get;
+      set;
+    }
     public bool ConnectionOpen
     {
-      get { return IsConnectionOpen(); }
+      get {
+        return IsConnectionOpen();
+      }
     }
 
     private bool _updateAttempted;
     public bool UpdateAttempted
     {
-      get { return _updateAttempted; }
+      get {
+        return _updateAttempted;
+      }
     }
 
     private string _connectionString;
@@ -1911,12 +1977,27 @@ namespace Org.DB
 
   public class DbRow<T>
   {
-    public DbQuery<T> DbQuery { get; set; }
-    public DbTable DbTable { get; set; }
-    public DbContext DbContext { get; set; }
-    public DbEntityBase DbEntity { get; set; }
+    public DbQuery<T> DbQuery {
+      get;
+      set;
+    }
+    public DbTable DbTable {
+      get;
+      set;
+    }
+    public DbContext DbContext {
+      get;
+      set;
+    }
+    public DbEntityBase DbEntity {
+      get;
+      set;
+    }
 
-    public List<DbSet<T>> Joined { get; set; }
+    public List<DbSet<T>> Joined {
+      get;
+      set;
+    }
 
     public DbRow(DbContext db)
     {
@@ -1935,11 +2016,23 @@ namespace Org.DB
 
   public class DbSet<T> : List<T>
   {
-    public DbQuery<T> DbQuery { get; set; }
-    public DbTable DbTable { get; set; }
-    public DbContext DbContext { get; set; }
+    public DbQuery<T> DbQuery {
+      get;
+      set;
+    }
+    public DbTable DbTable {
+      get;
+      set;
+    }
+    public DbContext DbContext {
+      get;
+      set;
+    }
 
-    public List<DbSet<T>> Joined { get; set; }
+    public List<DbSet<T>> Joined {
+      get;
+      set;
+    }
 
     public DbSet(DbContext db)
     {
@@ -1965,23 +2058,44 @@ namespace Org.DB
 
   public class DbEntityBase
   {
-    public string AliasedTypeName { get; set; }
-    public string TableName { get; set; }
-    public DbTable DbTable { get; set; }
-    public DbEntityBase OriginalValue { get; set; }
+    public string AliasedTypeName {
+      get;
+      set;
+    }
+    public string TableName {
+      get;
+      set;
+    }
+    public DbTable DbTable {
+      get;
+      set;
+    }
+    public DbEntityBase OriginalValue {
+      get;
+      set;
+    }
 
-    public virtual bool IsLoadingForUpdate { get; set; }
+    public virtual bool IsLoadingForUpdate {
+      get;
+      set;
+    }
 
     private bool _isLoadedForUpdate;
     public bool IsLoadedForUpdate
     {
-      get { return _isLoadedForUpdate; }
-      set { _isLoadedForUpdate = value; }
+      get {
+        return _isLoadedForUpdate;
+      }
+      set {
+        _isLoadedForUpdate = value;
+      }
     }
 
     public bool IsUpdated
     {
-      get { return this.IsThisEntityUpdated(); }
+      get {
+        return this.IsThisEntityUpdated();
+      }
     }
 
     public DbEntityBase()
@@ -2083,9 +2197,18 @@ namespace Org.DB
 
   public class DbResultSet : List<DbQueryResult>
   {
-    public DbContext DbContext { get; set; }
-    public DbColumnSet DbColumnSet { get; set; }
-    public string Query { get; set; }
+    public DbContext DbContext {
+      get;
+      set;
+    }
+    public DbColumnSet DbColumnSet {
+      get;
+      set;
+    }
+    public string Query {
+      get;
+      set;
+    }
 
     public DbResultSet(DbContext db)
     {
@@ -2097,12 +2220,30 @@ namespace Org.DB
 
   public class DbResult
   {
-    public DbContext DbContext { get; set; }
-    public string Query { get; set; }
-    public DbStatusCode DbStatusCode { get; set; }
-    public string Message { get; set; }
-    public int RowsAffected { get; set; }
-    public object ScalarValue { get; set; }
+    public DbContext DbContext {
+      get;
+      set;
+    }
+    public string Query {
+      get;
+      set;
+    }
+    public DbStatusCode DbStatusCode {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public int RowsAffected {
+      get;
+      set;
+    }
+    public object ScalarValue {
+      get;
+      set;
+    }
 
     public DbResult(DbContext db)
     {
@@ -2121,27 +2262,65 @@ namespace Org.DB
 
   public class DbTable
   {
-    public string DatabaseName { get; set; }
-    public string SchemaName { get; set; }
-    public string TableName { get; set; }
-    public string TableNameSansSchema { get { return Get_TableNameSansSchema(); } }
-    public string TableType { get; set; }
-    public DateTime CreateDT { get; set; }
-    public DateTime ModifyDT { get; set; }
+    public string DatabaseName {
+      get;
+      set;
+    }
+    public string SchemaName {
+      get;
+      set;
+    }
+    public string TableName {
+      get;
+      set;
+    }
+    public string TableNameSansSchema {
+      get {
+        return Get_TableNameSansSchema();
+      }
+    }
+    public string TableType {
+      get;
+      set;
+    }
+    public DateTime CreateDT {
+      get;
+      set;
+    }
+    public DateTime ModifyDT {
+      get;
+      set;
+    }
 
-    public DbColumnSet DbColumnSet { get; set; }
-    public DbConstraintSet DbConstraintSet { get; set; }
-    public DbColumn PrimaryKeyColumn { get; set; }
-    public DbColumn IdentityColumn { get; set; }
+    public DbColumnSet DbColumnSet {
+      get;
+      set;
+    }
+    public DbConstraintSet DbConstraintSet {
+      get;
+      set;
+    }
+    public DbColumn PrimaryKeyColumn {
+      get;
+      set;
+    }
+    public DbColumn IdentityColumn {
+      get;
+      set;
+    }
 
     public bool HasPrimaryKeyColumn
     {
-      get { return this.PrimaryKeyColumn == null ? false : true; }
+      get {
+        return this.PrimaryKeyColumn == null ? false : true;
+      }
     }
 
     public bool HasIdentityColumn
     {
-      get { return this.IdentityColumn == null ? false : true; }
+      get {
+        return this.IdentityColumn == null ? false : true;
+      }
     }
 
     public DbTable()
@@ -2164,23 +2343,23 @@ namespace Org.DB
     {
       this.DbColumnSet = new DbColumnSet();
 
-      string sql = "SELECT " + g.crlf + 
-                    "  c.[name] AS [Name], " + g.crlf +
-                    "  c.[column_id] AS [ColumnId], " + g.crlf +
-                    "  c.[system_type_id] AS [SystemTypeId], " + g.crlf +
-                    "  c.[user_type_id] AS [UserTypeId], " + g.crlf +
-                    "  c.[max_length] AS [MaxLength], " + g.crlf +
-                    "  c.[precision] AS [Precision], " + g.crlf +
-                    "  c.[scale] AS [Scale], " + g.crlf +
-                    "  c.[is_nullable] AS [IsNullable], " + g.crlf +
-                    "  c.[is_identity] AS [IsIdentity], " + g.crlf +
-                    "  i.[is_primary_key] AS [IsPrimaryKey], " + g.crlf +
-                    "  c.[default_object_id] as [DefaultObjectId] " + g.crlf +
-                    "FROM sys.columns c " +
-                    "LEFT OUTER JOIN sys.index_columns ic ON ic.object_id = c.object_id AND ic.column_id = c.column_id " + g.crlf +
-                    "LEFT OUTER JOIN sys.indexes i on ic.object_id = i.object_id AND ic.index_id = i.index_id " + g.crlf +
-                    "WHERE c.object_id = OBJECT_ID('" + this.TableName + "') " + g.crlf +
-                    "ORDER BY c.column_id ";
+      string sql = "SELECT " + g.crlf +
+                   "  c.[name] AS [Name], " + g.crlf +
+                   "  c.[column_id] AS [ColumnId], " + g.crlf +
+                   "  c.[system_type_id] AS [SystemTypeId], " + g.crlf +
+                   "  c.[user_type_id] AS [UserTypeId], " + g.crlf +
+                   "  c.[max_length] AS [MaxLength], " + g.crlf +
+                   "  c.[precision] AS [Precision], " + g.crlf +
+                   "  c.[scale] AS [Scale], " + g.crlf +
+                   "  c.[is_nullable] AS [IsNullable], " + g.crlf +
+                   "  c.[is_identity] AS [IsIdentity], " + g.crlf +
+                   "  i.[is_primary_key] AS [IsPrimaryKey], " + g.crlf +
+                   "  c.[default_object_id] as [DefaultObjectId] " + g.crlf +
+                   "FROM sys.columns c " +
+                   "LEFT OUTER JOIN sys.index_columns ic ON ic.object_id = c.object_id AND ic.column_id = c.column_id " + g.crlf +
+                   "LEFT OUTER JOIN sys.indexes i on ic.object_id = i.object_id AND ic.index_id = i.index_id " + g.crlf +
+                   "WHERE c.object_id = OBJECT_ID('" + this.TableName + "') " + g.crlf +
+                   "ORDER BY c.column_id ";
 
 
       SqlDataAdapter da = new SqlDataAdapter(sql, Connection);
@@ -2223,8 +2402,8 @@ namespace Org.DB
 
         if (!r.IsNull("IsPrimaryKey"))
         {
-          int pk = Convert.ToInt32(r["IsPrimaryKey"]); 
-          c.IsPrimaryKey = pk == 1; 
+          int pk = Convert.ToInt32(r["IsPrimaryKey"]);
+          c.IsPrimaryKey = pk == 1;
         }
 
         int defaultObjectId = 0;
@@ -2239,7 +2418,7 @@ namespace Org.DB
         else
           c.DbType = dbTypeSet[9999];
 
-          this.DbColumnSet.Add(c.Name, c);
+        this.DbColumnSet.Add(c.Name, c);
       }
 
 
@@ -2258,7 +2437,7 @@ namespace Org.DB
       if (this.SchemaName.IsBlank())
         return this.TableName;
 
-      return this.TableName.Replace(this.SchemaName + ".", String.Empty); 
+      return this.TableName.Replace(this.SchemaName + ".", String.Empty);
     }
   }
 
@@ -2268,25 +2447,72 @@ namespace Org.DB
 
   public class DbColumn
   {
-    public DbTable Table { get; set; }
-    public DbEntityBase Row { get; set; }
-    public string Name { get; set; }
-    public DbType DbType { get; set; }
-    public int ColumnId { get; set; }
-    public int SystemTypeId { get; set; }
-    public int UserTypeId { get; set; }
-    public int MaxLength { get; set; }
-    public int Precision { get; set; }
-    public int Scale { get; set; }
-    public bool IsNullable { get; set; }
-    public bool IsNullInDB { get; set; }
-    public bool IsIdentity { get; set; }
-    public bool IsPrimaryKey { get; set; }
-    public bool HasDefaultValue { get; set; }
+    public DbTable Table {
+      get;
+      set;
+    }
+    public DbEntityBase Row {
+      get;
+      set;
+    }
+    public string Name {
+      get;
+      set;
+    }
+    public DbType DbType {
+      get;
+      set;
+    }
+    public int ColumnId {
+      get;
+      set;
+    }
+    public int SystemTypeId {
+      get;
+      set;
+    }
+    public int UserTypeId {
+      get;
+      set;
+    }
+    public int MaxLength {
+      get;
+      set;
+    }
+    public int Precision {
+      get;
+      set;
+    }
+    public int Scale {
+      get;
+      set;
+    }
+    public bool IsNullable {
+      get;
+      set;
+    }
+    public bool IsNullInDB {
+      get;
+      set;
+    }
+    public bool IsIdentity {
+      get;
+      set;
+    }
+    public bool IsPrimaryKey {
+      get;
+      set;
+    }
+    public bool HasDefaultValue {
+      get;
+      set;
+    }
 
     public bool IsUpdated
     {
-      get { return this.IsColumnUpdated(); }
+      get {
+        return this.IsColumnUpdated();
+      }
     }
 
 
@@ -2304,7 +2530,7 @@ namespace Org.DB
       this.IsNullable = true;
       this.IsNullInDB = false;
       this.IsIdentity = false;
-      this.IsPrimaryKey = false; 
+      this.IsPrimaryKey = false;
       this.HasDefaultValue = false;
     }
 
@@ -2341,15 +2567,42 @@ namespace Org.DB
 
   public class DbConstraint
   {
-    public string ConstraintCatalog { get; set; }
-    public string ConstraintSchema { get; set; }
-    public string ConstraintName { get; set; }
-    public string TableCatalog { get; set; }
-    public string TableSchema { get; set; }
-    public string TableName { get; set; }
-    public ConstraintType ConstraintType { get; set; }
-    public string ColumnName { get; set; }
-    public int OrdinalPosition { get; set; }
+    public string ConstraintCatalog {
+      get;
+      set;
+    }
+    public string ConstraintSchema {
+      get;
+      set;
+    }
+    public string ConstraintName {
+      get;
+      set;
+    }
+    public string TableCatalog {
+      get;
+      set;
+    }
+    public string TableSchema {
+      get;
+      set;
+    }
+    public string TableName {
+      get;
+      set;
+    }
+    public ConstraintType ConstraintType {
+      get;
+      set;
+    }
+    public string ColumnName {
+      get;
+      set;
+    }
+    public int OrdinalPosition {
+      get;
+      set;
+    }
 
     public DbConstraint()
     {
@@ -2370,15 +2623,15 @@ namespace Org.DB
     public void Load(SqlConnection Connection)
     {
       string sql = "SELECT " +
-                    "  [name] AS [Name], " +
-                    "  [system_type_id] AS [SystemTypeId], " +
-                    "  [user_type_id] AS [UserTypeId], " +
-                    "  [max_length] AS [MaxLength], " +
-                    "  [precision] AS [Precision], " +
-                    "  [scale] AS [Scale], " +
-                    "  [is_nullable] AS [IsNullable] " +
-                    "FROM sys.types " +
-                    "ORDER BY system_type_id ";
+                   "  [name] AS [Name], " +
+                   "  [system_type_id] AS [SystemTypeId], " +
+                   "  [user_type_id] AS [UserTypeId], " +
+                   "  [max_length] AS [MaxLength], " +
+                   "  [precision] AS [Precision], " +
+                   "  [scale] AS [Scale], " +
+                   "  [is_nullable] AS [IsNullable] " +
+                   "FROM sys.types " +
+                   "ORDER BY system_type_id ";
 
       SqlDataAdapter da = new SqlDataAdapter(sql, Connection);
       DataSet ds = new DataSet();
@@ -2431,59 +2684,117 @@ namespace Org.DB
     {
       switch (typeName)
       {
-        case "image": return SqlDbType.Image;
-        case "text": return SqlDbType.Text;
-        case "uniqueidentifier": return SqlDbType.UniqueIdentifier;
-        case "date": return SqlDbType.Date;
-        case "time": return SqlDbType.Time;
-        case "datetime2": return SqlDbType.DateTime2;
-        case "datetimeoffset": return SqlDbType.DateTimeOffset;
-        case "tinyint": return SqlDbType.TinyInt;
-        case "smallint": return SqlDbType.SmallInt;
-        case "int": return SqlDbType.Int;
-        case "smalldatetime": return SqlDbType.SmallDateTime;
-        case "real": return SqlDbType.Real;
-        case "money": return SqlDbType.Money;
-        case "datetime": return SqlDbType.DateTime;
-        case "float": return SqlDbType.Float;
-        case "sql_variant": return SqlDbType.Variant;
-        case "ntext": return SqlDbType.NText;
-        case "bit": return SqlDbType.Bit;
-        case "decimal": return SqlDbType.Decimal;
-        case "numeric": return SqlDbType.Decimal;
-        case "smallmoney": return SqlDbType.SmallMoney;
-        case "bigint": return SqlDbType.BigInt;
-        case "varbinary": return SqlDbType.VarBinary;
-        case "varchar": return SqlDbType.VarChar;
-        case "binary": return SqlDbType.Binary;
-        case "char": return SqlDbType.Char;
-        case "timestamp": return SqlDbType.Timestamp;
-        case "nvarchar": return SqlDbType.NVarChar;
-        case "nchar": return SqlDbType.NChar;
-        case "xml": return SqlDbType.Xml;
+        case "image":
+          return SqlDbType.Image;
+        case "text":
+          return SqlDbType.Text;
+        case "uniqueidentifier":
+          return SqlDbType.UniqueIdentifier;
+        case "date":
+          return SqlDbType.Date;
+        case "time":
+          return SqlDbType.Time;
+        case "datetime2":
+          return SqlDbType.DateTime2;
+        case "datetimeoffset":
+          return SqlDbType.DateTimeOffset;
+        case "tinyint":
+          return SqlDbType.TinyInt;
+        case "smallint":
+          return SqlDbType.SmallInt;
+        case "int":
+          return SqlDbType.Int;
+        case "smalldatetime":
+          return SqlDbType.SmallDateTime;
+        case "real":
+          return SqlDbType.Real;
+        case "money":
+          return SqlDbType.Money;
+        case "datetime":
+          return SqlDbType.DateTime;
+        case "float":
+          return SqlDbType.Float;
+        case "sql_variant":
+          return SqlDbType.Variant;
+        case "ntext":
+          return SqlDbType.NText;
+        case "bit":
+          return SqlDbType.Bit;
+        case "decimal":
+          return SqlDbType.Decimal;
+        case "numeric":
+          return SqlDbType.Decimal;
+        case "smallmoney":
+          return SqlDbType.SmallMoney;
+        case "bigint":
+          return SqlDbType.BigInt;
+        case "varbinary":
+          return SqlDbType.VarBinary;
+        case "varchar":
+          return SqlDbType.VarChar;
+        case "binary":
+          return SqlDbType.Binary;
+        case "char":
+          return SqlDbType.Char;
+        case "timestamp":
+          return SqlDbType.Timestamp;
+        case "nvarchar":
+          return SqlDbType.NVarChar;
+        case "nchar":
+          return SqlDbType.NChar;
+        case "xml":
+          return SqlDbType.Xml;
 
 
-        case "sysname": return SqlDbType.Text;
-        case "hierarchyid": return SqlDbType.Text;
-        case "geometry": return SqlDbType.Text;
-        case "geography": return SqlDbType.Text;
+        case "sysname":
+          return SqlDbType.Text;
+        case "hierarchyid":
+          return SqlDbType.Text;
+        case "geometry":
+          return SqlDbType.Text;
+        case "geography":
+          return SqlDbType.Text;
       }
 
-      // default unknown types to text - hopefully won't occur... 
+      // default unknown types to text - hopefully won't occur...
       return SqlDbType.Text;
     }
   }
 
   public class DbType
   {
-    public SqlDbType SqlDbType { get; set; }
-    public string TypeName { get; set; }
-    public int SystemTypeId { get; set; }
-    public int UserTypeId { get; set; }
-    public int MaxLength { get; set; }
-    public int Precision { get; set; }
-    public int Scale { get; set; }
-    public bool IsNullable { get; set; }
+    public SqlDbType SqlDbType {
+      get;
+      set;
+    }
+    public string TypeName {
+      get;
+      set;
+    }
+    public int SystemTypeId {
+      get;
+      set;
+    }
+    public int UserTypeId {
+      get;
+      set;
+    }
+    public int MaxLength {
+      get;
+      set;
+    }
+    public int Precision {
+      get;
+      set;
+    }
+    public int Scale {
+      get;
+      set;
+    }
+    public bool IsNullable {
+      get;
+      set;
+    }
 
     public DbType()
     {
@@ -2500,14 +2811,35 @@ namespace Org.DB
 
   public class DbQuery<T>
   {
-    public DbSet<T> DbSet { get; set; }
-    public DbRow<T> DbRow { get; set; }
+    public DbSet<T> DbSet {
+      get;
+      set;
+    }
+    public DbRow<T> DbRow {
+      get;
+      set;
+    }
     public DbContext DbContext;
-    public string TableName { get; set; }
-    public string WhereClause { get; set; }
-    public string OrderByClause { get; set; }
-    public string ColumnList { get; set; }
-    public bool IsSet { get; set; }
+    public string TableName {
+      get;
+      set;
+    }
+    public string WhereClause {
+      get;
+      set;
+    }
+    public string OrderByClause {
+      get;
+      set;
+    }
+    public string ColumnList {
+      get;
+      set;
+    }
+    public bool IsSet {
+      get;
+      set;
+    }
 
     public DbQuery(DbContext dbContext, DbRow<T> dbRow)
     {
@@ -2610,7 +2942,10 @@ namespace Org.DB
 
   public class DbCriteria
   {
-    public DbRelSpecSet DbRelSpecSet { get; set; }
+    public DbRelSpecSet DbRelSpecSet {
+      get;
+      set;
+    }
 
     public DbCriteria()
     {
@@ -2624,11 +2959,26 @@ namespace Org.DB
 
   public class DbRelSpec
   {
-    public DbRelSpecType DbRelSpecType { get; set; }
-    public string ColumnName { get; set; }
-    public bool UseNegation { get; set; }
-    public DbRelOp DbRelOp { get; set; }
-    public object Value { get; set; }
+    public DbRelSpecType DbRelSpecType {
+      get;
+      set;
+    }
+    public string ColumnName {
+      get;
+      set;
+    }
+    public bool UseNegation {
+      get;
+      set;
+    }
+    public DbRelOp DbRelOp {
+      get;
+      set;
+    }
+    public object Value {
+      get;
+      set;
+    }
 
     public DbRelSpec()
     {

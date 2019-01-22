@@ -8,11 +8,26 @@ namespace Org.OpsManager.Controls
 {
   public class NotifyChangeResult
   {
-    public NotifyType NotifyType { get; set; }
-    public int ObjectId { get; set; }
-    public string NewObjectName { get; set; }
-    public int? ParentId { get; set; }
-    public int? XRefId { get; set; }
+    public NotifyType NotifyType {
+      get;
+      set;
+    }
+    public int ObjectId {
+      get;
+      set;
+    }
+    public string NewObjectName {
+      get;
+      set;
+    }
+    public int? ParentId {
+      get;
+      set;
+    }
+    public int? XRefId {
+      get;
+      set;
+    }
 
     public NotifyChangeResult()
     {

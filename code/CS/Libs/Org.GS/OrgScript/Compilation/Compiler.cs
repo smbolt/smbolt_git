@@ -8,12 +8,31 @@ namespace Org.GS.OrgScript.Compilation
 {
   public class Compiler
   {
-    public CompilerConfig CompilerConfig { get; private set; }
-    public CompilationPhase CompilationPhase { get; private set; }
-    public Parser Parser { get; private set; }
-    public CompilerNextStep CompilerNextStep { get; private set; }
-    public string SyntaxNodeReport { get; set; }
-    public string Report { get { return Get_Report(); } }
+    public CompilerConfig CompilerConfig {
+      get;
+      private set;
+    }
+    public CompilationPhase CompilationPhase {
+      get;
+      private set;
+    }
+    public Parser Parser {
+      get;
+      private set;
+    }
+    public CompilerNextStep CompilerNextStep {
+      get;
+      private set;
+    }
+    public string SyntaxNodeReport {
+      get;
+      set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public Compiler(string rawCode, CompilerConfig compilerConfig = null)
     {
@@ -43,7 +62,7 @@ namespace Org.GS.OrgScript.Compilation
       {
         throw new Exception("An exception occurred while attempting to run the compiler next step - next step is " + this.CompilerNextStep.ToString() + ".", ex);
       }
-    }    
+    }
 
     private CompilerConfig GetDefaultCompilerConfig()
     {

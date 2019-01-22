@@ -26,7 +26,7 @@ namespace Org.FileOrganizer
       _fsoRepo = fsoRepo;
       InitializeForm();
     }
-    
+
     private void Action(object sender, EventArgs e)
     {
       string action = g.GetActionFromEvent(sender);
@@ -44,7 +44,7 @@ namespace Org.FileOrganizer
           }
 
           InsertNewProject(txtProjectName.Text.Trim());
-          
+
           this.NewProjectName = txtProjectName.Text.Trim();
           this.DialogResult = DialogResult.OK;
           break;
@@ -69,7 +69,7 @@ namespace Org.FileOrganizer
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to determine if a project exists for project name '" + projectName + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to determine if a project exists for project name '" + projectName + "'.", ex);
       }
     }
 
@@ -81,7 +81,7 @@ namespace Org.FileOrganizer
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to insert a new project for project name '" + projectName + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to insert a new project for project name '" + projectName + "'.", ex);
       }
     }
 
@@ -94,7 +94,7 @@ namespace Org.FileOrganizer
 
     private void txtProjectName_TextChanged(object sender, EventArgs e)
     {
-      btnOK.Enabled = txtProjectName.Text.Length > 0; 
+      btnOK.Enabled = txtProjectName.Text.Length > 0;
     }
   }
 }

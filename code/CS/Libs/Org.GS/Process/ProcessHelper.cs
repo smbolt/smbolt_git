@@ -122,14 +122,14 @@ namespace Org.GS
 
           while (_process.StandardError.Peek() > -1)
           {
-            sbErr.Append(_process.StandardError.ReadLine()); 
+            sbErr.Append(_process.StandardError.ReadLine());
           }
           errorOutput = sbErr.ToString();
-          
+
           _process.WaitForExit();
 
           taskResult.Code = _process.ExitCode;
-          
+
           if (processReturnsTaskResult)
           {
             var fmt = new BinaryFormatter();
@@ -212,72 +212,72 @@ namespace Org.GS
 
     public static bool IsProgramInstanceUnique(string displayProgramName)
     {
-        string thisProcessName = string.Empty;
-        int thisProcessID = 0;
-        string debugProcessName = string.Empty;
-        List<Process> processes = new List<Process>();
-        List<Process> debugProcesses = new List<Process>();
-        SortedList<int, Process> allProcesses = new SortedList<int, Process>();
+      string thisProcessName = string.Empty;
+      int thisProcessID = 0;
+      string debugProcessName = string.Empty;
+      List<Process> processes = new List<Process>();
+      List<Process> debugProcesses = new List<Process>();
+      SortedList<int, Process> allProcesses = new SortedList<int, Process>();
 
-        Logger logger = new Logger();
+      Logger logger = new Logger();
 
-        try
+      try
+      {
+        Process thisProcess = Process.GetCurrentProcess();
+        thisProcessID = thisProcess.Id;
+
+        if (Debugger.IsAttached)
         {
-          Process thisProcess = Process.GetCurrentProcess();
-          thisProcessID = thisProcess.Id;
+          thisProcessName = thisProcess.ProcessName.Replace(".vshost", String.Empty);
+          debugProcessName = thisProcess.ProcessName;
+          debugProcesses = Process.GetProcessesByName(debugProcessName).ToList();
+        }
+        else
+        {
+          thisProcessName = thisProcess.ProcessName;
+        }
 
-          if (Debugger.IsAttached)
+        processes = Process.GetProcessesByName(thisProcessName).ToList();
+
+        foreach (Process p in processes)
+          allProcesses.Add(p.Id, p);
+
+        foreach (Process p in debugProcesses)
+          allProcesses.Add(p.Id, p);
+
+        if (allProcesses.Count == 1)
+          return true;
+
+
+        string otherProcessIDs = string.Empty;
+        int otherProcessCount = 0;
+
+        foreach (Process proc in allProcesses.Values)
+        {
+          if (proc.Id != thisProcessID)
           {
-            thisProcessName = thisProcess.ProcessName.Replace(".vshost", String.Empty);
-            debugProcessName = thisProcess.ProcessName;
-            debugProcesses = Process.GetProcessesByName(debugProcessName).ToList();
+            otherProcessCount += 1;
+
+            if (otherProcessCount == 1)
+              otherProcessIDs = proc.Id.ToString();
+            else
+              otherProcessIDs += ", " + proc.Id.ToString();
           }
-          else
-          {
-            thisProcessName = thisProcess.ProcessName;
-          }
+        }
 
-          processes = Process.GetProcessesByName(thisProcessName).ToList();
-
-          foreach (Process p in processes)
-            allProcesses.Add(p.Id, p);
-
-          foreach (Process p in debugProcesses)
-            allProcesses.Add(p.Id, p);
-
-          if (allProcesses.Count == 1)
-            return true;
+        string otherProcessesMessage = string.Empty;
+        if (otherProcessCount == 1)
+          otherProcessesMessage = "The Process ID of the other " + displayProgramName + " process is " + otherProcessIDs;
+        else
+          otherProcessesMessage = "The Process IDs of the other " + displayProgramName + " processes are " + otherProcessIDs;
 
 
-          string otherProcessIDs = string.Empty;
-          int otherProcessCount = 0;
+        logger.Log("INFO - Another instance of " + displayProgramName + " is already running - this instance, ProcessId=" + thisProcessID.ToString() + ", will close - Code 114");
 
-          foreach (Process proc in allProcesses.Values)
-          {
-            if (proc.Id != thisProcessID)
-            {
-              otherProcessCount += 1;
-
-              if (otherProcessCount == 1)
-                otherProcessIDs = proc.Id.ToString();
-              else
-                otherProcessIDs += ", " + proc.Id.ToString();
-            }
-          }
-
-          string otherProcessesMessage = string.Empty;
-          if (otherProcessCount == 1)
-            otherProcessesMessage = "The Process ID of the other " + displayProgramName + " process is " + otherProcessIDs;
-          else
-            otherProcessesMessage = "The Process IDs of the other " + displayProgramName + " processes are " + otherProcessIDs;
-
-
-          logger.Log("INFO - Another instance of " + displayProgramName + " is already running - this instance, ProcessId=" + thisProcessID.ToString() + ", will close - Code 114");
-
-          MessageBox.Show("Another instance of " + displayProgramName + " is already running." +
-            g.crlf + g.crlf + otherProcessesMessage + g.crlf + g.crlf +
-            "This instance of " + displayProgramName + " will close." + g.crlf + g.crlf + "(Code 114)", displayProgramName + " - Another Instance of " + displayProgramName + " is Running",
-            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        MessageBox.Show("Another instance of " + displayProgramName + " is already running." +
+                        g.crlf + g.crlf + otherProcessesMessage + g.crlf + g.crlf +
+                        "This instance of " + displayProgramName + " will close." + g.crlf + g.crlf + "(Code 114)", displayProgramName + " - Another Instance of " + displayProgramName + " is Running",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
         foreach (Process proc in allProcesses.Values)
         {
@@ -288,7 +288,7 @@ namespace Org.GS
               logger.Log("INFO - Attempting to kill another instance of " + displayProgramName + " with MainWindowHandle = 0, ProcessID=" + proc.Id.ToString());
               if (KillPredecessor(proc, logger) && allProcesses.Count == 2)
               {
-                return true;  
+                return true;
               }
               else
               {
@@ -324,7 +324,7 @@ namespace Org.GS
       catch (ArgumentException argException)
       {
         if (argException.Message.IndexOf(" not running") != -1)
-            logger.Log("INFO - Kill of process " + processToKillId.ToString() + " was successful - this instance of this program will continue to run");
+          logger.Log("INFO - Kill of process " + processToKillId.ToString() + " was successful - this instance of this program will continue to run");
         return true;  // the process was successfully killed
       }
       catch (Exception ex)

@@ -23,28 +23,87 @@ namespace Org.Pdf
 
   public class Document : IDisposable
   {
-    public long FileLength { get; private set; }
-    public long Permissions { get; private set; }
-    public string Author { get; set; }
-    public string Creator { get; set; }
-    public string Keywords { get; set; }
-    public Dictionary<string, string> MoreInfo { get; set; }
-    public string Producer { get; set; }
-    public string Subject { get; set; }
-    public string Title { get; set; }
-    public string Report { get { return Get_Report(); } }
+    public long FileLength {
+      get;
+      private set;
+    }
+    public long Permissions {
+      get;
+      private set;
+    }
+    public string Author {
+      get;
+      set;
+    }
+    public string Creator {
+      get;
+      set;
+    }
+    public string Keywords {
+      get;
+      set;
+    }
+    public Dictionary<string, string> MoreInfo {
+      get;
+      set;
+    }
+    public string Producer {
+      get;
+      set;
+    }
+    public string Subject {
+      get;
+      set;
+    }
+    public string Title {
+      get;
+      set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
     private PdfReader _pdfReader;
-    internal PdfReader PdfReader { get { return _pdfReader; } }
+    internal PdfReader PdfReader {
+      get {
+        return _pdfReader;
+      }
+    }
     private int _nextObjectNumber;
-    public int NextObjectNumber { get { return _nextObjectNumber++; } }
+    public int NextObjectNumber {
+      get {
+        return _nextObjectNumber++;
+      }
+    }
 
-    public string DocumentPath { get; private set; }
-    public int PageCount { get; private set; }
-    public int TotalObjectCount { get { return Get_TotalObjectCount(); } }
-    public PageSet PageSet { get; private set; }
+    public string DocumentPath {
+      get;
+      private set;
+    }
+    public int PageCount {
+      get;
+      private set;
+    }
+    public int TotalObjectCount {
+      get {
+        return Get_TotalObjectCount();
+      }
+    }
+    public PageSet PageSet {
+      get;
+      private set;
+    }
     private StringBuilder _logSb;
-    public string Log { get { return _logSb.ToString(); } }
-    public int BreakOnObject { get; private set; }
+    public string Log {
+      get {
+        return _logSb.ToString();
+      }
+    }
+    public int BreakOnObject {
+      get;
+      private set;
+    }
 
     public Document(string documentPath, string breakOnObject)
     {
@@ -98,7 +157,7 @@ namespace Org.Pdf
 
 
           var parser = new iText.Kernel.Pdf.Canvas.Parser.PdfDocumentContentParser(doc);
-          
+
           for (int i = 1; i < this.PageCount; i++)
           {
             var filters = new iText.Kernel.Pdf.Canvas.Parser.Filter.IEventFilter[] { };
@@ -115,12 +174,12 @@ namespace Org.Pdf
 
           pdfReader.Close();
           _pdfReader = null;
-        }        
+        }
       }
       catch (Exception ex)
       {
         throw new Exception("An exception was encountered attempting to create the iTextSharp.text.Document object using path '" +
-          this.DocumentPath + "'.", ex); 
+                            this.DocumentPath + "'.", ex);
       }
     }
 
@@ -128,7 +187,7 @@ namespace Org.Pdf
     {
 
     }
-    
+
     private int Get_TotalObjectCount()
     {
       int objectCount = 0;

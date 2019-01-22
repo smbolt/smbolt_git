@@ -8,13 +8,19 @@ namespace Org.ShareFileApiClient
 {
   public class SFFolderContent
   {
-    public SFFolderSet SFFolderSet { get; set; }
-    public SFFileSet SFFileSet { get; set; }
+    public SFFolderSet SFFolderSet {
+      get;
+      set;
+    }
+    public SFFileSet SFFileSet {
+      get;
+      set;
+    }
 
     public SFFolderContent()
     {
       this.SFFolderSet = new SFFolderSet();
-      this.SFFileSet = new SFFileSet(); 
+      this.SFFileSet = new SFFileSet();
     }
   }
 }

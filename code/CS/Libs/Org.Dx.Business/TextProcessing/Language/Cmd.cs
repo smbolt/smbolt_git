@@ -14,11 +14,16 @@ namespace Org.Dx.Business.TextProcessing
   public class Cmd
   {
     [XMap]
-    public int LineNumber { get; set; }
+    public int LineNumber {
+      get;
+      set;
+    }
     [XMap]
-    public string Code 
+    public string Code
     {
-      get { return _code; }
+      get {
+        return _code;
+      }
       set
       {
         string code = value;
@@ -45,34 +50,114 @@ namespace Org.Dx.Business.TextProcessing
     private string _code;
 
     [XMap(DefaultValue = "False")]
-    public bool Break { get; set; }
-    public string Verb { get { return Get_Verb(); } }
+    public bool Break {
+      get;
+      set;
+    }
+    public string Verb {
+      get {
+        return Get_Verb();
+      }
+    }
     public string[] _parms;
-    public string[] Parms { get { return Get_Parms(); } }
-    public string ParmsString { get { return Get_ParmsString(); } }
-    public bool IsRequired { get { return Get_IsRequired(); } }
-    public string TokenType { get { return Get_TokenType(); } }
-    public string DataName { get { return Get_DataName(); } }
-    public string DataFormat { get { return Get_DataFormat(); } }
-    public bool PositionAtEnd { get { return Get_PositionAtEnd(); } }
-    public bool Advance { get { return Get_Advance(); } }
-    public bool RemoveStoredToken { get { return Get_RemoveStoredToken(); } }
-    public int StoredTokenIndex { get { return Get_StoredTokenIndex(); } }
-    public bool UsePriorEnd { get { return Get_UsePriorEnd(); } }
-    public bool HasNoParameters { get { return this.Parms == null || this.Parms.Length == 0; } }
-    public string TextToFind { get { return this.Get_TextToFind(); } }
-    public bool ExcludedLastToken { get { return this.Get_ExcludeLastToken(); } }
-    public bool ActiveToRun { get; set; }
-    public int RunCount { get; set; }
-    public Tsd Parent { get; set; }
+    public string[] Parms {
+      get {
+        return Get_Parms();
+      }
+    }
+    public string ParmsString {
+      get {
+        return Get_ParmsString();
+      }
+    }
+    public bool IsRequired {
+      get {
+        return Get_IsRequired();
+      }
+    }
+    public string TokenType {
+      get {
+        return Get_TokenType();
+      }
+    }
+    public string DataName {
+      get {
+        return Get_DataName();
+      }
+    }
+    public string DataFormat {
+      get {
+        return Get_DataFormat();
+      }
+    }
+    public bool PositionAtEnd {
+      get {
+        return Get_PositionAtEnd();
+      }
+    }
+    public bool Advance {
+      get {
+        return Get_Advance();
+      }
+    }
+    public bool RemoveStoredToken {
+      get {
+        return Get_RemoveStoredToken();
+      }
+    }
+    public int StoredTokenIndex {
+      get {
+        return Get_StoredTokenIndex();
+      }
+    }
+    public bool UsePriorEnd {
+      get {
+        return Get_UsePriorEnd();
+      }
+    }
+    public bool HasNoParameters {
+      get {
+        return this.Parms == null || this.Parms.Length == 0;
+      }
+    }
+    public string TextToFind {
+      get {
+        return this.Get_TextToFind();
+      }
+    }
+    public bool ExcludedLastToken {
+      get {
+        return this.Get_ExcludeLastToken();
+      }
+    }
+    public bool ActiveToRun {
+      get;
+      set;
+    }
+    public int RunCount {
+      get;
+      set;
+    }
+    public Tsd Parent {
+      get;
+      set;
+    }
 
     private bool _isCommenttedOut = false;
-    public bool IsCommentedOut { get { return _isCommenttedOut; } }
+    public bool IsCommentedOut {
+      get {
+        return _isCommenttedOut;
+      }
+    }
     private bool _isBreakPoint = false;
-    public bool IsBreakPoint 
-    { 
-      get { return _isBreakPoint; }
-      set { _isBreakPoint = value; }
+    public bool IsBreakPoint
+    {
+      get {
+        return _isBreakPoint;
+      }
+      set {
+        _isBreakPoint = value;
+      }
     }
 
     public Cmd()
@@ -89,7 +174,7 @@ namespace Org.Dx.Business.TextProcessing
       if (this.Code.StartsWith("~"))
       {
         this.Break = true;
-        this.Code = this.Code.Substring(1); 
+        this.Code = this.Code.Substring(1);
       }
     }
 
@@ -98,7 +183,7 @@ namespace Org.Dx.Business.TextProcessing
       if (this.Code.IsBlank())
         return String.Empty;
 
-      return this.Code.GetTextBefore(Constants.OpenParen); 
+      return this.Code.GetTextBefore(Constants.OpenParen);
     }
 
     private bool Get_IsRequired()
@@ -165,7 +250,7 @@ namespace Org.Dx.Business.TextProcessing
       int closePos = parm.IndexOf("]", openPos > -1 ? openPos : 0);
 
       if (openPos > -1 && closePos == -1 || openPos == -1 && closePos > -1)
-        throw new Exception("Unmatched brackets were found in the command parameter '" + parm + "'."); 
+        throw new Exception("Unmatched brackets were found in the command parameter '" + parm + "'.");
 
       if (openPos == -1)
         return String.Empty;
@@ -182,7 +267,7 @@ namespace Org.Dx.Business.TextProcessing
           return tokenType;
       }
 
-      throw new Exception("Invalid token type specified '[" + parm + "]' in command parameter '" + parm + "'."); 
+      throw new Exception("Invalid token type specified '[" + parm + "]' in command parameter '" + parm + "'.");
     }
 
     private string Get_DataFormat()
@@ -208,7 +293,7 @@ namespace Org.Dx.Business.TextProcessing
           return dataFormat;
       }
 
-      throw new Exception("Invalid data format specified '" + dataFormat + "' in the command parameter '" + parm + "'."); 
+      throw new Exception("Invalid data format specified '" + dataFormat + "' in the command parameter '" + parm + "'.");
     }
 
     private bool Get_PositionAtEnd()
@@ -290,7 +375,7 @@ namespace Org.Dx.Business.TextProcessing
 
       if (this.Parms.Length < 2)
         throw new Exception("The index of the stored token must be supplied as the second parameter " +
-                                   "of the ExtractStoredToken command. Command code is '" + this.Code + "'.");
+                            "of the ExtractStoredToken command. Command code is '" + this.Code + "'.");
 
       string parm = this.Parms[1];
 
@@ -306,7 +391,7 @@ namespace Org.Dx.Business.TextProcessing
       throw new Exception("The second parameter of the ExtractStoredToken command must be numeric - the value " +
                           "found is '" + parm + "'. The command code is '" + this.Code + "'.");
     }
-    
+
     private string[] Get_Parms()
     {
       if (_parms != null)
@@ -332,7 +417,7 @@ namespace Org.Dx.Business.TextProcessing
 
       _parms = trimmedParms;
 
-      return _parms; 
+      return _parms;
     }
 
     private string Get_TextToFind()
@@ -355,7 +440,7 @@ namespace Org.Dx.Business.TextProcessing
         if (sb.Length > 0)
           sb.Append(" " + parm);
         else
-          sb.Append(parm); 
+          sb.Append(parm);
       }
 
       return sb.ToString();

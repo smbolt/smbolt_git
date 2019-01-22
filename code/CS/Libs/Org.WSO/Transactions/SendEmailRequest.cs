@@ -11,16 +11,34 @@ namespace Org.WSO.Transactions
   public class SendEmailRequest : TransactionBase
   {
     [XMap]
-    public List<string> ToAddresses { get; set; }
+    public List<string> ToAddresses {
+      get;
+      set;
+    }
     [XMap]
-    public List<string> CcAddresses { get; set; }
+    public List<string> CcAddresses {
+      get;
+      set;
+    }
     [XMap]
-    public List<string> BccAddresses { get; set; }
+    public List<string> BccAddresses {
+      get;
+      set;
+    }
     [XMap]
-    public string FromAddress { get; set; }
+    public string FromAddress {
+      get;
+      set;
+    }
     [XMap]
-    public string Subject { get; set; }
-    public string Body { get; set; }
+    public string Subject {
+      get;
+      set;
+    }
+    public string Body {
+      get;
+      set;
+    }
 
     public SendEmailRequest()
     {

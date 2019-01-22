@@ -13,19 +13,34 @@ namespace Org.GS.Configuration
   public class TaskCalendar
   {
     [XMap(IsRequired = true)]
-    public string WeekdayControl { get; set; }
+    public string WeekdayControl {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public string OrdinalControl { get; set; }
+    public string OrdinalControl {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public string SpecificDays { get; set; }
+    public string SpecificDays {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, Name="PeriodContexts")]
-    public PeriodContexts PeriodContexts { get; set; }
+    public PeriodContexts PeriodContexts {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true, Name = "HolidayActions")]
-    public HolidayActions HolidayActions { get; set; }
+    public HolidayActions HolidayActions {
+      get;
+      set;
+    }
 
     public TaskCalendar()
     {
@@ -34,6 +49,6 @@ namespace Org.GS.Configuration
       this.SpecificDays = String.Empty;
       this.PeriodContexts = PeriodContexts.NotSet;
       this.HolidayActions = HolidayActions.RunOnHoliday;
-    }   
+    }
   }
 }

@@ -13,12 +13,12 @@ namespace Org.WinService
     /// </summary>
     static void Main()
     {
-        ServiceBase[] ServicesToRun;
-        ServicesToRun = new ServiceBase[] 
-        { 
-            new WinService() 
-        };
-        ServiceBase.Run(ServicesToRun);
+      ServiceBase[] ServicesToRun;
+      ServicesToRun = new ServiceBase[]
+      {
+        new WinService()
+      };
+      ServiceBase.Run(ServicesToRun);
     }
   }
 }

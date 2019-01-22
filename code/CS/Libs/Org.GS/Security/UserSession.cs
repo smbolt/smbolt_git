@@ -12,10 +12,24 @@ namespace Org.GS.Security
 {
   public class UserSession
   {
-    public WindowsPrincipal WindowsPrincipal { get; set; }
-    public bool IsAuthenticated { get { return Get_IsAuthenticated(); } }
-    public string DomainUserName { get { return Get_DomainUserName(); } }
-    public ConfigSecurity ConfigSecurity { get; set; }
+    public WindowsPrincipal WindowsPrincipal {
+      get;
+      set;
+    }
+    public bool IsAuthenticated {
+      get {
+        return Get_IsAuthenticated();
+      }
+    }
+    public string DomainUserName {
+      get {
+        return Get_DomainUserName();
+      }
+    }
+    public ConfigSecurity ConfigSecurity {
+      get;
+      set;
+    }
 
     // constructor
     public UserSession()

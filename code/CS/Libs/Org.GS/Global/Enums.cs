@@ -121,7 +121,7 @@ namespace Org.GS
     Expired,
     ExpiringSoon
   }
-  
+
   public enum ConfigMgmtPerspective
   {
     Local,
@@ -201,7 +201,7 @@ namespace Org.GS
     CreateDirectory,
     FullControl
   }
-    
+
   public enum TaskResultStatus
   {
     Success = 0,
@@ -245,7 +245,7 @@ namespace Org.GS
     CraigslistAutos,
     SendFilesToWebService
   }
-    
+
   public enum LogDetailType
   {
     NotSet,

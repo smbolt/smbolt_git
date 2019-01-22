@@ -10,13 +10,17 @@ namespace Org.WSO
 {
   public interface IRequestProcessorFactory : IDisposable
   {
-    string Name { get; }
+    string Name {
+      get;
+    }
     IRequestProcessor CreateRequestProcessor(string nameAndVersion);
   }
 
   public interface IRequestProcessor : IDisposable
   {
-    int EntityId { get; }
+    int EntityId {
+      get;
+    }
     XElement ProcessRequest();
     void SetBaseAndEngine(ServiceBase serviceBase, TransactionEngine transactionEngine);
   }

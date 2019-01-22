@@ -8,8 +8,14 @@ namespace Org.TSK.Business.Models
 {
   public class TimeInterval
   {
-    public DateTime StartDateTime { get; set; }
-    public DateTime EndDateTime { get; set; }
+    public DateTime StartDateTime {
+      get;
+      set;
+    }
+    public DateTime EndDateTime {
+      get;
+      set;
+    }
 
     public TimeInterval(DateTime startDateTime, DateTime endDateTime)
     {

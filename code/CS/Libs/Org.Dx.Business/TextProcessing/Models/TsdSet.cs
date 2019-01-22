@@ -9,7 +9,7 @@ using Org.GS;
 namespace Org.Dx.Business.TextProcessing
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element, CollectionElements = "Tsd")] 
+  [XMap(XType = XType.Element, CollectionElements = "Tsd")]
   public class TsdSet : Dictionary<string, Tsd>
   {
   }

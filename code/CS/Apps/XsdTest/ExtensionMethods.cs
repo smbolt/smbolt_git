@@ -36,12 +36,12 @@ namespace Org.XsdTest
         if (sbLine.Length == 0)
           sbLine.Append(g.BlankString(indentChars + (2 * level) + 6));
         else
-          sbLine.Append(" "); 
+          sbLine.Append(" ");
 
         sbLine.Append(attrFmt);
       }
 
-      
+
       if (sbLine.Length > 0)
         sb.Append(sbLine.ToString() + " >" + g.crlf);
 

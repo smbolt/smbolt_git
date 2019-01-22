@@ -12,7 +12,11 @@ namespace Org.QBX.Tasks
 {
   public class QBXTransLoad : TaskProcessorBase
   {
-    public override int EntityId { get { return 528; } }
+    public override int EntityId {
+      get {
+        return 528;
+      }
+    }
     private Logger _logger;
 
     public override async TPL.Task<TaskResult> ProcessTaskAsync(Func<bool> checkContinue)

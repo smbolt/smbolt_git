@@ -11,51 +11,137 @@ namespace Org.GS.Configuration
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
   public class ConfigSmtpSpec : ConfigObjectBase
   {
-    public string SpecName { get; set; }
+    public string SpecName {
+      get;
+      set;
+    }
 
     [OrgConfigItem]
-    public string SmtpServer { get; set; }
+    public string SmtpServer {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public string SmtpPort { get; set; }
+    public string SmtpPort {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public string SmtpUserID { get; set; }
+    public string SmtpUserID {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public string SmtpPassword { get; set; }
+    public string SmtpPassword {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public bool EnableSSL { get; set; }
+    public bool EnableSSL {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public bool PickUpFromIIS { get; set; }
+    public bool PickUpFromIIS {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public bool AllowAnonymous { get; set; }
+    public bool AllowAnonymous {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public string EmailFromAddress { get; set; }
+    public string EmailFromAddress {
+      get;
+      set;
+    }
 
-    public bool LocalNoOverride { get; set; }
+    public bool LocalNoOverride {
+      get;
+      set;
+    }
 
-    public string VerifiedSmtpServer { get; set; }
-    public string VerifiedSmtpPort { get; set; }
-    public string VerifiedSmtpUserID { get; set; }
-    public string VerifiedSmtpPassword { get; set; }
-    public bool VerifiedEnableSSL { get; set; }
-    public bool VerifiedPickUpFromIIS { get; set; }
-    public bool VerifiedAllowAnonymous { get; set; }
-    public string VerifiedEmailFromAddress { get; set; }
+    public string VerifiedSmtpServer {
+      get;
+      set;
+    }
+    public string VerifiedSmtpPort {
+      get;
+      set;
+    }
+    public string VerifiedSmtpUserID {
+      get;
+      set;
+    }
+    public string VerifiedSmtpPassword {
+      get;
+      set;
+    }
+    public bool VerifiedEnableSSL {
+      get;
+      set;
+    }
+    public bool VerifiedPickUpFromIIS {
+      get;
+      set;
+    }
+    public bool VerifiedAllowAnonymous {
+      get;
+      set;
+    }
+    public string VerifiedEmailFromAddress {
+      get;
+      set;
+    }
 
-    public string OriginalSmtpServer { get; set; }
-    public string OriginalSmtpPort { get; set; }
-    public string OriginalSmtpUserID { get; set; }
-    public string OriginalSmtpPassword { get; set; }
-    public bool OriginalEnableSSL { get; set; }
-    public bool OriginalPickUpFromIIS { get; set; }
-    public bool OriginalAllowAnonymous { get; set; }
-    public string OriginalEmailFromAddress { get; set; }
+    public string OriginalSmtpServer {
+      get;
+      set;
+    }
+    public string OriginalSmtpPort {
+      get;
+      set;
+    }
+    public string OriginalSmtpUserID {
+      get;
+      set;
+    }
+    public string OriginalSmtpPassword {
+      get;
+      set;
+    }
+    public bool OriginalEnableSSL {
+      get;
+      set;
+    }
+    public bool OriginalPickUpFromIIS {
+      get;
+      set;
+    }
+    public bool OriginalAllowAnonymous {
+      get;
+      set;
+    }
+    public string OriginalEmailFromAddress {
+      get;
+      set;
+    }
 
-    public bool SmtpSpecVerified { get; set; }
-    public bool SkipSmtpSpecConfig { get; set; }
+    public bool SmtpSpecVerified {
+      get;
+      set;
+    }
+    public bool SkipSmtpSpecConfig {
+      get;
+      set;
+    }
 
     public string DescriptionString
     {
-      get { return GetDescriptionString(); }
+      get {
+        return GetDescriptionString();
+      }
     }
 
     public ConfigSmtpSpec()
@@ -64,7 +150,7 @@ namespace Org.GS.Configuration
     }
 
     public ConfigSmtpSpec(string namingPrefix)
-        : base(namingPrefix)
+      : base(namingPrefix)
     {
       Initialize();
     }
@@ -88,7 +174,7 @@ namespace Org.GS.Configuration
       this.SmtpSpecVerified = false;
       this.SkipSmtpSpecConfig = false;
 
-        this.LocalNoOverride = false;
+      this.LocalNoOverride = false;
     }
 
     public bool CanAdvance()
@@ -99,13 +185,13 @@ namespace Org.GS.Configuration
       if (this.SmtpSpecVerified)
       {
         if (this.VerifiedSmtpServer == this.SmtpServer &&
-          this.VerifiedSmtpPort == this.SmtpPort &&
-          this.VerifiedSmtpUserID == this.SmtpUserID &&
-          this.VerifiedSmtpPassword == this.SmtpPassword &&
-          this.VerifiedEnableSSL == this.EnableSSL &&
-          this.VerifiedPickUpFromIIS == this.PickUpFromIIS &&
-          this.VerifiedAllowAnonymous == this.AllowAnonymous && 
-          this.VerifiedEmailFromAddress == this.EmailFromAddress)
+            this.VerifiedSmtpPort == this.SmtpPort &&
+            this.VerifiedSmtpUserID == this.SmtpUserID &&
+            this.VerifiedSmtpPassword == this.SmtpPassword &&
+            this.VerifiedEnableSSL == this.EnableSSL &&
+            this.VerifiedPickUpFromIIS == this.PickUpFromIIS &&
+            this.VerifiedAllowAnonymous == this.AllowAnonymous &&
+            this.VerifiedEmailFromAddress == this.EmailFromAddress)
           return true;
       }
 
@@ -120,13 +206,13 @@ namespace Org.GS.Configuration
     private bool IsObjectUpdated()
     {
       if (this.OriginalSmtpServer == this.SmtpServer &&
-        this.OriginalSmtpPort == this.SmtpPort &&
-        this.OriginalSmtpUserID == this.SmtpUserID &&
-        this.OriginalSmtpPassword == this.SmtpPassword &&
-        this.OriginalEnableSSL == this.EnableSSL &&
-        this.OriginalPickUpFromIIS == this.PickUpFromIIS &&
-        this.OriginalAllowAnonymous == this.AllowAnonymous &&
-        this.OriginalEmailFromAddress == this.EmailFromAddress)
+          this.OriginalSmtpPort == this.SmtpPort &&
+          this.OriginalSmtpUserID == this.SmtpUserID &&
+          this.OriginalSmtpPassword == this.SmtpPassword &&
+          this.OriginalEnableSSL == this.EnableSSL &&
+          this.OriginalPickUpFromIIS == this.PickUpFromIIS &&
+          this.OriginalAllowAnonymous == this.AllowAnonymous &&
+          this.OriginalEmailFromAddress == this.EmailFromAddress)
         return false;
 
       return true;
@@ -170,16 +256,16 @@ namespace Org.GS.Configuration
       if (this.AllowAnonymous)
       {
         if (this.SmtpServer.IsNotBlank() &&
-          this.SmtpPort.IsNumeric())
+            this.SmtpPort.IsNumeric())
         {
           return true;
         }
       }
 
       if (this.SmtpServer.IsNotBlank() &&
-        this.SmtpPort.IsNumeric() &&
-        this.SmtpUserID.IsNotBlank() &&
-        this.SmtpPassword.IsNotBlank())
+          this.SmtpPort.IsNumeric() &&
+          this.SmtpUserID.IsNotBlank() &&
+          this.SmtpPassword.IsNotBlank())
       {
         return true;
       }

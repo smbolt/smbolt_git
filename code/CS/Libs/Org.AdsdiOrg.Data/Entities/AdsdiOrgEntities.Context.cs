@@ -9,176 +9,410 @@
 
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
-    using System.Linq;
-    
-    using DB = Org.DB;
-    using Org.GS;
-    
-    // BEGINNING OF CLASS TO GENERATE EF CONNECTION STRINGS FROM Org.GS.Configuration.ConfigDbSpec DATA
-    // IMPORT THIS CODE BY PLACING THE VALUE "include file="[include file path]" IN THE CONTEXT TEMPLATE
-    // BE SURE TO FORMAT THE INCLUDE STATEMENT APPROPRIATELY.
-    // SEE THE TOPIC "T4 Include Directive" in MSDN
-    // REPLACE THE [include file path] part with fully qualified (rooted) path for this file.
-    
-    // ADDITIONALLY - SEE THE FOLLOWING WORD DOCUMENTS IN THE Org.GS\Other FOLDER WHICH DOCUMENT OTHER NECESSARY CHANGES TO THE T4 TEMPLATES
-    // 1. Modifying EF Context Template.docx - for instructions for a couple simple modifications to the Context Template.
-    // 2. Modifying EF Entity Template.docx - for instructions for a couple simple modifications to the Entity Template.
-    
-    public static class EFHelper
+  using System;
+  using System.Data.Entity;
+  using System.Data.Entity.Infrastructure;
+  using System.Data.Entity.Core.Objects;
+  using System.Linq;
+
+  using DB = Org.DB;
+  using Org.GS;
+
+  // BEGINNING OF CLASS TO GENERATE EF CONNECTION STRINGS FROM Org.GS.Configuration.ConfigDbSpec DATA
+  // IMPORT THIS CODE BY PLACING THE VALUE "include file="[include file path]" IN THE CONTEXT TEMPLATE
+  // BE SURE TO FORMAT THE INCLUDE STATEMENT APPROPRIATELY.
+  // SEE THE TOPIC "T4 Include Directive" in MSDN
+  // REPLACE THE [include file path] part with fully qualified (rooted) path for this file.
+
+  // ADDITIONALLY - SEE THE FOLLOWING WORD DOCUMENTS IN THE Org.GS\Other FOLDER WHICH DOCUMENT OTHER NECESSARY CHANGES TO THE T4 TEMPLATES
+  // 1. Modifying EF Context Template.docx - for instructions for a couple simple modifications to the Context Template.
+  // 2. Modifying EF Entity Template.docx - for instructions for a couple simple modifications to the Entity Template.
+
+  public static class EFHelper
+  {
+    public static string BuildSqlServerEfConnectionString(string dbServer, string dbName, bool useWindowsAuth, string userId, string password, string efProvider, string efMetadata)
     {
-      public static string BuildSqlServerEfConnectionString(string dbServer, string dbName, bool useWindowsAuth, string userId, string password, string efProvider, string efMetadata)
+      System.Data.SqlClient.SqlConnectionStringBuilder connStringBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
+      connStringBuilder.DataSource = dbServer;
+      connStringBuilder.InitialCatalog = dbName;
+      connStringBuilder.IntegratedSecurity = useWindowsAuth;
+      if (!useWindowsAuth)
       {
-        System.Data.SqlClient.SqlConnectionStringBuilder connStringBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
-        connStringBuilder.DataSource = dbServer;
-        connStringBuilder.InitialCatalog = dbName;
-        connStringBuilder.IntegratedSecurity = useWindowsAuth;
-        if (!useWindowsAuth)
-        {
-          connStringBuilder.UserID = userId;
-          connStringBuilder.Password = password;
-        }
-        string sqlConnString = connStringBuilder.ToString();
-    
-        System.Data.Entity.Core.EntityClient.EntityConnectionStringBuilder entityConnStringBuilder = new System.Data.Entity.Core.EntityClient.EntityConnectionStringBuilder();
-        entityConnStringBuilder.Provider = efProvider;
-        entityConnStringBuilder.ProviderConnectionString = sqlConnString;
-        entityConnStringBuilder.Metadata = @"res://" + efMetadata + ".csdl|" +
-                                            @"res://" + efMetadata + ".ssdl|" +
-                                            @"res://" + efMetadata + ".msl";
-        string entityConnectionString = entityConnStringBuilder.ToString();
-    
-        return entityConnectionString;
+        connStringBuilder.UserID = userId;
+        connStringBuilder.Password = password;
       }
+      string sqlConnString = connStringBuilder.ToString();
+
+      System.Data.Entity.Core.EntityClient.EntityConnectionStringBuilder entityConnStringBuilder = new System.Data.Entity.Core.EntityClient.EntityConnectionStringBuilder();
+      entityConnStringBuilder.Provider = efProvider;
+      entityConnStringBuilder.ProviderConnectionString = sqlConnString;
+      entityConnStringBuilder.Metadata = @"res://" + efMetadata + ".csdl|" +
+                                         @"res://" + efMetadata + ".ssdl|" +
+                                         @"res://" + efMetadata + ".msl";
+      string entityConnectionString = entityConnStringBuilder.ToString();
+
+      return entityConnectionString;
     }
-    
-    // END OF CLASS TO GENERATE EF CONNECTION STRINGS FROM Org.GS.Configuration.ConfigDbSpec DATA
-    
-    
-    [DbMap(DbElement.EntitySet, "", "", "")]
-    public partial class Adsdi_OrgEntities : DbContext
+  }
+
+  // END OF CLASS TO GENERATE EF CONNECTION STRINGS FROM Org.GS.Configuration.ConfigDbSpec DATA
+
+
+  [DbMap(DbElement.EntitySet, "", "", "")]
+  public partial class Adsdi_OrgEntities : DbContext
+  {
+    public Adsdi_OrgEntities(string connectionStringName)
+      : base(connectionStringName)
+
     {
-        public Adsdi_OrgEntities(string connectionStringName)
-            : base(connectionStringName)
-    
-        {
-        }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
-        public virtual DbSet<Account> Accounts { get; set; }
-        public virtual DbSet<AccountLoginToken> AccountLoginTokens { get; set; }
-        public virtual DbSet<AccountPolicy> AccountPolicies { get; set; }
-        public virtual DbSet<AccountStatu> AccountStatus { get; set; }
-        public virtual DbSet<AccountTokenStatu> AccountTokenStatus { get; set; }
-        public virtual DbSet<AccountType> AccountTypes { get; set; }
-        public virtual DbSet<Address> Addresses { get; set; }
-        public virtual DbSet<AddressFormat> AddressFormats { get; set; }
-        public virtual DbSet<AddressType> AddressTypes { get; set; }
-        public virtual DbSet<AppLog> AppLogs { get; set; }
-        public virtual DbSet<AppLogDetail> AppLogDetails { get; set; }
-        public virtual DbSet<AppLogDetailType> AppLogDetailTypes { get; set; }
-        public virtual DbSet<AppLogSeverity> AppLogSeverities { get; set; }
-        public virtual DbSet<Calendar> Calendars { get; set; }
-        public virtual DbSet<ConfigItem> ConfigItems { get; set; }
-        public virtual DbSet<ConfigItemType> ConfigItemTypes { get; set; }
-        public virtual DbSet<Country> Countries { get; set; }
-        public virtual DbSet<Coupon> Coupons { get; set; }
-        public virtual DbSet<CouponType> CouponTypes { get; set; }
-        public virtual DbSet<EmailAddress> EmailAddresses { get; set; }
-        public virtual DbSet<EmailAddressStatu> EmailAddressStatus { get; set; }
-        public virtual DbSet<EmailAddressType> EmailAddressTypes { get; set; }
-        public virtual DbSet<Event> Events { get; set; }
-        public virtual DbSet<Group> Groups { get; set; }
-        public virtual DbSet<GroupMembership> GroupMemberships { get; set; }
-        public virtual DbSet<HolidayAction> HolidayActions { get; set; }
-        public virtual DbSet<Module> Modules { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<OrgPerson> OrgPersons { get; set; }
-        public virtual DbSet<OrgPersonType> OrgPersonTypes { get; set; }
-        public virtual DbSet<OrgStatu> OrgStatus { get; set; }
-        public virtual DbSet<OrgType> OrgTypes { get; set; }
-        public virtual DbSet<PasswordChangeHistory> PasswordChangeHistories { get; set; }
-        public virtual DbSet<PasswordChangeReason> PasswordChangeReasons { get; set; }
-        public virtual DbSet<PeriodContext> PeriodContexts { get; set; }
-        public virtual DbSet<Person> People { get; set; }
-        public virtual DbSet<PersonAddress> PersonAddresses { get; set; }
-        public virtual DbSet<PersonEmailAddress> PersonEmailAddresses { get; set; }
-        public virtual DbSet<PersonPhoneNumber> PersonPhoneNumbers { get; set; }
-        public virtual DbSet<PersonStatu> PersonStatus { get; set; }
-        public virtual DbSet<PersonType> PersonTypes { get; set; }
-        public virtual DbSet<PhoneNumber> PhoneNumbers { get; set; }
-        public virtual DbSet<PhoneNumberFormat> PhoneNumberFormats { get; set; }
-        public virtual DbSet<PhoneNumberType> PhoneNumberTypes { get; set; }
-        public virtual DbSet<PoliticalUnit> PoliticalUnits { get; set; }
-        public virtual DbSet<PoliticalUnitType> PoliticalUnitTypes { get; set; }
-        public virtual DbSet<PrivacyStatu> PrivacyStatus { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductCategory> ProductCategories { get; set; }
-        public virtual DbSet<Referral> Referrals { get; set; }
-        public virtual DbSet<ReferralType> ReferralTypes { get; set; }
-        public virtual DbSet<RelatedOrg> RelatedOrgs { get; set; }
-        public virtual DbSet<RelatedPerson> RelatedPersons { get; set; }
-        public virtual DbSet<RelationshipType> RelationshipTypes { get; set; }
-        public virtual DbSet<ScheduledTask> ScheduledTasks { get; set; }
-        public virtual DbSet<ScheduledTaskParameter> ScheduledTaskParameters { get; set; }
-        public virtual DbSet<SecurityQuestion> SecurityQuestions { get; set; }
-        public virtual DbSet<Service> Services { get; set; }
-        public virtual DbSet<SoftwareModule> SoftwareModules { get; set; }
-        public virtual DbSet<SoftwareRepository> SoftwareRepositories { get; set; }
-        public virtual DbSet<SoftwareVersion> SoftwareVersions { get; set; }
-        public virtual DbSet<Status> Status { get; set; }
-        public virtual DbSet<StatusUsage> StatusUsages { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TaskSchedule> TaskSchedules { get; set; }
-        public virtual DbSet<TaskScheduleElement> TaskScheduleElements { get; set; }
-        public virtual DbSet<TaskScheduleExecutionType> TaskScheduleExecutionTypes { get; set; }
-        public virtual DbSet<TaskScheduleIntervalType> TaskScheduleIntervalTypes { get; set; }
-        public virtual DbSet<TestTable1> TestTable1 { get; set; }
-        public virtual DbSet<TriviaAnswer> TriviaAnswers { get; set; }
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
-        public virtual DbSet<TriviaOption> TriviaOptions { get; set; }
-        public virtual DbSet<TriviaQuestion> TriviaQuestions { get; set; }
-        public virtual DbSet<Organization> Organizations { get; set; }
-        public virtual DbSet<SoftwareModuleType> SoftwareModuleTypes { get; set; }
-        public virtual DbSet<SoftwarePlatform> SoftwarePlatforms { get; set; }
-        public virtual DbSet<FrameworkVersion> FrameworkVersions { get; set; }
-    
-        public virtual ObjectResult<sp_GetSoftwareUpdatesForModuleVersion_Result> sp_GetSoftwareUpdatesForModuleVersion(Nullable<int> moduleCode, string currentVersion)
-        {
-            var moduleCodeParameter = moduleCode.HasValue ?
-                new ObjectParameter("ModuleCode", moduleCode) :
-                new ObjectParameter("ModuleCode", typeof(int));
-    
-            var currentVersionParameter = currentVersion != null ?
-                new ObjectParameter("CurrentVersion", currentVersion) :
-                new ObjectParameter("CurrentVersion", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetSoftwareUpdatesForModuleVersion_Result>("sp_GetSoftwareUpdatesForModuleVersion", moduleCodeParameter, currentVersionParameter);
-        }
-    
-        public virtual ObjectResult<sp_GetModuleVersionForPlatform_Result> sp_GetModuleVersionForPlatform(Nullable<int> moduleCode, string version, string platformString)
-        {
-            var moduleCodeParameter = moduleCode.HasValue ?
-                new ObjectParameter("ModuleCode", moduleCode) :
-                new ObjectParameter("ModuleCode", typeof(int));
-    
-            var versionParameter = version != null ?
-                new ObjectParameter("Version", version) :
-                new ObjectParameter("Version", typeof(string));
-    
-            var platformStringParameter = platformString != null ?
-                new ObjectParameter("PlatformString", platformString) :
-                new ObjectParameter("PlatformString", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetModuleVersionForPlatform_Result>("sp_GetModuleVersionForPlatform", moduleCodeParameter, versionParameter, platformStringParameter);
-        }
     }
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+      throw new UnintentionalCodeFirstException();
+    }
+
+    public virtual DbSet<Account> Accounts {
+      get;
+      set;
+    }
+    public virtual DbSet<AccountLoginToken> AccountLoginTokens {
+      get;
+      set;
+    }
+    public virtual DbSet<AccountPolicy> AccountPolicies {
+      get;
+      set;
+    }
+    public virtual DbSet<AccountStatu> AccountStatus {
+      get;
+      set;
+    }
+    public virtual DbSet<AccountTokenStatu> AccountTokenStatus {
+      get;
+      set;
+    }
+    public virtual DbSet<AccountType> AccountTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<Address> Addresses {
+      get;
+      set;
+    }
+    public virtual DbSet<AddressFormat> AddressFormats {
+      get;
+      set;
+    }
+    public virtual DbSet<AddressType> AddressTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<AppLog> AppLogs {
+      get;
+      set;
+    }
+    public virtual DbSet<AppLogDetail> AppLogDetails {
+      get;
+      set;
+    }
+    public virtual DbSet<AppLogDetailType> AppLogDetailTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<AppLogSeverity> AppLogSeverities {
+      get;
+      set;
+    }
+    public virtual DbSet<Calendar> Calendars {
+      get;
+      set;
+    }
+    public virtual DbSet<ConfigItem> ConfigItems {
+      get;
+      set;
+    }
+    public virtual DbSet<ConfigItemType> ConfigItemTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<Country> Countries {
+      get;
+      set;
+    }
+    public virtual DbSet<Coupon> Coupons {
+      get;
+      set;
+    }
+    public virtual DbSet<CouponType> CouponTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<EmailAddress> EmailAddresses {
+      get;
+      set;
+    }
+    public virtual DbSet<EmailAddressStatu> EmailAddressStatus {
+      get;
+      set;
+    }
+    public virtual DbSet<EmailAddressType> EmailAddressTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<Event> Events {
+      get;
+      set;
+    }
+    public virtual DbSet<Group> Groups {
+      get;
+      set;
+    }
+    public virtual DbSet<GroupMembership> GroupMemberships {
+      get;
+      set;
+    }
+    public virtual DbSet<HolidayAction> HolidayActions {
+      get;
+      set;
+    }
+    public virtual DbSet<Module> Modules {
+      get;
+      set;
+    }
+    public virtual DbSet<Order> Orders {
+      get;
+      set;
+    }
+    public virtual DbSet<OrderDetail> OrderDetails {
+      get;
+      set;
+    }
+    public virtual DbSet<OrgPerson> OrgPersons {
+      get;
+      set;
+    }
+    public virtual DbSet<OrgPersonType> OrgPersonTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<OrgStatu> OrgStatus {
+      get;
+      set;
+    }
+    public virtual DbSet<OrgType> OrgTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<PasswordChangeHistory> PasswordChangeHistories {
+      get;
+      set;
+    }
+    public virtual DbSet<PasswordChangeReason> PasswordChangeReasons {
+      get;
+      set;
+    }
+    public virtual DbSet<PeriodContext> PeriodContexts {
+      get;
+      set;
+    }
+    public virtual DbSet<Person> People {
+      get;
+      set;
+    }
+    public virtual DbSet<PersonAddress> PersonAddresses {
+      get;
+      set;
+    }
+    public virtual DbSet<PersonEmailAddress> PersonEmailAddresses {
+      get;
+      set;
+    }
+    public virtual DbSet<PersonPhoneNumber> PersonPhoneNumbers {
+      get;
+      set;
+    }
+    public virtual DbSet<PersonStatu> PersonStatus {
+      get;
+      set;
+    }
+    public virtual DbSet<PersonType> PersonTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<PhoneNumber> PhoneNumbers {
+      get;
+      set;
+    }
+    public virtual DbSet<PhoneNumberFormat> PhoneNumberFormats {
+      get;
+      set;
+    }
+    public virtual DbSet<PhoneNumberType> PhoneNumberTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<PoliticalUnit> PoliticalUnits {
+      get;
+      set;
+    }
+    public virtual DbSet<PoliticalUnitType> PoliticalUnitTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<PrivacyStatu> PrivacyStatus {
+      get;
+      set;
+    }
+    public virtual DbSet<Product> Products {
+      get;
+      set;
+    }
+    public virtual DbSet<ProductCategory> ProductCategories {
+      get;
+      set;
+    }
+    public virtual DbSet<Referral> Referrals {
+      get;
+      set;
+    }
+    public virtual DbSet<ReferralType> ReferralTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<RelatedOrg> RelatedOrgs {
+      get;
+      set;
+    }
+    public virtual DbSet<RelatedPerson> RelatedPersons {
+      get;
+      set;
+    }
+    public virtual DbSet<RelationshipType> RelationshipTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<ScheduledTask> ScheduledTasks {
+      get;
+      set;
+    }
+    public virtual DbSet<ScheduledTaskParameter> ScheduledTaskParameters {
+      get;
+      set;
+    }
+    public virtual DbSet<SecurityQuestion> SecurityQuestions {
+      get;
+      set;
+    }
+    public virtual DbSet<Service> Services {
+      get;
+      set;
+    }
+    public virtual DbSet<SoftwareModule> SoftwareModules {
+      get;
+      set;
+    }
+    public virtual DbSet<SoftwareRepository> SoftwareRepositories {
+      get;
+      set;
+    }
+    public virtual DbSet<SoftwareVersion> SoftwareVersions {
+      get;
+      set;
+    }
+    public virtual DbSet<Status> Status {
+      get;
+      set;
+    }
+    public virtual DbSet<StatusUsage> StatusUsages {
+      get;
+      set;
+    }
+    public virtual DbSet<sysdiagram> sysdiagrams {
+      get;
+      set;
+    }
+    public virtual DbSet<TaskSchedule> TaskSchedules {
+      get;
+      set;
+    }
+    public virtual DbSet<TaskScheduleElement> TaskScheduleElements {
+      get;
+      set;
+    }
+    public virtual DbSet<TaskScheduleExecutionType> TaskScheduleExecutionTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<TaskScheduleIntervalType> TaskScheduleIntervalTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<TestTable1> TestTable1 {
+      get;
+      set;
+    }
+    public virtual DbSet<TriviaAnswer> TriviaAnswers {
+      get;
+      set;
+    }
+    public virtual DbSet<C__MigrationHistory> C__MigrationHistory {
+      get;
+      set;
+    }
+    public virtual DbSet<TriviaOption> TriviaOptions {
+      get;
+      set;
+    }
+    public virtual DbSet<TriviaQuestion> TriviaQuestions {
+      get;
+      set;
+    }
+    public virtual DbSet<Organization> Organizations {
+      get;
+      set;
+    }
+    public virtual DbSet<SoftwareModuleType> SoftwareModuleTypes {
+      get;
+      set;
+    }
+    public virtual DbSet<SoftwarePlatform> SoftwarePlatforms {
+      get;
+      set;
+    }
+    public virtual DbSet<FrameworkVersion> FrameworkVersions {
+      get;
+      set;
+    }
+
+    public virtual ObjectResult<sp_GetSoftwareUpdatesForModuleVersion_Result> sp_GetSoftwareUpdatesForModuleVersion(Nullable<int> moduleCode, string currentVersion)
+    {
+      var moduleCodeParameter = moduleCode.HasValue ?
+                                new ObjectParameter("ModuleCode", moduleCode) :
+                                new ObjectParameter("ModuleCode", typeof(int));
+
+      var currentVersionParameter = currentVersion != null ?
+                                    new ObjectParameter("CurrentVersion", currentVersion) :
+                                    new ObjectParameter("CurrentVersion", typeof(string));
+
+      return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetSoftwareUpdatesForModuleVersion_Result>("sp_GetSoftwareUpdatesForModuleVersion", moduleCodeParameter, currentVersionParameter);
+    }
+
+    public virtual ObjectResult<sp_GetModuleVersionForPlatform_Result> sp_GetModuleVersionForPlatform(Nullable<int> moduleCode, string version, string platformString)
+    {
+      var moduleCodeParameter = moduleCode.HasValue ?
+                                new ObjectParameter("ModuleCode", moduleCode) :
+                                new ObjectParameter("ModuleCode", typeof(int));
+
+      var versionParameter = version != null ?
+                             new ObjectParameter("Version", version) :
+                             new ObjectParameter("Version", typeof(string));
+
+      var platformStringParameter = platformString != null ?
+                                    new ObjectParameter("PlatformString", platformString) :
+                                    new ObjectParameter("PlatformString", typeof(string));
+
+      return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetModuleVersionForPlatform_Result>("sp_GetModuleVersionForPlatform", moduleCodeParameter, versionParameter, platformStringParameter);
+    }
+  }
 }

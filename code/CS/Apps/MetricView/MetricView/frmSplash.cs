@@ -8,30 +8,30 @@ using System.Windows.Forms;
 
 namespace Teleflora.Operations.MetricView
 {
-    public partial class frmSplash : Form
+  public partial class frmSplash : Form
+  {
+    public frmSplash()
     {
-        public frmSplash()
-        {
-            InitializeComponent();
+      InitializeComponent();
 
-            this.Cursor = Cursors.AppStarting;
-        }
-
-        public void SetMessage(string message)
-        {
-            this.lblMessage.Text = message;
-        }
-
-        public void SetBuildString(string buildString)
-        {
-            this.lblBuild.Text = buildString;
-        }
-
-        private void frmSplash_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Cursor = Cursors.Arrow;
-        }
-
-
+      this.Cursor = Cursors.AppStarting;
     }
+
+    public void SetMessage(string message)
+    {
+      this.lblMessage.Text = message;
+    }
+
+    public void SetBuildString(string buildString)
+    {
+      this.lblBuild.Text = buildString;
+    }
+
+    private void frmSplash_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      this.Cursor = Cursors.Arrow;
+    }
+
+
+  }
 }

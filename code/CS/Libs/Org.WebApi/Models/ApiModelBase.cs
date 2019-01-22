@@ -8,7 +8,10 @@ namespace Org.WebApi.Models
 {
   public class ApiModelBase
   {
-    public int OrgId { get; set; }
+    public int OrgId {
+      get;
+      set;
+    }
 
     public ApiModelBase()
     {

@@ -8,8 +8,14 @@ namespace Org.Pipes
 {
   public class NamedPipeServerSupervisor
   {
-    public NamedPipeServerSet NamedPipeServerSet { get; private set; }
-    public string PipeList64Path { get; private set; }
+    public NamedPipeServerSet NamedPipeServerSet {
+      get;
+      private set;
+    }
+    public string PipeList64Path {
+      get;
+      private set;
+    }
 
 
     public NamedPipeServerSupervisor(string pipeList64Path = "")

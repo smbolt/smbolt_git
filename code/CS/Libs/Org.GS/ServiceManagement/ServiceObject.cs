@@ -8,7 +8,10 @@ namespace Org.GS.ServiceManagement
 {
   public class ServiceObject
   {
-    public ServiceObjectType ServiceObjectType { get; set; }
+    public ServiceObjectType ServiceObjectType {
+      get;
+      set;
+    }
     public ServiceObject()
     {
 

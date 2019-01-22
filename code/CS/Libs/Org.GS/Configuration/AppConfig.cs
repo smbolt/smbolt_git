@@ -18,32 +18,88 @@ namespace Org.GS.Configuration
   {
     private Encryptor encryptor;
 
-    public ConfigurationType ConfigurationType { get; set; }
-    public NotifyConfig NotifyConfig { get { return Get_NotifyConfig(); } }
-    public string ConfigName { get; set; }
-    public string ModuleName { get; set; }
-    public bool UseLocalConfig { get; set; }
-    public string AppDataPath { get; set; }
-    public bool IsUpdated { get { return Get_IsUpdated(); } }
-    public bool IsLoaded { get; set; }
-    public string FullPath { get; set; }
-    public string LoadedBy { get; set; }
-    public string OriginalFormattedXml { get; set; }
-    public string OriginalImage { get; set; }
-    public string CurrentImage { get; set; }
+    public ConfigurationType ConfigurationType {
+      get;
+      set;
+    }
+    public NotifyConfig NotifyConfig {
+      get {
+        return Get_NotifyConfig();
+      }
+    }
+    public string ConfigName {
+      get;
+      set;
+    }
+    public string ModuleName {
+      get;
+      set;
+    }
+    public bool UseLocalConfig {
+      get;
+      set;
+    }
+    public string AppDataPath {
+      get;
+      set;
+    }
+    public bool IsUpdated {
+      get {
+        return Get_IsUpdated();
+      }
+    }
+    public bool IsLoaded {
+      get;
+      set;
+    }
+    public string FullPath {
+      get;
+      set;
+    }
+    public string LoadedBy {
+      get;
+      set;
+    }
+    public string OriginalFormattedXml {
+      get;
+      set;
+    }
+    public string OriginalImage {
+      get;
+      set;
+    }
+    public string CurrentImage {
+      get;
+      set;
+    }
     private bool _pcKeysSet = false;
     private List<string> _pcKeys;
 
     [XMap(CollectionElements = "ProgramConfig", WrapperElement = "ProgramConfigSet")]
-    public ProgramConfigSet ProgramConfigSet { get; set; }
+    public ProgramConfigSet ProgramConfigSet {
+      get;
+      set;
+    }
 
     [XMap(XType=XType.Element)]
-    public ConfigSecurity ConfigSecurity { get; set; }
+    public ConfigSecurity ConfigSecurity {
+      get;
+      set;
+    }
 
-    public Dictionary<string, string> Variables { get; set; }
+    public Dictionary<string, string> Variables {
+      get;
+      set;
+    }
 
-    public string ObjectFactoryDebugSerialize { get; set; }
-    public string ObjectFactoryDebugDeserialize { get; set; }
+    public string ObjectFactoryDebugSerialize {
+      get;
+      set;
+    }
+    public string ObjectFactoryDebugDeserialize {
+      get;
+      set;
+    }
 
     public AppConfig()
     {
@@ -74,7 +130,7 @@ namespace Org.GS.Configuration
     {
       Initialize();
     }
-        
+
     public void Initialize()
     {
       this.IsLoaded = false;
@@ -132,8 +188,8 @@ namespace Org.GS.Configuration
             }
             else
             {
-              var ci = new CI(key, value, ciGroup); 
-              ciGroup.Add(key, ci); 
+              var ci = new CI(key, value, ciGroup);
+              ciGroup.Add(key, ci);
               return;
             }
           }
@@ -179,13 +235,13 @@ namespace Org.GS.Configuration
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to retrieve a CI with the key '" + key + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to retrieve a CI with the key '" + key + "'.", ex);
       }
     }
 
     public string GetVariableValue(string variableName)
     {
-      return this.ResolveVariables(variableName); 
+      return this.ResolveVariables(variableName);
     }
 
     public bool ContainsList(string listName)
@@ -245,7 +301,7 @@ namespace Org.GS.Configuration
           }
         }
       }
-            
+
       return list;
     }
 
@@ -334,7 +390,7 @@ namespace Org.GS.Configuration
               foreach (LI li in this.ProgramConfigSet[pcKey].ConfigListSet[listName])
               {
                 if (li.Value.IsNumeric())
-                    list.Add(Int32.Parse(li.Value));
+                  list.Add(Int32.Parse(li.Value));
               }
 
               return list;
@@ -342,7 +398,7 @@ namespace Org.GS.Configuration
           }
         }
       }
-            
+
       return list;
     }
 
@@ -362,7 +418,7 @@ namespace Org.GS.Configuration
             foreach (string newListItem in updatedList)
             {
               LI li = new LI(newListItem, newList);
-              newList.Add(li); 
+              newList.Add(li);
             }
 
             this.ProgramConfigSet[pcKey].ConfigListSet[listName] = newList;
@@ -497,9 +553,9 @@ namespace Org.GS.Configuration
             {
               var ga = new ConfigGroupAssignment();
               ga.GroupID = groupAssignment.GroupID;
-              u.ConfigGroupAssignments.Add(ga); 
+              u.ConfigGroupAssignments.Add(ga);
             }
-            configSecurity.ConfigUserSet.Add(u.UserID, u); 
+            configSecurity.ConfigUserSet.Add(u.UserID, u);
           }
 
           foreach (var configGroup in this.ConfigSecurity.ConfigGroupSet.Values)
@@ -547,7 +603,7 @@ namespace Org.GS.Configuration
             {
               if (kvpCIGroup.Value.ContainsKey(key))
               {
-                return true; 
+                return true;
               }
             }
           }
@@ -657,7 +713,7 @@ namespace Org.GS.Configuration
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred loading the AppConfig from file.", ex); 
+        throw new Exception("An exception occurred loading the AppConfig from file.", ex);
       }
     }
 
@@ -667,7 +723,7 @@ namespace Org.GS.Configuration
 
       try
       {
-        StartupLogging.WriteStartupLog("Loading AppConfig file from string"); 
+        StartupLogging.WriteStartupLog("Loading AppConfig file from string");
 
         XElement appConfig = XElement.Parse(configString);
         this.OriginalFormattedXml = appConfig.ToString();
@@ -681,7 +737,7 @@ namespace Org.GS.Configuration
           f.InDiagnosticsMode = true;
         }
 
-        f.LogToMemory = true; 
+        f.LogToMemory = true;
         XElement programConfigSetXml = appConfig.Element("ProgramConfigSet");
         if (programConfigSetXml != null)
           this.ProgramConfigSet = f.Deserialize(programConfigSetXml) as ProgramConfigSet;
@@ -725,7 +781,7 @@ namespace Org.GS.Configuration
                                   "CURRENT PROCESSED XML" + g.crlf2 +
                                   this.CurrentImage + g.crlf2 +
                                   "FIRST LINE WITH DIFFERENCES" + g.crlf2 +
-                                  firstDiffLine + g.crlf; 
+                                  firstDiffLine + g.crlf;
 
               using (var fConfigData = new frmConfigData(configData))
               {
@@ -748,7 +804,7 @@ namespace Org.GS.Configuration
             sb.Append(loaderException.Message + g.crlf);
           string message = "A ReflectionTypeLoadException occurred while attempting to load the AppConfigFile - individual loader exception messages follow." + g.crlf + sb.ToString();
           StartupLogging.WriteStartupLog(message);
-          throw new Exception(message, ex); 
+          throw new Exception(message, ex);
         }
         else
         {
@@ -818,7 +874,7 @@ namespace Org.GS.Configuration
         list1.Add(new LI("ListItem1", list1));
         programConfig.ConfigDictionarySet.Add("Dictionary1", new ConfigDictionary("Dictionary1", programConfig.ConfigDictionarySet));
         var dict1 = programConfig.ConfigDictionarySet["Dictionary1"];
-        dict1.Add(new DI("Key1", "Value1", dict1)); 
+        dict1.Add(new DI("Key1", "Value1", dict1));
         this.CaptureCurrentImage();
         File.WriteAllText(unencryptedConfigPath, this.CurrentImage);
       }
@@ -892,7 +948,7 @@ namespace Org.GS.Configuration
               {
                 if (ci.Key[0] == '$' && ci.Key[ci.Key.Length - 1] == '$')
                 {
-                  string variableKey = ci.Key.Substring(1, ci.Key.Length - 2); 
+                  string variableKey = ci.Key.Substring(1, ci.Key.Length - 2);
                   if (this.Variables.ContainsKey(ci.Key))
                     this.Variables[variableKey] = ci.Value;
                   else
@@ -913,32 +969,32 @@ namespace Org.GS.Configuration
 
         if (!this.Variables.ContainsKey("EXEPATH"))
         {
-          this.Variables.Add("EXEPATH", g.GetAppPath()); 
+          this.Variables.Add("EXEPATH", g.GetAppPath());
         }
 
         if (!this.Variables.ContainsKey("IMPORTS"))
         {
-          this.Variables.Add("IMPORTS", g.ImportsPath); 
+          this.Variables.Add("IMPORTS", g.ImportsPath);
         }
 
         if (!this.Variables.ContainsKey("EXPORTS"))
         {
-          this.Variables.Add("EXPORTS", g.ExportsPath); 
+          this.Variables.Add("EXPORTS", g.ExportsPath);
         }
 
         if (!this.Variables.ContainsKey("REPORTS"))
         {
-          this.Variables.Add("REPORTS", g.ReportsPath); 
+          this.Variables.Add("REPORTS", g.ReportsPath);
         }
 
         if (!this.Variables.ContainsKey("ERRORS"))
         {
-          this.Variables.Add("ERRORS", g.ErrorsPath); 
+          this.Variables.Add("ERRORS", g.ErrorsPath);
         }
 
         if (!this.Variables.ContainsKey("MEFCATALOG"))
         {
-          this.Variables.Add("MEFCATALOG", g.MEFCatalog); 
+          this.Variables.Add("MEFCATALOG", g.MEFCatalog);
         }
       }
 
@@ -947,11 +1003,11 @@ namespace Org.GS.Configuration
         if (g.ExecutablePath.Contains("DEV-MAIN"))
           this.Variables["DEVPATH"] = this.Variables["GPDEV"];
         else
-          this.Variables["DEVPATH"] = this.Variables["ORGDEV"]; 
+          this.Variables["DEVPATH"] = this.Variables["ORGDEV"];
       }
 
       if (!this.Variables.ContainsKey("HOST"))
-        this.Variables.Add("HOST", Environment.MachineName.ToUpper()); 
+        this.Variables.Add("HOST", Environment.MachineName.ToUpper());
     }
 
     public void Save()
@@ -1039,7 +1095,7 @@ namespace Org.GS.Configuration
           g[key].Value = value;
         else
         {
-            g.Add(key, new CI(key, value));
+          g.Add(key, new CI(key, value));
         }
       }
       else
@@ -1085,7 +1141,7 @@ namespace Org.GS.Configuration
       else
         throw new Exception("Application configuration program config '" + this.ConfigName + "' does not exist.");
     }
-        
+
     public void UpdateCI(string programName, string groupName, string key, string value)
     {
       if (key.IsBlank())
@@ -1106,7 +1162,7 @@ namespace Org.GS.Configuration
         group = pc.CISet[groupName];
         if (group.ContainsKey(key))
         {
-          group[key].Value = value; 
+          group[key].Value = value;
           return;
         }
         else
@@ -1144,14 +1200,14 @@ namespace Org.GS.Configuration
         if (ci.CIGroup.CISet != null)
         {
           if (ci.CIGroup.CISet.ProgramConfig != null)
-              program = ci.CIGroup.CISet.ProgramConfig.ConfigName;
+            program = ci.CIGroup.CISet.ProgramConfig.ConfigName;
         }
       }
 
       if (group.IsNotBlank() && program.IsNotBlank())
       {
         this.ProgramConfigSet[program].CISet[group].Remove(ci.Key);
-        return; 
+        return;
       }
 
 
@@ -1228,7 +1284,7 @@ namespace Org.GS.Configuration
       ConfigDbSpec configDbSpec = (ConfigDbSpec) ConfigObjectFactory.CreateConfigObject(typeof(ConfigDbSpec), configDbSpecName);
 
       if (this.ContainsGroup(configDbSpec.ConfigGroup))
-        return true; 
+        return true;
 
       return false;
     }
@@ -1239,7 +1295,7 @@ namespace Org.GS.Configuration
         return;
 
       if (this.IsLoaded == false)
-        throw new Exception("AppConfig object is not loaded."); 
+        throw new Exception("AppConfig object is not loaded.");
 
       if (this.ProgramConfigSet == null)
         throw new Exception("AppConfig ProgramConfigSet object is null.");
@@ -1257,19 +1313,19 @@ namespace Org.GS.Configuration
       CIGroup ciGroup = new CIGroup(configDbSpecGroupName, pc.CISet);
 
       CI ciDbServer = new CI(configDbSpecName + "DbServer", configDbSpec.DbServer);
-      ciGroup.Add(ciDbServer.Key, ciDbServer); 
+      ciGroup.Add(ciDbServer.Key, ciDbServer);
 
       CI ciDbDsn = new CI(configDbSpecName + "DbDsn", configDbSpec.DbDsn);
-      ciGroup.Add(ciDbDsn.Key, ciDbDsn); 
+      ciGroup.Add(ciDbDsn.Key, ciDbDsn);
 
       CI ciDbName = new CI(configDbSpecName + "DbName", configDbSpec.DbName);
       ciGroup.Add(ciDbName.Key, ciDbName);
 
       CI ciDbUserId = new CI(configDbSpecName + "DbUserId", configDbSpec.DbUserId);
-      ciGroup.Add(ciDbUserId.Key, ciDbUserId); 
+      ciGroup.Add(ciDbUserId.Key, ciDbUserId);
 
       CI ciDbPassword = new CI(configDbSpecName + "DbPassword", configDbSpec.DbPassword);
-      ciGroup.Add(ciDbPassword.Key, ciDbPassword); 
+      ciGroup.Add(ciDbPassword.Key, ciDbPassword);
 
       CI ciDbType = new CI(configDbSpecName + "DbType", configDbSpec.DbType.ToString());
       ciGroup.Add(ciDbType.Key, ciDbType);
@@ -1306,7 +1362,7 @@ namespace Org.GS.Configuration
       {
         var dbSpec = (ConfigDbSpec)co;
         if (dbSpec.DbPasswordEncoded)
-          dbSpec.DbPassword = TokenMaker.DecodeToken2(dbSpec.DbPassword); 
+          dbSpec.DbPassword = TokenMaker.DecodeToken2(dbSpec.DbPassword);
       }
 
       return co;
@@ -1325,7 +1381,7 @@ namespace Org.GS.Configuration
         PropertyInfo pi = t.GetProperty(cip.PropertyName);
 
         if (this.ContainsKey(ciName))
-            g.SetConfigObjectPropertyValue(co, pi, cip.PropertyType.Name, this.GetCI(ciName));
+          g.SetConfigObjectPropertyValue(co, pi, cip.PropertyType.Name, this.GetCI(ciName));
         else
         {
           if (!this.ContainsKey(ciName))
@@ -1378,7 +1434,7 @@ namespace Org.GS.Configuration
         if (pc.CISet != null)
         {
           if (this.ProgramConfigSet["Global"].CISet.ContainsKey(group))
-              return "Global";
+            return "Global";
         }
       }
 
@@ -1402,7 +1458,7 @@ namespace Org.GS.Configuration
           if (pc.CISet != null)
           {
             if (this.ProgramConfigSet[this.ModuleName].CISet.ContainsKey(group))
-                return this.ModuleName;
+              return this.ModuleName;
           }
 
         }
@@ -1431,7 +1487,7 @@ namespace Org.GS.Configuration
     //[DebuggerStepThrough]
     public void RefreshPcKeys()
     {
-      // The "program config keys" (pcKeys) define the hierarchy of the 
+      // The "program config keys" (pcKeys) define the hierarchy of the
       // cascading configs Global/Program/Module for retrieving configurations.
       // They "should" only require building once.
       if (_pcKeysSet)
@@ -1452,7 +1508,7 @@ namespace Org.GS.Configuration
         _pcKeys.Add(this.ModuleName);
       if (this.ConfigName.IsNotBlank() && !_pcKeys.Contains(this.ConfigName))
         _pcKeys.Add(this.ConfigName);
-      
+
       _pcKeysSet = true;
     }
 
@@ -1488,7 +1544,7 @@ namespace Org.GS.Configuration
         if (currCfgLines[i].Trim() != origCfgLines[i].Trim())
           return "First difference on zero-based line " + i.ToString() + g.crlf +
                  "Curr Cfg: " + currCfgLines[i].Trim() + g.crlf +
-                 "Orig Cfg: " + origCfgLines[i].Trim(); 
+                 "Orig Cfg: " + origCfgLines[i].Trim();
       }
 
       return "Total curr cfg lines is " + currLineCount.ToString() + g.crlf +
@@ -1498,7 +1554,7 @@ namespace Org.GS.Configuration
     public NotifyConfigSet GetNotifyConfigSet()
     {
       if (this.ProgramConfigSet == null)
-        return null; 
+        return null;
 
       if (this.ConfigName.IsBlank())
         return null;

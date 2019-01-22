@@ -12,28 +12,49 @@ using Org.GS;
 
 namespace Org.Software.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Org_Software", "", "SoftwareStatu")]
-    public partial class SoftwareStatu
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Org_Software", "", "SoftwareStatu")]
+  public partial class SoftwareStatu
+  {
+    public SoftwareStatu()
     {
-        public SoftwareStatu()
-        {
-            this.FrameworkVersions = new HashSet<FrameworkVersion>();
-            this.SoftwareModules = new HashSet<SoftwareModule>();
-            this.SoftwarePlatforms = new HashSet<SoftwarePlatform>();
-            this.SoftwareRepositories = new HashSet<SoftwareRepository>();
-            this.SoftwareVersions = new HashSet<SoftwareVersion>();
-        }
-    
-        public int SoftwareStatusId { get; set; }
-        public string SoftwareStatus { get; set; }
-    
-        public virtual ICollection<FrameworkVersion> FrameworkVersions { get; set; }
-        public virtual ICollection<SoftwareModule> SoftwareModules { get; set; }
-        public virtual ICollection<SoftwarePlatform> SoftwarePlatforms { get; set; }
-        public virtual ICollection<SoftwareRepository> SoftwareRepositories { get; set; }
-        public virtual ICollection<SoftwareVersion> SoftwareVersions { get; set; }
+      this.FrameworkVersions = new HashSet<FrameworkVersion>();
+      this.SoftwareModules = new HashSet<SoftwareModule>();
+      this.SoftwarePlatforms = new HashSet<SoftwarePlatform>();
+      this.SoftwareRepositories = new HashSet<SoftwareRepository>();
+      this.SoftwareVersions = new HashSet<SoftwareVersion>();
     }
+
+    public int SoftwareStatusId {
+      get;
+      set;
+    }
+    public string SoftwareStatus {
+      get;
+      set;
+    }
+
+    public virtual ICollection<FrameworkVersion> FrameworkVersions {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwareModule> SoftwareModules {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwarePlatform> SoftwarePlatforms {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwareRepository> SoftwareRepositories {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwareVersion> SoftwareVersions {
+      get;
+      set;
+    }
+  }
 }

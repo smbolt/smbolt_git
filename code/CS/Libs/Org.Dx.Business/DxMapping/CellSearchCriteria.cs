@@ -12,10 +12,23 @@ namespace Org.Dx.Business
     private DxSearchTarget _searchTarget;
     private CellSearchCriteriaSet _parent;
     private string _rawSearchSpec;
-    public int? RowIndexSpec { get; private set; }
-    public int? ColIndexSpec { get; private set; }
-    public string Report { get { return Get_Report(); } }
-    public TextNodeSpec TextNodeSpec { get; set; }
+    public int? RowIndexSpec {
+      get;
+      private set;
+    }
+    public int? ColIndexSpec {
+      get;
+      private set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
+    public TextNodeSpec TextNodeSpec {
+      get;
+      set;
+    }
 
     public CellSearchCriteria(CellSearchCriteriaSet parent, DxSearchTarget searchTarget, string searchSpec)
     {
@@ -43,7 +56,7 @@ namespace Org.Dx.Business
 
       int openPar = _rawSearchSpec.IndexOf("(");
       if (openPar == -1)
-        throw new Exception("The cell-level searchSpec format is invalid - it must contain a cell index specifier (an integer cell index or '*' indicating 'any cell'" + 
+        throw new Exception("The cell-level searchSpec format is invalid - it must contain a cell index specifier (an integer cell index or '*' indicating 'any cell'" +
                             " followed by a valid TextNodeSpec enclosed in parentheses - for example '*(Total)' or '5([dec]/ge:1000)' etc.");
 
       string indicesSpec = _rawSearchSpec.Substring(0, openPar).Trim();
@@ -87,7 +100,7 @@ namespace Org.Dx.Business
             if (!rowIndexToken.IsValidInteger())
             {
               throw new Exception("The row index token '" + rowIndexToken + "' specified in the cell search specification is invalid - " +
-                    "it must be an integer or an asterisk.");
+                                  "it must be an integer or an asterisk.");
             }
             else
             {
@@ -100,7 +113,7 @@ namespace Org.Dx.Business
             if (!colIndexToken.IsValidInteger())
             {
               throw new Exception("The column index token '" + colIndexToken + "' specified in the cell search specification is invalid - " +
-                    "it must be an integer or an asterisk.");
+                                  "it must be an integer or an asterisk.");
             }
             else
             {
@@ -109,7 +122,7 @@ namespace Org.Dx.Business
           }
           break;
       }
-      
+
       if (!tnsToken.StartsWith("(") || !tnsToken.EndsWith(")"))
         throw new Exception("The TextNodeSpec (second token) of the searchSpec '" + _rawSearchSpec + "' must be wrapped with parentheses in the searchSpec.");
 
@@ -117,7 +130,7 @@ namespace Org.Dx.Business
 
       this.TextNodeSpec = new TextNodeSpec(tns);
     }
-    
+
     private string Get_Report()
     {
       return _rawSearchSpec;

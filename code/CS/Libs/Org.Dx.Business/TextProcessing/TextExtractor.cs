@@ -30,7 +30,7 @@ namespace Org.Dx.Business.TextProcessing
             throw new Exception("The ExtractionUnit specified for the ExtractionMap '" + extractionMap.ExtractionUnit.ToString() + "' is not implemented.");
 
           if (extractionMap.ExtractSectionSet == null || extractionMap.ExtractSectionSet.Count < 1)
-            throw new Exception("The ExtractSectionSet collection of the ExtractionMap is null or empty."); 
+            throw new Exception("The ExtractSectionSet collection of the ExtractionMap is null or empty.");
         }
 
         var text = new Text(allowDebugBreak, FileType.PDF, null, fullPath);
@@ -57,7 +57,7 @@ namespace Org.Dx.Business.TextProcessing
             {
               if (extractionMap.Prefix.IsNotBlank())
               {
-                sb.Append("\n" + extractionMap.Prefix.Replace("$PageNumber", i.ToString()) + "\n"); 
+                sb.Append("\n" + extractionMap.Prefix.Replace("$PageNumber", i.ToString()) + "\n");
               }
 
               foreach (var extractSection in extractionMap.ExtractSectionSet.Values)
@@ -81,19 +81,19 @@ namespace Org.Dx.Business.TextProcessing
                 if (extractSection.Prefix.IsNotBlank())
                   sb.Append("\n" + extractSection.Prefix.Replace("$SectionName", extractSection.SectionName) + "\n");
                 else
-                  sb.Append("\n" + "SEC_BEG:" + extractSection.SectionName + "\n"); 
+                  sb.Append("\n" + "SEC_BEG:" + extractSection.SectionName + "\n");
 
                 sb.Append("\n" + extractedText + "\n");
 
                 if (extractSection.Suffix.IsNotBlank())
                   sb.Append("\n" + extractSection.Suffix.Replace("$SectionName", extractSection.SectionName) + "\n");
                 else
-                  sb.Append("\n" + "SEC_END" + "\n"); 
+                  sb.Append("\n" + "SEC_END" + "\n");
               }
 
               if (extractionMap.Suffix.IsNotBlank())
               {
-                sb.Append("\n" + extractionMap.Suffix.Replace("$PageNumber", i.ToString()) + "\n"); 
+                sb.Append("\n" + extractionMap.Suffix.Replace("$PageNumber", i.ToString()) + "\n");
               }
             }
 
@@ -109,7 +109,7 @@ namespace Org.Dx.Business.TextProcessing
         int twoBlanksPos = text.RawText.IndexOf("  ");
         if (twoBlanksPos > -1)
           throw new Exception("The raw text value contains back to back blanks at position " + twoBlanksPos.ToString() + ".");
-        
+
         return text;
       }
       catch (Exception ex)
@@ -250,7 +250,7 @@ namespace Org.Dx.Business.TextProcessing
         string xml = File.ReadAllText(fullPath);
 
         if (!xml.IsValidXml())
-          throw new Exception("The file '" + fullPath + "' does not contain a valid XML XElement."); 
+          throw new Exception("The file '" + fullPath + "' does not contain a valid XML XElement.");
 
         text.XElement = XElement.Parse(File.ReadAllText(fullPath));
 
@@ -370,7 +370,7 @@ namespace Org.Dx.Business.TextProcessing
             System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
             Image img2 = (Image)converter.ConvertFrom(bytes);
 
-      
+
 
 
 
@@ -411,7 +411,7 @@ namespace Org.Dx.Business.TextProcessing
     private PdfObject FindImageInPDFDictionary(PdfDictionary pg)
     {
       PdfDictionary res =
-          (PdfDictionary)PdfReader.GetPdfObject(pg.Get(PdfName.RESOURCES));
+        (PdfDictionary)PdfReader.GetPdfObject(pg.Get(PdfName.RESOURCES));
 
 
       PdfDictionary xobj =

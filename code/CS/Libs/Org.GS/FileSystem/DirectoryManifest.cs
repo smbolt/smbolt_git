@@ -9,8 +9,14 @@ namespace Org.GS
   [XMap (XType = XType.Element, CollectionElements = "FileManifest")]
   public class DirectoryManifest : List<FileManifest>
   {
-    public FileManifest SelectedFileManifest { get; set; }
-    public bool ReadyForProcessing { get; set; }
+    public FileManifest SelectedFileManifest {
+      get;
+      set;
+    }
+    public bool ReadyForProcessing {
+      get;
+      set;
+    }
 
     public DirectoryManifest()
     {

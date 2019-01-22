@@ -58,37 +58,39 @@
       this.tabPageAscii.SuspendLayout();
       this.tabPageEbcdic.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
       this.mnuMain.Size = new System.Drawing.Size(1135, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 22);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 727);
       this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -98,9 +100,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.cboCommand);
       this.pnlTop.Controls.Add(this.btnRunCommand);
       this.pnlTop.Controls.Add(this.btnBrowse);
@@ -113,9 +115,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1135, 94);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // btnBrowse
-      // 
+      //
       this.btnBrowse.Location = new System.Drawing.Point(666, 20);
       this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
       this.btnBrowse.Name = "btnBrowse";
@@ -125,9 +127,9 @@
       this.btnBrowse.Text = "Browse";
       this.btnBrowse.UseVisualStyleBackColor = true;
       this.btnBrowse.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblFileName
-      // 
+      //
       this.lblFileName.AutoSize = true;
       this.lblFileName.Location = new System.Drawing.Point(10, 7);
       this.lblFileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -135,17 +137,17 @@
       this.lblFileName.Size = new System.Drawing.Size(54, 13);
       this.lblFileName.TabIndex = 1;
       this.lblFileName.Text = "File Name";
-      // 
+      //
       // txtFileName
-      // 
+      //
       this.txtFileName.Location = new System.Drawing.Point(12, 21);
       this.txtFileName.Margin = new System.Windows.Forms.Padding(2);
       this.txtFileName.Name = "txtFileName";
       this.txtFileName.Size = new System.Drawing.Size(650, 20);
       this.txtFileName.TabIndex = 0;
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageCombined);
       this.tabMain.Controls.Add(this.tabPageAscii);
       this.tabMain.Controls.Add(this.tabPageEbcdic);
@@ -158,9 +160,9 @@
       this.tabMain.Size = new System.Drawing.Size(1135, 609);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 3;
-      // 
+      //
       // tabPageCombined
-      // 
+      //
       this.tabPageCombined.Controls.Add(this.txtCombined);
       this.tabPageCombined.Controls.Add(this.pnlCombinedTop);
       this.tabPageCombined.Location = new System.Drawing.Point(4, 22);
@@ -171,9 +173,9 @@
       this.tabPageCombined.TabIndex = 0;
       this.tabPageCombined.Text = "Combined";
       this.tabPageCombined.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtCombined
-      // 
+      //
       this.txtCombined.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtCombined.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtCombined.Font = new System.Drawing.Font("Lucida Console", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,9 +187,9 @@
       this.txtCombined.Size = new System.Drawing.Size(1123, 527);
       this.txtCombined.TabIndex = 1;
       this.txtCombined.WordWrap = false;
-      // 
+      //
       // pnlCombinedTop
-      // 
+      //
       this.pnlCombinedTop.BackColor = System.Drawing.SystemColors.Control;
       this.pnlCombinedTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlCombinedTop.Location = new System.Drawing.Point(2, 2);
@@ -195,9 +197,9 @@
       this.pnlCombinedTop.Name = "pnlCombinedTop";
       this.pnlCombinedTop.Size = new System.Drawing.Size(1123, 52);
       this.pnlCombinedTop.TabIndex = 0;
-      // 
+      //
       // tabPageAscii
-      // 
+      //
       this.tabPageAscii.Controls.Add(this.txtAscii);
       this.tabPageAscii.Controls.Add(this.pnlAsciiTop);
       this.tabPageAscii.Location = new System.Drawing.Point(4, 22);
@@ -208,9 +210,9 @@
       this.tabPageAscii.TabIndex = 1;
       this.tabPageAscii.Text = "ASCII";
       this.tabPageAscii.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtAscii
-      // 
+      //
       this.txtAscii.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtAscii.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtAscii.Font = new System.Drawing.Font("Lucida Console", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -222,9 +224,9 @@
       this.txtAscii.Size = new System.Drawing.Size(1123, 552);
       this.txtAscii.TabIndex = 2;
       this.txtAscii.WordWrap = false;
-      // 
+      //
       // pnlAsciiTop
-      // 
+      //
       this.pnlAsciiTop.BackColor = System.Drawing.SystemColors.Control;
       this.pnlAsciiTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlAsciiTop.Location = new System.Drawing.Point(2, 2);
@@ -232,9 +234,9 @@
       this.pnlAsciiTop.Name = "pnlAsciiTop";
       this.pnlAsciiTop.Size = new System.Drawing.Size(1123, 52);
       this.pnlAsciiTop.TabIndex = 1;
-      // 
+      //
       // tabPageEbcdic
-      // 
+      //
       this.tabPageEbcdic.Controls.Add(this.txtEbcdic);
       this.tabPageEbcdic.Controls.Add(this.pnlEbcdicTop);
       this.tabPageEbcdic.Location = new System.Drawing.Point(4, 22);
@@ -244,9 +246,9 @@
       this.tabPageEbcdic.TabIndex = 2;
       this.tabPageEbcdic.Text = "EBCDIC";
       this.tabPageEbcdic.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtEbcdic
-      // 
+      //
       this.txtEbcdic.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtEbcdic.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtEbcdic.Font = new System.Drawing.Font("Lucida Console", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -258,9 +260,9 @@
       this.txtEbcdic.Size = new System.Drawing.Size(1127, 556);
       this.txtEbcdic.TabIndex = 2;
       this.txtEbcdic.WordWrap = false;
-      // 
+      //
       // pnlEbcdicTop
-      // 
+      //
       this.pnlEbcdicTop.BackColor = System.Drawing.SystemColors.Control;
       this.pnlEbcdicTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlEbcdicTop.Location = new System.Drawing.Point(0, 0);
@@ -268,13 +270,13 @@
       this.pnlEbcdicTop.Name = "pnlEbcdicTop";
       this.pnlEbcdicTop.Size = new System.Drawing.Size(1127, 52);
       this.pnlEbcdicTop.TabIndex = 1;
-      // 
+      //
       // dlgFileOpen
-      // 
+      //
       this.dlgFileOpen.Title = "Locate file to open...";
-      // 
+      //
       // cboCommand
-      // 
+      //
       this.cboCommand.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.cboCommand.FormattingEnabled = true;
       this.cboCommand.Location = new System.Drawing.Point(12, 59);
@@ -282,9 +284,9 @@
       this.cboCommand.Size = new System.Drawing.Size(650, 22);
       this.cboCommand.TabIndex = 3;
       this.cboCommand.SelectedIndexChanged += new System.EventHandler(this.cboCommand_SelectedIndexChanged);
-      // 
+      //
       // btnRunCommand
-      // 
+      //
       this.btnRunCommand.Location = new System.Drawing.Point(666, 59);
       this.btnRunCommand.Margin = new System.Windows.Forms.Padding(2);
       this.btnRunCommand.Name = "btnRunCommand";
@@ -294,9 +296,9 @@
       this.btnRunCommand.Text = "Run";
       this.btnRunCommand.UseVisualStyleBackColor = true;
       this.btnRunCommand.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblCommands
-      // 
+      //
       this.lblCommands.AutoSize = true;
       this.lblCommands.Location = new System.Drawing.Point(11, 45);
       this.lblCommands.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -304,9 +306,9 @@
       this.lblCommands.Size = new System.Drawing.Size(59, 13);
       this.lblCommands.TabIndex = 1;
       this.lblCommands.Text = "Commands";
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1135, 748);

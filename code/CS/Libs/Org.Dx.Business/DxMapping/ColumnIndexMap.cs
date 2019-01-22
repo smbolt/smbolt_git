@@ -14,17 +14,17 @@ namespace Org.Dx.Business
     public int IndexOf(string key)
     {
       if (key == null || key.IsBlank())
-        throw new CxException(98, new object[] { key } );  
+        throw new CxException(98, new object[] { key } );
 
       string[] tokens = key.Split(Constants.PeriodDelimiter, StringSplitOptions.RemoveEmptyEntries);
       if (tokens.Length != 2)
-        throw new CxException(99, new object[] { key }); 
+        throw new CxException(99, new object[] { key });
 
       string entityName = tokens[0];
       string columnName = tokens[1];
 
       if (!this.ContainsKey(entityName))
-        throw new CxException(100, new object[] { key }); 
+        throw new CxException(100, new object[] { key });
 
       var entity = this[entityName];
 

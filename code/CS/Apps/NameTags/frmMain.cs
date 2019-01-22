@@ -323,98 +323,101 @@ namespace NameTags
       ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
       this.ctxMnuObjectList.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuFile,
-            this.mnuView,
-            this.mnuChildren,
-            this.mnuOptions});
-      // 
+        this.mnuFile,
+        this.mnuView,
+        this.mnuChildren,
+        this.mnuOptions
+      });
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.Index = 0;
       this.mnuFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuFileNew,
-            this.mnuFileOpen,
-            this.mnuFileSave,
-            this.mnuFileSaveAs,
-            this.mnuFileProjectProperties,
-            this.menuItem5,
-            this.mnuFileExit});
+        this.mnuFileNew,
+        this.mnuFileOpen,
+        this.mnuFileSave,
+        this.mnuFileSaveAs,
+        this.mnuFileProjectProperties,
+        this.menuItem5,
+        this.mnuFileExit
+      });
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileNew
-      // 
+      //
       this.mnuFileNew.Index = 0;
       this.mnuFileNew.Tag = "NEW_PROJECT";
       this.mnuFileNew.Text = "&New";
       this.mnuFileNew.Click += new System.EventHandler(this.mnuFileActions_Click);
-      // 
+      //
       // mnuFileOpen
-      // 
+      //
       this.mnuFileOpen.Index = 1;
       this.mnuFileOpen.Tag = "OPEN_PROJECT";
       this.mnuFileOpen.Text = "&Open";
       this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileActions_Click);
-      // 
+      //
       // mnuFileSave
-      // 
+      //
       this.mnuFileSave.Index = 2;
       this.mnuFileSave.Tag = "SAVE_PROJECT";
       this.mnuFileSave.Text = "&Save";
       this.mnuFileSave.Click += new System.EventHandler(this.mnuFileActions_Click);
-      // 
+      //
       // mnuFileSaveAs
-      // 
+      //
       this.mnuFileSaveAs.Index = 3;
       this.mnuFileSaveAs.Tag = "SAVE_PROJECT_AS";
       this.mnuFileSaveAs.Text = "Save &As";
       this.mnuFileSaveAs.Click += new System.EventHandler(this.mnuFileActions_Click);
-      // 
+      //
       // mnuFileProjectProperties
-      // 
+      //
       this.mnuFileProjectProperties.Index = 4;
       this.mnuFileProjectProperties.Tag = "PROJECT_PROPERTIES";
       this.mnuFileProjectProperties.Text = "&Project Properties";
       this.mnuFileProjectProperties.Click += new System.EventHandler(this.mnuFileActions_Click);
-      // 
+      //
       // menuItem5
-      // 
+      //
       this.menuItem5.Index = 5;
       this.menuItem5.Tag = "CLOSE_PROJECT";
       this.menuItem5.Text = "&Close";
       this.menuItem5.Click += new System.EventHandler(this.mnuFileActions_Click);
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Index = 6;
       this.mnuFileExit.Tag = "EXIT_PROGRAM";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.mnuFileActions_Click);
-      // 
+      //
       // mnuView
-      // 
+      //
       this.mnuView.Index = 1;
       this.mnuView.Text = "&View";
-      // 
+      //
       // mnuChildren
-      // 
+      //
       this.mnuChildren.Index = 2;
       this.mnuChildren.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuChildrenList});
+        this.mnuChildrenList
+      });
       this.mnuChildren.Text = "Children";
-      // 
+      //
       // mnuChildrenList
-      // 
+      //
       this.mnuChildrenList.Index = 0;
       this.mnuChildrenList.Tag = "ChildrenList";
       this.mnuChildrenList.Text = "Children List";
       this.mnuChildrenList.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlToolBar
-      // 
+      //
       this.pnlToolBar.Controls.Add(this.ckLabels);
       this.pnlToolBar.Controls.Add(this.ckOmitAll);
       this.pnlToolBar.Controls.Add(this.lblBlanks);
@@ -426,9 +429,9 @@ namespace NameTags
       this.pnlToolBar.Name = "pnlToolBar";
       this.pnlToolBar.Size = new System.Drawing.Size(1494, 42);
       this.pnlToolBar.TabIndex = 0;
-      // 
+      //
       // ckOmitAll
-      // 
+      //
       this.ckOmitAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.ckOmitAll.AutoSize = true;
       this.ckOmitAll.Location = new System.Drawing.Point(1225, 13);
@@ -437,9 +440,9 @@ namespace NameTags
       this.ckOmitAll.TabIndex = 5;
       this.ckOmitAll.Text = "Omit All";
       this.ckOmitAll.UseVisualStyleBackColor = true;
-      // 
+      //
       // lblBlanks
-      // 
+      //
       this.lblBlanks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.lblBlanks.AutoSize = true;
       this.lblBlanks.Location = new System.Drawing.Point(1443, 14);
@@ -447,23 +450,24 @@ namespace NameTags
       this.lblBlanks.Size = new System.Drawing.Size(39, 13);
       this.lblBlanks.TabIndex = 4;
       this.lblBlanks.Text = "Blanks";
-      // 
+      //
       // numBlanks
-      // 
+      //
       this.numBlanks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.numBlanks.Location = new System.Drawing.Point(1396, 11);
       this.numBlanks.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+        10,
+        0,
+        0,
+        0
+      });
       this.numBlanks.Name = "numBlanks";
       this.numBlanks.Size = new System.Drawing.Size(43, 20);
       this.numBlanks.TabIndex = 3;
       this.numBlanks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      // 
+      //
       // btnTestPrint
-      // 
+      //
       this.btnTestPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnTestPrint.Location = new System.Drawing.Point(1297, 6);
       this.btnTestPrint.Name = "btnTestPrint";
@@ -472,44 +476,45 @@ namespace NameTags
       this.btnTestPrint.Text = "Test Print";
       this.btnTestPrint.UseVisualStyleBackColor = true;
       this.btnTestPrint.Click += new System.EventHandler(this.btnTestPrint_Click);
-      // 
+      //
       // pnlDesignTools
-      // 
+      //
       this.pnlDesignTools.Controls.Add(this.tbDesign);
       this.pnlDesignTools.Location = new System.Drawing.Point(8, 0);
       this.pnlDesignTools.Name = "pnlDesignTools";
       this.pnlDesignTools.Size = new System.Drawing.Size(1055, 38);
       this.pnlDesignTools.TabIndex = 1;
-      // 
+      //
       // tbDesign
-      // 
+      //
       this.tbDesign.Appearance = System.Windows.Forms.ToolBarAppearance.Flat;
       this.tbDesign.AutoSize = false;
       this.tbDesign.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
-            this.tbtnProjectProperties,
-            this.tbtnOpen,
-            this.tbtnSave,
-            this.tbtnDesignMode,
-            this.tbtnPrintMode,
-            this.tbtnPrevPage,
-            this.tbtnNextPage,
-            this.tbtnEditNames,
-            this.tbtnPrintTags,
-            this.tbtnSep1,
-            this.tbtnText,
-            this.tbtnPicture,
-            this.tbbtnRectangle,
-            this.tbbtnBorderWidth,
-            this.tbbtnBorderColor,
-            this.tbbtnFont,
-            this.tbbtnColor,
-            this.tbtnZoomIn,
-            this.tbtnZoomOut,
-            this.tbtnSendToBack,
-            this.tbtnSendBackward,
-            this.tbtnBringForward,
-            this.tbtnBringToFront,
-            this.toolBarDiplomaPicture});
+        this.tbtnProjectProperties,
+        this.tbtnOpen,
+        this.tbtnSave,
+        this.tbtnDesignMode,
+        this.tbtnPrintMode,
+        this.tbtnPrevPage,
+        this.tbtnNextPage,
+        this.tbtnEditNames,
+        this.tbtnPrintTags,
+        this.tbtnSep1,
+        this.tbtnText,
+        this.tbtnPicture,
+        this.tbbtnRectangle,
+        this.tbbtnBorderWidth,
+        this.tbbtnBorderColor,
+        this.tbbtnFont,
+        this.tbbtnColor,
+        this.tbtnZoomIn,
+        this.tbtnZoomOut,
+        this.tbtnSendToBack,
+        this.tbtnSendBackward,
+        this.tbtnBringForward,
+        this.tbtnBringToFront,
+        this.toolBarDiplomaPicture
+      });
       this.tbDesign.ButtonSize = new System.Drawing.Size(32, 32);
       this.tbDesign.CausesValidation = false;
       this.tbDesign.Dock = System.Windows.Forms.DockStyle.None;
@@ -521,152 +526,152 @@ namespace NameTags
       this.tbDesign.TabIndex = 0;
       this.tbDesign.Wrappable = false;
       this.tbDesign.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.tbDesign_ButtonClick);
-      // 
+      //
       // tbtnProjectProperties
-      // 
+      //
       this.tbtnProjectProperties.Name = "tbtnProjectProperties";
       this.tbtnProjectProperties.Tag = "0";
       this.tbtnProjectProperties.ToolTipText = "Project Properties";
-      // 
+      //
       // tbtnOpen
-      // 
+      //
       this.tbtnOpen.Name = "tbtnOpen";
       this.tbtnOpen.Tag = "1";
       this.tbtnOpen.ToolTipText = "Open project";
-      // 
+      //
       // tbtnSave
-      // 
+      //
       this.tbtnSave.Name = "tbtnSave";
       this.tbtnSave.Tag = "2";
       this.tbtnSave.ToolTipText = "Save project";
-      // 
+      //
       // tbtnDesignMode
-      // 
+      //
       this.tbtnDesignMode.Name = "tbtnDesignMode";
       this.tbtnDesignMode.Tag = "3";
       this.tbtnDesignMode.ToolTipText = "Design mode";
-      // 
+      //
       // tbtnPrintMode
-      // 
+      //
       this.tbtnPrintMode.Name = "tbtnPrintMode";
       this.tbtnPrintMode.Tag = "4";
       this.tbtnPrintMode.ToolTipText = "Print mode";
-      // 
+      //
       // tbtnPrevPage
-      // 
+      //
       this.tbtnPrevPage.Name = "tbtnPrevPage";
       this.tbtnPrevPage.Tag = "5";
       this.tbtnPrevPage.ToolTipText = "Prev Page";
-      // 
+      //
       // tbtnNextPage
-      // 
+      //
       this.tbtnNextPage.Name = "tbtnNextPage";
       this.tbtnNextPage.Tag = "6";
       this.tbtnNextPage.ToolTipText = "Next Page";
-      // 
+      //
       // tbtnEditNames
-      // 
+      //
       this.tbtnEditNames.Name = "tbtnEditNames";
       this.tbtnEditNames.Tag = "7";
       this.tbtnEditNames.ToolTipText = "Edit names";
-      // 
+      //
       // tbtnPrintTags
-      // 
+      //
       this.tbtnPrintTags.Name = "tbtnPrintTags";
       this.tbtnPrintTags.Tag = "8";
       this.tbtnPrintTags.ToolTipText = "Print";
-      // 
+      //
       // tbtnSep1
-      // 
+      //
       this.tbtnSep1.Name = "tbtnSep1";
       this.tbtnSep1.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
       this.tbtnSep1.Tag = "9";
-      // 
+      //
       // tbtnText
-      // 
+      //
       this.tbtnText.Name = "tbtnText";
       this.tbtnText.Tag = "10";
       this.tbtnText.ToolTipText = "Add text";
-      // 
+      //
       // tbtnPicture
-      // 
+      //
       this.tbtnPicture.Name = "tbtnPicture";
       this.tbtnPicture.Tag = "11";
       this.tbtnPicture.ToolTipText = "Add a picture";
-      // 
+      //
       // tbbtnRectangle
-      // 
+      //
       this.tbbtnRectangle.Name = "tbbtnRectangle";
       this.tbbtnRectangle.Tag = "12";
       this.tbbtnRectangle.ToolTipText = "Rectangle shape";
-      // 
+      //
       // tbbtnBorderWidth
-      // 
+      //
       this.tbbtnBorderWidth.Name = "tbbtnBorderWidth";
       this.tbbtnBorderWidth.Tag = "13";
       this.tbbtnBorderWidth.ToolTipText = "Border Width";
-      // 
+      //
       // tbbtnBorderColor
-      // 
+      //
       this.tbbtnBorderColor.Name = "tbbtnBorderColor";
       this.tbbtnBorderColor.Tag = "14";
       this.tbbtnBorderColor.ToolTipText = "Border Color";
-      // 
+      //
       // tbbtnFont
-      // 
+      //
       this.tbbtnFont.Name = "tbbtnFont";
       this.tbbtnFont.Tag = "15";
       this.tbbtnFont.ToolTipText = "Text font";
-      // 
+      //
       // tbbtnColor
-      // 
+      //
       this.tbbtnColor.Name = "tbbtnColor";
       this.tbbtnColor.Tag = "16";
       this.tbbtnColor.ToolTipText = "Color";
-      // 
+      //
       // tbtnZoomIn
-      // 
+      //
       this.tbtnZoomIn.Name = "tbtnZoomIn";
       this.tbtnZoomIn.Tag = "17";
       this.tbtnZoomIn.ToolTipText = "Zoom in";
-      // 
+      //
       // tbtnZoomOut
-      // 
+      //
       this.tbtnZoomOut.Name = "tbtnZoomOut";
       this.tbtnZoomOut.Tag = "18";
       this.tbtnZoomOut.ToolTipText = "Zoom Out";
-      // 
+      //
       // tbtnSendToBack
-      // 
+      //
       this.tbtnSendToBack.Name = "tbtnSendToBack";
       this.tbtnSendToBack.Tag = "19";
       this.tbtnSendToBack.ToolTipText = "Send to back";
-      // 
+      //
       // tbtnSendBackward
-      // 
+      //
       this.tbtnSendBackward.Name = "tbtnSendBackward";
       this.tbtnSendBackward.Tag = "20";
       this.tbtnSendBackward.ToolTipText = "Send backward";
-      // 
+      //
       // tbtnBringForward
-      // 
+      //
       this.tbtnBringForward.Name = "tbtnBringForward";
       this.tbtnBringForward.Tag = "21";
       this.tbtnBringForward.ToolTipText = "Bring forward";
-      // 
+      //
       // tbtnBringToFront
-      // 
+      //
       this.tbtnBringToFront.Name = "tbtnBringToFront";
       this.tbtnBringToFront.Tag = "22";
       this.tbtnBringToFront.ToolTipText = "Bring to front";
-      // 
+      //
       // toolBarDiplomaPicture
-      // 
+      //
       this.toolBarDiplomaPicture.Name = "toolBarDiplomaPicture";
       this.toolBarDiplomaPicture.Tag = "23";
-      // 
+      //
       // pnlStatusBar
-      // 
+      //
       this.pnlStatusBar.Controls.Add(this.lblSelectedKey);
       this.pnlStatusBar.Controls.Add(this.lblTagCount);
       this.pnlStatusBar.Controls.Add(this.lblScale);
@@ -675,33 +680,33 @@ namespace NameTags
       this.pnlStatusBar.Name = "pnlStatusBar";
       this.pnlStatusBar.Size = new System.Drawing.Size(1494, 32);
       this.pnlStatusBar.TabIndex = 1;
-      // 
+      //
       // lblSelectedKey
-      // 
+      //
       this.lblSelectedKey.Location = new System.Drawing.Point(16, 8);
       this.lblSelectedKey.Name = "lblSelectedKey";
       this.lblSelectedKey.Size = new System.Drawing.Size(144, 16);
       this.lblSelectedKey.TabIndex = 4;
       this.lblSelectedKey.Text = "-1";
-      // 
+      //
       // lblTagCount
-      // 
+      //
       this.lblTagCount.Location = new System.Drawing.Point(176, 8);
       this.lblTagCount.Name = "lblTagCount";
       this.lblTagCount.Size = new System.Drawing.Size(360, 16);
       this.lblTagCount.TabIndex = 3;
-      // 
+      //
       // lblScale
-      // 
+      //
       this.lblScale.Location = new System.Drawing.Point(608, 8);
       this.lblScale.Name = "lblScale";
       this.lblScale.Size = new System.Drawing.Size(48, 16);
       this.lblScale.TabIndex = 2;
       this.lblScale.Text = "100%";
       this.lblScale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-      // 
+      //
       // pnlLeft
-      // 
+      //
       this.pnlLeft.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.pnlLeft.Controls.Add(this.lblDrawingObjects);
       this.pnlLeft.Controls.Add(this.lbDrawingObjects);
@@ -726,18 +731,18 @@ namespace NameTags
       this.pnlLeft.Name = "pnlLeft";
       this.pnlLeft.Size = new System.Drawing.Size(231, 751);
       this.pnlLeft.TabIndex = 2;
-      // 
+      //
       // lblDrawingObjects
-      // 
+      //
       this.lblDrawingObjects.AutoSize = true;
       this.lblDrawingObjects.Location = new System.Drawing.Point(11, 258);
       this.lblDrawingObjects.Name = "lblDrawingObjects";
       this.lblDrawingObjects.Size = new System.Drawing.Size(85, 13);
       this.lblDrawingObjects.TabIndex = 2;
       this.lblDrawingObjects.Text = "Drawing Objects";
-      // 
+      //
       // lbDrawingObjects
-      // 
+      //
       this.lbDrawingObjects.ContextMenuStrip = this.ctxMnuObjectList;
       this.lbDrawingObjects.FormattingEnabled = true;
       this.lbDrawingObjects.Location = new System.Drawing.Point(11, 277);
@@ -745,145 +750,145 @@ namespace NameTags
       this.lbDrawingObjects.Size = new System.Drawing.Size(205, 355);
       this.lbDrawingObjects.TabIndex = 1;
       this.lbDrawingObjects.SelectedIndexChanged += new System.EventHandler(this.lbDrawingObjects_SelectedIndexChanged);
-      // 
+      //
       // lblMousePos
-      // 
+      //
       this.lblMousePos.Location = new System.Drawing.Point(8, 40);
       this.lblMousePos.Name = "lblMousePos";
       this.lblMousePos.Size = new System.Drawing.Size(80, 16);
       this.lblMousePos.TabIndex = 0;
       this.lblMousePos.Text = "Mouse (x,y):";
-      // 
+      //
       // lblMousePosVal
-      // 
+      //
       this.lblMousePosVal.Location = new System.Drawing.Point(96, 40);
       this.lblMousePosVal.Name = "lblMousePosVal";
       this.lblMousePosVal.Size = new System.Drawing.Size(88, 16);
       this.lblMousePosVal.TabIndex = 0;
       this.lblMousePosVal.Text = "0,0";
-      // 
+      //
       // lblTagSizeVal
-      // 
+      //
       this.lblTagSizeVal.Location = new System.Drawing.Point(96, 24);
       this.lblTagSizeVal.Name = "lblTagSizeVal";
       this.lblTagSizeVal.Size = new System.Drawing.Size(88, 16);
       this.lblTagSizeVal.TabIndex = 0;
       this.lblTagSizeVal.Text = "0,0";
-      // 
+      //
       // lblTagSize
-      // 
+      //
       this.lblTagSize.Location = new System.Drawing.Point(8, 24);
       this.lblTagSize.Name = "lblTagSize";
       this.lblTagSize.Size = new System.Drawing.Size(80, 16);
       this.lblTagSize.TabIndex = 0;
       this.lblTagSize.Text = "Tag size (w,h):";
-      // 
+      //
       // lblObjPosVal
-      // 
+      //
       this.lblObjPosVal.Location = new System.Drawing.Point(96, 72);
       this.lblObjPosVal.Name = "lblObjPosVal";
       this.lblObjPosVal.Size = new System.Drawing.Size(88, 16);
       this.lblObjPosVal.TabIndex = 0;
       this.lblObjPosVal.Text = "0,0";
-      // 
+      //
       // lblObjPos
-      // 
+      //
       this.lblObjPos.Location = new System.Drawing.Point(8, 72);
       this.lblObjPos.Name = "lblObjPos";
       this.lblObjPos.Size = new System.Drawing.Size(80, 16);
       this.lblObjPos.TabIndex = 0;
       this.lblObjPos.Text = "Obj Pos (x,y):";
-      // 
+      //
       // lblObjSize
-      // 
+      //
       this.lblObjSize.Location = new System.Drawing.Point(8, 88);
       this.lblObjSize.Name = "lblObjSize";
       this.lblObjSize.Size = new System.Drawing.Size(80, 16);
       this.lblObjSize.TabIndex = 0;
       this.lblObjSize.Text = "Obj Size (w,h):";
-      // 
+      //
       // lblObjSizeVal
-      // 
+      //
       this.lblObjSizeVal.Location = new System.Drawing.Point(96, 88);
       this.lblObjSizeVal.Name = "lblObjSizeVal";
       this.lblObjSizeVal.Size = new System.Drawing.Size(88, 16);
       this.lblObjSizeVal.TabIndex = 0;
       this.lblObjSizeVal.Text = "0,0";
-      // 
+      //
       // lblScalePos
-      // 
+      //
       this.lblScalePos.Location = new System.Drawing.Point(8, 104);
       this.lblScalePos.Name = "lblScalePos";
       this.lblScalePos.Size = new System.Drawing.Size(80, 16);
       this.lblScalePos.TabIndex = 0;
       this.lblScalePos.Text = "Scl Pos (x,y):";
-      // 
+      //
       // lblScalePosVal
-      // 
+      //
       this.lblScalePosVal.Location = new System.Drawing.Point(96, 104);
       this.lblScalePosVal.Name = "lblScalePosVal";
       this.lblScalePosVal.Size = new System.Drawing.Size(88, 16);
       this.lblScalePosVal.TabIndex = 0;
       this.lblScalePosVal.Text = "0,0";
-      // 
+      //
       // lblName
-      // 
+      //
       this.lblName.Location = new System.Drawing.Point(8, 195);
       this.lblName.Name = "lblName";
       this.lblName.Size = new System.Drawing.Size(43, 16);
       this.lblName.TabIndex = 0;
       this.lblName.Text = "Name:";
-      // 
+      //
       // lblScaleSize
-      // 
+      //
       this.lblScaleSize.Location = new System.Drawing.Point(8, 120);
       this.lblScaleSize.Name = "lblScaleSize";
       this.lblScaleSize.Size = new System.Drawing.Size(80, 16);
       this.lblScaleSize.TabIndex = 0;
       this.lblScaleSize.Text = "Scl Size (w,h):";
-      // 
+      //
       // lblNameVal
-      // 
+      //
       this.lblNameVal.Location = new System.Drawing.Point(57, 195);
       this.lblNameVal.Name = "lblNameVal";
       this.lblNameVal.Size = new System.Drawing.Size(159, 16);
       this.lblNameVal.TabIndex = 0;
       this.lblNameVal.Text = "<name>";
-      // 
+      //
       // lblScaleSizeVal
-      // 
+      //
       this.lblScaleSizeVal.Location = new System.Drawing.Point(96, 120);
       this.lblScaleSizeVal.Name = "lblScaleSizeVal";
       this.lblScaleSizeVal.Size = new System.Drawing.Size(88, 16);
       this.lblScaleSizeVal.TabIndex = 0;
       this.lblScaleSizeVal.Text = "0,0";
-      // 
+      //
       // lblMouseMoveVal
-      // 
+      //
       this.lblMouseMoveVal.Location = new System.Drawing.Point(96, 56);
       this.lblMouseMoveVal.Name = "lblMouseMoveVal";
       this.lblMouseMoveVal.Size = new System.Drawing.Size(88, 16);
       this.lblMouseMoveVal.TabIndex = 0;
       this.lblMouseMoveVal.Text = "0,0";
-      // 
+      //
       // lblMouseMove
-      // 
+      //
       this.lblMouseMove.Location = new System.Drawing.Point(8, 56);
       this.lblMouseMove.Name = "lblMouseMove";
       this.lblMouseMove.Size = new System.Drawing.Size(80, 16);
       this.lblMouseMove.TabIndex = 0;
       this.lblMouseMove.Text = "Move (x,y):";
-      // 
+      //
       // splitMain
-      // 
+      //
       this.splitMain.Location = new System.Drawing.Point(235, 46);
       this.splitMain.Name = "splitMain";
       this.splitMain.Size = new System.Drawing.Size(3, 751);
       this.splitMain.TabIndex = 3;
       this.splitMain.TabStop = false;
-      // 
+      //
       // pnlRight
-      // 
+      //
       this.pnlRight.AutoScroll = true;
       this.pnlRight.BackColor = System.Drawing.Color.LightBlue;
       this.pnlRight.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -895,9 +900,9 @@ namespace NameTags
       this.pnlRight.Size = new System.Drawing.Size(1260, 751);
       this.pnlRight.TabIndex = 4;
       this.pnlRight.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlRight_MouseUp);
-      // 
+      //
       // pbMain
-      // 
+      //
       this.pbMain.BackColor = System.Drawing.Color.White;
       this.pbMain.ContextMenu = this.mnuPbMainContext;
       this.pbMain.Location = new System.Drawing.Point(8, 8);
@@ -910,305 +915,312 @@ namespace NameTags
       this.pbMain.MouseLeave += new System.EventHandler(this.pbMain_MouseLeave);
       this.pbMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbMain_MouseMove);
       this.pbMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbMain_MouseUp);
-      // 
+      //
       // mnuPbMainContext
-      // 
+      //
       this.mnuPbMainContext.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuPbMainContextArrange,
-            this.mnuPbMainContextAlign,
-            this.mnuPbMainContextNoFill,
-            this.mnuPbMainContextLock,
-            this.mnuPbMainContextUnlock,
-            this.mnuPbMainContextProperties,
-            this.mnuPbMainContextText});
-      // 
+        this.mnuPbMainContextArrange,
+        this.mnuPbMainContextAlign,
+        this.mnuPbMainContextNoFill,
+        this.mnuPbMainContextLock,
+        this.mnuPbMainContextUnlock,
+        this.mnuPbMainContextProperties,
+        this.mnuPbMainContextText
+      });
+      //
       // mnuPbMainContextArrange
-      // 
+      //
       this.mnuPbMainContextArrange.Index = 0;
       this.mnuPbMainContextArrange.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuPbMainContextArrangeFront,
-            this.mnuPbMainContextArrangeForward,
-            this.mnuPbMainContextArrangeBackward,
-            this.mnuPbMainContextArrangeBack});
+        this.mnuPbMainContextArrangeFront,
+        this.mnuPbMainContextArrangeForward,
+        this.mnuPbMainContextArrangeBackward,
+        this.mnuPbMainContextArrangeBack
+      });
       this.mnuPbMainContextArrange.Text = "Arrange";
-      // 
+      //
       // mnuPbMainContextArrangeFront
-      // 
+      //
       this.mnuPbMainContextArrangeFront.Index = 0;
       this.mnuPbMainContextArrangeFront.Tag = "BRING_TO_FRONT";
       this.mnuPbMainContextArrangeFront.Text = "Bring to front";
       this.mnuPbMainContextArrangeFront.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextArrangeForward
-      // 
+      //
       this.mnuPbMainContextArrangeForward.Index = 1;
       this.mnuPbMainContextArrangeForward.Tag = "BRING_FORWARD";
       this.mnuPbMainContextArrangeForward.Text = "Bring forward";
       this.mnuPbMainContextArrangeForward.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextArrangeBackward
-      // 
+      //
       this.mnuPbMainContextArrangeBackward.Index = 2;
       this.mnuPbMainContextArrangeBackward.Tag = "SEND_BACKWARD";
       this.mnuPbMainContextArrangeBackward.Text = "Send backward";
       this.mnuPbMainContextArrangeBackward.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextArrangeBack
-      // 
+      //
       this.mnuPbMainContextArrangeBack.Index = 3;
       this.mnuPbMainContextArrangeBack.Tag = "SEND_TO_BACK";
       this.mnuPbMainContextArrangeBack.Text = "Send to back";
       this.mnuPbMainContextArrangeBack.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextAlign
-      // 
+      //
       this.mnuPbMainContextAlign.Index = 1;
       this.mnuPbMainContextAlign.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuPbMainContextAlignLeft,
-            this.nuPbMainContextAlignCenter,
-            this.mnuPbMainContextAlignRight});
+        this.mnuPbMainContextAlignLeft,
+        this.nuPbMainContextAlignCenter,
+        this.mnuPbMainContextAlignRight
+      });
       this.mnuPbMainContextAlign.Text = "Align";
-      // 
+      //
       // mnuPbMainContextAlignLeft
-      // 
+      //
       this.mnuPbMainContextAlignLeft.Index = 0;
       this.mnuPbMainContextAlignLeft.Tag = "ALIGN_LEFT";
       this.mnuPbMainContextAlignLeft.Text = "Left";
       this.mnuPbMainContextAlignLeft.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // nuPbMainContextAlignCenter
-      // 
+      //
       this.nuPbMainContextAlignCenter.Index = 1;
       this.nuPbMainContextAlignCenter.Tag = "ALIGN_CENTER";
       this.nuPbMainContextAlignCenter.Text = "Center";
       this.nuPbMainContextAlignCenter.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextAlignRight
-      // 
+      //
       this.mnuPbMainContextAlignRight.Index = 2;
       this.mnuPbMainContextAlignRight.Tag = "ALIGN_RIGHT";
       this.mnuPbMainContextAlignRight.Text = "Right";
       this.mnuPbMainContextAlignRight.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextNoFill
-      // 
+      //
       this.mnuPbMainContextNoFill.Index = 2;
       this.mnuPbMainContextNoFill.Tag = "NO_FILL";
       this.mnuPbMainContextNoFill.Text = "No Fill";
       this.mnuPbMainContextNoFill.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextLock
-      // 
+      //
       this.mnuPbMainContextLock.Index = 3;
       this.mnuPbMainContextLock.Tag = "LOCK_SHAPE";
       this.mnuPbMainContextLock.Text = "Lock";
       this.mnuPbMainContextLock.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextUnlock
-      // 
+      //
       this.mnuPbMainContextUnlock.Index = 4;
       this.mnuPbMainContextUnlock.Tag = "UNLOCK_SHAPE";
       this.mnuPbMainContextUnlock.Text = "Unlock";
       this.mnuPbMainContextUnlock.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextProperties
-      // 
+      //
       this.mnuPbMainContextProperties.Index = 5;
       this.mnuPbMainContextProperties.Text = "Properties";
       this.mnuPbMainContextProperties.Click += new System.EventHandler(this.mnuPbMainContextProperties_Click);
-      // 
+      //
       // mnuPbMainContextText
-      // 
+      //
       this.mnuPbMainContextText.Index = 6;
       this.mnuPbMainContextText.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuPbMainContextTextUpper,
-            this.mnuPbMainContextTextLower,
-            this.mnuPbMainContextTextNormal});
+        this.mnuPbMainContextTextUpper,
+        this.mnuPbMainContextTextLower,
+        this.mnuPbMainContextTextNormal
+      });
       this.mnuPbMainContextText.Text = "Text";
-      // 
+      //
       // mnuPbMainContextTextUpper
-      // 
+      //
       this.mnuPbMainContextTextUpper.Index = 0;
       this.mnuPbMainContextTextUpper.Tag = "TEXT_UPPERCASE";
       this.mnuPbMainContextTextUpper.Text = "Use Upper Case";
       this.mnuPbMainContextTextUpper.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextTextLower
-      // 
+      //
       this.mnuPbMainContextTextLower.Index = 1;
       this.mnuPbMainContextTextLower.Tag = "TEXT_LOWERCASE";
       this.mnuPbMainContextTextLower.Text = "Use Lower Case";
       this.mnuPbMainContextTextLower.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuPbMainContextTextNormal
-      // 
+      //
       this.mnuPbMainContextTextNormal.Index = 2;
       this.mnuPbMainContextTextNormal.Tag = "TEXT_NORMALCASE";
       this.mnuPbMainContextTextNormal.Text = "Use Normal Case";
       this.mnuPbMainContextTextNormal.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // pnlShadow
-      // 
+      //
       this.pnlShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
       this.pnlShadow.ForeColor = System.Drawing.Color.Black;
       this.pnlShadow.Location = new System.Drawing.Point(12, 12);
       this.pnlShadow.Name = "pnlShadow";
       this.pnlShadow.Size = new System.Drawing.Size(300, 300);
       this.pnlShadow.TabIndex = 0;
-      // 
+      //
       // dlgFileSave
-      // 
+      //
       this.dlgFileSave.DefaultExt = "tag";
-      // 
+      //
       // mnuBorderWidth
-      // 
+      //
       this.mnuBorderWidth.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuBorderWidth0,
-            this.mnuBorderWidth1,
-            this.mnuBorderWidth2,
-            this.mnuBorderWidth3,
-            this.mnuBorderWidth4,
-            this.mnuBorderWidth5,
-            this.mnuBorderWidth6,
-            this.mnuBorderWidth7,
-            this.mnuBorderWidth8,
-            this.mnuBorderWidth9,
-            this.mnuBorderWidth10,
-            this.mnuBorderWidth15});
-      // 
+        this.mnuBorderWidth0,
+        this.mnuBorderWidth1,
+        this.mnuBorderWidth2,
+        this.mnuBorderWidth3,
+        this.mnuBorderWidth4,
+        this.mnuBorderWidth5,
+        this.mnuBorderWidth6,
+        this.mnuBorderWidth7,
+        this.mnuBorderWidth8,
+        this.mnuBorderWidth9,
+        this.mnuBorderWidth10,
+        this.mnuBorderWidth15
+      });
+      //
       // mnuBorderWidth0
-      // 
+      //
       this.mnuBorderWidth0.Index = 0;
       this.mnuBorderWidth0.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth0.Text = "0 pixels";
       this.mnuBorderWidth0.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth1
-      // 
+      //
       this.mnuBorderWidth1.Index = 1;
       this.mnuBorderWidth1.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth1.Text = "1 pixel";
       this.mnuBorderWidth1.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth2
-      // 
+      //
       this.mnuBorderWidth2.Index = 2;
       this.mnuBorderWidth2.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth2.Text = "2 pixels";
       this.mnuBorderWidth2.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth3
-      // 
+      //
       this.mnuBorderWidth3.Index = 3;
       this.mnuBorderWidth3.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth3.Text = "3 pixels";
       this.mnuBorderWidth3.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth4
-      // 
+      //
       this.mnuBorderWidth4.Index = 4;
       this.mnuBorderWidth4.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth4.Text = "4 pixels";
       this.mnuBorderWidth4.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth5
-      // 
+      //
       this.mnuBorderWidth5.Index = 5;
       this.mnuBorderWidth5.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth5.Text = "5 pixels";
       this.mnuBorderWidth5.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth6
-      // 
+      //
       this.mnuBorderWidth6.Index = 6;
       this.mnuBorderWidth6.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth6.Text = "6 pixels";
       this.mnuBorderWidth6.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth7
-      // 
+      //
       this.mnuBorderWidth7.Index = 7;
       this.mnuBorderWidth7.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth7.Text = "7 pixels";
       this.mnuBorderWidth7.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth8
-      // 
+      //
       this.mnuBorderWidth8.Index = 8;
       this.mnuBorderWidth8.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth8.Text = "8 pixels";
       this.mnuBorderWidth8.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth9
-      // 
+      //
       this.mnuBorderWidth9.Index = 9;
       this.mnuBorderWidth9.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth9.Text = "9 pixels";
       this.mnuBorderWidth9.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth10
-      // 
+      //
       this.mnuBorderWidth10.Index = 10;
       this.mnuBorderWidth10.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth10.Text = "10 pixels";
       this.mnuBorderWidth10.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuBorderWidth15
-      // 
+      //
       this.mnuBorderWidth15.Index = 11;
       this.mnuBorderWidth15.Tag = "BORDER_WIDTH";
       this.mnuBorderWidth15.Text = "15 pixels";
       this.mnuBorderWidth15.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuAddShape
-      // 
+      //
       this.mnuAddShape.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuAddShapeRectangle,
-            this.mnuAddShapeEllipse,
-            this.mnuAddShapeDiplomaPicture});
-      // 
+        this.mnuAddShapeRectangle,
+        this.mnuAddShapeEllipse,
+        this.mnuAddShapeDiplomaPicture
+      });
+      //
       // mnuAddShapeRectangle
-      // 
+      //
       this.mnuAddShapeRectangle.Index = 0;
       this.mnuAddShapeRectangle.Tag = "ADD_SHAPE_RECTANGLE";
       this.mnuAddShapeRectangle.Text = "Add Rectangle";
       this.mnuAddShapeRectangle.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuAddShapeEllipse
-      // 
+      //
       this.mnuAddShapeEllipse.Index = 1;
       this.mnuAddShapeEllipse.Tag = "ADD_SHAPE_ELLIPSE";
       this.mnuAddShapeEllipse.Text = "Add Ellipse";
       this.mnuAddShapeEllipse.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // mnuAddShapeDiplomaPicture
-      // 
+      //
       this.mnuAddShapeDiplomaPicture.Index = 2;
       this.mnuAddShapeDiplomaPicture.Tag = "ADD_SHAPE_DIPLOMA_PICTURE";
       this.mnuAddShapeDiplomaPicture.Text = "Add Diploma Picture";
       this.mnuAddShapeDiplomaPicture.Click += new System.EventHandler(this.mnuDrawingObjectAction);
-      // 
+      //
       // ctxMnuObjectList
-      // 
+      //
       this.ctxMnuObjectList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMnuObjectListProperties,
-            this.ctxMnuObjectListDelete,
-            this.ctxMnuObjectLock,
-            this.ctxMnuObjectListUnlock});
+        this.ctxMnuObjectListProperties,
+        this.ctxMnuObjectListDelete,
+        this.ctxMnuObjectLock,
+        this.ctxMnuObjectListUnlock
+      });
       this.ctxMnuObjectList.Name = "ctxMnuObjectList";
       this.ctxMnuObjectList.Size = new System.Drawing.Size(128, 92);
       this.ctxMnuObjectList.Click += new System.EventHandler(this.ctxMnuObjectList_Click);
-      // 
+      //
       // ctxMnuObjectListProperties
-      // 
+      //
       this.ctxMnuObjectListProperties.Name = "ctxMnuObjectListProperties";
       this.ctxMnuObjectListProperties.Size = new System.Drawing.Size(127, 22);
       this.ctxMnuObjectListProperties.Tag = "ListProperties";
       this.ctxMnuObjectListProperties.Text = "Properties";
       this.ctxMnuObjectListProperties.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ckLabels
-      // 
+      //
       this.ckLabels.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.ckLabels.AutoSize = true;
       this.ckLabels.Location = new System.Drawing.Point(1162, 13);
@@ -1218,47 +1230,48 @@ namespace NameTags
       this.ckLabels.Text = "Labels";
       this.ckLabels.UseVisualStyleBackColor = true;
       this.ckLabels.CheckedChanged += new System.EventHandler(this.ckLabels_CheckedChanged);
-      // 
+      //
       // ctxMnuObjectListDelete
-      // 
+      //
       this.ctxMnuObjectListDelete.Name = "ctxMnuObjectListDelete";
       this.ctxMnuObjectListDelete.Size = new System.Drawing.Size(127, 22);
       this.ctxMnuObjectListDelete.Tag = "ListDelete";
       this.ctxMnuObjectListDelete.Text = "Delete";
       this.ctxMnuObjectListDelete.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMnuObjectLock
-      // 
+      //
       this.ctxMnuObjectLock.Name = "ctxMnuObjectLock";
       this.ctxMnuObjectLock.Size = new System.Drawing.Size(127, 22);
       this.ctxMnuObjectLock.Tag = "ListLock";
       this.ctxMnuObjectLock.Text = "Lock";
       this.ctxMnuObjectLock.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMnuObjectListUnlock
-      // 
+      //
       this.ctxMnuObjectListUnlock.Name = "ctxMnuObjectListUnlock";
       this.ctxMnuObjectListUnlock.Size = new System.Drawing.Size(127, 22);
       this.ctxMnuObjectListUnlock.Tag = "ListUnlock";
       this.ctxMnuObjectListUnlock.Text = "Unlock";
       this.ctxMnuObjectListUnlock.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuOptions
-      // 
+      //
       this.mnuOptions.Index = 3;
       this.mnuOptions.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.mnuObjectsUnlockAll});
+        this.mnuObjectsUnlockAll
+      });
       this.mnuOptions.Text = "Objects";
-      // 
+      //
       // mnuObjectsUnlockAll
-      // 
+      //
       this.mnuObjectsUnlockAll.Index = 0;
       this.mnuObjectsUnlockAll.Tag = "UnlockAll";
       this.mnuObjectsUnlockAll.Text = "Unlock All";
       this.mnuObjectsUnlockAll.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
       this.ClientSize = new System.Drawing.Size(1502, 833);
       this.Controls.Add(this.pnlRight);
@@ -1862,8 +1875,8 @@ namespace NameTags
           origin.X = horzAdjust + leftMargin + (col * (tagWidth + horzSpacing));
           origin.Y = vertAdjust + topMargin + (row * (tagHeight + vertSpacing));
           RectangleF objRect = new RectangleF(origin.X * scale, origin.Y * scale,
-            (origin.X + tagSize.Width) * scale,
-            (origin.Y + tagSize.Height) * scale);
+                                              (origin.X + tagSize.Width) * scale,
+                                              (origin.Y + tagSize.Height) * scale);
 
           if (clip2.IntersectsWith(objRect))
           {
@@ -1924,9 +1937,9 @@ namespace NameTags
       int personPrintCount = _project.GetPersonPrintCount();
 
       lblTagCount.Text = ("Tags " +
-        (StateHelper.FirstTagOnPage + 1).ToString().Trim() + " to " +
-        (StateHelper.LastTagOnPage + 1).ToString().Trim() + " of " +
-        personPrintCount.ToString().Trim() + " selected tags shown");
+                          (StateHelper.FirstTagOnPage + 1).ToString().Trim() + " to " +
+                          (StateHelper.LastTagOnPage + 1).ToString().Trim() + " of " +
+                          personPrintCount.ToString().Trim() + " selected tags shown");
 
 
       if (StateHelper.LastTagOnPage < personPrintCount - 1)
@@ -2194,10 +2207,10 @@ namespace NameTags
         if (dimToChange == 'w' & bChangeBegun)
         {
           if ((x + w + dX < pbMain.Width) &  // don't let object go off edge of tag
-            (w + dX > 5)) // don't let scaled width get under 5
+              (w + dX > 5)) // don't let scaled width get under 5
           {
             _project.DrawingObjects.ChangeObjectWidth(i,
-              (w + dX) / StateHelper.Scale);
+                (w + dX) / StateHelper.Scale);
             pbMain.Refresh();
           }
 
@@ -2216,10 +2229,10 @@ namespace NameTags
         if (dimToChange == 'h' & bChangeBegun)
         {
           if ((y + h + dY < pbMain.Height) & // don't object go off edge of tag
-            (h + dY > 5)) // don't let scaled height get under 5
+              (h + dY > 5)) // don't let scaled height get under 5
           {
             _project.DrawingObjects.ChangeObjectHeight(i,
-              (h + dY) / StateHelper.Scale);
+                (h + dY) / StateHelper.Scale);
             pbMain.Refresh();
           }
 
@@ -2238,8 +2251,8 @@ namespace NameTags
         if (dimToChange == 'p' & bChangeBegun)
         {
           _project.DrawingObjects.ChangeObjectPosition(i,
-            (x + dX) / StateHelper.Scale,
-            (y + dY) / StateHelper.Scale);
+              (x + dX) / StateHelper.Scale,
+              (y + dY) / StateHelper.Scale);
           beginX = mx;
           beginY = my;
 
@@ -3011,7 +3024,7 @@ namespace NameTags
           if (_project.IsDirty)
           {
             switch (MessageBox.Show("Do you want to save the current name tag project?", "Closing Name Tag Project",
-              MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
             {
               case DialogResult.Yes:
                 SaveProject(false);
@@ -3031,7 +3044,7 @@ namespace NameTags
           if (_project.IsDirty)
           {
             switch (MessageBox.Show("Do you want to save the current name tag project?", "Creating New Name Tag Project",
-              MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
             {
               case DialogResult.Yes:
                 SaveProject(false);
@@ -3065,7 +3078,7 @@ namespace NameTags
           if (_project.IsDirty)
           {
             switch (MessageBox.Show("Do you want to save the current name tag project?", "Closing Name Tag Project",
-              MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
             {
               case DialogResult.Yes:
                 SaveProject(false);
@@ -3100,8 +3113,7 @@ namespace NameTags
 
       if (StateHelper.IsInDesignMode)
         EnterDesignMode();
-      else
-        if (_project.Persons.Count == 0)
+      else if (_project.Persons.Count == 0)
         EnterDesignMode();
       else
         EnterPrintMode();

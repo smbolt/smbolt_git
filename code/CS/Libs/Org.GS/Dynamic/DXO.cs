@@ -19,7 +19,7 @@ namespace Org.GS
   public class DXO : XElement
   {
     // pass parameter to base (XElement)
-    public DXO(string commandName) : base("DXO") 
+    public DXO(string commandName) : base("DXO")
     {
       this.Add(new XAttribute("CommandName", commandName));
     }
@@ -27,34 +27,34 @@ namespace Org.GS
     public void SetFormSize(int width, int height)
     {
       this.Add(
-        new XElement("Parameters", 
-          new XElement("Size",
-            new XAttribute("Width", width.ToString()),
-            new XAttribute("Height", height.ToString())
-            )
-          )
-        );
+        new XElement("Parameters",
+                     new XElement("Size",
+                                  new XAttribute("Width", width.ToString()),
+                                  new XAttribute("Height", height.ToString())
+                                 )
+                    )
+      );
     }
 
     public Size GetFormSize()
     {
-      return new Size(Int32.Parse(this.Element("Parameters").Element("Size").Attribute("Width").Value), 
+      return new Size(Int32.Parse(this.Element("Parameters").Element("Size").Attribute("Width").Value),
                       Int32.Parse(this.Element("Parameters").Element("Size").Attribute("Height").Value));
     }
 
 
     /*  Pattern for creating Parameters Element
-          
+
       this.Add(
-        new XElement("Parameters", 
+        new XElement("Parameters",
           new XElement("Size",
             new XAttribute("Width", width.ToString()),
             new XAttribute("Height", height.ToString())
-            ), 
-          new XElement("Size2", 
+            ),
+          new XElement("Size2",
             new XAttribute("Width", width.ToString()),
             new XAttribute("Height", height.ToString())
-            ) 
+            )
           )
         );
     */

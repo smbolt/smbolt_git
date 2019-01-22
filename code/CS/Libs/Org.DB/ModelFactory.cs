@@ -8,11 +8,11 @@ using Org.GS;
 namespace Org.DB
 {
   public class ModelFactory
-  {    
+  {
     public ModelBase CreateModel(object entity, EntityModelMap entityModelMap)
     {
-      object model = Activator.CreateInstance(entityModelMap.ModelType); 
-      
+      object model = Activator.CreateInstance(entityModelMap.ModelType);
+
       foreach (var piPair in entityModelMap.PropertyInfoPairSet.Values)
       {
         object value = piPair.EntityPropertyInfo.GetValue(entity);
@@ -20,11 +20,11 @@ namespace Org.DB
         switch (piPair.MappingRule)
         {
           case MappingRule.None:
-            piPair.ModelPropertyInfo.SetValue(model, value); 
+            piPair.ModelPropertyInfo.SetValue(model, value);
             break;
 
           case MappingRule.DoubleToDecimal:
-            piPair.ModelPropertyInfo.SetValue(model, value.ToDecimal()); 
+            piPair.ModelPropertyInfo.SetValue(model, value.ToDecimal());
             break;
 
           case MappingRule.Boolean1:

@@ -39,35 +39,37 @@
       this.mnuMain.SuspendLayout();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+        this.fileToolStripMenuItem
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(800, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // fileToolStripMenuItem
-      // 
+      //
       this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
+        this.exitToolStripMenuItem
+      });
       this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
       this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
       this.fileToolStripMenuItem.Text = "&File";
-      // 
+      //
       // exitToolStripMenuItem
-      // 
+      //
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
       this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.exitToolStripMenuItem.Tag = "Exit";
       this.exitToolStripMenuItem.Text = "E&xit";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 427);
       this.lblStatus.Name = "lblStatus";
@@ -75,18 +77,18 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnGetFxVersions);
       this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
       this.pnlTop.Location = new System.Drawing.Point(0, 24);
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(800, 40);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // btnGetFxVersions
-      // 
+      //
       this.btnGetFxVersions.Location = new System.Drawing.Point(12, 8);
       this.btnGetFxVersions.Name = "btnGetFxVersions";
       this.btnGetFxVersions.Size = new System.Drawing.Size(177, 23);
@@ -95,9 +97,9 @@
       this.btnGetFxVersions.Text = "Get .NET Framework Versions";
       this.btnGetFxVersions.UseVisualStyleBackColor = true;
       this.btnGetFxVersions.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,9 +110,9 @@
       this.txtOut.Size = new System.Drawing.Size(800, 363);
       this.txtOut.TabIndex = 3;
       this.txtOut.WordWrap = false;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);

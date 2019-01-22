@@ -7,24 +7,78 @@ namespace Org.GS
 {
   public class SearchParms
   {
-    public string RootPath { get; set; }
-    public DateTime SinceDate { get; set; }
-    public List<string> Extensions { get; set; }
-    public List<string> FolderNameIncludes { get; set; }
-    public LogicOp ExtensionAndFileNameIncludeLogicOp { get; set; }
-    public List<string> FolderNameExcludes { get; set; }
-    public List<string> FileNameIncludes { get; set; }
-    public List<string> FileNameExcludes { get; set; }
-    public List<string> ContentIncludes { get; set; }
-    public List<string> ContentExcludes { get; set; }
-    public SearchResults SearchResults { get; set; }
-    public bool ProcessChildFolders { get; set; }
-    public bool BuildFileList { get; set; }
-    public int FileCountLimit { get; set; }
-    public bool LogPathTooLongExceptions { get; set; }
-    public bool AllowMemoryUsageGrowth { get; set; }
-    public bool FailOnAccessViolations { get; set; }
-    public bool ExpandZipArchives { get; set; }
+    public string RootPath {
+      get;
+      set;
+    }
+    public DateTime SinceDate {
+      get;
+      set;
+    }
+    public List<string> Extensions {
+      get;
+      set;
+    }
+    public List<string> FolderNameIncludes {
+      get;
+      set;
+    }
+    public LogicOp ExtensionAndFileNameIncludeLogicOp {
+      get;
+      set;
+    }
+    public List<string> FolderNameExcludes {
+      get;
+      set;
+    }
+    public List<string> FileNameIncludes {
+      get;
+      set;
+    }
+    public List<string> FileNameExcludes {
+      get;
+      set;
+    }
+    public List<string> ContentIncludes {
+      get;
+      set;
+    }
+    public List<string> ContentExcludes {
+      get;
+      set;
+    }
+    public SearchResults SearchResults {
+      get;
+      set;
+    }
+    public bool ProcessChildFolders {
+      get;
+      set;
+    }
+    public bool BuildFileList {
+      get;
+      set;
+    }
+    public int FileCountLimit {
+      get;
+      set;
+    }
+    public bool LogPathTooLongExceptions {
+      get;
+      set;
+    }
+    public bool AllowMemoryUsageGrowth {
+      get;
+      set;
+    }
+    public bool FailOnAccessViolations {
+      get;
+      set;
+    }
+    public bool ExpandZipArchives {
+      get;
+      set;
+    }
 
     public SearchParms()
     {

@@ -36,44 +36,44 @@
       this.btnOK = new System.Windows.Forms.Button();
       this.btnCancel = new System.Windows.Forms.Button();
       this.SuspendLayout();
-      // 
+      //
       // lblHostName
-      // 
+      //
       this.lblHostName.AutoSize = true;
       this.lblHostName.Location = new System.Drawing.Point(12, 58);
       this.lblHostName.Name = "lblHostName";
       this.lblHostName.Size = new System.Drawing.Size(89, 20);
       this.lblHostName.TabIndex = 0;
       this.lblHostName.Text = "Host Name";
-      // 
+      //
       // lblEnvironment
-      // 
+      //
       this.lblEnvironment.AutoSize = true;
       this.lblEnvironment.Location = new System.Drawing.Point(12, 13);
       this.lblEnvironment.Name = "lblEnvironment";
       this.lblEnvironment.Size = new System.Drawing.Size(102, 20);
       this.lblEnvironment.TabIndex = 1;
       this.lblEnvironment.Text = "Environment:";
-      // 
+      //
       // lblEnvironmentValue
-      // 
+      //
       this.lblEnvironmentValue.AutoSize = true;
       this.lblEnvironmentValue.Location = new System.Drawing.Point(133, 13);
       this.lblEnvironmentValue.Name = "lblEnvironmentValue";
       this.lblEnvironmentValue.Size = new System.Drawing.Size(42, 20);
       this.lblEnvironmentValue.TabIndex = 2;
       this.lblEnvironmentValue.Text = "Prod";
-      // 
+      //
       // txtHostName
-      // 
+      //
       this.txtHostName.Location = new System.Drawing.Point(16, 92);
       this.txtHostName.Name = "txtHostName";
       this.txtHostName.Size = new System.Drawing.Size(386, 26);
       this.txtHostName.TabIndex = 3;
       this.txtHostName.TextChanged += new System.EventHandler(this.txtHostName_TextChanged);
-      // 
+      //
       // btnOK
-      // 
+      //
       this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnOK.Location = new System.Drawing.Point(114, 159);
       this.btnOK.Name = "btnOK";
@@ -83,9 +83,9 @@
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
       this.btnOK.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnCancel.Location = new System.Drawing.Point(114, 211);
       this.btnCancel.Name = "btnCancel";
@@ -95,9 +95,9 @@
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmAddOrUpdateHost
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(421, 304);

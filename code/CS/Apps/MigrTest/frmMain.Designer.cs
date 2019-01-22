@@ -42,35 +42,37 @@
       this.mnuMain.SuspendLayout();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(4, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1170, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.ckDryRun);
       this.pnlTop.Controls.Add(this.txtProfilePath);
       this.pnlTop.Controls.Add(this.cboProfileFile);
@@ -80,9 +82,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1170, 81);
       this.pnlTop.TabIndex = 1;
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(4, 729);
       this.lblStatus.Name = "lblStatus";
@@ -91,9 +93,9 @@
       this.lblStatus.TabIndex = 2;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // btnRunAction
-      // 
+      //
       this.btnRunAction.Location = new System.Drawing.Point(468, 40);
       this.btnRunAction.Name = "btnRunAction";
       this.btnRunAction.Size = new System.Drawing.Size(139, 23);
@@ -102,9 +104,9 @@
       this.btnRunAction.Text = "Run Action";
       this.btnRunAction.UseVisualStyleBackColor = true;
       this.btnRunAction.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,25 +116,25 @@
       this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtOut.Size = new System.Drawing.Size(1170, 624);
       this.txtOut.TabIndex = 3;
-      // 
+      //
       // cboProfileFile
-      // 
+      //
       this.cboProfileFile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboProfileFile.FormattingEnabled = true;
       this.cboProfileFile.Location = new System.Drawing.Point(13, 40);
       this.cboProfileFile.Name = "cboProfileFile";
       this.cboProfileFile.Size = new System.Drawing.Size(325, 21);
       this.cboProfileFile.TabIndex = 2;
-      // 
+      //
       // txtProfilePath
-      // 
+      //
       this.txtProfilePath.Location = new System.Drawing.Point(13, 10);
       this.txtProfilePath.Name = "txtProfilePath";
       this.txtProfilePath.Size = new System.Drawing.Size(594, 20);
       this.txtProfilePath.TabIndex = 3;
-      // 
+      //
       // ckDryRun
-      // 
+      //
       this.ckDryRun.AutoSize = true;
       this.ckDryRun.Location = new System.Drawing.Point(630, 12);
       this.ckDryRun.Name = "ckDryRun";
@@ -140,9 +142,9 @@
       this.ckDryRun.TabIndex = 4;
       this.ckDryRun.Text = "Dry Run";
       this.ckDryRun.UseVisualStyleBackColor = true;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1176, 752);

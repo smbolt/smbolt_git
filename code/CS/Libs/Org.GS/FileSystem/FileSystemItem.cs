@@ -25,68 +25,205 @@ namespace Org.GS
 
     public static bool StaticCountersInitialized = InitializeStaticCounters();
 
-    public static SearchParms SearchParms { get; private set;  }
-    private static string OriginalFullPath { get; set; }
-    public static string RootFolderPath { get; private set; }
-    public static FileSystemItem RootFolder { get; private set; }
-    public bool IsRootFolder { get; private set; }
- 
-    public string Name { get; set; }
-    public string Extension { get; private set; }
+    public static SearchParms SearchParms {
+      get;
+      private set;
+    }
+    private static string OriginalFullPath {
+      get;
+      set;
+    }
+    public static string RootFolderPath {
+      get;
+      private set;
+    }
+    public static FileSystemItem RootFolder {
+      get;
+      private set;
+    }
+    public bool IsRootFolder {
+      get;
+      private set;
+    }
+
+    public string Name {
+      get;
+      set;
+    }
+    public string Extension {
+      get;
+      private set;
+    }
     private FileInfo _fileInfo;
-    public FileSystemItemType FileSystemItemType  { get; private set; }
+    public FileSystemItemType FileSystemItemType  {
+      get;
+      private set;
+    }
 
-    public string FullPath { get { return Get_FullPath(); } }
-    public string PathToRoot { get { return Get_PathToRoot(); } }
-    public bool IsFile { get { return Get_IsFile(); } }
-    public bool IsFolder { get { return Get_IsFolder(); } }
-    public bool IsLastFolderUnderParent { get { return Get_IsLastFolderUnderParent(); } }
-    public int FolderCount { get { return Get_FolderCount(); } }
-    public long SizeIncludingDependants { get { return Get_SizeIncludingDescendants(); } }
+    public string FullPath {
+      get {
+        return Get_FullPath();
+      }
+    }
+    public string PathToRoot {
+      get {
+        return Get_PathToRoot();
+      }
+    }
+    public bool IsFile {
+      get {
+        return Get_IsFile();
+      }
+    }
+    public bool IsFolder {
+      get {
+        return Get_IsFolder();
+      }
+    }
+    public bool IsLastFolderUnderParent {
+      get {
+        return Get_IsLastFolderUnderParent();
+      }
+    }
+    public int FolderCount {
+      get {
+        return Get_FolderCount();
+      }
+    }
+    public long SizeIncludingDependants {
+      get {
+        return Get_SizeIncludingDescendants();
+      }
+    }
 
-    public static int TotalFileCount { get; set; }
-    public static int TotalFolderCount { get; set; }
-    public static int FsiCount { get { return TotalFolderCount + TotalFileCount; } }
-    public static int ProcessedCount { get; private set; }
+    public static int TotalFileCount {
+      get;
+      set;
+    }
+    public static int TotalFolderCount {
+      get;
+      set;
+    }
+    public static int FsiCount {
+      get {
+        return TotalFolderCount + TotalFileCount;
+      }
+    }
+    public static int ProcessedCount {
+      get;
+      private set;
+    }
 
     public static SortedList<string, int> Extensions;
     public static bool IsRecursionFinished;
 
-    public FileSystemItem Parent { get; set; }
-    public FileSystemItemSet FileSystemItemSet { get; set; }
-    public List<FileSystemItem> Folders { get { return Get_Folders(); } }
-    public List<FileSystemItem> Files { get { return Get_Files(); } }
-    public Dictionary<string, FileSystemItem> FileList { get; private set; }
+    public FileSystemItem Parent {
+      get;
+      set;
+    }
+    public FileSystemItemSet FileSystemItemSet {
+      get;
+      set;
+    }
+    public List<FileSystemItem> Folders {
+      get {
+        return Get_Folders();
+      }
+    }
+    public List<FileSystemItem> Files {
+      get {
+        return Get_Files();
+      }
+    }
+    public Dictionary<string, FileSystemItem> FileList {
+      get;
+      private set;
+    }
 
 
-    public bool IsZipArchiveFile { get; private set; }
-    public bool IsZipArchiveFilesExpanded { get; set; }
-    public bool IsZipArchivedItem { get; set; }
-    public string FileNameWithoutExtension { get; set; }
+    public bool IsZipArchiveFile {
+      get;
+      private set;
+    }
+    public bool IsZipArchiveFilesExpanded {
+      get;
+      set;
+    }
+    public bool IsZipArchivedItem {
+      get;
+      set;
+    }
+    public string FileNameWithoutExtension {
+      get;
+      set;
+    }
     private long _size;
-    public long Size { get { return Get_Size(); } }
-    public int Depth { get { return Get_Depth(); } }
+    public long Size {
+      get {
+        return Get_Size();
+      }
+    }
+    public int Depth {
+      get {
+        return Get_Depth();
+      }
+    }
 
-    public string LogicalPath { get; set; }
-    public bool IsFileIncluded { get; set; }
+    public string LogicalPath {
+      get;
+      set;
+    }
+    public bool IsFileIncluded {
+      get;
+      set;
+    }
 
-    public DateTime CreationTime { get { return _fileInfo.CreationTime; } }
-    public DateTime LastWriteTime { get { return _fileInfo.LastWriteTime; } }
-    public DateTime LastAccessTime { get { return _fileInfo.LastAccessTime; } }
+    public DateTime CreationTime {
+      get {
+        return _fileInfo.CreationTime;
+      }
+    }
+    public DateTime LastWriteTime {
+      get {
+        return _fileInfo.LastWriteTime;
+      }
+    }
+    public DateTime LastAccessTime {
+      get {
+        return _fileInfo.LastAccessTime;
+      }
+    }
 
-    public bool IsProcessed { get; set; }
-    public bool MaxPathExceeded { get; private set; }
+    public bool IsProcessed {
+      get;
+      set;
+    }
+    public bool MaxPathExceeded {
+      get;
+      private set;
+    }
 
-    public string Report { get {  return Get_Report(); } }
-    public string RootReport { get {  return Get_RootReport(); } }
-    public static List<FileSystemItem> ItemsWithAccessViolations { get; set; }
-    
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
+    public string RootReport {
+      get {
+        return Get_RootReport();
+      }
+    }
+    public static List<FileSystemItem> ItemsWithAccessViolations {
+      get;
+      set;
+    }
+
     // constructor to be used for top level item with optional SearchParms
     public FileSystemItem(string path, SearchParms searchParms = null)
     {
       if (path.IsBlank())
         throw new Exception("The FileSystemItem constructor cannot be involved with a null or blank path parameter.");
- 
+
       FileSystemItem.SearchParms = searchParms == null ? new SearchParms() : searchParms;
 
       ItemsWithAccessViolations = new List<FileSystemItem>();
@@ -106,9 +243,9 @@ namespace Org.GS
     {
       if (path.IsBlank())
         throw new Exception("The FileSystemItem constructor cannot be involved with a null or blank path parameter.");
- 
+
       if (fileSystemItemType == GS.FileSystemItemType.NotSet)
-        throw new Exception("The internal constructor of FileSystemItem cannot be invoked with the FileSysteItemType parameter equal to 'NotSet'."); 
+        throw new Exception("The internal constructor of FileSystemItem cannot be invoked with the FileSysteItemType parameter equal to 'NotSet'.");
 
       this.FileSystemItemType = fileSystemItemType;
 
@@ -142,7 +279,7 @@ namespace Org.GS
         if ((_fileInfo.Attributes & FileAttributes.Directory) == FileAttributes.Directory)
           this.FileSystemItemType = FileSystemItemType.Folder;
         else
-          this.FileSystemItemType = FileSystemItemType.File; 
+          this.FileSystemItemType = FileSystemItemType.File;
 
         this.Name = _fileInfo.Name;
 
@@ -151,7 +288,7 @@ namespace Org.GS
           _size = _fileInfo.Length;
           this.Extension = _fileInfo.Extension.Trim();
           this.FileNameWithoutExtension = Path.GetFileNameWithoutExtension(this.Name);
-          
+
           if (this.Extension.ToLower() == ".zip")
           {
             this.IsZipArchiveFile = true;
@@ -170,7 +307,7 @@ namespace Org.GS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to initialize the FileSystemItem object. The path is '" + path + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to initialize the FileSystemItem object. The path is '" + path + "'.", ex);
       }
     }
 
@@ -218,7 +355,7 @@ namespace Org.GS
       {
         if (ex.GetType().Name.Contains("UnauthorizedAccessException"))
         {
-          ItemsWithAccessViolations.Add(this); 
+          ItemsWithAccessViolations.Add(this);
 
           if (SearchParms.FailOnAccessViolations)
             throw new Exception("The PopulateFileSystemHierarchy (recursive) method failed with an access violation.");
@@ -226,7 +363,7 @@ namespace Org.GS
           return;
         }
 
-        throw new Exception("An exception occurred while attempting to build the folder list.", ex); 
+        throw new Exception("An exception occurred while attempting to build the folder list.", ex);
       }
     }
 
@@ -249,7 +386,7 @@ namespace Org.GS
     //      return null;
     //    }
     //  }
-      
+
     //  // add the full list of all dependent files to "_fileList'
     //  AddFilesToList(this, fileList);
 
@@ -302,8 +439,8 @@ namespace Org.GS
           if (pathToRoot.IsBlank())
             pathToRoot = RootFolderPath;
           else
-            pathToRoot = RootFolderPath + @"\" + pathToRoot; 
-          break; 
+            pathToRoot = RootFolderPath + @"\" + pathToRoot;
+          break;
         }
         else
         {
@@ -322,7 +459,7 @@ namespace Org.GS
 
       return pathToRoot;
     }
-    
+
     private FileSystemItem Get_RootFolder()
     {
       if (this.Parent == null)
@@ -330,7 +467,7 @@ namespace Org.GS
         if (this.IsFolder)
           return this;
         else
-          return null; 
+          return null;
       }
 
       var rootFolder = this.Parent;
@@ -351,7 +488,7 @@ namespace Org.GS
       if (this.FileSystemItemType == FileSystemItemType.File)
         return _size;
 
-      return Get_SizeIncludingDescendants(); 
+      return Get_SizeIncludingDescendants();
     }
 
     private int Get_Depth()
@@ -359,12 +496,12 @@ namespace Org.GS
       if (this.IsRootFolder || this.Parent == null)
         return 0;
 
-      int depth = 0; 
+      int depth = 0;
 
       var parent = this.Parent;
       while (parent != null)
       {
-        depth++; 
+        depth++;
         var f = parent.Parent;
         if (f == null)
           break;
@@ -392,7 +529,7 @@ namespace Org.GS
       if (this.FileSystemItemType == FileSystemItemType.Folder)
         return false;
 
-      throw new Exception("The FileSystemItemType property for this object has not been set."); 
+      throw new Exception("The FileSystemItemType property for this object has not been set.");
     }
 
     private bool Get_IsFolder()
@@ -403,7 +540,7 @@ namespace Org.GS
       if (this.FileSystemItemType == FileSystemItemType.File)
         return false;
 
-      throw new Exception("The FileSystemItemType property for this object has not been set."); 
+      throw new Exception("The FileSystemItemType property for this object has not been set.");
     }
 
     private bool Get_IsLastFolderUnderParent()
@@ -425,7 +562,7 @@ namespace Org.GS
     private int Get_FolderCount()
     {
       if (this.FileSystemItemSet == null || this.FileSystemItemSet.Count == 0)
-        return 0; 
+        return 0;
 
       return this.FileSystemItemSet.Values.Where(f => f.IsFolder).Count();
     }
@@ -567,7 +704,7 @@ namespace Org.GS
 
       FileSystemItemAdded(RootFolder);
     }
-    
+
     private static bool InitializeStaticCounters()
     {
       if (StaticCountersInitialized)
@@ -599,8 +736,8 @@ namespace Org.GS
       else
       {
         sb.Append(indent + (fsi.IsFile ?
-              ("\xB7").ToString() + " "+ fsi.Name + g.crlf :
-              "+ " +  fsi.Name + g.crlf));             
+                            ("\xB7").ToString() + " "+ fsi.Name + g.crlf :
+                            "+ " +  fsi.Name + g.crlf));
       }
 
       if (fsi.IsFolder)

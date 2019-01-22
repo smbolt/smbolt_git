@@ -27,7 +27,11 @@ namespace Org.ShareFileApiClient
   public class ApiClient : IDisposable
   {
     public OAuth2Token _oAuth2Token;
-    public OAuth2Token OAuth2Token { get { return _oAuth2Token; } }
+    public OAuth2Token OAuth2Token {
+      get {
+        return _oAuth2Token;
+      }
+    }
     public bool _isDryRun;
 
     public event Action<string> ProgressMessage;
@@ -115,7 +119,7 @@ namespace Org.ShareFileApiClient
         AddAuthorizationHeader(request, _oAuth2Token);
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-        // check the status code... if not 200 then it will probably throw an exception... 
+        // check the status code... if not 200 then it will probably throw an exception...
         //Console.WriteLine(response.StatusCode);
 
         using (var reader = new StreamReader(response.GetResponseStream()))
@@ -127,7 +131,7 @@ namespace Org.ShareFileApiClient
 
           ShareFile.Api.Models.Item folder = jo.ToObject<ShareFile.Api.Models.Item>();
           taskResult.TaskResultStatus = TaskResultStatus.Success;
-          taskResult.Object = folder; 
+          taskResult.Object = folder;
           taskResult.Data = jsonFmt;
           taskResult.EndDateTime = DateTime.Now;
         }
@@ -233,13 +237,13 @@ namespace Org.ShareFileApiClient
               filesToDelete++;
           }
 
-          SendMessageToHost("Files to delete: " + filesToDelete.ToString() + "."); 
+          SendMessageToHost("Files to delete: " + filesToDelete.ToString() + ".");
 
           foreach (var file in files)
           {
             if (file.__type == "ShareFile.Api.Models.File")
             {
-              SendMessageToHost("Deleting file '" + file.Name + "'."); 
+              SendMessageToHost("Deleting file '" + file.Name + "'.");
               var deleteTaskResult = DeleteItem(_oAuth2Token, file.Id);
             }
           }
@@ -295,7 +299,7 @@ namespace Org.ShareFileApiClient
           }
 
           int filesToDelete = files.Count;
-          
+
           foreach (var file in files)
           {
             if (file.__type == "ShareFile.Api.Models.File")
@@ -326,7 +330,7 @@ namespace Org.ShareFileApiClient
       {
         taskResult.TaskResultStatus = TaskResultStatus.Failed;
         taskResult.Code = 152;
-        taskResult.Message = "An exception occurred attempting to delete remote file named '" + remoteFileName + "' " + 
+        taskResult.Message = "An exception occurred attempting to delete remote file named '" + remoteFileName + "' " +
                              "from folder identified by ItemId '" + rootFolderId + "'.";
         taskResult.FullErrorDetail = ex.ToReport();
         taskResult.Exception = ex;
@@ -349,7 +353,7 @@ namespace Org.ShareFileApiClient
 
       var virusStatus = jc["VirusStatus"] as Newtonsoft.Json.Linq.JValue;
       if (virusStatus != null)
-        file.VirusStatus = g.ToEnum<ShareFile.Api.Models.FileVirusStatus>(virusStatus.Value.ToString(), FileVirusStatus.NotScanned); 
+        file.VirusStatus = g.ToEnum<ShareFile.Api.Models.FileVirusStatus>(virusStatus.Value.ToString(), FileVirusStatus.NotScanned);
 
       var name = jc["Name"] as Newtonsoft.Json.Linq.JValue;
       if (name != null)
@@ -409,7 +413,7 @@ namespace Org.ShareFileApiClient
         {
           if (FileExists(parentId, localPath))
           {
-            string fileName = Path.GetFileName(localPath); 
+            string fileName = Path.GetFileName(localPath);
 
             taskResult.TaskResultStatus = TaskResultStatus.Failed;
             taskResult.Message = "File name '" + fileName + "' already exists in remote folder and duplicate names are not allowed per configuration.";
@@ -479,7 +483,7 @@ namespace Org.ShareFileApiClient
         if (ex.Message.ToLower().Contains("(404) not found"))
           return false;
 
-        throw new Exception("An exception occurred attempting to determine whether a file to be uploaded already exists.", ex); 
+        throw new Exception("An exception occurred attempting to determine whether a file to be uploaded already exists.", ex);
       }
     }
 
@@ -496,7 +500,7 @@ namespace Org.ShareFileApiClient
         // Write MIME header
         ms.Write(boundaryBytes, 2, boundaryBytes.Length - 2);
         string header = String.Format(@"Content-Disposition: form-data; name=""{0}""; filename=""{1}""" +
-            "\r\nContent-Type: application/octet-stream\r\n\r\n", parameterName, file.Name);
+                                      "\r\nContent-Type: application/octet-stream\r\n\r\n", parameterName, file.Name);
         byte[] headerBytes = System.Text.Encoding.UTF8.GetBytes(header);
         ms.Write(headerBytes, 0, headerBytes.Length);
 
@@ -534,7 +538,9 @@ namespace Org.ShareFileApiClient
 
           do
           {
-            if (chunkSize > remaining) { chunkSize = remaining; }
+            if (chunkSize > remaining) {
+              chunkSize = remaining;
+            }
             postStream.Write(postBytes, offset, chunkSize);
 
             remaining -= chunkSize;
@@ -550,7 +556,7 @@ namespace Org.ShareFileApiClient
         if (response.StatusCode != HttpStatusCode.OK)
         {
           throw new Exception("HTTP status code other than 'OK' was returned when attempting to upload a file in the UploadMultiPartFile method - " +
-                              "status code is '" + response.StatusCode.ToString() + " (" + response.StatusDescription + ")."); 
+                              "status code is '" + response.StatusCode.ToString() + " (" + response.StatusDescription + ").");
         }
         response.Close();
       }
@@ -559,7 +565,7 @@ namespace Org.ShareFileApiClient
         throw new Exception("An exception occurred in the UploadMultiPartFile method while attempting to upload a file.", ex);
       }
     }
-    
+
     public TaskResult DeleteItem(OAuth2Token token, string itemId)
     {
       var taskResult = new TaskResult("DeleteItem");
@@ -584,7 +590,7 @@ namespace Org.ShareFileApiClient
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attempting to delete item with ID = '" + itemId + "'.", ex); 
+        throw new Exception("An exception occurred attempting to delete item with ID = '" + itemId + "'.", ex);
       }
     }
 
@@ -597,7 +603,7 @@ namespace Org.ShareFileApiClient
         HttpWebRequest request = WebRequest.CreateHttp(uri);
         AddAuthorizationHeader(request, _oAuth2Token);
         request.AllowAutoRedirect = true;
-        
+
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         using (var source = new BufferedStream(response.GetResponseStream()))
         {
@@ -619,7 +625,7 @@ namespace Org.ShareFileApiClient
         {
           var archiveTaskResult = UploadFile(archiveFolderId, localPath, true, "DownloadFile");
           archiveTaskResult.TaskName = "ArchiveFile";
-          taskResult.TaskResultSet.Add(taskResult.TaskResultSet.Count, archiveTaskResult); 
+          taskResult.TaskResultSet.Add(taskResult.TaskResultSet.Count, archiveTaskResult);
         }
 
         if (!suppressDelete)

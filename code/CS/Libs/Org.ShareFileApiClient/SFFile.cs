@@ -8,13 +8,20 @@ namespace Org.ShareFileApiClient
 {
   public class SFFile : SFBase
   {
-    public long Size { get; set; }
-    public override SFType SFType { get { return SFType.File; } }
+    public long Size {
+      get;
+      set;
+    }
+    public override SFType SFType {
+      get {
+        return SFType.File;
+      }
+    }
 
     public SFFile(SFFolder parentFolder)
     {
       this.ParentFolder = parentFolder;
-      this.Size = 0; 
+      this.Size = 0;
     }
   }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Org.DocGen.DocSpec
 {
-    public class PenSet : Dictionary<string, Pen>
-    {
-    }
+  public class PenSet : Dictionary<string, Pen>
+  {
+  }
 }

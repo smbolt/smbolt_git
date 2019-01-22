@@ -53,14 +53,14 @@ namespace Org.GS.Database
       DbTableSet ts = new DbTableSet();
 
       string sql = "SELECT " +
-                    "  s.[name] AS [Schema], " +
-                    "  t.[name] AS [Name], " +
-                    "  [type] AS [Type], " +
-                    "  [create_date] AS [CreateDate], " +
-                    "  [modify_date] AS [ModifyDate] " +
-                    "FROM sys.tables t " +
-                    "INNER JOIN sys.schemas s ON t.schema_id = s.schema_id " +
-                    "ORDER BY name ";
+                   "  s.[name] AS [Schema], " +
+                   "  t.[name] AS [Name], " +
+                   "  [type] AS [Type], " +
+                   "  [create_date] AS [CreateDate], " +
+                   "  [modify_date] AS [ModifyDate] " +
+                   "FROM sys.tables t " +
+                   "INNER JOIN sys.schemas s ON t.schema_id = s.schema_id " +
+                   "ORDER BY name ";
 
       SqlDataAdapter da = new SqlDataAdapter(sql, _conn);
       DataSet ds = new DataSet();
@@ -123,7 +123,7 @@ namespace Org.GS.Database
 
       foreach (Type t in types)
       {
-        var attr = t.GetCustomAttributes().OfType<IsDbTable>().FirstOrDefault();  
+        var attr = t.GetCustomAttributes().OfType<IsDbTable>().FirstOrDefault();
         if (attr != null)
           typesToReturn.Add(t);
       }

@@ -124,7 +124,7 @@ namespace Org.Metrics
                     var volFactor = _volumeFactor[metricDateTime.Hour];
                     var metricFactor = _metricFactor[metricCode];
                     var randomNbr = r.Next(0, 100);
-                                        
+
                     decimal metricValue = 0M;
                     switch (metricCode)
                     {
@@ -212,17 +212,17 @@ namespace Org.Metrics
                     if (metricsLoaded % 1000 == 0)
                     {
                       lblStatus.Text = metricDateTime.ToString("yyyyMMdd HH:mm:ss") + "  " +
-                                reqPerSec.ToString("###,###,##0.00").PadToJustifyRight(20) + "  " +
-                                cpu.ToString("###,###,##0.00").PadToJustifyRight(20) + "  " +
-                                excessCpu.ToString("###,###,##0.000").PadToJustifyRight(20) + "  " +
-                                reqQueued.ToString("#,##0").PadToJustifyRight(10) + "  " +
-                                availMem.ToString("#,##0").PadToJustifyRight(10) + "  " +
-                                metricsLoaded.ToString() + "," +
-                                targetSystemCode.ToString() + "," +
-                                targetAppCode.ToString() + "," +
-                                targetServerCode.ToString() + "," +
-                                metricCode.ToString();
-                      Application.DoEvents();                      
+                                       reqPerSec.ToString("###,###,##0.00").PadToJustifyRight(20) + "  " +
+                                       cpu.ToString("###,###,##0.00").PadToJustifyRight(20) + "  " +
+                                       excessCpu.ToString("###,###,##0.000").PadToJustifyRight(20) + "  " +
+                                       reqQueued.ToString("#,##0").PadToJustifyRight(10) + "  " +
+                                       availMem.ToString("#,##0").PadToJustifyRight(10) + "  " +
+                                       metricsLoaded.ToString() + "," +
+                                       targetSystemCode.ToString() + "," +
+                                       targetAppCode.ToString() + "," +
+                                       targetServerCode.ToString() + "," +
+                                       metricCode.ToString();
+                      Application.DoEvents();
                     }
                   }
 
@@ -234,7 +234,7 @@ namespace Org.Metrics
 
           conn.Close();
         }
-        
+
 
         this.Cursor = Cursors.Default;
       }
@@ -359,7 +359,7 @@ namespace Org.Metrics
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred the initialization of the program." + g.crlf2 +
-          ex.ToReport(), "Metrics - Program Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ex.ToReport(), "Metrics - Program Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
     }

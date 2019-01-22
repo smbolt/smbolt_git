@@ -23,11 +23,26 @@ namespace Org.GS.Network
 
   public class SerialComEventArgs
   {
-    public SerialComEventType SerialComEventType { get; set; }
-    public SerialComPortStatus SerialComPortStatus { get; set; }
-    public string TextData { get; set; }
-    public byte[] BinaryData { get; set; }
-    public string Message { get; set; }
+    public SerialComEventType SerialComEventType {
+      get;
+      set;
+    }
+    public SerialComPortStatus SerialComPortStatus {
+      get;
+      set;
+    }
+    public string TextData {
+      get;
+      set;
+    }
+    public byte[] BinaryData {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
 
     public SerialComEventArgs()
     {

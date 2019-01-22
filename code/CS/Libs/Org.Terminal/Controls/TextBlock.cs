@@ -16,11 +16,15 @@ namespace Org.Terminal.Controls
   public partial class TextBlock : MFBase
   {
     private Rectangle _prevCursorRect;
-    public string TextBlockName { get { return this.Name; } }
+    public string TextBlockName {
+      get {
+        return this.Name;
+      }
+    }
 
     private Record _record;
-    public Record Record 
-    { 
+    public Record Record
+    {
       get
       {
         return _record;
@@ -124,14 +128,14 @@ namespace Org.Terminal.Controls
           break;
 
         case EventType.MouseLeave:
-          break; 
+          break;
 
         case EventType.Paint:
-          PaintObject(e.PaintEventArgs); 
+          PaintObject(e.PaintEventArgs);
           break;
 
         case EventType.Click:
-          this.Click(e); 
+          this.Click(e);
           this.Focus();
           ActivateCursor();
           break;
@@ -166,7 +170,7 @@ namespace Org.Terminal.Controls
     public void PaintObject(PaintEventArgs e)
     {
       if (this.Name == "@LC0")
-        Console.WriteLine("TextBlock.PaintObject"); 
+        Console.WriteLine("TextBlock.PaintObject");
 
       if (BaseBitmap == null)
         return;
@@ -176,7 +180,7 @@ namespace Org.Terminal.Controls
 
     public void ClearBitmap()
     {
-      this.BaseBitmap = null; 
+      this.BaseBitmap = null;
     }
 
     public void Draw()
@@ -185,7 +189,7 @@ namespace Org.Terminal.Controls
         BaseBitmap = new Bitmap(this.Width, this.Height);
 
       if (this.Name == "@LC1")
-        Console.WriteLine("Draw width=" + this.Width.ToString() + "  height=" + this.Height.ToString()); 
+        Console.WriteLine("Draw width=" + this.Width.ToString() + "  height=" + this.Height.ToString());
 
       using (var gr = Graphics.FromImage(BaseBitmap))
       {
@@ -211,7 +215,7 @@ namespace Org.Terminal.Controls
     {
       if (base.IsCursorActive)
         return;
-      
+
       base.IsCursorActive = true;
       base.IsCursorVisible = true;
       BlinkCursor();
@@ -237,7 +241,7 @@ namespace Org.Terminal.Controls
       int charPos = this.CurrPos;
 
       var cursorRect = new Rectangle(base.CharLeftPadding + charPos * base.CharSize.Width + 3, base.CharTopPadding + base.CharSize.Height + 0, base.CharSize.Width, 2);
-      //var removeCursorRect = new Rectangle(base.CharLeftPadding, base.CharTopPadding + base.CharSize.Height + 0, this.Width - base.CharLeftPadding, 2); 
+      //var removeCursorRect = new Rectangle(base.CharLeftPadding, base.CharTopPadding + base.CharSize.Height + 0, this.Width - base.CharLeftPadding, 2);
 
       using (var gr = base.pb.CreateGraphics())
       {
@@ -267,23 +271,23 @@ namespace Org.Terminal.Controls
 
     public TextBlock CloneForVFlex(int lineNumber)
     {
-      string name = this.Name; 
+      string name = this.Name;
       if (!name.StartsWith("@"))
-        throw new Exception("The name of VFLEX source controls must start with '@'. The name of the VFLEX source control " + 
+        throw new Exception("The name of VFLEX source controls must start with '@'. The name of the VFLEX source control " +
                             "is '" + name + "'.");
 
-      string nameWork = name.Replace("@", String.Empty); 
+      string nameWork = name.Replace("@", String.Empty);
 
       if (!nameWork.StartsWith("LC") && !nameWork.StartsWith("TL"))
-        throw new Exception("The name of VFLEX source controls must start with '@LC' or '@TL'. The name of the VFLEX source control " + 
+        throw new Exception("The name of VFLEX source controls must start with '@LC' or '@TL'. The name of the VFLEX source control " +
                             "is '" + name + "'.");
 
       string nameBase = nameWork.Substring(0, 2);
       nameWork = nameWork.Substring(2);
       if (nameWork.IsNotInteger())
       {
-        throw new Exception("The name of VFLEX source controls must include only the line original line number folowing the " + 
-                            "'@LC' or '@TL' that the name starts with. The name of the VFLEX source control " + 
+        throw new Exception("The name of VFLEX source controls must include only the line original line number folowing the " +
+                            "'@LC' or '@TL' that the name starts with. The name of the VFLEX source control " +
                             "is '" + name + "'.");
       }
 
@@ -297,7 +301,7 @@ namespace Org.Terminal.Controls
       clone.TabStop = newFieldSpec.TabStop;
 
       bool isVFlexControl = clone.IsVFlexControl;
-            
+
       return clone;
     }
   }

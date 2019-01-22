@@ -15,14 +15,14 @@ namespace Org.FileUtility
   {
     private a a;
 
-		private bool _firstShowing = true;
+    private bool _firstShowing = true;
 
     private string _filePath = String.Empty;
-		private int _lineNumber = -1;
-		private int _charNumber = -1;
-		private int _mouseX = -1;
-		private int _mouseY = -1;
-    private int _defaultFileLimit = 0; 
+    private int _lineNumber = -1;
+    private int _charNumber = -1;
+    private int _mouseX = -1;
+    private int _mouseY = -1;
+    private int _defaultFileLimit = 0;
 
     public frmMain()
     {
@@ -31,7 +31,7 @@ namespace Org.FileUtility
     }
 
     private void Action(object sender, EventArgs e)
-    {      
+    {
       string action = g.GetActionFromEvent(sender);
 
       switch (action)
@@ -52,8 +52,8 @@ namespace Org.FileUtility
           FindRecentChanges();
           break;
 
-				case "BrowseSearchPath":
-					BrowseSearchPath();
+        case "BrowseSearchPath":
+          BrowseSearchPath();
           break;
 
         case "Exit":
@@ -62,8 +62,8 @@ namespace Org.FileUtility
       }
     }
 
-		private void FindFiles()
-		{
+    private void FindFiles()
+    {
       txtOut.Clear();
       Application.DoEvents();
 
@@ -79,7 +79,7 @@ namespace Org.FileUtility
 
       char[] delim = new char[] { ',' };
 
-      searchParms.RootPath = cboSearchPath.Text; 
+      searchParms.RootPath = cboSearchPath.Text;
       searchParms.Extensions = cboSearchFilters.Text.Trim().Split(delim, StringSplitOptions.RemoveEmptyEntries).ToList();
       searchParms.ContentIncludes = txtSearchPatternsInclude.Text.Trim().Split(delim, StringSplitOptions.RemoveEmptyEntries).ToList();
       searchParms.ContentExcludes = txtSearchPatternsExclude.Text.Trim().Split(delim, StringSplitOptions.RemoveEmptyEntries).ToList();
@@ -87,16 +87,16 @@ namespace Org.FileUtility
 
       var rootFolder = BuildFileList(searchParms, true);
 
-			StringBuilder sb = new StringBuilder();
-			foreach (var file in rootFolder.FileList.Values)
-			{
-				sb.Append(file.FullPath + g.crlf); 
-			}
+      StringBuilder sb = new StringBuilder();
+      foreach (var file in rootFolder.FileList.Values)
+      {
+        sb.Append(file.FullPath + g.crlf);
+      }
 
-			txtOut.Text = "The results of the search are as follows..." + g.crlf + sb.ToString();
+      txtOut.Text = "The results of the search are as follows..." + g.crlf + sb.ToString();
 
       this.Cursor = Cursors.Default;
-		}
+    }
 
     private void RunSearch()
     {
@@ -115,13 +115,13 @@ namespace Org.FileUtility
 
       char[] delim = new char[] { ',' };
 
-      searchParms.RootPath = cboSearchPath.Text; 
+      searchParms.RootPath = cboSearchPath.Text;
       searchParms.Extensions = cboSearchFilters.Text.Trim().Split(delim, StringSplitOptions.RemoveEmptyEntries).ToList();
       searchParms.ContentIncludes = txtSearchPatternsInclude.Text.Trim().Split(delim, StringSplitOptions.RemoveEmptyEntries).ToList();
       searchParms.ContentExcludes = txtSearchPatternsExclude.Text.Trim().Split(delim, StringSplitOptions.RemoveEmptyEntries).ToList();
 
       var rootFolder = BuildFileList(searchParms, false);
-      
+
       string searchResults = rootFolder.RunSearch();
 
       if (searchResults.Trim().Length == 0)
@@ -181,7 +181,7 @@ namespace Org.FileUtility
     }
 
     private OSFolder BuildFileList(SearchParms searchParms, bool wireUpEvents)
-    {      
+    {
       var rootFolder = new OSFolder();
       rootFolder.FullPath = cboSearchPath.Text.Trim();
       rootFolder.RootFolderPath = cboSearchPath.Text.Trim();
@@ -198,7 +198,7 @@ namespace Org.FileUtility
       rootFolder.BuildFolderAndFileList();
       return rootFolder;
     }
-    
+
     private bool FileLimitReached(OSFolder rootFolder, bool processAllFolders)
     {
       int folderOmitCount = processAllFolders ? 0 : 1;
@@ -229,7 +229,7 @@ namespace Org.FileUtility
           txtOut.Text = sb.ToString();
           Application.DoEvents();
         }
-        
+
         folder.IsProcessed = true;
       }
 
@@ -258,16 +258,16 @@ namespace Org.FileUtility
     {
       frmCode fCode = new frmCode(_filePath);
 
-			fCode.ShowDialog();
+      fCode.ShowDialog();
     }
 
-		private void BrowseSearchPath()
-		{
-			if (dlgFolderBrowser.ShowDialog() == DialogResult.OK)
-			{
-				cboSearchPath.Text = dlgFolderBrowser.SelectedPath;
-			}
-		}
+    private void BrowseSearchPath()
+    {
+      if (dlgFolderBrowser.ShowDialog() == DialogResult.OK)
+      {
+        cboSearchPath.Text = dlgFolderBrowser.SelectedPath;
+      }
+    }
 
     private void InitializeForm()
     {
@@ -337,7 +337,7 @@ namespace Org.FileUtility
       if (cboSearchPath.Text.Trim().Length == 0)
       {
         MessageBox.Show("Please enter a search path or use the File|Open menu item to locate a path.", "File Utility Error",
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
         cboSearchPath.Focus();
         return false;
       }
@@ -345,7 +345,7 @@ namespace Org.FileUtility
       if (!Directory.Exists(cboSearchPath.Text.Trim()))
       {
         MessageBox.Show("The search path entered is invalid.", "File Utility Error",
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
         cboSearchPath.Focus();
         return false;
       }
@@ -355,7 +355,7 @@ namespace Org.FileUtility
         if (txtSearchPatternsInclude.Text.Trim().Length == 0)
         {
           MessageBox.Show("No search patterns were entered - please enter search patterns to match.", "File Utility Error",
-              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                          MessageBoxButtons.OK, MessageBoxIcon.Error);
           txtSearchPatternsInclude.SelectAll();
           txtSearchPatternsInclude.Focus();
           return false;
@@ -386,117 +386,117 @@ namespace Org.FileUtility
 
     }
 
-		private string GetFilePath(int lineNumber, int charNumber)
-		{
-			if (lineNumber == -1 || charNumber == -1)
-				return String.Empty;
+    private string GetFilePath(int lineNumber, int charNumber)
+    {
+      if (lineNumber == -1 || charNumber == -1)
+        return String.Empty;
 
-			string fileLineNumber = String.Empty;
-			string fileName = String.Empty;
-			string folderName = String.Empty;
+      string fileLineNumber = String.Empty;
+      string fileName = String.Empty;
+      string folderName = String.Empty;
 
-			var line = txtOut.GetLine(lineNumber);
-			string lineText = line.Text.Trim();
-			if (lineText.IsBlank())
-				return String.Empty;
+      var line = txtOut.GetLine(lineNumber);
+      string lineText = line.Text.Trim();
+      if (lineText.IsBlank())
+        return String.Empty;
 
-			string[] tokens = lineText.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
+      string[] tokens = lineText.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
-			if (tokens.Length < 2)
-				return String.Empty;
+      if (tokens.Length < 2)
+        return String.Empty;
 
-			if (tokens[0].Length == 3 && tokens[0].IsNumeric() && tokens[1].ToLower() == "folder:")
-				return String.Empty;
+      if (tokens[0].Length == 3 && tokens[0].IsNumeric() && tokens[1].ToLower() == "folder:")
+        return String.Empty;
 
-			if (tokens[0].ToLower() == "file:")
-				fileName = tokens[1];
-			else
-				fileLineNumber = tokens[0];
+      if (tokens[0].ToLower() == "file:")
+        fileName = tokens[1];
+      else
+        fileLineNumber = tokens[0];
 
-			while (lineNumber > -1 && fileName.IsBlank())
-			{
-				lineNumber--;
-				line = txtOut.GetLine(lineNumber);
-				if (line == null)
-					return String.Empty;
-				lineText = line.Text.Trim();
-				tokens = lineText.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
-				if (tokens.Length > 1)
-				{
-					if (tokens[0].ToLower() == "file:")
-						fileName = tokens[1];
-				}
-			}
+      while (lineNumber > -1 && fileName.IsBlank())
+      {
+        lineNumber--;
+        line = txtOut.GetLine(lineNumber);
+        if (line == null)
+          return String.Empty;
+        lineText = line.Text.Trim();
+        tokens = lineText.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
+        if (tokens.Length > 1)
+        {
+          if (tokens[0].ToLower() == "file:")
+            fileName = tokens[1];
+        }
+      }
 
-			while (lineNumber > -1 && folderName.IsBlank())
-			{
-				lineNumber--;
-				line = txtOut.GetLine(lineNumber);
-				lineText = line.Text.Trim();
-				tokens = lineText.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
-				if (tokens.Length > 2)
-				{
-					if (tokens[1].ToLower() == "folder:")
-						folderName = tokens[2];
-				}
-			}
+      while (lineNumber > -1 && folderName.IsBlank())
+      {
+        lineNumber--;
+        line = txtOut.GetLine(lineNumber);
+        lineText = line.Text.Trim();
+        tokens = lineText.Split(Constants.SpaceDelimiter, StringSplitOptions.RemoveEmptyEntries);
+        if (tokens.Length > 2)
+        {
+          if (tokens[1].ToLower() == "folder:")
+            folderName = tokens[2];
+        }
+      }
 
-			if (fileName.IsBlank() || folderName.IsBlank())
-				return String.Empty;
+      if (fileName.IsBlank() || folderName.IsBlank())
+        return String.Empty;
 
-			string fullPath = folderName + @"\" + fileName;
+      string fullPath = folderName + @"\" + fileName;
 
-			if (!File.Exists(fullPath))
-				return String.Empty;
+      if (!File.Exists(fullPath))
+        return String.Empty;
 
-			return fullPath;
-		}
+      return fullPath;
+    }
 
-		private void ctxMnuResults_Opening(object sender, CancelEventArgs e)
-		{
-			_filePath = String.Empty;
+    private void ctxMnuResults_Opening(object sender, CancelEventArgs e)
+    {
+      _filePath = String.Empty;
 
-			if (_mouseX > -1 && _mouseY > -1)
-			{
-				var place = txtOut.PointToPlace(new Point(_mouseX, _mouseY));
-				if (place != null)
-				{
-					_lineNumber = place.iLine;
-					_charNumber = place.iChar;
+      if (_mouseX > -1 && _mouseY > -1)
+      {
+        var place = txtOut.PointToPlace(new Point(_mouseX, _mouseY));
+        if (place != null)
+        {
+          _lineNumber = place.iLine;
+          _charNumber = place.iChar;
 
-					_filePath = GetFilePath(_lineNumber, _charNumber);
-				}
-			}
+          _filePath = GetFilePath(_lineNumber, _charNumber);
+        }
+      }
 
-			if (_filePath == String.Empty)
-				e.Cancel = true;
-		}
-		
-		private void rtxtOut_MouseMove(object sender, MouseEventArgs e)
-		{
-			_mouseX = e.X;
-			_mouseY = e.Y;
-		}
+      if (_filePath == String.Empty)
+        e.Cancel = true;
+    }
 
-		private void frmMain_KeyUp(object sender, KeyEventArgs e)
-		{
-			if (!btnRunSearch.Enabled)
-				return;
+    private void rtxtOut_MouseMove(object sender, MouseEventArgs e)
+    {
+      _mouseX = e.X;
+      _mouseY = e.Y;
+    }
 
-			if (e.KeyCode == Keys.Enter)
-			{
-				RunSearch();
-			}
-		}
+    private void frmMain_KeyUp(object sender, KeyEventArgs e)
+    {
+      if (!btnRunSearch.Enabled)
+        return;
 
-		private void frmMain_Shown(object sender, EventArgs e)
-		{
-			if (!_firstShowing)
-				return;
+      if (e.KeyCode == Keys.Enter)
+      {
+        RunSearch();
+      }
+    }
 
-			txtSearchPatternsExclude.Select();
-			txtSearchPatternsInclude.Focus();
-		}
+    private void frmMain_Shown(object sender, EventArgs e)
+    {
+      if (!_firstShowing)
+        return;
+
+      txtSearchPatternsExclude.Select();
+      txtSearchPatternsInclude.Focus();
+    }
 
     private void cboChangeTimeFrame_SelectedIndexChanged(object sender, EventArgs e)
     {

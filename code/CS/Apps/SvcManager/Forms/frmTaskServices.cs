@@ -50,7 +50,7 @@ namespace Org.SvcManager
     private void AddNewTaskService()
     {
       List<string> hostNames = new List<string>();
-      hostNames.Add("OKC1WEB1001"); 
+      hostNames.Add("OKC1WEB1001");
 
       //using (var fAddOrUpdateTaskService = new frmAddOrUpdateTaskService(true, hostNames, _taskServiceSet))
       //{
@@ -73,7 +73,7 @@ namespace Org.SvcManager
 
         this.Cursor = Cursors.WaitCursor;
         var dbSpec = cboEnvironment.Text == "Prod" ? _prodDbSpec : _testDbSpec;
-        
+
         using (var taskRepo = new TaskRepository(dbSpec))
         {
           _taskServiceSet = taskRepo.GetTaskServiceSet();

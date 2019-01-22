@@ -10,8 +10,15 @@ namespace Org.Terminal.BMS
 {
   public class BmsStatementSet : SortedList<int, BmsStatement>
   {
-    public BmsMapErrorSet BmsMapErrorSet { get; set; }
-    private int NextStatementNumber { get { return Get_NextStatementNumber(); } }
+    public BmsMapErrorSet BmsMapErrorSet {
+      get;
+      set;
+    }
+    private int NextStatementNumber {
+      get {
+        return Get_NextStatementNumber();
+      }
+    }
 
     public void Load(string bmsString, BmsMapErrorSet bmsMapErrorSet)
     {
@@ -19,12 +26,12 @@ namespace Org.Terminal.BMS
       {
         this.BmsMapErrorSet = bmsMapErrorSet;
 
-        this.Clear();        
+        this.Clear();
 
         string[] rawLines = bmsString.Replace("\r", String.Empty).Split(Constants.NewLineDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
         BmsStatement stmt = null;
-        int lineNumber = 0; 
+        int lineNumber = 0;
 
         foreach (var line in rawLines)
         {
@@ -64,7 +71,7 @@ namespace Org.Terminal.BMS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to create a BmsStatementSet from a BMS map string.", ex); 
+        throw new Exception("An exception occurred while attempting to create a BmsStatementSet from a BMS map string.", ex);
       }
     }
 
@@ -81,7 +88,7 @@ namespace Org.Terminal.BMS
 
           bmsStmt.ExtractParentheticals();
           bmsStmt.ExtractParameters();
-          
+
           switch (bmsStmt.BmsStatementType)
           {
             case BmsStatementType.PRINT:
@@ -164,7 +171,7 @@ namespace Org.Terminal.BMS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to compile the BmsStatementSet.", ex); 
+        throw new Exception("An exception occurred while attempting to compile the BmsStatementSet.", ex);
       }
     }
 
@@ -245,7 +252,7 @@ namespace Org.Terminal.BMS
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to identify BMS statement types.", ex); 
+        throw new Exception("An exception occurred while attempting to identify BMS statement types.", ex);
       }
     }
 

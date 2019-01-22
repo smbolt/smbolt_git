@@ -13,7 +13,10 @@ namespace Org.GS.Configuration
   public class ConfigGroupAssignment
   {
     [XMap]
-    public string GroupID { get; set; }
+    public string GroupID {
+      get;
+      set;
+    }
 
     public ConfigGroupAssignment()
     {

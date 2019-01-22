@@ -17,7 +17,7 @@ namespace Org.GS
     Stopped = 3,
     Unknown = 99
   }
-  
+
   public enum SiteCommand
   {
     Start,
@@ -29,11 +29,20 @@ namespace Org.GS
   public class WebSite
   {
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
     [XMap]
-    public int Id { get; set; }
+    public int Id {
+      get;
+      set;
+    }
     [XMap]
-    public WebSiteStatus WebSiteStatus { get; set; }
+    public WebSiteStatus WebSiteStatus {
+      get;
+      set;
+    }
 
     public WebSite()
     {

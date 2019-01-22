@@ -11,20 +11,29 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "Event")]
-    public partial class Event
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "Event")]
+  public partial class Event
+  {
+    public Event()
     {
-        public Event()
-        {
-            this.AppLogs = new HashSet<AppLog>();
-        }
-    
-        public int EventCode { get; set; }
-        public string EventDesc { get; set; }
-    
-        public virtual ICollection<AppLog> AppLogs { get; set; }
+      this.AppLogs = new HashSet<AppLog>();
     }
+
+    public int EventCode {
+      get;
+      set;
+    }
+    public string EventDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<AppLog> AppLogs {
+      get;
+      set;
+    }
+  }
 }

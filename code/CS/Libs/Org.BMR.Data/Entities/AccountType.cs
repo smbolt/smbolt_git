@@ -11,20 +11,29 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "AccountType")]
-    public partial class AccountType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "AccountType")]
+  public partial class AccountType
+  {
+    public AccountType()
     {
-        public AccountType()
-        {
-            this.Accounts = new HashSet<Account>();
-        }
-    
-        public int AccountTypeId { get; set; }
-        public string AccountTypeDesc { get; set; }
-    
-        public virtual ICollection<Account> Accounts { get; set; }
+      this.Accounts = new HashSet<Account>();
     }
+
+    public int AccountTypeId {
+      get;
+      set;
+    }
+    public string AccountTypeDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Account> Accounts {
+      get;
+      set;
+    }
+  }
 }

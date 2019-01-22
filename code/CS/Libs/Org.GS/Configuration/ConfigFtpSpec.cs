@@ -12,38 +12,98 @@ namespace Org.GS.Configuration
   public class ConfigFtpSpec : ConfigObjectBase
   {
     [OrgConfigItem]
-    public string FtpServer { get; set; }
+    public string FtpServer {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public string FtpUserId { get; set; }
+    public string FtpUserId {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public string FtpPassword { get; set; }
+    public string FtpPassword {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public bool FtpKeepAlive { get; set; }
+    public bool FtpKeepAlive {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public bool FtpUsePassive { get; set; }
+    public bool FtpUsePassive {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public bool FtpUseBinary { get; set; }
+    public bool FtpUseBinary {
+      get;
+      set;
+    }
     [OrgConfigItem]
-    public int FtpBufferSize { get; set; }
+    public int FtpBufferSize {
+      get;
+      set;
+    }
 
-    public string VerifiedFtpServer { get; set; }
-    public string VerifiedFtpUserId { get; set; }
-    public string VerifiedFtpPassword { get; set; }
-    public bool VerifiedFtpKeepAlive { get; set; }
-    public bool VerifiedFtpUsePassive { get; set; }
-    public bool VerifiedFtpUseBinary { get; set; }
-    public int VerifiedFtpBufferSize { get; set; }
+    public string VerifiedFtpServer {
+      get;
+      set;
+    }
+    public string VerifiedFtpUserId {
+      get;
+      set;
+    }
+    public string VerifiedFtpPassword {
+      get;
+      set;
+    }
+    public bool VerifiedFtpKeepAlive {
+      get;
+      set;
+    }
+    public bool VerifiedFtpUsePassive {
+      get;
+      set;
+    }
+    public bool VerifiedFtpUseBinary {
+      get;
+      set;
+    }
+    public int VerifiedFtpBufferSize {
+      get;
+      set;
+    }
 
     private string OriginalFtpServer;
     private string OriginalFtpUserId;
     private string OriginalFtpPassword;
-    private bool OriginalFtpKeepAlive { get; set; }
-    private bool OriginalFtpUsePassive { get; set; }
-    private bool OriginalFtpUseBinary { get; set; }
-    private int OriginalFtpBufferSize { get; set; }
+    private bool OriginalFtpKeepAlive {
+      get;
+      set;
+    }
+    private bool OriginalFtpUsePassive {
+      get;
+      set;
+    }
+    private bool OriginalFtpUseBinary {
+      get;
+      set;
+    }
+    private int OriginalFtpBufferSize {
+      get;
+      set;
+    }
 
-    public bool FtpConnectionVerified { get; set; }
-    public bool SkipFtpConnectionConfig { get; set; }
+    public bool FtpConnectionVerified {
+      get;
+      set;
+    }
+    public bool SkipFtpConnectionConfig {
+      get;
+      set;
+    }
 
     //public override ConfigStatus ConfigStatus
     //{
@@ -53,16 +113,20 @@ namespace Org.GS.Configuration
 
     public string DescriptionString
     {
-      get { return GetDescriptionString(); }
+      get {
+        return GetDescriptionString();
+      }
     }
 
     public override bool IsUpdated
     {
-      get { return IsObjectUpdated(); }
+      get {
+        return IsObjectUpdated();
+      }
     }
 
     public ConfigFtpSpec(string namingPrefix)
-        : base(namingPrefix)
+      : base(namingPrefix)
     {
       Initialize();
     }
@@ -97,13 +161,13 @@ namespace Org.GS.Configuration
       if (this.FtpConnectionVerified)
       {
         if (this.VerifiedFtpServer == this.FtpServer &&
-          this.VerifiedFtpUserId == this.FtpUserId &&
-          this.VerifiedFtpPassword == this.FtpPassword &&
-          this.VerifiedFtpKeepAlive == this.FtpKeepAlive &&
-          this.VerifiedFtpUsePassive == this.FtpUsePassive &&
-          this.VerifiedFtpUseBinary == this.FtpUseBinary &&
-          this.VerifiedFtpBufferSize == this.FtpBufferSize
-          )
+            this.VerifiedFtpUserId == this.FtpUserId &&
+            this.VerifiedFtpPassword == this.FtpPassword &&
+            this.VerifiedFtpKeepAlive == this.FtpKeepAlive &&
+            this.VerifiedFtpUsePassive == this.FtpUsePassive &&
+            this.VerifiedFtpUseBinary == this.FtpUseBinary &&
+            this.VerifiedFtpBufferSize == this.FtpBufferSize
+           )
           return true;
       }
 
@@ -117,19 +181,19 @@ namespace Org.GS.Configuration
 
     public bool IsReadyToConnect()
     {
-        return (this.FtpServer.IsNotBlank() && this.FtpUserId.IsNotBlank() && this.FtpPassword.IsNotBlank());
+      return (this.FtpServer.IsNotBlank() && this.FtpUserId.IsNotBlank() && this.FtpPassword.IsNotBlank());
     }
 
     private bool IsObjectUpdated()
     {
       if (this.OriginalFtpServer == this.FtpServer &&
-        this.OriginalFtpUserId == this.FtpUserId &&
-        this.OriginalFtpPassword == this.FtpPassword &&
-        this.OriginalFtpKeepAlive == this.FtpKeepAlive &&
-        this.OriginalFtpUsePassive == this.FtpUsePassive &&
-        this.OriginalFtpUseBinary == this.FtpUseBinary &&
-        this.OriginalFtpBufferSize == this.FtpBufferSize
-        )
+          this.OriginalFtpUserId == this.FtpUserId &&
+          this.OriginalFtpPassword == this.FtpPassword &&
+          this.OriginalFtpKeepAlive == this.FtpKeepAlive &&
+          this.OriginalFtpUsePassive == this.FtpUsePassive &&
+          this.OriginalFtpUseBinary == this.FtpUseBinary &&
+          this.OriginalFtpBufferSize == this.FtpBufferSize
+         )
         return false;
 
       return true;

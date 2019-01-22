@@ -17,7 +17,7 @@ namespace Org.Terminal.BMS
 
       foreach (var bmsLine in this.Values)
       {
-        sb.Append(bmsLine.LineText.TrimEnd() + " "); 
+        sb.Append(bmsLine.LineText.TrimEnd() + " ");
       }
 
       return sb.ToString();

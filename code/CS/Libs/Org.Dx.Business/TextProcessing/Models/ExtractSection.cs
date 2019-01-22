@@ -12,16 +12,28 @@ namespace Org.Dx.Business.TextProcessing
   public class ExtractSection
   {
     [XMap(IsKey = true)]
-    public string SectionName { get; set; }
+    public string SectionName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Prefix { get; set; }
+    public string Prefix {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Suffix { get; set; }
+    public string Suffix {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Rectangle { get; set; }
+    public string Rectangle {
+      get;
+      set;
+    }
 
     public ExtractSection()
     {

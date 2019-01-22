@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Org.GS 
+namespace Org.GS
 {
   public class AssemblyMapSet : Dictionary<string, AssemblyMap>
   {
@@ -12,7 +12,7 @@ namespace Org.GS
     {
       StringBuilder sb = new StringBuilder();
 
-			foreach (var map in this.Values)
+      foreach (var map in this.Values)
       {
         sb.Append("Assembly Name" + g.crlf);
         sb.Append("  " + map.AssemblyName + g.crlf);

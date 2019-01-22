@@ -24,7 +24,11 @@ namespace Org.Diff
     private string _newRawData;
     private bool[] _newMods;
 
-    public string Report { get { return Get_Report(); } }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     private readonly string[] emptyStringArray = new string[0];
 
@@ -54,16 +58,16 @@ namespace Org.Diff
 
 
       return CreateCustomDiffs(
-          oldText,
-          newText,
-          ignoreWhitespace,
-          ignoreCase,
-          str =>
-          {
-            var s = new string[str.Length];
-            for (int i = 0; i < str.Length; i++) s[i] = str[i].ToString();
-            return s;
-          });
+               oldText,
+               newText,
+               ignoreWhitespace,
+               ignoreCase,
+               str =>
+      {
+        var s = new string[str.Length];
+        for (int i = 0; i < str.Length; i++) s[i] = str[i].ToString();
+        return s;
+      });
     }
 
     public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
@@ -78,11 +82,11 @@ namespace Org.Diff
 
 
       return CreateCustomDiffs(
-          oldText,
-          newText,
-          ignoreWhitespace,
-          ignoreCase,
-          str => SmartSplit(str, separators));
+               oldText,
+               newText,
+               ignoreWhitespace,
+               ignoreCase,
+               str => SmartSplit(str, separators));
     }
 
     public DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, Func<string, string[]> chunker)
@@ -112,13 +116,13 @@ namespace Org.Diff
 
       BuildModificationData();
 
-      //string report = "Old Hashed Pieces" + g.crlf + 
+      //string report = "Old Hashed Pieces" + g.crlf +
       //                _oldHashedPieces.ToGrid(10, 6) + g.crlf2 +
       //                "Old Modifications" + g.crlf +
       //                _oldMods.ToGrid(10, 6) + g.crlf2 +
-      //                "New Hashed Pieces" + g.crlf + 
+      //                "New Hashed Pieces" + g.crlf +
       //                _newHashedPieces.ToGrid(10, 6) + g.crlf2 +
-      //                "New Modifications" + g.crlf + 
+      //                "New Modifications" + g.crlf +
       //                _newMods.ToGrid(10, 6);
 
       string report = this.Report;
@@ -402,8 +406,8 @@ namespace Org.Diff
     private void BuildOldPieceHashes(bool ignoreWhitespace, bool ignoreCase, Func<string, string[]> chunker)
     {
       var pieces = string.IsNullOrEmpty(_oldRawData)
-          ? emptyStringArray
-          : chunker(_oldRawData);
+                   ? emptyStringArray
+                   : chunker(_oldRawData);
 
       _oldPieces = pieces;
       _oldHashedPieces = new int[pieces.Length];
@@ -430,8 +434,8 @@ namespace Org.Diff
     private void BuildNewPieceHashes(bool ignoreWhitespace, bool ignoreCase, Func<string, string[]> chunker)
     {
       var pieces = string.IsNullOrEmpty(_newRawData)
-          ? emptyStringArray
-          : chunker(_newRawData);
+                   ? emptyStringArray
+                   : chunker(_newRawData);
 
       _newPieces = pieces;
       _newHashedPieces = new int[pieces.Length];
@@ -479,7 +483,7 @@ namespace Org.Diff
 
 
       bool doneWithOld = false;
-      bool doneWithNew = false; 
+      bool doneWithNew = false;
 
       int oldIndex = 0;
       int newIndex = 0;

@@ -10,15 +10,42 @@ namespace Org.TSK.Business.Models
 {
   public class TaskService
   {
-    public int TaskServiceID { get; set; }
-    public int HostID { get; set; }
-    public string HostName { get; set; }
-    public int? ParentServiceID { get; set; }
-    public string TaskServiceName { get; set; }
-    public ServiceType ServiceType { get; set; }
-    public WebServiceBinding WCFServiceBinding { get; set; }
-    public string WCFServicePort { get; set; }
-    public string WCFServiceName { get; set; }
+    public int TaskServiceID {
+      get;
+      set;
+    }
+    public int HostID {
+      get;
+      set;
+    }
+    public string HostName {
+      get;
+      set;
+    }
+    public int? ParentServiceID {
+      get;
+      set;
+    }
+    public string TaskServiceName {
+      get;
+      set;
+    }
+    public ServiceType ServiceType {
+      get;
+      set;
+    }
+    public WebServiceBinding WCFServiceBinding {
+      get;
+      set;
+    }
+    public string WCFServicePort {
+      get;
+      set;
+    }
+    public string WCFServiceName {
+      get;
+      set;
+    }
 
     public TaskService()
     {

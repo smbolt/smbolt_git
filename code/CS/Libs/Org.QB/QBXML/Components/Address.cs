@@ -11,33 +11,63 @@ namespace Org.QB.QBXML
   public class Address
   {
     [XMap (XType = XType.Element)]
-    public string Addr1 { get; set; }
+    public string Addr1 {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string Addr2 { get; set; }
+    public string Addr2 {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string Addr3 { get; set; }
+    public string Addr3 {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string Addr4 { get; set; }
+    public string Addr4 {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string Addr5 { get; set; }
+    public string Addr5 {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string City { get; set; }
+    public string City {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string State { get; set; }
+    public string State {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string PostalCode { get; set; }
+    public string PostalCode {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string Country { get; set; }
+    public string Country {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public string Note { get; set; }
+    public string Note {
+      get;
+      set;
+    }
   }
 }

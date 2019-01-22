@@ -8,26 +8,86 @@ namespace Org.Dx.Business.TextProcessing
 {
   public class TokenSearchCriteria
   {
-    public Direction Direction { get; set; }
-    public DataType DataType { get; set; }
-    public string Pattern { get; set; }
-    public bool Trim { get; set; }
-    public bool TrimRight { get; set; }
-    public bool TrimLeft { get; set; }
-    public string TextToFind { get; set; }
-    public bool MatchCase { get; set; }
-    public bool IsRequired { get; set; }
-    public string BeforeToken { get; set; }
-    public string AfterToken { get; set; }
-    public bool Join { get; set; }
-    public PositionAt PositionAt { get; set; }
-    public string DataName { get; set; }
-    public string DefaultValue { get; set; }
-    public string DataFormat { get; set; }
-    public string Math { get; set; }
-    public bool RemoveStoredToken { get; set; }
-    public int StoredTokenIndex { get; set; }
-    public string LiteralValue { get; set; }
+    public Direction Direction {
+      get;
+      set;
+    }
+    public DataType DataType {
+      get;
+      set;
+    }
+    public string Pattern {
+      get;
+      set;
+    }
+    public bool Trim {
+      get;
+      set;
+    }
+    public bool TrimRight {
+      get;
+      set;
+    }
+    public bool TrimLeft {
+      get;
+      set;
+    }
+    public string TextToFind {
+      get;
+      set;
+    }
+    public bool MatchCase {
+      get;
+      set;
+    }
+    public bool IsRequired {
+      get;
+      set;
+    }
+    public string BeforeToken {
+      get;
+      set;
+    }
+    public string AfterToken {
+      get;
+      set;
+    }
+    public bool Join {
+      get;
+      set;
+    }
+    public PositionAt PositionAt {
+      get;
+      set;
+    }
+    public string DataName {
+      get;
+      set;
+    }
+    public string DefaultValue {
+      get;
+      set;
+    }
+    public string DataFormat {
+      get;
+      set;
+    }
+    public string Math {
+      get;
+      set;
+    }
+    public bool RemoveStoredToken {
+      get;
+      set;
+    }
+    public int StoredTokenIndex {
+      get;
+      set;
+    }
+    public string LiteralValue {
+      get;
+      set;
+    }
 
     public TokenSearchCriteria()
     {

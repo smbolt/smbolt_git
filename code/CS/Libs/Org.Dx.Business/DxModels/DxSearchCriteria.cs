@@ -8,12 +8,30 @@ namespace Org.Dx.Business
 {
   public class DxSearchCriteria
   {
-    public List<object> CompareValueSet { get; set; }
-    public int StartIndex { get; set; }
-    public int EndIndex { get; set; }
-    public DxComparisonType ComparisonType { get; set; }
-    public DxDataType DataType { get; set; }
-    public DxTextCase TextCase { get; set; }
+    public List<object> CompareValueSet {
+      get;
+      set;
+    }
+    public int StartIndex {
+      get;
+      set;
+    }
+    public int EndIndex {
+      get;
+      set;
+    }
+    public DxComparisonType ComparisonType {
+      get;
+      set;
+    }
+    public DxDataType DataType {
+      get;
+      set;
+    }
+    public DxTextCase TextCase {
+      get;
+      set;
+    }
 
     public DxSearchCriteria()
     {
@@ -32,7 +50,7 @@ namespace Org.Dx.Business
     public DxSearchCriteria(DxComparisonType comparisonType, DxTextCase textCase)
     {
       this.Initialize();
-      this.SetSearchStringSet(StringSetType.None); 
+      this.SetSearchStringSet(StringSetType.None);
       this.ComparisonType = comparisonType;
       this.TextCase = textCase;
       this.DataType = DxDataType.Text;
@@ -85,11 +103,15 @@ namespace Org.Dx.Business
       switch (stringSetType)
       {
         case StringSetType.MonthsLong:
-          this.CompareValueSet.AddRange(new List<string>() { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }); 
+          this.CompareValueSet.AddRange(new List<string>() {
+            "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+          });
           break;
 
         case StringSetType.MonthsShort:
-          this.CompareValueSet.AddRange(new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }); 
+          this.CompareValueSet.AddRange(new List<string>() {
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+          });
           break;
       }
     }

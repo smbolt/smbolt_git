@@ -8,6 +8,9 @@ namespace Org.BMR.ApiModels
 {
   public class PasswordResetResult
   {
-    public int RequestResultCode { get; set; }
+    public int RequestResultCode {
+      get;
+      set;
+    }
   }
 }

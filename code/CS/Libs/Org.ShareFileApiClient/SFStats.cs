@@ -8,9 +8,18 @@ namespace Org.ShareFileApiClient
 {
   public class SFStats
   {
-    public long FolderCount { get; set; }
-    public long FileCount { get; set; }
-    public long TotalBytes { get; set; }
+    public long FolderCount {
+      get;
+      set;
+    }
+    public long FileCount {
+      get;
+      set;
+    }
+    public long TotalBytes {
+      get;
+      set;
+    }
 
     public SFStats()
     {

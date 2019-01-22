@@ -127,7 +127,7 @@ namespace Org.OpsManager
 
         if (_opsData.Environment == "Prod")
           result = MessageBox.Show("Save these changes to the TaskScheduleElements table in the Task Scheduling database?",
-                                              "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                   "Ops Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
         if (result == DialogResult.No)
           return;
@@ -152,18 +152,18 @@ namespace Org.OpsManager
           _opsData.CurrentScheduleElement.IntervalType = cboIntervalType.Text.ToEnum<IntervalType>(IntervalType.NotSet);
 
         if (cboHolidayAction.Enabled && cboHolidayAction.Text.IsNotBlank())
-          _opsData.CurrentScheduleElement.HolidayActions = cboHolidayAction.Text.ToEnum<HolidayActions>(HolidayActions.NotSet); 
+          _opsData.CurrentScheduleElement.HolidayActions = cboHolidayAction.Text.ToEnum<HolidayActions>(HolidayActions.NotSet);
 
         if (cboPeriod.Enabled && cboPeriod.Text.IsNotBlank())
           _opsData.CurrentScheduleElement.PeriodContexts = cboPeriod.Text.ToEnum<PeriodContexts>(PeriodContexts.NotSet);
 
         _opsData.CurrentScheduleElement.StartDate = dtpStartDate.Checked ? dtpStartDate.Value.Date : (DateTime?)null;
- 
-        _opsData.CurrentScheduleElement.StartTime = dtpStartTime.Checked ? dtpStartTime.Value.TimeOfDay : (TimeSpan?)null;
- 
-        _opsData.CurrentScheduleElement.EndDate = dtpEndDate.Checked ? dtpEndDate.Value.Date : (DateTime?)null;
- 
-        _opsData.CurrentScheduleElement.EndTime = dtpEndTime.Checked ? dtpEndTime.Value.TimeOfDay : (TimeSpan?)null;
+         
+                _opsData.CurrentScheduleElement.StartTime = dtpStartTime.Checked ? dtpStartTime.Value.TimeOfDay : (TimeSpan?)null;
+         
+                _opsData.CurrentScheduleElement.EndDate = dtpEndDate.Checked ? dtpEndDate.Value.Date : (DateTime?)null;
+         
+                _opsData.CurrentScheduleElement.EndTime = dtpEndTime.Checked ? dtpEndTime.Value.TimeOfDay : (TimeSpan?)null;
 
         if (lblSpecificDaysList.Text.IsNotBlank())
           _opsData.CurrentScheduleElement.SpecificDays = lblSpecificDaysList.Text;
@@ -262,7 +262,7 @@ namespace Org.OpsManager
         cboPeriod.Text = periodContext == PeriodContexts.NotSet ? "" : periodContext.ToString();
         cboHolidayAction.Text = holidayAction == HolidayActions.NotSet ? "NULL" : holidayAction.ToString();
         cboIntervalType.Text = intervalType == IntervalType.NotSet ? "" : intervalType.ToString();
-        cboExecutionType.Text = executionType == TaskExecutionType.NotSet ? "" : executionType.ToString();      
+        cboExecutionType.Text = executionType == TaskExecutionType.NotSet ? "" : executionType.ToString();
 
         chkFirst.Checked = _opsData.CurrentScheduleElement.First;
         chkSecond.Checked = _opsData.CurrentScheduleElement.Second;
@@ -549,14 +549,14 @@ namespace Org.OpsManager
           dtpEndDate.Value = DateTime.Today.AddDays(1);
           dtpEndDate.Checked = _isNewElement;
         }
-        
+
         if (!_opsData.CurrentScheduleElement.StartTime.HasValue)
         {
           dtpStartTime.Checked = true;
           dtpStartTime.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0);
           dtpStartTime.Checked = _isNewElement;
         }
-        
+
         if (!_opsData.CurrentScheduleElement.EndTime.HasValue)
         {
           dtpEndTime.Checked = true;

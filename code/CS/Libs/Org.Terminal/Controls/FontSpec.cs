@@ -9,8 +9,14 @@ namespace Org.Terminal.Controls
 {
   public class FontSpec
   {
-    public float FontSize { get; set; }
-    public Size CharSize { get; set; }
+    public float FontSize {
+      get;
+      set;
+    }
+    public Size CharSize {
+      get;
+      set;
+    }
 
     public FontSpec(float fontSize, Size charSize)
     {

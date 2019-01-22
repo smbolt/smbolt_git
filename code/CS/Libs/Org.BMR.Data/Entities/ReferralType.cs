@@ -11,20 +11,29 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "ReferralType")]
-    public partial class ReferralType
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "ReferralType")]
+  public partial class ReferralType
+  {
+    public ReferralType()
     {
-        public ReferralType()
-        {
-            this.Referrals = new HashSet<Referral>();
-        }
-    
-        public string ReferralTypeCode { get; set; }
-        public string ReferralTypeDesc { get; set; }
-    
-        public virtual ICollection<Referral> Referrals { get; set; }
+      this.Referrals = new HashSet<Referral>();
     }
+
+    public string ReferralTypeCode {
+      get;
+      set;
+    }
+    public string ReferralTypeDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Referral> Referrals {
+      get;
+      set;
+    }
+  }
 }

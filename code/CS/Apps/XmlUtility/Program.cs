@@ -9,7 +9,7 @@ namespace Org.XmlUtility
 {
   static class Program
   {
-      /// <summary>
+    /// <summary>
     /// The main entry point for the application.
     /// </summary>
     [STAThread]

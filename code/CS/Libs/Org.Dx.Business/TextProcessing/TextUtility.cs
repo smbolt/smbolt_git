@@ -9,7 +9,10 @@ namespace Org.Dx.Business.TextProcessing
 {
   public class TextUtility : IDisposable
   {
-    public OptionsList OptionsList { get; set; }
+    public OptionsList OptionsList {
+      get;
+      set;
+    }
 
     public TextUtility(OptionsList optionsList = null)
     {
@@ -26,7 +29,7 @@ namespace Org.Dx.Business.TextProcessing
 
       if (literalValue.IsBlank())
         throw new Exception("The literalValue parameter is null.");
-      
+
       if (matchCase)
       {
         if (literalValue.StartsWith("*") && literalValue.EndsWith("*"))
@@ -232,8 +235,8 @@ namespace Org.Dx.Business.TextProcessing
       else
       {
         // The default (with no option set) is to move forward to a position between tokens
-        // regardless if whether the pointer is at zero. This default function should eventually 
-        // be replaced with the "NoAdvanceFromZero" option as it prevents the location and 
+        // regardless if whether the pointer is at zero. This default function should eventually
+        // be replaced with the "NoAdvanceFromZero" option as it prevents the location and
         // extraction of the first token.
 
         while (text[ptr] != ' ' && text[ptr] != '\n')
@@ -243,7 +246,7 @@ namespace Org.Dx.Business.TextProcessing
             return ptr;
         }
       }
-      
+
 
       // find next non-blank and non-new-line character (beginning of next token)
       while (text[ptr] == ' ' || text[ptr] == '\n')

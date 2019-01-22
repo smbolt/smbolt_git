@@ -13,12 +13,12 @@ namespace Org.FileMgmtService
     /// </summary>
     static void Main()
     {
-        ServiceBase[] ServicesToRun;
-        ServicesToRun = new ServiceBase[] 
-        { 
-            new FileMgmtService() 
-        };
-        ServiceBase.Run(ServicesToRun);
+      ServiceBase[] ServicesToRun;
+      ServicesToRun = new ServiceBase[]
+      {
+        new FileMgmtService()
+      };
+      ServiceBase.Run(ServicesToRun);
     }
   }
 }

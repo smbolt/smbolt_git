@@ -17,20 +17,51 @@ namespace Org.TP.Concrete
   public class TaskProcessorBase : MarshalByRefObject, ITaskProcessor, IDisposable
   {
     private static a a;
-    public virtual int EntityId { get { return 9999; } }
-    public string Name { get { return Get_Name(); } }
+    public virtual int EntityId {
+      get {
+        return 9999;
+      }
+    }
+    public string Name {
+      get {
+        return Get_Name();
+      }
+    }
     public event Action<NotifyMessage> NotifyMessage;
     public Func<bool> CheckContinue;
-    public bool TrackPerformance { get; set; }
-    public bool MoveFilesToError { get; set; }
-    public bool IsDryRun { get; set; }
-    public string DryRunIndicator { get { return IsDryRun ? "### DRY-RUN ### " : String.Empty; } }
-    protected Logger Logger { get; private set; }
+    public bool TrackPerformance {
+      get;
+      set;
+    }
+    public bool MoveFilesToError {
+      get;
+      set;
+    }
+    public bool IsDryRun {
+      get;
+      set;
+    }
+    public string DryRunIndicator {
+      get {
+        return IsDryRun ? "### DRY-RUN ### " : String.Empty;
+      }
+    }
+    protected Logger Logger {
+      get;
+      private set;
+    }
 
     private string _processorName;
-    public string ProcessorName { get { return _processorName; } }
+    public string ProcessorName {
+      get {
+        return _processorName;
+      }
+    }
 
-    protected List<string> ErrorList { get; private set; }
+    protected List<string> ErrorList {
+      get;
+      private set;
+    }
 
     public event Action<ProgressMessage> ProgressUpdate;
     public bool ProgressUpdateEventMapped;
@@ -38,17 +69,25 @@ namespace Org.TP.Concrete
     private TaskRequest _taskRequest;
     public TaskRequest TaskRequest
     {
-      get { return _taskRequest; }
-      set 
+      get {
+        return _taskRequest;
+      }
+      set
       {
         _taskRequest = value;
-        this.ParmSet = _taskRequest.ParmSet; 
+        this.ParmSet = _taskRequest.ParmSet;
       }
     }
 
-    public ParmSet ParmSet { get; set; }
+    public ParmSet ParmSet {
+      get;
+      set;
+    }
 
-    public PerfMetricSet PerfMetricSet { get; set; }
+    public PerfMetricSet PerfMetricSet {
+      get;
+      set;
+    }
 
     public TaskProcessorBase()
     {
@@ -58,13 +97,13 @@ namespace Org.TP.Concrete
       }
 
       Logger = new Logger();
-      Logger.Log(this.GetType().Name + " created."); 
+      Logger.Log(this.GetType().Name + " created.");
 
       this.TrackPerformance = false;
       this.PerfMetricSet = new PerfMetricSet();
       this.IsDryRun = false;
       this.MoveFilesToError = true;
-      _processorName = this.GetType().Name; 
+      _processorName = this.GetType().Name;
     }
 
     public virtual async TPL.Task<TaskResult> ProcessTaskAsync(Func<bool> checkContinue)
@@ -103,7 +142,7 @@ namespace Org.TP.Concrete
     private string Get_Name()
     {
       string taskProcessorName = this.GetType().Name;
-      return taskProcessorName; 
+      return taskProcessorName;
     }
 
     protected virtual TaskResult InitializeTaskResult()
@@ -114,7 +153,7 @@ namespace Org.TP.Concrete
       taskResult.BeginDateTime = DateTime.Now;
 
       if (this.ParmExists("LoggingDbSpec"))
-        LogContext.LogConfigDbSpec = this.GetParmValue("LoggingDbSpec") as ConfigDbSpec; 
+        LogContext.LogConfigDbSpec = this.GetParmValue("LoggingDbSpec") as ConfigDbSpec;
 
       return taskResult;
     }
@@ -177,7 +216,7 @@ namespace Org.TP.Concrete
       if (this.ProgressUpdate == null)
         return;
 
-      this.ProgressUpdate(new ProgressMessage(completedItems, totalItems)); 
+      this.ProgressUpdate(new ProgressMessage(completedItems, totalItems));
     }
 
     protected void ProgressNotify(string activityName, string message, int completedItems, int totalItems)
@@ -194,7 +233,7 @@ namespace Org.TP.Concrete
         Logger = new Logger();
       Logger.Log(this.GetType().Name + " in destructor.");
 
-      Dispose(false); 
+      Dispose(false);
     }
 
     protected string GetErrorReport()
@@ -223,7 +262,7 @@ namespace Org.TP.Concrete
 
     public void Dispose()
     {
-      Dispose(true); 
+      Dispose(true);
     }
 
     protected virtual void Dispose(bool disposing)

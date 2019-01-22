@@ -11,21 +11,33 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "AccountTokenStatu")]
-    public partial class AccountTokenStatu
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "AccountTokenStatu")]
+  public partial class AccountTokenStatu
+  {
+    public AccountTokenStatu()
     {
-        public AccountTokenStatu()
-        {
-            this.AccountLoginTokens = new HashSet<AccountLoginToken>();
-        }
-    
-        public int TokenStatusId { get; set; }
-        public string TokenStatusAbbr { get; set; }
-        public string TokenStatusDesc { get; set; }
-    
-        public virtual ICollection<AccountLoginToken> AccountLoginTokens { get; set; }
+      this.AccountLoginTokens = new HashSet<AccountLoginToken>();
     }
+
+    public int TokenStatusId {
+      get;
+      set;
+    }
+    public string TokenStatusAbbr {
+      get;
+      set;
+    }
+    public string TokenStatusDesc {
+      get;
+      set;
+    }
+
+    public virtual ICollection<AccountLoginToken> AccountLoginTokens {
+      get;
+      set;
+    }
+  }
 }

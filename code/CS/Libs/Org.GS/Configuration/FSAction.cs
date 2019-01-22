@@ -10,43 +10,97 @@ using Org.GS;
 namespace Org.GS.Configuration
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element, CollectionElements = "FSItem")] 
+  [XMap(XType = XType.Element, CollectionElements = "FSItem")]
   public class FSAction : Dictionary<string, FSItem>
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap]
-    public FileSystemCommand FileSystemCommand { get; set; }
+    public FileSystemCommand FileSystemCommand {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Src { get; set; }
-    public string FullSourcePath { get { return Get_FullSourcePath(); } }
+    public string Src {
+      get;
+      set;
+    }
+    public string FullSourcePath {
+      get {
+        return Get_FullSourcePath();
+      }
+    }
 
     [XMap]
-    public string Dst { get; set; }
-    public string FullDestPath { get { return Get_FullDestPath(); } }
+    public string Dst {
+      get;
+      set;
+    }
+    public string FullDestPath {
+      get {
+        return Get_FullDestPath();
+      }
+    }
 
-    public string FullActionName { get { return Get_FullActionName(); } }
+    public string FullActionName {
+      get {
+        return Get_FullActionName();
+      }
+    }
 
     [XMap(DefaultValue = "")]
-    public string Options { get; set; }
-    public bool ClearDirectory { get { return OptionsContains("clear"); } }
-    public bool Overwrite { get { return OptionsContains("overwrite"); } }
+    public string Options {
+      get;
+      set;
+    }
+    public bool ClearDirectory {
+      get {
+        return OptionsContains("clear");
+      }
+    }
+    public bool Overwrite {
+      get {
+        return OptionsContains("overwrite");
+      }
+    }
 
     [XMap(DefaultValue = "")]
-    public string ClearPattern { get; set; }
+    public string ClearPattern {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap (DefaultValue="Ignore")]
-    public FailureAction FailureAction { get; set; }
+    public FailureAction FailureAction {
+      get;
+      set;
+    }
 
-    public FSActionGroup FSActionGroup { get; set; }
-    public FSActionSet FSActionSet { get; set; }
+    public FSActionGroup FSActionGroup {
+      get;
+      set;
+    }
+    public FSActionSet FSActionSet {
+      get;
+      set;
+    }
 
-    public bool DestFolderRequired { get { return Get_DestFolderRequired(); } }
+    public bool DestFolderRequired {
+      get {
+        return Get_DestFolderRequired();
+      }
+    }
 
     [XParm(Name = "parent", ParmSource = XParmSource.Parent)]
     public FSAction(FSActionGroup parent)
@@ -87,7 +141,7 @@ namespace Org.GS.Configuration
         actionSrc = g.AppConfig.ResolveVariables(actionSrc).Trim();
       }
 
-      setSrc = setSrc.Replace("/", @"\"); 
+      setSrc = setSrc.Replace("/", @"\");
       groupSrc = groupSrc.Replace("/", @"\");
       actionSrc = actionSrc.Replace("/", @"\");
 
@@ -122,7 +176,7 @@ namespace Org.GS.Configuration
 
     private string Get_FullActionName()
     {
-      return this.FSActionGroup.Name.Trim() + "." + this.Name.Trim(); 
+      return this.FSActionGroup.Name.Trim() + "." + this.Name.Trim();
     }
 
     private bool OptionsContains(string option)
@@ -130,7 +184,7 @@ namespace Org.GS.Configuration
       if (this.Options == null)
         this.Options = String.Empty;
 
-      return this.Options.ToLower().Contains(option.ToLower()); 
+      return this.Options.ToLower().Contains(option.ToLower());
     }
 
     private bool Get_DestFolderRequired()

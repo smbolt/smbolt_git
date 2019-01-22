@@ -14,7 +14,7 @@ namespace Org.TW.ToolPanels
   {
     public TextPanel()
     {
-        InitializeComponent();
+      InitializeComponent();
     }
 
     public void SetText(string text)

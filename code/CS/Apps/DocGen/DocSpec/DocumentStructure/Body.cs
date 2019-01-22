@@ -9,17 +9,17 @@ using Org.GS;
 
 namespace Org.DocGen.DocSpec
 {
-    [Meta(OxName = "body", Abbr = "Body")]
-    public class Body : DocumentElement
+  [Meta(OxName = "body", Abbr = "Body")]
+  public class Body : DocumentElement
+  {
+    public Body(XElement xml, Doc doc, DocumentElement parent)
     {
-        public Body(XElement xml, Doc doc, DocumentElement parent)
-        {
-            base.Initialize(xml, doc, parent);
+      base.Initialize(xml, doc, parent);
 
-            if (xml == null)
-                return;
+      if (xml == null)
+        return;
 
-            this.LoadChildren(xml, doc, this.Parent);
-        }
+      this.LoadChildren(xml, doc, this.Parent);
     }
+  }
 }

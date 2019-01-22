@@ -22,7 +22,7 @@ namespace Org.NotificationTest
     private NotifyConfigMode _notifyConfigMode;
     public NotifyConfigSets _notifyConfigSets;
     private ConfigDbSpec _notifyDbSpec;
-    
+
     public frmMain()
     {
       InitializeComponent();
@@ -99,18 +99,20 @@ namespace Org.NotificationTest
       var enumatedTaskResult = GetTaskResult();
       var notifyConfigSet = GetNotifyConfigSet();
       var notification = new Notification(enumatedTaskResult, notifyConfigSet);
-      
+
       if (notification.NotificationStatus == NotificationStatus.ReadyToSend)
       {
         using (var notifyEngine = new NotifyEngine(notifyConfigSet, _smtpParms))
         {
           notifyEngine.NotifyAction += _notificationsManager.NotifyActionHandler;
-          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => { NotificationsAsyncComplete(r); });
+          notifyEngine.ProcessNotificationsAsync(notification).ContinueWith(r => {
+            NotificationsAsyncComplete(r);
+          });
         }
       }
 
       //txtOut.Text = "Async send invoked";
-      
+
       this.Cursor = Cursors.Default;
     }
 

@@ -12,8 +12,11 @@ namespace Org.WSO.Transactions
   public class GetAssemblyReportResponse : TransactionBase
   {
     [XMap]
-    public string AssemblyReport { get; set; }
-    
+    public string AssemblyReport {
+      get;
+      set;
+    }
+
     public GetAssemblyReportResponse()
     {
       this.AssemblyReport = string.Empty;

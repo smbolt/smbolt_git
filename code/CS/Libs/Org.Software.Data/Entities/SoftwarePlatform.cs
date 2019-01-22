@@ -12,23 +12,41 @@ using Org.GS;
 
 namespace Org.Software.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Org_Software", "", "SoftwarePlatform")]
-    public partial class SoftwarePlatform
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Org_Software", "", "SoftwarePlatform")]
+  public partial class SoftwarePlatform
+  {
+    public SoftwarePlatform()
     {
-        public SoftwarePlatform()
-        {
-            this.SoftwareVersions = new HashSet<SoftwareVersion>();
-        }
-    
-        public int SoftwarePlatformId { get; set; }
-        public string SoftwarePlatformString { get; set; }
-        public string PlatformDescription { get; set; }
-        public int SoftwareStatusId { get; set; }
-    
-        public virtual SoftwareStatu SoftwareStatu { get; set; }
-        public virtual ICollection<SoftwareVersion> SoftwareVersions { get; set; }
+      this.SoftwareVersions = new HashSet<SoftwareVersion>();
     }
+
+    public int SoftwarePlatformId {
+      get;
+      set;
+    }
+    public string SoftwarePlatformString {
+      get;
+      set;
+    }
+    public string PlatformDescription {
+      get;
+      set;
+    }
+    public int SoftwareStatusId {
+      get;
+      set;
+    }
+
+    public virtual SoftwareStatu SoftwareStatu {
+      get;
+      set;
+    }
+    public virtual ICollection<SoftwareVersion> SoftwareVersions {
+      get;
+      set;
+    }
+  }
 }

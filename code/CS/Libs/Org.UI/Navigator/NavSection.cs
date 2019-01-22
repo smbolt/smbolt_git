@@ -12,16 +12,21 @@ namespace Org.UI
 {
   public partial class NavSection : UserControl
   {
-    public UIPanel Navigator { get; set; }
+    public UIPanel Navigator {
+      get;
+      set;
+    }
     public List<NavButton> NavButtons;
 
-    private int _configuredHeight; 
+    private int _configuredHeight;
 
     private bool _isCollapsed;
     public bool IsCollapsed
     {
-      get { return _isCollapsed; }
-      set 
+      get {
+        return _isCollapsed;
+      }
+      set
       {
         _isCollapsed = value;
         if (_isCollapsed)
@@ -49,18 +54,18 @@ namespace Org.UI
 
       this.Text = "NavSection";
       this.Height = 120;
-      _configuredHeight = 120; 
-      this.IsCollapsed = true; 
+      _configuredHeight = 120;
+      this.IsCollapsed = true;
     }
 
     private void NavSection_Paint(object sender, PaintEventArgs e)
     {
-      e.Graphics.DrawString(this.Text, new Font("Tahoma", 10.0F, FontStyle.Bold), UIBase.BlueBrush, new Point(6, 8)); 
+      e.Graphics.DrawString(this.Text, new Font("Tahoma", 10.0F, FontStyle.Bold), UIBase.BlueBrush, new Point(6, 8));
     }
 
     private void NavSection_Click(object sender, EventArgs e)
     {
-      this.IsCollapsed = !this.IsCollapsed; 
+      this.IsCollapsed = !this.IsCollapsed;
     }
   }
 }

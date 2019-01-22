@@ -9,10 +9,24 @@ namespace Org.Dx.Business
 {
   public class NodeQueryFrame : List<NodeQueryFrameSlot>
   {
-    public SortedList<int, Node> Nodes { get; private set; }
-    public SortedList<int, NodeQueryElement> NodeQueryElements { get; private set; }
-    public QueryExecutionStatus QueryExecutionStatus { get { return Get_QueryExecutionStatus(); } }
-    public string Report { get { return Get_Report(); } }
+    public SortedList<int, Node> Nodes {
+      get;
+      private set;
+    }
+    public SortedList<int, NodeQueryElement> NodeQueryElements {
+      get;
+      private set;
+    }
+    public QueryExecutionStatus QueryExecutionStatus {
+      get {
+        return Get_QueryExecutionStatus();
+      }
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public NodeQueryFrame(SortedList<int, Node> nodes, SortedList<int, NodeQueryElement> nodeQueryElements)
     {
@@ -30,7 +44,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to build the NodeQueryFrame.", ex); 
+        throw new Exception("An exception occurred while attempting to build the NodeQueryFrame.", ex);
       }
     }
 
@@ -52,7 +66,7 @@ namespace Org.Dx.Business
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to process the query."); 
+        throw new Exception("An exception occurred while attempting to process the query.");
 
       }
     }
@@ -115,7 +129,7 @@ namespace Org.Dx.Business
                               "the NodeQureyElement (" + kvp.Value.Ex.ToString() + ").");
 
         kvp.Value.QueryExecutionStatus = QueryExecutionStatus.Initial;
-        kvp.Value.Ax = -1;; 
+        kvp.Value.Ax = -1;;
       }
 
       string nodesReport = GetNodesReport() + g.crlf2 + GetNodeQueryElementsReport();
@@ -127,7 +141,7 @@ namespace Org.Dx.Business
       {
         var node = this.Nodes.Count > nodeCollectionIndex ? this.Nodes.Values.ElementAt(nodeCollectionIndex++) : null;
         var nodeQueryElement = this.NodeQueryElements.Count > nodeQueryElementCollectionIndex ? this.NodeQueryElements.Values.ElementAt(nodeQueryElementCollectionIndex++) : null;
-        
+
         if (node == null && nodeQueryElement == null)
           break;
 
@@ -146,7 +160,7 @@ namespace Org.Dx.Business
 
       sb.Append("NODE QUERY FRAME DUMP" + g.crlf2);
       sb.Append("FRX NEX NAX SSI NSTA NDATA         |    QEX QAX SSI FLX QSTA QDATA" + g.crlf);
-      sb.Append("-----------------------------------|---------------------------------" + g.crlf); 
+      sb.Append("-----------------------------------|---------------------------------" + g.crlf);
 
       foreach (var slot in this)
       {
@@ -173,20 +187,20 @@ namespace Org.Dx.Business
 
         sb.Append(frx.ToString("000") + " " +
                   nexStr + " " +
-                  nax + " " + 
-                  nssi + "  " + 
-                  nst + " " + 
-                  ndat + " " + 
+                  nax + " " +
+                  nssi + "  " +
+                  nst + " " +
+                  ndat + " " +
 
-                  " | " + 
-                  (nax == " -1" ? "   " : " <=") + 
+                  " | " +
+                  (nax == " -1" ? "   " : " <=") +
 
-                  qexStr + " " + 
-                  qax + " " + 
+                  qexStr + " " +
+                  qax + " " +
                   qssi + "  " +
-                  qflx + " " + 
-                  qst + " " + 
-                  qdat + 
+                  qflx + " " +
+                  qst + " " +
+                  qdat +
                   g.crlf);
       }
 
@@ -209,7 +223,7 @@ namespace Org.Dx.Business
       foreach (var kvp in this.Nodes)
       {
         string alignedIndex = kvp.Value.Ax > -1 ? kvp.Value.Ax.ToString("000") : " -1";
-        sb.Append(kvp.Key.ToString("000") + " " + 
+        sb.Append(kvp.Key.ToString("000") + " " +
                   kvp.Value.SetSeqIndicator + " " +
                   alignedIndex + " " +
                   kvp.Value.TextValue + g.crlf);
@@ -229,7 +243,7 @@ namespace Org.Dx.Business
       {
         string alignedIndex = kvp.Value.Ax > -1 ? kvp.Value.Ax.ToString("000") : " -1";
         sb.Append(kvp.Key.ToString("000") + " " +
-                  (kvp.Value.IsTarget ? "T" : " ") + 
+                  (kvp.Value.IsTarget ? "T" : " ") +
                   alignedIndex + " " +
                   kvp.Value.QueryString + " " + g.crlf);
 
@@ -259,7 +273,7 @@ namespace Org.Dx.Business
       if (nodeIndex > -1)
         return this.Nodes[nodeIndex];
 
-      throw new Exception("No Node exists at frameIndex " + frameIndex.ToString() + "."); 
+      throw new Exception("No Node exists at frameIndex " + frameIndex.ToString() + ".");
     }
 
     // get query element base on query index

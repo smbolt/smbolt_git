@@ -19,10 +19,22 @@ namespace Org.SoftwareUpdates
 
   public class SoftwareUpdateError
   {
-    public string Title { get; set; }
-    public string ErrorDetail { get; set; }
-    public List<string> ErrorActions { get; set; }
-    public Color BackgroundColor { get; set;}
+    public string Title {
+      get;
+      set;
+    }
+    public string ErrorDetail {
+      get;
+      set;
+    }
+    public List<string> ErrorActions {
+      get;
+      set;
+    }
+    public Color BackgroundColor {
+      get;
+      set;
+    }
 
     public SoftwareUpdateError()
     {

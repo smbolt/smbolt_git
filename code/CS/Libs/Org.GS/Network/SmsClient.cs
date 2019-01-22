@@ -12,7 +12,7 @@ namespace Org.GS.Network
   public class SmsClient
   {
     public void SendSmsMessage(CdyneSmsParms smsParms)
-    {                
+    {
       TPL.Task.Factory.StartNew(() =>
       {
         try
@@ -23,15 +23,15 @@ namespace Org.GS.Network
           CdyneSmsAdapter smsAdapter = new CdyneSmsAdapter();
 
           string message = "ADO " + smsParms.Severity.ToString().Substring(0, 1).ToUpper() + " " +
-              smsParms.AlertID + " " +
-              DateTime.Now.ToString("yyyyMMdd-HHmmss") + " " +
-              smsParms.AlertCode.PadLeft(3, '0').Substring(0, 3) + " " +
-              smsParms.IPAddress.PadRight(15).Substring(0, 15) + " " +
-              smsParms.AppName.PadRight(18).Substring(0, 18) + " " +
-              smsParms.ClassName.PadRight(18).Substring(0, 18) + " " +
-              smsParms.MethodName.PadRight(18).Substring(0, 18) + " " +
-              smsParms.LocationCode.PadLeft(4, '0').Substring(0, 4) + " " +
-              smsParms.Message;
+                           smsParms.AlertID + " " +
+                           DateTime.Now.ToString("yyyyMMdd-HHmmss") + " " +
+                           smsParms.AlertCode.PadLeft(3, '0').Substring(0, 3) + " " +
+                           smsParms.IPAddress.PadRight(15).Substring(0, 15) + " " +
+                           smsParms.AppName.PadRight(18).Substring(0, 18) + " " +
+                           smsParms.ClassName.PadRight(18).Substring(0, 18) + " " +
+                           smsParms.MethodName.PadRight(18).Substring(0, 18) + " " +
+                           smsParms.LocationCode.PadLeft(4, '0').Substring(0, 4) + " " +
+                           smsParms.Message;
 
           message = message.Replace(@"\", @"/");
 

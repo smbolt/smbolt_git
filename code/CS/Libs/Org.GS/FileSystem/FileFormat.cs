@@ -8,8 +8,14 @@ namespace Org.GS
 {
   public class FileFormat
   {
-    public string Name { get; set; }
-    public List<OSFile> Files { get; set; }
+    public string Name {
+      get;
+      set;
+    }
+    public List<OSFile> Files {
+      get;
+      set;
+    }
 
     public FileFormat()
     {

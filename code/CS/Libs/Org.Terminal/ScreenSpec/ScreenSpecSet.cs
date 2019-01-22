@@ -11,7 +11,10 @@ namespace Org.Terminal.Screen
   public class ScreenSpecSet : Dictionary<string, ScreenSpec>
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     public ScreenSpecSet()
     {

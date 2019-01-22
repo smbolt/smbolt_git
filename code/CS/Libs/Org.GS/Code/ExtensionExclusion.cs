@@ -16,14 +16,20 @@ namespace Org.GS.Code
   }
 
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
+  [XMap(XType = XType.Element)]
   public class ExtensionExclusion
   {
     [XMap]
-    public string Value { get; set; }
+    public string Value {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public ExclusionControl ExclusionControl { get; set; }
+    public ExclusionControl ExclusionControl {
+      get;
+      set;
+    }
 
     public ExtensionExclusion()
     {

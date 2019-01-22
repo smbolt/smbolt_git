@@ -9,12 +9,30 @@ namespace Org.Crossword.Business
 {
   public class Word
   {
-    public int WordId { get; set; }
-    public Direction Direction { get; set; }
-    public int StartX { get; set; }
-    public int? EndX { get; set; }
-    public int StartY { get; set; }
-    public int? EndY { get; set; }
+    public int WordId {
+      get;
+      set;
+    }
+    public Direction Direction {
+      get;
+      set;
+    }
+    public int StartX {
+      get;
+      set;
+    }
+    public int? EndX {
+      get;
+      set;
+    }
+    public int StartY {
+      get;
+      set;
+    }
+    public int? EndY {
+      get;
+      set;
+    }
 
     private string _xRange;
     private string _yRange;

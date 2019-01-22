@@ -11,19 +11,34 @@ namespace Org.WSO
   public class WsException
   {
     [XMap]
-    public string Message { get; set; }
+    public string Message {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Source { get; set; }
+    public string Source {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element)]
-    public WsTargetSite WsTargetSite { get; set; }
+    public WsTargetSite WsTargetSite {
+      get;
+      set;
+    }
 
     [XMap]
-    public string StackTrace { get; set; }
+    public string StackTrace {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, Name = "WsException")]
-    public WsException InnerException { get; set; }
+    public WsException InnerException {
+      get;
+      set;
+    }
 
     public WsException()
     {
@@ -41,7 +56,7 @@ namespace Org.WSO
       this.StackTrace = System.Security.SecurityElement.Escape(ex.StackTrace);
       this.WsTargetSite = new WsTargetSite(ex);
       if (ex.InnerException != null)
-        this.InnerException = GetInnerException(ex); 
+        this.InnerException = GetInnerException(ex);
     }
 
     private WsException GetInnerException(Exception ex)
@@ -53,7 +68,7 @@ namespace Org.WSO
       innerException.StackTrace = System.Security.SecurityElement.Escape(ex.StackTrace);
       innerException.WsTargetSite = new WsTargetSite(ex);
       if (ex.InnerException != null)
-        innerException.InnerException = GetInnerException(ex.InnerException); 
+        innerException.InnerException = GetInnerException(ex.InnerException);
 
       return innerException;
     }
@@ -64,7 +79,7 @@ namespace Org.WSO
       sb.Append("WsException" + Environment.NewLine +
                 "    Message     : " + ex.Message + Environment.NewLine +
                 "    Source      : " + ex.Source + Environment.NewLine +
-                "    StackTrace  : " + ex.StackTrace + Environment.NewLine + 
+                "    StackTrace  : " + ex.StackTrace + Environment.NewLine +
                 "    TargetSite  : " + Environment.NewLine +
                 "        DeclaringType.Assembly.FullName : " + ex.WsTargetSite.DeclaringTypeAssemblyName + Environment.NewLine +
                 "        DeclaringType.FullName          : " + ex.WsTargetSite.DeclaringTypeFullName + Environment.NewLine +
@@ -74,8 +89,8 @@ namespace Org.WSO
 
       if (ex.InnerException != null)
       {
-          sb.Append("====InnerException====" + Environment.NewLine);
-          sb.Append(GetExceptionString(ex.InnerException));
+        sb.Append("====InnerException====" + Environment.NewLine);
+        sb.Append(GetExceptionString(ex.InnerException));
       }
 
       return sb.ToString();
@@ -83,7 +98,7 @@ namespace Org.WSO
 
     public string ToReport()
     {
-      int level = 0; 
+      int level = 0;
       StringBuilder sb = new StringBuilder();
 
       sb.Append("Exception Level:" + level.ToString() + g.crlf +
@@ -93,7 +108,7 @@ namespace Org.WSO
                 "  TargetSite: " + this.WsTargetSite.ToReport(level) + g.crlf);
 
       if (this.InnerException != null)
-        sb.Append(GetExceptionReport(this.InnerException, level)); 
+        sb.Append(GetExceptionReport(this.InnerException, level));
 
       return sb.ToString();
     }
@@ -110,7 +125,7 @@ namespace Org.WSO
                 "  TargetSite: " + ex.WsTargetSite.ToReport(level) + g.crlf);
 
       if (ex.InnerException != null)
-        sb.Append(GetExceptionReport(ex.InnerException, level)); 
+        sb.Append(GetExceptionReport(ex.InnerException, level));
 
       return sb.ToString();
     }

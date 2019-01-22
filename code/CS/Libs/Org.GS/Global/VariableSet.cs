@@ -9,7 +9,7 @@ using Org.GS;
 namespace Org.GS
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element, WrapperElement="VariableSet", CollectionElements = "Variable", UseKeyValue = true)] 
+  [XMap(XType = XType.Element, WrapperElement="VariableSet", CollectionElements = "Variable", UseKeyValue = true)]
   public class VariableSet : Dictionary<string, string>
   {
 

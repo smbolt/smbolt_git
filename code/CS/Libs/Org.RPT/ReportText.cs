@@ -35,11 +35,11 @@ namespace Org.RPT
   public class ReportText
   {
     [XMap]
-    public string Text 
+    public string Text
     {
       get
       {
-        return Get_Text(); 
+        return Get_Text();
       }
       set
       {
@@ -48,33 +48,59 @@ namespace Org.RPT
     }
 
     [XMap]
-    public string DataSource { get; set; }
+    public string DataSource {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "NotSet")]
-    public TextCase TextCase { get; set; }
+    public TextCase TextCase {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Left")]
-    public HorizAlign HorzAlign { get; set; }
+    public HorizAlign HorzAlign {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Tahoma")]
-    public string FontName { get; set; }
+    public string FontName {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "10")]
-    public float FontSize { get; set; }
+    public float FontSize {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "Regular")]
-    public FontStyle FontStyle { get; set; }
+    public FontStyle FontStyle {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "")]
-    public string TextColor { get; set; }
+    public string TextColor {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool WrapText { get; set; }
+    public bool WrapText {
+      get;
+      set;
+    }
 
     private string _rawText;
     public string RawText
     {
-      get { return _rawText; }
+      get {
+        return _rawText;
+      }
     }
 
     public ReportText()
@@ -118,7 +144,7 @@ namespace Org.RPT
         case FontStyle.BoldItalic:
           return System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic;
       }
-                    
+
       return System.Drawing.FontStyle.Regular;
     }
 

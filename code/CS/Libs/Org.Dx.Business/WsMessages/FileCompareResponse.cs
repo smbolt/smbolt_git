@@ -14,10 +14,16 @@ namespace Org.Dx.Business
   public class FileCompareResponse : TransactionBase
   {
     [XMap]
-    public bool IsIdentical { get; set; }
+    public bool IsIdentical {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ResultsFilePath { get; set; }
+    public string ResultsFilePath {
+      get;
+      set;
+    }
 
     public FileCompareResponse()
     {

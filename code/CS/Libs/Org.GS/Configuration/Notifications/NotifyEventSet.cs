@@ -13,16 +13,20 @@ namespace Org.GS.Configuration
   [XMap(XType = XType.Element, CollectionElements = "NotifyEvent")]
   public class NotifyEventSet : Dictionary<string, NotifyEvent>
   {
-    public List<int> EventIds { get { return Get_EventIds(); } }
+    public List<int> EventIds {
+      get {
+        return Get_EventIds();
+      }
+    }
 
     public NotifyEvent GetNotifyEventForNotification(Notification notification)
     {
-      string eventName = notification.EventName.Replace("$TASKNAME$", notification.TaskName); 
+      string eventName = notification.EventName.Replace("$TASKNAME$", notification.TaskName);
 
       if (this.ContainsKey(eventName))
         return this[eventName];
 
-      eventName = notification.EventName; 
+      eventName = notification.EventName;
 
       if (this.ContainsKey(eventName))
         return this[eventName];
@@ -71,7 +75,7 @@ namespace Org.GS.Configuration
       foreach (var notifyEvent in this.Values)
       {
         if (!eventIds.Contains(notifyEvent.NotifyEventId))
-          eventIds.Add(notifyEvent.NotifyEventId); 
+          eventIds.Add(notifyEvent.NotifyEventId);
       }
 
       return eventIds;

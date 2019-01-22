@@ -9,36 +9,56 @@ namespace Org.MX.Model
     [EntityMap]
     public int LocationID
     {
-      get { return base.ID; }
-      set { base.ID = value; }
+      get {
+        return base.ID;
+      }
+      set {
+        base.ID = value;
+      }
     }
 
     [EntityMap(Sequencer = true)]
     public int LocationCode
     {
-      get { return base.Code; }
-      set { base.Code = value; }
+      get {
+        return base.Code;
+      }
+      set {
+        base.Code = value;
+      }
     }
 
     [EntityMap]
     public string LocationName
     {
-      get { return base.Name; }
-      set { base.Name = value; }
+      get {
+        return base.Name;
+      }
+      set {
+        base.Name = value;
+      }
     }
 
     [EntityMap]
     public string LocationDesc
     {
-      get { return base.Description; }
-      set { base.Description = value; }
+      get {
+        return base.Description;
+      }
+      set {
+        base.Description = value;
+      }
     }
 
     [EntityMap]
     public new bool IsActive
     {
-      get { return base.IsActive; }
-      set { base.IsActive = value; }
+      get {
+        return base.IsActive;
+      }
+      set {
+        base.IsActive = value;
+      }
     }
 
     public Location() : base(0, 0, String.Empty, String.Empty) { }

@@ -11,7 +11,7 @@ using System.Xml.Linq;
 using System.Xml;
 using System.Xml.Schema;
 using System.Threading.Tasks;
-using System.Threading; 
+using System.Threading;
 using System.Windows.Forms;
 using System.Configuration;
 using FastColoredTextBoxNS;
@@ -60,7 +60,7 @@ namespace Org.XsdTest
     private void Action(object sender, EventArgs e)
     {
       string action = g.GetActionFromEvent(sender);
-      
+
       switch (action)
       {
         case "RunValidation":
@@ -110,10 +110,10 @@ namespace Org.XsdTest
         this.Cursor = Cursors.WaitCursor;
 
         // load the xml from the 'XML File' tab
-        XDocument doc = XDocument.Load(new StringReader(txtXml.Text)); 
-        
+        XDocument doc = XDocument.Load(new StringReader(txtXml.Text));
+
         // load the xsd from the 'XSD File' tab
-        XmlSchemaSet schemas = new XmlSchemaSet();  
+        XmlSchemaSet schemas = new XmlSchemaSet();
         schemas.Add("", XmlReader.Create(new StringReader(txtXsd.Text)));
 
         _validationErrors = new List<string>();
@@ -137,7 +137,7 @@ namespace Org.XsdTest
         tabMain.SelectedTab = tabPageValidationResults;
 
         txtValidation.SelectionStart = 0;
-        txtValidation.SelectionLength = 0; 
+        txtValidation.SelectionLength = 0;
 
         this.Cursor = Cursors.Default;
       }
@@ -155,8 +155,8 @@ namespace Org.XsdTest
       int errorNumber = _validationErrors.Count + 1;
       int lineNumber = -1;
       int linePosition = -1;
-      object sourceObject = null; 
-      XmlSchemaObject sourceSchemaObject = null; 
+      object sourceObject = null;
+      XmlSchemaObject sourceSchemaObject = null;
       string sourceUri = String.Empty;
 
       string errorMessage = "ERROR " + errorNumber.ToString("00000") + " - Message         : " + e.Message + g.crlf +
@@ -169,7 +169,7 @@ namespace Org.XsdTest
       {
         var ex = e.Exception;
         string exceptionTypeName = ex.GetType().Name;
- 
+
         switch (exceptionTypeName)
         {
           case "XmlSchemaValidationException":
@@ -217,7 +217,7 @@ namespace Org.XsdTest
         System.Diagnostics.Debugger.Break();
       }
 
-      _validationErrors.Add(errorMessage); 
+      _validationErrors.Add(errorMessage);
     }
 
     private bool InitializeForm()
@@ -249,7 +249,7 @@ namespace Org.XsdTest
         btnFormatXml.Enabled = false;
         btnFormatXsd.Enabled = false;
         btnSaveXml.Enabled = false;
-        btnSaveXsd.Enabled = false; 
+        btnSaveXsd.Enabled = false;
 
         lblXmlFileMessage.Text = String.Empty;
         lblXmlFileMessage.Visible = false;
@@ -274,7 +274,7 @@ namespace Org.XsdTest
       catch (Exception ex)
       {
         MessageBox.Show("An error occurred during application start up." + g.crlf2 + ex.ToReport(), _appName + " - Program Initialization Error",
-          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         return false;
       }
@@ -310,18 +310,18 @@ namespace Org.XsdTest
 
       foreach (var file in files)
       {
-        cboXmlFile.Items.Add(Path.GetFileName(file)); 
+        cboXmlFile.Items.Add(Path.GetFileName(file));
       }
     }
 
     private void LoadXsdFilesToComboBox()
     {
       cboXsdFile.Items.Clear();
-      var files = Directory.GetFiles(_xsdFilePath, "*.xsd"); 
+      var files = Directory.GetFiles(_xsdFilePath, "*.xsd");
 
       foreach (var file in files)
       {
-        cboXsdFile.Items.Add(Path.GetFileName(file)); 
+        cboXsdFile.Items.Add(Path.GetFileName(file));
       }
     }
 
@@ -362,7 +362,7 @@ namespace Org.XsdTest
         btnRunValidation.Enabled = false;
         return;
       }
-      
+
       txtValidation.Text = String.Empty;
 
       btnRunValidation.Enabled = true;
@@ -378,7 +378,7 @@ namespace Org.XsdTest
                               "Click the 'No' button and save the XML file if you want to retain your changes." + g.crlf2 +
                               "Click the 'Yes' if you want to reload the XML from the file and discard your changes.", _appName + " - Confirm Discard XML Changes",
                               MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
-            return; 
+            return;
         }
 
         string xmlData = File.ReadAllText(_xmlFileName);
@@ -386,13 +386,13 @@ namespace Org.XsdTest
         _suppressXmlTextChangedEvent = true;
         txtXml.Text = xml.ToString();
         txtXml.SelectionStart = 0;
-        txtXml.SelectionLength = 0; 
+        txtXml.SelectionLength = 0;
         _xmlFileData = txtXml.Text;
         tabMain.SelectedTab = tabPageXml;
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An error occurred while attempting to load the xml from file '" + _xmlFilePath + "'." + g.crlf2 + ex.ToReport(), 
+        MessageBox.Show("An error occurred while attempting to load the xml from file '" + _xmlFilePath + "'." + g.crlf2 + ex.ToReport(),
                         _appName + " - XML Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
@@ -415,13 +415,13 @@ namespace Org.XsdTest
         _suppressXsdTextChangedEvent = true;
         txtXsd.Text = xsd.ToString();
         txtXsd.SelectionStart = 0;
-        txtXsd.SelectionLength = 0; 
+        txtXsd.SelectionLength = 0;
         _xsdFileData = txtXsd.Text;
         tabMain.SelectedTab = tabPageXsd;
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An error occurred while attempting to load the xsd from file '" + _xsdFilePath + "'." + g.crlf2 + ex.ToReport(), 
+        MessageBox.Show("An error occurred while attempting to load the xsd from file '" + _xsdFilePath + "'." + g.crlf2 + ex.ToReport(),
                         _appName + " - XSD Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
@@ -466,7 +466,7 @@ namespace Org.XsdTest
         string xmlText = txtXml.Text;
         var xml = XElement.Parse(xmlText);
         string formattedText = xml.ToString();
-        File.WriteAllText(_xmlFileName, formattedText); 
+        File.WriteAllText(_xmlFileName, formattedText);
       }
       catch (Exception ex)
       {
@@ -482,7 +482,7 @@ namespace Org.XsdTest
         string xsdText = txtXsd.Text;
         var xsd = XElement.Parse(xsdText);
         string formattedText = xsd.ToString();
-        File.WriteAllText(_xsdFilePath, formattedText); 
+        File.WriteAllText(_xsdFilePath, formattedText);
       }
       catch (Exception ex)
       {
@@ -516,27 +516,27 @@ namespace Org.XsdTest
       var xsd = XElement.Parse(xmlText);
       string formattedText = xsd.ToString();
 
-      this.Invoke((Action)((() => 
-        {          
-          if (formattedText == _xmlFileData)
-          {
-            tabPageXml.Text = "XML File";
-            _xmlDataChanged = false;
-            lblXmlFileMessage.Text = String.Empty;
-            lblXmlFileMessage.Visible = false;
-            btnSaveXml.Enabled = false;
+      this.Invoke((Action)((() =>
+      {
+        if (formattedText == _xmlFileData)
+        {
+          tabPageXml.Text = "XML File";
+          _xmlDataChanged = false;
+          lblXmlFileMessage.Text = String.Empty;
+          lblXmlFileMessage.Visible = false;
+          btnSaveXml.Enabled = false;
 
-          }
-          else
-          {
-            tabPageXml.Text = "XML File *";
-            _xmlDataChanged = true;
-            lblXmlFileMessage.Text = "XML is modified";
-            lblXmlFileMessage.Visible = true;
-            btnSaveXml.Enabled = true;
-          }
-        } 
-      )));
+        }
+        else
+        {
+          tabPageXml.Text = "XML File *";
+          _xmlDataChanged = true;
+          lblXmlFileMessage.Text = "XML is modified";
+          lblXmlFileMessage.Visible = true;
+          btnSaveXml.Enabled = true;
+        }
+      }
+                           )));
     }
 
     private void CheckForXsdChange()
@@ -574,7 +574,7 @@ namespace Org.XsdTest
           btnSaveXsd.Enabled = true;
         }
       }
-      )));
+                           )));
     }
 
     private void udFontSize_ValueChanged(object sender, EventArgs e)
@@ -629,7 +629,7 @@ namespace Org.XsdTest
 
       this.Cursor = Cursors.Default;
     }
-    
+
     private void fctb_AutoIndentNeeded(object sender, AutoIndentEventArgs args)
     {
       //block {}

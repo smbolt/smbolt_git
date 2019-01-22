@@ -41,35 +41,37 @@
       this.mnuMain.SuspendLayout();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1169, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 678);
       this.lblStatus.Name = "lblStatus";
@@ -78,9 +80,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnClearObservations);
       this.pnlTop.Controls.Add(this.btnLoadObservations);
       this.pnlTop.Controls.Add(this.btnReloadMetricData);
@@ -89,9 +91,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1169, 49);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // txtMain
-      // 
+      //
       this.txtMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtMain.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtMain.Location = new System.Drawing.Point(0, 73);
@@ -101,9 +103,9 @@
       this.txtMain.Size = new System.Drawing.Size(1169, 605);
       this.txtMain.TabIndex = 3;
       this.txtMain.WordWrap = false;
-      // 
+      //
       // btnReloadMetricData
-      // 
+      //
       this.btnReloadMetricData.Location = new System.Drawing.Point(12, 14);
       this.btnReloadMetricData.Name = "btnReloadMetricData";
       this.btnReloadMetricData.Size = new System.Drawing.Size(135, 23);
@@ -112,9 +114,9 @@
       this.btnReloadMetricData.Text = "Reload Metric Data";
       this.btnReloadMetricData.UseVisualStyleBackColor = true;
       this.btnReloadMetricData.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnLoadObservations
-      // 
+      //
       this.btnLoadObservations.Location = new System.Drawing.Point(153, 14);
       this.btnLoadObservations.Name = "btnLoadObservations";
       this.btnLoadObservations.Size = new System.Drawing.Size(135, 23);
@@ -123,9 +125,9 @@
       this.btnLoadObservations.Text = "Load Observations";
       this.btnLoadObservations.UseVisualStyleBackColor = true;
       this.btnLoadObservations.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnClearObservations
-      // 
+      //
       this.btnClearObservations.Location = new System.Drawing.Point(294, 14);
       this.btnClearObservations.Name = "btnClearObservations";
       this.btnClearObservations.Size = new System.Drawing.Size(135, 23);
@@ -134,9 +136,9 @@
       this.btnClearObservations.Text = "Clear Observations";
       this.btnClearObservations.UseVisualStyleBackColor = true;
       this.btnClearObservations.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1169, 701);

@@ -11,16 +11,31 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "sysdiagram")]
-    public partial class sysdiagram
-    {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "sysdiagram")]
+  public partial class sysdiagram
+  {
+    public string name {
+      get;
+      set;
     }
+    public int principal_id {
+      get;
+      set;
+    }
+    public int diagram_id {
+      get;
+      set;
+    }
+    public Nullable<int> version {
+      get;
+      set;
+    }
+    public byte[] definition {
+      get;
+      set;
+    }
+  }
 }

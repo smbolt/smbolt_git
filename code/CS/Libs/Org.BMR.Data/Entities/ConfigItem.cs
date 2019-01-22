@@ -11,23 +11,56 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "ConfigItem")]
-    public partial class ConfigItem
-    {
-        public int ConfigItemId { get; set; }
-        public int ModuleCode { get; set; }
-        public string ConfigItemTypeCode { get; set; }
-        public int ConfigItemPriority { get; set; }
-        public string Category { get; set; }
-        public string ConfigItemKey { get; set; }
-        public string ConfigItemValue { get; set; }
-        public int StatusId { get; set; }
-    
-        public virtual ConfigItemType ConfigItemType { get; set; }
-        public virtual Module Module { get; set; }
-        public virtual Status Status { get; set; }
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "ConfigItem")]
+  public partial class ConfigItem
+  {
+    public int ConfigItemId {
+      get;
+      set;
     }
+    public int ModuleCode {
+      get;
+      set;
+    }
+    public string ConfigItemTypeCode {
+      get;
+      set;
+    }
+    public int ConfigItemPriority {
+      get;
+      set;
+    }
+    public string Category {
+      get;
+      set;
+    }
+    public string ConfigItemKey {
+      get;
+      set;
+    }
+    public string ConfigItemValue {
+      get;
+      set;
+    }
+    public int StatusId {
+      get;
+      set;
+    }
+
+    public virtual ConfigItemType ConfigItemType {
+      get;
+      set;
+    }
+    public virtual Module Module {
+      get;
+      set;
+    }
+    public virtual Status Status {
+      get;
+      set;
+    }
+  }
 }

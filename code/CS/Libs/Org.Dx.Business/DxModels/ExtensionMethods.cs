@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Org.GS;
 
-namespace Org.Dx.Business 
+namespace Org.Dx.Business
 {
-  public static class ExtensionMethods 
+  public static class ExtensionMethods
   {
     public static SortedList<int, Node> ToNodeSet(this SortedList<int, DxCell> c)
     {
@@ -25,15 +25,24 @@ namespace Org.Dx.Business
     {
       switch (s)
       {
-        case QueryExecutionStatus.Aligned: return "ALGN";
-        case QueryExecutionStatus.InInterval: return "INTV";
-        case QueryExecutionStatus.InProgress: return "INPR";
-        case QueryExecutionStatus.Matched: return "MTCH";
-        case QueryExecutionStatus.MatchedTarget: return "MTGT";
-        case QueryExecutionStatus.MatchedTargetPending: return "MTPN";
-        case QueryExecutionStatus.MatchFailed: return "FAIL";
-        case QueryExecutionStatus.Initial: return "INIT";
-        case QueryExecutionStatus.Target: return "TGRT";
+        case QueryExecutionStatus.Aligned:
+          return "ALGN";
+        case QueryExecutionStatus.InInterval:
+          return "INTV";
+        case QueryExecutionStatus.InProgress:
+          return "INPR";
+        case QueryExecutionStatus.Matched:
+          return "MTCH";
+        case QueryExecutionStatus.MatchedTarget:
+          return "MTGT";
+        case QueryExecutionStatus.MatchedTargetPending:
+          return "MTPN";
+        case QueryExecutionStatus.MatchFailed:
+          return "FAIL";
+        case QueryExecutionStatus.Initial:
+          return "INIT";
+        case QueryExecutionStatus.Target:
+          return "TGRT";
       }
 
       return "UNKN";
@@ -45,7 +54,7 @@ namespace Org.Dx.Business
         return new string[] { };
 
       s = s.Trim();
-      
+
       int relOpPos = s.IndexOfAny(Constants.RelOps);
 
       if (relOpPos == -1 || relOpPos == 0 || relOpPos == s.Length - 1)
@@ -75,10 +84,14 @@ namespace Org.Dx.Business
 
       switch (s)
       {
-        case "~": return RelOp.Contains;
-        case "=": return RelOp.Equals;
-        case ">": return RelOp.GreaterThan;
-        case "<": return RelOp.LessThan;
+        case "~":
+          return RelOp.Contains;
+        case "=":
+          return RelOp.Equals;
+        case ">":
+          return RelOp.GreaterThan;
+        case "<":
+          return RelOp.LessThan;
       }
 
       return RelOp.NotSet;
@@ -86,11 +99,11 @@ namespace Org.Dx.Business
 
     public static List<DxRowSet> ToRowSets(this DxWorkbook wb, DxFilterSet fs = null)
     {
-      var rowSets = new List<DxRowSet>(); 
+      var rowSets = new List<DxRowSet>();
 
       if(wb == null)
         return rowSets;
-      
+
       foreach(var ws in wb.Values)
       {
         bool includeWorksheet = true;
@@ -98,7 +111,7 @@ namespace Org.Dx.Business
         if (fs != null)
           includeWorksheet = fs.IncludeWorksheet(ws.WorksheetName);
 
-        DxRowSet filteredRowSet = null; 
+        DxRowSet filteredRowSet = null;
 
         if (includeWorksheet)
         {
@@ -108,12 +121,12 @@ namespace Org.Dx.Business
           {
             filteredRowSet = wb.DxMap.FilterRowSet(rowSet);
             filteredRowSet.WorksheetName = ws.WorksheetName;
-            rowSets.Add(filteredRowSet); 
+            rowSets.Add(filteredRowSet);
           }
           else
           {
-            rowSet.WorksheetName = ws.WorksheetName;            
-            rowSets.Add(rowSet); 
+            rowSet.WorksheetName = ws.WorksheetName;
+            rowSets.Add(rowSet);
           }
         }
       }
@@ -132,7 +145,7 @@ namespace Org.Dx.Business
         return rowSet;
       else
         ws = map.FilterRowSet(rowSet);
-        return ws;
+      return ws;
     }
   }
 }

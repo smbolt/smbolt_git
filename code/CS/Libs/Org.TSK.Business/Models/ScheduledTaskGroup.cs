@@ -8,8 +8,14 @@ namespace Org.TSK.Business.Models
 {
   public class ScheduledTaskGroup
   {
-    public int TaskGroupId { get; set; }
-    public string TaskGroupName { get; set; }
+    public int TaskGroupId {
+      get;
+      set;
+    }
+    public string TaskGroupName {
+      get;
+      set;
+    }
 
     public ScheduledTaskGroup()
     {

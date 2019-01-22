@@ -2,12 +2,12 @@
 {
   partial class NotifyConfigPanel
   {
-    /// <summary> 
+    /// <summary>
     /// Required designer variable.
     /// </summary>
     private System.ComponentModel.IContainer components = null;
 
-    /// <summary> 
+    /// <summary>
     /// Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -22,8 +22,8 @@
 
     #region Component Designer generated code
 
-    /// <summary> 
-    /// Required method for Designer support - do not modify 
+    /// <summary>
+    /// Required method for Designer support - do not modify
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent()
@@ -40,9 +40,9 @@
       this.txtName = new System.Windows.Forms.TextBox();
       this.btnSave = new System.Windows.Forms.Button();
       this.SuspendLayout();
-      // 
+      //
       // lblTreeNodePath
-      // 
+      //
       this.lblTreeNodePath.AutoSize = true;
       this.lblTreeNodePath.Location = new System.Drawing.Point(30, 31);
       this.lblTreeNodePath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -50,27 +50,27 @@
       this.lblTreeNodePath.Size = new System.Drawing.Size(128, 20);
       this.lblTreeNodePath.TabIndex = 6;
       this.lblTreeNodePath.Text = "Tree Node Path: ";
-      // 
+      //
       // txtSupportPhone
-      // 
+      //
       this.txtSupportPhone.Location = new System.Drawing.Point(600, 102);
       this.txtSupportPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.txtSupportPhone.Name = "txtSupportPhone";
       this.txtSupportPhone.Size = new System.Drawing.Size(186, 26);
       this.txtSupportPhone.TabIndex = 2;
       this.txtSupportPhone.TextChanged += new System.EventHandler(this.DirtyCheck);
-      // 
+      //
       // txtSupportEmail
-      // 
+      //
       this.txtSupportEmail.Location = new System.Drawing.Point(345, 102);
       this.txtSupportEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.txtSupportEmail.Name = "txtSupportEmail";
       this.txtSupportEmail.Size = new System.Drawing.Size(223, 26);
       this.txtSupportEmail.TabIndex = 1;
       this.txtSupportEmail.TextChanged += new System.EventHandler(this.DirtyCheck);
-      // 
+      //
       // chkSendEmail
-      // 
+      //
       this.chkSendEmail.AutoSize = true;
       this.chkSendEmail.Location = new System.Drawing.Point(345, 142);
       this.chkSendEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -80,9 +80,9 @@
       this.chkSendEmail.Text = "Send Email";
       this.chkSendEmail.UseVisualStyleBackColor = true;
       this.chkSendEmail.CheckedChanged += new System.EventHandler(this.DirtyCheck);
-      // 
+      //
       // chkSendSms
-      // 
+      //
       this.chkSendSms.AutoSize = true;
       this.chkSendSms.Location = new System.Drawing.Point(600, 142);
       this.chkSendSms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -92,9 +92,9 @@
       this.chkSendSms.Text = "Send SMS";
       this.chkSendSms.UseVisualStyleBackColor = true;
       this.chkSendSms.CheckedChanged += new System.EventHandler(this.DirtyCheck);
-      // 
+      //
       // chkIsActive
-      // 
+      //
       this.chkIsActive.AutoSize = true;
       this.chkIsActive.Location = new System.Drawing.Point(60, 142);
       this.chkIsActive.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -104,9 +104,9 @@
       this.chkIsActive.Text = "Is Active";
       this.chkIsActive.UseVisualStyleBackColor = true;
       this.chkIsActive.CheckedChanged += new System.EventHandler(this.DirtyCheck);
-      // 
+      //
       // lblSupportEmail
-      // 
+      //
       this.lblSupportEmail.AutoSize = true;
       this.lblSupportEmail.Location = new System.Drawing.Point(345, 77);
       this.lblSupportEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -115,9 +115,9 @@
       this.lblSupportEmail.TabIndex = 8;
       this.lblSupportEmail.Tag = "";
       this.lblSupportEmail.Text = "Support Email";
-      // 
+      //
       // lblSupportPhone
-      // 
+      //
       this.lblSupportPhone.AutoSize = true;
       this.lblSupportPhone.Location = new System.Drawing.Point(600, 77);
       this.lblSupportPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -126,9 +126,9 @@
       this.lblSupportPhone.TabIndex = 9;
       this.lblSupportPhone.Tag = "";
       this.lblSupportPhone.Text = "Support Phone";
-      // 
+      //
       // lblName
-      // 
+      //
       this.lblName.AutoSize = true;
       this.lblName.Location = new System.Drawing.Point(60, 77);
       this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -137,18 +137,18 @@
       this.lblName.TabIndex = 7;
       this.lblName.Tag = "";
       this.lblName.Text = "Notify Config Name";
-      // 
+      //
       // txtName
-      // 
+      //
       this.txtName.Location = new System.Drawing.Point(60, 102);
       this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.txtName.Name = "txtName";
       this.txtName.Size = new System.Drawing.Size(250, 26);
       this.txtName.TabIndex = 0;
       this.txtName.TextChanged += new System.EventHandler(this.DirtyCheck);
-      // 
+      //
       // btnSave
-      // 
+      //
       this.btnSave.Enabled = false;
       this.btnSave.Location = new System.Drawing.Point(60, 200);
       this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -159,9 +159,9 @@
       this.btnSave.Text = "Save";
       this.btnSave.UseVisualStyleBackColor = true;
       this.btnSave.Click += new System.EventHandler(this.Save);
-      // 
+      //
       // NotifyConfigPanel
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;

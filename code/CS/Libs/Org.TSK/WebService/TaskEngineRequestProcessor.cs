@@ -16,7 +16,11 @@ namespace Org.TSK
   {
     private static Func<TransactionBase, TaskResult> HostTransactionProcessor;
 
-    public override int EntityId { get { return 399; } }
+    public override int EntityId {
+      get {
+        return 399;
+      }
+    }
     public static bool _isMapped = false;
 
     public TaskEngineRequestProcessor()
@@ -34,7 +38,7 @@ namespace Org.TSK
       var f = new ObjectFactory2();
       TaskResult taskResult = null;
 
-      TransactionBase response = null; 
+      TransactionBase response = null;
 
       try
       {
@@ -46,7 +50,7 @@ namespace Org.TSK
         switch (request.Name)
         {
           case "PingRequest":
-            taskResult = HostTransactionProcessor(request); 
+            taskResult = HostTransactionProcessor(request);
             response = new PingResponse();
             break;
 
@@ -70,9 +74,9 @@ namespace Org.TSK
             break;
 
           default:
-            throw new Exception("The TaskEngine web service request processor does not implement processing for request type '" + request.Name + "'."); 
+            throw new Exception("The TaskEngine web service request processor does not implement processing for request type '" + request.Name + "'.");
         }
-        
+
         var transactionBody = f.Serialize(response);
 
         return transactionBody;

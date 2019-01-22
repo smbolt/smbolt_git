@@ -13,7 +13,11 @@ namespace Org.Cfg
   {
     private object _o;
     private JObject _jo;
-    public JObject JObject { get { return _jo; } }
+    public JObject JObject {
+      get {
+        return _jo;
+      }
+    }
 
     private string _json;
 
@@ -27,7 +31,7 @@ namespace Org.Cfg
       _json = json;
 
       if (_json != null)
-        _jo = (JObject) JsonConvert.DeserializeObject(_json); 
+        _jo = (JObject) JsonConvert.DeserializeObject(_json);
     }
   }
 }

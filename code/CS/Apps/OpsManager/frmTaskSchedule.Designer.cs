@@ -47,18 +47,18 @@
       this.pnlBottom.SuspendLayout();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // txtScheduleName
-      // 
+      //
       this.txtScheduleName.Location = new System.Drawing.Point(11, 23);
       this.txtScheduleName.Name = "txtScheduleName";
       this.txtScheduleName.Size = new System.Drawing.Size(191, 20);
       this.txtScheduleName.TabIndex = 2;
       this.txtScheduleName.Tag = "PropertyChange";
       this.txtScheduleName.TextChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // cbIsActive
-      // 
+      //
       this.cbIsActive.AutoSize = true;
       this.cbIsActive.Location = new System.Drawing.Point(692, 25);
       this.cbIsActive.Name = "cbIsActive";
@@ -69,18 +69,18 @@
       this.cbIsActive.Text = "Is Active";
       this.cbIsActive.UseVisualStyleBackColor = true;
       this.cbIsActive.CheckedChanged += new System.EventHandler(this.Action);
-      // 
+      //
       // lblScheduleName
-      // 
+      //
       this.lblScheduleName.AutoSize = true;
       this.lblScheduleName.Location = new System.Drawing.Point(11, 7);
       this.lblScheduleName.Name = "lblScheduleName";
       this.lblScheduleName.Size = new System.Drawing.Size(83, 13);
       this.lblScheduleName.TabIndex = 6;
       this.lblScheduleName.Text = "Schedule Name";
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 266);
       this.lblStatus.Name = "lblStatus";
@@ -88,9 +88,9 @@
       this.lblStatus.TabIndex = 17;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // gvScheduleElements
-      // 
+      //
       this.gvScheduleElements.AllowUserToAddRows = false;
       this.gvScheduleElements.AllowUserToDeleteRows = false;
       this.gvScheduleElements.AllowUserToResizeRows = false;
@@ -111,25 +111,26 @@
       this.gvScheduleElements.Tag = "EditScheduleElement";
       this.gvScheduleElements.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvScheduleElements_CellMouseUp);
       this.gvScheduleElements.DoubleClick += new System.EventHandler(this.Action);
-      // 
+      //
       // ctxMenuScheduleElements
-      // 
+      //
       this.ctxMenuScheduleElements.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctxMenuScheduleElementsDelete});
+        this.ctxMenuScheduleElementsDelete
+      });
       this.ctxMenuScheduleElements.Name = "ctxMenuScheduleElements";
       this.ctxMenuScheduleElements.Size = new System.Drawing.Size(108, 26);
       this.ctxMenuScheduleElements.Opening += new System.ComponentModel.CancelEventHandler(this.ctxMenuScheduleElements_Opening);
-      // 
+      //
       // ctxMenuScheduleElementsDelete
-      // 
+      //
       this.ctxMenuScheduleElementsDelete.Name = "ctxMenuScheduleElementsDelete";
       this.ctxMenuScheduleElementsDelete.Size = new System.Drawing.Size(107, 22);
       this.ctxMenuScheduleElementsDelete.Tag = "DeleteScheduleElement";
       this.ctxMenuScheduleElementsDelete.Text = "Delete";
       this.ctxMenuScheduleElementsDelete.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnNewScheduleElement
-      // 
+      //
       this.btnNewScheduleElement.Location = new System.Drawing.Point(632, 6);
       this.btnNewScheduleElement.Name = "btnNewScheduleElement";
       this.btnNewScheduleElement.Size = new System.Drawing.Size(127, 25);
@@ -138,9 +139,9 @@
       this.btnNewScheduleElement.Text = "New Schedule Element";
       this.btnNewScheduleElement.UseVisualStyleBackColor = true;
       this.btnNewScheduleElement.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSave
-      // 
+      //
       this.btnSave.Enabled = false;
       this.btnSave.Location = new System.Drawing.Point(3, 8);
       this.btnSave.Name = "btnSave";
@@ -150,9 +151,9 @@
       this.btnSave.Text = "Save";
       this.btnSave.UseVisualStyleBackColor = true;
       this.btnSave.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Location = new System.Drawing.Point(116, 8);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new System.Drawing.Size(110, 25);
@@ -161,9 +162,9 @@
       this.btnCancel.Text = "Close";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlBottom
-      // 
+      //
       this.pnlBottom.Controls.Add(this.btnSave);
       this.pnlBottom.Controls.Add(this.btnCancel);
       this.pnlBottom.Controls.Add(this.btnNewScheduleElement);
@@ -172,9 +173,9 @@
       this.pnlBottom.Name = "pnlBottom";
       this.pnlBottom.Size = new System.Drawing.Size(784, 40);
       this.pnlBottom.TabIndex = 26;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.lblScheduleName);
       this.pnlTop.Controls.Add(this.txtScheduleName);
       this.pnlTop.Controls.Add(this.cbIsActive);
@@ -183,9 +184,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(784, 58);
       this.pnlTop.TabIndex = 27;
-      // 
+      //
       // frmTaskSchedule
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(784, 286);

@@ -11,7 +11,11 @@ namespace Org.GS.Performance
   {
     private SortedDictionary<DateTime, string> PerfEvents;
 
-    public string PerfReport { get { return Get_PerfReport(); } }
+    public string PerfReport {
+      get {
+        return Get_PerfReport();
+      }
+    }
 
     public PerfMetrics()
     {
@@ -57,9 +61,9 @@ namespace Org.GS.Performance
           DateTime prevDt = this.PerfEvents.ElementAt(i - 1).Key;
           TimeSpan ts = dt - prevDt;
 
-          decimal seconds = (decimal) ts.TotalMilliseconds / 1000; 
+          decimal seconds = (decimal) ts.TotalMilliseconds / 1000;
 
-          sb.Append("  " + dt.ToString("yyyy-MM-dd HH:mm:ss.fff") + " - " + desc.PadTo(25) + "   " + 
+          sb.Append("  " + dt.ToString("yyyy-MM-dd HH:mm:ss.fff") + " - " + desc.PadTo(25) + "   " +
                     seconds.ToString("0000.000") + " seconds" + g.crlf);
 
           // last item

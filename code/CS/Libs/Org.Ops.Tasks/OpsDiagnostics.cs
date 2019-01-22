@@ -40,7 +40,7 @@ namespace Org.Ops.Tasks
 
           sb.Append("Profile             Category                      Counter                       Instance                           Value" + g.crlf +
                     "------------------------------------------------------------------------------------------------------------------------");
-          
+
           foreach (var perfProfile in perfProfileSet.Values)
           {
             foreach (var category in perfProfile.CategorySet.Values)
@@ -49,7 +49,7 @@ namespace Org.Ops.Tasks
               {
                 pc = new PerformanceCounter(counter.CategoryName, counter.CounterName, counter.InstanceName);
                 pc.NextValue();
-                counters.Add(pc, perfProfile.ProfileName);                 
+                counters.Add(pc, perfProfile.ProfileName);
               }
             }
           }
@@ -67,7 +67,7 @@ namespace Org.Ops.Tasks
           logger.Log(message);
 
           return new TaskResult(TaskRequest.TaskName).Success();
-        });     
+        });
 
         return taskResult;
       }

@@ -40,13 +40,13 @@ namespace Org.EdiWorkbench
     private string _lastMessage;
 
     private frmDisplay fDisplay;
-    private bool _isStartingUp; 
+    private bool _isStartingUp;
 
-    private System.Timers.Timer _messageTimer; 
+    private System.Timers.Timer _messageTimer;
 
     private string crlf;
     private string crlf2;
-        
+
     public frmMain()
     {
       InitializeComponent();
@@ -111,7 +111,7 @@ namespace Org.EdiWorkbench
 
     private void LoadEdi()
     {
-      string ediPath = GetEdiFolderPath() + @"\" + cboFileToProcess.Text + ".txt"; 
+      string ediPath = GetEdiFolderPath() + @"\" + cboFileToProcess.Text + ".txt";
       string ediFile = File.ReadAllText(ediPath);
       rtxtRawEdi.Text = ediFile;
 
@@ -120,24 +120,24 @@ namespace Org.EdiWorkbench
       tabMain.SelectedTab = tabPageRawEdi;
 
       string fileName = Path.GetFileName(ediPath);
-      DisplayMessage("File loaded: " + fileName); 
+      DisplayMessage("File loaded: " + fileName);
     }
 
     private void ConvertEdiToFormattedEdi()
     {
-      string ediPath = GetEdiFolderPath() + @"\" + cboFileToProcess.Text + ".txt"; 
+      string ediPath = GetEdiFolderPath() + @"\" + cboFileToProcess.Text + ".txt";
       string ediFmtPath = GetEdiFmtFolderPath() + @"\" + cboFileToProcess.Text + "_Fmt.txt";
 
       string formattedEdi = EdiHelper.TransformEdiToFormattedEdi(ediPath);
       File.WriteAllText(ediFmtPath, formattedEdi);
- 
+
       rtxtFmtEdi.Text = formattedEdi;
       rtxtFmtEdi.SelectionStart = 0;
       rtxtFmtEdi.SelectionLength = 0;
       tabMain.SelectedTab = tabPageFmtEdi;
 
       string fileName = Path.GetFileName(ediFmtPath);
-      DisplayMessage("File written: " + fileName); 
+      DisplayMessage("File written: " + fileName);
     }
 
     private void ParseRawEdiToEdiXml()
@@ -146,20 +146,20 @@ namespace Org.EdiWorkbench
       string ediXmlPath_A = GetEdiXmlAFolderPath() + @"\" + cboFileToProcess.Text + "_EdiA.xml";
 
       string ediXml_A = EdiHelper.ParseRawEdiToEdiXml(ediPath);
-      File.WriteAllText(ediXmlPath_A, ediXml_A); 
+      File.WriteAllText(ediXmlPath_A, ediXml_A);
 
       rtxtEdiXml_A.Text = ediXml_A;
       rtxtEdiXml_A.SelectionStart = 0;
-      rtxtEdiXml_A.SelectionLength = 0; 
+      rtxtEdiXml_A.SelectionLength = 0;
       tabMain.SelectedTab = tabPageEdiXml_A;
 
       string fileName = Path.GetFileName(ediXmlPath_A);
-      DisplayMessage("File written: " + fileName); 
+      DisplayMessage("File written: " + fileName);
     }
 
     private void LoadEdiToXsltToEdi()
     {
-      string ediPath = GetEdiFolderPath() + @"\" + cboFileToProcess.Text + ".txt"; 
+      string ediPath = GetEdiFolderPath() + @"\" + cboFileToProcess.Text + ".txt";
       string ediFile = File.ReadAllText(ediPath);
 
       rtxtToEdiXslt.Text = ediFile;
@@ -175,7 +175,7 @@ namespace Org.EdiWorkbench
       string busXmlPath = GetBusXmlAFolderPath() + @"\" + cboFileToProcess.Text + "_BusA.xml";
 
       string busXml = EdiHelper.TransformEdiToOopBus(ediPath);
-      File.WriteAllText(busXmlPath, busXml); 
+      File.WriteAllText(busXmlPath, busXml);
 
       rtxtBusXml_A.Text = busXml;
       rtxtBusXml_A.SelectionStart = 0;
@@ -183,12 +183,12 @@ namespace Org.EdiWorkbench
       tabMain.SelectedTab = tabPageBusXml_A;
 
       string fileName = Path.GetFileName(busXmlPath);
-      DisplayMessage("File written: " + fileName); 
+      DisplayMessage("File written: " + fileName);
     }
 
     private void TransformToEdiXml_B()
     {
-      string toEdiXslt = GetXsltFolderPath() + @"\ToEdiXml_" + _docNbr + ".xslt";            
+      string toEdiXslt = GetXsltFolderPath() + @"\ToEdiXml_" + _docNbr + ".xslt";
       string busXmlPath_A = GetBusXmlAFolderPath() + @"\" + cboFileToProcess.Text + "_BusA.xml";
 
       if (!File.Exists(busXmlPath_A))
@@ -210,7 +210,7 @@ namespace Org.EdiWorkbench
       catch (Exception ex)
       {
         MessageBox.Show(ex.ToReport(),
-        "EdiWorkbook - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "EdiWorkbook - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
       }
 
@@ -222,7 +222,7 @@ namespace Org.EdiWorkbench
 
       if (fDisplay.Visible)
       {
-        fDisplay.SetText(ediXml_B); 
+        fDisplay.SetText(ediXml_B);
       }
       else
       {
@@ -231,7 +231,7 @@ namespace Org.EdiWorkbench
 
 
       string fileName = Path.GetFileName(ediXmlPath_B);
-      DisplayMessage("File written: " + fileName); 
+      DisplayMessage("File written: " + fileName);
     }
 
     private string GetEdiFolderPath()
@@ -283,7 +283,7 @@ namespace Org.EdiWorkbench
         value = value.Replace("$User$", _userName);
 
       if (value.Contains("$EdiWorkRoot$"))
-        value = value.Replace("$EdiWorkRoot$", _ediWorkRoot); 
+        value = value.Replace("$EdiWorkRoot$", _ediWorkRoot);
 
       return value;
     }
@@ -328,7 +328,7 @@ namespace Org.EdiWorkbench
         for (int i = 0; i < cboFocus.Items.Count; i++)
         {
           if (cboFocus.Items[i].ToString() == _appFocus.ToString())
-          {            cboFocus.SelectedIndex = i;
+          { cboFocus.SelectedIndex = i;
             break;
 
           }
@@ -336,7 +336,7 @@ namespace Org.EdiWorkbench
 
         _useDisplayForm = false;
         if (ConfigurationManager.AppSettings.AllKeys.Contains("UseDisplayForm"))
-            _useDisplayForm = Boolean.Parse(ConfigurationManager.AppSettings["UseDisplayForm"]);
+          _useDisplayForm = Boolean.Parse(ConfigurationManager.AppSettings["UseDisplayForm"]);
 
 
 
@@ -349,8 +349,8 @@ namespace Org.EdiWorkbench
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An exception occured during application start up." + g.crlf2 + ex.ToReport(), 
-                        "EdiWorkbook - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+        MessageBox.Show("An exception occured during application start up." + g.crlf2 + ex.ToReport(),
+                        "EdiWorkbook - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -429,7 +429,7 @@ namespace Org.EdiWorkbench
       if(_isStartingUp)
         return;
 
-      _appFocus = (AppFocus)Enum.Parse(typeof(AppFocus), cboFocus.Text); 
+      _appFocus = (AppFocus)Enum.Parse(typeof(AppFocus), cboFocus.Text);
     }
 
     private void LoadXslt(string docNbr)
@@ -449,7 +449,7 @@ namespace Org.EdiWorkbench
       if (File.Exists(toEdiXmlFile))
         rtxtToEdiXslt.Text = File.ReadAllText(toEdiXmlFile);
 
-      _currentToEdiXslt = rtxtToEdiXslt.Text.Replace("\r\n", "\n"); 
+      _currentToEdiXslt = rtxtToEdiXslt.Text.Replace("\r\n", "\n");
       _saveToEdiXslt = _currentToEdiXslt;
     }
 
@@ -476,7 +476,7 @@ namespace Org.EdiWorkbench
 
     private void SaveToEdiXslt()
     {
-      string timestamp = DateTime.Now.ToString("yyyyMMdd-HHmmssfff"); 
+      string timestamp = DateTime.Now.ToString("yyyyMMdd-HHmmssfff");
       string toEdiXslt = GetXsltFolderPath() + @"\ToEdiXml_" + _docNbr + ".xslt";
       string toEdiXsltSave =  GetXsltSaveFolderPath() + @"\ToEdiXml_"+ timestamp + "_" + _docNbr + ".xslt";
 
@@ -486,7 +486,7 @@ namespace Org.EdiWorkbench
       _currentToEdiXslt = rtxtToEdiXslt.Text.Replace("\r\n", "\n");
       _saveToEdiXslt = _currentToEdiXslt;
       ToEdiXmlXsltChanged();
-      DisplayMessage("To EDI Xslt file saved"); 
+      DisplayMessage("To EDI Xslt file saved");
     }
 
     private void ReloadEdiXslt()
@@ -494,13 +494,13 @@ namespace Org.EdiWorkbench
       string toEdiXmlFile = GetXsltFolderPath() + @"\ToEdiXml_" + _docNbr + ".xslt";
 
       if (File.Exists(toEdiXmlFile))
-          rtxtToEdiXslt.Text = File.ReadAllText(toEdiXmlFile);
+        rtxtToEdiXslt.Text = File.ReadAllText(toEdiXmlFile);
 
       _currentToEdiXslt = rtxtToEdiXslt.Text.Replace("\r\n", "\n");
       _saveToEdiXslt = _currentToEdiXslt;
 
       string fileName = Path.GetFileName(toEdiXmlFile);
-      DisplayMessage("File reloaded: " + fileName); 
+      DisplayMessage("File reloaded: " + fileName);
     }
 
     private void DisplayMessage(string message)
@@ -525,7 +525,7 @@ namespace Org.EdiWorkbench
 
     private void lblMessage_DoubleClick(object sender, EventArgs e)
     {
-      DisplayMessage(_lastMessage); 
+      DisplayMessage(_lastMessage);
     }
 
     private void frmMain_KeyUp(object sender, KeyEventArgs e)
@@ -539,7 +539,7 @@ namespace Org.EdiWorkbench
 
     private void ckUseDisplayForm_CheckedChanged(object sender, EventArgs e)
     {
-      bool showDisplayForm = ckUseDisplayForm.Checked; 
+      bool showDisplayForm = ckUseDisplayForm.Checked;
 
       if (showDisplayForm)
       {
@@ -567,7 +567,7 @@ namespace Org.EdiWorkbench
 
       fDisplay.Close();
       fDisplay.Dispose();
-      fDisplay = null; 
+      fDisplay = null;
     }
 
     private void frmMain_Shown(object sender, EventArgs e)
@@ -579,7 +579,7 @@ namespace Org.EdiWorkbench
         ckUseDisplayForm.Checked = true;
 
       string docNbr = GetDocNbr();
-      LoadXslt(docNbr); 
+      LoadXslt(docNbr);
 
       _isStartingUp = false;
     }

@@ -53,35 +53,37 @@
       this.tabPageJson.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtJson)).BeginInit();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1344, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.btnLoadAppConfig);
       this.pnlTop.Controls.Add(this.btnDeserializeObject);
       this.pnlTop.Controls.Add(this.btnSerializeObject);
@@ -92,9 +94,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1344, 73);
       this.pnlTop.TabIndex = 1;
-      // 
+      //
       // btnLoadAppConfig
-      // 
+      //
       this.btnLoadAppConfig.Location = new System.Drawing.Point(495, 8);
       this.btnLoadAppConfig.Name = "btnLoadAppConfig";
       this.btnLoadAppConfig.Size = new System.Drawing.Size(128, 23);
@@ -103,9 +105,9 @@
       this.btnLoadAppConfig.Text = "Load AppConfig";
       this.btnLoadAppConfig.UseVisualStyleBackColor = true;
       this.btnLoadAppConfig.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnDeserializeObject
-      // 
+      //
       this.btnDeserializeObject.Location = new System.Drawing.Point(361, 8);
       this.btnDeserializeObject.Name = "btnDeserializeObject";
       this.btnDeserializeObject.Size = new System.Drawing.Size(128, 23);
@@ -114,9 +116,9 @@
       this.btnDeserializeObject.Text = "Deserialize Object";
       this.btnDeserializeObject.UseVisualStyleBackColor = true;
       this.btnDeserializeObject.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnSerializeObject
-      // 
+      //
       this.btnSerializeObject.Location = new System.Drawing.Point(228, 8);
       this.btnSerializeObject.Name = "btnSerializeObject";
       this.btnSerializeObject.Size = new System.Drawing.Size(128, 23);
@@ -125,9 +127,9 @@
       this.btnSerializeObject.Text = "Serialize Object";
       this.btnSerializeObject.UseVisualStyleBackColor = true;
       this.btnSerializeObject.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnBuildCommandSet
-      // 
+      //
       this.btnBuildCommandSet.Location = new System.Drawing.Point(13, 37);
       this.btnBuildCommandSet.Name = "btnBuildCommandSet";
       this.btnBuildCommandSet.Size = new System.Drawing.Size(128, 23);
@@ -136,9 +138,9 @@
       this.btnBuildCommandSet.Text = "Build Command Set";
       this.btnBuildCommandSet.UseVisualStyleBackColor = true;
       this.btnBuildCommandSet.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRun
-      // 
+      //
       this.btnRun.Location = new System.Drawing.Point(13, 8);
       this.btnRun.Name = "btnRun";
       this.btnRun.Size = new System.Drawing.Size(128, 23);
@@ -147,9 +149,9 @@
       this.btnRun.Text = "BuildMessage";
       this.btnRun.UseVisualStyleBackColor = true;
       this.btnRun.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 658);
       this.lblStatus.Name = "lblStatus";
@@ -158,9 +160,9 @@
       this.lblStatus.TabIndex = 2;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // tabMain
-      // 
+      //
       this.tabMain.Controls.Add(this.tabPageRawText);
       this.tabMain.Controls.Add(this.tabPageJson);
       this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -171,9 +173,9 @@
       this.tabMain.Size = new System.Drawing.Size(1344, 561);
       this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
       this.tabMain.TabIndex = 3;
-      // 
+      //
       // tabPageRawText
-      // 
+      //
       this.tabPageRawText.Controls.Add(this.txtRaw);
       this.tabPageRawText.Location = new System.Drawing.Point(4, 22);
       this.tabPageRawText.Name = "tabPageRawText";
@@ -182,9 +184,9 @@
       this.tabPageRawText.TabIndex = 0;
       this.tabPageRawText.Text = "Raw Text";
       this.tabPageRawText.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtRaw
-      // 
+      //
       this.txtRaw.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -195,7 +197,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtRaw.AutoScrollMinSize = new System.Drawing.Size(25, 13);
       this.txtRaw.BackBrush = null;
       this.txtRaw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -214,9 +217,9 @@
       this.txtRaw.Size = new System.Drawing.Size(1330, 529);
       this.txtRaw.TabIndex = 0;
       this.txtRaw.Zoom = 100;
-      // 
+      //
       // tabPageJson
-      // 
+      //
       this.tabPageJson.Controls.Add(this.txtJson);
       this.tabPageJson.Location = new System.Drawing.Point(4, 22);
       this.tabPageJson.Name = "tabPageJson";
@@ -225,9 +228,9 @@
       this.tabPageJson.TabIndex = 1;
       this.tabPageJson.Text = "Json ";
       this.tabPageJson.UseVisualStyleBackColor = true;
-      // 
+      //
       // txtJson
-      // 
+      //
       this.txtJson.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -238,7 +241,8 @@
         '\"',
         '\"',
         '\'',
-        '\''};
+        '\''
+      };
       this.txtJson.AutoScrollMinSize = new System.Drawing.Size(27, 14);
       this.txtJson.BackBrush = null;
       this.txtJson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -257,9 +261,9 @@
       this.txtJson.Size = new System.Drawing.Size(1330, 529);
       this.txtJson.TabIndex = 1;
       this.txtJson.Zoom = 100;
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1344, 679);
@@ -298,9 +302,9 @@
     private FastColoredTextBoxNS.FastColoredTextBox txtRaw;
     private System.Windows.Forms.TabPage tabPageJson;
     private FastColoredTextBoxNS.FastColoredTextBox txtJson;
-		private System.Windows.Forms.Button btnDeserializeObject;
-		private System.Windows.Forms.Button btnSerializeObject;
-		private System.Windows.Forms.Button btnLoadAppConfig;
+    private System.Windows.Forms.Button btnDeserializeObject;
+    private System.Windows.Forms.Button btnSerializeObject;
+    private System.Windows.Forms.Button btnLoadAppConfig;
     private System.Windows.Forms.Button btnBuildCommandSet;
   }
 }

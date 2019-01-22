@@ -69,28 +69,28 @@ namespace Org.OpsManager
               rh.RunStats.Dec4Label.IsNotBlank() || rh.RunStats.Dec5Label.IsNotBlank())
             runStats = "Y";
           gvRunHistory.Rows.Add(rh.TaskName
-                               ,rh.ProcessorType
-                               ,rh.ProcessorName + "_" + rh.ProcessorVersion
-                               ,rh.ExecutionStatus
-                               ,rh.RunStatus
-                               ,rh.RunCode
-                               ,rh.NoWorkDone ? "Y" : "N"
-                               ,rh.StartDateTime
-                               ,rh.EndDateTime
-                               ,rh.RunHost
-                               ,rh.RunUser
-                               ,rh.Message
-                               ,rh.RunUntilTask ? "Y" : "N"
-                               ,rh.RunUntilPeriod
-                               ,rh.RunUntilOffsetMinutes
-                               ,runStats
-                               ,rh.RunId);
+                                ,rh.ProcessorType
+                                ,rh.ProcessorName + "_" + rh.ProcessorVersion
+                                ,rh.ExecutionStatus
+                                ,rh.RunStatus
+                                ,rh.RunCode
+                                ,rh.NoWorkDone ? "Y" : "N"
+                                ,rh.StartDateTime
+                                ,rh.EndDateTime
+                                ,rh.RunHost
+                                ,rh.RunUser
+                                ,rh.Message
+                                ,rh.RunUntilTask ? "Y" : "N"
+                                ,rh.RunUntilPeriod
+                                ,rh.RunUntilOffsetMinutes
+                                ,runStats
+                                ,rh.RunId);
         }
       }
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred attempting to Display RunHistory to 'gvRunHistory'." + g.crlf2 +
-                       "Exception:" + g.crlf + ex.ToReport(), "Ops Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "Exception:" + g.crlf + ex.ToReport(), "Ops Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -116,7 +116,7 @@ namespace Org.OpsManager
           sb.Append(log.LogDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff").PadTo(24) + g.crlf +
                     "-----------------------" + g.crlf +
                     "Event:".PadTo(14) + (log.EventCode.HasValue ? _opsData.AppLogEvents[log.EventCode.Value] : "") + g.crlf +
-                    "Module:".PadTo(14) + (log.ModuleId.HasValue ? _opsData.AppLogModules[log.ModuleId.Value] : "") + g.crlf +          
+                    "Module:".PadTo(14) + (log.ModuleId.HasValue ? _opsData.AppLogModules[log.ModuleId.Value] : "") + g.crlf +
                     "Entity:".PadTo(14) + (log.EntityId.HasValue ? _opsData.AppLogEntities[log.EntityId.Value] : "") + g.crlf +
                     "User Name:".PadTo(14) + log.UserName + g.crlf +
                     "Notification Sent: " + log.NotificationSent + g.crlf);
@@ -177,14 +177,14 @@ namespace Org.OpsManager
 
             sb.Append(g.crlf2);
 
-          } 
+          }
         }
         txtLogDetails.Text = sb.ToString();
       }
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred attempting to show logs related to selected Run." + g.crlf2 +
-                       "Exception:" + g.crlf + ex.ToReport(), "Ops Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        "Exception:" + g.crlf + ex.ToReport(), "Ops Manager - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -194,37 +194,37 @@ namespace Org.OpsManager
 
       try
       {
-          GridView view = _opsData.GridViewSet["RunHistory"];
-          view.SetColumnWidths(gvRunHistory.ClientSize.Width);
+        GridView view = _opsData.GridViewSet["RunHistory"];
+        view.SetColumnWidths(gvRunHistory.ClientSize.Width);
 
-          foreach (GridColumn gc in view)
+        foreach (GridColumn gc in view)
+        {
+          DataGridViewColumn col = new DataGridViewTextBoxColumn();
+          col.Name = gc.Name;
+          col.HeaderText = gc.Text;
+
+          col.Width = gc.WidthPixels;
+
+          switch (gc.Align)
           {
-            DataGridViewColumn col = new DataGridViewTextBoxColumn();
-            col.Name = gc.Name;
-            col.HeaderText = gc.Text;
-
-            col.Width = gc.WidthPixels;
-
-            switch (gc.Align)
-            {
-              case "Right":
-                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                break;
-              case "Left":
-                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                break;
-              case "Center":
-                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                break;
-            }
-
-            if (gc.Fill)
-              col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            gvRunHistory.Columns.Add(col);
+            case "Right":
+              col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+              col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+              break;
+            case "Left":
+              col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+              col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+              break;
+            case "Center":
+              col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+              col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+              break;
           }
+
+          if (gc.Fill)
+            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+          gvRunHistory.Columns.Add(col);
+        }
       }
       catch (Exception ex)
       {

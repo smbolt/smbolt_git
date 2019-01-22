@@ -32,7 +32,7 @@ namespace Org.GS.Logging
         var appLogEntities = new Dictionary<int, string>();
 
         string sql = " SELECT [EntityID] " + g.crlf +
-                           " ,[EntityName] " + g.crlf +
+                     " ,[EntityName] " + g.crlf +
                      " FROM [Logging].[dbo].[AppLogEntity]";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -142,7 +142,7 @@ namespace Org.GS.Logging
         var appLogModules = new Dictionary<int, string>();
 
         string sql = " SELECT [ModuleID] " + g.crlf +
-                           " ,[Description] " + g.crlf +
+                     " ,[Description] " + g.crlf +
                      " FROM [Logging].[dbo].[AppLogModule]";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -253,7 +253,7 @@ namespace Org.GS.Logging
         var appLogEvents = new Dictionary<int, string>();
 
         string sql = " SELECT [EventCode] " + g.crlf +
-                           " ,[Description] " + g.crlf +
+                     " ,[Description] " + g.crlf +
                      " FROM [Logging].[dbo].[AppLogEvent]";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -364,7 +364,7 @@ namespace Org.GS.Logging
         var appLogSeverityCodes = new Dictionary<string, string>();
 
         string sql = " SELECT [SeverityCode] " + g.crlf +
-                           " ,[Description] " + g.crlf +
+                     " ,[Description] " + g.crlf +
                      " FROM [Logging].[dbo].[AppLogSeverity]";
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -422,7 +422,7 @@ namespace Org.GS.Logging
         if (fromDt.HasValue && toDt.HasValue)
         {
           whereClause += (whereClause.IsBlank() ? "WHERE" : "AND") + " LogDateTime BETWEEN '" + fromDt.Value.ToString("MM/dd/yyyy HH:mm:00") +
-                                                                                    "' AND '" + toDt.Value.ToString("MM/dd/yyyy HH:mm:00") + "' " + g.crlf;
+                         "' AND '" + toDt.Value.ToString("MM/dd/yyyy HH:mm:00") + "' " + g.crlf;
         }
 
         if (modules.IsNotBlank())
@@ -457,25 +457,25 @@ namespace Org.GS.Logging
 
         string sql = CTEs +
                      " SELECT TOP " + recordCount + g.crlf +
-                           "  al.[LogID] " + g.crlf +
-                           " ,[LogDateTime] " + g.crlf +
-                           " ,[SeverityCode] " + g.crlf +
-                           " ,[Message] " + g.crlf +
-                           " ,[ModuleID] " + g.crlf +
-                           " ,[EventCode] " + g.crlf +
-                           " ,[EntityID] " + g.crlf +
-                           " ,[RunID] " + g.crlf +
-                           " ,[UserName] " + g.crlf +
-                           " ,[ClientHost] " + g.crlf +
-                           " ,[ClientIP] " + g.crlf +
-                           " ,[ClientUser] " + g.crlf +
-                           " ,[ClientApplication] " + g.crlf +
-                           " ,[ClientApplicationVersion] " + g.crlf +
-                           " ,[TransactionName] " + g.crlf +
-                           " ,[NotificationSent] " + g.crlf +
+                     "  al.[LogID] " + g.crlf +
+                     " ,[LogDateTime] " + g.crlf +
+                     " ,[SeverityCode] " + g.crlf +
+                     " ,[Message] " + g.crlf +
+                     " ,[ModuleID] " + g.crlf +
+                     " ,[EventCode] " + g.crlf +
+                     " ,[EntityID] " + g.crlf +
+                     " ,[RunID] " + g.crlf +
+                     " ,[UserName] " + g.crlf +
+                     " ,[ClientHost] " + g.crlf +
+                     " ,[ClientIP] " + g.crlf +
+                     " ,[ClientUser] " + g.crlf +
+                     " ,[ClientApplication] " + g.crlf +
+                     " ,[ClientApplicationVersion] " + g.crlf +
+                     " ,[TransactionName] " + g.crlf +
+                     " ,[NotificationSent] " + g.crlf +
                      " FROM [Logging].[dbo].[AppLog] al " + g.crlf +
-                       joinClause +
-                       whereClause +
+                     joinClause +
+                     whereClause +
                      " ORDER BY al.LogID " + (descending ? "DESC" : "ASC");
 
         using (var cmd = new SqlCommand(sql, _conn))
@@ -509,7 +509,7 @@ namespace Org.GS.Logging
             al.TransactionName = r["TransactionName"].DbToString();
             al.NotificationSent = r["NotificationSent"].DbToBoolean().Value;
             appLogSet.Add(al);
-          } 
+          }
         }
 
         GetAppLogDetailSet(appLogSet);
@@ -540,10 +540,10 @@ namespace Org.GS.Logging
           return appLogSet;
 
         string sql = " SELECT [LogDetailID] " + g.crlf +
-                           " ,[LogID] " + g.crlf +
-                           " ,[DetailType] " + g.crlf +
-                           " ,[SetID] " + g.crlf +
-                           " ,[LogDetail] " + g.crlf +
+                     " ,[LogID] " + g.crlf +
+                     " ,[DetailType] " + g.crlf +
+                     " ,[SetID] " + g.crlf +
+                     " ,[LogDetail] " + g.crlf +
                      " FROM [Logging].[dbo].[AppLogDetail] " + g.crlf +
                      " WHERE LogID IN (" + logIds + ")";
         using (var cmd = new SqlCommand(sql, _conn))
@@ -585,24 +585,24 @@ namespace Org.GS.Logging
         AppLogSet appLogSet = new AppLogSet();
 
         string sql = " SELECT [LogID] " + g.crlf +
-                           " ,[LogDateTime] " + g.crlf +
-                           " ,[SeverityCode] " + g.crlf +
-                           " ,[Message] " + g.crlf +
-                           " ,[ModuleID] " + g.crlf +
-                           " ,[EventCode] " + g.crlf +
-                           " ,[EntityID] " + g.crlf +
-                           " ,[UserName] " + g.crlf +
-                           " ,[RunID] " + g.crlf +
-                           " ,[ClientHost] " + g.crlf +
-                           " ,[ClientIP] " + g.crlf +
-                           " ,[ClientUser] " + g.crlf +
-                           " ,[ClientApplication] " + g.crlf +
-                           " ,[ClientApplicationVersion] " + g.crlf +
-                           " ,[TransactionName] " + g.crlf +
-                           " ,[NotificationSent] " + g.crlf +
-                    " FROM [Logging].[dbo].[AppLog] " + g.crlf +
-                    " WHERE [RunID] = " + runId + g.crlf +
-                    " ORDER BY [LogDateTime] DESC";
+                     " ,[LogDateTime] " + g.crlf +
+                     " ,[SeverityCode] " + g.crlf +
+                     " ,[Message] " + g.crlf +
+                     " ,[ModuleID] " + g.crlf +
+                     " ,[EventCode] " + g.crlf +
+                     " ,[EntityID] " + g.crlf +
+                     " ,[UserName] " + g.crlf +
+                     " ,[RunID] " + g.crlf +
+                     " ,[ClientHost] " + g.crlf +
+                     " ,[ClientIP] " + g.crlf +
+                     " ,[ClientUser] " + g.crlf +
+                     " ,[ClientApplication] " + g.crlf +
+                     " ,[ClientApplicationVersion] " + g.crlf +
+                     " ,[TransactionName] " + g.crlf +
+                     " ,[NotificationSent] " + g.crlf +
+                     " FROM [Logging].[dbo].[AppLog] " + g.crlf +
+                     " WHERE [RunID] = " + runId + g.crlf +
+                     " ORDER BY [LogDateTime] DESC";
 
         using (SqlCommand cmd = new SqlCommand(sql, _conn))
         {
@@ -645,7 +645,7 @@ namespace Org.GS.Logging
     }
 
     public int DeleteOldLogRecords(int retentionDaysAUDT, int retentionDaysDIAG, int retentionDaysINFO, int retentionDaysMAJR, int retentionDaysMINR, int retentionDaysSEVR,
-                                    int retentionDaysTRAC, int retentionDaysWARN, string modulesToExlude, string eventsToExlude, string entitiesToExclude, bool isDryRun)
+                                   int retentionDaysTRAC, int retentionDaysWARN, string modulesToExlude, string eventsToExlude, string entitiesToExclude, bool isDryRun)
     {
       SqlTransaction trans = null;
 
@@ -671,15 +671,15 @@ namespace Org.GS.Logging
         string sql = " SET NOCOUNT OFF " + g.crlf +
                      " DECLARE @Now DateTime = GetDate(); " + g.crlf +
                      " DELETE FROM [Logging].[dbo].[AppLog] " + g.crlf +
-                           " WHERE ((SeverityCode LIKE 'AUDT' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysAUDT + ") " + g.crlf +
-                           "    OR (SeverityCode LIKE 'DIAG' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysDIAG + ") " + g.crlf +
-                           "    OR (SeverityCode LIKE 'INFO' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysINFO + ") " + g.crlf +
-                           "    OR (SeverityCode LIKE 'MAJR' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysMAJR + ") " + g.crlf +
-                           "    OR (SeverityCode LIKE 'MINR' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysMINR + ") " + g.crlf +
-                           "    OR (SeverityCode LIKE 'SEVR' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysSEVR + ") " + g.crlf +
-                           "    OR (SeverityCode LIKE 'TRAC' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysTRAC + ") " + g.crlf +
-                           "    OR (SeverityCode LIKE 'WARN' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysWARN + ")) " + g.crlf +
-                           modulesSql + eventsSql + entitiesSql + g.crlf +
+                     " WHERE ((SeverityCode LIKE 'AUDT' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysAUDT + ") " + g.crlf +
+                     "    OR (SeverityCode LIKE 'DIAG' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysDIAG + ") " + g.crlf +
+                     "    OR (SeverityCode LIKE 'INFO' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysINFO + ") " + g.crlf +
+                     "    OR (SeverityCode LIKE 'MAJR' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysMAJR + ") " + g.crlf +
+                     "    OR (SeverityCode LIKE 'MINR' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysMINR + ") " + g.crlf +
+                     "    OR (SeverityCode LIKE 'SEVR' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysSEVR + ") " + g.crlf +
+                     "    OR (SeverityCode LIKE 'TRAC' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysTRAC + ") " + g.crlf +
+                     "    OR (SeverityCode LIKE 'WARN' AND DATEDIFF(day, LogDateTime, @Now) > " + retentionDaysWARN + ")) " + g.crlf +
+                     modulesSql + eventsSql + entitiesSql + g.crlf +
                      " SELECT @@ROWCOUNT ";
 
         using (var cmd = new SqlCommand(sql, _conn, trans))

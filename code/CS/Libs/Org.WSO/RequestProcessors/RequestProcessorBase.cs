@@ -12,7 +12,11 @@ namespace Org.WSO
   [Serializable]
   public class RequestProcessorBase : IRequestProcessor, IDisposable
   {
-    public virtual int EntityId { get { return 9999; } }
+    public virtual int EntityId {
+      get {
+        return 9999;
+      }
+    }
     protected ServiceBase ServiceBase;
     protected TransactionEngine TransactionEngine;
     protected string MethodName;
@@ -25,11 +29,11 @@ namespace Org.WSO
     {
       g.LogToMemory("RequestProcessorBase Constructor");
 
-      if (!_isBaseMapped)    
+      if (!_isBaseMapped)
       {
         if(XmlMapper.AddAssembly(Assembly.GetExecutingAssembly()))
           g.LogToMemory("RequestProcessorBase MappingTypes");
-        _isBaseMapped = true; 
+        _isBaseMapped = true;
       }
     }
 
@@ -52,30 +56,30 @@ namespace Org.WSO
 
     public virtual XElement ProcessRequest()
     {
-      throw new Exception("The class that derives from this class 'RequestProcessorBase' must override the ProcessRequest method."); 
+      throw new Exception("The class that derives from this class 'RequestProcessorBase' must override the ProcessRequest method.");
     }
 
     protected void WriteErrorLog(string parm1, string parm2)
     {
-      // transition this to a different logging approach... 
+      // transition this to a different logging approach...
     }
 
     protected void WriteSuccessLog(string parm1, string parm2)
     {
-      // transition this to a different logging approach... 
+      // transition this to a different logging approach...
     }
-    
+
     ~RequestProcessorBase()
     {
-      g.LogToMemory("RequestProcessorBase Destructor"); 
-      Dispose(false); 
+      g.LogToMemory("RequestProcessorBase Destructor");
+      Dispose(false);
     }
 
     public void Dispose()
     {
-      g.LogToMemory("RequestProcessorBase Disposing"); 
-      Dispose(true); 
-    }  
+      g.LogToMemory("RequestProcessorBase Disposing");
+      Dispose(true);
+    }
 
     protected virtual void Dispose(bool disposing)
     {

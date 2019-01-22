@@ -12,16 +12,31 @@ namespace Org.Terminal.Controls
     private MFContainer _mfContainer;
 
     private MFBase _activeControl;
-    public MFBase ActiveControl { get { return Get_ActiveControl(); } }
+    public MFBase ActiveControl {
+      get {
+        return Get_ActiveControl();
+      }
+    }
 
     private Dictionary<string, MFBase> _controls;
     private SortedList<int, MFBase> _orderedControls;
     private SortedList<string, MFBase> _vFlexControls;
-    public ControlLine VFlexLine { get { return Get_VFlexLine(); } }
+    public ControlLine VFlexLine {
+      get {
+        return Get_VFlexLine();
+      }
+    }
 
-    public bool ContainsVFlexControl { get { return _vFlexControls == null ? false : _vFlexControls.Count > 0; } }
+    public bool ContainsVFlexControl {
+      get {
+        return _vFlexControls == null ? false : _vFlexControls.Count > 0;
+      }
+    }
 
-    public ControlLineSet ControlLineSet { get; private set; }
+    public ControlLineSet ControlLineSet {
+      get;
+      private set;
+    }
 
 
     public ControlManager(MFContainer mfContainer)
@@ -30,7 +45,7 @@ namespace Org.Terminal.Controls
       _controls = new Dictionary<string, MFBase>();
       _orderedControls = new SortedList<int, MFBase>();
       _vFlexControls = new SortedList<string, MFBase>();
-      this.ControlLineSet = new ControlLineSet(); 
+      this.ControlLineSet = new ControlLineSet();
     }
 
     public void AddControl(MFBase c)
@@ -51,8 +66,8 @@ namespace Org.Terminal.Controls
           throw new Exception("The control named '" + c.Name + "' has a duplicate TabIndex value of " + c.TabIndex.ToString() +
                               ", the already loaded control named '" + existingControl.Name + "' has the same TabIndex.");
         }
-          
-        _orderedControls.Add(c.TabIndex, c); 
+
+        _orderedControls.Add(c.TabIndex, c);
       }
 
       if (c.IsVFlexControl)
@@ -62,7 +77,7 @@ namespace Org.Terminal.Controls
           var existingControl = _vFlexControls[c.Name];
           throw new Exception("The control named '" + c.Name + "' has the same name as a already existing control.");
         }
-        _vFlexControls.Add(c.Name, c); 
+        _vFlexControls.Add(c.Name, c);
       }
     }
 
@@ -86,18 +101,18 @@ namespace Org.Terminal.Controls
       {
         if (controlLine.Count > 0 && vFlexControl.OrigLine != controlLine[0].OrigLine)
         {
-            throw new Exception("VFLEX controls must only exist on one screen line.  Control " + vFlexControl.Name + " is on line " +
-                                vFlexControl.OrigLine.ToString() + " and " + controlLine[0].Name + " is on line " + 
-                                controlLine[0].OrigLine.ToString() + ".");
+          throw new Exception("VFLEX controls must only exist on one screen line.  Control " + vFlexControl.Name + " is on line " +
+                              vFlexControl.OrigLine.ToString() + " and " + controlLine[0].Name + " is on line " +
+                              controlLine[0].OrigLine.ToString() + ".");
         }
 
         controlLine.Add(vFlexControl);
       }
 
       if (controlLine.Count == 0)
-        return null; 
+        return null;
 
-      return controlLine; 
+      return controlLine;
     }
 
     public void ClearControls()
@@ -106,7 +121,7 @@ namespace Org.Terminal.Controls
         this._controls.Clear();
 
       if (this._orderedControls != null)
-        this._orderedControls.Clear();         
+        this._orderedControls.Clear();
     }
 
     public MFBase GetNextControl(MFBase currControl, string controlType = "")
@@ -115,7 +130,7 @@ namespace Org.Terminal.Controls
         return null;
 
       int currTabIndex = currControl.TabIndex;
-      
+
       // loop through tab ordered controls greater than current tab index
       for (int i = 0; i < _orderedControls.Count; i++)
       {
@@ -284,7 +299,7 @@ namespace Org.Terminal.Controls
       catch (Exception ex)
       {
         throw new Exception("An exception occurred while attempting to move ControlLines down to make room for " +
-                            "new ControlLines being created with new VFLEX-created controls.", ex); 
+                            "new ControlLines being created with new VFLEX-created controls.", ex);
       }
     }
 
@@ -302,7 +317,7 @@ namespace Org.Terminal.Controls
         _orderedControls.Remove(c.TabIndex);
 
       if (_vFlexControls.ContainsKey(c.Name))
-        _vFlexControls.Remove(c.Name); 
+        _vFlexControls.Remove(c.Name);
     }
 
     public void ClearControlLineSet()

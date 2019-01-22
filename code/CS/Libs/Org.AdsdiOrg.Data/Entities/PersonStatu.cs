@@ -11,21 +11,33 @@ using Org.DB;
 using Org.GS;
 namespace Org.AdsdiOrg.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonStatu")]
-    public partial class PersonStatu
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "PersonStatu")]
+  public partial class PersonStatu
+  {
+    public PersonStatu()
     {
-        public PersonStatu()
-        {
-            this.People = new HashSet<Person>();
-        }
-    
-        public int PersonStatusId { get; set; }
-        public string PersonStatusAbbr { get; set; }
-        public string PersonStatus { get; set; }
-    
-        public virtual ICollection<Person> People { get; set; }
+      this.People = new HashSet<Person>();
     }
+
+    public int PersonStatusId {
+      get;
+      set;
+    }
+    public string PersonStatusAbbr {
+      get;
+      set;
+    }
+    public string PersonStatus {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Person> People {
+      get;
+      set;
+    }
+  }
 }

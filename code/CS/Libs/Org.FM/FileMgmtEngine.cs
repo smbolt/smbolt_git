@@ -19,7 +19,7 @@ namespace Org.FM
   {
     private TaskRequestSet _taskRequests;
 
-    public FileMgmtEngine(WinServiceParms winServiceParms) 
+    public FileMgmtEngine(WinServiceParms winServiceParms)
       : base(winServiceParms, "FileMgmtEngine")
     {
       base.EntityId = base.WinServiceParms.EntityId > 0 ? base.WinServiceParms.EntityId : 306;
@@ -77,7 +77,7 @@ namespace Org.FM
             if (base.WinServiceParms.InDiagnosticsMode)
             {
               this.NotifyHostEvent("No task to process - remaining task count is " + tasksToProcessCount.ToString() + nextTaskReport +
-                  " - next task set refresh at " + _taskRequests.NextLoadTime.ToString("yyyyMMdd HH:mm:ss"));
+                                   " - next task set refresh at " + _taskRequests.NextLoadTime.ToString("yyyyMMdd HH:mm:ss"));
             }
 
             CheckTaskListRefresh();
@@ -89,9 +89,9 @@ namespace Org.FM
           if (!base.WinServiceParms.SuppressNonErrorOutput)
           {
             this.NotifyHostEvent("The task engine will attempt to locate a task processor for and run task " + taskRequest.TaskName + " for " +
-                taskRequest.ScheduledRunDateTime.ToString("yyyy-MM-dd HH:mm:ss") +
-                " - taskId is " + taskRequest.TaskRequestId +
-                " - remaining task count is " + tasksToProcessCount.ToString() + ".");
+                                 taskRequest.ScheduledRunDateTime.ToString("yyyy-MM-dd HH:mm:ss") +
+                                 " - taskId is " + taskRequest.TaskRequestId +
+                                 " - remaining task count is " + tasksToProcessCount.ToString() + ".");
           }
 
           CheckTaskListRefresh();
@@ -101,7 +101,7 @@ namespace Org.FM
             this.NotifyHostEvent("Task '" + taskRequest.TaskName + "' will be discarded due to already running task of same type.");
             continue;
           }
-          
+
           if (taskRequest.IsDryRun)
           {
             string parmReport = taskRequest.GetParmReport();
@@ -115,7 +115,7 @@ namespace Org.FM
           {
             try
             {
-              ITaskProcessor tp = new FileMgmtTaskProcessor(); 
+              ITaskProcessor tp = new FileMgmtTaskProcessor();
               //taskRequest.RunId = CreateRunHistory(taskRequest);
               var taskResult = await base.TaskDispatcher.DispatchTaskAsync(tp, taskRequest);
               //_taskRequests.RemoveRunningTask(taskRequest);
@@ -258,7 +258,7 @@ namespace Org.FM
     {
       //// NEED TO GET THIS IMPLEMENTED
     }
-    
+
     private void Initialize()
     {
       base.InitializeBase();

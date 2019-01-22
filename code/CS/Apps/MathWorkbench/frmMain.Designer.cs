@@ -41,36 +41,38 @@
       this.mnuMain.SuspendLayout();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
       this.mnuMain.Size = new System.Drawing.Size(1214, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuExit});
+        this.mnuExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 22);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuExit
-      // 
+      //
       this.mnuExit.Name = "mnuExit";
       this.mnuExit.Size = new System.Drawing.Size(92, 22);
       this.mnuExit.Tag = "Exit";
       this.mnuExit.Text = "E&xit";
       this.mnuExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.lblEquation);
       this.pnlTop.Controls.Add(this.txtEquation);
       this.pnlTop.Controls.Add(this.btnCompute);
@@ -80,9 +82,9 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1214, 153);
       this.pnlTop.TabIndex = 1;
-      // 
+      //
       // btnCompute
-      // 
+      //
       this.btnCompute.Location = new System.Drawing.Point(12, 119);
       this.btnCompute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnCompute.Name = "btnCompute";
@@ -92,9 +94,9 @@
       this.btnCompute.Text = "Compute";
       this.btnCompute.UseVisualStyleBackColor = true;
       this.btnCompute.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 615);
       this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -103,9 +105,9 @@
       this.lblStatus.TabIndex = 2;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,27 +118,27 @@
       this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtOut.Size = new System.Drawing.Size(1214, 438);
       this.txtOut.TabIndex = 3;
-      // 
+      //
       // txtEquation
-      // 
+      //
       this.txtEquation.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtEquation.Location = new System.Drawing.Point(12, 23);
       this.txtEquation.Multiline = true;
       this.txtEquation.Name = "txtEquation";
       this.txtEquation.Size = new System.Drawing.Size(842, 90);
       this.txtEquation.TabIndex = 1;
-      // 
+      //
       // lblEquation
-      // 
+      //
       this.lblEquation.AutoSize = true;
       this.lblEquation.Location = new System.Drawing.Point(13, 4);
       this.lblEquation.Name = "lblEquation";
       this.lblEquation.Size = new System.Drawing.Size(49, 13);
       this.lblEquation.TabIndex = 2;
       this.lblEquation.Text = "Equation";
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1214, 642);

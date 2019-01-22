@@ -12,7 +12,11 @@ namespace Org.PF
 {
   public class PerfTaskProcessor : TaskProcessorBase
   {
-    public override int EntityId { get { return 522; } }
+    public override int EntityId {
+      get {
+        return 522;
+      }
+    }
     private Logger _logger;
 
 

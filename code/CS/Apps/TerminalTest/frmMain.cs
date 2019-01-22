@@ -113,7 +113,7 @@ namespace Org.TerminalTest
 
     private void MFControlEvent(MFEventArgs e)
     {
-      lblStatus.Text = "Clicked on " + e.Sender.Name; 
+      lblStatus.Text = "Clicked on " + e.Sender.Name;
     }
 
 
@@ -150,7 +150,7 @@ namespace Org.TerminalTest
         if (bmsMapSetFile.BmsMapSet.Count > 0)
         {
           _screenSpecSet = bmsMapSetFile.GetScreenSpecSet();
-          _screenSpec = _screenSpecSet.Values.First();                                                       
+          _screenSpec = _screenSpecSet.Values.First();
         }
 
 
@@ -161,13 +161,13 @@ namespace Org.TerminalTest
         _editorPanel.ShowScreen();
 
         _controlPanel = _twMgr.ToolPanels["ControlPanel"] as ControlPanel;
-        _controlPanel.SetScreenSpec(_screenSpecSet, _screenSpec.Name); 
+        _controlPanel.SetScreenSpec(_screenSpecSet, _screenSpec.Name);
 
-        //XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(ScreenSpecSet))); 
+        //XmlMapper.AddAssembly(Assembly.GetAssembly(typeof(ScreenSpecSet)));
         //var specSetXml = XElement.Parse(File.ReadAllText(g.ImportsPath + @"\ScreenXml\PDF2.xml"));
         //var f = new ObjectFactory2();
         //var screenSpecSetObject = f.Deserialize(specSetXml) as ScreenSpecSet;
-        //string recoil = f.Serialize(screenSpecSetObject).ToString(); 
+        //string recoil = f.Serialize(screenSpecSetObject).ToString();
 
         tabMain.SelectedTab = tabPageEditor1;
         pnlTop.Visible = false;
@@ -214,13 +214,13 @@ namespace Org.TerminalTest
             if (_bmsMapErrorSet.ContainsKey(bmsMapError.Code))
               throw new Exception("MapError.Code " + bmsMapError.Code.ToString() + " already exists in the collection.");
 
-            _bmsMapErrorSet.Add(bmsMapError.Code, bmsMapError); 
+            _bmsMapErrorSet.Add(bmsMapError.Code, bmsMapError);
           }
         }
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to load the MapError codes from the xml file.", ex); 
+        throw new Exception("An exception occurred while attempting to load the MapError codes from the xml file.", ex);
       }
     }
 
@@ -229,7 +229,7 @@ namespace Org.TerminalTest
     //  if (selectedCell == null)
     //    return;
 
-    //  lblStatus.Text = "Row: " + selectedCell.CellMetrics.Row.ToString() + "  Col: " + selectedCell.CellMetrics.Column.ToString();       
+    //  lblStatus.Text = "Row: " + selectedCell.CellMetrics.Row.ToString() + "  Col: " + selectedCell.CellMetrics.Column.ToString();
     //}
 
     private void frmMain_KeyDown(object sender, KeyEventArgs e)
@@ -292,7 +292,7 @@ namespace Org.TerminalTest
 
       }
 
-      _editorPanel.KeyUp(sender, e); 
+      _editorPanel.KeyUp(sender, e);
     }
 
     private void tabMain_Enter(object sender, EventArgs e)
@@ -426,7 +426,7 @@ namespace Org.TerminalTest
             EditorPanel ep = (EditorPanel)twComponents.ToolPanel;
             break;
 
-          // other types in Org.FTW may be possible - implement later, or as needed.
+            // other types in Org.FTW may be possible - implement later, or as needed.
         }
 
         twComponents.ToolWindow = new frmToolWindowBase(this, uiWindow.WindowTitle);
@@ -690,7 +690,7 @@ namespace Org.TerminalTest
               uiWindow.WindowLocation.IsDocked = false;
 
               switch (toolTarget)
-              {                  
+              {
                 case "Editor1":
                   if (tabMain.TabPages.Contains(tabPageEditor1))
                     tabMain.TabPages.Remove(tabPageEditor1);
@@ -850,26 +850,26 @@ namespace Org.TerminalTest
         tp.SetInitialFocus();
       }
 
-      _isFirstShowing = false; 
+      _isFirstShowing = false;
     }
-      
-		private void tabMain_MouseDoubleClick(object sender, MouseEventArgs e)
-		{
-			if (tabMain.SelectedTab.Tag == null)
-				return;
 
-			string selectedTab = tabMain.SelectedTab.Tag.ToString();
+    private void tabMain_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      if (tabMain.SelectedTab.Tag == null)
+        return;
 
-			switch (tabMain.SelectedTab.Tag.ToString())
-			{
-				case "TabPage_Editor1":
-					ToolWindowAction("TW_Float_Editor1"); 
-					break;
+      string selectedTab = tabMain.SelectedTab.Tag.ToString();
+
+      switch (tabMain.SelectedTab.Tag.ToString())
+      {
+        case "TabPage_Editor1":
+          ToolWindowAction("TW_Float_Editor1");
+          break;
 
         case "TabPage_ControlPanel":
-          ToolWindowAction("TW_Float_ControlPanel"); 
-					break;
-			}
+          ToolWindowAction("TW_Float_ControlPanel");
+          break;
+      }
     }
 
     private void frmMain_ResizeEnd(object sender, EventArgs e)
@@ -877,7 +877,7 @@ namespace Org.TerminalTest
       if (_editorPanel != null)
         _editorPanel.MainFormResizeEnd();
 
-      var uiWindow = _uiState.UIWindowSet["MainForm"]; 
+      var uiWindow = _uiState.UIWindowSet["MainForm"];
 
       switch (_uiState.UIWindowSet["MainForm"].WindowLocation.SizeMode)
       {
@@ -944,13 +944,13 @@ namespace Org.TerminalTest
         case "FontSize":
           _suppressCharWidthChange = true;
           udCharWidth.Value = Convert.ToInt32((float)fontSize * fontSizeToWidth);
-          udCharHeight.Value = Convert.ToInt32((float)fontSize * fontSizeToHeight); 
+          udCharHeight.Value = Convert.ToInt32((float)fontSize * fontSizeToHeight);
           break;
 
         case "CharWidth":
           if (_suppressCharWidthChange)
           {
-            _suppressCharWidthChange = false; 
+            _suppressCharWidthChange = false;
             return;
           }
           _editorPanel.SetFontSpec(new FontSpec(fontSize, new Size(charWidth, charHeight)));
@@ -964,7 +964,7 @@ namespace Org.TerminalTest
 
     private void ckShowFields_CheckedChanged(object sender, EventArgs e)
     {
-      _editorPanel.ShowFields(ckShowFields.Checked); 
+      _editorPanel.ShowFields(ckShowFields.Checked);
     }
   }
 }

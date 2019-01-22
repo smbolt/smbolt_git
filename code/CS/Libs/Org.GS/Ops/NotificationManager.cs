@@ -17,7 +17,7 @@ namespace Org.GS
 
     public void SendAlert(string notificationConfigName, string appName, string className, string methodName, string locationCode, string alertCode, string message, Exception ex)
     {
-      
+
       int secondOfDay = (DateTime.Now.Hour * 3600) + (DateTime.Now.Minute * 60) + DateTime.Now.Second;
       string timeWork = secondOfDay.ToString("00000") + DateTime.Now.Millisecond.ToString("000");
       string timeWork2 = timeWork.Substring(0, 4) + "-" + timeWork.Substring(4);
@@ -69,7 +69,7 @@ namespace Org.GS
         string subject = "ADO C" + alertID + " " + appName + ":" + locationCode + " " + message;
         emailMessage.Subject = subject.PadRight(125).Substring(0, 125).Trim();
         emailMessage.Body = BuildEmailBody(alertCode, "No description", LogSeverity.MAJR, appName, className, methodName, locationCode, message, ex);
-        new EmailClient().SendEmailMessage(emailMessage, g.DefaultConfigSmtpSpec); 
+        new EmailClient().SendEmailMessage(emailMessage, g.DefaultConfigSmtpSpec);
       }
 
       bool useSmsAlerts = false;
@@ -109,13 +109,13 @@ namespace Org.GS
           if (g.AppConfig.ContainsKey("SuppressSmsSend"))
             smsParms.SuppressSmsSend = g.AppConfig.GetBoolean("SuppressSmsSend");
 
-          new SmsClient().SendSmsMessage(smsParms); 
+          new SmsClient().SendSmsMessage(smsParms);
         }
       }
     }
-    
-    private string BuildEmailBody(string alertCode, string alertDescription, LogSeverity severity, string appName, 
-                                         string className, string methodName, string locationCode, string message, Exception ex)
+
+    private string BuildEmailBody(string alertCode, string alertDescription, LogSeverity severity, string appName,
+                                  string className, string methodName, string locationCode, string message, Exception ex)
     {
       string exceptionString = String.Empty;
       if (ex != null)
@@ -126,18 +126,18 @@ namespace Org.GS
       DateTime centralDateTime = TimeZoneInfo.ConvertTime(DateTime.Now, timeZoneInfo);
 
       string emailBody = "Alert from Org Online" + g.crlf2 +
-          "Server Date/Time  : " + DateTime.Now.ToString() + g.crlf +
-          "Central Date/Time : " + centralDateTime.ToString() + g.crlf +
-          "Alert Code        : " + alertCode + g.crlf +
-          "Alert Desc        : " + alertDescription + g.crlf +
-          "Server IP Address : " + NetworkHelper.GetCurrentIpAddress() + g.crlf +
-          "Application       : " + appName + g.crlf +
-          "Class             : " + className + g.crlf +
-          "Method            : " + methodName + g.crlf +
-          "Location Code     : " + locationCode + g.crlf +
-          "Severity          : " + severity.ToString() + g.crlf2 +
-          "Message           : " + g.crlf +
-          message + g.crlf2 + exceptionString;
+                         "Server Date/Time  : " + DateTime.Now.ToString() + g.crlf +
+                         "Central Date/Time : " + centralDateTime.ToString() + g.crlf +
+                         "Alert Code        : " + alertCode + g.crlf +
+                         "Alert Desc        : " + alertDescription + g.crlf +
+                         "Server IP Address : " + NetworkHelper.GetCurrentIpAddress() + g.crlf +
+                         "Application       : " + appName + g.crlf +
+                         "Class             : " + className + g.crlf +
+                         "Method            : " + methodName + g.crlf +
+                         "Location Code     : " + locationCode + g.crlf +
+                         "Severity          : " + severity.ToString() + g.crlf2 +
+                         "Message           : " + g.crlf +
+                         message + g.crlf2 + exceptionString;
 
       return emailBody;
     }

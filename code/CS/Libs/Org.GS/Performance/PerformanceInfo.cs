@@ -8,8 +8,14 @@ namespace Org.GS
 {
   public class PerformanceInfo
   {
-    public DateTime DateTime { get; set; }
-    public string Label { get; set; }
+    public DateTime DateTime {
+      get;
+      set;
+    }
+    public string Label {
+      get;
+      set;
+    }
 
     public PerformanceInfo()
     {

@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Org.ApiHost
 {
-    public interface IView
-    {
-        object Model { get; set; }
-        string ViewName { get; set; }
+  public interface IView
+  {
+    object Model {
+      get;
+      set;
     }
+    string ViewName {
+      get;
+      set;
+    }
+  }
 }

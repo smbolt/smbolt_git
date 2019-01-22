@@ -74,14 +74,14 @@ namespace Org.OpsManager
       {
         this.Cursor = Cursors.Default;
         MessageBox.Show("An exception occurred while attempting to update the Task Group for the Scheduled Task." + g.crlf2 + ex.ToReport(),
-                        "Assign Task Group - Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Assign Task Group - Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
     private void InitializeForm()
     {
       lblScheduledTaskNameValue.Text = _scheduleTask.TaskName;
-      
+
       cboTaskGroups.Items.Clear();
       cboTaskGroups.Items.Add(String.Empty);
       foreach (var group in _scheduledTaskGroups.Values)

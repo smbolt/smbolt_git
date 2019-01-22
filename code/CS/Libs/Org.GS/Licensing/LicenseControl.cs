@@ -10,14 +10,26 @@ namespace Org.GS.Licensing
 {
   public class LicenseControl
   {
-    private Encryptor encryptor; 
+    private Encryptor encryptor;
 
-    public string Version { get; set; }
+    public string Version {
+      get;
+      set;
+    }
     //public LicenseStatus LicenseStatus { get; set; }
-    public DateTime LastCheck { get; set; }
-    public string LicenseID { get; set; }
+    public DateTime LastCheck {
+      get;
+      set;
+    }
+    public string LicenseID {
+      get;
+      set;
+    }
 
-    public ComputerSignature ComputerSignature { get; set; }
+    public ComputerSignature ComputerSignature {
+      get;
+      set;
+    }
 
 
     public LicenseControl()

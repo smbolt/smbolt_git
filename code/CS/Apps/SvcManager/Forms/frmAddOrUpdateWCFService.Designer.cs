@@ -50,9 +50,9 @@
       this.lblParentService = new System.Windows.Forms.Label();
       this.lblParentServiceValue = new System.Windows.Forms.Label();
       this.SuspendLayout();
-      // 
+      //
       // lblServiceTypeValue
-      // 
+      //
       this.lblServiceTypeValue.AutoSize = true;
       this.lblServiceTypeValue.Location = new System.Drawing.Point(105, 56);
       this.lblServiceTypeValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -60,9 +60,9 @@
       this.lblServiceTypeValue.Size = new System.Drawing.Size(90, 13);
       this.lblServiceTypeValue.TabIndex = 1;
       this.lblServiceTypeValue.Text = "Windows Service";
-      // 
+      //
       // lblHostValue
-      // 
+      //
       this.lblHostValue.AutoSize = true;
       this.lblHostValue.Location = new System.Drawing.Point(105, 34);
       this.lblHostValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -70,9 +70,9 @@
       this.lblHostValue.Size = new System.Drawing.Size(68, 13);
       this.lblHostValue.TabIndex = 2;
       this.lblHostValue.Text = "HOSTNAME";
-      // 
+      //
       // lblEnvironmentValue
-      // 
+      //
       this.lblEnvironmentValue.AutoSize = true;
       this.lblEnvironmentValue.Location = new System.Drawing.Point(105, 13);
       this.lblEnvironmentValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -80,9 +80,9 @@
       this.lblEnvironmentValue.Size = new System.Drawing.Size(29, 13);
       this.lblEnvironmentValue.TabIndex = 3;
       this.lblEnvironmentValue.Text = "Prod";
-      // 
+      //
       // lblServiceType
-      // 
+      //
       this.lblServiceType.AutoSize = true;
       this.lblServiceType.Location = new System.Drawing.Point(19, 56);
       this.lblServiceType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -90,9 +90,9 @@
       this.lblServiceType.Size = new System.Drawing.Size(73, 13);
       this.lblServiceType.TabIndex = 4;
       this.lblServiceType.Text = "Service Type:";
-      // 
+      //
       // lblHost
-      // 
+      //
       this.lblHost.AutoSize = true;
       this.lblHost.Location = new System.Drawing.Point(19, 34);
       this.lblHost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -100,9 +100,9 @@
       this.lblHost.Size = new System.Drawing.Size(32, 13);
       this.lblHost.TabIndex = 5;
       this.lblHost.Text = "Host:";
-      // 
+      //
       // lblEnvironment
-      // 
+      //
       this.lblEnvironment.AutoSize = true;
       this.lblEnvironment.Location = new System.Drawing.Point(19, 13);
       this.lblEnvironment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -110,18 +110,18 @@
       this.lblEnvironment.Size = new System.Drawing.Size(69, 13);
       this.lblEnvironment.TabIndex = 6;
       this.lblEnvironment.Text = "Environment:";
-      // 
+      //
       // txtWCFServiceName
-      // 
+      //
       this.txtWCFServiceName.Location = new System.Drawing.Point(21, 154);
       this.txtWCFServiceName.Margin = new System.Windows.Forms.Padding(2);
       this.txtWCFServiceName.Name = "txtWCFServiceName";
       this.txtWCFServiceName.Size = new System.Drawing.Size(238, 20);
       this.txtWCFServiceName.TabIndex = 0;
       this.txtWCFServiceName.TextChanged += new System.EventHandler(this.InputChanged);
-      // 
+      //
       // lblWCFServiceName
-      // 
+      //
       this.lblWCFServiceName.AutoSize = true;
       this.lblWCFServiceName.Location = new System.Drawing.Point(19, 138);
       this.lblWCFServiceName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -129,9 +129,9 @@
       this.lblWCFServiceName.Size = new System.Drawing.Size(198, 13);
       this.lblWCFServiceName.TabIndex = 7;
       this.lblWCFServiceName.Text = "WCF Service Name (when hosted in IIS)";
-      // 
+      //
       // lblPort
-      // 
+      //
       this.lblPort.AutoSize = true;
       this.lblPort.Location = new System.Drawing.Point(19, 228);
       this.lblPort.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -139,18 +139,18 @@
       this.lblPort.Size = new System.Drawing.Size(26, 13);
       this.lblPort.TabIndex = 7;
       this.lblPort.Text = "Port";
-      // 
+      //
       // txtPort
-      // 
+      //
       this.txtPort.Location = new System.Drawing.Point(21, 244);
       this.txtPort.Margin = new System.Windows.Forms.Padding(2);
       this.txtPort.Name = "txtPort";
       this.txtPort.Size = new System.Drawing.Size(115, 20);
       this.txtPort.TabIndex = 2;
       this.txtPort.TextChanged += new System.EventHandler(this.InputChanged);
-      // 
+      //
       // lblHostingModel
-      // 
+      //
       this.lblHostingModel.AutoSize = true;
       this.lblHostingModel.Location = new System.Drawing.Point(19, 79);
       this.lblHostingModel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -158,9 +158,9 @@
       this.lblHostingModel.Size = new System.Drawing.Size(78, 13);
       this.lblHostingModel.TabIndex = 4;
       this.lblHostingModel.Text = "Hosting Model:";
-      // 
+      //
       // lblHostingModelValue
-      // 
+      //
       this.lblHostingModelValue.AutoSize = true;
       this.lblHostingModelValue.Location = new System.Drawing.Point(105, 79);
       this.lblHostingModelValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -168,24 +168,25 @@
       this.lblHostingModelValue.Size = new System.Drawing.Size(138, 13);
       this.lblHostingModelValue.TabIndex = 1;
       this.lblHostingModelValue.Text = "Hosted in Windows Service";
-      // 
+      //
       // cboWebServiceBinding
-      // 
+      //
       this.cboWebServiceBinding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboWebServiceBinding.FormattingEnabled = true;
       this.cboWebServiceBinding.Items.AddRange(new object[] {
-            "BasicHttp",
-            "WsHttp",
-            "WsHttps",
-            "NetTcp"});
+        "BasicHttp",
+        "WsHttp",
+        "WsHttps",
+        "NetTcp"
+      });
       this.cboWebServiceBinding.Location = new System.Drawing.Point(22, 199);
       this.cboWebServiceBinding.Name = "cboWebServiceBinding";
       this.cboWebServiceBinding.Size = new System.Drawing.Size(237, 21);
       this.cboWebServiceBinding.TabIndex = 1;
       this.cboWebServiceBinding.SelectedIndexChanged += new System.EventHandler(this.InputChanged);
-      // 
+      //
       // lblWebServiceBinding
-      // 
+      //
       this.lblWebServiceBinding.AutoSize = true;
       this.lblWebServiceBinding.Location = new System.Drawing.Point(19, 183);
       this.lblWebServiceBinding.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -193,9 +194,9 @@
       this.lblWebServiceBinding.Size = new System.Drawing.Size(107, 13);
       this.lblWebServiceBinding.TabIndex = 7;
       this.lblWebServiceBinding.Text = "Web Service Binding";
-      // 
+      //
       // btnPingPort
-      // 
+      //
       this.btnPingPort.Location = new System.Drawing.Point(144, 242);
       this.btnPingPort.Name = "btnPingPort";
       this.btnPingPort.Size = new System.Drawing.Size(115, 23);
@@ -204,9 +205,9 @@
       this.btnPingPort.Text = "PingPort";
       this.btnPingPort.UseVisualStyleBackColor = true;
       this.btnPingPort.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnTestWebService
-      // 
+      //
       this.btnTestWebService.Location = new System.Drawing.Point(21, 280);
       this.btnTestWebService.Name = "btnTestWebService";
       this.btnTestWebService.Size = new System.Drawing.Size(238, 23);
@@ -215,9 +216,9 @@
       this.btnTestWebService.Text = "Test Web Service (Ping)";
       this.btnTestWebService.UseVisualStyleBackColor = true;
       this.btnTestWebService.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnOK
-      // 
+      //
       this.btnOK.Location = new System.Drawing.Point(22, 319);
       this.btnOK.Name = "btnOK";
       this.btnOK.Size = new System.Drawing.Size(114, 23);
@@ -226,9 +227,9 @@
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
       this.btnOK.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnCancel
-      // 
+      //
       this.btnCancel.Location = new System.Drawing.Point(144, 319);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new System.Drawing.Size(115, 23);
@@ -237,9 +238,9 @@
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnCancel.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblParentService
-      // 
+      //
       this.lblParentService.AutoSize = true;
       this.lblParentService.Location = new System.Drawing.Point(19, 101);
       this.lblParentService.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -247,9 +248,9 @@
       this.lblParentService.Size = new System.Drawing.Size(80, 13);
       this.lblParentService.TabIndex = 4;
       this.lblParentService.Text = "Parent Service:";
-      // 
+      //
       // lblParentServiceValue
-      // 
+      //
       this.lblParentServiceValue.AutoSize = true;
       this.lblParentServiceValue.Location = new System.Drawing.Point(105, 101);
       this.lblParentServiceValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -257,9 +258,9 @@
       this.lblParentServiceValue.Size = new System.Drawing.Size(33, 13);
       this.lblParentServiceValue.TabIndex = 1;
       this.lblParentServiceValue.Text = "None";
-      // 
+      //
       // frmAddOrUpdateWCFService
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(278, 360);

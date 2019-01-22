@@ -12,70 +12,133 @@ namespace Org.Software.Business.Models
   public class SoftwareUpdatesForModuleVersion : ModelBase
   {
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "SoftwareModuleCode", false, false)]
-    public int SoftwareModuleCode { get; set; }
+    public int SoftwareModuleCode {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "SoftwareModuleName", false, false)]
-    public string SoftwareModuleName { get; set; }
+    public string SoftwareModuleName {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "SoftwarePlatformId", false, false)]
-    public int SoftwarePlatformId { get; set; }
+    public int SoftwarePlatformId {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "SoftwarePlatformString", false, false)]
-    public string SoftwarePlatformString { get; set; }
+    public string SoftwarePlatformString {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "PlatformDescription", false, false)]
-    public string PlatformDescription { get; set; }
+    public string PlatformDescription {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "SoftwareVersionId", false, false)]
-    public int SoftwareVersionId { get; set; }
+    public int SoftwareVersionId {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "SoftwareModuleId", false, false)]
-    public int SoftwareModuleId { get; set; }
+    public int SoftwareModuleId {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "SoftwareVersion", false, false)]
-    public string SoftwareVersion { get; set; }
+    public string SoftwareVersion {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "RepositoryId", false, false)]
-    public int RepositoryId { get; set; }
+    public int RepositoryId {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetSoftwareUpdatesForModuleVersion_Result", "RepositoryRoot", false, false)]
-    public string RepositoryRoot { get; set; }
+    public string RepositoryRoot {
+      get;
+      set;
+    }
   }
 
   [DbMap(DbElement.Model, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result")]
   public class ModuleVersionForPlatform : ModelBase
   {
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "SoftwareModuleName", false, false)]
-    public string SoftwareModuleName { get; set; }
+    public string SoftwareModuleName {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "SoftwareModuleTypeName", false, false)]
-    public string SoftwareModuleTypeName { get; set; }
+    public string SoftwareModuleTypeName {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "SoftwareModuleStatus", false, false)]
-    public int SoftwareModuleStatus { get; set; }
+    public int SoftwareModuleStatus {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "SoftwareVersion", false, false)]
-    public string SoftwareVersion { get; set; }
+    public string SoftwareVersion {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "SoftwareVersionStatus", false, false)]
-    public int SoftwareVersionStatus { get; set; }
+    public int SoftwareVersionStatus {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "SoftwarePlatformId", false, false)]
-    public int SoftwarePlatformId { get; set; }
+    public int SoftwarePlatformId {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "SoftwarePlatformString", false, false)]
-    public string SoftwarePlatformString { get; set; }
+    public string SoftwarePlatformString {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "SoftwarePlatformStatus", false, false)]
-    public int SoftwarePlatformStatus { get; set; }
+    public int SoftwarePlatformStatus {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "RepositoryId", false, false)]
-    public int RepositoryId { get; set; }
+    public int RepositoryId {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "RepositoryRoot", false, false)]
-    public string RepositoryRoot { get; set; }
+    public string RepositoryRoot {
+      get;
+      set;
+    }
 
     [DbMap(DbElement.Column, "Org_Software", "dbo", "sp_GetModuleVersionForPlatform_Result", "RepositoryStatus", false, false)]
-    public int RepositoryStatus { get; set; }
+    public int RepositoryStatus {
+      get;
+      set;
+    }
   }
 }

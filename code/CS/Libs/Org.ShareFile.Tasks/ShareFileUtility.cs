@@ -17,7 +17,11 @@ namespace Org.ShareFile.Tasks
 {
   public class ShareFileUtility : TaskProcessorBase
   {
-    public override int EntityId { get { return 515; } }
+    public override int EntityId {
+      get {
+        return 515;
+      }
+    }
     private Logger _logger;
     private ApiParms _apiParms;
     private int _fileCount = 0;
@@ -32,7 +36,7 @@ namespace Org.ShareFile.Tasks
       _logger.ModuleId = g.AppInfo.ModuleCode;
       _apiParms = new ApiParms();
 
-      _logger.Log("ShareFileUtility task processor is starting up.", 6129); 
+      _logger.Log("ShareFileUtility task processor is starting up.", 6129);
 
       try
       {
@@ -62,7 +66,7 @@ namespace Org.ShareFile.Tasks
           if (base.ParmExists("RemoteTargetFolder"))
             _apiParms.RemoteTargetFolder = base.GetParmValue("RemoteTargetFolder").ToString();
 
-          _logger.Log("The ShareFileUtility is processing task named '" + taskResult.TaskName + "'.", 6130); 
+          _logger.Log("The ShareFileUtility is processing task named '" + taskResult.TaskName + "'.", 6130);
 
           switch (taskResult.TaskName)
           {
@@ -233,7 +237,7 @@ namespace Org.ShareFile.Tasks
         if (fi.Length > _apiParms.MaxUploadSize)
         {
           return taskResult.Failed(DryRunIndicator + _fileCount.ToString("000") + " ERROR - File size of " + fi.Length.ToString("###,###,##0") + " bytes exceeds the maximum size allowed of " +
-                            _apiParms.MaxUploadSize.ToString("###,###,##0") + " bytes.");
+                                   _apiParms.MaxUploadSize.ToString("###,###,##0") + " bytes.");
         }
 
         using (var fm = new FileManager(_apiParms, _logger, IsDryRun))
@@ -272,8 +276,12 @@ namespace Org.ShareFile.Tasks
         {
           if (!Directory.Exists(_apiParms.ArchiveFolder))
           {
-            try { Directory.CreateDirectory(_apiParms.ArchiveFolder); }
-            catch (Exception ex) { return taskResult.Failed(DryRunIndicator + "An exception occurred attempting to create the ArchiveFolder '" + _apiParms.ArchiveFolder + "'.", ex); }
+            try {
+              Directory.CreateDirectory(_apiParms.ArchiveFolder);
+            }
+            catch (Exception ex) {
+              return taskResult.Failed(DryRunIndicator + "An exception occurred attempting to create the ArchiveFolder '" + _apiParms.ArchiveFolder + "'.", ex);
+            }
           }
         }
 
@@ -528,8 +536,8 @@ namespace Org.ShareFile.Tasks
                   _totalBytes += fi.Length;
 
                   resultsMessage = g.crlf + _fileCount.ToString("000") + " Name: " + fi.FullName + g.crlf +
-                                          _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
-                                          _fileCount.ToString("000") + " Result: Download successful - duration was " + childTaskResult.DurationString + " seconds" + g.crlf;
+                                   _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
+                                   _fileCount.ToString("000") + " Result: Download successful - duration was " + childTaskResult.DurationString + " seconds" + g.crlf;
 
                   if (_apiParms.ArchiveRemoteFiles)
                   {
@@ -545,8 +553,8 @@ namespace Org.ShareFile.Tasks
                     else
                       resultsMessage += _fileCount.ToString("000") + " Original remote file delete error: " + remoteFileDeleteError + g.crlf;
                   }
-                  
-                  summaryMessage.Append(resultsMessage); 
+
+                  summaryMessage.Append(resultsMessage);
                 }
                 else // failures and warnings
                 {
@@ -558,8 +566,8 @@ namespace Org.ShareFile.Tasks
                     _totalBytes += fi.Length;
 
                     resultsMessage = g.crlf + _fileCount.ToString("000") + " Name: " + fi.FullName + g.crlf + "Existing file of the same name was overwritten." + g.crlf +
-                                              _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
-                                              _fileCount.ToString("000") + " Result: Download successful - duration was " + childTaskResult.DurationString + " seconds" + g.crlf;
+                                     _fileCount.ToString("000") + " Size: " + fi.Length.ToString("###,###,##0") + g.crlf +
+                                     _fileCount.ToString("000") + " Result: Download successful - duration was " + childTaskResult.DurationString + " seconds" + g.crlf;
 
                     if (_apiParms.ArchiveRemoteFiles)
                     {
@@ -581,9 +589,9 @@ namespace Org.ShareFile.Tasks
                   else
                   {
                     resultsMessage = g.crlf + "*** Child Task " + childTaskResult.TaskResultStatus.ToString() + "***" + g.crlf +
-                                        "Code: " + childTaskResult.Code.ToString("0000") + g.crlf +
-                                        "Message: " + childTaskResult.Message + childTaskResult.FullErrorDetail + g.crlf;
-                    summaryMessage.Append(resultsMessage); 
+                                     "Code: " + childTaskResult.Code.ToString("0000") + g.crlf +
+                                     "Message: " + childTaskResult.Message + childTaskResult.FullErrorDetail + g.crlf;
+                    summaryMessage.Append(resultsMessage);
                   }
                 }
               }
@@ -594,7 +602,7 @@ namespace Org.ShareFile.Tasks
               taskResult.TotalEntityCount = _fileCount;
               taskResult.Message = DryRunIndicator + statsMessage + summaryMessage.ToString() + g.crlf + "Download operation completed in " + downloadFilesTR.Duration + " seconds";
 
-              _logger.Log("The ShareFileUtility DownloadFiles task was successful.  The results of the operation follow." + g.crlf + taskResult.Message, 6134); 
+              _logger.Log("The ShareFileUtility DownloadFiles task was successful.  The results of the operation follow." + g.crlf + taskResult.Message, 6134);
 
               return taskResult;
 

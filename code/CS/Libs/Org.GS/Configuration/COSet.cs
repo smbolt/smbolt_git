@@ -15,10 +15,16 @@ namespace Org.GS.Configuration
   public class COSet : Dictionary<string, CO>
   {
     [XMap(MyParent = true)]
-    public ProgramConfig ProgramConfig { get; set; }
+    public ProgramConfig ProgramConfig {
+      get;
+      set;
+    }
 
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
 
     [XParm(Name = "parent", ParmSource = XParmSource.Parent, AttrName = "", Required = false)]

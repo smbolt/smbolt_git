@@ -12,21 +12,33 @@ using Org.GS;
 
 namespace Org.Software.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Org_Software", "", "OrgStatu")]
-    public partial class OrgStatu
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Org_Software", "", "OrgStatu")]
+  public partial class OrgStatu
+  {
+    public OrgStatu()
     {
-        public OrgStatu()
-        {
-            this.Organizations = new HashSet<Organization>();
-        }
-    
-        public int OrgStatusId { get; set; }
-        public string OrgStatusAbbr { get; set; }
-        public string OrgStatusValue { get; set; }
-    
-        public virtual ICollection<Organization> Organizations { get; set; }
+      this.Organizations = new HashSet<Organization>();
     }
+
+    public int OrgStatusId {
+      get;
+      set;
+    }
+    public string OrgStatusAbbr {
+      get;
+      set;
+    }
+    public string OrgStatusValue {
+      get;
+      set;
+    }
+
+    public virtual ICollection<Organization> Organizations {
+      get;
+      set;
+    }
+  }
 }

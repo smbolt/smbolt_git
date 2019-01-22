@@ -61,7 +61,7 @@ namespace Org.PdfTextExtract
     private Image _emptyCell;
     private Text _text;
     private TextPatternSet _textPatternSet;
-    private List<string> _tabPageOrder; 
+    private List<string> _tabPageOrder;
     #endregion
 
 
@@ -220,9 +220,9 @@ namespace Org.PdfTextExtract
               fileName = Path.ChangeExtension(fileName, ".xml");
 
             dlgFileSave.InitialDirectory = filePath;
-            dlgFileSave.FileName = fileName; 
+            dlgFileSave.FileName = fileName;
           }
-        }        
+        }
 
         dlgFileSave.Title = "Save mapped file as...";
 
@@ -230,7 +230,7 @@ namespace Org.PdfTextExtract
         {
           File.WriteAllText(dlgFileSave.FileName, mappedFileText);
           this.Cursor = Cursors.Default;
-          MessageBox.Show("The mapped file has been saved." + g.crlf2 + "Path is: '" +g.crlf2 + dlgFileSave.FileName + "'.", 
+          MessageBox.Show("The mapped file has been saved." + g.crlf2 + "Path is: '" +g.crlf2 + dlgFileSave.FileName + "'.",
                           g.AppInfo.AppName + " - Mapped File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -256,7 +256,7 @@ namespace Org.PdfTextExtract
         _fileFormatSet = new FileFormatSet();
         var fileFormat = new FileFormat();
         fileFormat.Name = "UNDEFINED";
-        _fileFormatSet.Add(fileFormat.Name, fileFormat); 
+        _fileFormatSet.Add(fileFormat.Name, fileFormat);
 
         var searchParms = new SearchParms();
 
@@ -340,7 +340,7 @@ namespace Org.PdfTextExtract
     private void LoadFilesGrid(List<string> filterStrings)
     {
       if (_fileFormatSet == null || _fileFormatSet.Count == 0)
-        return; 
+        return;
 
       _filesGridUpdating = true;
 
@@ -360,7 +360,7 @@ namespace Org.PdfTextExtract
       {
         foreach (var formatName in _fileFormatSet.Keys)
         {
-          formatsToInclude.Add(formatName); 
+          formatsToInclude.Add(formatName);
         }
       }
 
@@ -404,7 +404,7 @@ namespace Org.PdfTextExtract
 
       btnRecognizeFormats.Enabled = fileCount > 0;
 
-      lblStatus.Text = gvFiles.Rows.Count.ToString("###,##0") + " files loaded."; 
+      lblStatus.Text = gvFiles.Rows.Count.ToString("###,##0") + " files loaded.";
     }
 
     private void gvFiles_SelectionChanged(object sender, EventArgs e)
@@ -414,7 +414,7 @@ namespace Org.PdfTextExtract
     private void ProcessFile()
     {
       if (_filesGridUpdating)
-        return; 
+        return;
 
       if (gvFiles.SelectedRows.Count == 0)
         return;
@@ -524,13 +524,13 @@ namespace Org.PdfTextExtract
         {
           var toolPanel = _twMgr.ToolPanels["PdfViewer"] as PdfViewerControl;
           toolPanel.CloseDocument();
-          toolPanel.LoadDocument(fullFilePath); 
+          toolPanel.LoadDocument(fullFilePath);
         }
 
         if (_twMgr.ToolPanels.ContainsKey("TextExtractDesigner") && extractSpec != null)
         {
           var toolPanel = _twMgr.ToolPanels["TextExtractDesigner"] as TextExtractDesigner;
-          toolPanel.LoadTextObject(recogSpec, extractSpec, _text); 
+          toolPanel.LoadTextObject(recogSpec, extractSpec, _text);
         }
 
         tabMain.SelectedTab = tabPageTextExtractDesigner;
@@ -539,8 +539,8 @@ namespace Org.PdfTextExtract
       catch (Exception ex)
       {
         this.Cursor = Cursors.Default;
-            MessageBox.Show("An exception occurred while attempting to load the pdf file and extract text." + g.crlf2 + ex.ToReport(),
-                    "PdfTextExtract - Processing Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show("An exception occurred while attempting to load the pdf file and extract text." + g.crlf2 + ex.ToReport(),
+                        "PdfTextExtract - Processing Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
       this.Cursor = Cursors.Default;
@@ -617,7 +617,7 @@ namespace Org.PdfTextExtract
         tp.Text = _textPatternSet.ToReport();
         if (!tp.IsDockedInToolWindow)
         {
-          tabMain.SelectedTab = tabPageFormatRecognition; 
+          tabMain.SelectedTab = tabPageFormatRecognition;
         }
       }
     }
@@ -630,7 +630,7 @@ namespace Org.PdfTextExtract
     {
       using (var textEngine = new TextEngine())
       {
-        return textEngine.GetPatterns(text); 
+        return textEngine.GetPatterns(text);
       }
     }
 
@@ -648,7 +648,7 @@ namespace Org.PdfTextExtract
         //  return;
 
         //var formatSpec = _formatSpecSet[formatName];
-        //var rs = formatSpec.RecogSpecSet; 
+        //var rs = formatSpec.RecogSpecSet;
         //var ts = formatSpec.TextStructureDefinition;
 
         //if (ts == null || rs == null)
@@ -658,7 +658,7 @@ namespace Org.PdfTextExtract
         //  return;
 
         //this.Cursor = Cursors.WaitCursor;
-        //ts.SetTextStructure(_text, rs); 
+        //ts.SetTextStructure(_text, rs);
       }
       catch (Exception ex)
       {
@@ -682,15 +682,15 @@ namespace Org.PdfTextExtract
       if (configText.IsBlank())
         return;
 
-      XElement xml = null; 
+      XElement xml = null;
 
       try
       {
-        xml = XElement.Parse(configText); 
+        xml = XElement.Parse(configText);
       }
       catch (Exception ex)
       {
-        MessageBox.Show("An exception occurred while attempting to create a valid xml element from the data in the Configuration Editor tool window." + g.crlf2 + 
+        MessageBox.Show("An exception occurred while attempting to create a valid xml element from the data in the Configuration Editor tool window." + g.crlf2 +
                         "The exception is shown below." + g.crlf2 + ex.ToReport(),
                         "PdfTextExtract - Configuration Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return;
@@ -714,7 +714,7 @@ namespace Org.PdfTextExtract
         fullXmlPath = fullXmlPathLabelText.Replace("Full XML Path:", String.Empty).Trim();
       }
 
-      Label lblFullFilePath = toolPanel.GetTopPanelControl("lblFullFilePath") as Label; 
+      Label lblFullFilePath = toolPanel.GetTopPanelControl("lblFullFilePath") as Label;
       if (lblFullFilePath != null)
       {
         string fullFilePathLabelText = lblFullFilePath.Text;
@@ -751,7 +751,7 @@ namespace Org.PdfTextExtract
         if (oldExtractSpec == null)
         {
           MessageBox.Show("An exception occurred while attempting to save the configuration data from Configuration Editor tool window." + g.crlf2 +
-                          "The existing ExtractSpec named  '" + specName + "' could not be found in the ExtractExtractSpec in the file '" + 
+                          "The existing ExtractSpec named  '" + specName + "' could not be found in the ExtractExtractSpec in the file '" +
                           fullFilePath + "'.",
                           "PdfTextExtract - Configuration Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
           return;
@@ -760,15 +760,15 @@ namespace Org.PdfTextExtract
         oldExtractSpec.AddBeforeSelf(newExtractSpec);
         oldExtractSpec.Remove();
         fileText = extractSpecSet.ToString();
-        
+
       }
       else
       {
         string[] pathTokens = fullXmlPath.Split(Constants.BSlashDelimiter, StringSplitOptions.RemoveEmptyEntries);
         if (pathTokens.Length < 2)
         {
-          MessageBox.Show("The full xml path '" + fullXmlPath + "' contains less than the minimum of 2 tokens which are used for locating the specific elements in " + 
-                          "the configuration file that are to be saved." + g.crlf2 + "The update to the configuration file failed for the file named'" + 
+          MessageBox.Show("The full xml path '" + fullXmlPath + "' contains less than the minimum of 2 tokens which are used for locating the specific elements in " +
+                          "the configuration file that are to be saved." + g.crlf2 + "The update to the configuration file failed for the file named'" +
                           fullFilePath + "'.", "PdfTextExtract - Configuration Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
           return;
         }
@@ -796,13 +796,13 @@ namespace Org.PdfTextExtract
         XElement oldElement = null;
         int tokenIndex = 1;
 
-        
+
         while (tokenIndex < pathTokens.Length)
         {
           string tsdName = pathTokens[tokenIndex];
           if (parentElement.Element("TsdSet") != null)
           {
-            parentElement = parentElement.Element("TsdSet"); 
+            parentElement = parentElement.Element("TsdSet");
           }
 
           var tsdSet = parentElement.Elements("Tsd");
@@ -828,11 +828,11 @@ namespace Org.PdfTextExtract
                 else
                 {
                   throw new Exception("The Tsd xml object named '" + tsdName + "' does not have a TsdSet in which lower level Tsd xml objects are located. " +
-                                      "The full xml path of Tsd to be updated is '" + fullXmlPath + "'."); 
+                                      "The full xml path of Tsd to be updated is '" + fullXmlPath + "'.");
                 }
               }
-            }            
-          }          
+            }
+          }
         }
 
         if (oldElement == null)
@@ -851,7 +851,7 @@ namespace Org.PdfTextExtract
 
         if (_text != null)
         {
-          _text.RefreshExtractSpec(_extractSpecSet[specName]); 
+          _text.RefreshExtractSpec(_extractSpecSet[specName]);
         }
 
         if (_twMgr != null && _twMgr.ToolPanels != null && _twMgr.ToolPanels.ContainsKey("TextExtractDesigner") && _text != null)
@@ -861,13 +861,13 @@ namespace Org.PdfTextExtract
 
           if (recogSpecName.IsNotBlank() && _recogSpecSet.ContainsKey(recogSpecName))
           {
-            var recogSpec = _recogSpecSet[recogSpecName]; 
+            var recogSpec = _recogSpecSet[recogSpecName];
             var textExtractDesigner = _twMgr.ToolPanels["TextExtractDesigner"] as TextExtractDesigner;
             textExtractDesigner.LoadTextObject(recogSpec, extractSpec, _text);
           }
         }
 
-        MessageBox.Show("The configuration was saved to disk and to the in-memory collections.", "Pdf Text Extractor", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+        MessageBox.Show("The configuration was saved to disk and to the in-memory collections.", "Pdf Text Extractor", MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
       catch (Exception ex)
       {
@@ -912,16 +912,16 @@ namespace Org.PdfTextExtract
         _formats = new SortedList<string, bool>();
         _formats.Add("UNDEFINED", true);
         RefreshFormatsListBox();
-        
+
         _filesGridUpdating = false;
-        _allowDebugBreak = g.CI("AllowDebugBreak").ToBoolean(); 
+        _allowDebugBreak = g.CI("AllowDebugBreak").ToBoolean();
 
         _bgClearStyle = new fctb.MarkerStyle(Brushes.White);
         _bgHighlightStyle = new fctb.MarkerStyle(Brushes.LightSteelBlue);
         _rangesToClear = new List<fctb.Range>();
 
         _assignedMap = g.CI("AssignedMap");
-        _mapsFolder = g.CI("MapsFolder"); 
+        _mapsFolder = g.CI("MapsFolder");
 
         _runPostLoadCommands = g.CI("RunPostLoadCommands").ToBoolean();
         _postLoadCommands = g.GetList("PostLoadCommands");
@@ -943,11 +943,11 @@ namespace Org.PdfTextExtract
         foreach (TabPage tabPage in tabMain.TabPages)
         {
           if (tabPage.Tag != null)
-            _tabPageOrder.Add(tabPage.Tag.ToString().Replace("TabPage_", String.Empty)); 
+            _tabPageOrder.Add(tabPage.Tag.ToString().Replace("TabPage_", String.Empty));
         }
 
         btnRecognizeFormats.Enabled = false;
-        
+
       }
       catch (Exception ex)
       {
@@ -988,7 +988,7 @@ namespace Org.PdfTextExtract
 
           string assignedFormat = r.Cells["FileFormat"].Value.ToString().ToUpper();
           if (assignedFormat != "UNDEFINED")
-            continue; 
+            continue;
 
           string fullFilePath = r.Cells["FilePath"].Value.ToString() + @"\" + r.Cells["FileName"].Value.ToString();
 
@@ -1004,8 +1004,8 @@ namespace Org.PdfTextExtract
             string fileName = r.Cells["FileName"].Value.ToString().Trim();
             string filePath = r.Cells["FilePath"].Value.ToString().Trim();
 
-            lblStatus.Text =  "Processed " + (i + 1).ToString("#,##0") + " of " + gvFiles.Rows.Count.ToString("###,##0") + " in " + 
-                               processTimer.SecondsSoFar().Value.ToString("#,##0.000") + " seconds - " + fullFilePath;
+            lblStatus.Text =  "Processed " + (i + 1).ToString("#,##0") + " of " + gvFiles.Rows.Count.ToString("###,##0") + " in " +
+                              processTimer.SecondsSoFar().Value.ToString("#,##0.000") + " seconds - " + fullFilePath;
             Application.DoEvents();
 
             if (formatName != "UNDEFINED" && !_fileFormatSet.ContainsKey(formatName))
@@ -1013,7 +1013,7 @@ namespace Org.PdfTextExtract
 
             if (_fileFormatSet.ContainsKey("UNDEFINED"))
             {
-              string fileFullPath = filePath.ToLower() + @"\" + fileName.ToLower(); 
+              string fileFullPath = filePath.ToLower() + @"\" + fileName.ToLower();
 
               var undefinedFormat = _fileFormatSet["UNDEFINED"];
               int undefinedIndex = -1;
@@ -1029,9 +1029,9 @@ namespace Org.PdfTextExtract
 
               if (undefinedIndex > -1)
               {
-                var fileToMove = undefinedFormat.Files[undefinedIndex]; 
+                var fileToMove = undefinedFormat.Files[undefinedIndex];
                 undefinedFormat.Files.RemoveAt(undefinedIndex);
-                _fileFormatSet[formatName].Files.Add(fileToMove); 
+                _fileFormatSet[formatName].Files.Add(fileToMove);
               }
             }
 
@@ -1040,7 +1040,7 @@ namespace Org.PdfTextExtract
               _formatsListBoxUpdating = true;
               _formats.Add(formatName, true);
               RefreshFormatsListBox();
-              Application.DoEvents(); 
+              Application.DoEvents();
               _formatsListBoxUpdating = false;
             }
 
@@ -1062,7 +1062,7 @@ namespace Org.PdfTextExtract
         }
 
         if (gvFiles.Rows.Count > 10)
-          MessageBox.Show("Recognition process is complete.", "PdfTextExtract", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+          MessageBox.Show("Recognition process is complete.", "PdfTextExtract", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         this.Cursor = Cursors.Default;
       }
@@ -1149,7 +1149,7 @@ namespace Org.PdfTextExtract
         {
           foreach (var extractSpecFile in extractSpecFiles)
           {
-            bool includeFile = true; 
+            bool includeFile = true;
 
             if (_extractSpecIncludes.Count > 0)
             {
@@ -1246,7 +1246,7 @@ namespace Org.PdfTextExtract
       foreach (var filter in filterList)
       {
         if (filter.Trim() == "*")
-          continue; 
+          continue;
 
         cboFileNameFilters.Items.Add(filter);
       }
@@ -1350,7 +1350,7 @@ namespace Org.PdfTextExtract
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred attempting to save the updated AppConfig file." + g.crlf2 +
-                        "Exception Message:" + ex.ToReport(), "PdfTextExtract - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Exception Message:" + ex.ToReport(), "PdfTextExtract - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
 
       try
@@ -1361,7 +1361,7 @@ namespace Org.PdfTextExtract
       catch (Exception ex)
       {
         MessageBox.Show("An exception occurred while closing the main form and child forms." + g.crlf2 +
-                        "Exception Message:" + ex.ToReport(), "PdfTextExtract - Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                        "Exception Message:" + ex.ToReport(), "PdfTextExtract - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 
@@ -1376,7 +1376,7 @@ namespace Org.PdfTextExtract
     private void InitializeToolWindowForms()
     {
       int secondScreenWidth = 0;
-      int thirdScreenWidth = 0; 
+      int thirdScreenWidth = 0;
 
       Rectangle primaryScreenRectangle = new Rectangle(new Point(0, 0), Screen.PrimaryScreen.Bounds.Size);
 
@@ -1384,9 +1384,9 @@ namespace Org.PdfTextExtract
         secondScreenWidth = Screen.AllScreens[1].Bounds.Width;
 
       if (Screen.AllScreens.Count() > 2)
-        thirdScreenWidth = Screen.AllScreens[2].Bounds.Width; 
+        thirdScreenWidth = Screen.AllScreens[2].Bounds.Width;
 
-      Rectangle totalScreenArea = 
+      Rectangle totalScreenArea =
         new Rectangle(new Point(0, 0), new Size(primaryScreenRectangle.Width + secondScreenWidth + thirdScreenWidth, primaryScreenRectangle.Height));
 
       List<string> splitterPanelsManaged = new List<string>();
@@ -1411,7 +1411,7 @@ namespace Org.PdfTextExtract
                                 "PdfTextExtract - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
               }
-              
+
               dockedPanels.Add(dockedPanelKey, (Panel) control);
             }
           }
@@ -1456,7 +1456,7 @@ namespace Org.PdfTextExtract
             twComponents.ToolPanel = new TextExtractDesigner();
             break;
 
-          // other types in Org.TW may be possible - implement later, or as needed.
+            // other types in Org.TW may be possible - implement later, or as needed.
         }
 
         twComponents.ToolWindow = new frmToolWindowBase(this, uiWindow.WindowTitle);
@@ -1465,10 +1465,10 @@ namespace Org.PdfTextExtract
         twComponents.ToolWindow.ToolAction += ToolWindow_ToolAction;
         twComponents.ToolPanel.Tag = "ToolPanel_" + toolName;
         twComponents.ToolPanel.NotifyHostEvent += ToolPanel_NotifyHostEvent;
-        twComponents.ToolPanel.DockButton.Click += Action; 
+        twComponents.ToolPanel.DockButton.Click += Action;
         twComponents.FloatedTarget = twComponents.ToolWindow.DockPanel;
         twComponents.DockedTarget = dockedPanels["DockTarget_" + toolName];
-        _twMgr.ToolWindowComponentsSet.Add(toolName, twComponents); 
+        _twMgr.ToolWindowComponentsSet.Add(toolName, twComponents);
 
         if (uiWindow.WindowLocation.IsDocked)
         {
@@ -1534,7 +1534,7 @@ namespace Org.PdfTextExtract
       switch (name)
       {
         case "RawExtractedText":
-          rtv.TopPanel.Height = 50; 
+          rtv.TopPanel.Height = 50;
           Button btnFindPatterns = new Button();
           btnFindPatterns.Name = "btnFindPatterns";
           btnFindPatterns.Tag = "FindPatterns";
@@ -1549,7 +1549,7 @@ namespace Org.PdfTextExtract
           break;
 
         case "ConfigEdit":
-          rtv.TopPanel.Height = 35; 
+          rtv.TopPanel.Height = 35;
           Button btnSaveConfig = new Button();
           btnSaveConfig.Name = "btnSaveConfig";
           btnSaveConfig.Tag = "SaveConfig";
@@ -1594,15 +1594,15 @@ namespace Org.PdfTextExtract
 
       string tag = e.Sender.Tag.ToString();
       if (tag.IsBlank())
-        return; 
+        return;
 
       string command = e.Command.ToString();
       string toolWindowAction = "TW_" + command + "_" + tag.Replace("ToolPanel_", String.Empty);
-      
+
 
       ToolWindowAction(toolWindowAction, e.ToolPanelUpdateParms);
     }
-    
+
     private void ToolWindowAction(string action, ToolPanelUpdateParms parms = null)
     {
       string[] tokens = action.Split('_');
@@ -1666,7 +1666,7 @@ namespace Org.PdfTextExtract
               twc.ToolPanel.Dock = DockStyle.Fill;
               uiWindow.WindowLocation.IsDocked = true;
 
-              int tabInsertIndex = GetTabInsertIndex(toolTarget); 
+              int tabInsertIndex = GetTabInsertIndex(toolTarget);
 
               switch (toolTarget)
               {
@@ -1724,7 +1724,7 @@ namespace Org.PdfTextExtract
             break;
 
           case "Float":
-            if (twc.FloatedTarget != null) 
+            if (twc.FloatedTarget != null)
             {
               twc.DockedTarget.Controls.Remove(twc.ToolPanel);
               twc.ToolWindow.DockPanel.Controls.Clear();
@@ -1801,7 +1801,7 @@ namespace Org.PdfTextExtract
               return;
 
             var targetToolPanel = _twMgr.ToolPanels[parms.ToolPanelName];
-            ExecuteToolWindowCommand(targetToolPanel, parms); 
+            ExecuteToolWindowCommand(targetToolPanel, parms);
             break;
         }
       }
@@ -1826,7 +1826,7 @@ namespace Org.PdfTextExtract
           switch (command)
           {
             case "LoadTsd":
-              string[] pathTokens = path.Split(Constants.BSlashDelimiter, StringSplitOptions.RemoveEmptyEntries); 
+              string[] pathTokens = path.Split(Constants.BSlashDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
               switch (parms.TextConfigType)
               {
@@ -1847,7 +1847,7 @@ namespace Org.PdfTextExtract
                       var spec = _extractSpecSet[configName];
                       var f2 = new ObjectFactory2();
                       var xml = f2.Serialize(spec);
-                      config = xml.ToString();                       
+                      config = xml.ToString();
                     }
 
                     configEditToolPanel.Text = config;
@@ -1899,7 +1899,7 @@ namespace Org.PdfTextExtract
                   Tsd tsd = extractSpec[topTsdName];
 
                   int level = 1;
- 
+
                   while (pathTokens.Length - 1 > level)
                   {
                     level++;
@@ -1937,7 +1937,7 @@ namespace Org.PdfTextExtract
                   if (lblFullXmlPath != null)
                   {
                     lblFullXmlPath.Left = 450;
-                    lblFullXmlPath.Width = 300; 
+                    lblFullXmlPath.Width = 300;
                     lblFullXmlPath.Text = "Full XML Path:   " + parms.ConfigFullXmlPath;
                   }
 
@@ -1960,7 +1960,7 @@ namespace Org.PdfTextExtract
 
           break;
 
-        case "TextExtractResults":          
+        case "TextExtractResults":
           var textExtractResultsToolPanel = toolPanel as RichTextViewer;
 
           switch (command)
@@ -2014,7 +2014,7 @@ namespace Org.PdfTextExtract
         return;
 
       frmToolWindowBase toolWindow = e.ToolWindow as frmToolWindowBase;
-      string name = toolWindow.Tag.ToString().Replace("ToolWindow_", String.Empty); 
+      string name = toolWindow.Tag.ToString().Replace("ToolWindow_", String.Empty);
 
       switch (e.ToolActionEvent)
       {
@@ -2036,7 +2036,7 @@ namespace Org.PdfTextExtract
 
     private void cboRootFolder_SelectedIndexChanged(object sender, EventArgs e)
     {
-      btnLoadFiles.Enabled = cboRootFolder.Text.IsNotBlank(); 
+      btnLoadFiles.Enabled = cboRootFolder.Text.IsNotBlank();
     }
 
     private void tabMain_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -2052,27 +2052,27 @@ namespace Org.PdfTextExtract
           break;
 
         case "TabPage_PdfViewer":
-          ToolWindowAction("TW_Float_PdfViewer"); 
+          ToolWindowAction("TW_Float_PdfViewer");
           break;
 
         case "TabPage_RawExtractedText":
-          ToolWindowAction("TW_Float_RawExtractedText"); 
+          ToolWindowAction("TW_Float_RawExtractedText");
           break;
 
         case "TabPage_FormatRecognition":
-          ToolWindowAction("TW_Float_FormatRecognition"); 
+          ToolWindowAction("TW_Float_FormatRecognition");
           break;
 
         case "TabPage_ConfigEdit":
-          ToolWindowAction("TW_Float_ConfigEdit"); 
+          ToolWindowAction("TW_Float_ConfigEdit");
           break;
 
         case "TabPage_TextExtractDesigner":
-          ToolWindowAction("TW_Float_TextExtractDesigner"); 
+          ToolWindowAction("TW_Float_TextExtractDesigner");
           break;
 
         case "TabPage_TextExtractResults":
-          ToolWindowAction("TW_Float_TextExtractResults"); 
+          ToolWindowAction("TW_Float_TextExtractResults");
           break;
 
       }
@@ -2113,7 +2113,7 @@ namespace Org.PdfTextExtract
       this.BringToFront();
 
       RunPostLoadCommands();
-      _isFirstShowing = false; 
+      _isFirstShowing = false;
     }
   }
 }

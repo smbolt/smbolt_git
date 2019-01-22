@@ -9,17 +9,26 @@ using Org.GS;
 namespace Org.Dx.Business.TextProcessing
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(XType = XType.Element)] 
+  [XMap(XType = XType.Element)]
   public class RecogLine
   {
     [XMap]
-    public string ID { get; set; }
+    public string ID {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Use { get; set; }
+    public string Use {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Text { get; set; }
+    public string Text {
+      get;
+      set;
+    }
 
     public RecogLine()
     {

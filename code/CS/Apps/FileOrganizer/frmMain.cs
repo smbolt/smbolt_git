@@ -9,7 +9,7 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Org.FSO; 
+using Org.FSO;
 using Org.GS;
 using Org.GS.Configuration;
 
@@ -31,7 +31,7 @@ namespace Org.FileOrganizer
       InitializeComponent();
       InitializeForm();
     }
-    
+
 
     private void Action(object sender, EventArgs e)
     {
@@ -96,7 +96,7 @@ namespace Org.FileOrganizer
       var path = GetPathNameFromProjectName(rf);
       var id = _fsoRepo.GetRootFolderID(path);
 
-      DialogResult result = MessageBox.Show("This will delete the root folder and all sub folders and files. Are you sure you want to do this", 
+      DialogResult result = MessageBox.Show("This will delete the root folder and all sub folders and files. Are you sure you want to do this",
                                             "Delete - This process cannot be undone.", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
       if(result != DialogResult.OK)
       {
@@ -114,7 +114,7 @@ namespace Org.FileOrganizer
       var path = GetPathNameFromProjectName(rf);
       var id = _fsoRepo.GetRootFolderID(path);
 
-      DialogResult result = MessageBox.Show("This will delete the folders table and all files asociated with those folders. Are you sure you want to do this", 
+      DialogResult result = MessageBox.Show("This will delete the folders table and all files asociated with those folders. Are you sure you want to do this",
                                             "Delete - This process cannot be undone.", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
       if(result != DialogResult.OK)
       {
@@ -127,7 +127,7 @@ namespace Org.FileOrganizer
     }
 
     private void ProcessRootFolder()
-		{
+    {
       var rf = cboRootFolderDropDown.Text.Trim();
       var name = GetPathNameFromProjectName(rf);
       var id = _fsoRepo.GetRootFolderIDFromName(name);
@@ -135,8 +135,8 @@ namespace Org.FileOrganizer
       if(btnProcessRootFolder.Text == "Re-Process Root Folder")
       {
         DialogResult result = MessageBox.Show("Re-Processing a root folder will delete all current folders and files associated with the root folder " + g.crlf +
-                        " and then re-populate the the table with the current folder and file structure.", "This is a delete and cannot be undone.", 
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                                              " and then re-populate the the table with the current folder and file structure.", "This is a delete and cannot be undone.",
+                                              MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
         if(result != DialogResult.OK)
         {
           return;
@@ -160,39 +160,39 @@ namespace Org.FileOrganizer
 
       char[] delim = new char[] { ',' };
 
-      searchParms.RootPath = GetPathNameFromProjectName(cboRootFolderDropDown.Text); 
+      searchParms.RootPath = GetPathNameFromProjectName(cboRootFolderDropDown.Text);
       searchParms.FileCountLimit = txtFileCountLimit.Text.ToInt32();
       searchParms.LogPathTooLongExceptions = true;
 
       var rootFolder = BuildFileList(searchParms);
 
-			StringBuilder sb = new StringBuilder();
-			foreach (var file in rootFolder.FileList.Values)
-			{
-				sb.Append(file.FullPath + g.crlf); 
-			}
+      StringBuilder sb = new StringBuilder();
+      foreach (var file in rootFolder.FileList.Values)
+      {
+        sb.Append(file.FullPath + g.crlf);
+      }
 
-			txtOut.Text = "The results of the search are as follows..." + g.crlf + sb.ToString();
+      txtOut.Text = "The results of the search are as follows..." + g.crlf + sb.ToString();
 
       this.Cursor = Cursors.Default;
-		}
+    }
 
     private bool ValidateInput(bool requireSearchPatterns)
     {
       if (cboRootFolderDropDown.Text.Trim().Length == 0)
       {
         MessageBox.Show("Please enter a search path or use the File|Open menu item to locate a path.", "File Utility Error",
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
         cboRootFolderDropDown.Focus();
         return false;
       }
-      
+
       var path = GetPathNameFromProjectName(cboRootFolderDropDown.Text.Trim());
       string trimmedPath = path.Trim();
       if (!Directory.Exists(trimmedPath))
       {
         MessageBox.Show("The search path entered is invalid.", "File Utility Error",
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
         cboRootFolderDropDown.Focus();
         return false;
       }
@@ -201,14 +201,14 @@ namespace Org.FileOrganizer
     }
 
     private OSFolder BuildFileList(SearchParms searchParms)
-    {   
+    {
       Project projectToProcess = new Project();
       foreach (var project in _projectSet)
         if(project.Key == cboProject.Text.ToString())
         {
           projectToProcess.Name = project.Value.Name;
           projectToProcess.ProjectID = project.Value.ProjectID;
-        }    
+        }
       var rootFolder = new OSFolder();
       rootFolder.FullPath = GetPathNameFromProjectName(cboRootFolderDropDown.Text.Trim());
       rootFolder.RootFolderPath = GetPathNameFromProjectName(cboRootFolderDropDown.Text.Trim());
@@ -224,7 +224,7 @@ namespace Org.FileOrganizer
       rootFolder.BuildFolderAndFileList();
       return rootFolder;
     }
-    
+
     private bool FileLimitReached(OSFolder rootFolder, bool processAllFolders)
     {
       int folderOmitCount = processAllFolders ? 0 : 1;
@@ -254,7 +254,7 @@ namespace Org.FileOrganizer
         {
           repo.LoadFileSystem(folder, ExtensionList, rootFolderId);
         }
-        
+
         folder.IsProcessed = true;
       }
 
@@ -288,7 +288,7 @@ namespace Org.FileOrganizer
           {
             string newProjectName = fNewProject.NewProjectName;
             LoadProjects();
-            SelectProjectByName(newProjectName); 
+            SelectProjectByName(newProjectName);
           }
         }
       }
@@ -301,12 +301,12 @@ namespace Org.FileOrganizer
 
     private void LoadProjects()
     {
-      _projectSet = _fsoRepo.GetProjects(); 
+      _projectSet = _fsoRepo.GetProjects();
 
       cboProject.Items.Clear();
       foreach (var project in _projectSet.Values)
       {
-        cboProject.Items.Add(project.Name); 
+        cboProject.Items.Add(project.Name);
       }
     }
 
@@ -322,7 +322,7 @@ namespace Org.FileOrganizer
       }
 
       if (_projectSet.ContainsKey(cboProject.Text))
-        _project = _projectSet[cboProject.Text]; 
+        _project = _projectSet[cboProject.Text];
     }
 
     private void DeleteProject()
@@ -333,17 +333,17 @@ namespace Org.FileOrganizer
         {
           projectToDelete.Name = project.Value.Name;
           projectToDelete.ProjectID = project.Value.ProjectID;
-        } 
+        }
 
       _project = projectToDelete;
 
       if (_project == null)
-        return; 
+        return;
 
       if (MessageBox.Show("Are you sure you want to delete project '" + _project.Name + "'?" + g.crlf2 +
-                      "This action cannot be reversed.", "Confirm Project Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                          "This action cannot be reversed.", "Confirm Project Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
         return;
-      
+
 
       try
       {
@@ -595,7 +595,7 @@ namespace Org.FileOrganizer
       gvTagTypes.Columns.Add(tagTypeCol);
     }
 
-    private void UpdateRootFolders() 
+    private void UpdateRootFolders()
     {
       Project p = _fsoRepo.GetProjectByName(cboProject.Text.Trim());
       if(p.ProjectID == 0)
@@ -615,7 +615,7 @@ namespace Org.FileOrganizer
       cboRootFolderDropDown.DataSource = dataSource;
     }
 
-    private void cboRootFolderDropDown_SelectedIndexChanged(object sender,EventArgs e) 
+    private void cboRootFolderDropDown_SelectedIndexChanged(object sender,EventArgs e)
     {
       var path = GetPathNameFromProjectName(cboRootFolderDropDown.Text.Trim());
 

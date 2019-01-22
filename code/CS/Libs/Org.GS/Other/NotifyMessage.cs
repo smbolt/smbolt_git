@@ -9,9 +9,18 @@ namespace Org.GS
   [Serializable]
   public class NotifyMessage
   {
-    public string Message { get; set; }
-    public string Subject { get; set; }
-    public string EventName { get; set; }
+    public string Message {
+      get;
+      set;
+    }
+    public string Subject {
+      get;
+      set;
+    }
+    public string EventName {
+      get;
+      set;
+    }
 
     public NotifyMessage(string message, string subject, string eventName)
     {

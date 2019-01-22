@@ -9,11 +9,26 @@ namespace Org.Dx.Business
   public class DxActionBase : IDxAction, IDisposable
   {
     public event Action<DxWorkbook> OnNewWorkbookVersion;
-    protected MapEngine MapEngine { get; private set; }
-    protected DxActionParms DxActionParms { get; private set; }
-    protected DxWorkbook SourceWorkbook { get; set; }
-    protected DxWorkbook TargetWorkbook { get; set; }
-    protected DxMapSet DxMapSet { get; set; }
+    protected MapEngine MapEngine {
+      get;
+      private set;
+    }
+    protected DxActionParms DxActionParms {
+      get;
+      private set;
+    }
+    protected DxWorkbook SourceWorkbook {
+      get;
+      set;
+    }
+    protected DxWorkbook TargetWorkbook {
+      get;
+      set;
+    }
+    protected DxMapSet DxMapSet {
+      get;
+      set;
+    }
 
     public DxActionBase(MapEngine mapEngine, DxActionParms dxActionParms)
     {

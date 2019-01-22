@@ -41,54 +41,56 @@
       this.openDialog = new System.Windows.Forms.OpenFileDialog();
       this.mnuMain.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(784, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileOpen,
-            this.mnuFileSave,
-            this.mnuFileSaveAs,
-            this.mnuFileClose});
+        this.mnuFileOpen,
+        this.mnuFileSave,
+        this.mnuFileSaveAs,
+        this.mnuFileClose
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileSave
-      // 
+      //
       this.mnuFileSave.Name = "mnuFileSave";
       this.mnuFileSave.Size = new System.Drawing.Size(152, 22);
       this.mnuFileSave.Tag = "Save";
       this.mnuFileSave.Text = "&Save";
       this.mnuFileSave.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuFileSaveAs
-      // 
+      //
       this.mnuFileSaveAs.Name = "mnuFileSaveAs";
       this.mnuFileSaveAs.Size = new System.Drawing.Size(152, 22);
       this.mnuFileSaveAs.Tag = "SaveAs";
       this.mnuFileSaveAs.Text = "Save &As";
       this.mnuFileSaveAs.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // mnuFileClose
-      // 
+      //
       this.mnuFileClose.Name = "mnuFileClose";
       this.mnuFileClose.Size = new System.Drawing.Size(152, 22);
       this.mnuFileClose.Tag = "Close";
       this.mnuFileClose.Text = "&Close";
       this.mnuFileClose.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 543);
       this.lblStatus.Name = "lblStatus";
@@ -97,9 +99,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // txtMain
-      // 
+      //
       this.txtMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtMain.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtMain.Location = new System.Drawing.Point(0, 24);
@@ -110,17 +112,17 @@
       this.txtMain.TabIndex = 2;
       this.txtMain.WordWrap = false;
       this.txtMain.TextChanged += new System.EventHandler(this.txtMain_TextChanged);
-      // 
+      //
       // mnuFileOpen
-      // 
+      //
       this.mnuFileOpen.Name = "mnuFileOpen";
       this.mnuFileOpen.Size = new System.Drawing.Size(152, 22);
       this.mnuFileOpen.Tag = "Open";
       this.mnuFileOpen.Text = "&Open";
       this.mnuFileOpen.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmConfigEdit
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(784, 562);

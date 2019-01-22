@@ -18,24 +18,50 @@ namespace Org.AX
   public class AxAction
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = true)]
-    public AxFunction AxFunction { get; set; }    
+    public AxFunction AxFunction {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "True")]
-    public bool IsActive { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Src { get; set; }
+    public string Src {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Tgt { get; set; }
+    public string Tgt {
+      get;
+      set;
+    }
 
-    public AxActionClass AxActionClass { get { return Get_AxActionClass(); } }
+    public AxActionClass AxActionClass {
+      get {
+        return Get_AxActionClass();
+      }
+    }
 
-    public bool IsDryRun { get; private set; }
-    public string Report { get { return Get_Report(); } }
+    public bool IsDryRun {
+      get;
+      private set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
 
     public AxAction()
     {
@@ -64,7 +90,7 @@ namespace Org.AX
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to execute AxAction '" + this.Report + "'.", ex); 
+        throw new Exception("An exception occurred while attempting to execute AxAction '" + this.Report + "'.", ex);
       }
     }
 
@@ -83,7 +109,7 @@ namespace Org.AX
 
             case AxFunction.DeleteRecursive:
               return engine.DeleteRecursive(this.Tgt);
-            
+
             case AxFunction.CopyFiles:
               return engine.CopyFiles(this.Src, this.Tgt);
 
@@ -132,7 +158,7 @@ namespace Org.AX
 
     private string Get_Report()
     {
-      return "AxAction report not yet implemented."; 
+      return "AxAction report not yet implemented.";
     }
 
   }

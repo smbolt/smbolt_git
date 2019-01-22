@@ -11,14 +11,22 @@ namespace Org.GS.Performance
   public class PerfProfile
   {
     [XMap(IsKey=true)]
-    public string ProfileName { get; set; }
+    public string ProfileName {
+      get;
+      set;
+    }
 
     [XMap(XType=XType.Element, CollectionElements="Category")]
-    public CategorySet CategorySet { get; set; }
+    public CategorySet CategorySet {
+      get;
+      set;
+    }
 
     public int TotalCounters
     {
-      get { return Get_TotalCounters(); }
+      get {
+        return Get_TotalCounters();
+      }
     }
 
     public PerfProfile()

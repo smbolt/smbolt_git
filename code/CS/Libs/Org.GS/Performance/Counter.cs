@@ -11,25 +11,41 @@ namespace Org.GS.Performance
   public class Counter
   {
     [XMap]
-    public string CategoryName { get; set; }
-    
-    [XMap]
-    public string CounterName { get; set; }
+    public string CategoryName {
+      get;
+      set;
+    }
 
     [XMap]
-    public PerformanceCounterType CounterType { get; set; }
+    public string CounterName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string InstanceName { get; set; }
+    public PerformanceCounterType CounterType {
+      get;
+      set;
+    }
+
+    [XMap]
+    public string InstanceName {
+      get;
+      set;
+    }
 
     public string Key
     {
-      get { return Get_Key(); }
+      get {
+        return Get_Key();
+      }
     }
 
     public string DisplayKey
     {
-      get { return Get_DisplayKey(); }
+      get {
+        return Get_DisplayKey();
+      }
     }
 
     public Counter()

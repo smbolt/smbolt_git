@@ -30,7 +30,7 @@ namespace Org.WinService
       }
       catch (Exception ex)
       {
-        
+
         TerminateService(ex.Message);
       }
     }

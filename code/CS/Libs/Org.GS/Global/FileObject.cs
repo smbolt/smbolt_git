@@ -11,10 +11,16 @@ namespace Org.GS
   public class FileObject
   {
     [XMap]
-    public string FileName { get; set; }
+    public string FileName {
+      get;
+      set;
+    }
 
     [XMap(XType= XType.Element)]
-    public string Data { get; set; }
+    public string Data {
+      get;
+      set;
+    }
 
     public FileObject()
     {

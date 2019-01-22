@@ -11,20 +11,20 @@ using Org.GS;
 
 namespace Org.CHCM.Business
 {
-	public class CHCMRepository : IDisposable
+  public class CHCMRepository : IDisposable
   {
     private SqlConnection _conn;
     private string _connectionString;
     private ConfigDbSpec _configDbSpec;
 
 
-		public CHCMRepository(ConfigDbSpec configDbSpec)
-		{
-			_configDbSpec = configDbSpec;
-			if (!_configDbSpec.IsReadyToConnect())
-				throw new Exception(configDbSpec + "' is not ready to connect.");
-			_connectionString = _configDbSpec.ConnectionString;
-		}
+    public CHCMRepository(ConfigDbSpec configDbSpec)
+    {
+      _configDbSpec = configDbSpec;
+      if (!_configDbSpec.IsReadyToConnect())
+        throw new Exception(configDbSpec + "' is not ready to connect.");
+      _connectionString = _configDbSpec.ConnectionString;
+    }
 
     public List<Person> GetPersons()
     {
@@ -35,7 +35,7 @@ namespace Org.CHCM.Business
         var persons = new List<Person>();
 
         string sql = "SELECT PersonId AS PersonId, " + g.crlf +
-                     "  Prefix as Prefix, " + g.crlf + 
+                     "  Prefix as Prefix, " + g.crlf +
                      "  FirstName AS FirstName, " + g.crlf +
                      "  MiddleName AS MiddleName, " + g.crlf +
                      "  LastName AS LastName, " + g.crlf +
@@ -57,31 +57,31 @@ namespace Org.CHCM.Business
           da.Fill(ds);
 
           if (ds.Tables.Count == 0)
-						return persons;
+            return persons;
 
           var dt = ds.Tables[0];
           foreach (DataRow r in dt.Rows)
           {
             var person = new Person();
-						person.PersonId = r["PersonId"].DbToInt32().Value;
-						person.Prefix = r["Prefix"].DbToString();
-						person.FirstName = r["FirstName"].DbToString();
-						person.MiddleName = r["MiddleName"].DbToString();
-						person.LastName = r["LastName"].DbToString();
-						person.Suffix = r["Suffix"].DbToString();
-						person.FirstName = r["FirstName"].DbToString();
-						person.IsActive = r["IsActive"].DbToBoolean().Value;
-						person.BirthYear = r["BirthYear"].DbToInt32();
-						person.BirthMonth = r["BirthMonth"].DbToInt32();
-						person.BirthDay = r["BirthDay"].DbToInt32();
-						person.SchoolGrade = r["SchoolGrade"].DbToChar();
-						person.UseBirthday = r["UseBirthday"].DbToBoolean().Value;
-						person.Age = r["Age"].DbToInt32();
-						persons.Add(person);
+            person.PersonId = r["PersonId"].DbToInt32().Value;
+            person.Prefix = r["Prefix"].DbToString();
+            person.FirstName = r["FirstName"].DbToString();
+            person.MiddleName = r["MiddleName"].DbToString();
+            person.LastName = r["LastName"].DbToString();
+            person.Suffix = r["Suffix"].DbToString();
+            person.FirstName = r["FirstName"].DbToString();
+            person.IsActive = r["IsActive"].DbToBoolean().Value;
+            person.BirthYear = r["BirthYear"].DbToInt32();
+            person.BirthMonth = r["BirthMonth"].DbToInt32();
+            person.BirthDay = r["BirthDay"].DbToInt32();
+            person.SchoolGrade = r["SchoolGrade"].DbToChar();
+            person.UseBirthday = r["UseBirthday"].DbToBoolean().Value;
+            person.Age = r["Age"].DbToInt32();
+            persons.Add(person);
           }
         }
 
-				return persons;
+        return persons;
       }
       catch (Exception ex)
       {

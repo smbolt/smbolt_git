@@ -10,6 +10,6 @@ namespace Org.WSO.Transactions
 {
   [XMap(XType = XType.Element)]
   public class SendFilesResponse : TransactionBase
-  {  
+  {
   }
 }

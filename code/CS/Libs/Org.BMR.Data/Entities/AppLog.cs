@@ -11,38 +11,101 @@ using Org.GS;
 using Org.DB;
 namespace Org.BMR.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
-    [DbMap(DbElement.Table, "Adsdi_Org", "", "AppLog")]
-    public partial class AppLog
+  using System;
+  using System.Collections.Generic;
+
+  [DbMap(DbElement.Table, "Adsdi_Org", "", "AppLog")]
+  public partial class AppLog
+  {
+    public AppLog()
     {
-        public AppLog()
-        {
-            this.AppLogDetails = new HashSet<AppLogDetail>();
-        }
-    
-        public long LogId { get; set; }
-        public System.DateTime LogDateTime { get; set; }
-        public int SeverityCodeId { get; set; }
-        public string SeverityCode { get; set; }
-        public string Message { get; set; }
-        public int ModuleCode { get; set; }
-        public int EventCode { get; set; }
-        public int OrgId { get; set; }
-        public int AccountId { get; set; }
-        public int EntityTypeId { get; set; }
-        public int EntityId { get; set; }
-        public string UserName { get; set; }
-        public string SessionId { get; set; }
-    
-        public virtual Account Account { get; set; }
-        public virtual Account Account1 { get; set; }
-        public virtual AppLogEntity AppLogEntity { get; set; }
-        public virtual Event Event { get; set; }
-        public virtual Module Module { get; set; }
-        public virtual Organization Organization { get; set; }
-        public virtual ICollection<AppLogDetail> AppLogDetails { get; set; }
-        public virtual AppLogSeverity AppLogSeverity { get; set; }
+      this.AppLogDetails = new HashSet<AppLogDetail>();
     }
+
+    public long LogId {
+      get;
+      set;
+    }
+    public System.DateTime LogDateTime {
+      get;
+      set;
+    }
+    public int SeverityCodeId {
+      get;
+      set;
+    }
+    public string SeverityCode {
+      get;
+      set;
+    }
+    public string Message {
+      get;
+      set;
+    }
+    public int ModuleCode {
+      get;
+      set;
+    }
+    public int EventCode {
+      get;
+      set;
+    }
+    public int OrgId {
+      get;
+      set;
+    }
+    public int AccountId {
+      get;
+      set;
+    }
+    public int EntityTypeId {
+      get;
+      set;
+    }
+    public int EntityId {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public string SessionId {
+      get;
+      set;
+    }
+
+    public virtual Account Account {
+      get;
+      set;
+    }
+    public virtual Account Account1 {
+      get;
+      set;
+    }
+    public virtual AppLogEntity AppLogEntity {
+      get;
+      set;
+    }
+    public virtual Event Event {
+      get;
+      set;
+    }
+    public virtual Module Module {
+      get;
+      set;
+    }
+    public virtual Organization Organization {
+      get;
+      set;
+    }
+    public virtual ICollection<AppLogDetail> AppLogDetails {
+      get;
+      set;
+    }
+    public virtual AppLogSeverity AppLogSeverity {
+      get;
+      set;
+    }
+  }
 }

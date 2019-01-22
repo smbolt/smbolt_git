@@ -11,24 +11,43 @@ namespace Org.GS
   public class FxVersionSet : Dictionary<string, FxVersion> {  }
 
   [XMap(XType = XType.Element)]
-  public class FxVersion  
-  {   
+  public class FxVersion
+  {
     [XMap]
-    public int FrameworkVersionId { get; set; }
+    public int FrameworkVersionId {
+      get;
+      set;
+    }
 
     [XMap(IsKey = true)]
-    public string FrameworkVersionString { get; set; }
+    public string FrameworkVersionString {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Version { get; set; }
+    public string Version {
+      get;
+      set;
+    }
 
     [XMap]
-    public string VersionNum { get; set; }
+    public string VersionNum {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ServicePackString { get; set; }
+    public string ServicePackString {
+      get;
+      set;
+    }
 
-    public string FxVersionKey { get { return Get_FxVersionKey(); } }
+    public string FxVersionKey {
+      get {
+        return Get_FxVersionKey();
+      }
+    }
 
     public FxVersion()
     {

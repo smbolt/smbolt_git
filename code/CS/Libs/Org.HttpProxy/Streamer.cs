@@ -14,7 +14,7 @@ namespace Org.HttpProxy
     static int _maxChunksInTransit;
     const int MaxBuffersPerRequest = 40;
 
-    // This  queue is shared by all the requests in our system. 
+    // This  queue is shared by all the requests in our system.
     // It will have be initialized by MaxChunksInTransit and ReadChunkSize
     private static BlockingCollection<ArraySegment<byte>> _freeReadBufferQueue;
 
@@ -40,7 +40,7 @@ namespace Org.HttpProxy
 
       var allWritesHaveBeenEnqueued = new TaskCompletionSource<object>();
 
-      // Init the write loop. It will await the dataQueue. Once there is data to write it will 
+      // Init the write loop. It will await the dataQueue. Once there is data to write it will
       Action writeLoop = async () =>
       {
         while (true)
@@ -58,7 +58,7 @@ namespace Org.HttpProxy
 
           Interlocked.Increment(ref pendingWrites);
 
-          // Schedule async write. Make sure you don't wait until it's done before continuing 
+          // Schedule async write. Make sure you don't wait until it's done before continuing
           output.BeginWrite(dataBuffer, 0, dataRead, (iar) =>
           {
             try

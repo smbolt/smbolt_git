@@ -17,19 +17,34 @@ namespace Org.WSO.Transactions
   public class GetConfigListRequest : TransactionBase
   {
     [XMap]
-    public GetConfigListCommand GetConfigListCommand { get; set; }
+    public GetConfigListCommand GetConfigListCommand {
+      get;
+      set;
+    }
 
     [XMap]
-    public string GetFilesFrom { get; set; }
+    public string GetFilesFrom {
+      get;
+      set;
+    }
 
     [XMap]
-    public string SendFilesTo { get; set; }
+    public string SendFilesTo {
+      get;
+      set;
+    }
 
     [XMap]
-    public ConfigFileType ConfigType { get; set; }
+    public ConfigFileType ConfigType {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ProfileName { get; set; }
+    public string ProfileName {
+      get;
+      set;
+    }
 
     public GetConfigListRequest()
     {

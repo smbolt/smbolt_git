@@ -170,7 +170,7 @@ namespace Org.Ops.Tasks
 
       //_exchangeSvcMgr.SendEmails(email);
 
-      //_message.Append(String.Join(",", email.EmailMessage.ToRecipients.Select(r => r.Address)) + g.crlf);   
+      //_message.Append(String.Join(",", email.EmailMessage.ToRecipients.Select(r => r.Address)) + g.crlf);
     }
 
     protected override void Initialize()

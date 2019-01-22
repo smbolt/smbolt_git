@@ -13,24 +13,45 @@ namespace Org.Cfg
   public class ConfigFtpSpec : CO
   {
     [DefaultValue("")]
-    public string FtpServer { get; set; }
+    public string FtpServer {
+      get;
+      set;
+    }
 
     [DefaultValue("")]
-    public string FtpUserId { get; set; }
+    public string FtpUserId {
+      get;
+      set;
+    }
 
     [DefaultValue("")]
-    public string FtpPassword { get; set; }
+    public string FtpPassword {
+      get;
+      set;
+    }
 
     [DefaultValue(false)]
-    public bool FtpKeepAlive { get; set; }
+    public bool FtpKeepAlive {
+      get;
+      set;
+    }
 
     [DefaultValue(false)]
-    public bool FtpUsePassive { get; set; }
+    public bool FtpUsePassive {
+      get;
+      set;
+    }
 
     [DefaultValue(false)]
-    public bool FtpUseBinary { get; set; }
+    public bool FtpUseBinary {
+      get;
+      set;
+    }
 
-		[DefaultValue(8192)]
-    public int FtpBufferSize { get; set; }
+    [DefaultValue(8192)]
+    public int FtpBufferSize {
+      get;
+      set;
+    }
   }
 }

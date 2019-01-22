@@ -18,22 +18,30 @@ namespace Org.SF
     private string _processName;
 
     private bool _processFinished = false;
-    public bool ProcessFinished 
+    public bool ProcessFinished
     {
-      get { return _processFinished; }
-      set { _processFinished = value; }
+      get {
+        return _processFinished;
+      }
+      set {
+        _processFinished = value;
+      }
     }
 
     private bool _userCanceled = false;
-    public bool UserCanceled 
+    public bool UserCanceled
     {
-      get { return _userCanceled; }
-      set { _userCanceled = value; }
+      get {
+        return _userCanceled;
+      }
+      set {
+        _userCanceled = value;
+      }
     }
 
     public int ProgressValue
     {
-      set 
+      set
       {
         if (value > progressBar.Maximum)
           progressBar.Value = progressBar.Maximum;
@@ -57,7 +65,7 @@ namespace Org.SF
       InitializeComponent();
 
       _titleBarText = titleBarText;
-      _description = description; 
+      _description = description;
       _processName = processName;
 
       InitializeForm();
@@ -69,7 +77,7 @@ namespace Org.SF
       lblDescription.Text = _description;
 
       progressBar.Maximum = 100;
-      progressBar.Value = 0; 
+      progressBar.Value = 0;
     }
 
     private void frmDataLoadProgress_FormClosing(object sender, FormClosingEventArgs e)
@@ -87,11 +95,11 @@ namespace Org.SF
       if (_processFinished)
         return;
 
-      if (MessageBox.Show("Are you sure you want to cancel the " + _processName + "?", _titleBarText + " - Confirm Cancel", 
-          MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+      if (MessageBox.Show("Are you sure you want to cancel the " + _processName + "?", _titleBarText + " - Confirm Cancel",
+                          MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
         return;
 
-      _userCanceled = true; 
+      _userCanceled = true;
     }
   }
 }

@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Org.Software.Business.Models
 {
-	public class SoftwareStatus
-	{
-		public int SoftwareStatusId { get; set; }
-		public string StatusDescription { get; set; }
-	}
+  public class SoftwareStatus
+  {
+    public int SoftwareStatusId {
+      get;
+      set;
+    }
+    public string StatusDescription {
+      get;
+      set;
+    }
+  }
 }

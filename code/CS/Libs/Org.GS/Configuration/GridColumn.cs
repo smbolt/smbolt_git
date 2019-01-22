@@ -11,56 +11,116 @@ namespace Org.GS.Configuration
   public class GridColumn
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Text { get; set; }
+    public string Text {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Tag { get; set; }
+    public string Tag {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="True")]
-    public bool Visible { get; set; }
+    public bool Visible {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ColumnName { get; set; }
+    public string ColumnName {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Model { get; set; }
+    public string Model {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ModelKey { get; set; }
+    public string ModelKey {
+      get;
+      set;
+    }
 
     [XMap]
-    public bool ForeignEntryRequired { get; set; }
+    public bool ForeignEntryRequired {
+      get;
+      set;
+    }
 
     [XMap]
-    public int Width { get; set; }
+    public int Width {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="Left")]
-    public string Align { get; set; }
+    public string Align {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool Fill { get; set; }
+    public bool Fill {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "0")]
-    public int MaxChars { get; set; }
+    public int MaxChars {
+      get;
+      set;
+    }
 
-    public string DataValue { get; set; }
-    public string ToolTip { get; set; }
-    public int WidthPixels { get; set; }
-    public float WidthPct { get; set; }
-    public bool IsLastVisibleColumn { get; set; }
-    public int ColumnIndex { get; set; }
-    public bool IsDbNullable { get; set; }
-    public bool IsPrimaryKey { get; set; }
+    public string DataValue {
+      get;
+      set;
+    }
+    public string ToolTip {
+      get;
+      set;
+    }
+    public int WidthPixels {
+      get;
+      set;
+    }
+    public float WidthPct {
+      get;
+      set;
+    }
+    public bool IsLastVisibleColumn {
+      get;
+      set;
+    }
+    public int ColumnIndex {
+      get;
+      set;
+    }
+    public bool IsDbNullable {
+      get;
+      set;
+    }
+    public bool IsPrimaryKey {
+      get;
+      set;
+    }
 
     public GridColumn()
     {
       this.Name = String.Empty;
       this.Text = String.Empty;
       this.Tag = String.Empty;
-      this.Visible = true; 
+      this.Visible = true;
       this.ColumnName = String.Empty;
       this.Model = String.Empty;
       this.ModelKey = String.Empty;
@@ -74,7 +134,7 @@ namespace Org.GS.Configuration
       this.WidthPixels = 0;
       this.WidthPct = 0F;
       this.IsLastVisibleColumn = false;
-      this.ColumnIndex = -1; 
+      this.ColumnIndex = -1;
       this.IsDbNullable = false;
       this.IsPrimaryKey = false;
     }
@@ -97,22 +157,22 @@ namespace Org.GS.Configuration
       this.WidthPct = templateColumn.WidthPct;
       this.ToolTip = templateColumn.ToolTip;
       this.IsLastVisibleColumn = templateColumn.IsLastVisibleColumn;
-      this.ColumnIndex = -1; 
+      this.ColumnIndex = -1;
       this.IsDbNullable = false;
       this.IsPrimaryKey = false;
-    }    
+    }
 
     public void AutoInit()
     {
       if (this.Text.IsNotBlank())
       {
-        string text = this.Text.Replace(" ", String.Empty); 
+        string text = this.Text.Replace(" ", String.Empty);
         if (this.Name.IsBlank())
           this.Name = text;
         if (this.ColumnName.IsBlank())
           this.ColumnName = text;
         if (this.Tag.IsBlank())
-          this.Tag = text; 
+          this.Tag = text;
       }
     }
   }

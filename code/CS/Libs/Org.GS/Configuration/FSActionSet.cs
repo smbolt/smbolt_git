@@ -10,27 +10,45 @@ using Org.GS;
 namespace Org.GS.Configuration
 {
   [ObfuscationAttribute(Exclude = true, ApplyToMembers = true)]
-  [XMap(CollectionElements = "FSActionGroup", XType = XType.Element)] 
+  [XMap(CollectionElements = "FSActionGroup", XType = XType.Element)]
   public class FSActionSet : Dictionary<string, FSActionGroup>
   {
     [XMap(XType = XType.Element, ClassName = "ConfigDictionary", Name = "Variables")]
-    public ConfigDictionary Variables { get; set; }
+    public ConfigDictionary Variables {
+      get;
+      set;
+    }
 
     private Dictionary<string, string> _variables;
-    
-    [XMap]
-    public string Src { get; set; }
 
     [XMap]
-    public string Dst { get; set; }
+    public string Src {
+      get;
+      set;
+    }
+
+    [XMap]
+    public string Dst {
+      get;
+      set;
+    }
 
     [XMap(IsRequired = false, DefaultValue = "False")]
-    public bool UseActionSetVariables { get; set; }
+    public bool UseActionSetVariables {
+      get;
+      set;
+    }
 
     [XMap(MyParent = true)]
-    public ProgramConfig ProgramConfig { get; set; }
+    public ProgramConfig ProgramConfig {
+      get;
+      set;
+    }
 
-    public bool ContinueProcessing { get; set; }
+    public bool ContinueProcessing {
+      get;
+      set;
+    }
 
     [XParm(Name = "parent", ParmSource = XParmSource.Parent, AttrName = "", Required = false)]
     public FSActionSet(ProgramConfig parent)

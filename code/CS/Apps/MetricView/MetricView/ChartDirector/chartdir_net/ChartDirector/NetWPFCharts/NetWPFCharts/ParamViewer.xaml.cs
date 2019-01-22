@@ -6,24 +6,24 @@ using ChartDirector;
 
 namespace CSharpWPFDemo
 {
-    public partial class ParamViewer : Window
+  public partial class ParamViewer : Window
+  {
+    public ParamViewer()
     {
-        public ParamViewer()
-        {
-            InitializeComponent();
-        }
-
-        public void Display(object sender, WPFHotSpotEventArgs e)
-        {
-            // Add the name of the ChartViewer control that is being clicked
-            dataGrid.Items.Add(new DictionaryEntry("source", (sender as WPFChartViewer).Name));
-
-            // List out the parameters of the hot spot
-            foreach (var key in e.AttrValues)
-                dataGrid.Items.Add(key);
-
-            // Display the form
-            ShowDialog();
-        }
+      InitializeComponent();
     }
+
+    public void Display(object sender, WPFHotSpotEventArgs e)
+    {
+      // Add the name of the ChartViewer control that is being clicked
+      dataGrid.Items.Add(new DictionaryEntry("source", (sender as WPFChartViewer).Name));
+
+      // List out the parameters of the hot spot
+      foreach (var key in e.AttrValues)
+        dataGrid.Items.Add(key);
+
+      // Display the form
+      ShowDialog();
+    }
+  }
 }

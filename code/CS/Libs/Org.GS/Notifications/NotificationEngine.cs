@@ -25,8 +25,8 @@ namespace Org.GS.Notifications
 
       try
       {
-        if (_notificationConfig == null || 
-            !_notificationConfig.NotifyEventSet.ContainsKey(notification.EventName) || 
+        if (_notificationConfig == null ||
+            !_notificationConfig.NotifyEventSet.ContainsKey(notification.EventName) ||
             _notificationConfig.NotifyGroupSet.Count == 0)
         {
           taskResult.TaskResultStatus = TaskResultStatus.Success;
@@ -59,8 +59,10 @@ namespace Org.GS.Notifications
                 emailMessage.NotificationMessageBody = notification.Body;
                 emailMessage.NotificationAddresses.Add(new EmailNotificationAddress(NotificationAddressType.EmailToAddress, notifyPerson.EmailAddress));
                 emailMessage.NotificationAddresses.Add(new EmailNotificationAddress(NotificationAddressType.EmailFromAddress, _smtpParms.EmailFromAddress));
-                var emailTask = TPL.Task.Run(() => { return ProcessEmailTaskAsync(_smtpParms, emailMessage); });
-                emailTasks.Add(emailTask); 
+                var emailTask = TPL.Task.Run(() => {
+                  return ProcessEmailTaskAsync(_smtpParms, emailMessage);
+                });
+                emailTasks.Add(emailTask);
               }
 
               if (notifyPerson.IsSmsActive)
@@ -93,8 +95,8 @@ namespace Org.GS.Notifications
 
       try
       {
-        if (_notificationConfig == null || 
-            !_notificationConfig.NotifyEventSet.ContainsKey(notification.EventName) || 
+        if (_notificationConfig == null ||
+            !_notificationConfig.NotifyEventSet.ContainsKey(notification.EventName) ||
             _notificationConfig.NotifyGroupSet.Count == 0)
         {
           taskResult.TaskResultStatus = TaskResultStatus.Success;
@@ -127,8 +129,10 @@ namespace Org.GS.Notifications
                 emailMessage.NotificationMessageBody = notification.Body;
                 emailMessage.NotificationAddresses.Add(new EmailNotificationAddress(NotificationAddressType.EmailToAddress, notifyPerson.EmailAddress));
                 emailMessage.NotificationAddresses.Add(new EmailNotificationAddress(NotificationAddressType.EmailFromAddress, _smtpParms.EmailFromAddress));
-                var emailTask = TPL.Task.Run(() => { return ProcessEmailTaskAsync(_smtpParms, emailMessage); });
-                emailTasks.Add(emailTask); 
+                var emailTask = TPL.Task.Run(() => {
+                  return ProcessEmailTaskAsync(_smtpParms, emailMessage);
+                });
+                emailTasks.Add(emailTask);
               }
 
               if (notifyPerson.IsSmsActive)

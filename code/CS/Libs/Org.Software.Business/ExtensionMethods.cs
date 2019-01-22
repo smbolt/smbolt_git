@@ -16,7 +16,7 @@ namespace Org.Software.Business
 
       List<string> tokens = value.Split(Constants.PeriodDelimiter).ToList();
       if (tokens.Count != 4)
-        throw new Exception("Invalid version string '" + value + "' - must be in format '9.9.9.9'."); 
+        throw new Exception("Invalid version string '" + value + "' - must be in format '9.9.9.9'.");
 
       string expandedVersionString = String.Empty;
 
@@ -25,9 +25,9 @@ namespace Org.Software.Business
         if (token.IsNotNumeric())
           throw new Exception("Invalid version string '" + value + "' - non-numeric value found - must be in format '9.9.9.9'.");
         if (expandedVersionString.IsBlank())
-          expandedVersionString += token.ToInt32().ToString("000000"); 
+          expandedVersionString += token.ToInt32().ToString("000000");
         else
-          expandedVersionString += "." + token.ToInt32().ToString("000000"); 
+          expandedVersionString += "." + token.ToInt32().ToString("000000");
       }
 
       return expandedVersionString;

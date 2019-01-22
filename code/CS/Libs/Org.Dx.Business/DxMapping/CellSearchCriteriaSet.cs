@@ -9,18 +9,56 @@ namespace Org.Dx.Business
 {
   public class CellSearchCriteriaSet : List<CellSearchCriteria>
   {
-    public bool UsesOrLogic { get; protected set; }
-    public bool UsesAndLogic { get { return !this.UsesOrLogic; } }
-    public string Comment { get; set; }
-    public bool MatchByDefault { get; private set; }
-    public Algorithm Algorithm { get; private set; }
-    public bool FindFirst { get; set; }
-    public bool FindLast { get; set; }
-    public bool OrLastIndex { get; set; }
-    public bool Random { get; set; }
-    public int? MinOppositeIndex { get; set; }
-    public int? MaxOppositeIndex { get; set; }
-    public string Report { get { return Get_Report(); } }
+    public bool UsesOrLogic {
+      get;
+      protected set;
+    }
+    public bool UsesAndLogic {
+      get {
+        return !this.UsesOrLogic;
+      }
+    }
+    public string Comment {
+      get;
+      set;
+    }
+    public bool MatchByDefault {
+      get;
+      private set;
+    }
+    public Algorithm Algorithm {
+      get;
+      private set;
+    }
+    public bool FindFirst {
+      get;
+      set;
+    }
+    public bool FindLast {
+      get;
+      set;
+    }
+    public bool OrLastIndex {
+      get;
+      set;
+    }
+    public bool Random {
+      get;
+      set;
+    }
+    public int? MinOppositeIndex {
+      get;
+      set;
+    }
+    public int? MaxOppositeIndex {
+      get;
+      set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
     private string _rawSpec;
     private IndexType _indexType;
     private DxSearchTarget _dxSearchTarget;
@@ -260,7 +298,7 @@ namespace Org.Dx.Business
 
       foreach (var cellSpec in cellSpecs)
       {
-        // peel off any cellSpecs beginning with a forward slash... 
+        // peel off any cellSpecs beginning with a forward slash...
         if (cellSpec.StartsWith("/"))
         {
           if (cellSpec.ToLower().StartsWith("/find-all:"))
@@ -374,7 +412,7 @@ namespace Org.Dx.Business
     private string Get_Report()
     {
       var sb = new StringBuilder();
-      
+
       for (int i = 0; i < this.Count; i++)
       {
         sb.Append(i.ToString("00") + " - " + this[i].Report + g.crlf);

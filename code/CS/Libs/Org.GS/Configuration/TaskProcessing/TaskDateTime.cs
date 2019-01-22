@@ -13,19 +13,34 @@ namespace Org.GS.Configuration
   public class TaskDateTime
   {
     [XMap(Format = "MM/dd/yyyy")]
-    public DateTime? StartDate { get; set; }
+    public DateTime? StartDate {
+      get;
+      set;
+    }
 
     [XMap(Format = @"hh\:mm")]
-    public TimeSpan? StartTime { get; set; }
+    public TimeSpan? StartTime {
+      get;
+      set;
+    }
 
     [XMap(Format = "MM/dd/yyyy")]
-    public DateTime? EndDate { get; set; }
+    public DateTime? EndDate {
+      get;
+      set;
+    }
 
     [XMap(Format = @"hh\:mm")]
-    public TimeSpan? EndTime { get; set; }
+    public TimeSpan? EndTime {
+      get;
+      set;
+    }
 
     [XMap]
-    public IntervalType IntervalType { get; set; }
+    public IntervalType IntervalType {
+      get;
+      set;
+    }
 
     public TaskDateTime()
     {

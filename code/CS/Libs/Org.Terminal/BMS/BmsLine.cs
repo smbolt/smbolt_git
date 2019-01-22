@@ -9,8 +9,14 @@ namespace Org.Terminal.BMS
 {
   public class BmsLine
   {
-    public int LineNumber { get; set; }
-    public string LineText { get; set; }
+    public int LineNumber {
+      get;
+      set;
+    }
+    public string LineText {
+      get;
+      set;
+    }
 
     public BmsLine()
     {
@@ -20,7 +26,7 @@ namespace Org.Terminal.BMS
 
     public override string ToString()
     {
-      return this.LineNumber.ToString("0000") + " " + this.LineText; 
+      return this.LineNumber.ToString("0000") + " " + this.LineText;
     }
 
     public BmsLine CloneForVFLEX(int lineNumber)
@@ -46,11 +52,11 @@ namespace Org.Terminal.BMS
             nameToken = nameToken + " ";
           }
 
-          clone.LineText = clone.LineText.Replace(nameToken, newNameToken); 
+          clone.LineText = clone.LineText.Replace(nameToken, newNameToken);
         }
       }
 
-      return clone; 
+      return clone;
     }
   }
 }

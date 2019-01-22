@@ -13,10 +13,22 @@ namespace Org.Pdf
 {
   public class PdfDocument : IDisposable
   {
-    public Document Document { get; private set; }
-    public string DocumentPath { get; private set; }
-    public int PageCount { get; private set; }
-    public PdfPageSet PdfPageSet { get; private set; }
+    public Document Document {
+      get;
+      private set;
+    }
+    public string DocumentPath {
+      get;
+      private set;
+    }
+    public int PageCount {
+      get;
+      private set;
+    }
+    public PdfPageSet PdfPageSet {
+      get;
+      private set;
+    }
 
     public PdfDocument(string documentPath)
     {
@@ -47,7 +59,7 @@ namespace Org.Pdf
           //      break;
 
           //    case "PdfName":
-          //      var pdfName = catObj as PdfName; 
+          //      var pdfName = catObj as PdfName;
           //      break;
 
           //    case "PdfDictionary":
@@ -66,7 +78,7 @@ namespace Org.Pdf
 
             var filter = new RegionTextRenderFilter(r);
             var strategy = new FilteredTextRenderListener(new LocationTextExtractionStrategy(), filter);
-            string extractedText = PdfTextExtractor.GetTextFromPage(pdfReader, i, strategy); 
+            string extractedText = PdfTextExtractor.GetTextFromPage(pdfReader, i, strategy);
 
             var pdfPage = new PdfPage(i);
 
@@ -78,7 +90,7 @@ namespace Org.Pdf
               switch (typeName)
               {
                 case "PdfArray":
-                  var pdfArray = obj as PdfArray; 
+                  var pdfArray = obj as PdfArray;
 
                   break;
 
@@ -97,19 +109,19 @@ namespace Org.Pdf
 
 
 
-            this.PdfPageSet.Add(pdfPage.PageNumber, pdfPage); 
+            this.PdfPageSet.Add(pdfPage.PageNumber, pdfPage);
           }
 
           pdfReader.Close();
         }
 
 
-        
+
       }
       catch (Exception ex)
       {
         throw new Exception("An exception was encountered attempting to create the iTextSharp.text.Document object using path '" +
-          this.DocumentPath + "'.", ex); 
+                            this.DocumentPath + "'.", ex);
       }
     }
 

@@ -8,14 +8,41 @@ namespace Org.GS
 {
   public class PerfEntry
   {
-    public string Name { get; set; }
-    public string Desc { get; set; }
-    public DateTime StartDateTime { get; private set; }
-    public DateTime EndDateTime { get; private set; }
-    public TimeSpan Elapsed { get { return Get_Elapsed(); } }
-    public string ElapsedFmt { get { return Get_ElapsedFmt(); } }
-    public PerfEntryStatus PerfEntryStatus { get; private set; }
-    public bool IsComplete { get { return this.PerfEntryStatus == PerfEntryStatus.Complete; } }
+    public string Name {
+      get;
+      set;
+    }
+    public string Desc {
+      get;
+      set;
+    }
+    public DateTime StartDateTime {
+      get;
+      private set;
+    }
+    public DateTime EndDateTime {
+      get;
+      private set;
+    }
+    public TimeSpan Elapsed {
+      get {
+        return Get_Elapsed();
+      }
+    }
+    public string ElapsedFmt {
+      get {
+        return Get_ElapsedFmt();
+      }
+    }
+    public PerfEntryStatus PerfEntryStatus {
+      get;
+      private set;
+    }
+    public bool IsComplete {
+      get {
+        return this.PerfEntryStatus == PerfEntryStatus.Complete;
+      }
+    }
 
     public PerfEntry(string name, string desc = "")
     {

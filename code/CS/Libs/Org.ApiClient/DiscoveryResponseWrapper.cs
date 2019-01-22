@@ -8,15 +8,24 @@ using Org.GS;
 
 namespace Org.ApiClient
 {
-    public class DiscoveryResponseWrapper
-    {
-        public string DiscoveryUrl { get; set; }
-        public DiscoveryResponseStatus DiscoveryResponseStatus { get; set; }
-        public DiscoveryResponse DiscoveryResponse { get; set; }
-
-        public DiscoveryResponseWrapper()
-        {
-            this.DiscoveryResponseStatus = DiscoveryResponseStatus.DiscoveryNotAttempted;
-        }
+  public class DiscoveryResponseWrapper
+  {
+    public string DiscoveryUrl {
+      get;
+      set;
     }
+    public DiscoveryResponseStatus DiscoveryResponseStatus {
+      get;
+      set;
+    }
+    public DiscoveryResponse DiscoveryResponse {
+      get;
+      set;
+    }
+
+    public DiscoveryResponseWrapper()
+    {
+      this.DiscoveryResponseStatus = DiscoveryResponseStatus.DiscoveryNotAttempted;
+    }
+  }
 }

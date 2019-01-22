@@ -10,12 +10,31 @@ namespace Org.GS.AppDomainManagement
 {
   public class AppDomainInfo
   {
-    public string FriendlyName { get; set; }
-    public AppDomain AppDomain { get; private set; }
-    public AppDomainInfoSet AppDomainInfoSet { get; private set; }
-    public AppDomainInfo Parent { get; private set; }
-    public string Report { get { return Get_Report(); } }
-    public SortedList<string, AppDomainObjectDescriptor> RegisteredObjects { get; set; }
+    public string FriendlyName {
+      get;
+      set;
+    }
+    public AppDomain AppDomain {
+      get;
+      private set;
+    }
+    public AppDomainInfoSet AppDomainInfoSet {
+      get;
+      private set;
+    }
+    public AppDomainInfo Parent {
+      get;
+      private set;
+    }
+    public string Report {
+      get {
+        return Get_Report();
+      }
+    }
+    public SortedList<string, AppDomainObjectDescriptor> RegisteredObjects {
+      get;
+      set;
+    }
 
     public AppDomainInfo(AppDomain appDomain, AppDomainInfo parent)
     {
@@ -43,14 +62,14 @@ namespace Org.GS.AppDomainManagement
           using (var appDomainUtility = new AppDomainUtility())
             return appDomainUtility.GetAssemblyReport();
         }
-        
+
         assemblies = this.AppDomain.GetAssemblies();
 
         if (assemblies == null)
         {
-          sb.Append(g.crlf); 
+          sb.Append(g.crlf);
           sb.Append("Need to get list of assemblies through the proxy - can't get references to the assembly in this, " +
-                    "the parent AppDomain" + g.crlf);           
+                    "the parent AppDomain" + g.crlf);
         }
 
         if (assemblies != null)
@@ -64,10 +83,10 @@ namespace Org.GS.AppDomainManagement
             string image = assembly.ImageRuntimeVersion;
 
             string results = "Manifest Module   : " + manifestModule + g.crlf +
-                              "Full Name         : " + fullName + g.crlf +
-                              "Code Base         : " + codeBase + g.crlf +
-                              "Location          : " + location + g.crlf +
-                              "Image             : " + image + g.crlf2;
+                             "Full Name         : " + fullName + g.crlf +
+                             "Code Base         : " + codeBase + g.crlf +
+                             "Location          : " + location + g.crlf +
+                             "Image             : " + image + g.crlf2;
             sb.Append(results);
           }
         }
@@ -77,7 +96,7 @@ namespace Org.GS.AppDomainManagement
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while attempting to build the AppDomainInfo.Report.", ex); 
+        throw new Exception("An exception occurred while attempting to build the AppDomainInfo.Report.", ex);
       }
     }
   }

@@ -14,8 +14,14 @@ namespace Org.OpsManager.Controls
 {
   public partial class NotifyPersonPanel : BasePanel
   {
-    private NotifyPerson NotifyPerson { get; set; }
-    private NotifyPersonGroup NotifyPersonGroup { get; set; } 
+    private NotifyPerson NotifyPerson {
+      get;
+      set;
+    }
+    private NotifyPersonGroup NotifyPersonGroup {
+      get;
+      set;
+    }
 
     public NotifyPersonPanel(PanelData panelData, ChangeType changeType)
     {
@@ -97,11 +103,11 @@ namespace Org.OpsManager.Controls
         {
           //Update NotifyPerson
           if (txtName.Text.GetStringValueOrNull() != this.NotifyPerson.Name ||
-            txtEmailAddress.Text.GetStringValueOrNull() != this.NotifyPerson.EmailAddress ||
-            txtSmsNumber.Text.GetStringValueOrNull() != this.NotifyPerson.SmsNumber ||
-            chkIsActive.Checked != this.NotifyPerson.IsActive ||
-            chkEmailActive.Checked != this.NotifyPerson.IsEmailActive ||
-            chkSmsActive.Checked != this.NotifyPerson.IsSmsActive)
+              txtEmailAddress.Text.GetStringValueOrNull() != this.NotifyPerson.EmailAddress ||
+              txtSmsNumber.Text.GetStringValueOrNull() != this.NotifyPerson.SmsNumber ||
+              chkIsActive.Checked != this.NotifyPerson.IsActive ||
+              chkEmailActive.Checked != this.NotifyPerson.IsEmailActive ||
+              chkSmsActive.Checked != this.NotifyPerson.IsSmsActive)
           {
             this.NotifyPerson.Name = txtName.Text.Trim();
             this.NotifyPerson.IsActive = chkIsActive.Checked;
@@ -154,7 +160,7 @@ namespace Org.OpsManager.Controls
               this.NotifyPersonGroup.NotifyPersonGroupId = notifyRepo.InsertNotifyPersonGroup(this.NotifyPersonGroup);
 
             base.FireNotifyInsert(new NotifyChangeResult(base.NotifyType, this.NotifyPerson.NotifyPersonId, this.NotifyPerson.Name,
-                                                         this.NotifyPersonGroup.NotifyGroupId, this.NotifyPersonGroup.NotifyPersonGroupId));
+                                  this.NotifyPersonGroup.NotifyGroupId, this.NotifyPersonGroup.NotifyPersonGroupId));
           }
           else
             base.FireNotifyInsert(new NotifyChangeResult(base.NotifyType, this.NotifyPerson.NotifyPersonId, this.NotifyPerson.Name));
@@ -188,9 +194,10 @@ namespace Org.OpsManager.Controls
             case NodeType.Reference:
               notifyRepo.DeleteNotifyPersonGroup(this.NotifyPersonGroup.NotifyPersonGroupId);
               base.FireNotifyDelete(new NotifyChangeResult(base.NotifyType, this.NotifyPerson.NotifyPersonId, this.NotifyPerson.Name,
-                                                              this.NotifyPersonGroup.NotifyGroupId, this.NotifyPersonGroup.NotifyPersonGroupId));
+                                    this.NotifyPersonGroup.NotifyGroupId, this.NotifyPersonGroup.NotifyPersonGroupId));
               break;
-            default: return;
+            default:
+              return;
           }
         }
       }

@@ -9,7 +9,10 @@ namespace Org.DB
 {
   public class EntityModelMapSet : Dictionary<string, EntityModelMap>
   {
-    public Dictionary<string, string> ModelToEntityIndex { get; set; }
+    public Dictionary<string, string> ModelToEntityIndex {
+      get;
+      set;
+    }
 
     public EntityModelMapSet()
     {
@@ -37,7 +40,7 @@ namespace Org.DB
             sb.Append("    " + pip.Key.PadTo(20) + "  ");
             PropertyInfoPair pair = pip.Value;
             sb.Append("Entity:" + pair.EntityPropertyInfo.Name + "  type " + pair.EntityPropertyInfo.PropertyType.ToFullTypeName() + " <==> ");
-            sb.Append("Model:" + pair.ModelPropertyInfo.Name + " type " + pair.ModelPropertyInfo.PropertyType.ToFullTypeName() + g.crlf); 
+            sb.Append("Model:" + pair.ModelPropertyInfo.Name + " type " + pair.ModelPropertyInfo.PropertyType.ToFullTypeName() + g.crlf);
           }
         }
         else
@@ -46,7 +49,7 @@ namespace Org.DB
         }
 
 
-        sb.Append(g.crlf); 
+        sb.Append(g.crlf);
       }
 
 

@@ -14,16 +14,28 @@ namespace Org.Dx.Business
   public class FileCompareRequest : TransactionBase
   {
     [XMap]
-    public string BaseFilePath { get; set; }
+    public string BaseFilePath {
+      get;
+      set;
+    }
 
     [XMap]
-    public string CompareFilePath { get; set; }
+    public string CompareFilePath {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ScriptFilePath { get; set; }
+    public string ScriptFilePath {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ReportFilePath { get; set; }
+    public string ReportFilePath {
+      get;
+      set;
+    }
 
     public FileCompareRequest()
     {

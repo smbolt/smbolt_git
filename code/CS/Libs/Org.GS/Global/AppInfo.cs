@@ -15,32 +15,103 @@ namespace Org.GS
   {
     private Assembly _assembly;
 
-    public string Vendor { get; set; }
-    public string AppName { get; set; }
-    public string AppVersion { get; set; }
-    public string AppTitle { get; set; }
-    public int ModuleCode { get; set; }
-    public string MainExecutablePath { get; set; }
-    public string ModulePath { get; private set; }
-    public string ModuleName { get; set; }
-    public string ModuleVersion { get; set; }
-    public string ConfigName { get; set; }
-    public string AppConfigSuffix { get; set; }
-    public string OrgVersion { get; set; }
-    public ApplicationType ParentAppDomainAppType { get; set; }
-    public string ParentAppDomainConfigName { get; set; }
-    public ApplicationType OrgApplicationType { get; set; }
-    public LicenseScheme LicenseScheme { get; set; }
-    public LicenseStatus LicenseStatus { get; set; }
-    public int LicenseExpiringInterval { get; set; }
-    public DateTime FreeUntil { get; set; }
-    public DateTime FreeAfter { get; set; }
-    public int LicenseRemainingDays { get; set; }
-    public bool RunningInNonDefaultAppDomain { get { return !AppDomain.CurrentDomain.IsTheDefaultAppDomain(); } }
+    public string Vendor {
+      get;
+      set;
+    }
+    public string AppName {
+      get;
+      set;
+    }
+    public string AppVersion {
+      get;
+      set;
+    }
+    public string AppTitle {
+      get;
+      set;
+    }
+    public int ModuleCode {
+      get;
+      set;
+    }
+    public string MainExecutablePath {
+      get;
+      set;
+    }
+    public string ModulePath {
+      get;
+      private set;
+    }
+    public string ModuleName {
+      get;
+      set;
+    }
+    public string ModuleVersion {
+      get;
+      set;
+    }
+    public string ConfigName {
+      get;
+      set;
+    }
+    public string AppConfigSuffix {
+      get;
+      set;
+    }
+    public string OrgVersion {
+      get;
+      set;
+    }
+    public ApplicationType ParentAppDomainAppType {
+      get;
+      set;
+    }
+    public string ParentAppDomainConfigName {
+      get;
+      set;
+    }
+    public ApplicationType OrgApplicationType {
+      get;
+      set;
+    }
+    public LicenseScheme LicenseScheme {
+      get;
+      set;
+    }
+    public LicenseStatus LicenseStatus {
+      get;
+      set;
+    }
+    public int LicenseExpiringInterval {
+      get;
+      set;
+    }
+    public DateTime FreeUntil {
+      get;
+      set;
+    }
+    public DateTime FreeAfter {
+      get;
+      set;
+    }
+    public int LicenseRemainingDays {
+      get;
+      set;
+    }
+    public bool RunningInNonDefaultAppDomain {
+      get {
+        return !AppDomain.CurrentDomain.IsTheDefaultAppDomain();
+      }
+    }
 
     private bool _missingOrgAttributes;
-    public bool MissingOrgAttributes { get { return _missingOrgAttributes; } }
-        
+    public bool MissingOrgAttributes {
+      get {
+        return _missingOrgAttributes;
+      }
+    }
+
     public AppInfo()
     {
       this.ModuleVersion = "1.0.0.0";
@@ -58,12 +129,12 @@ namespace Org.GS
         var parentAppDomainConfigName = AppDomain.CurrentDomain.GetData("ParentAppDomainConfigName");
         if (parentAppDomainConfigName != null && parentAppDomainConfigName.GetType().Name == "String")
         {
-          this.ParentAppDomainConfigName = parentAppDomainConfigName.ToString(); 
+          this.ParentAppDomainConfigName = parentAppDomainConfigName.ToString();
         }
       }
 
       _missingOrgAttributes = false;
-            
+
       _assembly = Assembly.GetEntryAssembly();
 
       if (_assembly == null)
@@ -83,7 +154,7 @@ namespace Org.GS
       }
 
       // If we still haven't located the applications "root assembly"...
-      // Check to see if AppInfo is being initialized inside an AppDomain that is 
+      // Check to see if AppInfo is being initialized inside an AppDomain that is
       // not the default (first) AppDomain in the process.
 
       if (_assembly == null)
@@ -117,13 +188,13 @@ namespace Org.GS
 
       this.AppName = _assembly.GetName().Name;
       if (this.AppName.StartsWith("Org."))
-        this.AppName = this.AppName.Replace("Org.", String.Empty); 
+        this.AppName = this.AppName.Replace("Org.", String.Empty);
       if (this.AppName.StartsWith("COKC."))
-        this.AppName = this.AppName.Replace("COKC.", String.Empty); 
+        this.AppName = this.AppName.Replace("COKC.", String.Empty);
 
       Version v = _assembly.GetName().Version;
       this.AppVersion = v.Major.ToString().Trim() + "." + v.Minor.ToString().Trim() + "." + v.Build.ToString().Trim() + "." + v.Revision.ToString();
-                        
+
       this.Vendor = "Org";
       AssemblyCompanyAttribute vendorAttribute = (AssemblyCompanyAttribute) _assembly.GetCustomAttributes(typeof(AssemblyCompanyAttribute), false).ToList().FirstOrDefault();
       if (vendorAttribute != null && vendorAttribute.Company.IsNotBlank())
@@ -138,12 +209,11 @@ namespace Org.GS
       OrgVersion OrgVersion = (OrgVersion)_assembly.GetCustomAttributes(typeof(OrgVersion), false).ToList().FirstOrDefault();
       if (OrgVersion == null)
         _missingOrgAttributes = true;
+      else if (OrgVersion.Value.IsBlank())
+        _missingOrgAttributes = true;
       else
-        if (OrgVersion.Value.IsBlank())
-          _missingOrgAttributes = true;
-        else
-          this.OrgVersion = OrgVersion.Value.Trim();
-            
+        this.OrgVersion = OrgVersion.Value.Trim();
+
       this.OrgApplicationType = ApplicationType.NotSet;
       OrgApplicationType OrgApplicationType = (OrgApplicationType)_assembly.GetCustomAttributes(typeof(OrgApplicationType), false).ToList().FirstOrDefault();
       if (OrgApplicationType == null)
@@ -180,13 +250,13 @@ namespace Org.GS
 
       if (g.ModuleId.HasValue)
         this.ModuleCode = g.ModuleId.Value;
-            
+
       this.FreeUntil = DateTime.MinValue;
       this.FreeAfter = DateTime.MinValue;
       this.LicenseScheme = LicenseScheme.None;
       this.LicenseStatus = LicenseStatus.None;
       this.LicenseExpiringInterval = 30;
-      this.LicenseRemainingDays = 0; 
+      this.LicenseRemainingDays = 0;
 
       OrgFreeUntil freeUntilAttribute = (OrgFreeUntil)_assembly.GetCustomAttributes(typeof(OrgFreeUntil), false).ToList().FirstOrDefault();
       if (freeUntilAttribute != null)
@@ -196,8 +266,8 @@ namespace Org.GS
       if (freeAfterAttribute != null)
         this.FreeAfter = DateTime.Parse(freeAfterAttribute.Value);
 
-      OrgLicenseExpiringInterval licenseExpiringIntervalAttribute = 
-          (OrgLicenseExpiringInterval)_assembly.GetCustomAttributes(typeof(OrgLicenseExpiringInterval), false).ToList().FirstOrDefault();
+      OrgLicenseExpiringInterval licenseExpiringIntervalAttribute =
+        (OrgLicenseExpiringInterval)_assembly.GetCustomAttributes(typeof(OrgLicenseExpiringInterval), false).ToList().FirstOrDefault();
       if (licenseExpiringIntervalAttribute != null)
         this.LicenseExpiringInterval = licenseExpiringIntervalAttribute.Days;
 

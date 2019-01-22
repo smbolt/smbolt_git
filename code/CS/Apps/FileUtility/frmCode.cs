@@ -50,7 +50,7 @@ namespace Org.FileUtility
       try
       {
         File.WriteAllText(_filePath, txtCode.Text);
-        lblStatus.Text = _filePath + " - saved."; 
+        lblStatus.Text = _filePath + " - saved.";
       }
       catch (Exception ex)
       {
@@ -65,20 +65,20 @@ namespace Org.FileUtility
     }
 
     private void InitializeForm()
-		{
-			this.Text = _filePath;
+    {
+      this.Text = _filePath;
 
-			if (!File.Exists(_filePath))
-			{
-				txtCode.Text = "*** FILE NOT FOUND ***" + g.crlf2 + "Path: " + _filePath;
-				return;
-			}
+      if (!File.Exists(_filePath))
+      {
+        txtCode.Text = "*** FILE NOT FOUND ***" + g.crlf2 + "Path: " + _filePath;
+        return;
+      }
 
       string code = File.ReadAllText(_filePath);
 
       txtCode.Text = code;
 
-      lblStatus.Text = _filePath + " - displayed."; 
+      lblStatus.Text = _filePath + " - displayed.";
     }
 
     private void txtCode_KeyUp(object sender, KeyEventArgs e)

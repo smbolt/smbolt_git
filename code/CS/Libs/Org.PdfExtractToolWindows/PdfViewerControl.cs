@@ -13,32 +13,32 @@ using Org.GS;
 
 namespace Org.PdfExtractToolWindows
 {
-	public partial class PdfViewerControl : ToolPanelBase
-	{
-		public PdfViewerControl()
-			: base("PdfViewer")
-		{
-			InitializeComponent();
-		}
+  public partial class PdfViewerControl : ToolPanelBase
+  {
+    public PdfViewerControl()
+      : base("PdfViewer")
+    {
+      InitializeComponent();
+    }
 
-		public void CloseDocument()
-		{
-			this.dxPdfViewer.CloseDocument();
-		}
+    public void CloseDocument()
+    {
+      this.dxPdfViewer.CloseDocument();
+    }
 
-		public void LoadDocument(string fullFileName)
-		{
-			try
-			{
-				if (!File.Exists(fullFileName))
-					throw new Exception("File '" + fullFileName + "' does not exist - cannot be loaded into the PDF Viewer.");
+    public void LoadDocument(string fullFileName)
+    {
+      try
+      {
+        if (!File.Exists(fullFileName))
+          throw new Exception("File '" + fullFileName + "' does not exist - cannot be loaded into the PDF Viewer.");
 
-				this.dxPdfViewer.LoadDocument(fullFileName); 
-			}
-			catch (Exception ex)
-			{
-				throw new Exception("An exception occurred while attempting to load file '" + fullFileName + "' to the PDF Viewer.", ex); 
-			}
-		}
-	}
+        this.dxPdfViewer.LoadDocument(fullFileName);
+      }
+      catch (Exception ex)
+      {
+        throw new Exception("An exception occurred while attempting to load file '" + fullFileName + "' to the PDF Viewer.", ex);
+      }
+    }
+  }
 }

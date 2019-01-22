@@ -46,35 +46,37 @@
       this.mnuMain.SuspendLayout();
       this.pnlTop.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // mnuMain
-      // 
+      //
       this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+        this.mnuFile
+      });
       this.mnuMain.Location = new System.Drawing.Point(0, 0);
       this.mnuMain.Name = "mnuMain";
       this.mnuMain.Size = new System.Drawing.Size(1218, 24);
       this.mnuMain.TabIndex = 0;
       this.mnuMain.Text = "menuStrip1";
-      // 
+      //
       // mnuFile
-      // 
+      //
       this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+        this.mnuFileExit
+      });
       this.mnuFile.Name = "mnuFile";
       this.mnuFile.Size = new System.Drawing.Size(37, 20);
       this.mnuFile.Text = "&File";
-      // 
+      //
       // mnuFileExit
-      // 
+      //
       this.mnuFileExit.Name = "mnuFileExit";
       this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
       this.mnuFileExit.Tag = "Exit";
       this.mnuFileExit.Text = "E&xit";
       this.mnuFileExit.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // lblStatus
-      // 
+      //
       this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblStatus.Location = new System.Drawing.Point(0, 655);
       this.lblStatus.Name = "lblStatus";
@@ -83,9 +85,9 @@
       this.lblStatus.TabIndex = 1;
       this.lblStatus.Text = "Status";
       this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.Controls.Add(this.txtPageBreak);
       this.pnlTop.Controls.Add(this.ckReplaceCrlfWithNewLine);
       this.pnlTop.Controls.Add(this.lblPageBreakText);
@@ -99,17 +101,17 @@
       this.pnlTop.Name = "pnlTop";
       this.pnlTop.Size = new System.Drawing.Size(1218, 107);
       this.pnlTop.TabIndex = 2;
-      // 
+      //
       // txtPageBreak
-      // 
+      //
       this.txtPageBreak.Location = new System.Drawing.Point(297, 81);
       this.txtPageBreak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.txtPageBreak.Name = "txtPageBreak";
       this.txtPageBreak.Size = new System.Drawing.Size(241, 20);
       this.txtPageBreak.TabIndex = 4;
-      // 
+      //
       // ckReplaceCrlfWithNewLine
-      // 
+      //
       this.ckReplaceCrlfWithNewLine.AutoSize = true;
       this.ckReplaceCrlfWithNewLine.Checked = true;
       this.ckReplaceCrlfWithNewLine.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -120,9 +122,9 @@
       this.ckReplaceCrlfWithNewLine.TabIndex = 3;
       this.ckReplaceCrlfWithNewLine.Text = "Replace CRLF with New Line";
       this.ckReplaceCrlfWithNewLine.UseVisualStyleBackColor = true;
-      // 
+      //
       // lblPageBreakText
-      // 
+      //
       this.lblPageBreakText.AutoSize = true;
       this.lblPageBreakText.Location = new System.Drawing.Point(297, 66);
       this.lblPageBreakText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -130,9 +132,9 @@
       this.lblPageBreakText.Size = new System.Drawing.Size(87, 13);
       this.lblPageBreakText.TabIndex = 2;
       this.lblPageBreakText.Text = "Page Break Text";
-      // 
+      //
       // lblTextExtractionStrategy
-      // 
+      //
       this.lblTextExtractionStrategy.AutoSize = true;
       this.lblTextExtractionStrategy.Location = new System.Drawing.Point(297, 19);
       this.lblTextExtractionStrategy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -140,22 +142,23 @@
       this.lblTextExtractionStrategy.Size = new System.Drawing.Size(120, 13);
       this.lblTextExtractionStrategy.TabIndex = 2;
       this.lblTextExtractionStrategy.Text = "Text Extraction Strategy";
-      // 
+      //
       // cboTextExtractionStrategy
-      // 
+      //
       this.cboTextExtractionStrategy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboTextExtractionStrategy.FormattingEnabled = true;
       this.cboTextExtractionStrategy.Items.AddRange(new object[] {
-            "Location",
-            "Simple"});
+        "Location",
+        "Simple"
+      });
       this.cboTextExtractionStrategy.Location = new System.Drawing.Point(297, 36);
       this.cboTextExtractionStrategy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.cboTextExtractionStrategy.Name = "cboTextExtractionStrategy";
       this.cboTextExtractionStrategy.Size = new System.Drawing.Size(241, 21);
       this.cboTextExtractionStrategy.TabIndex = 1;
-      // 
+      //
       // btnDisplayXml
-      // 
+      //
       this.btnDisplayXml.Location = new System.Drawing.Point(135, 12);
       this.btnDisplayXml.Name = "btnDisplayXml";
       this.btnDisplayXml.Size = new System.Drawing.Size(117, 23);
@@ -164,9 +167,9 @@
       this.btnDisplayXml.Text = "Show XML";
       this.btnDisplayXml.UseVisualStyleBackColor = true;
       this.btnDisplayXml.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // btnRun
-      // 
+      //
       this.btnRun.Location = new System.Drawing.Point(12, 12);
       this.btnRun.Name = "btnRun";
       this.btnRun.Size = new System.Drawing.Size(117, 23);
@@ -175,9 +178,9 @@
       this.btnRun.Text = "Run";
       this.btnRun.UseVisualStyleBackColor = true;
       this.btnRun.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // txtOut
-      // 
+      //
       this.txtOut.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtOut.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtOut.Location = new System.Drawing.Point(0, 131);
@@ -187,9 +190,9 @@
       this.txtOut.Size = new System.Drawing.Size(1218, 524);
       this.txtOut.TabIndex = 3;
       this.txtOut.WordWrap = false;
-      // 
+      //
       // btnExtractImages
-      // 
+      //
       this.btnExtractImages.Location = new System.Drawing.Point(12, 66);
       this.btnExtractImages.Name = "btnExtractImages";
       this.btnExtractImages.Size = new System.Drawing.Size(117, 23);
@@ -198,9 +201,9 @@
       this.btnExtractImages.Text = "Extract Images";
       this.btnExtractImages.UseVisualStyleBackColor = true;
       this.btnExtractImages.Click += new System.EventHandler(this.Action);
-      // 
+      //
       // frmMain
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1218, 679);

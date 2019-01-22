@@ -9,31 +9,56 @@ namespace Org.WSO
 {
   public class WsMessage
   {
-    public WsMessageHeader MessageHeader { get; set; }
-    public WsMessageBody MessageBody { get; set; }
-    public string MessageDebug { get; set; }
-    public bool IsErrorTransaction { get { return Get_IsErrorTransaction(); } }
+    public WsMessageHeader MessageHeader {
+      get;
+      set;
+    }
+    public WsMessageBody MessageBody {
+      get;
+      set;
+    }
+    public string MessageDebug {
+      get;
+      set;
+    }
+    public bool IsErrorTransaction {
+      get {
+        return Get_IsErrorTransaction();
+      }
+    }
 
     public XElement TransactionBody
     {
-      get { return this.MessageBody.Transaction.TransactionBody; }
-      set { this.MessageBody.Transaction.TransactionBody = value; }
+      get {
+        return this.MessageBody.Transaction.TransactionBody;
+      }
+      set {
+        this.MessageBody.Transaction.TransactionBody = value;
+      }
     }
 
     public WsTransactionHeader TransactionHeader
     {
-      get { return this.MessageBody.Transaction.TransactionHeader; }
-      set { this.MessageBody.Transaction.TransactionHeader = value; }
+      get {
+        return this.MessageBody.Transaction.TransactionHeader;
+      }
+      set {
+        this.MessageBody.Transaction.TransactionHeader = value;
+      }
     }
 
     public string TransactionName
     {
-      get { return this.MessageBody.Transaction.TransactionHeader.TransactionName; }
+      get {
+        return this.MessageBody.Transaction.TransactionHeader.TransactionName;
+      }
     }
 
     public TransactionStatus TransactionStatus
     {
-      get { return this.MessageBody.Transaction.TransactionHeader.TransactionStatus; }
+      get {
+        return this.MessageBody.Transaction.TransactionHeader.TransactionStatus;
+      }
     }
 
     public WsMessage()
@@ -58,7 +83,7 @@ namespace Org.WSO
     }
 
     public WsMessage(WsParms parms, XElement transactionBody)
-    {      
+    {
       try
       {
         this.MessageDebug = String.Empty;
@@ -80,21 +105,21 @@ namespace Org.WSO
             this.MessageHeader.ReceiverReceiveDateTime = MessageFactory.GetWebServiceDateTime();
             break;
         }
-      
+
         this.MessageHeader.OrgId = parms.OrgId;
         this.MessageHeader.UserName = parms.UserName;
         this.MessageHeader.Password = parms.Password;
         this.MessageHeader.AppName = parms.AppName;
-        this.MessageHeader.Version = parms.AppVersion; 
+        this.MessageHeader.Version = parms.AppVersion;
         this.MessageHeader.TrackPerformance = parms.TrackPerformance;
 
-        this.TransactionHeader.TransactionName = parms.TransactionName; 
-        this.TransactionHeader.TransactionVersion = parms.TransactionVersion; 
+        this.TransactionHeader.TransactionName = parms.TransactionName;
+        this.TransactionHeader.TransactionVersion = parms.TransactionVersion;
         this.TransactionBody = transactionBody;
       }
       catch(Exception ex)
       {
-        throw new Exception("An exception occurred attempting to create new WsMessage.", ex); 
+        throw new Exception("An exception occurred attempting to create new WsMessage.", ex);
       }
     }
 
@@ -105,7 +130,7 @@ namespace Org.WSO
       message.Add(this.GetMessageBodyXml());
       if (this.MessageDebug == null)
         this.MessageDebug = String.Empty;
-      message.Add(new XElement("MessageDebug", this.MessageDebug)); 
+      message.Add(new XElement("MessageDebug", this.MessageDebug));
 
       return message;
     }
@@ -146,13 +171,13 @@ namespace Org.WSO
 
       if (this.MessageHeader.ReceiverHost.IsUsed)
       {
-          XElement receiverHost = GetWebServiceHostXml("ReceiverHost", this.MessageHeader.ReceiverHost);
-          messageHeader.Add(receiverHost);
+        XElement receiverHost = GetWebServiceHostXml("ReceiverHost", this.MessageHeader.ReceiverHost);
+        messageHeader.Add(receiverHost);
       }
 
       if (this.MessageHeader.TrackPerformance)
       {
-        messageHeader.Add(new XElement("TrackPerformance", "True")); 
+        messageHeader.Add(new XElement("TrackPerformance", "True"));
       }
 
       if (this.MessageHeader.TrackPerformance)
@@ -172,7 +197,7 @@ namespace Org.WSO
       if (!this.MessageHeader.TrackPerformance)
         return;
 
-      this.MessageHeader.PerformanceInfoSet.AddEntry(entry); 
+      this.MessageHeader.PerformanceInfoSet.AddEntry(entry);
     }
 
     private XElement BuildTimeStampXml(string elementName, WsDateTime wsdt)
@@ -204,7 +229,7 @@ namespace Org.WSO
 
       XElement transactionHeader = new XElement("TransactionHeader");
       transactionHeader.Add(new XAttribute("TransactionName", this.MessageBody.Transaction.TransactionHeader.TransactionName));
-      transactionHeader.Add(new XAttribute("TransactionVersion", this.MessageBody.Transaction.TransactionHeader.TransactionVersion)); 
+      transactionHeader.Add(new XAttribute("TransactionVersion", this.MessageBody.Transaction.TransactionHeader.TransactionVersion));
       transactionHeader.Add(new XAttribute("TransactionStatus", this.MessageBody.Transaction.TransactionHeader.TransactionStatus.ToString()));
       transaction.Add(transactionHeader);
 
@@ -222,7 +247,7 @@ namespace Org.WSO
         XElement messageElement = XElement.Parse(message);
         PopulateMessageHeader(messageElement.Element("WsMessageHeader"));
         PopulateMessageBody(messageElement.Element("WsMessageBody"));
-        this.MessageDebug = messageElement.Element("MessageDebug").Value; 
+        this.MessageDebug = messageElement.Element("MessageDebug").Value;
       }
       catch (Exception ex)
       {
@@ -244,7 +269,7 @@ namespace Org.WSO
       this.MessageHeader.SenderHost = header.SenderHost;
       this.MessageHeader.ReceiverHost = header.ReceiverHost;
       this.MessageHeader.TrackPerformance = header.TrackPerformance;
-      this.MessageHeader.PerformanceInfoSet = header.PerformanceInfoSet; 
+      this.MessageHeader.PerformanceInfoSet = header.PerformanceInfoSet;
     }
 
     private void PopulateMessageHeader(XElement messageHeaderXml)
@@ -311,7 +336,7 @@ namespace Org.WSO
     private WsHost BuildWebServiceHost(XElement wshXml)
     {
       WsHost wsh = new WsHost();
-  
+
       wsh.IsUsed = true;
       wsh.DomainName = wshXml.Attribute("DomainName").Value;
       wsh.ComputerName = wshXml.Attribute("ComputerName").Value;

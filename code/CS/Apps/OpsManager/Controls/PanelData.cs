@@ -9,13 +9,34 @@ namespace Org.OpsManager.Controls
 {
   public class PanelData
   {
-    public NotifyType NotifyType { get; set; }
-    public NodeType NodeType { get; set; }
-    public int? ObjectId { get; set; }
-    public int? XRefId { get; set; }
-    public int? ParentId { get; set; }
-    public string TreeNodePath { get; set; }
-    public ConfigDbSpec ConfigDbSpec { get; set; }
+    public NotifyType NotifyType {
+      get;
+      set;
+    }
+    public NodeType NodeType {
+      get;
+      set;
+    }
+    public int? ObjectId {
+      get;
+      set;
+    }
+    public int? XRefId {
+      get;
+      set;
+    }
+    public int? ParentId {
+      get;
+      set;
+    }
+    public string TreeNodePath {
+      get;
+      set;
+    }
+    public ConfigDbSpec ConfigDbSpec {
+      get;
+      set;
+    }
 
     public PanelData(NotifyType notifyType, NodeType nodeType, int? objectId, int? xRefId, int? parentId, string treeNodePath, ConfigDbSpec configDbSpec)
     {

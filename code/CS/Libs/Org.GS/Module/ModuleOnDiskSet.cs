@@ -43,7 +43,7 @@ namespace Org.GS
           var moduleOnDisk = new ModuleOnDisk();
           moduleOnDisk.ModuleName = moduleFolderName;
           moduleOnDisk.ModuleVersion = versionFolderName;
-          moduleOnDisk.ModuleFolder = versionFolder; 
+          moduleOnDisk.ModuleFolder = versionFolder;
 
           if (!this.ContainsKey(moduleOnDisk.ModuleKey))
             this.Add(moduleOnDisk.ModuleKey, moduleOnDisk);

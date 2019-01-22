@@ -11,15 +11,27 @@ namespace Org.Dx.Business
   public class ColumnMap
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap]
-    public int Index { get; set; }
+    public int Index {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool IsRequired { get; set; }
+    public bool IsRequired {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "String")]
-    public DataType DataType { get; set; }
+    public DataType DataType {
+      get;
+      set;
+    }
   }
 }

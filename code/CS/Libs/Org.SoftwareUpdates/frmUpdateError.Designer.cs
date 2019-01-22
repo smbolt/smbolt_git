@@ -46,9 +46,9 @@
       this.pnlErrorMessage.SuspendLayout();
       this.pnlControl.SuspendLayout();
       this.SuspendLayout();
-      // 
+      //
       // pnlTop
-      // 
+      //
       this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(24)))), ((int)(((byte)(156)))));
       this.pnlTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.pnlTop.Controls.Add(this.lblTitle);
@@ -59,9 +59,9 @@
       this.pnlTop.Padding = new System.Windows.Forms.Padding(8, 4, 4, 4);
       this.pnlTop.Size = new System.Drawing.Size(617, 56);
       this.pnlTop.TabIndex = 0;
-      // 
+      //
       // lblTitle
-      // 
+      //
       this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(24)))), ((int)(((byte)(156)))));
       this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
       this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,9 +73,9 @@
       this.lblTitle.TabIndex = 1;
       this.lblTitle.Text = "Error message";
       this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pbError
-      // 
+      //
       this.pbError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(24)))), ((int)(((byte)(156)))));
       this.pbError.Dock = System.Windows.Forms.DockStyle.Left;
       this.pbError.Image = global::Org.SoftwareUpdates.Resource1.error2;
@@ -84,9 +84,9 @@
       this.pbError.Size = new System.Drawing.Size(48, 46);
       this.pbError.TabIndex = 0;
       this.pbError.TabStop = false;
-      // 
+      //
       // pnlErrorMessage
-      // 
+      //
       this.pnlErrorMessage.BackColor = System.Drawing.Color.White;
       this.pnlErrorMessage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.pnlErrorMessage.Controls.Add(this.txtErrorMessage);
@@ -96,9 +96,9 @@
       this.pnlErrorMessage.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
       this.pnlErrorMessage.Size = new System.Drawing.Size(617, 131);
       this.pnlErrorMessage.TabIndex = 1;
-      // 
+      //
       // txtErrorMessage
-      // 
+      //
       this.txtErrorMessage.BackColor = System.Drawing.Color.White;
       this.txtErrorMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.txtErrorMessage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,9 +110,9 @@
       this.txtErrorMessage.Size = new System.Drawing.Size(597, 119);
       this.txtErrorMessage.TabIndex = 99;
       this.txtErrorMessage.TabStop = false;
-      // 
+      //
       // lblErrorMessageHeader
-      // 
+      //
       this.lblErrorMessageHeader.Dock = System.Windows.Forms.DockStyle.Top;
       this.lblErrorMessageHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblErrorMessageHeader.Location = new System.Drawing.Point(0, 56);
@@ -122,9 +122,9 @@
       this.lblErrorMessageHeader.TabIndex = 0;
       this.lblErrorMessageHeader.Text = "Error Message";
       this.lblErrorMessageHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // pnlControl
-      // 
+      //
       this.pnlControl.Controls.Add(this.lblActionExplanation);
       this.pnlControl.Controls.Add(this.lblAction);
       this.pnlControl.Controls.Add(this.btnOK);
@@ -136,9 +136,9 @@
       this.pnlControl.Padding = new System.Windows.Forms.Padding(3);
       this.pnlControl.Size = new System.Drawing.Size(617, 117);
       this.pnlControl.TabIndex = 2;
-      // 
+      //
       // lblActionExplanation
-      // 
+      //
       this.lblActionExplanation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.lblActionExplanation.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.lblActionExplanation.Location = new System.Drawing.Point(3, 74);
@@ -147,18 +147,18 @@
       this.lblActionExplanation.Size = new System.Drawing.Size(611, 40);
       this.lblActionExplanation.TabIndex = 5;
       this.lblActionExplanation.Text = "Select an action from the drop-down list above to respond to the error.";
-      // 
+      //
       // lblAction
-      // 
+      //
       this.lblAction.AutoSize = true;
       this.lblAction.Location = new System.Drawing.Point(15, 30);
       this.lblAction.Name = "lblAction";
       this.lblAction.Size = new System.Drawing.Size(167, 13);
       this.lblAction.TabIndex = 4;
       this.lblAction.Text = "Select how to respond to the error";
-      // 
+      //
       // btnOK
-      // 
+      //
       this.btnOK.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnOK.Location = new System.Drawing.Point(263, 43);
       this.btnOK.Name = "btnOK";
@@ -167,9 +167,9 @@
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
       this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-      // 
+      //
       // cboAction
-      // 
+      //
       this.cboAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cboAction.FormattingEnabled = true;
       this.cboAction.Location = new System.Drawing.Point(10, 44);
@@ -177,9 +177,9 @@
       this.cboAction.Size = new System.Drawing.Size(247, 21);
       this.cboAction.TabIndex = 0;
       this.cboAction.SelectedIndexChanged += new System.EventHandler(this.cboAction_SelectedIndexChanged);
-      // 
+      //
       // lblActionHeader
-      // 
+      //
       this.lblActionHeader.Dock = System.Windows.Forms.DockStyle.Top;
       this.lblActionHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblActionHeader.Location = new System.Drawing.Point(3, 3);
@@ -189,9 +189,9 @@
       this.lblActionHeader.TabIndex = 1;
       this.lblActionHeader.Text = "Error response action";
       this.lblActionHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
+      //
       // frmUpdateError
-      // 
+      //
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(617, 328);

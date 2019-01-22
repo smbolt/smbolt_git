@@ -9,56 +9,120 @@ namespace Org.WSO
 {
   public class WsMessageHeader
   {
-    public WsMessage WsMessage { get; set; }
-    public HeaderType HeaderType { get; set; }
-    public string Version { get; set; }
-    public string AppName { get; set; }
-    public string AppVersion { get; set; }
-    public int OrgId { get; set; }
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public WsHost SenderHost { get; set; }
-    public WsHost ReceiverHost { get; set; }
-    public WsDateTime SenderSendDateTime { get; set; }
-    public WsDateTime ReceiverReceiveDateTime { get; set; }
-    public WsDateTime ReceiverRespondDateTime { get; set; }
-    public WsDateTime SenderReceiveDateTime { get; set; }
-    public string TransactionName { get { return Get_TransactionName(); } }
+    public WsMessage WsMessage {
+      get;
+      set;
+    }
+    public HeaderType HeaderType {
+      get;
+      set;
+    }
+    public string Version {
+      get;
+      set;
+    }
+    public string AppName {
+      get;
+      set;
+    }
+    public string AppVersion {
+      get;
+      set;
+    }
+    public int OrgId {
+      get;
+      set;
+    }
+    public string UserName {
+      get;
+      set;
+    }
+    public string Password {
+      get;
+      set;
+    }
+    public WsHost SenderHost {
+      get;
+      set;
+    }
+    public WsHost ReceiverHost {
+      get;
+      set;
+    }
+    public WsDateTime SenderSendDateTime {
+      get;
+      set;
+    }
+    public WsDateTime ReceiverReceiveDateTime {
+      get;
+      set;
+    }
+    public WsDateTime ReceiverRespondDateTime {
+      get;
+      set;
+    }
+    public WsDateTime SenderReceiveDateTime {
+      get;
+      set;
+    }
+    public string TransactionName {
+      get {
+        return Get_TransactionName();
+      }
+    }
 
 
     public DateTime SenderSendLocalDateTime
     {
-      get { return GetLocalDateTime(this.SenderSendDateTime); }
+      get {
+        return GetLocalDateTime(this.SenderSendDateTime);
+      }
     }
 
     public DateTime ReceiverReceiveLocalDateTime
     {
-      get { return GetLocalDateTime(this.ReceiverReceiveDateTime); }
+      get {
+        return GetLocalDateTime(this.ReceiverReceiveDateTime);
+      }
     }
 
     public DateTime ReceiverRespondLocalDateTime
     {
-      get { return GetLocalDateTime(this.ReceiverRespondDateTime); }
+      get {
+        return GetLocalDateTime(this.ReceiverRespondDateTime);
+      }
     }
 
     public DateTime SenderReceiveLocalDateTime
     {
-      get { return GetLocalDateTime(this.SenderReceiveDateTime); }
+      get {
+        return GetLocalDateTime(this.SenderReceiveDateTime);
+      }
     }
 
     public TimeSpan TotalResponseTime
     {
-      get { return GetTotalResponseTime(); }
+      get {
+        return GetTotalResponseTime();
+      }
     }
 
     public TimeSpan ServerResponseTime
     {
-      get { return GetServerResponseTime(); }
+      get {
+        return GetServerResponseTime();
+      }
     }
 
-    public bool TrackPerformance { get; set; }
+    public bool TrackPerformance {
+      get;
+      set;
+    }
 
-    public WsPerformanceInfoSet PerformanceInfoSet { get; set; }
+    public WsPerformanceInfoSet PerformanceInfoSet {
+      get;
+      set;
+    }
 
     public WsMessageHeader(WsMessage wsMessage)
     {
@@ -119,16 +183,16 @@ namespace Org.WSO
       string senderReceiveDateTimeString = "No Data";
 
       if (!this.SenderSendDateTime.IsMinValue())
-          senderSendDateTimeString = this.SenderSendDateTime.DateTime.ToString("MM/dd/yyyy HH:mm:ss.fff") + " " + this.SenderSendDateTime.TimeZoneInfo.DisplayName;
+        senderSendDateTimeString = this.SenderSendDateTime.DateTime.ToString("MM/dd/yyyy HH:mm:ss.fff") + " " + this.SenderSendDateTime.TimeZoneInfo.DisplayName;
 
       if (!this.ReceiverReceiveDateTime.IsMinValue())
-          receiverReceiveDateTimeString = this.ReceiverReceiveDateTime.DateTime.ToString("MM/dd/yyyy HH:mm:ss.fff") + " " + this.ReceiverReceiveDateTime.TimeZoneInfo.DisplayName;
+        receiverReceiveDateTimeString = this.ReceiverReceiveDateTime.DateTime.ToString("MM/dd/yyyy HH:mm:ss.fff") + " " + this.ReceiverReceiveDateTime.TimeZoneInfo.DisplayName;
 
       if (!this.ReceiverRespondDateTime.IsMinValue())
-          receiverRespondDateTimeString = this.ReceiverRespondDateTime.DateTime.ToString("MM/dd/yyyy HH:mm:ss.fff") + " " + this.ReceiverRespondDateTime.TimeZoneInfo.DisplayName;
+        receiverRespondDateTimeString = this.ReceiverRespondDateTime.DateTime.ToString("MM/dd/yyyy HH:mm:ss.fff") + " " + this.ReceiverRespondDateTime.TimeZoneInfo.DisplayName;
 
       if (!this.SenderReceiveDateTime.IsMinValue())
-          senderReceiveDateTimeString = this.SenderReceiveDateTime.DateTime.ToString("MM/dd/yyyy HH:mm:ss.fff") + " " + this.SenderReceiveDateTime.TimeZoneInfo.DisplayName;
+        senderReceiveDateTimeString = this.SenderReceiveDateTime.DateTime.ToString("MM/dd/yyyy HH:mm:ss.fff") + " " + this.SenderReceiveDateTime.TimeZoneInfo.DisplayName;
 
       sb.Append(indent + "  Time Stamps" + crlf);
       sb.Append(indent + "      Sender Send          : " + senderSendDateTimeString + crlf);

@@ -18,22 +18,51 @@ namespace Org.GS.Logging
     private static ConfigDbSpec _configDbSpec;
     private static SqlConnection _conn;
 
-    public int ModuleId { get; set; }
-    public int EntityId { get; set; }
-    public string ClientHost { get; set; }
-    public string ClientIp { get; set; }
-    public string ClientUser { get; set; }
-    public string ClientApplication { get; set; }
-    public string ClientApplicationVersion { get; set; }
-    public string TransactionName { get; set; }
-    public int? RunId { get; set; }
+    public int ModuleId {
+      get;
+      set;
+    }
+    public int EntityId {
+      get;
+      set;
+    }
+    public string ClientHost {
+      get;
+      set;
+    }
+    public string ClientIp {
+      get;
+      set;
+    }
+    public string ClientUser {
+      get;
+      set;
+    }
+    public string ClientApplication {
+      get;
+      set;
+    }
+    public string ClientApplicationVersion {
+      get;
+      set;
+    }
+    public string TransactionName {
+      get;
+      set;
+    }
+    public int? RunId {
+      get;
+      set;
+    }
 
     private object lockObject;
 
     private string _logFilePath = String.Empty;
     public string LogFilePath
     {
-      get { return _logFilePath; }
+      get {
+        return _logFilePath;
+      }
     }
 
     public Logger()
@@ -45,7 +74,7 @@ namespace Org.GS.Logging
       ClearClientProperties();
       this.ModuleId = 0;
       this.EntityId = 0;
-      this.RunId = null; 
+      this.RunId = null;
     }
 
     public static void SetConfigDbSpec(ConfigDbSpec configDbSpec)
@@ -57,7 +86,7 @@ namespace Org.GS.Logging
     {
       var logRecord = new LogRecord();
       logRecord.Message = message;
-      Log(logRecord); 
+      Log(logRecord);
     }
 
     public void Log(string message, string clientHost, string clientIp, string clientUser)
@@ -67,7 +96,7 @@ namespace Org.GS.Logging
       l.ClientHost = clientHost;
       l.ClientIp = clientIp;
       l.ClientUser = clientUser;
-      Log(l); 
+      Log(l);
     }
 
     public void Log(string message, string sessionId)
@@ -334,7 +363,7 @@ namespace Org.GS.Logging
           if (LogContext.ConfigLogSpec != null && LogContext.ConfigLogSpec.LogDbSpecPrefix.IsNotBlank())
           {
             LogContext.LogConfigDbSpec = g.GetDbSpec(LogContext.ConfigLogSpec.LogDbSpecPrefix);
-            _configDbSpec = LogContext.LogConfigDbSpec; 
+            _configDbSpec = LogContext.LogConfigDbSpec;
           }
         }
       }
@@ -383,32 +412,32 @@ namespace Org.GS.Logging
               break;
 
             default:
-            if (Monitor.TryEnter(_logRecordSet, 1000))
-            {
-              try
+              if (Monitor.TryEnter(_logRecordSet, 1000))
               {
-                if (_logRecordSet.Count < 1000)
-                  _logRecordSet.Add(logRecord);
+                try
+                {
+                  if (_logRecordSet.Count < 1000)
+                    _logRecordSet.Add(logRecord);
+                }
+                catch (Exception exception)
+                {
+                  string exMessage = exception.Message;
+                }
+                finally
+                {
+                  Monitor.Exit(_logRecordSet);
+                }
               }
-              catch (Exception exception)
-              {
-                string exMessage = exception.Message;
-              }
-              finally
-              {
-                Monitor.Exit(_logRecordSet);
-              }
-            }
-            break;
+              break;
           }
         }
         catch(Exception ex)
         {
-          //throw new Exception("An exception occurred while attempting to write a log record.", ex); 
+          //throw new Exception("An exception occurred while attempting to write a log record.", ex);
         }
       });
     }
-    
+
     private void WriteLog(LogRecord logRecord)
     {
       if (g.SuppressLogging)
@@ -446,7 +475,7 @@ namespace Org.GS.Logging
       if (Monitor.TryEnter(WriteLogToDatabase_LockObject, 2000))
       {
         try
-        {          
+        {
           EnsureConnection();
 
           if (l.LogDetailSet.Count > 0)
@@ -470,14 +499,14 @@ namespace Org.GS.Logging
             cmd.Parameters.AddWithValue("@EventCode", l.EventCode);
             cmd.Parameters.AddWithValue("@EntityId", l.EntityId);
             cmd.Parameters.AddWithValue("@RunId", l.RunId);
-            cmd.Parameters.AddWithValue("@UserName", l.UserName.IsBlank() ? null : l.UserName.Trim()); 
+            cmd.Parameters.AddWithValue("@UserName", l.UserName.IsBlank() ? null : l.UserName.Trim());
             cmd.Parameters.AddWithValue("@ClientHost", l.ClientHost.IsBlank() ? null : l.ClientHost.Trim());
             cmd.Parameters.AddWithValue("@ClientIp", l.ClientIp.IsBlank() ? null : l.ClientIp.Trim());
-            cmd.Parameters.AddWithValue("@ClientUser", l.ClientUser.IsBlank() ? null : l.ClientUser.Trim()); 
-            cmd.Parameters.AddWithValue("@ClientApplication", l.ClientApplication.IsBlank() ? null : l.ClientApplication.Trim()); 
+            cmd.Parameters.AddWithValue("@ClientUser", l.ClientUser.IsBlank() ? null : l.ClientUser.Trim());
+            cmd.Parameters.AddWithValue("@ClientApplication", l.ClientApplication.IsBlank() ? null : l.ClientApplication.Trim());
             cmd.Parameters.AddWithValue("@ClientApplicationVersion", l.ClientApplicationVersion.IsBlank() ? null : l.ClientApplicationVersion.Trim());
-            cmd.Parameters.AddWithValue("@TransactionName", l.TransactionName.IsBlank() ? null : l.TransactionName.Trim()); 
-            cmd.Parameters.AddWithValue("@NotificationSent", l.NotificationSent ? 1 : 0); 
+            cmd.Parameters.AddWithValue("@TransactionName", l.TransactionName.IsBlank() ? null : l.TransactionName.Trim());
+            cmd.Parameters.AddWithValue("@NotificationSent", l.NotificationSent ? 1 : 0);
             SqlParameter logIdParm = new SqlParameter("@LogId", SqlDbType.BigInt);
             logIdParm.Direction = ParameterDirection.Output;
             cmd.Parameters.Add(logIdParm);
@@ -502,7 +531,7 @@ namespace Org.GS.Logging
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@LogId", logId);
                 cmd.Parameters.AddWithValue("@DetailType", logDetail.LogDetailType.ToString());
-                cmd.Parameters.AddWithValue("@SetId", logDetail.SetId); 
+                cmd.Parameters.AddWithValue("@SetId", logDetail.SetId);
                 cmd.Parameters.AddWithValue("@LogDetail", logDetail.DetailData);
                 SqlParameter logDetailIdParm = new SqlParameter("@LogDetailId", SqlDbType.BigInt);
                 logDetailIdParm.Direction = ParameterDirection.Output;
@@ -531,14 +560,14 @@ namespace Org.GS.Logging
       else
       {
         throw new Exception("A lock could not be obtained within 2 seconds for writing the log record to the database.");
-      } 
+      }
     }
 
     private void WriteLogToFile(LogRecord logRecord)
     {
       if (!Directory.Exists(g.LogPath))
-        return;  
-                  
+        return;
+
       DateTime InitialWriteAttemptDT = DateTime.Now;
       string logFullPath = String.Empty;
 
@@ -559,7 +588,7 @@ namespace Org.GS.Logging
 
             try
             {
-              logRecord.LogWriteAttempt = attempt; 
+              logRecord.LogWriteAttempt = attempt;
               string logFileName = "app.log";
 
               switch (LogContext.ConfigLogSpec.LogFileFrequency)
@@ -574,7 +603,7 @@ namespace Org.GS.Logging
               }
 
               logFullPath = g.LogPath + @"\" + logFileName;
-              _logFilePath = logFullPath; 
+              _logFilePath = logFullPath;
 
               logRecord.LogWriteWait = DateTime.Now - InitialWriteAttemptDT;
               string logFileEntry = FormatLogEntry(logRecord.GetLogEntry()) + g.crlf;
@@ -677,7 +706,7 @@ namespace Org.GS.Logging
       sw.Close();
       File.Delete(tempLogFullPath);
     }
- 
+
     public void ClearLogFile()
     {
       if (LogContext.LogContextState != LogContextState.Normal)
@@ -747,7 +776,7 @@ namespace Org.GS.Logging
         }
       });
     }
-        
+
     public void Flush()
     {
       if (LogContext.LogContextState != LogContextState.Normal)
@@ -777,7 +806,7 @@ namespace Org.GS.Logging
         }
         finally
         {
-          Monitor.Exit(_logRecordSet); 
+          Monitor.Exit(_logRecordSet);
         }
       }
     }
@@ -821,7 +850,7 @@ namespace Org.GS.Logging
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred attempting to open the logging database connection.", ex); 
+        throw new Exception("An exception occurred attempting to open the logging database connection.", ex);
       }
     }
 

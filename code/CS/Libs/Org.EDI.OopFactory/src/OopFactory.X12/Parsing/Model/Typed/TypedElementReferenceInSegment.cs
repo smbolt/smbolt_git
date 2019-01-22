@@ -5,8 +5,8 @@ using System.Text;
 
 namespace OopFactory.X12.Parsing.Model.Typed
 {
-    public class TypedElementReferenceInSegment
-    {
+  public class TypedElementReferenceInSegment
+  {
 
-    }
+  }
 }

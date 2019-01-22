@@ -19,6 +19,6 @@ namespace Org.GS.ServiceManagement
     NotSet,
     ServiceEnvironment,
     ServiceHost,
-    ServiceSpec    
+    ServiceSpec
   }
 }

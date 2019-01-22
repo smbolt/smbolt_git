@@ -13,18 +13,42 @@ namespace Org.GS.Configuration
   [XMap(XType = XType.Element, CollectionElements = "NotifyConfig", SequenceDuplicates = true)]
   public class NotifyConfigSet : Dictionary<string, NotifyConfig>
   {
-    public ProgramConfig ProgramConfig { get; set; }
+    public ProgramConfig ProgramConfig {
+      get;
+      set;
+    }
 
-    public int NotifyConfigSetId { get; set; }
+    public int NotifyConfigSetId {
+      get;
+      set;
+    }
 
     [XMap]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
-    public bool IsActive { get; set; }
-    public string CreatedBy { get; set; }
-    public DateTime CreatedOn { get; set; }
-    public string ModifiedBy { get; set; }
-    public DateTime? ModifiedOn { get; set; }
+    public bool IsActive {
+      get;
+      set;
+    }
+    public string CreatedBy {
+      get;
+      set;
+    }
+    public DateTime CreatedOn {
+      get;
+      set;
+    }
+    public string ModifiedBy {
+      get;
+      set;
+    }
+    public DateTime? ModifiedOn {
+      get;
+      set;
+    }
 
     public NotifyConfigSet()
     {
@@ -132,7 +156,7 @@ namespace Org.GS.Configuration
           foreach (var notifyEvent in notifyConfig.NotifyEventSet.Values)
           {
             if (notifyEvent.IsActive)
-            {              
+            {
               if (notifyEvent.Name == namedEvent)
                 return true;
             }

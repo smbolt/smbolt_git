@@ -16,7 +16,7 @@ namespace Org.DynamoDB
   {
     private DbParms _dbParms;
     private AmazonDynamoDBConfig _ddbConfig;
-    private AmazonDynamoDBClient _client;    
+    private AmazonDynamoDBClient _client;
 
     public DbClient(DbParms dbParms)
     {

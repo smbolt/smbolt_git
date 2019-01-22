@@ -40,7 +40,7 @@ namespace Org.CommandUtility
       _logger.Log("Program mode is '" + _programMode.ToString() + "'.");
       if (!_inSilentMode && _programMode != ProgramMode.HelpMode)
         Console.WriteLine("Program mode is '" + _programMode.ToString() + "'." + g.crlf);
-      
+
       switch (_programMode)
       {
         case ProgramMode.PingPort:
@@ -56,13 +56,13 @@ namespace Org.CommandUtility
           break;
       }
 
-      LogAndShowMessageOnConsole(taskResult); 
+      LogAndShowMessageOnConsole(taskResult);
 
       DisplaySummary();
-      
+
       if (_overrideWaitMode && !_inWaitMode)
         _inWaitMode = true;
-      
+
       if (_inWaitMode)
       {
         if (!_inSilentMode)
@@ -121,10 +121,18 @@ namespace Org.CommandUtility
             spinCount++;
             switch (spinCount % 4)
             {
-              case 0: Console.Write("/"); break;
-              case 1: Console.Write("-"); break;
-              case 2: Console.Write("\\"); break;
-              case 3: Console.Write("|"); break;
+              case 0:
+                Console.Write("/");
+                break;
+              case 1:
+                Console.Write("-");
+                break;
+              case 2:
+                Console.Write("\\");
+                break;
+              case 3:
+                Console.Write("|");
+                break;
             }
             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
           }
@@ -248,7 +256,7 @@ namespace Org.CommandUtility
 
       int indexOfA = GetIndexOf("-a", args);
 
-      // if we have "-a", it must be followed immediately by address (IP:Port) to try to ping... 
+      // if we have "-a", it must be followed immediately by address (IP:Port) to try to ping...
       if (indexOfA > -1)
       {
         int indexOfAValue = indexOfA + 1;
@@ -304,9 +312,12 @@ namespace Org.CommandUtility
     {
       switch (modeSwitch.ToLower())
       {
-        case "-help": return ProgramMode.HelpMode;
-        case "-editconfig": return ProgramMode.EditConfig;
-        case "-pingport": return ProgramMode.PingPort;
+        case "-help":
+          return ProgramMode.HelpMode;
+        case "-editconfig":
+          return ProgramMode.EditConfig;
+        case "-pingport":
+          return ProgramMode.PingPort;
       }
 
       return ProgramMode.Invalid;
@@ -355,9 +366,9 @@ namespace Org.CommandUtility
       taskResult.IsLogged = true;
 
       Console.Write(g.crlf + "*** ERROR ***" + g.crlf +
-                        "Task: " + taskResult.TaskName + g.crlf +
-                        "Code: " + taskResult.Code.ToString() + g.crlf +
-                        "Message: " + taskResult.Message + g.crlf);
+                    "Task: " + taskResult.TaskName + g.crlf +
+                    "Code: " + taskResult.Code.ToString() + g.crlf +
+                    "Message: " + taskResult.Message + g.crlf);
       if (taskResult.Exception != null)
         Console.Write("Exception: " + taskResult.Exception.ToReport() + g.crlf);
 
@@ -378,70 +389,70 @@ namespace Org.CommandUtility
       _errorMessages = new Dictionary<int, string>();
 
       _errorMessages.Add(101, "ShareFileUtility could not determine the requested mode of operation." + g.crlf +
-                              "The first command line parameter must be one of the following: " + g.crlf +
-                              "  '-help'   to display usage information and instructions" + g.crlf +
-                              "  '-editConfig'   to edit the AppConfig file" + g.crlf +
-                              "  '-portPing'   to attempt to ping an IP address and port" + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "The first command line parameter must be one of the following: " + g.crlf +
+                         "  '-help'   to display usage information and instructions" + g.crlf +
+                         "  '-editConfig'   to edit the AppConfig file" + g.crlf +
+                         "  '-portPing'   to attempt to ping an IP address and port" + g.crlf +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(102, "The ShareFileUtility command line must include an '-i' switch to specify the input file to be uploaded." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(103, "The ShareFileUtility command line must include an '-i' switch to specify the input folder of files to be uploaded." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(104, "The ShareFileUtility command line must include an '-i' switch to specify the input folder to watch for files to be uploaded." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(105, "The ShareFileUtility command line must include an '-o' switch to specify the output folder location." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(106, "The ShareFileUtility command line must include the input file name immediately following the '-i' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(107, "The ShareFileUtility command line must include the input folder name immediately following the '-i' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(108, "The ShareFileUtility command line parameter immediately following the '-i' switch must be a valid input file name." + g.crlf +
-                              "The value '@InputValue@' does not correspond to a valid file name." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "The value '@InputValue@' does not correspond to a valid file name." + g.crlf +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(109, "The ShareFileUtility command line parameter immediately following the '-i' switch must be a valid input folder name." + g.crlf +
-                              "The value '@InputValue@' does not correspond to a valid folder name." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "The value '@InputValue@' does not correspond to a valid folder name." + g.crlf +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(110, "The ShareFileUtility command line must include the output file name immediately following the '-o' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(111, "The ShareFileUtility command line parameter immediately following the '-o' switch must be a valid output folder path name (whether or not it exists)." + g.crlf +
-                              "The value '@OutputValue@' does not correspond to a valid folder path name." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "The value '@OutputValue@' does not correspond to a valid folder path name." + g.crlf +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(112, "The ShareFileUtility program is unable to create the non-existent output folder at '@OutputValue@'.");
 
       _errorMessages.Add(113, "The ShareFileUtility command line must include an '-f' switch to specify the remote file name to be deleted." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(114, "The ShareFileUtility command line must include the remote file name to be downloaded immediately following the '-f' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(115, "The ShareFileUtility command line must include the remote file name to be deleted immediately following the '-f' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(116, "The ShareFileUtility command line must include the archive folder name immediately following the '-a' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(117, "The ShareFileUtility program is unable to create the non-existent archive folder at '@ArchiveValue@'.");
 
       _errorMessages.Add(118, "The ShareFileUtility command line must include an '-e' switch to specify the name of the event for which notifications will be tested." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(119, "The ShareFileUtility command line must include the name of the event to be use for testing notifications immediately following the '-e' switch." + g.crlf +
-                              "See 'readme.html' in the program directory for help.");
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(120, "The ShareFileUtility command line parameter immediately following the '-a' switch must be a valid output folder path name (whether or not it exists)." + g.crlf +
-                          "The value '@ArchiveValue@' does not correspond to a valid folder path name." + g.crlf +
-                          "See 'readme.html' in the program directory for help.");
+                         "The value '@ArchiveValue@' does not correspond to a valid folder path name." + g.crlf +
+                         "See 'readme.html' in the program directory for help.");
 
       _errorMessages.Add(143, "An exception occurred attempting to create the ArchiveFolder '@ArchiveFolder@'.");
       _errorMessages.Add(145, "An exception occurred while attempting to establish the FileSystemWatcher to watch folder '@WatchFolderPath@' for new files.");

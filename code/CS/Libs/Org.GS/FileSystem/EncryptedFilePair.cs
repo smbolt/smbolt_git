@@ -8,12 +8,31 @@ namespace Org.GS
 {
   public class EncryptedFilePair
   {
-    public string EncryptedFilePath { get; set; }
-    public string UnencryptedFilePath { get; set; }
-    public string RawText { get; set; }
-    public string OriginalFormattedText { get; set; }
-    public string CurrentFormattedText { get; set; }
-    public bool IsUpdated { get { return Get_IsUpdated(); } }
+    public string EncryptedFilePath {
+      get;
+      set;
+    }
+    public string UnencryptedFilePath {
+      get;
+      set;
+    }
+    public string RawText {
+      get;
+      set;
+    }
+    public string OriginalFormattedText {
+      get;
+      set;
+    }
+    public string CurrentFormattedText {
+      get;
+      set;
+    }
+    public bool IsUpdated {
+      get {
+        return Get_IsUpdated();
+      }
+    }
 
     public EncryptedFilePair()
     {
@@ -23,7 +42,7 @@ namespace Org.GS
       this.OriginalFormattedText = String.Empty;
       this.CurrentFormattedText = String.Empty;
     }
-    
+
     private bool Get_IsUpdated()
     {
       if (this.OriginalFormattedText.IsBlank() || this.CurrentFormattedText.IsBlank())

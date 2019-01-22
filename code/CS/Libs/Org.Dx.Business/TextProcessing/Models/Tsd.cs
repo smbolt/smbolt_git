@@ -15,37 +15,70 @@ namespace Org.Dx.Business.TextProcessing
   public class Tsd : List<Cmd>
   {
     [XMap(IsKey = true)]
-    public string Name { get; set; }
+    public string Name {
+      get;
+      set;
+    }
 
     [XMap(IsKey = true)]
-    public string SpecialRoutine { get; set; }
+    public string SpecialRoutine {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="True")]
-    public bool Active { get; set; }
+    public bool Active {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue = "False")]
-    public bool Iterate { get; set; }
+    public bool Iterate {
+      get;
+      set;
+    }
 
     [XMap]
-    public string BreakOnLine { get; set; }
+    public string BreakOnLine {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool IsReportUnit { get; set; }
+    public bool IsReportUnit {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool NewWorksheet { get; set; }
+    public bool NewWorksheet {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ExtractTemplate { get; set; }
+    public string ExtractTemplate {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool Debug { get; set; }
+    public bool Debug {
+      get;
+      set;
+    }
 
     [XMap(DefaultValue="False")]
-    public bool SkipExtract { get; set; }
+    public bool SkipExtract {
+      get;
+      set;
+    }
 
     [XMap]
-    public string ExtractOptions { get; set; }
+    public string ExtractOptions {
+      get;
+      set;
+    }
     public OptionsList LevelExtractOptions
     {
       get
@@ -55,25 +88,70 @@ namespace Org.Dx.Business.TextProcessing
         return _optionsList;
       }
     }
-    private OptionsList _optionsList { get; set; }
+    private OptionsList _optionsList {
+      get;
+      set;
+    }
 
     [XMap(XType = XType.Element, CollectionElements = "Tsd", WrapperElement="TsdSet")]
-    public TsdSet TsdSet { get; set; }
+    public TsdSet TsdSet {
+      get;
+      set;
+    }
 
-    public string Code { get { return Get_Code(); } }
-    public int BeginPosition { get; set; }
-    public int EndPosition { get; set; }
-    public Tsd PriorSibling { get { return Get_PriorSibling(); } }
-    public string FullXmlPath { get { return Get_FullXmlPath(); } }
-    public string FullFilePath { get { return (this.ExtractSpec != null ? this.ExtractSpec.FullFilePath : String.Empty); } }
-    public string Condition { get; set; }
+    public string Code {
+      get {
+        return Get_Code();
+      }
+    }
+    public int BeginPosition {
+      get;
+      set;
+    }
+    public int EndPosition {
+      get;
+      set;
+    }
+    public Tsd PriorSibling {
+      get {
+        return Get_PriorSibling();
+      }
+    }
+    public string FullXmlPath {
+      get {
+        return Get_FullXmlPath();
+      }
+    }
+    public string FullFilePath {
+      get {
+        return (this.ExtractSpec != null ? this.ExtractSpec.FullFilePath : String.Empty);
+      }
+    }
+    public string Condition {
+      get;
+      set;
+    }
 
-    public List<Cmd> StructureCommands { get { return Get_StructureCommands(); } }
-    public List<Cmd> TextExtractCommands { get { return Get_TextExtractCommands(); } }
+    public List<Cmd> StructureCommands {
+      get {
+        return Get_StructureCommands();
+      }
+    }
+    public List<Cmd> TextExtractCommands {
+      get {
+        return Get_TextExtractCommands();
+      }
+    }
 
-    public ExtractSpec ExtractSpec; 
-    public Tsd Parent { get; set; }
-    public static ColumnIndexMap ColumnIndexMap { get; set; }
+    public ExtractSpec ExtractSpec;
+    public Tsd Parent {
+      get;
+      set;
+    }
+    public static ColumnIndexMap ColumnIndexMap {
+      get;
+      set;
+    }
 
     public Tsd()
     {
@@ -94,7 +172,7 @@ namespace Org.Dx.Business.TextProcessing
     {
       _optionsList = new OptionsList(this.ExtractOptions);
     }
-    
+
 
     public string Get_Code()
     {
@@ -103,8 +181,8 @@ namespace Org.Dx.Business.TextProcessing
       foreach (var cmd in this)
       {
         if (sb.Length > 0)
-          sb.Append(g.crlf); 
-        sb.Append(cmd.Code); 
+          sb.Append(g.crlf);
+        sb.Append(cmd.Code);
       }
 
       return sb.ToString();
@@ -116,7 +194,7 @@ namespace Org.Dx.Business.TextProcessing
         return null;
 
       if (this.Parent.TsdSet == null || this.TsdSet.Count == 0)
-        return null; 
+        return null;
 
       string thisName = this.Name;
 
@@ -124,7 +202,7 @@ namespace Org.Dx.Business.TextProcessing
 
       for (int i = 0; i < this.Parent.TsdSet.Count; i++)
       {
-        var kvp = this.Parent.TsdSet.ElementAt(i); 
+        var kvp = this.Parent.TsdSet.ElementAt(i);
         if (kvp.Value.Name == thisName)
           return priorSibling;
         priorSibling = kvp.Value;
@@ -194,8 +272,8 @@ namespace Org.Dx.Business.TextProcessing
             break;
 
           default:
-						if (!cmd.Verb.ToLower().StartsWith("*"))
-							list.Add(cmd);
+            if (!cmd.Verb.ToLower().StartsWith("*"))
+              list.Add(cmd);
             break;
         }
       }

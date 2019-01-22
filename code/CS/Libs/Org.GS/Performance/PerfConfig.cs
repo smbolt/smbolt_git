@@ -11,27 +11,34 @@ namespace Org.GS.Performance
   public class PerfConfig
   {
     [XMap(XType=XType.Element, CollectionElements="PerfProfile")]
-    public PerfProfileSet PerfProfileSet { get; set; }
+    public PerfProfileSet PerfProfileSet {
+      get;
+      set;
+    }
 
     private string _originalFileImage;
     public string OriginalFileImage
     {
-      get { return _originalFileImage; }
+      get {
+        return _originalFileImage;
+      }
     }
 
     private string _currentFileImage;
     public string CurrentFileImage
     {
-      get 
+      get
       {
         CaptureCurrentFileImage();
-        return _currentFileImage; 
+        return _currentFileImage;
       }
     }
 
     public bool IsUpdated
     {
-      get { return Get_IsUpdated(); }
+      get {
+        return Get_IsUpdated();
+      }
     }
 
     public PerfConfig()

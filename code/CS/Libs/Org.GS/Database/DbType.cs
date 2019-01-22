@@ -10,14 +10,38 @@ namespace Org.GS.Database
 {
   public class DbType
   {
-    public SqlDbType SqlDbType { get; set; }
-    public string TypeName { get; set; }
-    public int SystemTypeId { get; set; }
-    public int UserTypeId { get; set; }
-    public int MaxLength { get; set; }
-    public int Precision { get; set; }
-    public int Scale { get; set; }
-    public bool IsNullable { get; set; }
+    public SqlDbType SqlDbType {
+      get;
+      set;
+    }
+    public string TypeName {
+      get;
+      set;
+    }
+    public int SystemTypeId {
+      get;
+      set;
+    }
+    public int UserTypeId {
+      get;
+      set;
+    }
+    public int MaxLength {
+      get;
+      set;
+    }
+    public int Precision {
+      get;
+      set;
+    }
+    public int Scale {
+      get;
+      set;
+    }
+    public bool IsNullable {
+      get;
+      set;
+    }
 
     public DbType()
     {

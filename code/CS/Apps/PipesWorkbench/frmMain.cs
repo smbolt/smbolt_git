@@ -37,7 +37,7 @@ namespace Org.PipesWorkbench
       InitializeComponent();
       InitializeForm();
     }
-    
+
     private void Action(object sender, EventArgs e)
     {
       string action = g.GetActionFromEvent(sender);
@@ -172,7 +172,7 @@ namespace Org.PipesWorkbench
       }
       catch (Exception ex)
       {
-        throw new Exception("An exception occurred while running the named pipe server.", ex); 
+        throw new Exception("An exception occurred while running the named pipe server.", ex);
       }
     }
 
@@ -211,7 +211,7 @@ namespace Org.PipesWorkbench
       // or disconnected.
       catch (IOException ex)
       {
-        WriteToDisplay("An exception occurred in the pipe server." + ex.ToReport()); 
+        WriteToDisplay("An exception occurred in the pipe server." + ex.ToReport());
       }
 
       pipeServer.Close();
@@ -227,7 +227,7 @@ namespace Org.PipesWorkbench
       string message = @"C:\_work\path.txt";
 
       string response = _namedPipeClient.SendMessage(message);
-      WriteToDisplay("Response: " + response); 
+      WriteToDisplay("Response: " + response);
     }
 
     private void CloseNamedPipeClient()
@@ -251,7 +251,7 @@ namespace Org.PipesWorkbench
           if (pipeSet.Count == 0)
           {
             lblExistingNamedPipesValue.Text = "None";
-            return; 
+            return;
           }
 
           foreach (var pipe in pipeSet.Values)
@@ -289,7 +289,7 @@ namespace Org.PipesWorkbench
         this.Invoke((Action)((() =>
         {
           MessageBox.Show("An exception occurred while attempting to write to the display." + g.crlf + ex.ToReport(),
-                          g.AppInfo.AppName + " - Exception Writing to Display", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                          g.AppInfo.AppName + " - Exception Writing to Display", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
         })));
@@ -343,19 +343,19 @@ namespace Org.PipesWorkbench
                                 "The pipe name should include the max instances specification in brackets i.e. PipeName[4].");
 
           string pipeName = pipeSpec.Substring(0, pos);
-          string maxInstanceSpec = pipeSpec.Substring(pos).Replace("[", String.Empty).Replace("]", String.Empty); 
+          string maxInstanceSpec = pipeSpec.Substring(pos).Replace("[", String.Empty).Replace("]", String.Empty);
           if (maxInstanceSpec.IsNotNumeric())
             throw new Exception("The format of the NamedPipe '" + namedPipe + "' in the NamedPipe configuration list is invalid. " +
-                                "The pipe name should include the max instances specification in brackets i.e. PipeName[4]. " + 
+                                "The pipe name should include the max instances specification in brackets i.e. PipeName[4]. " +
                                 "The max instances value '" + maxInstanceSpec + "' is not numeric.");
 
           _pipesOnServers[serverName].Add(pipeSpec);
         }
 
-        // add servers and pipes to new combo boxes... 
+        // add servers and pipes to new combo boxes...
 
 
-        _mainNamedPipeServerName = g.CI("MainNamedPipeServerName"); 
+        _mainNamedPipeServerName = g.CI("MainNamedPipeServerName");
         _mainNamedPipeName = g.CI("MainNamedPipeName");
         _namedPipePattern = g.CI("NamedPipePattern");
         _maxMainPipeInstances = g.CI("MaxMainPipeInstances").ToInt32OrDefault(-1);

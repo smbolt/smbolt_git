@@ -11,9 +11,15 @@ namespace Org.QB.QBXML
   public class CustomerAddRq : QbXmlBase
   {
     [XMap (XType = XType.Element)]
-    public CustomerAdd CustomerAdd { get; set; }
+    public CustomerAdd CustomerAdd {
+      get;
+      set;
+    }
 
     [XMap (XType = XType.Element)]
-    public IncludeRetElementList IncludeRetElementList { get; set; }
+    public IncludeRetElementList IncludeRetElementList {
+      get;
+      set;
+    }
   }
 }

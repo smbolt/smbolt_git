@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Org.DocGen.DocSpec
 {
-    public class ContentItemSet : SortedList<string, ContentItem>
-    {
-    }
+  public class ContentItemSet : SortedList<string, ContentItem>
+  {
+  }
 }

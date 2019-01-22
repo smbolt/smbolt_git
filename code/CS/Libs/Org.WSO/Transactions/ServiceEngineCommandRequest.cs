@@ -13,7 +13,10 @@ namespace Org.WSO.Transactions
   public class ServiceEngineCommandRequest : TransactionBase
   {
     [XMap(XType = XType.Element, CollectionElements = "WsCommand", WrapperElement = "WsCommandSet")]
-    public WsCommandSet WsCommandSet { get; set; }
+    public WsCommandSet WsCommandSet {
+      get;
+      set;
+    }
 
     public ServiceEngineCommandRequest()
     {
