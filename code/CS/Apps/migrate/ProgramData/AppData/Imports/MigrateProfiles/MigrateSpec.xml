@@ -1,0 +1,65 @@
+﻿<ProfileSet>
+  <Profile Name="WellMaster_Stage">
+    <MappingControlSet>
+      <MappingControl Name="app" Source="$WELLMASTER_SOURCE$\app" Destination="$WELLMASTER_TARGET$\app" ClearDestination="True" Recursive="True" /> 
+      <MappingControl Name="bin" Source="$WELLMASTER_SOURCE$\bin" Destination="$WELLMASTER_TARGET$\bin" ClearDestination="True">
+        <IncludedExtensionSet>
+          <IncludedExtension Extension=".xml" />
+          <IncludedExtension Extension=".dll" />
+          <IncludedExtension Extension=".pdb" />
+          <IncludedExtension Extension=".exe">
+            <ExtensionExclusionSet>
+              <ExtensionExclusion Value=".vshost" ExclusionControl="IfIncludes" />
+            </ExtensionExclusionSet>
+          </IncludedExtension>
+        </IncludedExtensionSet>
+      </MappingControl>
+      <MappingControl Name="content-css" Source="$WELLMASTER_SOURCE$\content\css" Destination="$WELLMASTER_TARGET$\content\css" ClearDestination="True">
+        <IncludedExtensionSet>
+          <IncludedExtension Extension=".css" />
+        </IncludedExtensionSet>
+      </MappingControl>
+      <MappingControl Name="content-css-fonts" Source="$WELLMASTER_SOURCE$\content\css\fonts" Destination="$WELLMASTER_TARGET$\content\css\fonts" ClearDestination="True">
+        <IncludedExtensionSet>
+          <IncludedExtension Extension="*" />
+        </IncludedExtensionSet>
+      </MappingControl>
+      <MappingControl Name="content-fonts" Source="$WELLMASTER_SOURCE$\content\fonts" Destination="$WELLMASTER_TARGET$\content\fonts" ClearDestination="True">
+        <IncludedExtensionSet>
+          <IncludedExtension Extension="*" />
+        </IncludedExtensionSet>
+      </MappingControl>
+      <MappingControl Name="images" Source="$WELLMASTER_SOURCE$\images" Destination="$WELLMASTER_TARGET$\images" ClearDestination="True">
+        <IncludedExtensionSet>
+          <IncludedExtension Extension="*" />
+        </IncludedExtensionSet>
+      </MappingControl>
+      <MappingControl Name="scripts" Source="$WELLMASTER_SOURCE$\scripts" Destination="$WELLMASTER_TARGET$\scripts" ClearDestination="True">
+        <IncludedExtensionSet>
+          <IncludedExtension Extension="*" />
+        </IncludedExtensionSet>
+      </MappingControl>
+      <MappingControl Name="webroot" Source="$WELLMASTER_SOURCE$" Destination="$WELLMASTER_TARGET$" ClearDestination="True">
+        <IncludedExtensionSet>
+          <IncludedExtension Extension="*" />
+        </IncludedExtensionSet>
+        <IncludedFileSet>
+          <IncludedFile V="*" />
+        </IncludedFileSet>
+        <ExcludedFileSet>
+          <ExcludedFile V="*csproj*" />
+          <ExcludedFile V="Global.asax.cs" />
+          <ExcludedFile V="packages.config" />
+          <ExcludedFile V="Web.Debug.config" />
+          <ExcludedFile V="Web.Release.config" />
+          <ExcludedFile V="Web.Release.config" />
+        </ExcludedFileSet>
+      </MappingControl>
+    </MappingControlSet>
+  </Profile>
+  <VariableSet>
+    <Variable K="$WELLMASTER_SOURCE$" V="C:\DEV-MAIN\Main\Apps\WellMasterWeb\WellMasterWeb" />
+    <Variable K="$~WELLMASTER_TARGET$" V="\\GP-FILE-01\data\Public\Data Management\Migration\WellMaster\#YYYYMMDD-HHMMSS#" />
+    <Variable K="$WELLMASTER_TARGET$" V="C:\_work\MigrateTest\TestTarget" />
+  </VariableSet>
+</ProfileSet>

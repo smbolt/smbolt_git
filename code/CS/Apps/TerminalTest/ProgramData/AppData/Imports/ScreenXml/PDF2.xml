@@ -1,0 +1,9 @@
+﻿<ScreenSpecSet Name="PDF2">
+  <ScreenSpec Name="PDF2" Rows="24" Columns="80" FixedWidth="True" FixedHeight="True">
+    <FieldSpecSet>
+      <FieldSpec Name="" Line="1" Col="4" Lth="4" Init="~Menu" Attrs="PAW"  />
+      <FieldSpec Name="" Line="2" Col="10" Lth="7" Init="~RefList" Attrs="PAW"  />
+      <FieldSpec Name="" Line="3" Col="10" Lth="7" Init="~RefMode" Attrs="PAW"  />      
+    </FieldSpecSet>
+  </ScreenSpec>
+</ScreenSpecSet>

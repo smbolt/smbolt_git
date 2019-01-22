@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevOpsWorkbench", "DevOpsWorkbench.csproj", "{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{3D72E8B1-B424-44A8-A4AC-66B8B65BF194}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - HLibs", "20 - HLibs", "{24445939-3467-4B1F-9C1B-CE3D5A486C84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30 - LLibs", "30 - LLibs", "{8472F7DD-6E0D-4227-8AF3-8E23FC29F4DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.PS", "..\..\Libs\Org.PS\Org.PS.csproj", "{3B593735-6368-4713-BF23-D96D821C78FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30}.Debug|x86.Build.0 = Debug|Any CPU
+		{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30}.Release|x86.ActiveCfg = Release|Any CPU
+		{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30}.Release|x86.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{3B593735-6368-4713-BF23-D96D821C78FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B593735-6368-4713-BF23-D96D821C78FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B593735-6368-4713-BF23-D96D821C78FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3B593735-6368-4713-BF23-D96D821C78FA}.Debug|x86.Build.0 = Debug|Any CPU
+		{3B593735-6368-4713-BF23-D96D821C78FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B593735-6368-4713-BF23-D96D821C78FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B593735-6368-4713-BF23-D96D821C78FA}.Release|x86.ActiveCfg = Release|Any CPU
+		{3B593735-6368-4713-BF23-D96D821C78FA}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2C0F90DF-5A61-4D95-9DF7-0C6DAF9CCC30} = {3D72E8B1-B424-44A8-A4AC-66B8B65BF194}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {8472F7DD-6E0D-4227-8AF3-8E23FC29F4DB}
+		{3B593735-6368-4713-BF23-D96D821C78FA} = {24445939-3467-4B1F-9C1B-CE3D5A486C84}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0821C7B4-141A-4A8D-A0B2-E0A79F6235C8}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = DevOpsWorkbench.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

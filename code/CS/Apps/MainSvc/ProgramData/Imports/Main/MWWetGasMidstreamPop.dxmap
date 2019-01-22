@@ -1,0 +1,347 @@
+﻿<DxMapSet Name="MWActualGas" DxDocType="MidstreamPopStatement" OperatorName="Markwest" PreProcessingRoutine="FilterSheets,SplitSheets,TrimSheets">
+  <DxRegionSet> 
+    <!--For DxRegion RowSpec if a spec is separated by a comma it means "AND", if it is separated by a tilde "~", then it means "OR".-->
+    <!--If a RowSpec only contains an integer then that integer will be used as the actual number of the row or column to be used. -->
+    <!--Row and Col specs must be in the format of Row1:[str/eq:"SomeValue"] or Col5:[str/eq:"Some Value"] as a pattern not exacty-->
+    <DxRegion Name="PopRegionSummary" 
+              TopRowSpec="*('PERCENT OF PROCEEDS*')" 
+              BottomRowSpec="1('Total')|6('Total')" 
+              LeftColSpec="1" 
+              RightColSpec="13" 
+              />
+  </DxRegionSet>
+  <DxMap Name="MWActualGasMidstreamPop" DxMapType="SheetToSheet" SheetControl="None">
+    <DxFilterSet>
+      <DxFilter FilterMethod="SheetFilterCellValues" SheetFilterCellValues="0,10,Recipient | 2,3,LEASE INFORMATION | 7,0,Accounting Date | 13,2,Mcf
+                | 13,7,NGL Shrink | 8,12,Net Value |  13,4,Products | 4,3,@ISNOTBLANK@ "/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="Statement.RecordType" Src="*,*,*" Dest="*,0,$" IsRequired="True" NoSrcCell="True" DefaultValue="Statement"/>
+      <DxMapItem Name="Statement.MeterNumber" Src="*,4,3" Dest="*,0,$" IsRequired="True"/>
+      <DxMapItem Name="Statement.PaystationNumber" Src="*,4,4" Dest="*,0,$" IsRequired="True"/>
+      <DxMapItem Name="Statement.MeterName" Src="*,4,5" Dest="*,0,$" IsRequired="True" DefaultValue="SummaryStatement"/>
+      <DxMapItem Name="Statement.StatementDate" Src="*,6,1" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ProductionDate" Src="*,5,1" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.AccountingDate" Src="*,7,1" Dest="*,0,$" IsRequired="True" HelperFunction="ExtractDateTime(MMYY)" />
+      <DxMapItem Name="Statement.ContractNumber" Src="*,4,7" Dest="*,0,$" IsRequired="True"  />
+      <DxMapItem Name="Statement.FacilityName" Src="*,4,8" Dest="*,0,$" IsRequired="True"  />
+      <DxMapItem Name="Statement.State" Src="*,4,9" Dest="*,0,$" IsRequired="True"  />
+      <DxMapItem Name="Statement.OperatorName" Src="*,4,10" Dest="*,0,$" IsRequired="True"  />
+      <DxMapItem Name="Statement.PressureBase" Src="*,4,12" Dest="*,0,$" IsRequired="True"  />
+      <DxMapItem Name="Statement.LiquidValue" Src="*,9,3" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ResidueValue" Src="*,9,4" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.GrossValue" Src="*,9,5" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.FeesAndAdjustments" Src="*,9,6" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.NetValue" Src="*,9,12" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.GrossWellheadMCF" Src="*,15,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.AllocationDecimal" Src="*,16,2" Dest="*,0,$" IsRequired="True"  />
+      <DxMapItem Name="Statement.WHPaystationMCF" Src="*,17,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHFieldFuelMCF" Src="*,18,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHGSystemLossMCF" Src="*,19,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHCondensateMCF" Src="*,20,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHBypassMCF" Src="*,23,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHNetDeliveredMCF" Src="*,25,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.GrossWellheadMMBTU" Src="*,15,3" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHPaystationMMBTU" Src="*,17,3" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHFieldFuelMMBTU" Src="*,18,3" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHGSystemLossMMBTU" Src="*,19,3" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHCondensateMMBTU" Src="*,20,3" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHBypassMMBTU" Src="*,23,3" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHNetDeliveredMMBTU" Src="*,25,3" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WellheadBTU" Src="*,29,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ResidueNetDeliveredMMBTU" Src="*,37,0" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ResidueShrinkMMBTU" Src="*,37,1" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ResiduePlantFuelMMBTU" Src="*,37,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.WHPlantFuelMMBTU" Src="*,37,2" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ResidueSettlementHopedaleFracFuelMMBTU" Src="*,37,3" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ResidueSettlementStabilizerFuelMMBTU" Src="*,37,4" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.TheoreticalResidueMMBTU" Src="*,37,5" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.AllocatedResidueMMBTU" Src="*,37,8" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ResidueContractPercent" Src="*,37,7" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.SettlementResidueMMBTU" Src="*,37,6" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ResidueTIKMMBTU" Src="*,37,9" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.ResiduePrice" Src="*,37,11" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.TotalShrinkMMBTU" Src="*,27,7" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.TotalSettlementGallons" Src="*,27,10" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.TotalTheoreticalGallons" Src="*,27,5" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.TotalAllocatedGallons" Src="*,27,6" Dest="*,0,$" IsRequired="True" />
+      <DxMapItem Name="Statement.TotalLiquidValue" Src="*,27,12" Dest="*,0,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[0]" Src="*,*,*" Dest="*,1,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[0]" Src="*,*,*" Dest="*,1,$" IsRequired="True" NoSrcCell="True" DefaultValue="PurityEthane"/>
+      <DxMapItem Name="Product.TheoreticalGallons[0]" Src="*,15,5" Dest="*,1,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[0]" Src="*,15,10" Dest="*,1,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[0]" Src="*,15,6" Dest="*,1,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[0]" Src="*,15,7" Dest="*,1,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[0]" Src="*,15,8" Dest="*,1,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[0]" Src="*,15,11" Dest="*,1,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[0]" Src="*,15,12" Dest="*,1,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[1]" Src="*,*,*" Dest="*,2,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[1]" Src="*,*,*" Dest="*,2,$" IsRequired="True" NoSrcCell="True" DefaultValue="Ethane"/>
+      <DxMapItem Name="Product.TheoreticalGallons[1]" Src="*,16,5" Dest="*,2,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[1]" Src="*,16,10" Dest="*,2,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[1]" Src="*,16,6" Dest="*,2,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[1]" Src="*,16,7" Dest="*,2,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[1]" Src="*,16,8" Dest="*,2,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[1]" Src="*,16,11" Dest="*,2,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[1]" Src="*,16,12" Dest="*,2,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[2]" Src="*,*,*" Dest="*,3,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[2]" Src="*,*,*" Dest="*,3,$" IsRequired="True" NoSrcCell="True" DefaultValue="Propane"/>
+      <DxMapItem Name="Product.TheoreticalGallons[2]" Src="*,17,5" Dest="*,3,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[2]" Src="*,17,10" Dest="*,3,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[2]" Src="*,17,6" Dest="*,3,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[2]" Src="*,17,7" Dest="*,3,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[2]" Src="*,17,8" Dest="*,3,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[2]" Src="*,17,11" Dest="*,3,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[2]" Src="*,17,12" Dest="*,3,$" IsRequired="True" />
+
+
+      <DxMapItem Name="Product.RecordType[3]" Src="*,*,*" Dest="*,4,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[3]" Src="*,*,*" Dest="*,4,$" IsRequired="True" NoSrcCell="True" DefaultValue="IsoButane"/>
+      <DxMapItem Name="Product.TheoreticalGallons[3]" Src="*,18,5" Dest="*,4,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[3]" Src="*,18,10" Dest="*,4,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[3]" Src="*,18,6" Dest="*,4,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[3]" Src="*,18,7" Dest="*,4,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[3]" Src="*,18,8" Dest="*,4,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[3]" Src="*,18,11" Dest="*,4,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[3]" Src="*,18,12" Dest="*,4,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[4]" Src="*,*,*" Dest="*,5,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[4]" Src="*,*,*" Dest="*,5,$" IsRequired="True" NoSrcCell="True" DefaultValue="Butane"/>
+      <DxMapItem Name="Product.TheoreticalGallons[4]" Src="*,19,5" Dest="*,5,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[4]" Src="*,19,10" Dest="*,5,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[4]" Src="*,19,6" Dest="*,5,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[4]" Src="*,19,7" Dest="*,5,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[4]" Src="*,19,8" Dest="*,5,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[4]" Src="*,19,11" Dest="*,5,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[4]" Src="*,19,12" Dest="*,5,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[5]" Src="*,*,*" Dest="*,6,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[5]" Src="*,*,*" Dest="*,6,$" IsRequired="True" NoSrcCell="True" DefaultValue="IsoPentane"/>
+      <DxMapItem Name="Product.TheoreticalGallons[5]" Src="*,20,5" Dest="*,6,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[5]" Src="*,20,10" Dest="*,6,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[5]" Src="*,20,6" Dest="*,6,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[5]" Src="*,20,7" Dest="*,6,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[5]" Src="*,20,8" Dest="*,6,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[5]" Src="*,20,11" Dest="*,6,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[5]" Src="*,20,12" Dest="*,6,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[6]" Src="*,*,*" Dest="*,7,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[6]" Src="*,*,*" Dest="*,7,$" IsRequired="True" NoSrcCell="True" DefaultValue="Pentane"/>
+      <DxMapItem Name="Product.TheoreticalGallons[6]" Src="*,21,5" Dest="*,7,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[6]" Src="*,21,10" Dest="*,7,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[6]" Src="*,21,6" Dest="*,7,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[6]" Src="*,21,7" Dest="*,7,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[6]" Src="*,21,8" Dest="*,7,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[6]" Src="*,21,11" Dest="*,7,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[6]" Src="*,21,12" Dest="*,7,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[7]" Src="*,*,*" Dest="*,8,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[7]" Src="*,*,*" Dest="*,8,$" IsRequired="True" NoSrcCell="True" DefaultValue="Hexanes"/>
+      <DxMapItem Name="Product.TheoreticalGallons[7]" Src="*,22,5" Dest="*,8,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[7]" Src="*,22,10" Dest="*,8,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[7]" Src="*,22,6" Dest="*,8,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[7]" Src="*,22,7" Dest="*,8,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[7]" Src="*,22,8" Dest="*,8,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[7]" Src="*,22,11" Dest="*,8,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[7]" Src="*,22,12" Dest="*,8,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[8]" Src="*,*,*" Dest="*,9,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[8]" Src="*,*,*" Dest="*,9,$" IsRequired="True" NoSrcCell="True" DefaultValue="C3ToddHunter"/>
+      <DxMapItem Name="Product.TheoreticalGallons[8]" Src="*,23,5" Dest="*,9,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[8]" Src="*,23,10" Dest="*,9,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[8]" Src="*,23,6" Dest="*,9,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[8]" Src="*,23,7" Dest="*,9,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[8]" Src="*,23,8" Dest="*,9,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[8]" Src="*,23,11" Dest="*,9,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[8]" Src="*,23,12" Dest="*,9,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[9]" Src="*,*,*" Dest="*,10,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[9]" Src="*,*,*" Dest="*,10,$" IsRequired="True" NoSrcCell="True" DefaultValue="C3MarcusHook"/>
+      <DxMapItem Name="Product.TheoreticalGallons[9]" Src="*,24,5" Dest="*,10,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[9]" Src="*,24,10" Dest="*,10,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[9]" Src="*,24,6" Dest="*,10,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[9]" Src="*,24,7" Dest="*,10,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[9]" Src="*,24,8" Dest="*,10,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[9]" Src="*,24,11" Dest="*,10,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[9]" Src="*,24,12" Dest="*,10,$" IsRequired="True" />
+
+      <DxMapItem Name="Product.RecordType[10]" Src="*,*,*" Dest="*,11,$" IsRequired="True" NoSrcCell="True" DefaultValue="Product"/>
+      <DxMapItem Name="Product.ProductType[10]" Src="*,*,*" Dest="*,11,$" IsRequired="True" NoSrcCell="True" DefaultValue="NC4ToBroadmoor"/>
+      <DxMapItem Name="Product.TheoreticalGallons[10]" Src="*,25,5" Dest="*,11,$" IsRequired="True" />
+      <DxMapItem Name="Product.SettlementGallons[10]" Src="*,25,10" Dest="*,11,$" IsRequired="True" />
+      <DxMapItem Name="Product.AllocatedGallons[10]" Src="*,25,6" Dest="*,11,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkMMBTU[10]" Src="*,25,7" Dest="*,11,$" IsRequired="True" />
+      <DxMapItem Name="Product.ShrinkFactor[10]" Src="*,25,8" Dest="*,11,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidPrice[10]" Src="*,25,11" Dest="*,11,$" IsRequired="True" />
+      <DxMapItem Name="Product.LiquidValue[10]" Src="*,25,12" Dest="*,11,$" IsRequired="True" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[0]" Src="*,*,*" Dest="*,12,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[0]" Src="*,*,*" Dest="*,12,$" IsRequired="True" NoSrcCell="True" DefaultValue="Sulfur"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[0]" Src="*,43,8" Dest="*,12,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[1]" Src="*,*,*" Dest="*,13,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[1]" Src="*,*,*" Dest="*,13,$" IsRequired="True" NoSrcCell="True" DefaultValue="Nitrogen"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[1]" Src="*,44,8" Dest="*,13,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[2]" Src="*,*,*" Dest="*,14,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[2]" Src="*,*,*" Dest="*,14,$" IsRequired="True" NoSrcCell="True" DefaultValue="Carbon Dioxide"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[2]" Src="*,45,8" Dest="*,14,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[3]" Src="*,*,*" Dest="*,15,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[3]" Src="*,*,*" Dest="*,15,$" IsRequired="True" NoSrcCell="True" DefaultValue="OtherInerts"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[3]" Src="*,46,8" Dest="*,15,$" IsRequired="False" DefaultValue="0" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[4]" Src="*,*,*" Dest="*,16,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[4]" Src="*,*,*" Dest="*,16,$" IsRequired="True" NoSrcCell="True" DefaultValue="Methane"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[4]" Src="*,47,8" Dest="*,16,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[5]" Src="*,*,*" Dest="*,17,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[5]" Src="*,*,*" Dest="*,17,$" IsRequired="True" NoSrcCell="True" DefaultValue="Ethane"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[5]" Src="*,48,8" Dest="*,17,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[6]" Src="*,*,*" Dest="*,18,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[6]" Src="*,*,*" Dest="*,18,$" IsRequired="True" NoSrcCell="True" DefaultValue="Propane"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[6]" Src="*,49,8" Dest="*,18,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[7]" Src="*,*,*" Dest="*,19,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[7]" Src="*,*,*" Dest="*,19,$" IsRequired="True" NoSrcCell="True" DefaultValue="IsoButane"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[7]" Src="*,50,8" Dest="*,19,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[8]" Src="*,*,*" Dest="*,20,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[8]" Src="*,*,*" Dest="*,20,$" IsRequired="True" NoSrcCell="True" DefaultValue="Butane"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[8]" Src="*,51,8" Dest="*,20,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[9]" Src="*,*,*" Dest="*,21,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[9]" Src="*,*,*" Dest="*,21,$" IsRequired="True" NoSrcCell="True" DefaultValue="IsoPentane"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[9]" Src="*,52,8" Dest="*,21,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[10]" Src="*,*,*" Dest="*,22,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[10]" Src="*,*,*" Dest="*,22,$" IsRequired="True" NoSrcCell="True" DefaultValue="Pentane"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[10]" Src="*,53,8" Dest="*,22,$" IsRequired="False" />
+
+      <DxMapItem Name="GasAnalysis.RecordType[11]" Src="*,*,*" Dest="*,23,$" IsRequired="True" NoSrcCell="True" DefaultValue="GasAnalysis"/>
+      <DxMapItem Name="GasAnalysis.ProductType[11]" Src="*,*,*" Dest="*,23,$" IsRequired="True" NoSrcCell="True" DefaultValue="Hexanes Plus"/>
+      <DxMapItem Name="GasAnalysis.ComponentMassPercent[11]" Src="*,54,8" Dest="*,23,$" IsRequired="False" />
+
+      <DxMapItem Name="Fees.RecordType[0]" Src="*,*,*" Dest="*,24,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[0]" Src="*,43,0" Dest="*,24,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[0]" Src="*,43,2" Dest="*,24,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[0]" Src="*,43,3" Dest="*,24,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[0]" Src="*,43,4" Dest="*,24,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[0]" Src="*,*,*" Dest="*,24,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[1]" Src="*,*,*" Dest="*,25,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[1]" Src="*,44,0" Dest="*,25,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[1]" Src="*,44,2" Dest="*,25,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[1]" Src="*,44,3" Dest="*,25,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[1]" Src="*,44,4" Dest="*,25,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[1]" Src="*,*,*" Dest="*,25,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[2]" Src="*,*,*" Dest="*,26,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[2]" Src="*,45,0" Dest="*,26,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[2]" Src="*,45,2" Dest="*,26,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[2]" Src="*,45,3" Dest="*,26,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[2]" Src="*,45,4" Dest="*,26,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[2]" Src="*,*,*" Dest="*,26,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[3]" Src="*,*,*" Dest="*,27,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[3]" Src="*,46,0" Dest="*,27,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[3]" Src="*,46,2" Dest="*,27,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[3]" Src="*,46,3" Dest="*,27,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[3]" Src="*,46,4" Dest="*,27,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[3]" Src="*,*,*" Dest="*,27,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[4]" Src="*,*,*" Dest="*,28,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[4]" Src="*,47,0" Dest="*,28,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[4]" Src="*,47,2" Dest="*,28,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[4]" Src="*,47,3" Dest="*,28,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[4]" Src="*,47,4" Dest="*,28,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[4]" Src="*,*,*" Dest="*,28,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[5]" Src="*,*,*" Dest="*,29,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[5]" Src="*,48,0" Dest="*,29,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[5]" Src="*,48,2" Dest="*,29,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[5]" Src="*,48,3" Dest="*,29,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[5]" Src="*,48,4" Dest="*,29,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[5]" Src="*,*,*" Dest="*,29,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[6]" Src="*,*,*" Dest="*,30,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[6]" Src="*,49,0" Dest="*,30,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[6]" Src="*,49,2" Dest="*,30,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[6]" Src="*,49,3" Dest="*,30,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[6]" Src="*,49,4" Dest="*,30,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[6]" Src="*,*,*" Dest="*,30,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[7]" Src="*,*,*" Dest="*,31,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[7]" Src="*,50,0" Dest="*,31,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[7]" Src="*,50,2" Dest="*,31,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[7]" Src="*,50,3" Dest="*,31,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[7]" Src="*,50,4" Dest="*,31,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[7]" Src="*,*,*" Dest="*,31,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[8]" Src="*,*,*" Dest="*,32,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[8]" Src="*,51,0" Dest="*,32,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[8]" Src="*,51,2" Dest="*,32,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[8]" Src="*,51,3" Dest="*,32,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[8]" Src="*,51,4" Dest="*,32,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[8]" Src="*,*,*" Dest="*,32,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[9]" Src="*,*,*" Dest="*,33,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[9]" Src="*,52,0" Dest="*,33,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[9]" Src="*,52,2" Dest="*,33,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[9]" Src="*,52,3" Dest="*,33,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[9]" Src="*,52,4" Dest="*,33,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[9]" Src="*,*,*" Dest="*,33,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[10]" Src="*,*,*" Dest="*,34,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[10]" Src="*,53,0" Dest="*,34,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[10]" Src="*,53,2" Dest="*,34,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[10]" Src="*,53,3" Dest="*,34,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[10]" Src="*,53,4" Dest="*,34,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[10]" Src="*,*,*" Dest="*,34,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[11]" Src="*,*,*" Dest="*,35,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[11]" Src="*,54,0" Dest="*,35,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[11]" Src="*,54,2" Dest="*,35,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[11]" Src="*,54,3" Dest="*,35,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[11]" Src="*,54,4" Dest="*,35,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[11]" Src="*,*,*" Dest="*,35,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[12]" Src="*,*,*" Dest="*,36,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[12]" Src="*,55,0" Dest="*,36,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[12]" Src="*,55,2" Dest="*,36,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[12]" Src="*,55,3" Dest="*,36,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[12]" Src="*,55,4" Dest="*,36,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[12]" Src="*,*,*" Dest="*,36,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[13]" Src="*,*,*" Dest="*,37,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[13]" Src="*,56,0" Dest="*,37,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[13]" Src="*,56,2" Dest="*,37,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[13]" Src="*,56,3" Dest="*,37,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[13]" Src="*,56,4" Dest="*,37,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[13]" Src="*,*,*" Dest="*,37,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[14]" Src="*,*,*" Dest="*,38,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[14]" Src="*,57,0" Dest="*,38,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[14]" Src="*,57,2" Dest="*,38,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[14]" Src="*,57,3" Dest="*,38,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[14]" Src="*,57,4" Dest="*,38,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[14]" Src="*,*,*" Dest="*,38,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+
+      <DxMapItem Name="Fees.RecordType[15]" Src="*,*,*" Dest="*,39,$" IsRequired="True" NoSrcCell="True" DefaultValue="Fees"/>
+      <DxMapItem Name="Fees.FeeType[15]" Src="*,58,0" Dest="*,39,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Basis[15]" Src="*,58,2" Dest="*,39,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Rate[15]" Src="*,58,3" Dest="*,39,$" IsRequired="True" />
+      <DxMapItem Name="Fees.Value[15]" Src="*,58,4" Dest="*,39,$" IsRequired="True" />
+      <DxMapItem Name="Fees.UOMID[15]" Src="*,*,*" Dest="*,39,$" IsRequired="True" NoSrcCell="True" DefaultValue="2"/>
+    </DxMapItemSet>
+  </DxMap>
+  <DxProcessingRoutineSet>
+    <DxProcessingRoutine Name="FilterSheets" IncludeSheetFilter="!Gulfport Storage" />
+    <DxProcessingRoutine Name="SplitSheets" NewSheetIdentifier="PERCENT OF PROCEEDS STATEMENT" ColumnIdentifier="7" SplitSheetName="Gulfport Gas Statements" DiscardFirst="True" />
+    <DxProcessingRoutine Name="TrimSheets" />
+  </DxProcessingRoutineSet>
+</DxMapSet>

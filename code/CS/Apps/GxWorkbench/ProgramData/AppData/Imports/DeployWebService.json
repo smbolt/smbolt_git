@@ -1,0 +1,56 @@
+{
+    "Manifest": {
+        "JobName": "DeployWebService"
+    },
+    "Globals": {
+        "$SrcStem$": "\\\\gulfport.net\\data\\Applications\\Runtime_Resources",
+        "$DstStem$": "C:\\Gulfport\\WebServices",
+        "$AppPoolName$": ""
+    },
+    "Parameters": {
+        "$Env$": "Test",
+        "$Release$": "Latest",
+        "$WebSiteName$": "",
+        "$AppPoolName$": ""
+    },
+    "Step01": {
+        "TaskName": "StopWebService",
+        "GxTaskObjectType": "WebSiteMgmt",
+        "WebSiteName": "$WebSiteName$",
+        "AppPoolName": "$AppPoolName$"
+    },
+    "Step02": {
+        "TaskName": "MigrateFiles",
+        "Cond": "Step01=0",
+        "GxTaskObjectType": "FileMgmt",
+        "FileActions": {
+            "DeleteMainSvcBinaries": {
+                "FileAction": "Delete",
+                "Src": "$SrcStem$\\Stage\\$Release$\\Code\\Apps\\MainSvc\\*.*",
+                "Tgt": "$DstStem$\\$WebSiteName$\\bin"
+            },
+            "CopyMainSvcBinaries": {
+                "FileAction": "Copy|NoOverwrite|Strict",
+                "Src": "$SrcStem$\\Stage\\$Release$\\Code\\Apps\\MainSvc\\*.*",
+                "Tgt": "$DstStem$\\$WebSiteName$\\bin"
+            },
+            "VerifyMainSvcBinaries": {
+                "FileAction": "VerifyCompareInfo",
+                "Src": "$SrcStem$\\Stage\\$Release$\\Code\\Apps\\MainSvc\\*.*",
+                "Tgt": "$DstStem$\\$WebSiteName$\\bin"
+            }
+        }
+    },
+    "Step03": {
+        "TaskName": "StartWebService",
+        "Cond": "Step02 0",
+        "GxTaskObjectType": "WebSiteMgmt",
+        "WebSiteName": "$WebSiteName$",
+        "AppPoolName": "$AppPoolName$"
+    },
+    "Notify": [
+        "user1@gulfportenergy.com",
+        "user2@gulfportenergy.com",
+        "user3@gulfportenergy.com"
+    ]
+}

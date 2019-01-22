@@ -1,0 +1,49 @@
+﻿<DxMapSet Name="EQTDryGas" DxDocType="MidstreamPopStatement" OperatorName="EQT" PreProcessingRoutine="SplitSheets" >
+  
+  <DxMap Name="EQTDryGasMidstreamPop" DxMapType="SheetToSheet">
+    <DxFilterSet>
+      <DxFilter FilterMethod="RowFilterCellValues" RowFilterCellValues="0,2,@CONTAINS(Invoice Date)@"/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="ContractNumberVariable" Src="*,1,0" Dest="@ContractNumber" HelperFunction="SplitText" Delimiter="Colon" Token="1" />
+      <DxMapItem Name="ProductionDateVariable" Src="*,0,1" Dest="@ProductionDate" IsRequired="True" HelperFunction="SplitText" Delimiter="Space" Token="6" />
+    </DxMapItemSet>
+    <DxRegionSet>
+      <DxRegion Name="PreviousMonth" TopLeftCell="*~Pooling Detail" BottomRightCell="*~Meter Level Charges[1]" DxRegionExtractMethod="SkipThisRegion" >
+        <DxRegionRowSet>
+          <DxRegionRow Cond="0~Pooling Detail" Include="Numeric" />          
+        </DxRegionRowSet>
+      </DxRegion>
+      <DxRegion Name="CurrentMonth" TopLeftCell="*~Current Month Activity" DxRegionExtractMethod="RowToSheet">
+        <DxMapSet Name="CurrentMonth">
+          <DxMap Name="CurrentMonth" DxMapType="RowToSheet" SheetControl="NewSheetAfter" >
+            <DxFilterSet>
+              <DxFilter FilterMethod="RowFilterCellValues" RowFilterCellValues="*,0,[date]|*,3,[decn]|*,4,[decn]|*,5,[decn]|*,12,[decn]"/>
+            </DxFilterSet>
+            <DxMapItemSet>
+              <DxMapItem Name="Statement.RecordType" Src="*,*,*" Dest="*,0,$" IsRequired="True" NoSrcCell="True" DefaultValue="Statement" />
+              <DxMapItem Name="Statement.ProductionDate" Src="$ProductionDate" Dest="*,0,$" IsRequired="True" DataType="DateTime" />
+              <DxMapItem Name="Statement.AccountingDate" Src="$ProductionDate" Dest="*,0,$" IsRequired="True" DataType="DateTime" />
+              <DxMapItem Name="Statement.ContractNumber" Src="$ContractNumber" Dest="*,0,$" DataType="Varchar" />
+              <DxMapItem Name="Statement.MeterNumber" Src="*,*,1" Dest="*,0,$" DataType="Varchar" />
+              <DxMapItem Name="Statement.MeterName" Src="*,*,2" Dest="*,0,$" DataType="Varchar" />
+              <DxMapItem Name="Statement.WHPaystationMCF" Src="*,*,3" Dest="*,0,$" DataType="Float" />
+              <DxMapItem Name="Statement.ResiduePlantBTU" Src="*,*,4" Dest="*,0,$" DataType="Float" HelperFunction="MultiplyBy(0.001)"/>
+              <DxMapItem Name="Statement.WHPaystationMMBTU" Src="*,*,5" Dest="*,0,$" DataType="Float" />
+              <DxMapItem Name="Statement.WHPlantFuelMMBTU" Src="*,*,6" Dest="*,0,$" DataType="Float" />
+              <DxMapItem Name="Statement.AllocatedResidueMMBTU" Src="*,*,7" Dest="*,0,$" DataType="Float" />
+              <DxMapItem Name="Statement.WHGrossDeliverMMBTU" Src="*,*,8" Dest="*,0,$" DataType="Float" />
+              <DxMapItem Name="Statement.WHFieldFuelMMBTU" Src="*,*,9" Dest="*,0,$" DataType="Float" />
+              <DxMapItem Name="Statement.WHNetDeliveredMMBTU" Src="*,*,10" Dest="*,0,$" DataType="Float" />
+              <DxMapItem Name="Statement.WHNetDeliveredMCF" Src="*,*,11" Dest="*,0,$" DataType="Float" />
+              <DxMapItem Name="Statement.FeesAndAdjustments" Src="*,*,12" Dest="*,0,$" DataType="Float" />
+            </DxMapItemSet>
+          </DxMap>          
+        </DxMapSet>
+      </DxRegion>
+    </DxRegionSet>
+  </DxMap>
+  <DxProcessingRoutineSet>
+    <DxProcessingRoutine Name="SplitSheets" NewSheetIdentifier="Billing" ColumnIdentifier="1" SplitSheetName="" />
+  </DxProcessingRoutineSet>
+</DxMapSet>

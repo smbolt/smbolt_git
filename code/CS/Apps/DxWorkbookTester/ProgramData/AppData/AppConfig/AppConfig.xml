@@ -1,0 +1,114 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="DxWorkbookTester">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$DB_SERVER$" V="OKC1EDW2001" />
+          <CI K="$WS_HOST$" V="OKC1WEB1001" />
+          <CI K="$WS_PORT$" V="32303" />
+          <CI K="$BRANCH$" V="FEAT-IM-50009" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="WebServiceMapName" V="BasinNonOpProduction" />
+          <CI K="MapPath" V="\\gulfport.net\data\Applications\Runtime_Resources\Test\Maps" />
+          <CI K="InDiagnosticsMode" V="True" />
+          <CI K="*Deserialize_DebugBreak" V="DxMapItemSet" />
+          <CI K="Serialize_DebugBreak" V="DxCellArray" />
+          <CI K="PROD_DBSERVER" V="OKC1EDW0001" />
+          <CI K="TEST_DBSERVER" V="OKC1EDW2001" />
+          <CI K="DEV_DBSERVER" V="OKC1EDW2001" />
+          <CI K="PROD_WSHOST" V="OKC1WEB0001" />
+          <CI K="PROD2_WSHOST" V="OKC1WEB0001" />
+          <CI K="PROD_ISO_WSHOST" V="OKC1WEB0001" />
+          <CI K="TEST_WSHOST" V="OKC1WEB1001" />
+          <CI K="TEST2_WSHOST" V="OKC1WEB1001" />
+          <CI K="TEST_ISO_WSHOST" V="OKC1WEB1001" />
+          <CI K="DEV_WSHOST" V="LOCALHOST" />
+          <CI K="PROD_WSPORT" V="36303" />
+          <CI K="PROD_ISO_WSPORT" V="36304" />
+          <CI K="PROD2_WSPORT" V="36305" />
+          <CI K="TEST_WSPORT" V="32303" />
+          <CI K="TEST2_WSPORT" V="32305" />
+          <CI K="TEST_ISO_WSPORT" V="32304" />
+          <CI K="DEV_WSPORT" V="32001" />
+          <CI K="SelectedDbEnvironment" V="Test" />
+          <CI K="TaskToRun" V="MonthlyMidstreamPopWEX" />
+          <CI K="#TaskOverrideParms" V="InputFolder=Manual" />
+          <CI K="UseManualInputFolder" V="True" />
+          <CI K="LoadTaskFromConfig" V="False" />
+        </CIGroup>
+        <CIGroup Name="TasksConfigDbSpec">
+          <CI K="TasksDbServer" V="$DB_SERVER$" />
+          <CI K="TasksDbName" V="TaskScheduling" />
+          <CI K="TasksDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="StmtConfigDbSpec">
+          <CI K="StmtDbServer" V="$DB_SERVER$" />
+          <CI K="StmtDbName" V="GPStatement" />
+          <CI K="StmtDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="WsHostConfigWsSpec">
+          <CI K="WsHostWsBinding" V="BasicHttp" />
+          <CI K="WsHostWsHost" V="$WS_HOST$" />
+          <CI K="WsHostWsPort" V="$WS_PORT$" />
+          <CI K="@WsHostWsHost" V="localhost" />
+          <CI K="@WsHostWsPort" V="32001" />
+          <CI K="WsHostWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="80" />
+          <CI K="MainFormVerticalSize" V="85" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="DbEnvironment">
+          <LI V="Test" />
+          <LI V="Prod" />
+          <LI V="Dev" />
+        </ConfigList>
+        <ConfigList Name="WsEnvironment">
+          <LI V="Test" />
+          <LI V="Test2" />
+          <LI V="Test_ISO" />
+          <LI V="Prod" />
+          <LI V="Prod2" />
+          <LI V="Prod_ISO" />
+          <LI V="Dev" />
+        </ConfigList>
+      </ConfigListSet>
+      <TaskConfigurations>
+        <TaskConfigSet Mode="FastTest">
+          <TaskConfig IsActive="False" Name="NonOpProductionSheridan" ProcessorName="NonOpProductionDataImport" ProcessorVersion="1.0.0.0" >
+            <TaskSchedule>
+              <TaskScheduleElement IsActive="True" ExecutionType="RunOnFrequency" FrequencySeconds="900" >
+                <TaskDateTime StartTime="06:00" EndTime="22:00" IntervalType="DailyInterval" />
+                <TaskCalendar WeekdayControl="TTTTTTT" OrdinalControl="FFFFFFFFFFF" SpecificDays="" PeriodContexts="NotSet" HolidayActions="RunOnHoliday" />
+                <TaskRunControl MaxRunTimeSeconds="0" MaxExecutions="0" AllowConcurrent="True" />
+              </TaskScheduleElement>
+            </TaskSchedule>
+            <TaskParmSet>
+              <TaskParm K="$FSSTEM$" V="\\gulfport.net\data\Applications\Data_Integration" />
+              <TaskParm K="$ENV$" V="Test" />
+              <TaskParm K="$TASKNODE$" V="NonOp_Sheridan" />
+              <TaskParm K="$CATALOG_STEM$" V="\\gulfport.net\data\Applications\Data_Integration" />
+              <TaskParm K="$CATALOG_NODE$" V="ComponentCatalog" />
+              <TaskParm K="OutputDbSpec" V="Stmt" />
+              <TaskParm K="ConfigWsSpec" V="http://OKC1WEB2001:32303/MainSvc.svc" />
+              <TaskParm K="InputFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Ready" />
+              <TaskParm K="ProcessedFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Processed" />
+              <TaskParm K="ErrorFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Error" />
+              <TaskParm K="IsDryRun" V="False" DataType="System.Boolean" />
+              <TaskParm K="TaskServiceID" V="1" DataType="System.Int32"/>
+              <TaskParm K="StatementType" V="NonOpStatement" />
+              <TaskParm K="Operator" V="Sheridan" />
+              <TaskParm K="MapName" V="SheridanNonOpProduction" />
+              <TaskParm K="ExtractTransName" V="ExcelExtract" />
+              <TaskParm K="OperatorID" V="78" DataType="System.Int32"/>
+              <TaskParm K="StatementTypeBusEntityId" V="37" DataType="System.Int32"/>
+            </TaskParmSet>
+          </TaskConfig>
+        </TaskConfigSet>
+      </TaskConfigurations>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

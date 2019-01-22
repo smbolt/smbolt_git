@@ -1,0 +1,4 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GraphicReports\obj\Debug\Org.GraphicReports.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GraphicReports\obj\Debug\Org.GraphicReports.Resource1.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GraphicReports\obj\Debug\Org.GraphicReports.csproj.GenerateResource.Cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GraphicReports\obj\Debug\Org.GraphicReports.csproj.CoreCompileInputs.cache

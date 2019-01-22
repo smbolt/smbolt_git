@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationTest", "NotificationTest.csproj", "{E71AEFF9-79AD-418B-8BAF-4EE818DADD92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{53954A66-CD15-4434-B9DC-368914E9564E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{97A360A4-5024-41F5-AA5E-14B18DDFBED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Notify", "..\..\Libs\Org.Notify\Org.Notify.csproj", "{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E71AEFF9-79AD-418B-8BAF-4EE818DADD92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71AEFF9-79AD-418B-8BAF-4EE818DADD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71AEFF9-79AD-418B-8BAF-4EE818DADD92}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E71AEFF9-79AD-418B-8BAF-4EE818DADD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71AEFF9-79AD-418B-8BAF-4EE818DADD92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71AEFF9-79AD-418B-8BAF-4EE818DADD92}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E71AEFF9-79AD-418B-8BAF-4EE818DADD92} = {53954A66-CD15-4434-B9DC-368914E9564E}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {97A360A4-5024-41F5-AA5E-14B18DDFBED1}
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1} = {97A360A4-5024-41F5-AA5E-14B18DDFBED1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73D8A9A6-378B-473F-8FB3-E7829ECC54D4}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = NotificationTest.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\Libs\\Org.Notify\\Org.Notify.csproj
+		SccProjectTopLevelParentUniqueName1 = NotificationTest.sln
+		SccProjectName1 = ../../Libs/Org.Notify
+		SccAuxPath1 = https://gulfportenergy.visualstudio.com
+		SccLocalPath1 = ..\\..\\Libs\\Org.Notify
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

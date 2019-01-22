@@ -1,0 +1,9 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.AdobeSdk\bin\Debug\Org.AdobeSdk.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.AdobeSdk\bin\Debug\Org.AdobeSdk.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.AdobeSdk\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.AdobeSdk\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.AdobeSdk\obj\Debug\Org.AdobeSdk.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.AdobeSdk\obj\Debug\Interop.Acrobat.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.AdobeSdk\obj\Debug\Org.AdobeSdk.csproj.ResolveComReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.AdobeSdk\obj\Debug\Org.AdobeSdk.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.AdobeSdk\obj\Debug\Org.AdobeSdk.pdb

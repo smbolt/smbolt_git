@@ -1,0 +1,27 @@
+﻿<DxMapSet Name="NonOpProduction-Citizen" DxDocType="NonOpProduction" OperatorName="Citizen">
+  <DxMap Name="WellNameMap" DxMapType="SheetMap"> 
+    <DxFilterSet>
+      <DxFilter FilterMethod="ColumnTypes" ColumnTypes="s,!,!,!,!,!"/>
+    </DxFilterSet> 
+    <DxMapItemSet>  
+      <DxMapItem Name="WellName" Src="*,0,0" Dest="$WellName" IsRequired="True"  />
+    </DxMapItemSet>
+  </DxMap>  
+  <DxMap Name="RowsMap" DxMapType="RowToRow">
+    <DxFilterSet>
+      <DxFilter FilterMethod="ColumnTypes" ColumnTypes="dt"/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="StatementStatusID" Src="*,*,*" Dest="*,*,1" IsRequired="True" DataType="Int"  NoSrcCell="True" DefaultValue="1"/>
+      <DxMapItem Name="OperatorWellID" Src="$WellName" Dest="*,*,2" IsRequired="False" DataType="Varchar" NoSrcCell="True"/>
+      <DxMapItem Name="WellName" Src="$WellName" Dest="*,*,3" IsRequired="True" NoSrcCell="True"/>
+      <DxMapItem Name="ProductionDate" Src="*,*,0" Dest="*,*,6" IsRequired="True" DataType="DateTime" Validate="True"/>
+      <DxMapItem Name="Oil" Src="*,*,1" Dest="*,*,10"  DataType="Float" />
+      <DxMapItem Name="Gas" Src="*,*,2" Dest="*,*,9"  DataType="Float" />
+      <DxMapItem Name="Water" Src="*,*,3" Dest="*,*,11"  DataType="Float" />
+      <DxMapItem Name="CasingPressure" Src="*,*,4" Dest="*,*,13"  DataType="Float" />
+      <DxMapItem Name="Choke" Src="*,*,5" Dest="*,*,14"  DataType="Float" HelperFunction="ChokeMVToZero"/>
+      <DxMapItem Name="TubingPressure" Src="*,*,6" Dest="*,*,12" DataType="Float" />
+    </DxMapItemSet>
+  </DxMap>
+</DxMapSet>

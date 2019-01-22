@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.SystemChecker", "Org.SystemChecker.csproj", "{6F8E1C34-182C-4727-9091-C8356E30426D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{9FCFC931-1E8E-4916-8CF2-4A76E0B6CC93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F8E1C34-182C-4727-9091-C8356E30426D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8E1C34-182C-4727-9091-C8356E30426D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8E1C34-182C-4727-9091-C8356E30426D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8E1C34-182C-4727-9091-C8356E30426D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F8E1C34-182C-4727-9091-C8356E30426D} = {9FCFC931-1E8E-4916-8CF2-4A76E0B6CC93}
+	EndGlobalSection
+EndGlobal

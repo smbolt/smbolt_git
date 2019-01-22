@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrTest", "MigrTest.csproj", "{DC6C188B-6A0A-450C-ABA4-E7B3B69B283D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{87B7E218-ABA9-474B-A194-2F78B2D38A47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{9FFAF062-35FC-42A3-960E-49F2A643EB20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.AX", "..\..\Libs\Org.AX\Org.AX.csproj", "{3A667DDD-7CE6-4DA2-9621-F76836D42724}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = MigrTest.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC6C188B-6A0A-450C-ABA4-E7B3B69B283D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6C188B-6A0A-450C-ABA4-E7B3B69B283D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6C188B-6A0A-450C-ABA4-E7B3B69B283D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DC6C188B-6A0A-450C-ABA4-E7B3B69B283D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6C188B-6A0A-450C-ABA4-E7B3B69B283D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6C188B-6A0A-450C-ABA4-E7B3B69B283D}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{3A667DDD-7CE6-4DA2-9621-F76836D42724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A667DDD-7CE6-4DA2-9621-F76836D42724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A667DDD-7CE6-4DA2-9621-F76836D42724}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3A667DDD-7CE6-4DA2-9621-F76836D42724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A667DDD-7CE6-4DA2-9621-F76836D42724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A667DDD-7CE6-4DA2-9621-F76836D42724}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC6C188B-6A0A-450C-ABA4-E7B3B69B283D} = {87B7E218-ABA9-474B-A194-2F78B2D38A47}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {9FFAF062-35FC-42A3-960E-49F2A643EB20}
+		{3A667DDD-7CE6-4DA2-9621-F76836D42724} = {9FFAF062-35FC-42A3-960E-49F2A643EB20}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeTest", "CodeTest.csproj", "{5E583230-B112-41A0-93E8-90611CC9257F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 -App", "01 -App", "{AEF3B6AD-6683-40B6-BB52-6554783819FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{EC7DA6B3-A76C-4C9F-BA04-1FE230BE28F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E583230-B112-41A0-93E8-90611CC9257F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E583230-B112-41A0-93E8-90611CC9257F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E583230-B112-41A0-93E8-90611CC9257F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E583230-B112-41A0-93E8-90611CC9257F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E583230-B112-41A0-93E8-90611CC9257F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E583230-B112-41A0-93E8-90611CC9257F}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5E583230-B112-41A0-93E8-90611CC9257F} = {AEF3B6AD-6683-40B6-BB52-6554783819FC}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {EC7DA6B3-A76C-4C9F-BA04-1FE230BE28F9}
+	EndGlobalSection
+EndGlobal

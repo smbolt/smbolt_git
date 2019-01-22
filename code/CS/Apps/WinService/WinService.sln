@@ -1,0 +1,141 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{C9DC16FF-B386-422B-B699-CA208CC85448}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{EB48D513-1ABB-4262-8AEC-95D9F5070777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.WinService", "WinService\Org.WinService.csproj", "{19B6AE2E-5D69-4C4C-B475-2380EF3686A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.WSO", "..\..\Libs\Org.WSO\Org.WSO.csproj", "{371D3EDF-6965-4A65-919C-C49E1546FD33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TSK", "..\..\Libs\Org.TSK\Org.TSK.csproj", "{7FA02D66-E682-4BDF-8487-75753948B2FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TP", "..\..\Libs\Org.TP\Org.TP.csproj", "{859B20F5-1182-4480-8CE5-F3A794A488B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.WinSvc", "..\..\Libs\Org.WinSvc\Org.WinSvc.csproj", "{40604B3B-C130-44A8-9C4F-DE757AD152B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "90 - Nuget", "90 - Nuget", "{95AD2347-5E34-44B1-8BAA-E32BC8A0E4E4}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Notify", "..\..\Libs\Org.Notify\Org.Notify.csproj", "{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TSK.Business", "..\..\Libs\Org.TSK.Business\Org.TSK.Business.csproj", "{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19B6AE2E-5D69-4C4C-B475-2380EF3686A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B6AE2E-5D69-4C4C-B475-2380EF3686A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B6AE2E-5D69-4C4C-B475-2380EF3686A4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{19B6AE2E-5D69-4C4C-B475-2380EF3686A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B6AE2E-5D69-4C4C-B475-2380EF3686A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B6AE2E-5D69-4C4C-B475-2380EF3686A4}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|x86.ActiveCfg = Release|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Release|x86.ActiveCfg = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|x86.ActiveCfg = Release|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|x86.Build.0 = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|x86.Build.0 = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19B6AE2E-5D69-4C4C-B475-2380EF3686A4} = {C9DC16FF-B386-422B-B699-CA208CC85448}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {EB48D513-1ABB-4262-8AEC-95D9F5070777}
+		{371D3EDF-6965-4A65-919C-C49E1546FD33} = {EB48D513-1ABB-4262-8AEC-95D9F5070777}
+		{7FA02D66-E682-4BDF-8487-75753948B2FC} = {EB48D513-1ABB-4262-8AEC-95D9F5070777}
+		{859B20F5-1182-4480-8CE5-F3A794A488B6} = {EB48D513-1ABB-4262-8AEC-95D9F5070777}
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9} = {EB48D513-1ABB-4262-8AEC-95D9F5070777}
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1} = {EB48D513-1ABB-4262-8AEC-95D9F5070777}
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0} = {EB48D513-1ABB-4262-8AEC-95D9F5070777}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04411DF6-C88C-483E-8894-21D57522D7AF}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = WinService.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\Libs\\Org.WSO\\Org.WSO.csproj
+		SccProjectTopLevelParentUniqueName1 = WinService.sln
+		SccProjectName1 = ../../Libs/Org.WSO
+		SccAuxPath1 = https://gulfportenergy.visualstudio.com
+		SccLocalPath1 = ..\\..\\Libs\\Org.WSO
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\..\\Libs\\Org.TP\\Org.TP.csproj
+		SccProjectTopLevelParentUniqueName2 = WinService.sln
+		SccProjectName2 = ../../Libs/Org.TP
+		SccAuxPath2 = https://gulfportenergy.visualstudio.com
+		SccLocalPath2 = ..\\..\\Libs\\Org.TP
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\..\\Libs\\Org.Notify\\Org.Notify.csproj
+		SccProjectTopLevelParentUniqueName3 = WinService.sln
+		SccProjectName3 = ../../Libs/Org.Notify
+		SccAuxPath3 = https://gulfportenergy.visualstudio.com
+		SccLocalPath3 = ..\\..\\Libs\\Org.Notify
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

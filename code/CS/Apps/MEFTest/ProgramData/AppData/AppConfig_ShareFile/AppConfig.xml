@@ -1,0 +1,92 @@
+﻿<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="MEFTest">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$ENV-PARM$" V="Test" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="IsDryRun" V="False" />
+          <CI K="ModulesPath" V="C:\DEV-MAIN\Main\Libs\Org.ShareFile.Tasks\bin\Debug" />
+          <CI K="LogConfigDbSpec" V="Log" />
+          <CI K="GetParmsFromDb" V="False" />
+          <CI K="ProcessInputFile" V="False" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="Database" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="NotSet" />
+          <CI K="LogFileSizeManagementMethod" V="NotManagedByThisApp" />
+          <CI K="LogFileSizeManagementAgent" V="None" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="LogConfigDbSpec">
+          <CI K="LogDbServer" V="OKC1EDW2001" />
+          <CI K="LogDbName" V="Logging" />
+          <CI K="LogDbType" V="SqlServer" />
+          <CI K="LogDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TaskSchedulingProdConfigDbSpec">
+          <CI K="TaskSchedulingProdDbServer" V="OKC1EDW0001" />
+          <CI K="TaskSchedulingProdDbName" V="TaskScheduling" />
+          <CI K="TaskSchedulingProdDbType" V="SqlServer" />
+          <CI K="TaskSchedulingProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TaskSchedulingTestConfigDbSpec">
+          <CI K="TaskSchedulingTestDbServer" V="OKC1EDW2001" />
+          <CI K="TaskSchedulingTestDbName" V="TaskScheduling" />
+          <CI K="TaskSchedulingTestDbType" V="SqlServer" />
+          <CI K="TaskSchedulingTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="ShareFileParms">
+          <CI K="ShareFileHostName" V="gulfportenergy.sf-api.com" />
+          <CI K="ShareFileUserName" V="sbolt@gulfportenergy.com" />
+          <CI K="ShareFilePassword" V="gen126@Gulfport" />
+          <CI K="ShareFileClientId" V="fNPDiJP3kLDsqf4ZsYqKeZNMK6IIp8Uw" />
+          <CI K="ShareFileClientSecret" V="e7qQvOzdGwAmSSxp1ymsjx2BR40L96RUOtHdeLimCUiVuTEr" />
+        </CIGroup>
+        <CIGroup Name="ShareFileOptions">
+          <CI K="RootFolderId" V="fob7b28f-fa08-4516-be92-715c5951b0dd" />
+          <CI K="RemoteTargetFolder" V="UPLOAD" />
+          <CI K="RemoteArchiveFolder" V="ARCHIVE" />
+          <CI K="SuppressRemoteDelete" V="True" />
+          <CI K="ArchiveRemoteFiles" V="True" />
+          <CI K="AllowDuplicateFiles" V="False" />
+          <CI K="ArchiveFolder" V="C:\Nathan\Archive\" />
+          <CI K="UploadFilePath" V="C:\Nathan\Download\Test.txt" />
+          <CI K="UploadFolderPath" V="\\gulfport.net\data\Gulfport\Applications\Data_Integration\Test\ShareFile\Ready" />
+          <CI K="DeleteFileName" V="File - Copy - Copy.txt" />
+          <CI K="OutputFolderPath" V="C:\Nathan\Download" />
+          <CI K="MaxFilesUpload" V="20" />
+          <CI K="MaxUploadSize" V="2000000" />
+          <CI K="MaxFilesDownload" V="20" />
+          <CI K="MaxDownloadSize" V="2000000" />
+        </CIGroup>
+      </CISet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="TaskInfoDictionary">
+          <DI K="LEGEND" V="[TaskProcessorName]|[TaskProcessorVersion]|[TaskNodeFolder]|[StatementType]|[InputDbSpec]|[OutputDbSpec]" />
+          <DI K="ListRemoteFolder" V="ShareFileUtility|1.0.0.0||||" />
+          <DI K="UploadSingleFile" V="ShareFileUtility|1.0.0.0||||" />
+          <DI K="UploadByFolder" V="ShareFileUtility|1.0.0.0||||" />
+          <DI K="DeleteRemoteFile" V="ShareFileUtility|1.0.0.0||||" />
+          <DI K="ClearRemoteFolder" V="ShareFileUtility|1.0.0.0||||" />
+          <DI K="DailyDownloadLaScadaFiles" V="ShareFileUtility|1.0.0.0||||" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ShareFileLoginParms">
+          <DI K="HostName" V="gulfportenergy.sf-api.com" />
+          <DI K="UserName" V="sbolt@gulfportenergy.com" />
+          <DI K="Password" V="gen126@Gulfport" />
+          <DI K="ClientId" V="fNPDiJP3kLDsqf4ZsYqKeZNMK6IIp8Uw" />
+          <DI K="ClientSecret" V="e7qQvOzdGwAmSSxp1ymsjx2BR40L96RUOtHdeLimCUiVuTEr" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="EnvironmentDictionary">
+          <DI K="Production" V="Prod" />
+          <DI K="Test" V="Test" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

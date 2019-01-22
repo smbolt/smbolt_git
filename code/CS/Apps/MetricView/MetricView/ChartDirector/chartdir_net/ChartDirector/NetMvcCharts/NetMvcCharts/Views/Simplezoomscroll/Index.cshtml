@@ -1,0 +1,64 @@
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Zooming and Scrolling</title>
+    @Scripts.Render("~/Scripts/cdjcv.js")
+</head>
+<body style="margin:0px;">
+<script type="text/javascript">
+
+//
+// Execute the following initialization code after the web page is loaded
+//
+JsChartViewer.addEventListener(window, 'load', function() {
+    // Update the chart when the view port has changed (eg. when the user zooms in using the mouse)
+    var viewer = JsChartViewer.get('@ViewBag.Viewer.ID');
+    viewer.attachHandler("ViewPortChanged", viewer.partialUpdate);
+
+    // Set the initial mouse usage to "scroll"
+    viewer.setMouseUsage(JsChartViewer.Scroll);
+    document.getElementById("scrollChart").checked = true;
+});
+
+</script>
+<form method="post" id="SimpleZoomScroll">
+<table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td align="right" colspan="2" style="background:#000088">
+            <div style="padding:0px 3px 2px 0px; font:italic bold 10pt Arial;">
+                <a style="color:#FFFF00; text-decoration:none" href="http://www.advsofteng.com/">Advanced Software Engineering</a>
+            </div>
+        </td>
+    </tr>
+    <tr valign="top">
+        <td style="width:127px; background:#c0c0ff; border-right:black 1px solid; border-bottom:black 1px solid;">
+        <div style="font:9pt Verdana; padding:10px 0px 0px 3px; line-height:1.5; width:127px">
+            <!-- The onclick handler of the following radio buttons sets the mouse usage mode. -->
+            <input name="mouseUsage" id="scrollChart" type="radio"
+                onclick="JsChartViewer.get('@ViewBag.Viewer.ID').setMouseUsage(JsChartViewer.Scroll)" />
+            Drag To Scroll<br />
+            <input name="mouseUsage" id="zoomInChart" type="radio"
+                onclick="JsChartViewer.get('@ViewBag.Viewer.ID').setMouseUsage(JsChartViewer.ZoomIn)" />
+            Zoom In<br />
+            <input name="mouseUsage" id="zoomOutChart" type="radio"
+                onclick="JsChartViewer.get('@ViewBag.Viewer.ID').setMouseUsage(JsChartViewer.ZoomOut)" />
+            Zoom Out<br />
+        </div>
+        </td>
+        <td>
+            <div style="font-weight:bold; font-size:20pt; margin:5px 0px 0px 5px; font-family:Arial">
+                Simple Zooming and Scrolling
+            </div>
+            <hr style="border:solid 1px #000080" />
+            <div style="padding:0px 5px 5px 10px">
+                <!-- ****** Here is the chart viewer ****** -->
+                @Html.Raw(ViewBag.Viewer.RenderHTML())
+            </div>
+        </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

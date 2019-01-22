@@ -1,0 +1,7 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\obj\Debug\DocGen.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\bin\Debug\Org.DocGen.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\bin\Debug\Org.DocGen.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\obj\Debug\Org.DocGen.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\obj\Debug\Org.DocGen.pdb

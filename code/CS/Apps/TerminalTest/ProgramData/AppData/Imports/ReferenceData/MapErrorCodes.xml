@@ -1,0 +1,203 @@
+﻿<MapErrorSet>
+  <MapError Code="3001" Level="0" Msg="" />
+  <MapError Code="3002" Level="0" Msg="" />
+  <MapError Code="3003" Level="0" Msg="" />
+  <MapError Code="3004" Level="0" Msg="" />
+  <MapError Code="3005" Level="0" Msg="" />
+  <MapError Code="3006" Level="0" Msg="" />
+  <MapError Code="3007" Level="0" Msg="" />
+  <MapError Code="3008" Level="0" Msg="" />
+  <MapError Code="3009" Level="0" Msg="" />
+  <MapError Code="3010" Level="0" Msg="" />
+  
+  <MapError Code="3011" Level="0" Msg="" />
+  <MapError Code="3012" Level="0" Msg="" />
+  <MapError Code="3013" Level="0" Msg="" />
+  <MapError Code="3014" Level="0" Msg="" />
+  <MapError Code="3015" Level="0" Msg="" />
+  <MapError Code="3016" Level="0" Msg="" />
+  <MapError Code="3017" Level="0" Msg="" />
+  <MapError Code="3018" Level="0" Msg="" />
+  <MapError Code="3019" Level="0" Msg="" />
+
+  <MapError Code="3020" Level="0" Msg="" />
+  <MapError Code="3021" Level="0" Msg="" />
+  <MapError Code="3022" Level="0" Msg="" />
+  <MapError Code="3023" Level="0" Msg="" />
+  <MapError Code="3024" Level="0" Msg="" />
+  <MapError Code="3025" Level="0" Msg="" />
+  <MapError Code="3026" Level="0" Msg="" />
+  <MapError Code="3027" Level="0" Msg="" />
+  <MapError Code="3028" Level="0" Msg="" />
+  <MapError Code="3029" Level="0" Msg="" />
+
+  <MapError Code="3030" Level="0" Msg="" />
+  <MapError Code="3031" Level="0" Msg="" />
+  <MapError Code="3032" Level="0" Msg="" />
+  <MapError Code="3033" Level="0" Msg="" />
+  <MapError Code="3034" Level="0" Msg="" />
+  <MapError Code="3035" Level="0" Msg="" />
+  <MapError Code="3036" Level="0" Msg="" />
+  <MapError Code="3037" Level="0" Msg="" />
+  <MapError Code="3038" Level="0" Msg="" />
+  <MapError Code="3039" Level="0" Msg="" />
+
+  <MapError Code="3040" Level="0" Msg="" />
+  <MapError Code="3041" Level="0" Msg="" />
+  <MapError Code="3042" Level="0" Msg="" />
+  <MapError Code="3043" Level="0" Msg="" />
+  <MapError Code="3044" Level="0" Msg="" />
+  <MapError Code="3045" Level="0" Msg="" />
+  <MapError Code="3046" Level="0" Msg="" />
+  <MapError Code="3047" Level="0" Msg="" />
+  <MapError Code="3048" Level="0" Msg="" />
+  <MapError Code="3049" Level="0" Msg="" />
+
+  <MapError Code="3050" Level="0" Msg="" />
+  <MapError Code="3051" Level="0" Msg="" />
+  <MapError Code="3052" Level="0" Msg="" />
+  <MapError Code="3053" Level="0" Msg="" />
+  <MapError Code="3054" Level="0" Msg="" />
+  <MapError Code="3055" Level="0" Msg="" />
+  <MapError Code="3056" Level="0" Msg="" />
+  <MapError Code="3057" Level="0" Msg="" />
+  <MapError Code="3058" Level="0" Msg="" />
+  <MapError Code="3059" Level="0" Msg="" />
+
+  <MapError Code="3060" Level="0" Msg="" />
+  <MapError Code="3061" Level="0" Msg="" />
+  <MapError Code="3062" Level="0" Msg="" />
+  <MapError Code="3063" Level="0" Msg="" />
+  <MapError Code="3064" Level="0" Msg="" />
+  <MapError Code="3065" Level="0" Msg="" />
+  <MapError Code="3066" Level="0" Msg="" />
+  <MapError Code="3067" Level="0" Msg="" />
+  <MapError Code="3068" Level="0" Msg="" />
+  <MapError Code="3069" Level="0" Msg="" />
+
+  <MapError Code="3070" Level="0" Msg="" />
+  <MapError Code="3071" Level="0" Msg="" />
+  <MapError Code="3072" Level="0" Msg="" />
+  <MapError Code="3073" Level="0" Msg="" />
+  <MapError Code="3074" Level="0" Msg="" />
+  <MapError Code="3075" Level="0" Msg="" />
+  <MapError Code="3076" Level="0" Msg="" />
+  <MapError Code="3077" Level="0" Msg="" />
+  <MapError Code="3078" Level="0" Msg="" />
+  <MapError Code="3079" Level="0" Msg="" />
+
+  <MapError Code="3080" Level="0" Msg="" />
+  <MapError Code="3081" Level="0" Msg="" />
+  <MapError Code="3082" Level="0" Msg="" />
+  <MapError Code="3083" Level="0" Msg="" />
+  <MapError Code="3084" Level="0" Msg="" />
+  <MapError Code="3085" Level="0" Msg="" />
+  <MapError Code="3086" Level="0" Msg="" />
+  <MapError Code="3087" Level="0" Msg="" />
+  <MapError Code="3088" Level="0" Msg="" />
+  <MapError Code="3089" Level="0" Msg="" />
+
+  <MapError Code="3090" Level="0" Msg="" />
+  <MapError Code="3091" Level="0" Msg="" />
+  <MapError Code="3092" Level="0" Msg="" />
+  <MapError Code="3093" Level="0" Msg="" />
+  <MapError Code="3094" Level="0" Msg="" />
+  <MapError Code="3095" Level="0" Msg="" />
+  <MapError Code="3096" Level="0" Msg="" />
+  <MapError Code="3097" Level="0" Msg="" />
+  <MapError Code="3098" Level="0" Msg="" />
+  <MapError Code="3099" Level="0" Msg="" />
+  
+</MapErrorSet>
+
+<!--
+
+DFHMSD  Mapset definition and termination errors
+
+A MAXIMUM OF 3 OPERANDS ALLOWED IN CTRL
+CANNOT HAVE MORE THAN ONE DFHMSD MACRO
+DSATTS IS SPECIFIED WITHOUT MAPATTS
+EXTATT CONFLICTS WITH DSATTS/MAPATTS
+EXTATT NOT NO, MAPONLY OR YES
+INVALID CURSLOC - cursloc
+INVALID LANG - lang
+INVALID MODE - mode
+INVALID STORAGE - storage
+INVALID TIOAPFX - tioapfx
+INVALID TYPE - type
+MAPSET NAME IS MISSING
+POSITIONAL OPERAND xxxx INVALID
+
+
+DFHMDI (Map definition errors)
+
+A MAXIMUM OF 3 OPERANDS ALLOWED IN CTRL
+COLUMN CANNOT EXCEED nn
+DSATTS is specified without MAPATTS
+EXTATT conflicts with MAPATTS/DSATTS
+EXTATT not omitted, NO, MAPONLY or YES
+INVALID CTRL OPTION - ctrl
+INVALID CURSLOC - cursloc
+INVALID MODE - mode
+INVALID SIZE - size
+INVALID TIOAPFX - tioapfx
+LINE CANNOT EXCEED nn
+MAPNAME IS MISSING
+MSD AND MDI TYPE MISMATCH
+POSITIONAL OPERAND xxxx INVALID
+
+
+DFHMDF  Field definition errors
+
+A MAXIMUM OF 2 OPERANDS ALLOWED IN JUSTIFY
+ADJACENT ATTRIBUTE AT POS nnn
+ATTRIBUTE CONFLICT - ALPHA AND NUM
+ATTRIBUTE CONFLICT - ASKIP AND ALPHA
+ATTRIBUTE CONFLICT - ASKIP AND NUM
+ATTRIBUTE CONFLICT - ASKIP AND PROT
+ATTRIBUTE CONFLICT - ASKIP AND UNPROT
+ATTRIBUTE CONFLICT - BRT AND DRK
+ATTRIBUTE CONFLICT - BRT AND NORM
+ATTRIBUTE CONFLICT - NORM AND DRK
+ATTRIBUTE CONFLICT - PROT AND UNPROT
+BAD LENGTH - length
+BOTH INITIAL AND XINIT ARE SPECIFIED
+CONFLICTING JUSTIFY PARMS
+GRPNAME AND OCCURS ARE SPECIFIED
+GRPNAME SPECIFIED WITHOUT FLDNAME
+IC ATTRIBUTE HAS OCCURRED IN ANOTHER MDF MACRO
+INITIAL/XINIT IS GREATER THAN LENGTH
+INITIAL/XINIT IS INVALID WITH LENGTH=0
+INVALID ATTRB OPTION – attrb
+INVALID COLOR
+INVALID JUSTIFY OPTION - justify
+INVALID OCCURS - occurs
+INVALID POS - pos
+JUSTIFY CONFLICT - BLANK AND ZERO
+JUSTIFY CONFLICT - LEFT AND RIGHT
+LENGTH=0 IS INVALID FOR NAMED FIELD
+PICIN/PICOUT CAN ONLY BE SPECIFIED FOR A NAMED FIELD
+PICIN/PICOUT HAS ODD NUMBER OF HEX DIGITS
+PICIN/PICOUT HEX LENGTH NOT EQUAL TO LENGTH
+PICIN/PICOUT IS INVALID
+PICIN/PICOUT: 1ST PAIR NOT 40, 5C, 5B, 4D
+PICIN/PICOUT: NUMBER OF 20/21 IS NOT ODD
+POS nnn OVERLAPS WITH ANOTHER FIELD
+POS COLUMN+LENGTH EXCEEDS DEFINED MAP SIZE
+POS EXCEEDS DEFINED MAP SIZE
+POS HAS TOO MANY PARAMETERS
+POSITIONAL OPERAND xxxx INVALID
+SINGLE POS EXCEEDS DEFINED MAP SIZE
+SPECIAL FORMAT XINIT CANNOT BE SPECIFIED IF LENGTH IS LESS
+THAN 8
+UNNAMED FIELD HAS UNPROT OR FSET, INPUT DATA CANNOT BE
+MAPPED
+XINIT HAS ODD NUMBER OF HEX DIGITS
+The following errors occur owing to internal limits.
+Please report them.
+AN INTERNAL ERROR HAS OCCURRED
+ERROR IN ATTRIBUTE TABLE nnnn
+AN INTERNAL ERROR HAS OCCURRED
+
+
+-->

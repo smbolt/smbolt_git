@@ -1,0 +1,14 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\obj\x86\Debug\SvnHelper.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\obj\x86\Debug\Org.SvnHelper.frmMain.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\obj\x86\Debug\Org.SvnHelper.Properties.Resources.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\obj\x86\Debug\SvnHelper.csproj.GenerateResource.Cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\obj\x86\Debug\SvnHelper.csproj.CoreCompileInputs.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\bin\x86\Debug\Org.SvnHelper.exe.config
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\bin\x86\Debug\Org.SvnHelper.exe
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\bin\x86\Debug\Org.SvnHelper.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\bin\x86\Debug\Org.CTL.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\bin\x86\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\bin\x86\Debug\Org.CTL.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\bin\x86\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\obj\x86\Debug\Org.SvnHelper.exe
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\SvnHelper\obj\x86\Debug\Org.SvnHelper.pdb

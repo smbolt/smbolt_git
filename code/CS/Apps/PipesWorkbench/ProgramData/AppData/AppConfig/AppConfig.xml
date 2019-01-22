@@ -1,0 +1,24 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="PipesWorkbench">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="PipeList64Path" V="C:\Utilities\PipeList64\pipelist64.exe" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="NamedPipeServers">
+          <LI V="Main" />
+        </ConfigList>
+        <ConfigList Name="NamedPipes">
+          <LI V="Main:Org\RemoteHostSvc\Main[4]" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

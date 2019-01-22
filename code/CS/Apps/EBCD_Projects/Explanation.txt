@@ -1,0 +1,13 @@
+EBCD is Encrypted Binary Control Data
+
+EKV2 is Encryption Key Vault?  Not really sure.
+
+Executable Projects are:
+
+1. EBCD_Builder - Creates named key value pair files as binary data.
+
+2. EBCD_Batch - Creates Resource Files with embedded EBCD data inside it.
+
+
+Not fully sure how to implement an end-to-end solution where the Resource file is compiled into an app (as of now)
+Or how to use the EBCD.bin data in an application from a folder (rather than from a resource file).

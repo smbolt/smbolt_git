@@ -1,0 +1,40 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="Global">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="GlobalOption1" V="GlobalValue1" />
+        </CIGroup>
+      </CISet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="Migrate">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="ConfigArgs" V="p=WellMaster_Stage ~-ro" />
+          <CI K="~DebugBreak" V="IncludedFile" />
+          <CI K="ConfirmClose" V="True" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="ProfilePaths">
+          <LI V="$IMPORTS$\MigrateProfiles" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

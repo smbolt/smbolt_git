@@ -1,0 +1,62 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="DocDesign">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="UseUIState" V="True" />
+          <CI K="DebugElementsAtPoint" V="True" />
+          <CI K="InitialScale" V="150" />
+          <CI K="LastPackageUsed" V="IndexCard" />
+        </CIGroup>
+        <CIGroup Name="FilePaths">
+          <CI K="ImagePath" V="C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\_CreatedOutput\Images" />
+          <CI K="DocPath" V="C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\_CreatedOutput\Documents" />
+          <CI K="PackagePath" V="C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\_ResumeConfigs" />
+          <CI K="ResumeOutXml" V="C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DocGen\_Content\ResumesOut.xml" />
+          <CI K="WordFilePath" V="C:\DevProjects\Main\Source\ResumeImage\ResumeDocs\Courtney Bolt - Resume.docx" />
+          <CI K="ResumeDocs" V="C:\DevProjects\Main\Source\ResumeImage\ResumeDocs" />
+          <CI K="HyphenationData" V="C:\DevProjects\Main\SpellChecker\WordLists\hyph_en_US\hyph_en_US.dic" />
+          <CI K="DictionaryData" V="C:\DevProjects\Main\SpellChecker\WordLists\en_US\en_US.dic" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="None" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+      </CISet>
+      <UIState>
+        <UIWindowSet>
+          <UIWindow Name="MainForm" StartPosition="CenterScreen" IsMainForm="True">
+            <WindowLocation IsVisible="True" SizeMode="PercentOfScreen" Location="0,0" Size="0.995,0.99" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Text" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="99,380" Size="1038,314" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Info" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsVisible="True" Location="400,346" Size="240,302" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_ControlPanel" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="200,200" Size="240,605" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Properties" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="735,262" Size="390,601" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Image" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="150,241" Size="1008,586" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Debug" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsVisible="True" Location="200,200" Size="921,327" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_TreeView" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsVisible="True" Location="650,250" Size="0,0" />
+          </UIWindow>
+        </UIWindowSet>
+      </UIState>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

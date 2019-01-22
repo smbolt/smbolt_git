@@ -1,0 +1,35 @@
+
+      <UIState>
+        <UIWindowSet>
+          <UIWindow Name="MainForm" StartPosition="CenterScreen" IsMainForm="True">
+            <WindowLocation IsVisible="True" SizeMode="PercentOfScreen" Location="0,0" Size="0.9,0.95" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_TreeView" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="66,141" Size="342,560" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Text" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="99,380" Size="1038,314" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Info" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="400,346" Size="240,302" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_ControlPanel" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="200,200" Size="240,605" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Properties" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="735,262" Size="390,601" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Image" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="150,241" Size="1008,586" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Debug" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation Location="200,200" Size="921,327" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_DocTree" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsVisible="True" Location="650,250" Size="0,0" />
+          </UIWindow>
+          <UIWindow Name="ToolWindow_Code" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsVisible="True" Location="675,275" Size="0,0" />
+          </UIWindow>
+        </UIWindowSet>
+      </UIState>

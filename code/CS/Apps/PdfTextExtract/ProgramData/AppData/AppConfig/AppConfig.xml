@@ -1,0 +1,121 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="PdfTextExtract">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$BRANCH$" V="FEAT-SB-50007" />
+        </CIGroup>
+        <CIGroup Name="Control">
+          <CI K="MappedFilePath" V="\\gulfport.net\data\Applications\Data_Integration\Prod" />
+          <CI K="SelectedRootFolder" V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_OneOKDryGas\Ready" />
+          <CI K="@SelectedRootFolder" V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_DCPSuperplant\Ready" />
+          <CI K="#@SelectedRootFolder" V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_EnableDryGas\Ready" />
+          <CI K="!!SelectedRootFolder" V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_OneOK\Ready" />
+          <CI K="@#SelectedRootFolder" V="\\gulfport.net\data\Applications\Data_Integration\Test\SlawsonCheckDetail\Ready" />
+          <CI K="!SelectedRootFolder" V="\\gulfport.net\data\Applications\Data_Integration\Test\MWStmt-DryGasJefferson\Ready" />
+          <CI K="@@SelectedRootFolder" V="\\gulfport.net\data\Applications\Data_Integration\Test\MWStmt-DryGas\Ready" />
+          <CI K="#SelectedRootFolder" V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_Targa\Manual" />
+          <CI K="MapsFolder" V="\\gulfport.net\data\Applications\Runtime_Resources\Test\Maps" />
+          <CI K="SelectedFileNameFilter" V="*" />
+          <CI K="!AssignedMap" V="MWMidstreamDryGas" />
+          <CI K="#AssignedMap" V="SlawsonCheckDetail" />
+          <CI K="@AssignedMap" V="OneOKMidstreamPop-A" />
+          <CI K="AssignedMap" V="OneOKMidstreamDryGas_V001" />
+          <CI K="Location" V="Work" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="UseConfigErrorForm" V="True" />
+          <CI K="InDiagnosticsMode" V="True" />
+          <CI K="RunPostLoadCommands" V="True" />
+          <CI K="AllowDebugBreak" V="True" />
+          <CI K="HomeFsStem" V="c:\_work\FSSTEM" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="85" />
+          <CI K="MainFormVerticalSize" V="85" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="MapNames">
+          <LI V="DCPMidstreamPop-A" />
+          <LI V="DCPMidstreamPop-B" />
+          <LI V="DCPMidstreamPop-C" />
+          <LI V="EnableMidstreamDryGas-A" />
+          <LI V="EnableMidstreamPop-A" />
+          <LI V="EnableMidstreamPop-2018-03" />
+          <LI V="OneOKMidstreamDryGas-A" />
+          <LI V="OneOKMidstreamPop-A" />
+          <LI V="OneOKMidstreamPop-B" />
+          <LI V="TargaMidstreamPop-A" />
+          <LI V="TargaMidstreamPop-B" />
+          <LI V="MWMidstreamPrelimGas" />
+        </ConfigList>
+        <ConfigList Name="RootFolders">
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MWStmt-Prelim\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_DCPLindsay\Manual" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_DCPLindsayDryGas\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_DCPSuperplant\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_DCPSuperplant\Manual" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_DCPSuperplantDryGas\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_Enable\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_EnableDryGas\Manual" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_EnableDryGas\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_OneOK\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_OneOK\Manual" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_OneOKDryGas\Manual" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_OneOKDryGas\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_Targa\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_Targa\Manual" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MWStmt-DryGas\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\MWStmt-DryGasJefferson\Ready" />
+          <LI V="\\gulfport.net\data\Applications\Data_Integration\Test\SlawsonCheckDetail\Ready" />
+        </ConfigList>
+        <ConfigList Name="FileNameFilters">
+          <LI V="*" />
+        </ConfigList>
+        <ConfigList Name="ExtractSpecIncludes">
+          <LI V="*" />
+        </ConfigList>
+        <ConfigList Name="PostLoadCommands">
+          <LI V="LoadFiles" />
+          <LI V="RecognizeFormats" />
+          <LI V="SelectOnlyItemInGrid" />
+          <LI V="ProcessFile" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+      <UIState>
+        <UIWindowSet>
+          <UIWindow Name="MainForm" TypeName="frmMain" StartPosition="CenterScreen" IsMainForm="True">
+            <WindowLocation IsVisible="True" SizeMode="PercentOfScreen" Location="0,0" Size="0.9,0.95" />
+          </UIWindow>
+          <UIWindow Name="PdfViewer" TypeName="PdfViewer" WindowTitle="PDF Viewer" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="2244,163" Size="1288,743" />
+          </UIWindow>
+          <UIWindow Name="RawExtractedText" TypeName="RichTextViewer" WindowTitle="Raw Text Extract" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="2041,75" Size="1319,866" />
+          </UIWindow>
+          <UIWindow Name="FormatRecognition" TypeName="RichTextViewer" WindowTitle="Format Recognition" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="200,200" Size="1319,866" />
+          </UIWindow>
+          <UIWindow Name="ConfigEdit" TypeName="RichTextViewer" WindowTitle="Config Editor" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="3173,150" Size="1319,866" />
+          </UIWindow>
+          <UIWindow Name="TextExtractDesigner" TypeName="TextExtractDesigner" WindowTitle="Text Extract Designer" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="95,43" Size="1319,866" />
+          </UIWindow>
+          <UIWindow Name="TextExtractResults" TypeName="RichTextViewer" WindowTitle="Text Extract Results" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="92,82" Size="1619,979" />
+          </UIWindow>
+          <UIWindow Name="TextExtractErrors" TypeName="RichTextViewer" WindowTitle="Text Extract Errors" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="122,112" Size="1619,979" />
+          </UIWindow>
+        </UIWindowSet>
+      </UIState>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

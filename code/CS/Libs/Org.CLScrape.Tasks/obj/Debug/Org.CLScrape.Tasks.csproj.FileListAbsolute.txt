@@ -1,0 +1,10 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\bin\Debug\Org.CLScrape.Tasks.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\bin\Debug\Org.CLScrape.Tasks.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\obj\Debug\Org.CLScrape.Tasks.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\obj\Debug\Org.CLScrape.Tasks.csproj.CoreCompileInputs.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\obj\Debug\Org.CLScrape.Tasks.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\obj\Debug\Org.CLScrape.Tasks.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\bin\Debug\Org.TP.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.CLScrape.Tasks\bin\Debug\Org.TP.pdb

@@ -1,0 +1,25 @@
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Clickable Objects</title>
+</head>
+<body style="margin:5px 0px 0px 5px">
+<script type="text/javascript">
+function popMsg(msg) {
+    alert("You have clicked on " + msg + ".");
+}
+</script>
+<div style="font:bold 18pt verdana;">
+    Custom Clickable Objects
+</div>
+<hr style="border:solid 1px #000080" />
+<div style="font:10pt verdana; width:600px; margin-bottom:20px">
+    In the following chart, the lines, legend keys, title, copyright, and the "Merge
+    with Star Tech" text are all clickable!
+</div>
+<!-- ****** Here is the chart viewer ****** -->
+@Html.Raw(ViewBag.Viewer.RenderHTML())
+</body>
+</html>

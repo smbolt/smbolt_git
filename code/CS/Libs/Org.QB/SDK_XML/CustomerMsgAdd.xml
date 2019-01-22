@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="13.0"?>
+<QBXML>
+    <QBXMLMsgsRq onError="stopOnError">
+        <CustomerMsgAddRq>
+            <CustomerMsgAdd>
+                <!-- required -->
+                <Name >STRTYPE</Name>
+                <!-- required -->
+                <IsActive >BOOLTYPE</IsActive>
+                <!-- optional -->
+            </CustomerMsgAdd>
+            <IncludeRetElement >STRTYPE</IncludeRetElement>
+            <!-- optional, may repeat -->
+        </CustomerMsgAddRq>
+        <CustomerMsgAddRs statusCode="INTTYPE" statusSeverity="STRTYPE" statusMessage="STRTYPE">
+            <CustomerMsgRet>
+                <!-- optional -->
+                <ListID >IDTYPE</ListID>
+                <!-- required -->
+                <TimeCreated >DATETIMETYPE</TimeCreated>
+                <!-- required -->
+                <TimeModified >DATETIMETYPE</TimeModified>
+                <!-- required -->
+                <EditSequence >STRTYPE</EditSequence>
+                <!-- required -->
+                <Name >STRTYPE</Name>
+                <!-- required -->
+                <IsActive >BOOLTYPE</IsActive>
+                <!-- optional -->
+            </CustomerMsgRet>
+            <ErrorRecovery>
+                <!-- optional -->
+                <!-- BEGIN OR -->
+                <ListID >IDTYPE</ListID>
+                <!-- optional -->
+                <!-- OR -->
+                <OwnerID >GUIDTYPE</OwnerID>
+                <!-- optional -->
+                <!-- OR -->
+                <TxnID >IDTYPE</TxnID>
+                <!-- optional -->
+                <!-- END OR -->
+                <TxnNumber >INTTYPE</TxnNumber>
+                <!-- optional -->
+                <EditSequence >STRTYPE</EditSequence>
+                <!-- optional -->
+                <ExternalGUID >GUIDTYPE</ExternalGUID>
+                <!-- optional -->
+            </ErrorRecovery>
+        </CustomerMsgAddRs>
+    </QBXMLMsgsRq>
+</QBXML>

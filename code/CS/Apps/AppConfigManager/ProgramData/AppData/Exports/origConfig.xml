@@ -1,0 +1,134 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="WinService">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="WindowsServiceEngine" V="TaskEngine" />
+          <CI K="RunActionSetAtStartup" V="False" />
+          <CI K="RunUnitDiagnosticsMode" V="Debug" />
+          <CI K="NotifyConfigSetName" V="IM-AppIntegrationOps" />
+          <CI K="DefaultNotifyEventName" V="WebServiceDefault" />
+          <CI K="NotifyDbSpecPrefix" V="Notify" />
+          <CI K="TaskAssignmentSource" V="Database" />
+        </CIGroup>
+        <CIGroup Name="WinServiceParms">
+          <CI K="WindowsServiceName" V="GPTaskService03" />
+          <CI K="EntityId" V="527" />
+          <CI K="SleepInterval" V="1000" />
+          <CI K="ConfigLogSpecPrefix" V="Default" />
+          <CI K="ConfigNotifySpecPrefix" V="Default" />
+          <CI K="MaxWaitIntervalMilliseconds" V="1000" />
+          <CI K="InDiagnosticsMode" V="False" />
+          <CI K="SuppressNonErrorOutput" V="True" />
+          <CI K="SuppressTaskReload" V="False" />
+          <CI K="RunWebService" V="True" />
+          <CI K="UseAlerter" V="False" />
+          <CI K="AlerterPath" V="" />          
+        </CIGroup>
+        <CIGroup Name="TaskEngineParms">
+          <CI K="TaskScheduleMode" V="Database" />
+          <CI K="TaskLoadIntervalSeconds" V="1800" />
+          <CI K="TasksDbSpecPrefix" V="Tasks" />
+          <CI K="WSHTaskProfile" V="FastTest" />
+          <CI K="TaskProfile" V="Normal" />
+          <CI K="MEFModulesPath" V="$MEFCATALOG$" />
+          <CI K="LimitMEFImports" V="False" />
+          <CI K="MEFLimitListName" V="MEFLimitList" />
+        </CIGroup>
+        <CIGroup Name="EngineMonitoringParms">
+          <CI K="EngineMonitorActive" V="False" />
+          <CI K="EngineMonitorIntervalSeconds" V="60" />
+          <CI K="EngineMonitorAttemptRestart" V="True" />
+          <CI K="EngineMonitorNotifyOnRestartAttempts" V="True" />
+          <CI K="EngineMonitorNotifyLimit" V="5" />
+          <CI K="EngineMonitorResetNotifyLimitHours" V="12" />
+          <CI K="EngineMonitorRunDependenciesChecks" V="True" />
+          <CI K="EngineMonitorDependencyCheckLimit" V="9999999" />
+          <CI K="EngineMonitorDependencyRetryIntervalSeconds" V="600" />
+          <CI K="LogNormalMonitoringActivity" V="False" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigLogSpec">
+          <CI K="DefaultLogMethod" V="Database" />
+          <CI K="DefaultLogDbSpecPrefix" V="Log" />
+          <CI K="DefaultLogPath" V="" />
+          <CI K="DefaultLogFileFrequency" V="Continuous" />
+          <CI K="DefaultLogFileSizeManagementMethod" V="TotalBytes" />
+          <CI K="DefaultLogFileSizeManagementAgent" V="Logger" />
+          <CI K="DefaultLogFileAgeMaxDays" V="20" />
+          <CI K="DefaultLogFileSizeMax" V="2000000" />
+          <CI K="DefaultLogFileSizeTrim" V="750000" />
+        </CIGroup>
+        <CIGroup Name="LogConfigDbSpec">
+          <CI K="LogDbServer" V="OKC1EDW0001" />
+          <CI K="LogDbDsn" V="" />
+          <CI K="LogDbName" V="Logging" />
+          <CI K="LogDbUserId" V="" />
+          <CI K="LogDbPassword" V="" />
+          <CI K="LogDbType" V="SqlServer" />
+          <CI K="LogDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigNotifySpec">
+          <CI K="DefaultNotifyConfigMode" V="Database" />
+          <CI K="DefaultNotifyConfigSetName" V="IM-AppIntegrationOps" />
+          <CI K="DefaultNotifyDbSpecPrefix" V="Notify" />
+          <CI K="DefaultNotifyDefaultEventName" V="Default" />
+          <CI K="DefaultNotifyOnGetTasks" V="True" />
+          <CI K="DefaultNotifyOnNoWorkDone" V="False" />
+        </CIGroup>
+        <CIGroup Name="WsHostConfigWsSpec">
+          <CI K="WsHostWsBinding" V="BasicHttp" />
+          <CI K="WsHostWsHost" V="localhost" />
+          <CI K="WsHostWsPort" V="36103" />
+          <CI K="WsHostWsServiceName" V="" />
+        </CIGroup>
+        <CIGroup Name="TasksConfigDbSpec">
+          <CI K="TasksDbServer" V="OKC1EDW0001" />
+          <CI K="TasksDbName" V="TaskScheduling" />
+          <CI K="TasksDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="NotifyConfigDbSpec">
+          <CI K="NotifyDbServer" V="OKC1EDW0001" />
+          <CI K="NotifyDbName" V="Notifications" />
+          <CI K="NotifyDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigSmtpSpec">
+          <CI K="DefaultSmtpServer" V="smtp.gulfportenergy.com" />
+          <CI K="DefaultSmtpPort" V="25" />
+          <CI K="DefaultSmtpUserID" V="" />
+          <CI K="DefaultSmtpPassword" V="" />
+          <CI K="DefaultEnableSSL" V="False" />
+          <CI K="DefaultPickUpFromIIS" V="False" />
+          <CI K="DefaultAllowAnonymous" V="True" />
+          <CI K="DefaultEmailFromAddress" V="sbolt@gulfportenergy.com" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="MEFLimitList">
+          <LI V="MWStmtTasks" />
+        </ConfigList>
+        <ConfigList Name="TasksToRun">
+          <LI V="Dummy" />
+        </ConfigList>
+        <ConfigList Name="TasksToRun_Parked">
+          <LI V="Dummy" />
+        </ConfigList>
+      </ConfigListSet>
+      <NotifyConfigSet Name="Default">
+        <NotifyConfig Name="Default" SupportEmail="kroper@gulfportenergy.com" SupportPhone="405-242-4411">
+          <NotifyGroupSet>
+            <NotifyGroup Name="Ops1">
+              <NotifyPerson Name="Kelly Roper" IsActive="True" EmailAddress="kroper@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Steve Bolt" IsActive="True" EmailAddress="sbolt@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Nathan Reid" IsActive="True" EmailAddress="nreid@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            </NotifyGroup>
+          </NotifyGroupSet>
+          <NotifyEventSet>
+            <NotifyEvent Name="Default" IsActive="True" DefaultSubject="Default Notification Message">
+              <NotifyGroupReference Name="Ops1" IsActive="True" />
+            </NotifyEvent>
+          </NotifyEventSet>
+        </NotifyConfig>
+      </NotifyConfigSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

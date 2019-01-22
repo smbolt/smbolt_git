@@ -1,0 +1,118 @@
+<DataImport>
+  <DataImportHeader FileNumber="20170514.180000" FileCreateDateTime="05/14/2017 18:00:00" />  
+  <DataImportBody>    
+    <WellSet>       
+      <Well API="3505123604" WellName="SPIES 2-27H" OperatorName="Marathon" LegalLocation="YORK TOWNSHIP" 
+            Latitude="39.8866340000" Longitude="-80.8718400000" County="GRADY" State="Oklahoma" 
+            OriginalKbElevation="1201.00" GroundElevation="1175.00" SpudDate="03/18/2017" RigReleaseDate="" 
+            TargetFormation="" TargetDepth="15000" GisNumber="" WellSpecifics="" >        
+        <JobSet>          
+          <Job JobType="" JobName="" StartDate="05/01/2017 12:00:00 AM" 
+               Operator="Ascent" WellType="" RigNumber="" RigContractor="" AfeNumber="" AfeAmount="" Objective="" >
+            <ReportDateSet>
+              <ReportDate Value="05/02/2017">          
+                <ReportSectionSet> 
+                  <ReportSection ReportSectionType="Survey" SectionType="ReportDateBased" SFN="1001">
+                    <SurveyItemSet>
+                      <SurveyItem MD="100" Inclination="0.5" Azimuth="242.1" TVD="100" Section="0" DLS="0.5" NS="0" EW="0" />
+                    </SurveyItemSet>
+                  </ReportSection>
+                  <ReportSection ReportSectionType="Survey" SFN="1001">
+                    <SurveyItemSet>
+                      <SurveyItem MD="100" Inclination="0.5" Azimuth="242.1" TVD="100" Section="0" DLS="0.5" NS="0" EW="0" />
+                      <SurveyItem MD="100" Inclination="0.5" Azimuth="242.1" TVD="100" Section="0" DLS="0.5" NS="-1" EW="0" />
+                    </SurveyItemSet>
+                  </ReportSection>
+                  <ReportSection ReportSectionType="Survey" SFN="1001">
+                    <SurveyItemSet>
+                      <SurveyItem MD="100" Inclination="0.5" Azimuth="242.1" TVD="100" Section="0" DLS="0.5" NS="0" EW="0" />
+                      <SurveyItem MD="100" Inclination="0.5" Azimuth="242.1" TVD="100" Section="0" DLS="0.5" NS="-1" EW="0" />
+                      <SurveyItem MD="200" Inclination="0.4" Azimuth="243" TVD="200" Section="0" DLS="0.1" NS="-1" EW="-1" />
+                    </SurveyItemSet>
+                  </ReportSection>
+                  <ReportSection ReportSectionType="Survey" SFN="1001">
+                    <SurveyItemSet>
+                      <SurveyItem MD="100" Inclination="0.5" Azimuth="242.1" TVD="100" Section="0" DLS="0.5" NS="0" EW="0" />
+                      <SurveyItem MD="100" Inclination="0.5" Azimuth="242.1" TVD="100" Section="0" DLS="0.5" NS="-1" EW="0" />
+                      <SurveyItem MD="200" Inclination="0.4" Azimuth="243" TVD="200" Section="0" DLS="0.1" NS="-1" EW="-1" />
+                      <SurveyItem MD="300" Inclination="0.3" Azimuth="252.4" TVD="300" Section="0" DLS="0.1" NS="-1" EW="-1" />                      
+                    </SurveyItemSet>
+                  </ReportSection>
+                  <ReportSection ReportSectionType="Survey" SFN="1001">
+                    <SurveyItemSet>
+                      <SurveyItem MD="100" Inclination="0.5" Azimuth="242.1" TVD="100" Section="0" DLS="0.5" NS="0" EW="0" />
+                      <SurveyItem MD="100" Inclination="0.5" Azimuth="242.1" TVD="100" Section="0" DLS="0.5" NS="-1" EW="0" />
+                      <SurveyItem MD="200" Inclination="0.4" Azimuth="243" TVD="200" Section="0" DLS="0.1" NS="-1" EW="-1" />
+                      <SurveyItem MD="300" Inclination="0.3" Azimuth="252.4" TVD="300" Section="0" DLS="0.1" NS="-1" EW="-1" />
+                      <SurveyItem MD="400" Inclination="0.2" Azimuth="230.4" TVD="400" Section="0" DLS="0.2" NS="-1" EW="-1" />
+                    </SurveyItemSet>
+                  </ReportSection>
+                  <ReportSection ReportSectionType="Casing" SFN="1001" >
+                    <CasingItemSet>
+                      <CasingItem CasingType="Conductor" RunDate="05/14/2017" SizeOD="30.00" Grade="LP" 
+                                  ConnectionType="Welded" WeightLbFt="99.00" SetDepth="150.00" Length="150.00" />                      
+                    </CasingItemSet>
+                  </ReportSection>
+                  <ReportSection ReportSectionType="Casing" SFN="1001" >
+                    <CasingItemSet>
+                      <CasingItem CasingType="Surface" RunDate="05/15/2017" SizeOD="30.00" Grade="J-55" 
+                                  ConnectionType="ButtressThread" WeightLbFt="94.00" SetDepth="500.00" Length="500.00" />
+                    </CasingItemSet>
+                  </ReportSection>
+                  <ReportSection ReportSectionType="Casing" SFN="12345" >
+                    <CasingItemSet>
+                      <CasingItem CasingType="Surface" RunDate="05/15/2017" SizeOD="20.00" Grade="J-55" 
+                                  ConnectionType="ButtressThread" WeightLbFt="94.00" SetDepth="500.00" Length="500.00" />
+                      <CasingItem CasingType="Intermediate" RunDate="05/16/2017" SizeOD="13.375" Grade="J-55" 
+                                  ConnectionType="ButtressThread" WeightLbFt="54.50" SetDepth="800.00" Length="800.00" />
+                      <CasingItem CasingType="Production" RunDate="05/17/2017" SizeOD="5.50" Grade="P-110" ConnectionType="DQX" 
+                                  WeightLbFt="23.00" SetDepth="19826.00" Length="19826.00" />
+                    </CasingItemSet>
+                  </ReportSection>
+                  <ReportSection ReportSectionType="BHA" SFN="1001" ItemNo="1" ItemMake="" ItemDescription="HWPD" 
+                                 ItemModel="" ItemLength="432.07" ItemNoJoint="14" ItemOD="5" TopThreads="" 
+                                 FishNeckOD="" FishNeckLengths="" />          
+                  <ReportSection ReportSectionType="BHA" SFN="1001" ItemNo="1" ItemMake="" ItemDescription="HWPD" 
+                                 ItemModel="" ItemLength="445.45" ItemNoJoint="14" ItemOD="5" TopThreads="" 
+                                 FishNeckOD="" FishNeckLengths="" />          
+                  <ReportSection ReportSectionType="DrillBits" SFN="1001" BitNumber="1" Manufacturer="AS519" 
+                                 SN="10050241" Type="" Motor_RPM="56" Depth_Start="80" Depth_End="1148" Depth_Drilled="1068" 
+                                 HrsTotal="13.5" TFA="2.6" SizeOD="" Jet="22/22/22/22/22/22/22" WeightOnBit="12" ROP="79.1" 
+                                 TotalRateOfPenetration="79.1" DrillingTorque="6700" RotateTime="13.5" Wear_Dull="3-7-BT-S-X-0-CT-PR" 
+                                 Wear_Guage="" WOB="" UsedClass="New" DateIn="05/14/2017" DateOut="05/16/2017" BhaLength="1269.04" 
+                                 SSP="1450" FlowRateGpm="873" StringWeight="84990" />
+                  <ReportSection ReportSectionType="DrillBits" SFN="1001" BitNumber="1" Manufacturer="AS519" 
+                                 SN="10050241" Type="" Motor_RPM="56" Depth_Start="80" Depth_End="1148" Depth_Drilled="1068" 
+                                 HrsTotal="13.5" TFA="2.6" SizeOD="" Jet="22/22/22/22/22/22/22" WeightOnBit="12" ROP="79.1" 
+                                 TotalRateOfPenetration="79.1" DrillingTorque="6700" RotateTime="13.5" Wear_Dull="3-7-BT-S-X-0-CT-PR" 
+                                 Wear_Guage="" WOB="" UsedClass="New" DateIn="05/14/2017" DateOut="05/16/2017" BhaLength="1269.04" 
+                                 SSP="1450" FlowRateGpm="873" StringWeight="84990" />          
+                  <ReportSection ReportSectionType="DailyDrillingSummary" SFN="1001" 
+                                 JobType="Drilling" JobName="Original Drilling" RigNumber="224" RigContractor="HELMERICH AND PAYNE"
+                                 AfeNumber="DD1227178CAPDRL" AfeAmount="6215350" DailyFieldEstCost="32235.00" CumFieldEstCost="32235.00" 
+                                 DailyEndDepth="0" />
+                  <ReportSection ReportSectionType="DailyDrillingTimeLog" SFN="1001" >
+                    <TimeLogItemSet>
+                      <TimeLogItem ActivityDate="05/16/2017" StartTime="12:00:00" EndTime="20:00:00" Activity="CLEAN" 
+                                   Operations="Clean rig and prepare for rig down" />
+                      <TimeLogItem ActivityDate="05/16/2017" StartTime="20:00:00" EndTime="06:00:00" Activity="SECURE" 
+                                   Operations="Wait on daylight" />                      
+                    </TimeLogItemSet>
+                  </ReportSection>
+                  <ReportSection ReportSectionType="DailyDrillingTimeLog" SFN="1001" >
+                    <TimeLogItemSet>
+                      <TimeLogItem ActivityDate="05/17/2017" StartTime="12:00:00" EndTime="20:00:00" Activity="CLEAN" 
+                                   Operations="Clean rig and prepare for rig down" />
+                      <TimeLogItem ActivityDate="05/17/2017" StartTime="20:00:00" EndTime="06:00:00" Activity="SECURE" 
+                                   Operations="Wait on daylight" />                      
+                    </TimeLogItemSet>
+                  </ReportSection>          
+                </ReportSectionSet>            
+              </ReportDate> 
+            </ReportDateSet>       
+          </Job>
+        </JobSet>        
+      </Well>
+    </WellSet>
+  </DataImportBody>
+</DataImport>

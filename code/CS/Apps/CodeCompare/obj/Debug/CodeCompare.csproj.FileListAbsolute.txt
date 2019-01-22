@@ -1,0 +1,16 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\bin\Debug\Org.CodeCompare.exe.config
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\obj\Debug\Org.CodeCompare.Properties.Resources.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\obj\Debug\CodeCompare.csproj.GenerateResource.Cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\bin\Debug\Org.CodeCompare.exe
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\bin\Debug\Org.CodeCompare.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\bin\Debug\FastColoredTextBox.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\bin\Debug\FastColoredTextBox.xml
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\obj\Debug\Org.CodeCompare.frmMain.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\obj\Debug\Org.CodeCompare.exe
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\obj\Debug\Org.CodeCompare.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\obj\Debug\Org.CodeCompare.frmCode.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\obj\Debug\CodeCompare.csproj.CoreCompileInputs.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\obj\Debug\CodeCompare.csprojAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\CodeCompare\obj\Debug\CodeCompare.csproj.CopyComplete

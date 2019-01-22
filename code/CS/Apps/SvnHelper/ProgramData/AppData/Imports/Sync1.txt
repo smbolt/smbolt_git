@@ -1,0 +1,22 @@
+﻿# BeyondCompare Sync Script
+# Parameters
+# Left Folder = %1
+# Right Folder = %2
+# Direction = %3
+# Filters = %4
+# Log File = %5
+
+# Turn logging on.
+log normal %5
+
+# Load the default session
+load <default>
+
+# Set Filters
+filter %4
+
+# Load the Base Folders
+load %1  %2
+
+# Copy different files left to right, delete orphans on right.
+sync create-empty update: %3

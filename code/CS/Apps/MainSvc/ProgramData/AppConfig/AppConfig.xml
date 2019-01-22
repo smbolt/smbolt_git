@@ -1,0 +1,155 @@
+﻿<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="MainSvc">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$BRANCH" V="C:\DEV-MAIN\FEAT-SB-50007" />
+          <CI K="$DEVPATH$" V="C:\DEV-MAIN\$BRANCH$" />
+          <CI K="$STDCATALOG$" V="\\gulfport.net\data\Applications\Runtime_Resources\Test\Code\Catalogs\MAIN\STD\" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="MapPath" V="\\gulfport.net\data\Applications\Runtime_Resources\Test\Maps" />
+          <CI K="!MapPath" V="$DEVPATH$\Maps" />
+          <CI K="RunUnitDiagnosticsMode" V="None" />
+          <CI K="SkipInitLogging" V="True" />
+          <CI K="UseSupportEmail" V="True" />
+          <CI K="SuppressEmailSend" V="False" />
+          <CI K="EmailReplyToAddress" V="stephen.m.bolt@gmail.com" />
+          <CI K="LogConfigDbSpec" V="Log" />
+          <CI K="RunActionSetAtStartup" V="True" />
+          <CI K="UseMEFModulesPath" V="True" />
+          <CI K="@MEFModulesPath" V="C:\DEV-MAIN\Main\Libs\Org.WSO\bin\Debug" />
+          <CI K="SoftwareDbSpecPrefix" V="OrgSoftware" />
+          <CI K="NotifyDbSpecPrefix" V="Notify" />
+          <CI K="NotifyConfigSetName" V="IM-AppIntegrationOps" />
+          <CI K="DefaultNotifyEventName" V="WebServiceDefault" />
+          <CI K="NotifyConfigMode" V="FromDatabase" />
+          <CI K="NotifySmtpSpecPrefix" V="Default" />
+          <CI K="WebServiceName" V="FileDataExtractWebService" />
+          <CI K="ComponentLoadMode" V="LocalCatalog" />
+          <CI K="CATALOG_STEM" V="\\gulfport.net\data\Applications\Runtime_Resources" />
+          <CI K="CATALOG_ENV" V="Test" />
+          <CI K="CATALOG_TASKNODE" V="Code\Catalogs" />
+          <CI K="CATALOG_NAME" V="MAIN" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="Database" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="NotSet" />
+          <CI K="LogFileSizeManagementMethod" V="NotManagedByThisApp" />
+          <CI K="LogFileSizeManagementAgent" V="None" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="LogConfigDbSpec">
+          <CI K="LogDbServer" V="OKC1EDW2001" />
+          <CI K="LogDbDsn" V="" />
+          <CI K="LogDbName" V="Logging" />
+          <CI K="LogDbUserId" V="" />
+          <CI K="LogDbPassword" V="" />
+          <CI K="LogDbType" V="SqlServer" />
+          <CI K="LogDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="NotifyConfigDbSpec">
+          <CI K="NotifyDbServer" V="OKC1EDW2001" />
+          <CI K="NotifyDbName" V="Notifications" />
+          <CI K="NotifyDbType" V="SqlServer" />
+          <CI K="NotifyDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="OrgSoftwareConfigDbSpec">
+          <CI K="OrgSoftwareDbServer" V="107.161.158.19,36501" />
+          <CI K="OrgSoftwareDbDsn" V="" />
+          <CI K="OrgSoftwareDbName" V="Software" />
+          <CI K="OrgSoftwareDbUserId" V="sa" />
+          <CI K="OrgSoftwareDbPassword" V="wrnCu8Kyw6/DrsOqw6DDn8K8wq3CvMK3" />
+          <CI K="OrgSoftwareDbPasswordEncoded" V="True" />
+          <CI K="OrgSoftwareDbType" V="SqlServer" />
+          <CI K="OrgSoftwareDbUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigSmtpSpec">
+          <CI K="DefaultSmtpServer" V="smtp.gulfportenergy.com" />
+          <CI K="DefaultSmtpPort" V="25" />
+          <CI K="DefaultSmtpUserID" V="" />
+          <CI K="DefaultSmtpPassword" V="" />
+          <CI K="DefaultEnableSSL" V="False" />
+          <CI K="DefaultPickUpFromIIS" V="False" />
+          <CI K="DefaultAllowAnonymous" V="True" />
+          <CI K="DefaultEmailFromAddress" V="kroper@gulfportenergy.com" />
+        </CIGroup>
+      </CISet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="CatalogEntries">
+          <DI K="Ping" V="WSO|Org.WSO|Org.WSO.RequestProcessors.RequestProcessorFactory" />
+          <DI K="WsCommand" V="WSO|Org.WSO|Org.WSO.RequestProcessors.RequestProcessorFactory" />
+          <DI K="ServiceEngineCommand" V="WSO|Org.WSO|Org.WSO.RequestProcessors.RequestProcessorFactory" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="DevComputers">
+          <DI K="GPNET\L-GM5TK12" V="NREID-NOTEBOOK" />
+          <DI K="GPNET\L-47G2L32" V="KROPER-NOTEBOOK" />
+          <DI K="GPNET\L-D52CMC2" V="SBOLT-NOTEBOOK" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="DevUsers">
+          <DI K="GPNET\L-GM5TK12" V="NREID" />
+          <DI K="GPNET\L-47G2L32" V="KROPER" />
+          <DI K="GPNET\L-D52CMC2" V="SBOLT" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+      <FSActionSet>
+        <FSActionGroup Name="Copy_DxTasks" Src="$DEVPATH$\Libs\Gulfport.Dx.Tasks\bin\Debug" Dst="$MEFCATALOG$\DxTasks">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite" >
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+        <FSActionGroup Name="Copy_DxBusiness" Src="$DEVPATH$\Libs\Org.Dx.Business\bin\Debug" Dst="$MEFCATALOG$\DxBusiness">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite" >
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+        <FSActionGroup Name="Copy_WSO" Src="$DEVPATH$\Libs\Org.WSO\bin\Debug" Dst="$MEFCATALOG$\WSO" >
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite" >
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+        <FSActionGroup Name="Copy_GS_TO_WSO" Src="$DEVPATH$\Libs\Org.GS\bin\Debug" Dst="$MEFCATALOG$\WSO">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Overwrite" >
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+      </FSActionSet>
+      <NotifyConfigSet Name="Default">
+        <NotifyConfig Name="Default" SupportEmail="sbolt@gulfportenergy.com" SupportPhone="405-242-4411">
+          <NotifyGroupSet>
+            <NotifyGroup Name="Ops1">
+              <NotifyPerson Name="Kelly Roper" IsActive="True" EmailAddress="kroper@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Steve Bolt" IsActive="True" EmailAddress="sbolt@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Nathan Reid" IsActive="True" EmailAddress="nreid@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            </NotifyGroup>
+          </NotifyGroupSet>
+          <NotifyEventSet>
+            <NotifyEvent Name="Default" IsActive="True" DefaultSubject="WebService Catch - All Error">
+              <NotifyGroupReference Name="Ops1" IsActive="True" />
+            </NotifyEvent>
+          </NotifyEventSet>
+        </NotifyConfig>
+        <NotifyConfig Name="Dummy" SupportEmail="kroper@gulfportenergy.com" SupportPhone="405-242-4411">
+          <NotifyGroupSet>
+            <NotifyGroup Name="Ops1">
+              <NotifyPerson Name="Kelly Roper" IsActive="False" EmailAddress="kroper@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Steve Bolt" IsActive="True" EmailAddress="sbolt@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            </NotifyGroup>
+          </NotifyGroupSet>
+          <NotifyEventSet>
+            <NotifyEvent Name="Dummy_Success" IsActive="True" DefaultSubject="Dummy Task Completed Successfully">
+              <NotifyGroupReference Name="Ops1" IsActive="True" />
+            </NotifyEvent>
+          </NotifyEventSet>
+        </NotifyConfig>
+      </NotifyConfigSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

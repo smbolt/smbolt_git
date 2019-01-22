@@ -1,0 +1,130 @@
+﻿This is a listing of the error codes used in the Gulfport Well Master Web Project
+
+4001 - An exception occurred attempting to retrieve customers in Dto.GetCustomers
+4002 - Failed to obtain a lock for retrieving customers in Dto.GetCustomers
+4003 - An exception occurred attempting to retrieve a single customer in Dto.GetCustomer
+4004 - Failed to obtain a lock for retrieving a single customer in Dto.GetCustomer
+4005 - An exception occurred attempting to insert a customer in Dto.InsertCustomer
+4006 - Failed to obtain a lock for inserting a customer in Dto.InsertCustomer
+4007 - Failed to locate customer for update in Dto.UpdateCustomer
+4008 - An exception occurred attempting to update a customer in Dto.UpdateCustomer
+4009 - Failed to obtain a lock for updating a customer in Dto.UpdateCustomer
+4010 - An exception occurred attempting to retrieve users in Dto.GetUsers
+4011 - Failed to obtain a lock for retrieving users in Dto.GetUsers
+4012 - An exception occurred attempting to retrieve a single user in Dto.GetUser
+4013 - Failed to obtain a lock for retrieving a single user in Dto.GetUser
+4014 - An exception occurred attempting to insert a user in Dto.InsertUser
+4015 - Failed to obtain a lock for inserting a user in Dto.InsertUser
+4016 - Failed to locate user for update in Dto.UpdateUser
+4017 - An exception occurred attempting to update a user in Dto.UpdateUser
+4018 - Failed to obtain a lock for updating a user in Dto.UpdateUser
+4019 - An exception occurred attempting to retrieve a single customer in CustomerController.Get
+4020 - An exception occurred attempting to retrieve customers in CustomerController.Get
+4021 - An exception occurred attempting to insert a customer in CustomerController.Post
+4022 - Login failed because user does not exist in SecurityManager.Login
+4023 - Login failed because user is not in Active status in SecurityManager.Login
+4024 - An exception occurred attempting to login user in SecurityManager.Login
+4025 - Failed to obtain a lock for user login in SecurityManager.Login
+4026 - An exception occurred attempting to login user in UserController.Post
+4027 - Login failed due to incorrect password
+4028 - Authorization failure - null authorization token
+4029 - Authorization failure - invalid authorization token
+4030 - Authorization failure - authorization token expired
+4031 - An exception occurred attempting to retrieve users in UserController.Get
+4032 - An exception occurred attempting to retrieve a single user in UserController.Get
+4033 - An exception occurred attempting to insert a user in UserController.Post
+4034 - An exception occurred attempting to retrieve wells in WellController.Get
+4035 - An exception occurred attempting to retrieve a single well in WellController.Get
+4036 - An exception occurred attempting to insert a well in WellController.Post
+4037 - An exception occurred attempting to update a well in WellController.Post
+4038 - An exception occurred attempting to insert a user in UserController.Post
+4039 - An exception occurred attempting to update a customer in CustomerController.Post
+4040 - An exception occurred attempting to retrieve wells in Dto.GetWells
+4041 - Failed to obtain a lock for retrieving wells in Dto.GetWells
+4042 - An exception occurred attempting to retrieve a single well in Dto.GetWell
+4043 - Failed to obtain a lock for retrieving a single well in Dto.GetWell
+4044 - An exception occurred attempting to insert a well in Dto.InsertWell
+4045 - Failed to obtain a lock for inserting a well in Dto.InsertWell
+4046 - Failed to locate well for update in Dto.UpdateWell
+4047 - An exception occurred attempting to update a well in Dto.UpdateWell
+4048 - Failed to obtain a lock for updating a well in Dto.UpdateWell
+4049 - An exception occurred attempting to retrieve terminals in Dto.GetTerminals
+4050 - Failed to obtain a lock for retrieving terminals in Dto.GetTerminals
+4051 - An exception occurred attempting to retrieve a single terminal in Dto.GetTerminal
+4052 - Failed to obtain a lock for retrieving a single terminal in Dto.GetTerminal
+4053 - Failed to locate terminal for update in Dto.UpdateTerminal
+4054 - An exception occurred attempting to update a terminal in Dto.UpdateTerminal
+4055 - Failed to obtain a lock for updating a terminal in Dto.UpdateTerminal
+4056 - An exception occurred attempting to retrieve tracks in Dto.GetTracks
+4057 - Failed to obtain a lock for retrieving tracks in Dto.GetTracks
+4058 - An exception occurred attempting to retrieve a single track in Dto.GetTrack
+4059 - Failed to obtain a lock for retrieving a single track in Dto.GetTrack
+4060 - An exception occurred attempting to insert a terminal in Dto.InsertTerminal
+4061 - Failed to obtain a lock for inserting a terminal in Dto.InsertTerminal
+4062 - An exception occurred attempting to insert a track in Dto.InsertTrack
+4063 - Failed to obtain a lock for inserting a track in Dto.InsertTrack
+4064 - Failed to locate track for update in Dto.UpdateTrack
+4065 - An exception occurred attempting to update a track in Dto.UpdateTrack
+4066 - Failed to obtain a lock for updating a track in Dto.UpdateTrack
+4067 - An exception occurred attempting to retrieve spots in Dto.GetSpots
+4068 - Failed to obtain a lock for retrieving spots in Dto.GetSpots
+4069 - An exception occurred attempting to retrieve a single spot in Dto.GetSpot
+4070 - Failed to obtain a lock for retrieving a single spot in Dto.GetSpot
+4071 - An exception occurred attempting to insert a spot in Dto.InsertSpot
+4072 - Failed to obtain a lock for inserting a spot in Dto.InsertSpot
+4073 - Failed to locate spot for update in Dto.UpdateSpot
+4074 - An exception occurred attempting to update a spot in Dto.UpdateSpot
+4075 - Failed to obtain a lock for updating a spot in Dto.UpdateSpot
+4076 - An exception occurred attempting to retrieve terminals in TerminalController.Get
+4077 - An exception occurred attempting to retrieve a single terminal in TerminalController.Get
+4078 - An exception occurred attempting to insert a terminal in TerminalController.Post
+4079 - An exception occurred attempting to update a terminal in TerminalController.Post
+4080 - An exception occurred attempting to retrieve tracks in TrackController.Get
+4081 - An exception occurred attempting to retrieve a single track in TrackController.Get
+4082 - An exception occurred attempting to insert a track in TrackController.Post
+4083 - An exception occurred attempting to update a track in TrackController.Post
+4084 - An exception occurred attempting to retrieve spots in SpotController.Get
+4085 - An exception occurred attempting to retrieve a single spot in SpotController.Get
+4086 - An exception occurred attempting to insert a spot in SpotController.Post
+4087 - An exception occurred attempting to update a spot in SpotController.Post
+4088 - An exception occurred attempting to retrieve carriers in Dto.GetCarriers
+4089 - Failed to obtain a lock for retrieving carriers in Dto.GetCarriers
+4090 - An exception occurred attempting to retrieve a single carrier in Dto.GetCarrier
+4091 - Failed to obtain a lock for retrieving a single carrier in Dto.GetCarrier
+4092 - An exception occurred attempting to insert a carrier in Dto.InsertCarrier
+4093 - Failed to obtain a lock for inserting a carrier in Dto.InsertCarrier
+4094 - Failed to locate carrier for update in Dto.UpdateCarrier
+4095 - An exception occurred attempting to update a carrier in Dto.UpdateCarrier
+4096 - Failed to obtain a lock for updating a carrier in Dto.UpdateCarrier
+4097 - An exception occurred attempting to retrieve driver in Dto.GetDrivers
+4098 - Failed to obtain a lock for retrieving drivers in Dto.GetDrivers
+4099 - An exception occurred attempting to retrieve a single driver in Dto.GetDriver
+4100 - Failed to obtain a lock for retrieving a single driver in Dto.GetDriver
+4101 - An exception occurred attempting to insert a driver in Dto.InsertDriver
+4102 - Failed to obtain a lock for inserting a driver in Dto.InsertDriver
+4103 - Failed to locate driver for update in Dto.UpdateDriver
+4104 - An exception occurred attempting to update a driver in Dto.UpdateDriver
+4105 - Failed to obtain a lock for updating a driver in Dto.UpdateDriver
+4106 - An exception occurred attempting to retrieve carrier in CarrierController.Get
+4107 - An exception occurred attempting to retrieve a single carrier in CarrierController.Get
+4108 - An exception occurred attempting to insert a carrier in CarrierController.Post
+4109 - An exception occurred attempting to update a carrier in CarrierController.Post
+4110 - An exception occurred attempting to retrieve a single well by name in Dto.GetWellByName
+4111 - Failed to obtain a lock for retrieving a single well by name in Dto.GetWellByName
+4112 - An exception occurred attempting to retrieve a single well by name in WellController.Get
+4113 - An exception occurred attempting to retrieve driver in DriverController.Get
+4114 - An exception occurred attempting to retrieve a single driver in DriverController.Get
+4115 - An exception occurred attempting to insert a driver in DriverController.Post
+4116 - An exception occurred attempting to update a driver in DriverController.Post
+4117 - An exception occurred attempting to retrieve tank cars in Dto.GetTankCars
+4118 - Failed to obtain a lock for retrieving tank cars in Dto.GetTankCars
+4119 - An exception occurred attempting to retrieve a single tank car in Dto.GetTankCar
+4120 - Failed to obtain a lock for retrieving a single tank car in Dto.GetTankCar
+4121 - An exception occurred attempting to insert a tank car in Dto.InsertTankCar
+4122 - Failed to obtain a lock for inserting a tank car in Dto.InsertTankCar
+4123 - Failed to locate tank car for update in Dto.UpdateTankCar
+4124 - An exception occurred attempting to update a tank car in Dto.UpdateTankCar
+4125 - Failed to obtain a lock for updating a tank car in Dto.UpdateTankCar
+4126 - An exception occurred attempting to retrieve retrieve rail operations list (SpottedCars) in RailOpsController.Get
+4127 - An exception occurred attempting to retrieve spottec cars (rail operations list) in Dto.GetSpottedCars
+4128 - Failed to obtain a lock for retrieving spotted cars (rail operations list) in Dto.GetSpottedCars

@@ -1,0 +1,112 @@
+﻿<GridViewSet DefaultViewName="OpsManager">
+  <GridView ViewName="scheduledTasks" IsDefault="True">
+    <GridColumn Name="ScheduledTaskID" Text="ID" ColumnName="ScheduledTaskID" Width="35" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="TaskName" Text="Task Name" ColumnName="TaskName" Width="185" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ProcessorName" Text="Processor Name/Version" ColumnName="ProcessorName" Width="195" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="TaskGroup" Text="Task Group" ColumnName="TaskGroup" Width="200" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ProcessorType" Text="Processor Type" ColumnName="ProcessorType" Width="100" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="StartTime" Text="Start" ColumnName="StartTime" Width="40" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="EndTime" Text="End" ColumnName="EndTime" Width="40" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="Freq" Text="Freq" ColumnName="Freq" Width="40" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="IsActive" Text="Act" ColumnName="IsActive" Width="30" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="IsDryRun" Text="Dry" ColumnName="IsDryRun" Width="30" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunUntilTask" Text="RU" ColumnName="RunUntil" Width="30" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunForPeriod" Text="RFP" ColumnName="RunForPeriod" Width="30" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunUntilOverride" Text="Ovr" ColumnName="RunUntilOverride" Width="30" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="PeriodContext" Text="Period" ColumnName="PeriodContext" Width="40" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunUntilOffsetMinutes" Text="Offset" ColumnName="RunUntilOffsetMinutes" Width="40" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="TrackHistory" Text="Hist" ColumnName="TrackHistory" Width="30" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="TaskAssignments" Text="Task Assignments (From Database)" ColumnName="TaskAssignments" Width="200" Align="Left" Fill="True" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="taskSchedules" IsDefault="False">
+    <GridColumn Name="TaskScheduleID" Text="Task Schedule ID" ColumnName="TaskScheduleID" Width="90" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ScheduleName" Text="Schedule Name" ColumnName="ScheduleName" Width="100" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="IsActive" Text="Active" ColumnName="IsActive" Width="50" Align="Left" Fill="True" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="scheduleElements" IsDefault="False">
+    <GridColumn Name="TaskScheduleElementID" Text="Task Schedule Element ID" ColumnName="TaskScheduleElementID" Width="1" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="IsActive" Text="Active" ColumnName="IsActive" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ExecutionType" Text="Execution Type" ColumnName="ExecutionType" Width="120" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="FrequencySeconds" Text="Freq. Seconds" ColumnName="FrequencySeconds" Width="120" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="IntervalType" Text="Interval Type" ColumnName="IntervalType" Width="120" Align="Left" Fill="True" MaxChars="0" />
+    <GridColumn Name="StartDate" Text="StartDate" ColumnName="StartDate" Width="100" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="StartTime" Text="Start Time" ColumnName="StartTime" Width="120" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="EndDate" Text="End Date" ColumnName="EndDate" Width="100" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="EndTime" Text="End Time" ColumnName="EndTime" Width="120" Align="Left" Fill="True" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="taskParameters" IsDefault="False">
+    <GridColumn Name="ParameterID" Text="Parameter ID" ColumnName="ParameterID" Width="1" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ParameterName" Text="Parameter Name" ColumnName="ParameterName" Width="90" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ParameterValue" Text="Parameter Value" ColumnName="ParameterValue" Width="220" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="DataType" Text="Data Type" ColumnName="DataType" Width="130" Align="Left" Fill="True" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="parameterSets" IsDefault="False">
+    <GridColumn Name="ParameterSetName" Text="Parameter Set Name" ColumnName="ParameterSetName" Width="90" Align="Left" Fill="True" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="parametersInSet" IsDefault="False">
+    <GridColumn Name="ParameterID" Text="Parameter ID" ColumnName="ParameterID" Width="1" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ParameterName" Text="Parameter Name" ColumnName="ParameterName" Width="100" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ParameterValue" Text="Parameter Value" ColumnName="ParameterValue" Width="170" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="DataType" Text="Data Type" ColumnName="DataType" Width="100" Align="Left" Fill="True" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="WindowsServices" IsDefault="False">
+    <GridColumn Name="ServiceName" Text="Service Name" ColumnName="ServiceName" Width="120" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="MachineName" Text="Machine Name" ColumnName="MachineName" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ServiceStatus" Text="Service Status" ColumnName="ServiceStatus" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="CanPauseAndContinue" Text="Can Pause And Continue" ColumnName="CanPauseAndContinue" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="CanStop" Text="Can stop" ColumnName="CanStop" Width="60" Align="Left" Fill="False" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="WebSites" IsDefault="False">
+    <GridColumn Name="WebSiteName" Text="Site Name" ColumnName="WebSiteName" Width="120" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="WebSiteId" Text="Web Site Id" ColumnName="WebSiteId" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="WebSiteStatus" Text="Site Status" ColumnName="WebSiteStatus" Width="60" Align="Left" Fill="False" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="AppPools" IsDefault="False">
+    <GridColumn Name="AppPoolName" Text="App Pool Name" ColumnName="AppPoolName" Width="120" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="AutoStart" Text="AutoStart" ColumnName="AutoStart" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="Enable32BitAppOnWin64" Text="Enable 32 Bit App On Win64" ColumnName="Enable32BitAppOnWin64" Width="60" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="AppPoolStatus" Text="App Pool Status" ColumnName="AppPoolStatus" Width="60" Align="Left" Fill="False" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="Logging" IsDefault="False">
+    <GridColumn Name="LogDateTime" Text="Date Time" ColumnName="LogDateTime" Width="10" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="SeverityCode" Text="Severity" ColumnName="SeverityCode" Width="5" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="Message" Text="Message" ColumnName="Message" Width="40" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="Module" Text="Module" ColumnName="Module" Width="15" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="Code" Text="Code" ColumnName="Code" Width="5" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="Entity" Text="Entity" ColumnName="Entity" Width="15" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ClientData" Text="Client" ColumnName="ClientData" Width="5" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="Detail" Text="Detail" ColumnName="Detail" Width="5" Align="Center" Fill="True" MaxChars="0" />
+    <GridColumn Name="LogId" Text="LogId" ColumnName="LogId" Width="0" Align="Center" Fill="False" Visible="False" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="RunHistory" IsDefault="False">
+    <GridColumn Name="TaskName" Text="Task Name" ColumnName="TaskName" Width="10" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ProcessorType" Text="Processor Type" ColumnName="ProcessorType" Width="7" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ProcessorName" Text="Processor Name/Version" ColumnName="ProcessorName" Width="10" Align="Left" Fill="False" MaxChars="0" />   
+    <GridColumn Name="ExecutionStatus" Text="Execution Status" ColumnName="ExecutionStatus" Width="7" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunStatus" Text="Run Status" ColumnName="RunStatus" Width="6" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunCode" Text="Run Code" ColumnName="RunCode" Width="5" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="NoWorkDone" Text="NWD" ColumnName="NoWorkDone" Width="2" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="StartDateTime" Text="Start DateTime" ColumnName="StartDateTime" Width="8" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="EndDateTime" Text="End DateTime" ColumnName="EndDateTime" Width="8" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunHost" Text="Run Host" ColumnName="RunHost" Width="7" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunUser" Text="Run User" ColumnName="RunUser" Width="6" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="Message" Text="Message" ColumnName="Message" Width="6" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunUntilTask" Text="RU" ColumnName="RunUntilTask" Width="2" Align="Center" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunUntilPeriod" Text="Period" ColumnName="RunUntilPeriod" Width="3" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunUntilOffsetMinutes" Text="Offset" ColumnName="RunUntilOffsetMinutes" Width="3" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunStats" Text="Run Stats" ColumnName="RunStats" Width="5" Align="Left" Fill="True" MaxChars="0" />   
+    <GridColumn Name="RunId" Text="RunId" ColumnName="RunId" Width="0" Align="Left" Fill="False" Visible="False" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="Identifiers" IsDefault="False">
+    <GridColumn Name="ID" Text="ID" ColumnName="ID" Width="10" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="Description" Text="Description" ColumnName="Description" Width="90" Align="Left" Fill="True" MaxChars="0" />
+  </GridView>
+  <GridView ViewName="ScheduledRuns" IsDefault="False">
+    <GridColumn Name="TaskName" Text="Task Name" ColumnName="TaskName" Width="30" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ScheduledRunDateTime" Text="Scheduled Run DateTime" ColumnName="ScheduledRunDateTime" Width="20" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ProcessorType" Text="Processor Type" ColumnName="ProcessorType" Width="20" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="ProcessorName" Text="Processor Name/Version" ColumnName="ProcessorName" Width="25" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunType" Text="Run Type" ColumnName="RunType" Width="25" Align="Left" Fill="False" MaxChars="0" />
+    <GridColumn Name="RunUntilTask" Text="RU" ColumnName="RunUntilTask" Width="5" Align="Left" Fill="True" MaxChars="0" />
+  </GridView>
+</GridViewSet>

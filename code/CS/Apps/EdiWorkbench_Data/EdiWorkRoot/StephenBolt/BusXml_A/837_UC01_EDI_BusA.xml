@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ClaimDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oopfactory.com/2011/XSL/Hipaa">
+  <Claim Version="005010X222A1" Type="Professional" TransactionCode="000000252" ClaimNumber="" BillTypeCode="111" PatientControlNumber="249" TotalClaimChargeAmount="60" ProviderSignatureOnFile="Y" ProviderAcceptAssignmentCode="A" BenefitsAssignmentCertificationIndicator="Y" ReleaseOfInformationCode="Y" MedicalRecordNumber="" StatementFromDate="2012-09-21" StatementToDate="2012-09-21">
+    <ServiceLocationInfo Qualifier="B" FacilityCode="11" FrequencyTypeCode="1" />
+    <BillingInfo>
+      <Provider Npi="6565656565" TaxId="222222222">
+        <Name LastName="Sean" FirstName="Smith" MiddleName="K">
+          <Type Identifier="85" Qualifier="Person">Billing Provider</Type>
+          <Identification Qualifier="XX" Id="6565656565">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+        </Name>
+        <Address City="Frisco City" StateCode="NY" PostalCode="112348888">
+          <Line1>5537 KINGS HIGHWAY</Line1>
+          <Line2>APT 6G</Line2>
+        </Address>
+        <Identification Qualifier="EI" Id="222222222">Employer's Identification Number</Identification>
+      </Provider>
+    </BillingInfo>
+    <SubmitterInfo>
+      <Provider>
+        <Name LastName="Mayo Clinic">
+          <Type Identifier="41" Qualifier="NonPerson">Submitter</Type>
+          <Identification Qualifier="46" Id="S32433">Electronic Transmitter Identification Number (ETIN)</Identification>
+        </Name>
+        <Contact FunctionCode="IC">
+          <Name>Mayo Clinic</Name>
+          <Number Qualifier="TE">9547487111</Number>
+          <Number Qualifier="FX">9547487222</Number>
+        </Contact>
+      </Provider>
+    </SubmitterInfo>
+    <Subscriber Gender="Male" DateOfBirth="1945-11-23" MemberId="Y333RF3333">
+      <Name LastName="SIMMONS" FirstName="FOSTER">
+        <Type Identifier="IL" Qualifier="Person">Insured or Subscriber</Type>
+        <Identification Qualifier="MI" Id="Y333RF3333">Member Identification Number</Identification>
+      </Name>
+      <Address City="SUGAR LAND" StateCode="CA" PostalCode="743434232">
+        <Line1>8367 ALIQUAM ROAD</Line1>
+        <Line2>AP #117-8770</Line2>
+      </Address>
+      <Relationship Code="18" />
+    </Subscriber>
+    <Payer>
+      <Name LastName="AETNA HEALTH INC">
+        <Type Identifier="PR" Qualifier="NonPerson">Payer</Type>
+        <Identification Qualifier="PI" Id="9393">Payor Identification</Identification>
+      </Name>
+      <Address City="Blue Bell" StateCode="PA" PostalCode="19422">
+        <Line1>P.O. BOX 1125</Line1>
+      </Address>
+    </Payer>
+    <SubscriberInformation PayerResponsibilitySequenceNumberCode="P" IndividualRelationshipCode="18" ReferenceIdentification="K34532" Name="GFAMPLAN" InsuranceTypeCode="" CoordinationOfBenefitsCode="" YesNoConditionResponseCode="" EmploymentStatusCode="" ClaimFilingIndicatorCode="ZZ" />
+    <Diagnosis DiagnosisType="Principal" Version="ICD9" Qualifier="BK" Code="41012" PoiIndicator="" Poi="Unknown" />
+    <Provider Npi="6565656565">
+      <Name LastName="Sean" FirstName="Smith" MiddleName="K">
+        <Type Identifier="82" Qualifier="Person">Rendering Provider</Type>
+        <Identification Qualifier="XX" Id="6565656565">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+      </Name>
+    </Provider>
+    <Provider Npi="1336177328">
+      <Name LastName="NY Office">
+        <Type Identifier="77" Qualifier="NonPerson">Service Location</Type>
+        <Identification Qualifier="XX" Id="1336177328">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+      </Name>
+      <Address City="White Plains" StateCode="NY" PostalCode="809051232">
+        <Line1>5081 Tellus. Avenue</Line1>
+        <Line2>668-2204 Non Rd.</Line2>
+      </Address>
+      <Identification Qualifier="LU" Id="484345">Location Number</Identification>
+    </Provider>
+    <Identification Qualifier="X4" Id="CL324234">Clinical Laboratory Improvement Amendment Number</Identification>
+    <ServiceLine LineNumber="1" Quantity="1" Unit="UN" DiagnosisCodePointer1="1" ChargeAmount="60" ServiceDateFrom="2012-09-21" ServiceDateTo="2012-09-21">
+      <PlaceOfService Code="11" />
+      <Procedure Qualifier="HC" ProcedureCode="99214" />
+      <Identification Qualifier="6R" Id="1134">Provider Control Number</Identification>
+      <DateRange Qualifier="472" BeginDate="2012-09-21" EndDate="2012-09-21">Service</DateRange>
+    </ServiceLine>
+  </Claim>
+  <Claim Version="005010X222A1" Type="Professional" TransactionCode="000000252" ClaimNumber="" BillTypeCode="111" PatientControlNumber="250" TotalClaimChargeAmount="38" ProviderSignatureOnFile="Y" ProviderAcceptAssignmentCode="A" BenefitsAssignmentCertificationIndicator="Y" ReleaseOfInformationCode="Y" MedicalRecordNumber="" StatementFromDate="2012-09-24" StatementToDate="2012-09-24">
+    <ServiceLocationInfo Qualifier="B" FacilityCode="11" FrequencyTypeCode="1" />
+    <BillingInfo>
+      <Provider Npi="6565656565" TaxId="222222222">
+        <Name LastName="Sean" FirstName="Smith" MiddleName="K">
+          <Type Identifier="85" Qualifier="Person">Billing Provider</Type>
+          <Identification Qualifier="XX" Id="6565656565">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+        </Name>
+        <Address City="Frisco City" StateCode="NY" PostalCode="112348888">
+          <Line1>5537 KINGS HIGHWAY</Line1>
+          <Line2>APT 6G</Line2>
+        </Address>
+        <Identification Qualifier="EI" Id="222222222">Employer's Identification Number</Identification>
+      </Provider>
+    </BillingInfo>
+    <SubmitterInfo>
+      <Provider>
+        <Name LastName="Mayo Clinic">
+          <Type Identifier="41" Qualifier="NonPerson">Submitter</Type>
+          <Identification Qualifier="46" Id="S32433">Electronic Transmitter Identification Number (ETIN)</Identification>
+        </Name>
+        <Contact FunctionCode="IC">
+          <Name>Mayo Clinic</Name>
+          <Number Qualifier="TE">9547487111</Number>
+          <Number Qualifier="FX">9547487222</Number>
+        </Contact>
+      </Provider>
+    </SubmitterInfo>
+    <Subscriber Gender="Female" DateOfBirth="1965-12-22" MemberId="Y333RF12344">
+      <Name LastName="MIKE" FirstName="ROBERT" MiddleName="M">
+        <Type Identifier="IL" Qualifier="Person">Insured or Subscriber</Type>
+        <Identification Qualifier="MI" Id="Y333RF12344">Member Identification Number</Identification>
+      </Name>
+      <Address City="HOLLIS" StateCode="NY" PostalCode="11429">
+        <Line1>516-09 HOLLIS AVE.</Line1>
+        <Line2>FIRST FLOOR</Line2>
+      </Address>
+      <Relationship Code="18" />
+    </Subscriber>
+    <Payer>
+      <Name LastName="AETNA HEALTH INC">
+        <Type Identifier="PR" Qualifier="NonPerson">Payer</Type>
+        <Identification Qualifier="PI" Id="9393">Payor Identification</Identification>
+      </Name>
+      <Address City="Blue Bell" StateCode="PA" PostalCode="19422">
+        <Line1>P.O. BOX 1125</Line1>
+      </Address>
+    </Payer>
+    <SubscriberInformation PayerResponsibilitySequenceNumberCode="P" IndividualRelationshipCode="18" ReferenceIdentification="G34534GS" Name="GFAMPLAN" InsuranceTypeCode="" CoordinationOfBenefitsCode="" YesNoConditionResponseCode="" EmploymentStatusCode="" ClaimFilingIndicatorCode="ZZ" />
+    <Diagnosis DiagnosisType="Principal" Version="ICD9" Qualifier="BK" Code="320" PoiIndicator="" Poi="Unknown" />
+    <Provider Npi="6565656565">
+      <Name LastName="Sean" FirstName="Smith" MiddleName="K">
+        <Type Identifier="82" Qualifier="Person">Rendering Provider</Type>
+        <Identification Qualifier="XX" Id="6565656565">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+      </Name>
+    </Provider>
+    <Provider Npi="1336177328">
+      <Name LastName="NY Office">
+        <Type Identifier="77" Qualifier="NonPerson">Service Location</Type>
+        <Identification Qualifier="XX" Id="1336177328">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+      </Name>
+      <Address City="White Plains" StateCode="NY" PostalCode="809051232">
+        <Line1>5081 Tellus. Avenue</Line1>
+        <Line2>668-2204 Non Rd.</Line2>
+      </Address>
+      <Identification Qualifier="LU" Id="484345">Location Number</Identification>
+    </Provider>
+    <ServiceLine LineNumber="1" Quantity="1" Unit="UN" DiagnosisCodePointer1="1" ChargeAmount="38" ServiceDateFrom="2012-09-24" ServiceDateTo="2012-09-24">
+      <PlaceOfService Code="11" />
+      <Procedure Qualifier="HC" ProcedureCode="35102" />
+      <Identification Qualifier="6R" Id="1135">Provider Control Number</Identification>
+      <DateRange Qualifier="472" BeginDate="2012-09-24" EndDate="2012-09-24">Service</DateRange>
+    </ServiceLine>
+  </Claim>
+  <Claim Version="005010X222A1" Type="Professional" TransactionCode="000000252" ClaimNumber="" BillTypeCode="111" PatientControlNumber="251" TotalClaimChargeAmount="797.21" ProviderSignatureOnFile="Y" ProviderAcceptAssignmentCode="A" BenefitsAssignmentCertificationIndicator="Y" ReleaseOfInformationCode="Y" MedicalRecordNumber="" StatementFromDate="2012-01-09" StatementToDate="2012-01-09">
+    <ServiceLocationInfo Qualifier="B" FacilityCode="11" FrequencyTypeCode="1" />
+    <BillingInfo>
+      <Provider Npi="6565656565" TaxId="222222222">
+        <Name LastName="Sean" FirstName="Smith" MiddleName="K">
+          <Type Identifier="85" Qualifier="Person">Billing Provider</Type>
+          <Identification Qualifier="XX" Id="6565656565">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+        </Name>
+        <Address City="Frisco City" StateCode="NY" PostalCode="112348888">
+          <Line1>5537 KINGS HIGHWAY</Line1>
+          <Line2>APT 6G</Line2>
+        </Address>
+        <Identification Qualifier="EI" Id="222222222">Employer's Identification Number</Identification>
+      </Provider>
+    </BillingInfo>
+    <SubmitterInfo>
+      <Provider>
+        <Name LastName="Mayo Clinic">
+          <Type Identifier="41" Qualifier="NonPerson">Submitter</Type>
+          <Identification Qualifier="46" Id="S32433">Electronic Transmitter Identification Number (ETIN)</Identification>
+        </Name>
+        <Contact FunctionCode="IC">
+          <Name>Mayo Clinic</Name>
+          <Number Qualifier="TE">9547487111</Number>
+          <Number Qualifier="FX">9547487222</Number>
+        </Contact>
+      </Provider>
+    </SubmitterInfo>
+    <Subscriber Gender="Male" DateOfBirth="1945-11-23" MemberId="Y333RF3333">
+      <Name LastName="SIMMONS" FirstName="FOSTER">
+        <Type Identifier="IL" Qualifier="Person">Insured or Subscriber</Type>
+        <Identification Qualifier="MI" Id="Y333RF3333">Member Identification Number</Identification>
+      </Name>
+      <Address City="SUGAR LAND" StateCode="CA" PostalCode="743434232">
+        <Line1>8367 ALIQUAM ROAD</Line1>
+        <Line2>AP #117-8770</Line2>
+      </Address>
+      <Relationship Code="18" />
+    </Subscriber>
+    <Payer>
+      <Name LastName="AETNA HEALTH INC">
+        <Type Identifier="PR" Qualifier="NonPerson">Payer</Type>
+        <Identification Qualifier="PI" Id="9393">Payor Identification</Identification>
+      </Name>
+      <Address City="Blue Bell" StateCode="PA" PostalCode="19422">
+        <Line1>P.O. BOX 1125</Line1>
+      </Address>
+    </Payer>
+    <SubscriberInformation PayerResponsibilitySequenceNumberCode="P" IndividualRelationshipCode="18" ReferenceIdentification="K34532" Name="GFAMPLAN" InsuranceTypeCode="" CoordinationOfBenefitsCode="" YesNoConditionResponseCode="" EmploymentStatusCode="" ClaimFilingIndicatorCode="ZZ" />
+    <Diagnosis DiagnosisType="Principal" Version="ICD9" Qualifier="BK" Code="410" PoiIndicator="" Poi="Unknown" />
+    <Diagnosis DiagnosisType="Other" Version="ICD9" Qualifier="BF" Code="415" PoiIndicator="" Poi="Unknown" />
+    <Diagnosis DiagnosisType="Other" Version="ICD9" Qualifier="BF" Code="36834" PoiIndicator="" Poi="Unknown" />
+    <Diagnosis DiagnosisType="Other" Version="ICD9" Qualifier="BF" Code="5223" PoiIndicator="" Poi="Unknown" />
+    <Provider Npi="1902825870">
+      <Name LastName="SOLOMON" FirstName="ROBERT">
+        <Type Identifier="DN" Qualifier="Person">Referring Provider</Type>
+        <Identification Qualifier="XX" Id="1902825870">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+      </Name>
+    </Provider>
+    <Provider Npi="6565656565">
+      <Name LastName="Sean" FirstName="Smith" MiddleName="K">
+        <Type Identifier="82" Qualifier="Person">Rendering Provider</Type>
+        <Identification Qualifier="XX" Id="6565656565">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+      </Name>
+    </Provider>
+    <Provider Npi="1336177328">
+      <Name LastName="NY Office">
+        <Type Identifier="77" Qualifier="NonPerson">Service Location</Type>
+        <Identification Qualifier="XX" Id="1336177328">Centers for Medicare and Medicaid Services National Provider Identifier</Identification>
+      </Name>
+      <Address City="White Plains" StateCode="NY" PostalCode="809051232">
+        <Line1>5081 Tellus. Avenue</Line1>
+        <Line2>668-2204 Non Rd.</Line2>
+      </Address>
+      <Identification Qualifier="LU" Id="484345">Location Number</Identification>
+    </Provider>
+    <Identification Qualifier="X4" Id="CL324234">Clinical Laboratory Improvement Amendment Number</Identification>
+    <ServiceLine LineNumber="1" Quantity="1" Unit="UN" DiagnosisCodePointer1="1" DiagnosisCodePointer2="2" DiagnosisCodePointer3="3" DiagnosisCodePointer4="4" ChargeAmount="275" ServiceDateFrom="2012-01-09" ServiceDateTo="2012-01-09">
+      <PlaceOfService Code="11" />
+      <Procedure Qualifier="HC" ProcedureCode="99214" Modifier1="TC" Modifier2="M2" Modifier3="M3" Modifier4="M4" />
+      <Identification Qualifier="6R" Id="1136">Provider Control Number</Identification>
+      <DateRange Qualifier="472" BeginDate="2012-01-09" EndDate="2012-01-09">Service</DateRange>
+    </ServiceLine>
+    <ServiceLine LineNumber="2" Quantity="1" Unit="UN" DiagnosisCodePointer1="1" DiagnosisCodePointer2="2" ChargeAmount="180.01" ServiceDateFrom="2012-01-09" ServiceDateTo="2012-01-09">
+      <PlaceOfService Code="11" />
+      <Procedure Qualifier="HC" ProcedureCode="92570" />
+      <Identification Qualifier="6R" Id="1137">Provider Control Number</Identification>
+      <DateRange Qualifier="472" BeginDate="2012-01-09" EndDate="2012-01-09">Service</DateRange>
+    </ServiceLine>
+    <ServiceLine LineNumber="3" Quantity="1" Unit="UN" DiagnosisCodePointer1="1" DiagnosisCodePointer2="2" ChargeAmount="0.2" ServiceDateFrom="2012-01-09" ServiceDateTo="2012-01-09">
+      <PlaceOfService Code="11" />
+      <Procedure Qualifier="HC" ProcedureCode="90371" />
+      <Identification Qualifier="6R" Id="1138">Provider Control Number</Identification>
+      <DateRange Qualifier="472" BeginDate="2012-01-09" EndDate="2012-01-09">Service</DateRange>
+    </ServiceLine>
+    <ServiceLine LineNumber="4" Quantity="1" Unit="UN" DiagnosisCodePointer1="1" DiagnosisCodePointer2="2" ChargeAmount="342" ServiceDateFrom="2012-01-09" ServiceDateTo="2012-01-09">
+      <PlaceOfService Code="11" />
+      <Procedure Qualifier="HC" ProcedureCode="78478" />
+      <Identification Qualifier="6R" Id="1139">Provider Control Number</Identification>
+      <DateRange Qualifier="472" BeginDate="2012-01-09" EndDate="2012-01-09">Service</DateRange>
+    </ServiceLine>
+  </Claim>
+</ClaimDocument>

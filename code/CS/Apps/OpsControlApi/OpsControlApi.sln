@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpsControlApi", "OpsControlApi.csproj", "{C9F2CCC8-0F6E-4E6D-86D9-F0222C9BEE53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{73305434-7FBD-43A0-A980-DCEBBBBE3155}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Common Libs", "20 - Common Libs", "{F4EAFB0D-37CC-404B-B1CC-EDB5BCA4A741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.WebApi", "..\..\Libs\Org.WebApi\Org.WebApi.csproj", "{F71322B4-A836-40CC-94A0-80450F52DB95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{19014108-59CE-4992-8664-1ABBEF88FD2B}"
+	ProjectSection(SolutionItems) = preProject
+		..\.nuget\NuGet.Config = ..\.nuget\NuGet.Config
+		..\.nuget\NuGet.exe = ..\.nuget\NuGet.exe
+		..\.nuget\NuGet.targets = ..\.nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 - Nuget", "99 - Nuget", "{42D9DE6F-26CD-46CD-8F1F-A5FE84F21F91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.DB", "..\..\Libs\Org.DB\Org.DB.csproj", "{A92C55EB-A2BF-4239-B87B-EEBD669584C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Api Related Libs", "10 - Api Related Libs", "{1228DE81-43C3-43CC-846D-C50EC03DBB9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TSK.Business", "..\..\Libs\Org.TSK.Business\Org.TSK.Business.csproj", "{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Ops.ApiModels", "..\..\Libs\Org.Ops.ApiModels\Org.Ops.ApiModels.csproj", "{CA4FF33B-F3DE-472C-A551-517ADC4E34CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9F2CCC8-0F6E-4E6D-86D9-F0222C9BEE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F2CCC8-0F6E-4E6D-86D9-F0222C9BEE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F2CCC8-0F6E-4E6D-86D9-F0222C9BEE53}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C9F2CCC8-0F6E-4E6D-86D9-F0222C9BEE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F2CCC8-0F6E-4E6D-86D9-F0222C9BEE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9F2CCC8-0F6E-4E6D-86D9-F0222C9BEE53}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{F71322B4-A836-40CC-94A0-80450F52DB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71322B4-A836-40CC-94A0-80450F52DB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71322B4-A836-40CC-94A0-80450F52DB95}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F71322B4-A836-40CC-94A0-80450F52DB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71322B4-A836-40CC-94A0-80450F52DB95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F71322B4-A836-40CC-94A0-80450F52DB95}.Release|x86.ActiveCfg = Release|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{CA4FF33B-F3DE-472C-A551-517ADC4E34CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4FF33B-F3DE-472C-A551-517ADC4E34CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4FF33B-F3DE-472C-A551-517ADC4E34CB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CA4FF33B-F3DE-472C-A551-517ADC4E34CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4FF33B-F3DE-472C-A551-517ADC4E34CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4FF33B-F3DE-472C-A551-517ADC4E34CB}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9F2CCC8-0F6E-4E6D-86D9-F0222C9BEE53} = {73305434-7FBD-43A0-A980-DCEBBBBE3155}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {F4EAFB0D-37CC-404B-B1CC-EDB5BCA4A741}
+		{F71322B4-A836-40CC-94A0-80450F52DB95} = {1228DE81-43C3-43CC-846D-C50EC03DBB9D}
+		{19014108-59CE-4992-8664-1ABBEF88FD2B} = {42D9DE6F-26CD-46CD-8F1F-A5FE84F21F91}
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3} = {F4EAFB0D-37CC-404B-B1CC-EDB5BCA4A741}
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0} = {1228DE81-43C3-43CC-846D-C50EC03DBB9D}
+		{CA4FF33B-F3DE-472C-A551-517ADC4E34CB} = {1228DE81-43C3-43CC-846D-C50EC03DBB9D}
+	EndGlobalSection
+EndGlobal

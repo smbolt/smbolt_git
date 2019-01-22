@@ -1,0 +1,93 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="SvnHelper">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$OSource$" V="C:\DevProjects\Main\Source" />
+          <CI K="$GSource$" V="I:\TFS\Apps" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="ProcessAllFolders" V="True" />
+          <CI K="UpdateInterval" V="50" />
+          <CI K="ProjectPath" V="c:\DevProjects\Main\Source" />
+          <CI K="HideSyncTab" V="False" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Continuous" />
+          <CI K="LogFileSizeManagementMethod" V="TotalBytes" />
+          <CI K="LogFileSizeManagementAgent" V="LogHelper" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="10000000" />
+          <CI K="LogFileSizeTrim" V="7500000" />
+        </CIGroup>
+        <CIGroup Name="BeyondCompare">
+          <CI K="BCExePath" V="C:\Program Files (x86)\Beyond Compare 4\BCompare.exe" />
+        </CIGroup>
+        <CIGroup Name="Sync1ConfigSyncSpec">
+          <CI K="Sync1LeftFolder" V="C:\DevProjects\Main\Source\SyncTest\AppLauncher" />
+          <CI K="Sync1RightFolder" V="I:\TFS\Apps\AppLauncher" />
+          <CI K="Sync1Filter" V="*.html;*.htm;*.png;*.jpg" />
+          <CI K="Sync1ScriptName" V="Sync1.txt" />
+          <CI K="Sync1Active" V="True" />
+        </CIGroup>
+        <CIGroup Name="Sync2ConfigSyncSpec">
+          <CI K="Sync2LeftFolder" V="C:\DevProjects\Main\Source\SyncTest\CodePusher" />
+          <CI K="Sync2RightFolder" V="I:\TFS\Apps\CodePusher" />
+          <CI K="Sync2Filter" V="*.svn" />
+          <CI K="Sync2ScriptName" V="Sync1.txt" />
+          <CI K="Sync2Active" V="False" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="SvnControl">
+          <LI V="AdsdiDev" />
+          <LI V="AppConfigManager" />
+          <LI V="AppLauncher" />
+          <LI V="BuildMyResume" />
+          <LI V="BuildMyResume.Domain" />
+          <LI V="BulkTrans" />
+          <LI V="CodePusher" />
+          <LI V="CraigslistApi" />
+          <LI V="CraigslistManager" />
+          <LI V="DictionaryManager" />
+          <LI V="DocDesign" />
+          <LI V="EncryptedFileUtility" />
+          <LI V="Freelance" />
+          <LI V="Gulfport" />
+          <LI V="MainSvc" />
+          <LI V="MEFTest" />
+          <LI V="MockTvccService" />
+          <LI V="ReportTest" />
+          <LI V="ResumeImage" />
+          <LI V="rksscan" />
+          <LI V="RKSScan" />
+          <LI V="SerialComUtility" />
+          <LI V="Shared" />
+          <LI V="SvnHelper" />
+          <LI V="VideoCoding" />
+          <LI V="VoiceCoding" />
+          <LI V="WebNavigator" />
+          <LI V="WebSvcTest" />
+          <LI V="WellMasterWeb" />
+          <LI V="WeokieToQBO" />
+          <LI V="WinApp" />
+          <LI V="WinAppHost" />
+          <LI V="WinService" />
+          <LI V="WinServiceHost" />
+        </ConfigList>
+        <ConfigList Name="SyncControl">
+          <LI V="AppLauncher" />
+          <LI V="CodePusher" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="SyncConfigs">
+          <DI K="AppLauncher" V="Sync1" />
+          <DI K="CodePusher" V="Sync2" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

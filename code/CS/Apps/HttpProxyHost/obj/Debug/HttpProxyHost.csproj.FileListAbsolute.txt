@@ -1,0 +1,13 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\bin\Debug\HttpProxyHost.exe.config
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\bin\Debug\HttpProxyHost.exe
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\bin\Debug\HttpProxyHost.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\obj\Debug\HttpProxyHost.csprojAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\obj\Debug\HttpProxyHost.frmMain.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\obj\Debug\HttpProxyHost.Properties.Resources.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\obj\Debug\HttpProxyHost.csproj.GenerateResource.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\obj\Debug\HttpProxyHost.csproj.CoreCompileInputs.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\obj\Debug\HttpProxyHost.csproj.CopyComplete
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\obj\Debug\HttpProxyHost.exe
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\HttpProxyHost\obj\Debug\HttpProxyHost.pdb

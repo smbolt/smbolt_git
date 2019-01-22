@@ -1,0 +1,35 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="TextUtility">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="ConfigItem1" V="ConfigValue1" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="70" />
+          <CI K="MainFormVerticalSize" V="85" />
+        </CIGroup>
+        <CIGroup Name="ProdConfigDbSpec">
+          <CI K="ProdDbServer" V="OKC1EDW0001" />
+          <CI K="ProdDbName" V="GPStatement" />
+          <CI K="ProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TestConfigDbSpec">
+          <CI K="TestDbServer" V="OKC1EDW2001" />
+          <CI K="TestDbName" V="GPStatement" />
+          <CI K="TestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,88 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="NotificationTest">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="NotifyDbSpecPrefix" V="Notify" />
+          <CI K="NotifyConfigMode" V="AppConfig" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigSmtpSpec">
+          <CI K="DefaultSmtpServer" V="smtp.gulfportenergy.com" />
+          <CI K="DefaultSmtpPort" V="25" />
+          <CI K="DefaultSmtpUserID" V="" />
+          <CI K="DefaultSmtpPassword" V="" />
+          <CI K="DefaultEnableSSL" V="False" />
+          <CI K="DefaultPickUpFromIIS" V="False" />
+          <CI K="DefaultAllowAnonymous" V="True" />
+          <CI K="DefaultEmailFromAddress" V="CustomApplicationSupportTest@gulfportenergy.com" />
+        </CIGroup>
+        <CIGroup Name="NotifyConfigDbSpec">
+          <CI K="NotifyDbServer" V="OKC1EDW2001" />
+          <CI K="NotifyDbName" V="Notifications" />
+          <CI K="NotifyDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="TestList1">
+          <LI V="TestValue1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="TestDictionary1">
+          <DI K="TestKey1" V="TestValue1" />
+          <DI K="TestKey2" V="TestValue2" />
+          <DI K="TestKey3" V="TestValue3" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+      <NotifyConfigSet Name="Default">
+        <NotifyConfig Name="Dummy" SupportEmail="kroper@gulfportenergy.com" SupportPhone="405-242-4411">
+          <NotifyGroupSet>
+            <NotifyGroup Name="Ops1">
+              <NotifyPerson Name="Kelly Roper" IsActive="False" EmailAddress="kroper@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Steve Bolt" IsActive="True" EmailAddress="sbolt@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            </NotifyGroup>
+            <NotifyGroup Name="Ops2">
+              <NotifyPerson Name="Kelly Roper" IsActive="False" EmailAddress="kroper@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Steve Bolt (HOME)" IsActive="True" EmailAddress="stephen.m.bolt@gmail.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            </NotifyGroup>
+            <NotifyGroup Name="Ops3">
+              <NotifyPerson Name="Kelly Roper" IsActive="False" EmailAddress="kroper@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Steve Bolt (HOME)" IsActive="True" EmailAddress="stephen.m.bolt@gmail.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            </NotifyGroup>
+          </NotifyGroupSet>
+          <NotifyEventSet>
+            <NotifyEvent Name="$TASKNAME$_Success" IsActive="True" DefaultSubject="$TASKNAME$ - Task Completed Successful">
+              <NotifyGroupReference Name="Ops1" IsActive="True" />
+              <NotifyGroupReference Name="Ops2" IsActive="False" />
+              <NotifyGroupReference Name="Ops3" IsActive="False" />
+            </NotifyEvent>
+            <NotifyEvent Name="$TASKNAME$_Warning" IsActive="True" DefaultSubject="$TASKNAME$ - Task Completed with Warning(s)">
+              <NotifyGroupReference Name="Ops1" IsActive="True" />
+              <NotifyGroupReference Name="Ops2" IsActive="False" />
+            </NotifyEvent>
+            <NotifyEvent Name="$TASKNAME$_Failed" IsActive="True" DefaultSubject="$TASKNAME$ - Task Failed">
+              <NotifyGroupReference Name="Ops1" IsActive="False" />
+            </NotifyEvent>
+          </NotifyEventSet>
+        </NotifyConfig>
+        <NotifyConfig Name="ColoradoDailyStmt" SupportEmail="kroper@gulfportenergy.com" SupportPhone="405-242-4411">
+          <NotifyGroupSet>
+            <NotifyGroup Name="Ops1">
+              <NotifyPerson Name="Kelly Roper" IsActive="True" EmailAddress="kroper@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+              <NotifyPerson Name="Steve Bolt" IsActive="True" EmailAddress="sbolt@gulfportenergy.com" IsEmailActive="True" SmsNumber="" IsSmsActive="False" />
+            </NotifyGroup>
+          </NotifyGroupSet>
+          <NotifyEventSet>
+            <NotifyEvent Name="ColoradoDailyStmt_Success" IsActive="True" DefaultSubject="Colorado Daily Statement Import was Successful">
+              <NotifyGroupReference Name="Ops1" IsActive="True" />
+              <NotifyGroupReference Name="Ops2" IsActive="True" />
+            </NotifyEvent>
+            <NotifyEvent Name="ColoradoDailyStmt_Failed" IsActive="True" DefaultSubject="Colorado Daily Statement Import Failed">
+              <NotifyGroupReference Name="Ops1" IsActive="True" />
+            </NotifyEvent>
+          </NotifyEventSet>
+        </NotifyConfig>
+      </NotifyConfigSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

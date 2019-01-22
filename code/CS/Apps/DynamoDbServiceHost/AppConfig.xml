@@ -1,0 +1,5 @@
+﻿<AppConfig>
+  <CI K="DynamoDbInstallationPath" V="D:\DynamoDb" />
+  <CI K="Key2" V="Value2" />
+  <CI K="Key3" V="Value3" />
+</AppConfig>

@@ -1,0 +1,17 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\obj\x86\Debug\DbGen.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\obj\x86\Debug\Org.DbGen.frmMain.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\obj\x86\Debug\Org.DbGen.Properties.Resources.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\obj\x86\Debug\DbGen.csproj.GenerateResource.Cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\obj\x86\Debug\DbGen.csproj.CoreCompileInputs.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\Org.DbGen.exe.config
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\Org.DbGen.exe
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\Org.DbGen.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\Org.DB.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\EntityFramework.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\Org.DB.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\Org.DB.dll.config
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\bin\Debug\EntityFramework.xml
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\obj\x86\Debug\Org.DbGen.exe
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DbGen\obj\x86\Debug\Org.DbGen.pdb

@@ -1,0 +1,103 @@
+REPORT TRACE
+
+LVL   TYPE                 Name                   X         Y         W         H            RdNextY        RosCurrY
+01    PageBorder           PageBorder         0037.500  0037.500  0775.000  1025.000        0037.500        0037.500  
+01    ReportObjectSet                                   0037.500
+
+01    Rectangle            TitleBox           0037.500  0037.500  0775.000  0050.000        0037.500        0087.500  
+01    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0037.500  0039.500  0000.000  0000.000        0037.500        0037.500  50001
+02    ReportObjectSet                                   0037.500
+02    ReportText           ReportObject       0140.500  0039.500  0000.000  0000.000        0037.500        0037.500  Bug found in software
+02    ReportObjectSet                                   0037.500
+02    ReportText           ReportObject       0037.500  0062.500  0000.000  0000.000        0037.500        0037.500  Project:
+02    ReportObjectSet                                   0037.500
+02    ReportText           ReportObject       0037.500  0062.500  0000.000  0000.000        0037.500        0037.500  New Product
+02    ReportObjectSet                                   0037.500
+02    ReportText           ReportObject       0037.500  0062.500  0000.000  0000.000        0037.500        0037.500  Version:
+02    ReportObjectSet                                   0037.500
+02    ReportText           ReportObject       0037.500  0062.500  0000.000  0000.000        0037.500        0037.500  3.4.3
+02    ReportObjectSet                                   0037.500
+02    ReportText           ReportObject       0037.500  0062.500  0000.000  0000.000        0037.500        0037.500  Printed:
+02    ReportObjectSet                                   0037.500
+02    ReportText           ReportObject       0667.500  0062.500  0000.000  0000.000        0037.500        0037.500  09/24/2015 10:30 AM
+02    ReportObjectSet                                   0037.500
+
+01    Rectangle            SecondBox          0037.500  0087.500  0775.000  0180.000        0037.500        0267.500  
+01    ReportObjectSet                                   0267.500
+02    ReportText           ReportObject       0041.500  0092.500  0000.000  0000.000        0037.500        0087.500  Status:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0142.500  0092.500  0000.000  0000.000        0037.500        0087.500  Closed
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0041.500  0112.500  0000.000  0000.000        0037.500        0087.500  Magic #:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0142.500  0112.500  0000.000  0000.000        0037.500        0087.500  2001
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0041.500  0132.500  0000.000  0000.000        0037.500        0087.500  Risk Level:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0142.500  0132.500  0000.000  0000.000        0037.500        0087.500  Medium
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0041.500  0152.500  0000.000  0000.000        0037.500        0087.500  Reported By:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0142.500  0152.500  0000.000  0000.000        0037.500        0087.500  Larry
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0041.500  0172.500  0000.000  0000.000        0037.500        0087.500  Resources:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0142.500  0172.500  0000.000  0000.000        0037.500        0087.500  Bill, George
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0041.500  0192.500  0000.000  0000.000        0037.500        0087.500  Customer:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0142.500  0192.500  0000.000  0000.000        0037.500        0087.500  Best Customer
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0041.500  0212.500  0000.000  0000.000        0037.500        0087.500  Rel Tickets:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0142.500  0212.500  0000.000  0000.000        0037.500        0087.500  63001,63002
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0041.500  0232.500  0000.000  0000.000        0037.500        0087.500  ET Scripts or DB Chg:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0037.500  0232.500  0000.000  0000.000        0037.500        0087.500  N
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0217.500  0232.500  0000.000  0000.000        0037.500        0087.500  Sysparm Add or Chg:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0350.500  0232.500  0000.000  0000.000        0037.500        0087.500  N
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0379.500  0232.500  0000.000  0000.000        0037.500        0087.500  OffCycle:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0442.500  0232.500  0000.000  0000.000        0037.500        0087.500  N
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0317.500  0092.500  0000.000  0000.000        0037.500        0087.500  Resolution:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0402.500  0092.500  0000.000  0000.000        0037.500        0087.500  Program Fixed
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0317.500  0112.500  0000.000  0000.000        0037.500        0087.500  Type:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0402.500  0112.500  0000.000  0000.000        0037.500        0087.500  Defect
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0317.500  0132.500  0000.000  0000.000        0037.500        0087.500  Bdgt Type:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0402.500  0132.500  0000.000  0000.000        0037.500        0087.500  Development
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0317.500  0152.500  0000.000  0000.000        0037.500        0087.500  ET Version:
+02    ReportObjectSet                                   0087.500
+02    ReportText           ReportObject       0402.500  0152.500  0000.000  0000.000        0037.500        0087.500  5.0.0.0
+02    ReportObjectSet                                   0087.500
+
+02    Rectangle            ThirdBox           0037.500  0087.500  0775.000  0028.000        0037.500        0115.500  
+02    ReportObjectSet                                   0115.500
+03    ReportText           ReportObject       0037.500  0090.500  0000.000  0000.000        0037.500        0087.500  Long Description
+03    ReportObjectSet                                   0087.500
+
+02    Rectangle            FourthBox          0037.500  0115.500  0775.000  0000.000        0037.500        0115.500  
+02    ReportObjectSet                                   0115.500
+03    ReportText           ReportObject       0037.500  0117.500  0000.000  0000.000        0037.500        0115.500  A problem as described by the 
+03    ReportObjectSet                                   0115.500
+
+02    Rectangle            FifthBox           0037.500  0115.500  0775.000  0028.000        0037.500        0143.500  
+02    ReportObjectSet                                   0143.500
+03    ReportText           ReportObject       0037.500  0118.500  0000.000  0000.000        0037.500        0115.500  Comments
+03    ReportObjectSet                                   0115.500
+
+02    Rectangle            SixthBox           0037.500  0143.500  0775.000  0000.000        0037.500        0143.500  
+02    ReportObjectSet                                   0143.500
+03    ReportText           ReportObject       0037.500  0146.500  0000.000  0000.000        0037.500        0143.500  This ticket can be closed.
+03    ReportObjectSet                                   0143.500

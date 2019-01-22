@@ -1,0 +1,374 @@
+﻿********************************************************************************
+* BMS MAP FOR PDF OPTION 2                                                     *
+*                                                                              *
+********************************************************************************
+*---+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8
+         PRINT NOGEN
+*----------------------------------------------------------------------*
+PDF2     DFHMSD TYPE=&SYSPARM,                                         X
+               LANG=COBOL,                                             X
+               MODE=INOUT,                                             X
+               TERM=3270-2,                                            X
+               CTRL=FREEKB,                                            X
+               STORAGE=AUTO,                                           X
+               TIOAPFX=YES
+*----------------------------------------------------------------------*
+PDF2MAP  DFHMDI SIZE=(24,80),                                          X
+               LINE=1,                                                 X
+               COLUMN=1
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,4),                                             X
+               LENGTH=4,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~Menu'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,10),                                            X
+               LENGTH=7,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~RefList'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,19),                                            X
+               LENGTH=7,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='R~efMode'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,28),                                            X
+               LENGTH=9,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~Utilities'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,39),                                            X
+               LENGTH=11,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~Workstation'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,52),                                            X
+               LENGTH=4,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~Help'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(2,2),                                             X
+               LENGTH=78,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='-----------------------------------------------X
+               -------------------------------'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(3,33),                                            X
+               LENGTH=16,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='Edit Entry Panel'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(4,2),                                             X
+               LENGTH=12,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,              
+                                             X
+               INITIAL='Command ===>'
+*----------------------------------------------------------------------*
+COMMAND  DFHMDF POS=(4,15),                                            X
+               LENGTH=65,                                              X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(5,69),                                            X
+               LENGTH=5,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='More:'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(5,79),                                            X
+               LENGTH=1,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='+'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(6,2),                                             X
+               LENGTH=13,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='ISPF Library:'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(7,5),                                             X
+               LENGTH=13,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Project . . .'
+*----------------------------------------------------------------------*
+PROJECT  DFHMDF POS=(7,19),                                            X
+               LENGTH=8,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(8,5),                                             X
+               LENGTH=13,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Group . . . .'
+*----------------------------------------------------------------------*
+GROUP1   DFHMDF POS=(8,19),                                            X
+               LENGTH=8,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(8,28),                                            X
+               LENGTH=5,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='. . .'
+*----------------------------------------------------------------------*
+GROUP2   DFHMDF POS=(8,34),                                            X
+               LENGTH=8,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(8,43),                                            X
+               LENGTH=5,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='. . .'
+*----------------------------------------------------------------------*
+GROUP3   DFHMDF POS=(8,49),                                            X
+               LENGTH=8,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(8,58),                                            X
+               LENGTH=5,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='. . .'
+*----------------------------------------------------------------------*
+GROUP4   DFHMDF POS=(8,64),                                            X
+               LENGTH=8,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(9,5),                                             X
+               LENGTH=13,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Type  . . . . .'
+*----------------------------------------------------------------------*
+TYPE     DFHMDF POS=(9,19),                                            X
+               LENGTH=8,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(10,5),                                            X
+               LENGTH=13,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Member  . . .'
+*----------------------------------------------------------------------*
+MEMBER   DFHMDF POS=(10,19),                                           X
+               LENGTH=8,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(10,35),                                           X
+               LENGTH=44,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='(Blank or pattern for member selection list)'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(12,2),                                            X
+               LENGTH=37,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='Other partitioned, Sequential or VSAM'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(12,40),                                           X
+               LENGTH=18,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='Data Set, or file:'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(13,5),                                            X
+               LENGTH=14,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Name . . . . .'
+*----------------------------------------------------------------------*
+FILENAME DFHMDF POS=(13,20),                                           X
+               LENGTH=56,                                              X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(14,5),                                            X
+               LENGTH=17,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Volume Serial . .'
+*----------------------------------------------------------------------*
+VOLSER   DFHMDF POS=(14,23),                                           X
+               LENGTH=6,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(14,33),                                           X
+               LENGTH=18,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='(If not cataloged)'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(16,2),                                            X
+               LENGTH=37,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='Workstation File:'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(17,5),                                            X
+               LENGTH=14,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='File Name  . .'
+*----------------------------------------------------------------------*
+FILENM2  DFHMDF POS=(17,20),                                           X
+               LENGTH=56,                                              X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(18,42),                                           X
+               LENGTH=7,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='Options'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(19,2),                                            X
+               LENGTH=22,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Initial Macro  . . . .'
+*----------------------------------------------------------------------*
+INITMCR  DFHMDF POS=(19,25),                                           X
+               LENGTH=7,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+CFRMCMR  DFHMDF POS=(19,42),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(19,45),                                           X
+               LENGTH=27,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='Confirm Cancel/Move/Replace'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(20,2),                                            X
+               LENGTH=22,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Profile Name . . . . .'
+*----------------------------------------------------------------------*
+PROFNM   DFHMDF POS=(20,25),                                           X
+               LENGTH=7,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+MIXEDMD  DFHMDF POS=(20,42),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(20,45),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='Mixed Mode'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(21,2),                                            X
+               LENGTH=22,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Format Name  . . . . .'
+*----------------------------------------------------------------------*
+FMTNAME  DFHMDF POS=(21,25),                                           X
+               LENGTH=7,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+EDITWS   DFHMDF POS=(21,42),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(21,45),                                           X
+               LENGTH=19,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='Edit on Workstation'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(22,2),                                            X
+               LENGTH=22,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Data Set Password  . .'
+*----------------------------------------------------------------------*
+DSPSW    DFHMDF POS=(22,25),                                           X
+               LENGTH=7,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+PRSVVBL  DFHMDF POS=(22,42),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(22,45),                                           X
+               LENGTH=25,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='Preserve VB Record Length'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(23,2),                                            X
+               LENGTH=22,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Record Length  . . . .'
+*----------------------------------------------------------------------*
+RCDLTH   DFHMDF POS=(23,25),                                           X
+               LENGTH=5,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+EDASCII  DFHMDF POS=(23,42),                                           X
+               LENGTH=1,                                               X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(23,45),                                           X
+               LENGTH=15,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='Edit ASCII Data'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(24,3),                                            X
+               LENGTH=8,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='F4=Setup'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(24,16),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='F5=MyFiles'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(24,28),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='F12=Cancel'
+*----------------------------------------------------------------------*
+         END
+*----------------------------------------------------------------------*

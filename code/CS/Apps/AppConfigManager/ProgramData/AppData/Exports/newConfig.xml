@@ -1,0 +1,309 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="Global">
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Locations">
+          <DI K="Appalachia" V="001" />
+          <DI K="New England" V="002" />
+          <DI K="Eastern Canada" V="003" />
+          <DI K="Southeast &amp; Mid-Atlantic" V="004" />
+          <DI K="East Texas" V="005" />
+          <DI K="Louisiana" V="006" />
+          <DI K="Midcontinent" V="007" />
+          <DI K="Rockies" V="008" />
+          <DI K="Upper Rockies" V="009" />
+          <DI K="Alberta" V="010" />
+          <DI K="Midwest" V="011" />
+          <DI K="West Texas" V="012" />
+          <DI K="Desert SW" V="013" />
+          <DI K="California" V="014" />
+          <DI K="Pac NW" V="015" />
+          <DI K="British Columbia" V="016" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Appalachia_Export">
+          <DI K="TGP" V="001" />
+          <DI K="PEPL" V="002" />
+          <DI K="Algonquin" V="003" />
+          <DI K="DTI" V="004" />
+          <DI K="EasternShore" V="005" />
+          <DI K="REX EX" V="006" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Appalachia_Import">
+          <DI K="TGP" V="001" />
+          <DI K="TCO" V="002" />
+          <DI K="PEPL" V="003" />
+          <DI K="REX" V="004" />
+          <DI K="TCPL" V="005" />
+          <DI K="Crossroads" V="006" />
+          <DI K="Transco" V="007" />
+          <DI K="ANR" V="008" />
+          <DI K="TGT" V="009" />
+          <DI K="TETCO" V="010" />
+          <DI K="Iroquois" V="011" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="New England_Export">
+          <DI K="Iroquois" V="001" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="New England_Import">
+          <DI K="Algonquin" V="001" />
+          <DI K="TGP" V="002" />
+          <DI K="Portland" V="003" />
+          <DI K="Transcanada" V="004" />
+          <DI K="Maritimes" V="005" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Eastern Canada_Export">
+          <DI K="Great Lakes" V="001" />
+          <DI K="Viking" V="002" />
+          <DI K="St. Lawrence" V="003" />
+          <DI K="N. County Pipeline" V="004" />
+          <DI K="Iroquois" V="005" />
+          <DI K="Nat Fuels/TGP" V="006" />
+          <DI K="Empire" V="007" />
+          <DI K="PNGTS" V="008" />
+          <DI K="Maritimes NE" V="009" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Eastern Canada_Import">
+          <DI K="TC AB" V="001" />
+          <DI K="Great Lakes" V="002" />
+          <DI K="PEPL" V="003" />
+          <DI K="Bluewater" V="004" />
+          <DI K="Vector" V="005" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Southeast &amp; Mid-Atlantic_Export">
+          <DI K="Transco" V="001" />
+          <DI K="TETCO" V="002" />
+          <DI K="Trunkline" V="003" />
+          <DI K="TGP" V="004" />
+          <DI K="ANR" V="005" />
+          <DI K="TGT" V="006" />
+          <DI K="Columbia Gas" V="007" />
+          <DI K="Midwestern" V="008" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Southeast &amp; Mid-Atlantic_Import">
+          <DI K="Transco" V="001" />
+          <DI K="TETCO" V="002" />
+          <DI K="Trunkline" V="003" />
+          <DI K="TGP" V="004" />
+          <DI K="ANR" V="005" />
+          <DI K="Columbia Gulf" V="006" />
+          <DI K="Gulf South" V="007" />
+          <DI K="Midcon Express" V="008" />
+          <DI K="Fayetteville" V="009" />
+          <DI K="SESH" V="010" />
+          <DI K="SONAT" V="011" />
+          <DI K="TGT" V="012" />
+          <DI K="DTI" V="013" />
+          <DI K="Midla/Eastern Shore" V="014" />
+          <DI K="FGT" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="East Texas_Export">
+          <DI K="FGT" V="001" />
+          <DI K="GSPL/GCPL" V="002" />
+          <DI K="OkTex" V="003" />
+          <DI K="Sabine" V="004" />
+          <DI K="TGP" V="005" />
+          <DI K="Sonat" V="006" />
+          <DI K="Transco" V="007" />
+          <DI K="TGT" V="008" />
+          <DI K="NGPL" V="009" />
+          <DI K="Golden Pass" V="010" />
+          <DI K="Tiger" V="011" />
+          <DI K="Gulf States" V="012" />
+          <DI K="CEGT" V="013" />
+          <DI K="Trunkline" V="014" />
+          <DI K="Midcon Express" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="East Texas_Import">
+          <DI K="MC Express" V="001" />
+          <DI K="Gulf Crossing" V="002" />
+          <DI K="NGPL from OK" V="003" />
+          <DI K="TETCO" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Louisiana_Export">
+          <DI K="Trunkline" V="001" />
+          <DI K="FGT" V="002" />
+          <DI K="Sonat" V="003" />
+          <DI K="MRT" V="004" />
+          <DI K="TETCO" V="005" />
+          <DI K="TGP" V="006" />
+          <DI K="Transco" V="007" />
+          <DI K="Texas Gas" V="008" />
+          <DI K="MEX east" V="009" />
+          <DI K="Gulf South" V="010" />
+          <DI K="SESH" V="011" />
+          <DI K="Columbia Gulf" V="012" />
+          <DI K="MIDLA" V="013" />
+          <DI K="Trans-Union" V="014" />
+          <DI K="ANR" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Louisiana_Import">
+          <DI K="NGPL" V="001" />
+          <DI K="ETC Tiger" V="002" />
+          <DI K="MEX" V="003" />
+          <DI K="Gulf Crossing" V="004" />
+          <DI K="Gulf South" V="005" />
+          <DI K="Gulf States" V="006" />
+          <DI K="Golden Pass" V="007" />
+          <DI K="Sabine" V="008" />
+          <DI K="TETCO ETX-LA" V="009" />
+          <DI K="Transco" V="010" />
+          <DI K="FGT" V="011" />
+          <DI K="CEGT" V="012" />
+          <DI K="Trunkline" V="013" />
+          <DI K="TGP" V="014" />
+          <DI K="Texas Gas" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Midcontinent_Export">
+          <DI K="ANR West Leg" V="001" />
+          <DI K="CEGT" V="002" />
+          <DI K="Fayetteville Express" V="003" />
+          <DI K="NGPL" V="004" />
+          <DI K="NNG" V="005" />
+          <DI K="MRT" V="006" />
+          <DI K="PEPL" V="007" />
+          <DI K="REX" V="008" />
+          <DI K="Tetco M1 24 Inch" V="009" />
+          <DI K="TGT" V="010" />
+          <DI K="Midcon Express" V="011" />
+          <DI K="Gulf Crossing" V="012" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Midcontinent_Import">
+          <DI K="CIG" V="001" />
+          <DI K="REX" V="002" />
+          <DI K="Trailblazer" V="003" />
+          <DI K="Chey Plains" V="004" />
+          <DI K="SSCPL" V="005" />
+          <DI K="KMIGT" V="006" />
+          <DI K="NNG Perm" V="007" />
+          <DI K="NGPL" V="008" />
+          <DI K="TW Perm" V="009" />
+          <DI K="EPNG Perm" V="010" />
+          <DI K="MRT" V="011" />
+          <DI K="TETCO" V="012" />
+          <DI K="Trans-Union" V="013" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Rockies_Export">
+          <DI K="CIG" V="001" />
+          <DI K="REX" V="002" />
+          <DI K="TransCo" V="003" />
+          <DI K="Kern" V="004" />
+          <DI K="Trailblazer" V="005" />
+          <DI K="Chey Plains" V="006" />
+          <DI K="Ruby" V="007" />
+          <DI K="NWPL South" V="008" />
+          <DI K="NWPL North" V="009" />
+          <DI K="WBI" V="010" />
+          <DI K="SSCPL" V="011" />
+          <DI K="TIGT" V="012" />
+          <DI K="Bison" V="013" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Rockies_Import">
+          <DI K="DUMMY" V="001" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Upper Rockies_Export">
+          <DI K="Alliance" V="001" />
+          <DI K="North Border" V="002" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Upper Rockies_Import">
+          <DI K="North Border" V="001" />
+          <DI K="Alliance" V="002" />
+          <DI K="Bison" V="003" />
+          <DI K="WBI" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Alberta_Export">
+          <DI K="Foothills BC" V="001" />
+          <DI K="Foothills SK" V="002" />
+          <DI K="Alliance" V="003" />
+          <DI K="Empress" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Alberta_Import">
+          <DI K="Alliance" V="001" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Midwest_Export">
+          <DI K="GLGT" V="001" />
+          <DI K="PEPL Canada" V="002" />
+          <DI K="PEPL OH" V="003" />
+          <DI K="ANR" V="004" />
+          <DI K="TGT" V="005" />
+          <DI K="TETCO" V="006" />
+          <DI K="Vector" V="007" />
+          <DI K="Crossroads" V="008" />
+          <DI K="Michcon" V="009" />
+          <DI K="Bluewater" V="010" />
+          <DI K="REX to APP" V="011" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Midwest_Import">
+          <DI K="GLGT" V="001" />
+          <DI K="Viking" V="002" />
+          <DI K="Alliance" V="003" />
+          <DI K="REX VIA ROX" V="004" />
+          <DI K="PEPL" V="005" />
+          <DI K="NBPL" V="006" />
+          <DI K="ANR" V="007" />
+          <DI K="NGPL" V="008" />
+          <DI K="TGT" V="009" />
+          <DI K="TETCO" V="010" />
+          <DI K="NNG" V="011" />
+          <DI K="Trunkline" V="012" />
+          <DI K="MRT" V="013" />
+          <DI K="MGT" V="014" />
+          <DI K="REX VIA APP" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="West Texas_Export">
+          <DI K="EPNG Del to Midcon" V="001" />
+          <DI K="NGPL Del to Midcon" V="002" />
+          <DI K="NNG Del to Midcon" V="003" />
+          <DI K="TW Del to Midcon" V="004" />
+          <DI K="TW Exports West" V="005" />
+          <DI K="EPNG S. ML Exports" V="006" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="West Texas_Import">
+          <DI K="Rec. from EPNG N. ML" V="001" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Desert SW_Export">
+          <DI K="El Paso" V="001" />
+          <DI K="Transwestern" V="002" />
+          <DI K="Southern Trails" V="003" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Desert SW_Import">
+          <DI K="Transcolorado" V="001" />
+          <DI K="Northwest" V="002" />
+          <DI K="El Paso" V="003" />
+          <DI K="Transwestern" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="California_Export">
+          <DI K="North Baja to Mexico" V="001" />
+          <DI K="EPNG 1903 to AZ at Ehrenberg" V="002" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="California_Import">
+          <DI K="Ruby" V="001" />
+          <DI K="El Paso" V="002" />
+          <DI K="Transwestern" V="003" />
+          <DI K="Gas Trans NW" V="004" />
+          <DI K="Southern Trails" V="005" />
+          <DI K="Kern" V="006" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Pac NW_Export">
+          <DI K="PG&amp;E" V="001" />
+          <DI K="Tuscarora" V="002" />
+          <DI K="Paiute" V="003" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Pac NW_Import">
+          <DI K="West Coast" V="001" />
+          <DI K="Foothills" V="002" />
+          <DI K="NWPL" V="003" />
+          <DI K="Ruby Net Imports" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="British Columbia_Export">
+          <DI K="NWPL" V="001" />
+          <DI K="GTN" V="002" />
+          <DI K="Alliance" V="003" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="British Columbia_Import">
+          <DI K="TC Nova" V="001" />
+          <DI K="Rec. from Foothills" V="002" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

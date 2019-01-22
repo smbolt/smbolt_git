@@ -1,0 +1,24 @@
+﻿<DxMapSet Name="NonOpProduction-PDS" DxDocType="NonOpProduction" OperatorName="PDS">
+  <DxMap Name="FirstMap" DxMapType="RowToRow">
+    <DxFilterSet>
+      <DxFilter FilterMethod="ColumnTypes" ColumnTypes="*,*,*,*,dt"/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="StatementStatusID" Src="*,*,*" Dest="*,*,1" IsRequired="True" DataType="Int" Validate="False" NoSrcCell="True" DefaultValue="1"/>
+      <DxMapItem Name="OperatorWellID" Src="*,*,13" Dest="*,*,2" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="WellName" Src="*,*,2" Dest="*,*,3" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name ="Operator" Src="*,*,0" Dest ="*,*,4" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name ="ProductionDate" Src="*,*,4" Dest ="*,*,6" IsRequired="False" DataType="DateTime" Validate="False"/>
+      <DxMapItem Name="Gas" Src="*,*,10" Dest="*,*,8" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Oil" Src="*,*,11" Dest="*,*,9" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Water" Src="*,*,12" Dest="*,*,10" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="API" Src="*,*,3" Dest="*,*,15" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="CasingPressure" Src="*,*,7" Dest="*,*,13" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="TubingPressure" Src="*,*,6" Dest="*,*,12" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Choke" Src="*,*,5" Dest="*,*,14" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Downtime" Src="*,*,8" Dest="*,*,7" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="DowntimeReason" Src="*,*,9" Dest="*,*,16" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="OwnerID" Src="*,*,1" Dest="*,*,22" IsRequired="False" DataType="Varchar" Validate="False"/>
+    </DxMapItemSet>
+  </DxMap>
+</DxMapSet>

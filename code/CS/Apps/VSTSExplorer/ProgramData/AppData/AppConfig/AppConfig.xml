@@ -1,0 +1,26 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="VSTSExplorer">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="SBOLT_PAT" V="gxle5sylv4coc3rwcex54cctwmmgtg2hcmxdri4nygxxaqucufiq" />
+          <CI K="AppId" V="C9B1FFDD-B252-44A8-9ECC-5CCF8DBB458A" />
+          <CI K="AppSecret" V="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIs" />
+          <CI K="AuthorizeUrl" V="https://app.vssps.visualstudio.com/oauth2/authorize" />
+          <CI K="AccessTokenUrl" V="https://app.vssps.visualstudio.com/oauth2/authorize" />
+          <CI K="ClientSecret" V="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im9PdmN6NU1fN3AtSGpJS2xGWHo5M3VfVjBabyJ9.eyJjaWQiOiJjOWIxZmZkZC1iMjUyLTQ0YTgtOWVjYy01Y2NmOGRiYjQ1OGEiLCJjc2kiOiJiN2NmOTEwZC05NzJjLTQwZTYtYjJiNy0xZGU1YWE2NDQ4ODgiLCJuYW1laWQiOiJlMzMyNWVlYy0xMGEyLTRkOGQtYWM5OS0xMGY5ZmQ2ODExN2QiLCJpc3MiOiJhcHAudnNzcHMudmlzdWFsc3R1ZGlvLmNvbSIsImF1ZCI6ImFwcC52c3Nwcy52aXN1YWxzdHVkaW8uY29tIiwibmJmIjoxNTMzOTA3OTc5LCJleHAiOjE2OTE2NzQzNzl9.N69qowWaG-l4RV13zrSAZ5K1OXMNAd07gEyUl9_XHSANglA8kYgGtZH88CELCYaKLSwdSZrupWAlOHGvfbYuL6kY6A1EMsQPjQSt4W61JEKkNsTMUYXogm0j42clXOo2zmRwkVtQ4nMyYQKQuwivZNPLk8rRKj04Slh0Luz2mdP7KWKiaQJ9PcZIa_hkqXPsJCVIPEyJYRWMMEEOM7CdZswLEB5fiZ1Ad5cXns97RcSHDBftG997QtfkVbfdnNNJ2D3LvD5UbesxooHBI5dhhf81hFisay4TKuTy1s7W2Q0gd8MU5tfU8S5l8F5rfZPvRECQdLRQfk0jCIImymPeuw" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="VSTSConnections">
+          <DI K="Gulfport" V="https://gulfportenergy.visualstudio.com/DefaultCollection" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbDto", "DbDto.csproj", "{4935CBFE-0AD6-411D-A0AC-E1AB7B3D0C46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{13966A43-2DDA-4F0E-BA3C-F4E2A91106E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{F356D274-3A6C-458B-9415-A3BCB0E28D2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gulfport.WellMaster.Data", "..\..\..\..\..\..\DEV-MAIN\Main\Libs\Gulfport.WellMasterData\Gulfport.WellMaster.Data.csproj", "{FCC89436-1B08-4CE6-A5D7-4F92A2967D85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 - Nuget", "99 - Nuget", "{23FE57C1-FADE-4D19-8B8A-C95D8E0497CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{93F899F7-FFC0-4928-951E-93E38F175AD4}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\..\..\..\..\DEV-MAIN\Main\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.DB", "..\..\..\..\..\..\DEV-MAIN\Main\Libs\Org.DB\Org.DB.csproj", "{A92C55EB-A2BF-4239-B87B-EEBD669584C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gulfport.BusinessObjects", "..\..\..\..\..\..\DEV-MAIN\Main\Libs\Gulfport.BusinessObjects\Gulfport.BusinessObjects.csproj", "{2203BA5F-73D5-4443-BBF0-AC7E22D15C05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gulfport.Common", "..\..\..\..\..\..\DEV-MAIN\Main\Libs\Gulfport.Common\Gulfport.Common.csproj", "{B5483456-624D-4A37-A5AC-F0704BA7BF10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4935CBFE-0AD6-411D-A0AC-E1AB7B3D0C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4935CBFE-0AD6-411D-A0AC-E1AB7B3D0C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4935CBFE-0AD6-411D-A0AC-E1AB7B3D0C46}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4935CBFE-0AD6-411D-A0AC-E1AB7B3D0C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4935CBFE-0AD6-411D-A0AC-E1AB7B3D0C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4935CBFE-0AD6-411D-A0AC-E1AB7B3D0C46}.Release|x86.ActiveCfg = Release|Any CPU
+		{FCC89436-1B08-4CE6-A5D7-4F92A2967D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC89436-1B08-4CE6-A5D7-4F92A2967D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC89436-1B08-4CE6-A5D7-4F92A2967D85}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FCC89436-1B08-4CE6-A5D7-4F92A2967D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC89436-1B08-4CE6-A5D7-4F92A2967D85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC89436-1B08-4CE6-A5D7-4F92A2967D85}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{2203BA5F-73D5-4443-BBF0-AC7E22D15C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2203BA5F-73D5-4443-BBF0-AC7E22D15C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2203BA5F-73D5-4443-BBF0-AC7E22D15C05}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2203BA5F-73D5-4443-BBF0-AC7E22D15C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2203BA5F-73D5-4443-BBF0-AC7E22D15C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2203BA5F-73D5-4443-BBF0-AC7E22D15C05}.Release|x86.ActiveCfg = Release|Any CPU
+		{B5483456-624D-4A37-A5AC-F0704BA7BF10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5483456-624D-4A37-A5AC-F0704BA7BF10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5483456-624D-4A37-A5AC-F0704BA7BF10}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B5483456-624D-4A37-A5AC-F0704BA7BF10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5483456-624D-4A37-A5AC-F0704BA7BF10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5483456-624D-4A37-A5AC-F0704BA7BF10}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4935CBFE-0AD6-411D-A0AC-E1AB7B3D0C46} = {13966A43-2DDA-4F0E-BA3C-F4E2A91106E2}
+		{FCC89436-1B08-4CE6-A5D7-4F92A2967D85} = {F356D274-3A6C-458B-9415-A3BCB0E28D2C}
+		{93F899F7-FFC0-4928-951E-93E38F175AD4} = {23FE57C1-FADE-4D19-8B8A-C95D8E0497CC}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {F356D274-3A6C-458B-9415-A3BCB0E28D2C}
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3} = {F356D274-3A6C-458B-9415-A3BCB0E28D2C}
+		{2203BA5F-73D5-4443-BBF0-AC7E22D15C05} = {F356D274-3A6C-458B-9415-A3BCB0E28D2C}
+		{B5483456-624D-4A37-A5AC-F0704BA7BF10} = {F356D274-3A6C-458B-9415-A3BCB0E28D2C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,102 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="Global">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="Mode" V="~Controls" />
+        </CIGroup>
+        <CIGroup Name="SoftwareSTEVEBLTConfigDbSpec">
+          <CI K="SoftwareSTEVEBLTDbServer" V="STEVEBLT\BOLTLT" />
+          <CI K="SoftwareSTEVEBLTDbDsn" V="" />
+          <CI K="SoftwareSTEVEBLTDbName" V="Org_Software" />
+          <CI K="SoftwareSTEVEBLTDbUserId" V="sa" />
+          <CI K="SoftwareSTEVEBLTDbPassword" V="gen126@Local" />
+          <CI K="SoftwareSTEVEBLTDbType" V="SqlServer" />
+          <CI K="SoftwareSTEVEBLTUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="LoeForecastingSTEVEBLTConfigDbSpec">
+          <CI K="LoeForecastingSTEVEBLTDbServer" V="OKC1EDW2001" />
+          <CI K="~LoeForecastingSTEVEBLTDbServer" V="STEVEBLT\BOLTLT" />
+          <CI K="LoeForecastingSTEVEBLTDbDsn" V="" />
+          <CI K="LoeForecastingSTEVEBLTDbName" V="LoeForecasting" />
+          <CI K="~LoeForecastingSTEVEBLTDbUserId" V="sa" />
+          <CI K="LoeForecastingSTEVEBLTDbUserId" V="" />
+          <CI K="~LoeForecastingSTEVEBLTDbPassword" V="gen126@Local" />
+          <CI K="LoeForecastingSTEVEBLTDbPassword" V="" />
+          <CI K="LoeForecastingSTEVEBLTDbType" V="SqlServer" />
+          <CI K="LoeForecastingSTEVEBLTDbUseWindowsAuth" V="True" />
+          <CI K="~LoeForecastingSTEVEBLTDbUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="TruckingNB-98ConfigDbSpec">
+          <CI K="TruckingNB-98DbServer" V="nb-98\sql2012nb98" />
+          <CI K="TruckingNB-98DbDsn" V="" />
+          <CI K="TruckingNB-98DbName" V="Trucking" />
+          <CI K="TruckingNB-98DbUserId" V="sa" />
+          <CI K="TruckingNB-98DbPassword" V="gen126@Adsdi" />
+          <CI K="TruckingNB-98DbType" V="SqlServer" />
+          <CI K="TruckingNB-98DbUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="Adsdi_OrgNB-99ConfigDbSpec">
+          <CI K="Adsdi_OrgNB-99DbServer" V="nb-99\sql2012ee3" />
+          <CI K="Adsdi_OrgNB-99DbDsn" V="" />
+          <CI K="Adsdi_OrgNB-99DbName" V="Adsdi_Org" />
+          <CI K="Adsdi_OrgNB-99DbUserId" V="sa" />
+          <CI K="Adsdi_OrgNB-99DbPassword" V="gen126@Adsdi" />
+          <CI K="Adsdi_OrgNB-99DbType" V="SqlServer" />
+          <CI K="Adsdi_OrgNB-99DbUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="TruckingNB-99ConfigDbSpec">
+          <CI K="TruckingNB-99DbServer" V="nb-99\sql2012ee3" />
+          <CI K="TruckingNB-99DbDsn" V="" />
+          <CI K="TruckingNB-99DbName" V="Trucking" />
+          <CI K="TruckingNB-99DbUserId" V="sa" />
+          <CI K="TruckingNB-99DbPassword" V="gen126@Adsdi" />
+          <CI K="TruckingNB-99DbType" V="SqlServer" />
+          <CI K="TruckingNB-99DbUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="TruckingGATEWAY01ConfigDbSpec">
+          <CI K="TruckingGATEWAY01DbServer" V="GATEWAY01\SQL2012EE1" />
+          <CI K="TruckingGATEWAY01DbDsn" V="" />
+          <CI K="TruckingGATEWAY01DbName" V="Trucking" />
+          <CI K="TruckingGATEWAY01DbUserId" V="sa" />
+          <CI K="TruckingGATEWAY01DbPassword" V="eph317@Adsdi" />
+          <CI K="TruckingGATEWAY01DbType" V="SqlServer" />
+          <CI K="TruckingGATEWAY01DbUseWindowsAuth" V="False" />
+        </CIGroup>
+        <CIGroup Name="TruckingKRConfigDbSpec">
+          <CI K="TruckingDESKTOP-2O2P8NUDbServer" V="DESKTOP-2O2P8NU\KR" />
+          <CI K="TruckingDESKTOP-2O2P8NUDbDsn" V="" />
+          <CI K="TruckingDESKTOP-2O2P8NUDbName" V="Trucking" />
+          <CI K="TruckingDESKTOP-2O2P8NUDbUserId" V="sa" />
+          <CI K="TruckingDESKTOP-2O2P8NUDbPassword" V="Wh0dunit" />
+          <CI K="TruckingDESKTOP-2O2P8NUDbType" V="SqlServer" />
+          <CI K="TruckingDESKTOP-2O2P8NUDbUseWindowsAuth" V="False" />
+        </CIGroup>
+      </CISet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="ControlTest">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="FormHorizontalSize" V="75" />
+          <CI K="FormVerticalSize" V="92" />
+          <CI K="DefaultPanel" V="StatePanel" />
+        </CIGroup>
+        <CIGroup Name="Data">
+          <CI K="ConnectionStringName" V="TruckingEntities" />
+          <CI K="DataStoreName" V="Trucking" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Models">
+          <LI V="City" />
+          <LI V="State" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="ConnectionStrings">
+          <DI K="NB-99" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

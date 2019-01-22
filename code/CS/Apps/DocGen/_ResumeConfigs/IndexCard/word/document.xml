@@ -1,0 +1,41 @@
+﻿<a:document xmlns:a="http://schemas.adsdi.com/wordprocessingml-extensions/2010/main" >
+  <a:docInfo>
+    <a:name a:val="res1" />
+  </a:docInfo>
+  <a:body>
+    <a:sectPr a:name="sect0">
+      <a:pgMar a:top="360" a:right="360" a:bottom="360" a:left="360" a:header="180" a:footer="0" a:gutter="0" />
+      <a:pgSz a:w="11520" a:h="7200" a:orient="portrait"/>
+    </a:sectPr>
+    <a:tbl a:name="shell" a:tblPr="mnTbl">
+      <a:tr>
+        <a:tc a:tcPr="mnCell" a:tag="r0">
+          <!--<a:tbl a:name="mnTbl" a:tblPr="mnTbl" a:tag="tgt" a:class="class1">
+            <a:tr>
+              <a:tc a:tcPr="content1" a:tag="r0" a:class="class2"/>
+            </a:tr>
+            <a:tr>
+              <a:tc a:tcPr="content1" a:tag="r1" a:class="class2"/>
+            </a:tr>
+            <a:tr>
+              <a:tc a:tcPr="content1" a:tag="r2" a:class="class2"/>
+            </a:tr>
+            <a:tr>
+              <a:tc a:tcPr="content1" a:tag="r3" a:class="class2"/>
+            </a:tr>
+            <a:tr>
+              <a:tc a:tcPr="content1" a:tag="r4" a:class="class2"/>
+            </a:tr>-->
+            <!--
+            <a:repeat a:count="3">
+              <a:tr>
+                <a:tc a:tcPr="content1" a:tag="cTag#" a:class="class2"/>
+              </a:tr>
+            </a:repeat>
+            
+          </a:tbl>-->
+        </a:tc>
+      </a:tr>
+    </a:tbl>
+  </a:body>
+</a:document>

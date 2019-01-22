@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DEAD409-1F98-452F-8881-3BF6228C2929}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>NameTags</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Org.NameTags</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>NameTags.frmMain</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <None Include="graphics\tag.jpg" />
+    <None Include="graphics\tag2.jpg" />
+    <Content Include="LocalConfig.xml" />
+    <Content Include="ProgramData\AppData\AppConfig\AppConfig.xml" />
+    <Content Include="ToDo.txt" />
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="graphics\diploma_picture_normal.gif" />
+    <None Include="graphics\edit_names_normal.gif" />
+    <None Include="graphics\color_normal.gif" />
+    <None Include="graphics\add_shape_normal.gif" />
+    <None Include="graphics\add_picture_normal.gif" />
+    <None Include="graphics\design_mode_normal.gif" />
+    <None Include="graphics\display_mode_normal.gif" />
+    <None Include="graphics\add_text_normal.gif" />
+    <None Include="graphics\text_font_normal.gif" />
+    <None Include="graphics\zoom_out_normal.gif" />
+    <None Include="graphics\zoom_in_normal.gif" />
+    <None Include="graphics\save_project_normal.gif" />
+    <None Include="graphics\print_normal.gif" />
+    <None Include="graphics\send_to_back_normal.gif" />
+    <None Include="graphics\send_backward_normal.gif" />
+    <None Include="graphics\bring_to_front_normal.gif" />
+    <None Include="graphics\bring_forward_normal.gif" />
+    <None Include="graphics\prev_page_normal.gif" />
+    <None Include="graphics\next_page_normal.gif" />
+    <None Include="graphics\open_project_normal.gif" />
+    <None Include="graphics\border_color_normal.gif" />
+    <None Include="graphics\border_width_normal.gif" />
+    <None Include="graphics\project_properties_normal.gif" />
+    <None Include="graphics\bring_to_front_normal.bmp" />
+    <None Include="graphics\ribbon.jpg" />
+    <None Include="graphics\TagIcon.ico" />
+    <None Include="graphics\LargeTagIcon.ico" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigHelper.cs" />
+    <Compile Include="DrawingObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DrawingObjectSet.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="frmChildren.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChildren.Designer.cs">
+      <DependentUpon>frmChildren.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmObjectProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmObjectProperties.Designer.cs">
+      <DependentUpon>frmObjectProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpenProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpenProject.Designer.cs">
+      <DependentUpon>frmOpenProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogHelper.cs" />
+    <Compile Include="NameTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Person.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PersonSet.cs" />
+    <Compile Include="PrintPageSettings.cs" />
+    <Compile Include="Project.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StateHelper.cs" />
+    <EmbeddedResource Include="frmChildren.resx">
+      <DependentUpon>frmChildren.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNames.resx">
+      <DependentUpon>frmNames.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmObjectProperties.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmObjectProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenProject.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOpenProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProject.resx">
+      <DependentUpon>frmProject.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="ProgramData\AppData\AppConfig\AppConfig.xmlx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Org.CHCM.Business\Org.CHCM.Business.csproj">
+      <Project>{1d8b6bc1-5f4d-4fb3-bc23-5f89656b012f}</Project>
+      <Name>Org.CHCM.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.GS\Org.GS.csproj">
+      <Project>{a43ec37d-35c1-4f80-9d14-978da1312fa9}</Project>
+      <Name>Org.GS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProgramData\AppData\CentralConfig\" />
+    <Folder Include="ProgramData\AppData\Doc\" />
+    <Folder Include="ProgramData\AppData\Errors\" />
+    <Folder Include="ProgramData\AppData\Exports\" />
+    <Folder Include="ProgramData\AppData\Help\" />
+    <Folder Include="ProgramData\AppData\Imports\" />
+    <Folder Include="ProgramData\AppData\Log\" />
+    <Folder Include="ProgramData\AppData\MEFCatalog\" />
+    <Folder Include="ProgramData\AppData\Performance\" />
+    <Folder Include="ProgramData\AppData\Reports\" />
+    <Folder Include="ProgramData\AppData\Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

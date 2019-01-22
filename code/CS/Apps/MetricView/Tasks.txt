@@ -1,0 +1,3 @@
+
+The addition of the event caused the MetricGraph object to need to be serializable.  The UserControl object is not searializable.
+We need to drive the updating of the MetricGraph based on config changes with a method not an event.

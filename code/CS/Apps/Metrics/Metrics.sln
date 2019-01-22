@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrics", "Metrics.csproj", "{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Charting", "..\..\Libs\Org.Charting\Org.Charting.csproj", "{D5394E1B-46EB-4578-9DCC-EEE68BDA9855}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{C64D45B7-AE25-43CA-A5AB-FE5A2D270B8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{55C13B2C-3553-42AD-86EC-0AE69A164E47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.MX", "..\..\Libs\Org.MX\Org.MX.csproj", "{4A3C2036-C37C-44F5-BA4E-2A6E89373270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D}.Debug|x86.Build.0 = Debug|Any CPU
+		{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D}.Release|x86.ActiveCfg = Release|Any CPU
+		{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D}.Release|x86.Build.0 = Release|Any CPU
+		{D5394E1B-46EB-4578-9DCC-EEE68BDA9855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5394E1B-46EB-4578-9DCC-EEE68BDA9855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5394E1B-46EB-4578-9DCC-EEE68BDA9855}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D5394E1B-46EB-4578-9DCC-EEE68BDA9855}.Debug|x86.Build.0 = Debug|Any CPU
+		{D5394E1B-46EB-4578-9DCC-EEE68BDA9855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5394E1B-46EB-4578-9DCC-EEE68BDA9855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5394E1B-46EB-4578-9DCC-EEE68BDA9855}.Release|x86.ActiveCfg = Release|Any CPU
+		{D5394E1B-46EB-4578-9DCC-EEE68BDA9855}.Release|x86.Build.0 = Release|Any CPU
+		{4A3C2036-C37C-44F5-BA4E-2A6E89373270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3C2036-C37C-44F5-BA4E-2A6E89373270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3C2036-C37C-44F5-BA4E-2A6E89373270}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4A3C2036-C37C-44F5-BA4E-2A6E89373270}.Debug|x86.Build.0 = Debug|Any CPU
+		{4A3C2036-C37C-44F5-BA4E-2A6E89373270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3C2036-C37C-44F5-BA4E-2A6E89373270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A3C2036-C37C-44F5-BA4E-2A6E89373270}.Release|x86.ActiveCfg = Release|Any CPU
+		{4A3C2036-C37C-44F5-BA4E-2A6E89373270}.Release|x86.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C0135629-D0AC-4FF8-A289-5C0EFCAD7D5D} = {C64D45B7-AE25-43CA-A5AB-FE5A2D270B8E}
+		{D5394E1B-46EB-4578-9DCC-EEE68BDA9855} = {55C13B2C-3553-42AD-86EC-0AE69A164E47}
+		{4A3C2036-C37C-44F5-BA4E-2A6E89373270} = {55C13B2C-3553-42AD-86EC-0AE69A164E47}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {55C13B2C-3553-42AD-86EC-0AE69A164E47}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5410C4C3-9BF9-4955-B7B4-A7C94F17D81D}
+	EndGlobalSection
+EndGlobal

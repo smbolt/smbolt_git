@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF463424-FF85-44CB-8B37-9801A5F15C8E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ApiClient</RootNamespace>
+    <AssemblyName>ApiClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IdentityModel, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\z_NugetPackages\IdentityModel.3.9.0\lib\net452\IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\z_NugetPackages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Org.GS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Org.GS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\Main\GitRepos\Org\Source\z_NugetPackages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="LocalConfig.xmlx" />
+    <None Include="packages.config" />
+    <None Include="ProgramData\AppData\AppConfig\AppConfig.xmlx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\desktop.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Org.ApiClient\Org.ApiClient.csproj">
+      <Project>{9fe8bc9d-6bef-462a-9bc9-ee469de4bad0}</Project>
+      <Name>Org.ApiClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\authorized.png" />
+    <None Include="images\authorized-big.png" />
+    <None Include="images\clear.png" />
+    <None Include="images\configure.png" />
+    <None Include="images\configure-big.png" />
+    <None Include="images\discover.png" />
+    <None Include="images\discover-big.png" />
+    <None Include="images\error-doc.png" />
+    <None Include="images\failed.png" />
+    <None Include="images\icons8-json-16.png" />
+    <None Include="images\interaction.png" />
+    <None Include="images\not-authorized.png" />
+    <None Include="images\not-secure.png" />
+    <None Include="images\not-secure-bit.png" />
+    <None Include="images\open.png" />
+    <None Include="images\doc.png" />
+    <None Include="images\id-token-big.png" />
+    <None Include="images\id-token.png" />
+    <None Include="images\auth-token-big.png" />
+    <None Include="images\auth-token.png" />
+    <None Include="images\login-big.png" />
+    <None Include="images\login.png" />
+    <None Include="images\clear-big.png" />
+    <Content Include="images\org.ico" />
+    <None Include="images\success.png" />
+    <Content Include="Libs\Org.GS.dll" />
+    <Content Include="Libs\Org.GS.pdb" />
+    <Content Include="LocalConfig.xml" />
+    <Content Include="ProgramData\AppData\AppConfig\AppConfig.xml" />
+    <None Include="Resources\authorized.png" />
+    <None Include="Resources\token-big.png" />
+    <None Include="Resources\token.png" />
+    <None Include="Resources\open.png" />
+    <None Include="Resources\not-secure-bit.png" />
+    <None Include="Resources\not-secure.png" />
+    <None Include="Resources\not-authorized.png" />
+    <None Include="Resources\icons8-json-16.png" />
+    <None Include="Resources\failed.png" />
+    <None Include="Resources\error-doc.png" />
+    <None Include="Resources\discover-big.png" />
+    <None Include="Resources\discover.png" />
+    <None Include="Resources\configure-big.png" />
+    <None Include="Resources\configure.png" />
+    <None Include="Resources\clear.png" />
+    <None Include="Resources\authorized-big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProgramData\AppData\CentralConfig\" />
+    <Folder Include="ProgramData\AppData\Doc\" />
+    <Folder Include="ProgramData\AppData\Errors\" />
+    <Folder Include="ProgramData\AppData\Exports\" />
+    <Folder Include="ProgramData\AppData\Help\" />
+    <Folder Include="ProgramData\AppData\Imports\" />
+    <Folder Include="ProgramData\AppData\Log\" />
+    <Folder Include="ProgramData\AppData\MEFCatalog\" />
+    <Folder Include="ProgramData\AppData\Performance\" />
+    <Folder Include="ProgramData\AppData\Reports\" />
+    <Folder Include="ProgramData\AppData\Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

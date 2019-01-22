@@ -1,0 +1,30 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="FtpTest">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="ConfigItem1" V="ConfigValue1" />
+        </CIGroup>
+        <CIGroup Name="PDSConfigFtpSpec">
+          <CI K="PDSFtpServer" V="192.168.1.1" />
+          <CI K="PDSFtpUserId" V="gulfport" />
+          <CI K="PDSFtpPassword" V="password" />
+          <CI K="PDSFtpKeepAlive" V="True" />
+          <CI K="PDSFtpUsePassive" V="True" />
+          <CI K="PDSFtpUseBinary" V="False" />
+          <CI K="PDSFtpBufferSize" V="8192" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,21 @@
+<DxMapSet Name="NonOpProduction-Unit" DxDocType="NonOpProduction" OperatorName="Unit Petroleum">
+  <DxMap Name="FirstMap" DxMapType="RowToRow">
+    <DxFilterSet>
+      <DxFilter FilterMethod="RowFilterCellValues" RowFilterCellValues="*,1,dt"/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="StatementStatusID" Src="*,*,*" Dest="*,*,1" IsRequired="True" DataType="Int" NoSrcCell="True" DefaultValue="1"/>
+      <DxMapItem Name="OperatorWellID" Src="*,*,11" Dest="*,*,2" IsRequired="False" DataType="Varchar"/>
+      <DxMapItem Name="WellName" Src="*,*,0" Dest="*,*,3" IsRequired="False" DataType="Varchar"/>
+      <DxMapItem Name="API" Src="*,*,11" Dest="*,*,15" IsRequired="False" DataType="Varchar"/>
+      <DxMapItem Name="ProductionDate" Src="*,*,1" Dest="*,*,6" IsRequired="True" DataType="DateTime" Validate="True"/>
+      <DxMapItem Name="TubingPressure" Src="*,*,5" Dest="*,*,11" IsRequired="False" DataType="Float"/>
+      <DxMapItem Name="CasingPressure" Src="*,*,6" Dest="*,*,12" IsRequired="False" DataType="Float"/>
+      <DxMapItem Name="Downtime" Src="*,*,8" Dest="*,*,7" IsRequired="False" DataType="Float"/>
+      <DxMapItem Name="DowntimeReason" Src="*,*,9" Dest="*,*,16" IsRequired="False" DataType="Varchar"/>
+      <DxMapItem Name="Gas" Src="*,*,3" Dest="*,*,8" IsRequired="False" DataType="Float"/>
+      <DxMapItem Name="Oil" Src="*,*,2" Dest="*,*,9" IsRequired="False" DataType="Float"/>
+      <DxMapItem Name="Water" Src="*,*,4" Dest="*,*,10" IsRequired="False" DataType="Float"/>
+    </DxMapItemSet>
+  </DxMap>
+</DxMapSet>

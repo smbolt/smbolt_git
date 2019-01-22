@@ -1,0 +1,18 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="DbGen">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="DbSpecName" V="IHSTest" />
+          <CI K="ClassPath" V="C:\_work\DbGen" />
+        </CIGroup>
+        <CIGroup Name="IHSTestConfigDbSpec">
+          <CI K="IHSTestDbServer" V="OKC1EDW2001" />
+          <CI K="IHSTestDbName" V="IHS" />
+          <CI K="IHSTestDbType" V="SqlServer" />
+          <CI K="IHSTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

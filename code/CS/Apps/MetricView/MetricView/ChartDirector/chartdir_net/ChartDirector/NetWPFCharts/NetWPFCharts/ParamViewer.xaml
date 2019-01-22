@@ -1,0 +1,21 @@
+﻿<Window
+        x:Class="CSharpWPFDemo.ParamViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSharpWPFDemo"
+        xmlns:ChartDirector="clr-namespace:ChartDirector;assembly=netchartdir" 
+        mc:Ignorable="d"
+        Title="ParamViewer" Height="391" Width="332" ResizeMode="NoResize" ShowInTaskbar="False"
+    >
+    <Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="8,5,8,0" TextWrapping="Wrap" Text="This is to demonstrate that ChartDirector charts are clickable. In this demo program, we just display the information provided to the ClickHotSpot event handler. " VerticalAlignment="Top" Height="55" Width="308"/>
+        <DataGrid Name="dataGrid" Margin="8,60,8,8" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" HeadersVisibility="Column" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Key" Binding="{Binding Key}" Width="100" />
+                <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

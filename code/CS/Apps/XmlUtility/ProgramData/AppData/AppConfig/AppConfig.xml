@@ -1,0 +1,26 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="XmlUtility">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="FolderPath" V="K:\Public (All Companies)\WL Temp\XML XSD Test Files\For Steve" />
+          <CI K="FileName" V="DataImport_20180416.110705.xml" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="90" />
+          <CI K="MainFormVerticalSize" V="90" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="XPathExpressions">
+          <LI V="//ns:Details[@Level='3']" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

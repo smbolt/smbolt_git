@@ -1,0 +1,547 @@
+<ExtractSpecSet>
+  <ExtractSpec Name="DCPLindsayMidstreamPop-A" RecogSpecName="DCPLindsayMidstreamPop" Desc="DCP Lindsay Midstream POP Statement">
+    <Tsd Name="ReportUnit" Iterate="True" IsReportUnit="True" BreakOnLine="0" >
+      <Cmd Code="SetTextStart(PERCENT OF PROCEEDS STATEMENT)" />
+      <Cmd Code="ProcessingCommand(PositionAdjust[10])" />
+      <Cmd Code="SetTextEnd(PERCENT OF PROCEEDS STATEMENT,orEnd,beg)" />
+      <TsdSet>
+        <Tsd Name="Header">
+          <Cmd Code="SetTextStart()" />
+          <Cmd Code="SetTextEnd(Wellhead Information,beg)" />
+          <Cmd Code="SetGlobalVariable([bool]IsFixedRecoveryFormat,find,Fixed Recovery)" />
+          <Cmd Code="SetRowIndex(0)" />
+          <Cmd Code="ExtractLiteralToken(Statement.RecordType,Statement)" />          
+          
+          <Cmd Code="ExtractToken(Statement.MeterNumber,[p'99999999A'])" /> 
+          <Cmd Code="ExtractNextToken(Statement.PaymentID)" />
+          <Cmd Code="ExtractTextBefore(Statement.MeterName,LINDSAY GATHERING,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractTextBefore(Statement.MeterName,OK CHI0523501,cond=!IsFixedRecoveryFormat)" />          
+          <Cmd Code="LocateToken(Production Date: [eol])" />
+          <Cmd Code="ExtractPriorTokensOfType([date]Statement.ProductionDate.mm/dd/yyyy,2,[MMMM] [YYYY])" />
+          
+          <Cmd Code="LocateToken(LINDSAY,0)" /> 
+          <Cmd Code="LocateToken(GATHERING,0)" /> 
+          
+          <Cmd Code="ExtractLiteralToken(Statement.FacilityName,LINDSAY GATHERING)" />
+          <Cmd Code="ExtractNextToken(Statement.State,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractNextToken(Statement.ContractNumber,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractTextBefore(Statement.OperatorName,[eol],cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractNextToken([dec]Statement.PressureBase,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractNextTokens(DISCARD,2,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractNextToken([dec]Statement.OperatorID,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Production Date: [eol],cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractNextTokens([date]Statement.StatementDate.mm/dd/yyyy,3,cond=IsFixedRecoveryFormat)" /> 
+          
+          
+          <Cmd Code="LocateToken([bol] Statement Date:,0)" />
+          <Cmd Code="ExtractPriorTokensOfType([date]Statement.StatementDate.mm/dd/yyyy,3,[MMMM] [DD] [YYYY],cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Operator Name/ID Pressure Base,0,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractTextBefore(Statement.OperatorName,[dec],cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(GATHERING [eol],cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractNextToken([dec]Statement.OperatorID,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] LINDSAY,0,beg,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken(Statement.ContractNumber,prev,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken(Statement.State,prev,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Operator Name/ID Pressure Base [eol],0,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Statement.PressureBase,stored,last,cond=!IsFixedRecoveryFormat)" />          
+          
+          <Cmd Code="LocateToken(OKMR [eol],0)" /> 
+          <Cmd Code="ExtractNextToken(DISCARD)" />
+          <Cmd Code="ExtractNextTokens([date]Statement.AccountingDate.mm/dd/yyyy,2)" /> 
+          <Cmd Code="ExtractNextToken(DISCARD)" /><!--NEED TO FIGURE OUT WHAT THIS IS: Rate Per MCF = 3.24859-->
+          <Cmd Code="LocateToken(Rate per MCF: [eol],0)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,13)" />
+          <Cmd Code="ExtractToken(Statement.ContractPartyNumber,stored)" />
+          <Cmd Code="ExtractToken(DISCARD,stored)" />
+          <Cmd Code="ExtractToken([decn]Statement.LiquidValue,stored)" />
+          <Cmd Code="ExtractToken([decn]Statement.ResidueValue,stored)" />
+          <Cmd Code="ExtractToken([decn]Statement.FeesAndAdjustments,stored)" />
+          <Cmd Code="ExtractToken([decn]Statement.GrossValue,stored)" />
+          <Cmd Code="ExtractToken([decn]Statement.ExemptValue,stored)" />
+
+          <Cmd Code="SetRowIndex(1)" />
+          <Cmd Code="ExtractLiteralToken(Taxes.RecordType,Taxes)" />
+          <Cmd Code="ExtractLiteralToken(Taxes.TaxType,OKPR)" />
+          <Cmd Code="ExtractToken([decn]Taxes.TaxDue,stored)" />
+
+          <Cmd Code="SetRowIndex(2)" />
+          <Cmd Code="ExtractLiteralToken(Taxes.RecordType,Taxes)" />
+          <Cmd Code="ExtractLiteralToken(Taxes.TaxType,OKER)" />  
+          <Cmd Code="ExtractToken([decn]Taxes.TaxDue,stored)" />
+
+          <Cmd Code="SetRowIndex(3)" />
+          <Cmd Code="ExtractLiteralToken(Taxes.RecordType,Taxes)" />
+          <Cmd Code="ExtractLiteralToken(Taxes.TaxType,OKEX)" />
+          <Cmd Code="ExtractToken([decn]Taxes.TaxDue,stored)" />
+
+          <Cmd Code="SetRowIndex(4)" />
+          <Cmd Code="ExtractLiteralToken(Taxes.RecordType,Taxes)" />
+          <Cmd Code="ExtractLiteralToken(Taxes.TaxType,OKMR)" />
+          <Cmd Code="ExtractToken([decn]Taxes.TaxDue,stored)" />
+          
+          <Cmd Code="SetRowIndex(0)" />
+          <Cmd Code="ExtractToken(DISCARD,stored)" />
+          <Cmd Code="ExtractToken([decn]Statement.NetValue,stored)" />
+          
+        </Tsd>
+        <Tsd Name="WellHead">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(Residue Settlement [eol],beg)" />
+          
+          <Cmd Code="SetRowIndex(0,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Gross WH :,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.GrossWellheadMCF,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.GrossWellheadMMBTU,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Allocation Decimal:,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.AllocationDecimal,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Paystation:,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WHPaystationMCF,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WHPaystationMMBTU,cond=IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(5,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Ethane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Product.ContractPercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,8,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken(DISCARD,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.FixedRecoveries,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.SettlementGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(6,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Propane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Product.ContractPercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,7,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken(DISCARD,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.SettlementGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.FixedRecoveries,cond=IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(7,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,IsoButane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Product.ContractPercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(ISO-BUTANE,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(7,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.FixedRecoveries,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.SettlementGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(8,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Butane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Deducts:,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Product.ContractPercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] NORMAL BUTANE,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(7,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,stored,cond=IsFixedRecoveryFormat)" /> 
+          <Cmd Code="ExtractToken([dec]Product.FixedRecoveries,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.SettlementGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(9,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Pentanes Plus,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] PENTANES PLUS,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(6,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ContractPercent,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.SettlementGallons,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] PENTANES PLUS,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,cond=IsFixedRecoveryFormat)" /> 
+          <Cmd Code="ExtractToken([dec]Product.FixedRecoveries,cond=IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(0,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Contractual Field [eol],0,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Statement.WHGSystemLossMCF,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Statement.WHGSystemLossMMBTU,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Net Delivered:,0,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WHNetDeliveredMCF,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WHNetDeliveredMMBTU,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Wellhead BTU,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken(DISCARD,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WellheadBTU,prev,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Gas Factor:,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Statement.WHCompressibilityFactor,cond=IsFixedRecoveryFormat)" />         
+          
+
+          <Cmd Code="SetRowIndex(0,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Gross WH:,beg,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.GrossWellheadMCF,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.GrossWellheadMMBTU,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Allocation Decimal:,beg,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.AllocationDecimal,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Paystation:,beg,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WHPaystationMCF,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WHPaystationMMBTU,cond=!IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(5,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Ethane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Paystation:,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Product.SettlementGallons,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,7,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken(DISCARD,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ContractPercent,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=!IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(6,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Propane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] ETHANE,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,7,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken(DISCARD,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ContractPercent,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] PROPANE,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Product.SettlementGallons,cond=!IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(7,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,IsoButane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,8,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken(DISCARD,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ContractPercent,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Product.SettlementGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=!IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(8,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Butane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] NORMAL BUTANE gal,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(7,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ContractPercent,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Product.SettlementGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=!IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(0,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] NetDelivered:,beg,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WHNetDeliveredMCF,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WHNetDeliveredMMBTU,cond=!IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(9,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Pentanes Plus,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] NetDelivered:,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Product.SettlementGallons,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,7,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken(DISCARD,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.TheoreticalGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.AllocatedGallons,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ShrinkMMBTU,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.ContractPercent,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidPrice,stored,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([dec]Product.LiquidValue,stored,cond=!IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(0,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Wellhead BTU,beg,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]Statement.WellheadBTU,prev,cond=!IsFixedRecoveryFormat)" />
+        </Tsd>
+        <Tsd Name="Residue">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(Fees / Adjustments Fee Rate Value Components Mol % GPM [eol],beg)" />
+          <Cmd Code="LocateToken(Residue Value [eol],0)" />
+          <Cmd Code="TokenizeNextLine(10)" />
+          <Cmd Code="ExtractToken(Statement.ResidueNetDeliveredMMBTU,stored)" />
+          <Cmd Code="ExtractToken(Statement.ResidueShrinkMMBTU,stored)" />
+          <Cmd Code="ExtractToken(Statement.TheoreticalResidueMMBTU,stored)" />
+          <Cmd Code="ExtractToken(Statement.AllocatedResidueMMBTU,stored)" />
+          <Cmd Code="ExtractToken(Statement.NetResidueMCF,stored)" />
+          <Cmd Code="ExtractToken(Statement.NetResidueMMBTU,stored)" />
+          <Cmd Code="ExtractToken(Statement.ResidueContractPercent,stored)" />
+          <Cmd Code="ExtractToken(Statement.SettlementResidueMMBTU,stored)" />
+          <Cmd Code="ExtractToken(Statement.ResiduePrice,stored)" />
+        </Tsd>
+        <Tsd Name="FeesGasAnalysis1">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(Plant Product Volumes,beg)" />          
+          <Cmd Code="SetRowIndex(10)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Helium)" />
+          <Cmd Code="LocateToken([bol] Helium,beg)" />
+          <Cmd Code="SetTextPosition(back,1,line,before)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent)" /> 
+          
+          <!-- SET VARIABLE INDICATING WHETHER GATHERING FEE IS PRESENT -->
+          <Cmd Code="SetVariable([bool]IsGatheringFeeIncluded,find,[bol] Gathering)" />
+
+          <!-- WHEN GATHERING FEE IS FOUND -->
+          <Cmd Code="SetRowIndex(24,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(Fees.RecordType,Fees,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(Fees.FeeType,Gathering Fee,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="LocateToken([bol] Gathering,beg,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsGatheringFeeIncluded)" />          
+          <Cmd Code="ExtractToken([decn]Fees.Rate,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractToken([decn]Fees.Value,cond=IsGatheringFeeIncluded)" />
+
+          <Cmd Code="SetRowIndex(11,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Nitrogen,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="LocateToken([bol] Nitrogen,beg,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractToken(DISCARD,cond=IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsGatheringFeeIncluded)" />
+          
+          <!-- WHEN GATHERING FEE IS NOT FOUND -->
+          
+          <Cmd Code="SetRowIndex(11,cond=!IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Nitrogen,cond=!IsGatheringFeeIncluded)" />
+          <Cmd Code="LocateToken([bol] Nitrogen,beg,cond=!IsGatheringFeeIncluded)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=!IsGatheringFeeIncluded)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=!IsGatheringFeeIncluded)" />
+          
+          <!-- SET VARIABLE INDICATING IF MINIMUM VOLUME FEE IS FOUND -->
+          <Cmd Code="SetVariable([bool]IsMinimumValueFeeIncluded,find,[bol] Minimum Volume)" />
+          
+          
+          <!-- IF MINIMUM VOLUME FEE IS FOUND -->
+          <Cmd Code="SetRowIndex(25,cond=IsMinimumValueFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(Fees.RecordType,Fees,cond=IsMinimumValueFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(Fees.FeeType,Insufficient Volumes,cond=IsMinimumValueFeeIncluded)" />
+          <Cmd Code="LocateToken([bol] Minimum Volume,beg,cond=IsMinimumValueFeeIncluded)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsMinimumValueFeeIncluded)" />          
+          <Cmd Code="ExtractToken([decn]Fees.Rate,cond=IsMinimumValueFeeIncluded)" />
+          <Cmd Code="ExtractToken([decn]Fees.Value,cond=IsMinimumValueFeeIncluded)" />          
+
+          <Cmd Code="SetRowIndex(12,cond=IsMinimumValueFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsMinimumValueFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Carbon Dioxide,cond=IsMinimumValueFeeIncluded)" />
+          <Cmd Code="LocateToken([bol] Minimum Volume,cond=IsMinimumValueFeeIncluded)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsMinimumValueFeeIncluded)" />
+          
+          <!-- IF MINIMUM VOLUME FEE IS NOT FOUND -->
+          
+          <Cmd Code="SetRowIndex(12,cond=!IsMinimumValueFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsMinimumValueFeeIncluded)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Carbon Dioxide,cond=!IsMinimumValueFeeIncluded)" />
+          <Cmd Code="LocateToken([bol] Carbon Dioxide,beg,cond=!IsMinimumValueFeeIncluded)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=!IsMinimumValueFeeIncluded)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=!IsMinimumValueFeeIncluded)" />
+          
+          <!-- UNCONITIONAL -->
+          
+          <Cmd Code="SetRowIndex(13)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Hydrogen Sulfide)" />
+          <Cmd Code="LocateToken([bol] H2S,beg)" />
+          <Cmd Code="SetTextPosition(back,1,line,before)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent)" />
+          
+          <Cmd Code="SetRowIndex(14)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Other Inerts)" />
+          <Cmd Code="LocateToken([bol] Other Inerts,beg)" />
+          <Cmd Code="SetTextPosition(back,1,line,before)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent)" />
+          
+          <!-- NON FIXED RECOVERY FORMAT  -->
+          
+          <Cmd Code="SetRowIndex(15,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Methane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Methane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=!IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(16,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Ethane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=!IsFixedRecoveryFormat)" />         
+          
+          <!-- FIXED RECOVERY FORMAT -->
+          
+          <Cmd Code="SetRowIndex(15,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Methane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Methane,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,2,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsFixedRecoveryFormat)" />
+          
+          <Cmd Code="SetRowIndex(16,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Ethane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Ethane,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=IsFixedRecoveryFormat)" />         
+        </Tsd>
+        <Tsd Name="FeesGasAnalysis2">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd()" />
+
+          <Cmd Code="SetRowIndex(17,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Propane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Propane,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(18,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,IsoButane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Iso Butane,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(0,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Plant BTU,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.ResiduePlantBTU,cond=IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(19,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Butane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Nor Butane,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(20,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,IsoPentane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Iso Pentane,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(21,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Pentane,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Nor Pentane,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(22,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Hexanes Plus,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Hexanes Plus,beg,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="SetTextPosition(back,1,line,before,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(17,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Propane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Propane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=!IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(18,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,IsoButane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Iso Butane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=!IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(19,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Butane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Nor Butane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=!IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(20,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,IsoPentane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Iso Pentane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=!IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(21,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Pentane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Nor Pentane,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,cond=!IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(22,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Hexanes Plus,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken(Hexanes Plus,beg,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentLiquidContent,prev,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractToken([decn]GasAnalysis.ComponentMolePercent,prev,cond=!IsFixedRecoveryFormat)" />
+
+          <Cmd Code="SetRowIndex(0,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="LocateToken([bol] Plant BTU,cond=!IsFixedRecoveryFormat)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.ResiduePlantBTU,cond=!IsFixedRecoveryFormat)" />         
+          
+        </Tsd>
+      </TsdSet>
+    </Tsd>
+  </ExtractSpec>
+</ExtractSpecSet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

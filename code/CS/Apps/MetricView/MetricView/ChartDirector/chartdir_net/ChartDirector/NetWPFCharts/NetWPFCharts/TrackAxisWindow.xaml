@@ -1,0 +1,13 @@
+<Window x:Class="CSharpWPFDemo.TrackAxisWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSharpWPFDemo"
+        mc:Ignorable="d"
+        xmlns:ChartDirector="clr-namespace:ChartDirector;assembly=netchartdir" UseLayoutRounding="True"
+        Title="Track Line with Axis Labels" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid>
+        <ChartDirector:WPFChartViewer x:Name="WPFChartViewer1" Margin="5" MouseMovePlotArea="WPFChartViewer1_MouseMovePlotArea" />
+    </Grid>
+</Window>

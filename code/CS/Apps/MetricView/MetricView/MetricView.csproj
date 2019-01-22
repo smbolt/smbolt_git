@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D13C92B7-3390-4CC1-8696-388A8DD881E8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Teleflora.Operations.MetricView</RootNamespace>
+    <AssemblyName>MetricView</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="netchartdir">
+      <HintPath>ChartDirector\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregateType.cs" />
+    <Compile Include="AggregateTypeSet.cs" />
+    <Compile Include="AvailableMetric.cs" />
+    <Compile Include="AvailableMetricCollection.cs" />
+    <Compile Include="AvailableMetricsReport.cs" />
+    <Compile Include="frmMetricData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetricData.Designer.cs">
+      <DependentUpon>frmMetricData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMetricProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetricProperties.Designer.cs">
+      <DependentUpon>frmMetricProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMetricReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetricReports.Designer.cs">
+      <DependentUpon>frmMetricReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMetrics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetrics.Designer.cs">
+      <DependentUpon>frmMetrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReOrderGraphs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReOrderGraphs.Designer.cs">
+      <DependentUpon>frmReOrderGraphs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralUtility.cs" />
+    <Compile Include="IncludedMetricSet.cs" />
+    <Compile Include="SpecificMetric.cs" />
+    <Compile Include="AvailableMetricSet.cs" />
+    <Compile Include="Interval.cs" />
+    <Compile Include="IntervalSet.cs" />
+    <Compile Include="Metric.cs" />
+    <Compile Include="MetricQueryParms.cs" />
+    <Compile Include="MetricSet.cs" />
+    <Compile Include="MetricState.cs" />
+    <Compile Include="MetricStateSet.cs" />
+    <Compile Include="MetricType.cs" />
+    <Compile Include="MetricTypeSet.cs" />
+    <Compile Include="MetricValueType.cs" />
+    <Compile Include="MetricValueTypeSet.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="ServerSet.cs" />
+    <Compile Include="TFApplication.cs" />
+    <Compile Include="ApplicationSet.cs" />
+    <Compile Include="ConfigHelper.cs" />
+    <Compile Include="Environment.cs" />
+    <Compile Include="EnvironmentSet.cs" />
+    <Compile Include="frmGraphProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGraphProperties.Designer.cs">
+      <DependentUpon>frmGraphProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetricDataObjects.cs" />
+    <Compile Include="MetricGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MetricGraph.Designer.cs">
+      <DependentUpon>MetricGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetricGraphCollection.cs" />
+    <Compile Include="MetricGraphConfiguration.cs" />
+    <Compile Include="MetricObservation.cs" />
+    <Compile Include="MetricObservationSet.cs" />
+    <Compile Include="MetricObservationSetCollection.cs" />
+    <Compile Include="MetricsData.cs" />
+    <Compile Include="MetricViewConfiguration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGraphProperties.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGraphProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetricData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMetricData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetricProperties.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMetricProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetricReports.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMetricReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetrics.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMetrics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReOrderGraphs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReOrderGraphs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetricGraph.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MetricGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TFSystem.cs" />
+    <Compile Include="SystemSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="images\MetricViewSplashTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

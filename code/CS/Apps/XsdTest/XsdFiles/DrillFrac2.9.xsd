@@ -1,0 +1,807 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DataImport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DataImportHeader">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DataImportBody">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="WellSet">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Well">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="WellHeaderItemSet">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="WellHeaderItem">
+                                        <xs:complexType>
+                                          <xs:attribute name="API" type="xs:string" use="required" />
+                                          <xs:attribute name="County" type="xs:string" use="required" />
+                                          <xs:attribute name="Latitude" type="xs:decimal" use="optional" />
+                                          <xs:attribute name="Longitude" type="xs:decimal" use="optional" />
+                                          <xs:attribute name="State" type="xs:string" use="required" />
+                                          <xs:attribute name="WellName" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="WellHeaderInfoItemSet">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="WellHeaderInfoItem">
+                                        <xs:complexType>
+                                          <xs:attribute name="API" type="xs:string" use="optional" />
+                                          <xs:attribute name="WellName" type="xs:string" use="optional" />
+                                          <xs:attribute name="WellConfiguration" type="xs:string" use="optional" />
+                                          <xs:attribute name="WellStatus" type="xs:string" use="optional" />
+                                          <xs:attribute name="WellSubStatus" type="xs:string" use="optional" />
+                                          <xs:attribute name="GroundElevation" type="xs:decimal" use="optional" />
+                                          <xs:attribute name="OriginalKellyBushingElevation" type="xs:decimal" use="optional" />
+                                          <xs:attribute name="FieldName" type="xs:string" use="optional" />
+                                          <xs:attribute name="Township" type="xs:string" use="optional" />
+                                          <xs:attribute name="Range" type="xs:string" use="optional" />
+                                          <xs:attribute name="RigReleaseDate" type="xs:string" use="optional" />
+                                          <xs:attribute name="Section" type="xs:string" use="optional" />
+                                          <xs:attribute name="LocationNote" type="xs:string" use="optional" />
+                                          <xs:attribute name="TargetDepth" type="xs:decimal" use="optional" />
+                                          <xs:attribute name="TargetFormation" type="xs:string" use="optional" />
+                                          <xs:attribute name="WellSpudDate" type="xs:string" use="optional" />
+                                          <xs:attribute name="District" type="xs:string" use="optional" />
+                                          <xs:attribute name="Region" type="xs:string" use="optional" />
+                                          <xs:attribute name="Division" type="xs:string" use="optional" />
+                                          <xs:attribute name="OpsProject" type="xs:string" use="optional" />
+                                          <xs:attribute name="PadName" type="xs:string" use="optional" />
+                                          <xs:attribute name="PBDepth" type="xs:string" use="optional" />
+                                          <xs:attribute name="Project" type="xs:string" use="optional" />
+                                          <xs:attribute name="StatePermitNumber" type="xs:string" use="optional" />
+                                          <xs:attribute name="TrueVerticalDepth" type="xs:string" use="optional" />
+                                          <xs:attribute name="WellNumber" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="JobSet">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Job">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="JobHeaderItemSet">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="JobHeaderItem">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="API" type="xs:string" use="optional" />
+                                                      <xs:attribute name="JobType" type="xs:string" use="required" />
+                                                      <xs:attribute name="JobName" type="xs:string" use="optional" />
+                                                      <xs:attribute name="Operator" type="xs:string" use="required" />
+                                                      <xs:attribute name="AfeNumber" type="xs:string" use="optional" />
+                                                      <xs:attribute name="SuppAfeNumber" type="xs:string" use="optional" />
+                                                      <xs:attribute name="Objective" type="xs:string" use="optional" />
+                                                      <xs:attribute name="ProjectDescription" type="xs:string" use="optional" />
+                                                      <xs:attribute name="RigContractor" type="xs:string" use="optional" />
+                                                      <xs:attribute name="DailyCostEstimate" type="xs:decimal" use="optional" />
+                                                      <xs:attribute name="FeildEstimateToDate" type="xs:decimal" use="optional" />
+                                                      <xs:attribute name="JobStatus" type="xs:string" use="optional" />
+                                                      <xs:attribute name="ReportNumber" type="xs:string" use="optional" />
+                                                      <xs:attribute name="RigNumber" type="xs:string" use="optional" />
+                                                      <xs:attribute name="TargetFormation" type="xs:string" use="optional" />
+                                                      <xs:attribute name="WellType" type="xs:string" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="ReportDateSet">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="ReportDate">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="ReportSectionSet">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element maxOccurs="unbounded" name="ReportSection">
+                                                                <xs:complexType>
+                                                                  <xs:sequence>
+                                                                    <xs:element minOccurs="0" name="StimFluidItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="StimFluidItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="CumulativeFluidToWell" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FluidTypeSummary" type="xs:string" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="StimFluidsDailyItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="StimFluidsDailyItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="CompletionZone" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="FluidDensityDailyPerType" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FluidTypeDaily" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="FluidVolumeDailyPerType" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FracStageNumber" type="xs:string" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="StimDetailItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="StimDetailItem">
+                                                                            <xs:complexType>
+                                                                              <xs:sequence>
+                                                                                <xs:element maxOccurs="unbounded" name="ReportSection">
+                                                                                  <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                      <xs:element minOccurs="0" name="StimDetail3ItemSet">
+                                                                                        <xs:complexType>
+                                                                                          <xs:sequence>
+                                                                                            <xs:element maxOccurs="unbounded" name="StimDetail3Item">
+                                                                                              <xs:complexType>
+                                                                                                <xs:attribute name="ProppantConcentration" type="xs:decimal" use="optional" />
+                                                                                                <xs:attribute name="ProppantDesignedAmount" type="xs:decimal" use="optional" />
+                                                                                                <xs:attribute name="ProppantAmount" type="xs:decimal" use="optional" />
+                                                                                                <xs:attribute name="ProppantName" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="ProppantType" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="SandSize" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="ProppantNote" type="xs:string" use="optional" />
+                                                                                              </xs:complexType>
+                                                                                            </xs:element>
+                                                                                          </xs:sequence>
+                                                                                        </xs:complexType>
+                                                                                      </xs:element>
+                                                                                      <xs:element minOccurs="0" name="StimDetail2ItemSet">
+                                                                                        <xs:complexType>
+                                                                                          <xs:sequence>
+                                                                                            <xs:element maxOccurs="unbounded" name="StimDetail2Item">
+                                                                                              <xs:complexType>
+                                                                                                <xs:attribute name="AdditiveActualVolume" type="xs:decimal" use="optional" />
+                                                                                                <xs:attribute name="AdditiveDesignedVolume" type="xs:decimal" use="optional" />
+                                                                                                <xs:attribute name="AdditiveType" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="AdditiveVolumeUnits" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="StageNumber" type="xs:decimal" use="optional" />
+                                                                                                <xs:attribute name="TreatmentVolumePerStageGallon" type="xs:decimal" use="optional" />
+                                                                                                <xs:attribute name="Comment" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="TreatmentDate" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="TreatmentVolumePerStageBarrel" type="xs:decimal" use="optional" />
+                                                                                              </xs:complexType>
+                                                                                            </xs:element>
+                                                                                          </xs:sequence>
+                                                                                        </xs:complexType>
+                                                                                      </xs:element>
+                                                                                      <xs:element minOccurs="0" name="StimFluidTypeItemSet">
+                                                                                        <xs:complexType>
+                                                                                          <xs:sequence>
+                                                                                            <xs:element maxOccurs="unbounded" name="StimFluidTypeItem">
+                                                                                              <xs:complexType>
+                                                                                                <xs:attribute name="FluidName" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="FluidType" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="FracStageDate" type="xs:string" use="optional" />
+                                                                                                <xs:attribute name="FracStageNumber" type="xs:string" use="optional" />
+                                                                                              </xs:complexType>
+                                                                                            </xs:element>
+                                                                                          </xs:sequence>
+                                                                                        </xs:complexType>
+                                                                                      </xs:element>
+                                                                                    </xs:sequence>
+                                                                                    <xs:attribute name="ReportSectionType" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="SFN" type="xs:string" use="required" />
+                                                                                  </xs:complexType>
+                                                                                </xs:element>
+                                                                              </xs:sequence>
+                                                                              <xs:attribute name="PlugSetDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BottomDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PlugPressure" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PlugRate" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PlugVolume" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BreakdownVolum" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BreakdownVolume" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BreakdownPressure" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PumpedWaterVolume" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="WirelineCompany" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="FracGradient" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BreakdownRate" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Date" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="DiversionCompany" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="DiversionMethod" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="EndDate" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="InstantaneousShutInPressure" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PreShutInPressure" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ProppantDesigned" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ProppantTotal" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TopDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ShutInPressure5Minute" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SlurryRateAverage" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SlurryRateMaximum" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="StageNumber" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="StimTreatCompany" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TotalCleanVolume" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TreatPressureAverage" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TreatPressureMaximum" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Wellbore" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Zone" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="InstantaneousShutInPressure10Minute" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FracType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="FracSubType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="PropantPlaced" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SlurryVolumeTotal" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PostJobFracGradient" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PreTreatSICP" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="RAType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="StimulationComments" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TaggedWithRA" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TechResultDetail" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TechResultNotes" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TemperatureTreatmentFluid" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TreatPressureMinimum" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TreatRateAverage" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TreatRateMaximum" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TreatRateMinimum" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DeliverMode" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="InstantaneousShutInPressure15Minute" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="StimDesign" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="StimTreatSupervisor" type="xs:string" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="PerforationItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="PerforationItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="BottomMeasuredDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Comment" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Density" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="GunSize" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ReportDate" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TopMeasuredDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MaxPressure" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MaxRate" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Phasing" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PlugType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="StageNumber" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TopTrueVerticalDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="LinkedZone" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="NumberOfShots" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="AverageClusterSpacing" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BottomTrueVerticalDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Formation" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="NumberOfClusters" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PerferationCompany" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="PumpedWaterVolume" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="OtherInHoleItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="OtherInHoleItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="BottomDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Make" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Model" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Comment" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Description" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="OuterDiameter" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="RunDate" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TopDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="EquipmentType" type="xs:string" use="optional" />                                                                              
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="TubingItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="TubingItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="BottomMeasuredDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PackerAssemblyDescription" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TopMeasuredDepth" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="FlowbackItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element name="FlowbackItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="CumulativeWaterRecovered" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FirstFlowChoke" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FormationCasingPressure" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FormationTubingPressure" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ProducedHours" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ProducedOil" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ProducedWater" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="WaterLeftToRecover" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="PumpOpItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="PumpOpItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="LinerSize" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PumpMake" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="PumpModel" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="PumpNumber" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PumpStroke" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="SafetyCheckItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="SafetyCheckItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="Description" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="InspectedBy" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Time" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Type" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Comment" type="xs:string" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="DailyContactItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="DailyContactItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="Company" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Contact" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Position" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Mobile" type="xs:string" use="optional" />                                                                              
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="PersonnelLogItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="PersonnelLogItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="Company" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Count" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Note" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="RegWorkTime" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TotWorkTime" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Type" type="xs:string" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="MudCheckItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="MudCheckItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="CumMudFieldEst" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DailyMudFieldEst" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MudWeight" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Density" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="HTHPFilterCake" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="HTHPFiltrate" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="LCM" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Lime" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MudType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="OWRatio" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TemperatureHTHP" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Vis3" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Vis6" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="WPS" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Water" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Depth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Gel10Min" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Gel10Sec" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Vis300" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Vis600" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="CaCL" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Filtrate" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Gel30Min" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Source" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Comment" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="CumMudLosses" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ECD" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MudLosses" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="HGS" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PercentOil" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="OBM" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="FilterCake" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Calcium" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MBT" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="MudCheck2ItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="MudCheck2Item">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="ElectricStability" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FunnelViscosity" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="LGS" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PvCalculated" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="YpCalculated" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="LCMSolids" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Chlorides" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MudWeight" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PH" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MW" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="MudLogItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="MudLogItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="AvgDrillGas" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MaxDrillGas" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MaxTripGas" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ConnectionGas" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="GasBack" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="MWDTieItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element name="MWDTieItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="Description" type="xs:string" use="required" />
+                                                                              <xs:attribute name="TieInAzimuth" type="xs:unsignedByte" use="required" />
+                                                                              <xs:attribute name="TieInEastWest" type="xs:unsignedByte" use="required" />
+                                                                              <xs:attribute name="TieInInclination" type="xs:unsignedByte" use="required" />
+                                                                              <xs:attribute name="TieInMeasuredDepth" type="xs:unsignedByte" use="required" />
+                                                                              <xs:attribute name="TieInNorthSouth" type="xs:unsignedByte" use="required" />
+                                                                              <xs:attribute name="TieInTrueVerticalDepth" type="xs:unsignedByte" use="required" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="SurveyItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="SurveyItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="Azimuth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BUR" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DLS" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="EastWest" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Inclination" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="MeasuredDepth" type="xs:decimal" use="required" />
+                                                                              <xs:attribute name="NorthSouth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Section" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TrueVerticalDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SurveyType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Method" type="xs:string" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="FormationTopItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="FormationTopItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="FormationName" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="ProgTopTVD" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DrillTopMD" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DrillTopTVD" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="PlannedCasingItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="PlannedCasingItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="ActualStartDate" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="ActualStartDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Phase" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="PlannedStartDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="WellBore" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="ActualPhaseFieldEstCost" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ActualPhaseFieldEst" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Duration" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PIMLStart" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="PlannedPhaseCost" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="ActualEndDate" type="xs:string" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="DrillParameterItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="DrillParameterItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="DpStandPipePressure" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DrillingTorque" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DailyEndDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="InitialRateOfPenetration" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PickUpStringWeight" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="QRate" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="RotationalTime" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="RotationsPerMinute" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SlideTime" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SOStringWeight" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SPP" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="StartDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="WeightOnBit" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="EndDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TFO" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="DrillBitItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="DrillBitItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="BitBHANumber" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BitModel" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="BitType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="DepthDrilled" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DepthEnd" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DepthStart" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="IADCBitDull" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Manufacturer" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="RotateTime" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="RPM" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SizeOuterDiameter" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="WeightOnBit" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DateBitIn" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="DateBitOut" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Jets" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="SPP" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="RateofPenetration" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="UsedClass" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="SerialNumber" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TFA" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BHAName" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="BitRunNo" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="MotorRPM" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TotalHours" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="BHANo" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="IADC" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="BHALength" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="CirculationTime" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DrillingTorque" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FlowRate" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="RateOfPenetrationTotal" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="StringWeight" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="BHAItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="BHAItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="BHANumber" type="xs:decimal" use="required" />
+                                                                              <xs:attribute name="BitOuterDiameter" type="xs:decimal" use="required" />
+                                                                              <xs:attribute name="ComponentLength" type="xs:decimal" use="required" />
+                                                                              <xs:attribute name="DrillStringComponent" type="xs:string" use="required" />
+                                                                              <xs:attribute name="BitMake" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="BitModel" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TopThreads" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="JointCount" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FishNeckLength" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FishNeckOuterDiameter" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="CasingItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="CasingItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="ConnectionType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Description" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Grade" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Length" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="OuterDiameter" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="RunDate" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="SetDepthMD" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SetDepthTVD" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="WeightPerLength" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="InnerDiameter" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="CentralizerCount" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TopMD" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="HydraulicDataItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="HydraulicDataItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="Efficiency" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Pressure" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PumpNo" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="SlowSpeed" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="Strokes" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="QFlow" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="CasingShoeTestItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element name="CasingShoeTestItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="EMudWeight" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="FluidDensity" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="LastCasingStringRun" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="MeasuredDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PressureLeakOff" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TestDate" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TestType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TrueVerticalDepth" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="DailyProgressItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element name="DailyProgressItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="DailyDepthProgress" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DailyEndDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="JobType" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="ReportDate" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="DaysFromSpud" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="TimeLog2ItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="TimeLog2Item">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="DrillingOperationCode" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="DrillingPhase" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="EndDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="NonProductiveTime" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="OpsStatus" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="StartDepth" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="TimeEnd" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TimeStart" type="xs:string" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="TimeLogItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element maxOccurs="unbounded" name="TimeLogItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="ActivityDescription" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="OperationDetails" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TimeEnd" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="TimeStart" type="xs:string" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                    <xs:element minOccurs="0" name="DailyHeaderItemSet">
+                                                                      <xs:complexType>
+                                                                        <xs:sequence>
+                                                                          <xs:element name="DailyHeaderItem">
+                                                                            <xs:complexType>
+                                                                              <xs:attribute name="DailyCostEstimate" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="DailySummary" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="FieldEstimateToDate" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="PlannedSummary" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="ReportNumber" type="xs:decimal" use="optional" />
+                                                                              <xs:attribute name="Summary" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="API" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="JobName" type="xs:string" use="optional" />
+                                                                              <xs:attribute name="DaysFromSpud" type="xs:decimal" use="optional" />
+                                                                            </xs:complexType>
+                                                                          </xs:element>
+                                                                        </xs:sequence>
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                  </xs:sequence>
+                                                                  <xs:attribute name="ReportSectionType" type="xs:string" use="required" />
+                                                                  <xs:attribute name="SFN" type="xs:string" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="Value" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="JobType" type="xs:string" use="required" />
+                                          <xs:attribute name="JobName" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="API" type="xs:string" use="required" />
+                              <xs:attribute name="WellName" type="xs:string" use="required" />
+                              <xs:attribute name="OperatorName" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="FileNumber" type="xs:decimal" use="required" />
+            <xs:attribute name="FileCreateDateTime" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvcManager", "SvcManager.csproj", "{B4EB7C54-65F8-43BF-98C4-83F138524E54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{36E797C7-4D43-4C03-9262-6963F2B5EB25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{BB3FE8C3-6C65-4F32-A07C-772484D91402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TSK.Business", "..\..\Libs\Org.TSK.Business\Org.TSK.Business.csproj", "{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.WSC", "..\..\Libs\Org.WSC\Org.WSC.csproj", "{0D8E811B-09E5-42CA-8C64-C5149C7A45A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.WSO", "..\..\Libs\Org.WSO\Org.WSO.csproj", "{371D3EDF-6965-4A65-919C-C49E1546FD33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4EB7C54-65F8-43BF-98C4-83F138524E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4EB7C54-65F8-43BF-98C4-83F138524E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4EB7C54-65F8-43BF-98C4-83F138524E54}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4EB7C54-65F8-43BF-98C4-83F138524E54}.Debug|x86.Build.0 = Debug|Any CPU
+		{B4EB7C54-65F8-43BF-98C4-83F138524E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4EB7C54-65F8-43BF-98C4-83F138524E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4EB7C54-65F8-43BF-98C4-83F138524E54}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4EB7C54-65F8-43BF-98C4-83F138524E54}.Release|x86.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|x86.Build.0 = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|x86.Build.0 = Release|Any CPU
+		{0D8E811B-09E5-42CA-8C64-C5149C7A45A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D8E811B-09E5-42CA-8C64-C5149C7A45A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D8E811B-09E5-42CA-8C64-C5149C7A45A5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0D8E811B-09E5-42CA-8C64-C5149C7A45A5}.Debug|x86.Build.0 = Debug|Any CPU
+		{0D8E811B-09E5-42CA-8C64-C5149C7A45A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D8E811B-09E5-42CA-8C64-C5149C7A45A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D8E811B-09E5-42CA-8C64-C5149C7A45A5}.Release|x86.ActiveCfg = Release|Any CPU
+		{0D8E811B-09E5-42CA-8C64-C5149C7A45A5}.Release|x86.Build.0 = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|x86.Build.0 = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|x86.ActiveCfg = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B4EB7C54-65F8-43BF-98C4-83F138524E54} = {36E797C7-4D43-4C03-9262-6963F2B5EB25}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {BB3FE8C3-6C65-4F32-A07C-772484D91402}
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0} = {BB3FE8C3-6C65-4F32-A07C-772484D91402}
+		{0D8E811B-09E5-42CA-8C64-C5149C7A45A5} = {BB3FE8C3-6C65-4F32-A07C-772484D91402}
+		{371D3EDF-6965-4A65-919C-C49E1546FD33} = {BB3FE8C3-6C65-4F32-A07C-772484D91402}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6081B672-5CB8-44F4-AC20-93EA0C30F873}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = SvcManager.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\Libs\\Org.WSO\\Org.WSO.csproj
+		SccProjectTopLevelParentUniqueName1 = SvcManager.sln
+		SccProjectName1 = ../../Libs/Org.WSO
+		SccAuxPath1 = https://gulfportenergy.visualstudio.com
+		SccLocalPath1 = ..\\..\\Libs\\Org.WSO
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

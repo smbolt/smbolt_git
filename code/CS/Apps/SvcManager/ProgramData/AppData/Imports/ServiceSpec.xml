@@ -1,0 +1,58 @@
+﻿<ServiceEnvironmentSet>
+  
+  <ServiceEnvironment Name="Prod" IsProductionEnvironment="True">
+    <ServiceHostSet>      
+      <ServiceHost Name="OKC1WEB0001">
+        <ServiceSpecSet>
+          <ServiceSpec Name="GPTaskService01" ServiceType="WindowsService">
+            <ServiceSpecSet>
+              <ServiceSpec Name="TaskEngineWebService" ServiceType="WcfWebService" WsPort="36301"/>
+            </ServiceSpecSet>
+          </ServiceSpec>
+          <ServiceSpec Name="GPTaskService02" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="GPTaskService03" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="GPTaskService04" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="GPTaskService05" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="Smartsheet Data Mesh Service" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="MainSvc" ServiceType="WcfWebService">
+          </ServiceSpec>
+          <ServiceSpec Name="GPFileDataExtractService" ServiceType="WcfWebService">
+          </ServiceSpec>
+          <ServiceSpec Name="OpsMgmt" ServiceType="WcfWebService">
+          </ServiceSpec>
+        </ServiceSpecSet>
+      </ServiceHost>      
+    </ServiceHostSet>
+  </ServiceEnvironment>
+  <ServiceEnvironment Name="Test">    
+    <ServiceHostSet>
+      <ServiceHost Name="OKC1WEB1001">
+        <ServiceSpecSet>
+          <ServiceSpec Name="GPTaskService01" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="GPTaskService02" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="GPTaskService03" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="GPTaskService04" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="GPTaskService05" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="Smartsheet Data Mesh Service" ServiceType="WindowsService">
+          </ServiceSpec>
+          <ServiceSpec Name="MainSvc" ServiceType="WcfWebService">
+          </ServiceSpec>
+          <ServiceSpec Name="GPFileDataExtractService" ServiceType="WcfWebService">
+          </ServiceSpec>
+          <ServiceSpec Name="OpsMgmt" ServiceType="WcfWebService">
+          </ServiceSpec> 
+        </ServiceSpecSet>
+      </ServiceHost>
+    </ServiceHostSet>    
+  </ServiceEnvironment>  
+</ServiceEnvironmentSet>

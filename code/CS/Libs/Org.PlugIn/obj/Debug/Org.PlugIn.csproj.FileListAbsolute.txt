@@ -1,0 +1,10 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\bin\Debug\Org.PlugIn.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\bin\Debug\Org.PlugIn.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\obj\Debug\Org.PlugIn.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\obj\Debug\Org.PlugIn.csproj.CoreCompileInputs.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\obj\Debug\Org.PlugIn.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\obj\Debug\Org.PlugIn.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\bin\Debug\Org.TP.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.PlugIn\bin\Debug\Org.TP.pdb

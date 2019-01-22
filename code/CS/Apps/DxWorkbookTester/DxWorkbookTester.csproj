@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9948A0EB-D1AD-40EC-B99B-FB75584BD15E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Org.DxWorkbookTester</RootNamespace>
+    <AssemblyName>DxWorkbookTester</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Gulfport.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="LocalConfig.xmlx" />
+    <None Include="ProgramData\AppData\AppConfig\AppConfig.xmlx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Gulfport.AllocDec.Business\Gulfport.AllocDec.Business.csproj">
+      <Project>{38ffc692-289c-4963-9a8b-159ca335bf69}</Project>
+      <Name>Gulfport.AllocDec.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Gulfport.Common.Tasks\Gulfport.Common.Tasks.csproj">
+      <Project>{1b0032fb-6dec-4bce-8697-986f597c92f0}</Project>
+      <Name>Gulfport.Common.Tasks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Gulfport.MWStmt.Business\Gulfport.MWStmt.Business.csproj">
+      <Project>{75b15baa-3878-42a0-a557-db8897e70159}</Project>
+      <Name>Gulfport.MWStmt.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Gulfport.MWStmt.Tasks\Gulfport.MWStmt.Tasks.csproj">
+      <Project>{48bd3ae8-2a85-4e9b-8c86-b59dff058ae0}</Project>
+      <Name>Gulfport.MWStmt.Tasks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Gulfport.NonOp.Business\Gulfport.NonOp.Business.csproj">
+      <Project>{75b34f02-1f43-434c-97c8-d8329e79ebd5}</Project>
+      <Name>Gulfport.NonOp.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Gulfport.NonOp.Tasks\Gulfport.NonOp.Tasks.csproj">
+      <Project>{97180063-c602-44e3-923e-73b684eee98c}</Project>
+      <Name>Gulfport.NonOp.Tasks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Gulfport.Stmt.Business\Gulfport.Stmt.Business.csproj">
+      <Project>{fca4bc0e-94f2-46db-919d-2eeab941f651}</Project>
+      <Name>Gulfport.Stmt.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.Dx.Business\Org.Dx.Business.csproj">
+      <Project>{9fc01483-94a8-407b-aa5b-142390345fdf}</Project>
+      <Name>Org.Dx.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.DxDocs\Org.DxDocs.csproj">
+      <Project>{cb5ace5f-29bf-4171-8942-2a9771cf5296}</Project>
+      <Name>Org.DxDocs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.GS\Org.GS.csproj">
+      <Project>{a43ec37d-35c1-4f80-9d14-978da1312fa9}</Project>
+      <Name>Org.GS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.TP\Org.TP.csproj">
+      <Project>{859b20f5-1182-4480-8ce5-f3a794a488b6}</Project>
+      <Name>Org.TP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.TSK.Business\Org.TSK.Business.csproj">
+      <Project>{aad6c4fe-ca4e-4a3d-8f73-4ef5710348a0}</Project>
+      <Name>Org.TSK.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.WSO\Org.WSO.csproj">
+      <Project>{371d3edf-6965-4a65-919c-c49e1546fd33}</Project>
+      <Name>Org.WSO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Gulfport.ico" />
+    <Content Include="LocalConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProgramData\AppData\AppConfig\AppConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProgramData\AppData\CentralConfig\" />
+    <Folder Include="ProgramData\AppData\Doc\" />
+    <Folder Include="ProgramData\AppData\Errors\" />
+    <Folder Include="ProgramData\AppData\Exports\" />
+    <Folder Include="ProgramData\AppData\Help\" />
+    <Folder Include="ProgramData\AppData\Imports\" />
+    <Folder Include="ProgramData\AppData\Log\" />
+    <Folder Include="ProgramData\AppData\MEFCatalog\" />
+    <Folder Include="ProgramData\AppData\Performance\" />
+    <Folder Include="ProgramData\AppData\Reports\" />
+    <Folder Include="ProgramData\AppData\Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

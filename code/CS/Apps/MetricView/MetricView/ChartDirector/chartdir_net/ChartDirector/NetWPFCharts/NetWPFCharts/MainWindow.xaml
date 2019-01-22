@@ -1,0 +1,85 @@
+﻿<Window x:Class="CSharpWPFDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSharpWPFDemo"
+        mc:Ignorable="d"
+        xmlns:ChartDirector="clr-namespace:ChartDirector;assembly=netchartdir" UseLayoutRounding="True"
+        Title="ChartDirector Sample Charts" Height="600" Width="950"
+        >
+    <DockPanel LastChildFill="True" >
+        <ToolBar DockPanel.Dock="Top" Button.Click="toolBar_Click">
+            <ToolBar.Resources>
+                <Style TargetType="Image">
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ToolBar.Resources>
+            <Button x:Name="BackPB" Height="48" Width="64">
+                <StackPanel>
+                    <Image Source="leftarrow.gif" Stretch="None" />
+                    <TextBlock Text="Back" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="ForwardPB" Height="48" Width="64">
+                <StackPanel>
+                    <Image Source="rightarrow.gif" Stretch="None" />
+                    <TextBlock Text="Forward" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="PreviousPB" Height="48" Width="64">
+                <StackPanel>
+                    <Image Source="uparrow.gif" Stretch="None" />
+                    <TextBlock Text="Previous" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="NextPB" Height="48" Width="64">
+                <StackPanel>
+                    <Image Source="downarrow.gif" Stretch="None" />
+                    <TextBlock Text="Next" />
+                </StackPanel>
+            </Button>
+        </ToolBar>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="650*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView x:Name="treeView" SelectedItemChanged="treeView_SelectedItemChanged" BorderBrush="#FFAAAAAA" BorderThickness="1" PreviewMouseDown="treeView_PreviewMouseDown">
+                <TreeView.Resources>
+                    <Style TargetType="TreeViewItem">
+                        <Style.Triggers>
+                            <Trigger Property="HasItems" Value="False">
+                                <Setter Property="Margin" Value="-16,0,0,0" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TreeView.Resources>
+            </TreeView>
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+            <Border Grid.Column="2" BorderBrush="#FFAAAAAA" BorderThickness="1" >
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <DockPanel>
+                        <TextBlock x:Name="title" DockPanel.Dock="Top" Text="Up to 8 charts in each demo module" FontSize="28" FontWeight="Bold" Margin="5,0,0,0"/>
+                        <Rectangle DockPanel.Dock="Top" Fill="DarkBlue" Height="3" Margin="0,0,8,0"/>
+                        <WrapPanel DockPanel.Dock="Top">
+                            <ChartDirector:WPFChartViewer x:Name="chartViewer1" Width="140" Height="140" Margin="5" ClickHotSpot="chartViewer_ClickHotSpot" />
+                            <ChartDirector:WPFChartViewer x:Name="chartViewer2" Width="140" Height="140" Margin="5" ClickHotSpot="chartViewer_ClickHotSpot" />
+                            <ChartDirector:WPFChartViewer x:Name="chartViewer3" Width="140" Height="140" Margin="5" ClickHotSpot="chartViewer_ClickHotSpot" />
+                            <ChartDirector:WPFChartViewer x:Name="chartViewer4" Width="140" Height="140" Margin="5" ClickHotSpot="chartViewer_ClickHotSpot" />
+                            <ChartDirector:WPFChartViewer x:Name="chartViewer5" Width="140" Height="140" Margin="5" ClickHotSpot="chartViewer_ClickHotSpot" />
+                            <ChartDirector:WPFChartViewer x:Name="chartViewer6" Width="140" Height="140" Margin="5" ClickHotSpot="chartViewer_ClickHotSpot" />
+                            <ChartDirector:WPFChartViewer x:Name="chartViewer7" Width="140" Height="140" Margin="5" ClickHotSpot="chartViewer_ClickHotSpot" />
+                            <ChartDirector:WPFChartViewer x:Name="chartViewer8" Width="140" Height="140" Margin="5" ClickHotSpot="chartViewer_ClickHotSpot" />
+                        </WrapPanel>
+                    </DockPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>

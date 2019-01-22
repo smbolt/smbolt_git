@@ -1,0 +1,22 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="PdfExtract">
+      <CISet>
+        <CIGroup Name="GeneralOptions">
+          <CI K="InputFilePath" V="$IMPORTS$\2016-Aug-Stmt.pdf" />
+          <CI K="OutputFilePath" V="$EXPORTS$\PdfText.txt" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="Value1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Locations">
+          <DI K="British Columbia" V="016" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

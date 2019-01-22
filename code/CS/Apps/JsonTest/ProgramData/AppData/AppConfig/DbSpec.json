@@ -1,0 +1,20 @@
+﻿[
+  {
+    "CIType": "ConfigDbSpec",
+    "CIName": "Logging",
+    "DbServer": "OKC1EDW2001",
+    "DbName": "Logging",
+    "DbType": 3,
+    "DbUseWindowsAuth": true,
+    "ConnectionString": "Server=OKC1EDW2001; Database=Logging; Trusted_Connection=True;"
+  },
+  {
+    "CIType": "ConfigDbSpec",
+    "CIName": "Logging2",
+    "DbServer": "OKC1EDW2001",
+    "DbName": "Logging",
+    "DbType": 3,
+    "DbUseWindowsAuth": true,
+    "ConnectionString": "Server=OKC1EDW2001; Database=Logging; Trusted_Connection=True;"
+  }
+]

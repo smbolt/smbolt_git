@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9454C32-2A57-41FE-9C6B-98BC2F34BC2C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSharpWPFDemo</RootNamespace>
+    <AssemblyName>NetWPFCharts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cd_wpf.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="netchartdir">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="anglepie.cs" />
+    <Compile Include="angularpointer.cs" />
+    <Compile Include="angularpointer2.cs" />
+    <Compile Include="arealine.cs" />
+    <Compile Include="axisscale.cs" />
+    <Compile Include="background.cs" />
+    <Compile Include="barlabel.cs" />
+    <Compile Include="binaryseries.cs" />
+    <Compile Include="blackhbarmeter.cs" />
+    <Compile Include="blackhlinearmeter.cs" />
+    <Compile Include="blackroundmeter.cs" />
+    <Compile Include="blacksemicirclemeter.cs" />
+    <Compile Include="blackvbarmeter.cs" />
+    <Compile Include="blackvlinearmeter.cs" />
+    <Compile Include="boxwhisker.cs" />
+    <Compile Include="boxwhisker2.cs" />
+    <Compile Include="bubble.cs" />
+    <Compile Include="bubblescale.cs" />
+    <Compile Include="builtinsymbols.cs" />
+    <Compile Include="candlestick.cs" />
+    <Compile Include="circlelabelpie.cs" />
+    <Compile Include="colorbar.cs" />
+    <Compile Include="colorbar2.cs" />
+    <Compile Include="colorgantt.cs" />
+    <Compile Include="colorhbarmeter.cs" />
+    <Compile Include="colorhlinearmeter.cs" />
+    <Compile Include="colorroundmeter.cs" />
+    <Compile Include="colorsemicirclemeter.cs" />
+    <Compile Include="colorvbarmeter.cs" />
+    <Compile Include="colorvlinearmeter.cs" />
+    <Compile Include="compactline.cs" />
+    <Compile Include="concentric.cs" />
+    <Compile Include="cone.cs" />
+    <Compile Include="confidenceband.cs" />
+    <Compile Include="contour.cs" />
+    <Compile Include="contourcolor.cs" />
+    <Compile Include="contourinterpolate.cs" />
+    <Compile Include="contourlegend.cs" />
+    <Compile Include="crosshair.cs" />
+    <Compile Include="CrossHairWindow.xaml.cs">
+      <DependentUpon>CrossHairWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="curvefitting.cs" />
+    <Compile Include="customsymbolline.cs" />
+    <Compile Include="cylinderbar.cs" />
+    <Compile Include="cylinderlightbar.cs" />
+    <Compile Include="datatable.cs" />
+    <Compile Include="datatable2.cs" />
+    <Compile Include="DemoModule.cs" />
+    <Compile Include="deptharea.cs" />
+    <Compile Include="depthbar.cs" />
+    <Compile Include="donut.cs" />
+    <Compile Include="donutshading.cs" />
+    <Compile Include="donutwidth.cs" />
+    <Compile Include="dualhbar.cs" />
+    <Compile Include="dualxaxis.cs" />
+    <Compile Include="dualyaxis.cs" />
+    <Compile Include="enhancedarea.cs" />
+    <Compile Include="errline.cs" />
+    <Compile Include="explodedpie.cs" />
+    <Compile Include="finance.cs" />
+    <Compile Include="finance2.cs" />
+    <Compile Include="financedemo.cs" />
+    <Compile Include="FinanceDemoWindow.xaml.cs">
+      <DependentUpon>FinanceDemoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="financesymbols.cs" />
+    <Compile Include="floatingbox.cs" />
+    <Compile Include="fontpie.cs" />
+    <Compile Include="fontxy.cs" />
+    <Compile Include="fourq.cs" />
+    <Compile Include="funnel.cs" />
+    <Compile Include="gantt.cs" />
+    <Compile Include="gapbar.cs" />
+    <Compile Include="glasslightbar.cs" />
+    <Compile Include="glassmultibar.cs" />
+    <Compile Include="gradientbar.cs" />
+    <Compile Include="gradientmultibar.cs" />
+    <Compile Include="hbar.cs" />
+    <Compile Include="hbarmeter.cs" />
+    <Compile Include="hbarmeterorientation.cs" />
+    <Compile Include="hboxwhisker.cs" />
+    <Compile Include="histogram.cs" />
+    <Compile Include="hlinearmeter.cs" />
+    <Compile Include="hlinearmeterorientation.cs" />
+    <Compile Include="hloc.cs" />
+    <Compile Include="iconameter.cs" />
+    <Compile Include="icondonut.cs" />
+    <Compile Include="iconpie.cs" />
+    <Compile Include="iconpie2.cs" />
+    <Compile Include="layergantt.cs" />
+    <Compile Include="legendpie.cs" />
+    <Compile Include="legendpie2.cs" />
+    <Compile Include="linearzonemeter.cs" />
+    <Compile Include="linecompare.cs" />
+    <Compile Include="linefill.cs" />
+    <Compile Include="logaxis.cs" />
+    <Compile Include="markbar.cs" />
+    <Compile Include="markzone.cs" />
+    <Compile Include="markzone2.cs" />
+    <Compile Include="missingpoints.cs" />
+    <Compile Include="multiaxes.cs" />
+    <Compile Include="multibar.cs" />
+    <Compile Include="multicylinder.cs" />
+    <Compile Include="multidepthpie.cs" />
+    <Compile Include="multihmeter.cs" />
+    <Compile Include="multiline.cs" />
+    <Compile Include="multiline2.cs" />
+    <Compile Include="multipie.cs" />
+    <Compile Include="multiradar.cs" />
+    <Compile Include="multishapebar.cs" />
+    <Compile Include="multistackbar.cs" />
+    <Compile Include="multisymbolline.cs" />
+    <Compile Include="multivmeter.cs" />
+    <Compile Include="neonroundmeter.cs" />
+    <Compile Include="overlapbar.cs" />
+    <Compile Include="paramcurve.cs" />
+    <Compile Include="ParamViewer.xaml.cs">
+      <DependentUpon>ParamViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pareto.cs" />
+    <Compile Include="patternarea.cs" />
+    <Compile Include="percentarea.cs" />
+    <Compile Include="percentbar.cs" />
+    <Compile Include="pieshading.cs" />
+    <Compile Include="polararea.cs" />
+    <Compile Include="polarbubble.cs" />
+    <Compile Include="polarline.cs" />
+    <Compile Include="polarscatter.cs" />
+    <Compile Include="polarspline.cs" />
+    <Compile Include="polarvector.cs" />
+    <Compile Include="polarzones.cs" />
+    <Compile Include="polarzones2.cs" />
+    <Compile Include="polygonbar.cs" />
+    <Compile Include="posnegbar.cs" />
+    <Compile Include="posnegwaterfall.cs" />
+    <Compile Include="pyramidelevation.cs" />
+    <Compile Include="pyramidgap.cs" />
+    <Compile Include="pyramidrotation.cs" />
+    <Compile Include="realtimedemo.cs" />
+    <Compile Include="RealTimeDemoWindow.xaml.cs">
+      <DependentUpon>RealTimeDemoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="realtimetrack.cs" />
+    <Compile Include="RealTimeTrackWindow.xaml.cs">
+      <DependentUpon>RealTimeTrackWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="realtimezoomscroll.cs" />
+    <Compile Include="RealTimeZoomScrollWindow.xaml.cs">
+      <DependentUpon>RealTimeZoomScrollWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="rectangularmeter.cs" />
+    <Compile Include="rose.cs" />
+    <Compile Include="rotatedarea.cs" />
+    <Compile Include="rotatedline.cs" />
+    <Compile Include="rotatedpyramid.cs" />
+    <Compile Include="roundmeter.cs" />
+    <Compile Include="roundmeterreadout.cs" />
+    <Compile Include="scatter.cs" />
+    <Compile Include="scattercontour.cs" />
+    <Compile Include="scatterlabels.cs" />
+    <Compile Include="scattersurface.cs" />
+    <Compile Include="scattersymbols.cs" />
+    <Compile Include="scattertrend.cs" />
+    <Compile Include="semicirclemeter.cs" />
+    <Compile Include="semicirclemeterreadout.cs" />
+    <Compile Include="shadowpie.cs" />
+    <Compile Include="sidelabelpie.cs" />
+    <Compile Include="simplearea.cs" />
+    <Compile Include="simplebar.cs" />
+    <Compile Include="simplebar2.cs" />
+    <Compile Include="simpleline.cs" />
+    <Compile Include="simplepie.cs" />
+    <Compile Include="simplepyramid.cs" />
+    <Compile Include="simpleradar.cs" />
+    <Compile Include="simplezoomscroll.cs" />
+    <Compile Include="SimpleZoomScrollWindow.xaml.cs">
+      <DependentUpon>SimpleZoomScrollWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="smoothcontour.cs" />
+    <Compile Include="softlightbar.cs" />
+    <Compile Include="softmultibar.cs" />
+    <Compile Include="splineline.cs" />
+    <Compile Include="squareameter.cs" />
+    <Compile Include="stackedarea.cs" />
+    <Compile Include="stackedbar.cs" />
+    <Compile Include="stackradar.cs" />
+    <Compile Include="stackrose.cs" />
+    <Compile Include="stepline.cs" />
+    <Compile Include="surface.cs" />
+    <Compile Include="surface2.cs" />
+    <Compile Include="surface3.cs" />
+    <Compile Include="surfaceaxis.cs" />
+    <Compile Include="surfacelighting.cs" />
+    <Compile Include="surfaceperspective.cs" />
+    <Compile Include="surfaceshading.cs" />
+    <Compile Include="surfacewireframe.cs" />
+    <Compile Include="symbolline.cs" />
+    <Compile Include="symbolline2.cs" />
+    <Compile Include="texturedonut.cs" />
+    <Compile Include="threedanglepie.cs" />
+    <Compile Include="threedarea.cs" />
+    <Compile Include="threedbar.cs" />
+    <Compile Include="threedbubble.cs" />
+    <Compile Include="threedbubble2.cs" />
+    <Compile Include="threedbubble3.cs" />
+    <Compile Include="threeddepthpie.cs" />
+    <Compile Include="threeddonut.cs" />
+    <Compile Include="threeddonutshading.cs" />
+    <Compile Include="threedline.cs" />
+    <Compile Include="threedpie.cs" />
+    <Compile Include="threedpieshading.cs" />
+    <Compile Include="threedpyramid.cs" />
+    <Compile Include="threedscatter.cs" />
+    <Compile Include="threedscatter2.cs" />
+    <Compile Include="threedscatteraxis.cs" />
+    <Compile Include="threedscattergroups.cs" />
+    <Compile Include="threedstackarea.cs" />
+    <Compile Include="ticks.cs" />
+    <Compile Include="trackaxis.cs" />
+    <Compile Include="TrackAxisWindow.xaml.cs">
+      <DependentUpon>TrackAxisWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="trackbox.cs" />
+    <Compile Include="TrackBoxWindow.xaml.cs">
+      <DependentUpon>TrackBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="trackfinance.cs" />
+    <Compile Include="TrackFinanceWindow.xaml.cs">
+      <DependentUpon>TrackFinanceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tracklabel.cs" />
+    <Compile Include="TrackLabelWindow.xaml.cs">
+      <DependentUpon>TrackLabelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tracklegend.cs" />
+    <Compile Include="TrackLegendWindow.xaml.cs">
+      <DependentUpon>TrackLegendWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="trendline.cs" />
+    <Compile Include="unevenpoints.cs" />
+    <Compile Include="varwidthbar.cs" />
+    <Compile Include="vbarmeter.cs" />
+    <Compile Include="vbarmeterorientation.cs" />
+    <Compile Include="vector.cs" />
+    <Compile Include="viewportcontroldemo.cs" />
+    <Compile Include="ViewPortControlDemoWindow.xaml.cs">
+      <DependentUpon>ViewPortControlDemoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vlinearmeter.cs" />
+    <Compile Include="vlinearmeterorientation.cs" />
+    <Compile Include="waterfall.cs" />
+    <Compile Include="whitehbarmeter.cs" />
+    <Compile Include="whitehlinearmeter.cs" />
+    <Compile Include="whiteroundmeter.cs" />
+    <Compile Include="whitesemicirclemeter.cs" />
+    <Compile Include="whitevbarmeter.cs" />
+    <Compile Include="whitevlinearmeter.cs" />
+    <Compile Include="xyline.cs" />
+    <Compile Include="xyzoomscroll.cs" />
+    <Compile Include="XYZoomScrollWindow.xaml.cs">
+      <DependentUpon>XYZoomScrollWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="xzonecolor.cs" />
+    <Compile Include="yzonecolor.cs" />
+    <Compile Include="zoomscrolltrack.cs" />
+    <Compile Include="ZoomScrollTrackWindow.xaml.cs">
+      <DependentUpon>ZoomScrollTrackWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="zoomscrolltrack2.cs" />
+    <Compile Include="ZoomScrollTrack2Window.xaml.cs">
+      <DependentUpon>ZoomScrollTrack2Window.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CrossHairWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FinanceDemoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ParamViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RealTimeDemoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RealTimeTrackWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RealTimeZoomScrollWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SimpleZoomScrollWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrackAxisWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TrackBoxWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TrackFinanceWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TrackLabelWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TrackLegendWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewPortControlDemoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XYZoomScrollWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZoomScrollTrackWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZoomScrollTrack2Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="downarrow.gif" />
+    <Resource Include="freezePB.gif" />
+    <Resource Include="leftarrow.gif" />
+    <Resource Include="pointer.gif" />
+    <Resource Include="rightarrow.gif" />
+    <Resource Include="runPB.gif" />
+    <Resource Include="saveIcon.gif" />
+    <Resource Include="uparrow.gif" />
+    <Resource Include="zoomInIcon.gif" />
+    <Resource Include="zoomOutIcon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\3dscattericon.png" />
+    <Resource Include="Icons\areaicon.png" />
+    <Resource Include="Icons\baricon.png" />
+    <Resource Include="Icons\barmetericon.png" />
+    <Resource Include="Icons\boxicon.png" />
+    <Resource Include="Icons\bubbleicon.png" />
+	<Resource Include="Icons\clockicon.png" />
+    <Resource Include="Icons\contouricon.png" />
+    <Resource Include="Icons\financeicon.png" />
+	<Resource Include="Icons\gantticon.png" />
+    <Resource Include="Icons\linearmetericon.png" />
+    <Resource Include="Icons\lineicon.png" />
+	<Resource Include="Icons\metericon.png" />
+    <Resource Include="Icons\pieicon.png" />
+    <Resource Include="Icons\polaricon.png" />
+    <Resource Include="Icons\pyramidicon.png" />
+    <Resource Include="Icons\surfaceicon.png" />
+    <Resource Include="Icons\trackicon.png" />
+    <Resource Include="Icons\trendicon.png" />
+    <Resource Include="Icons\xyicon.png" />
+	<Resource Include="Icons\zoomicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cd_wpf.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="angry.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="clock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cloud.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="computer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="doc.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gas.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="laugh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="marble.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="marble2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="marble3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="molecule.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="nocomment.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rain.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="service.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="small_computer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="small_molecule.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="small_user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="smile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="snow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="snowy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="software.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="star.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sun.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tile.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wood.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

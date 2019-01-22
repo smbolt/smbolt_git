@@ -1,0 +1,40 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="MEFTest">
+      <CISet>
+        <CIGroup Name="GeneralOptions">
+          <CI K="PdfSearchPath" V="C:\_work\PdfSearchPath" />
+          <CI K="RecursiveSearch" V="True" />
+          <CI K="ModulesPath" V="C:\DEV-MAIN\Main\Libs\Org.PDF.Tasks\bin\Debug" />
+          <CI K="SelectedTaskProcessor" V="PdfSearch,1.0.0.0" />
+          <CI K="SelectedEnvironment" V="Test" />
+        </CIGroup>
+        <CIGroup Name="FVConfigDbSpec">
+          <CI K="FVDbServer" V="OKC1EDW2001" />
+          <CI K="FVDbDsn" V="" />
+          <CI K="FVDbName" V="FieldVisor" />
+          <CI K="FVDbUserId" V="" />
+          <CI K="FVDbPassword" V="" />
+          <CI K="FVDbType" V="SqlServer" />
+          <CI K="FVDbUseWindowsAuth" V="True" />
+          <CI K="FVDbEfProvider" V="" />
+          <CI K="FVDbEfMetadata" V="" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="TaskProcessorDictionary">
+          <DI K="PdfSearch,1.0.0.0" V="" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="EnvironmentDictionary">
+          <DI K="Production" V="Prod" />
+          <DI K="Test" V="Test" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC554996-640E-4CA8-AD40-B8E52E0E3B78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Org.CTL</RootNamespace>
+    <AssemblyName>Org.CTL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ButtonBarResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ButtonBarResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ButtonBar\ButtonBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ButtonBar\ButtonBar.Designer.cs">
+      <DependentUpon>ButtonBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlBase.Designer.cs">
+      <DependentUpon>ControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlEventArgs.cs" />
+    <Compile Include="ControlProperties.cs" />
+    <Compile Include="ControlPropertiesSet.cs" />
+    <Compile Include="ControlUpdate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WaitSpinnerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WaitSpinnerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WaitSpinner\WaitSpinner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WaitSpinner\WaitSpinner.Designer.cs">
+      <DependentUpon>WaitSpinner.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ButtonBarResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ButtonBarResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ButtonBar\ButtonBar.resx">
+      <DependentUpon>ButtonBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitSpinnerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WaitSpinnerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitSpinner\WaitSpinner.resx">
+      <DependentUpon>WaitSpinner.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ButtonBar\Images\Update.png" />
+    <None Include="ButtonBar\Images\Commit.png" />
+    <None Include="ButtonBar\Images\SvnStop.png" />
+    <None Include="ButtonBar\Images\ShowLog.png" />
+    <None Include="ButtonBar\Images\ClearLog.png" />
+    <None Include="ButtonBar\Images\Hide.png" />
+    <Content Include="ButtonBar\Images\SyncLeft.png" />
+    <Content Include="ButtonBar\Images\SyncRight.png" />
+    <Content Include="WaitSpinner\Images\failure.png" />
+    <Content Include="WaitSpinner\Images\spin1.png" />
+    <Content Include="WaitSpinner\Images\spin10.png" />
+    <Content Include="WaitSpinner\Images\spin11.png" />
+    <Content Include="WaitSpinner\Images\spin12.png" />
+    <Content Include="WaitSpinner\Images\spin13.png" />
+    <Content Include="WaitSpinner\Images\spin14.png" />
+    <Content Include="WaitSpinner\Images\spin15.png" />
+    <Content Include="WaitSpinner\Images\spin16.png" />
+    <Content Include="WaitSpinner\Images\spin2.png" />
+    <Content Include="WaitSpinner\Images\spin3.png" />
+    <Content Include="WaitSpinner\Images\spin4.png" />
+    <Content Include="WaitSpinner\Images\spin5.png" />
+    <Content Include="WaitSpinner\Images\spin6.png" />
+    <Content Include="WaitSpinner\Images\spin7.png" />
+    <Content Include="WaitSpinner\Images\spin8.png" />
+    <Content Include="WaitSpinner\Images\spin9.png" />
+    <Content Include="WaitSpinner\Images\success.png" />
+    <None Include="ButtonBar\Images\button1.png" />
+    <Content Include="ButtonBar\Images\Pause.png" />
+    <Content Include="ButtonBar\Images\Resume.png" />
+    <Content Include="ButtonBar\Images\Start.png" />
+    <Content Include="ButtonBar\Images\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Org.GS\Org.GS.csproj">
+      <Project>{a43ec37d-35c1-4f80-9d14-978da1312fa9}</Project>
+      <Name>Org.GS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

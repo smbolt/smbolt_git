@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.MainSvc", "Org.MainSvc.csproj", "{DB3E6F9C-468D-4EAC-9C12-5A692E22737A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{4F323DF0-F20D-42A7-AD08-3ABE6DDA7FAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Libs", "10 - Libs", "{D99F1F86-4013-4D71-8638-DCE5F8357D46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7D0AE38C-0A48-40F7-859C-B9A05ABA5037}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 - Nuget", "99 - Nuget", "{BE5E8A87-0315-4C4D-AE79-0490A7DFA89E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TP", "..\..\Libs\Org.TP\Org.TP.csproj", "{859B20F5-1182-4480-8CE5-F3A794A488B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.WSO", "..\..\Libs\Org.WSO\Org.WSO.csproj", "{371D3EDF-6965-4A65-919C-C49E1546FD33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Notify", "..\..\Libs\Org.Notify\Org.Notify.csproj", "{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = MainSvc_DxExcelExtract.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\Libs\\Org.TP\\Org.TP.csproj
+		SccProjectTopLevelParentUniqueName1 = MainSvc_DxExcelExtract.sln
+		SccProjectName1 = ../../Libs/Org.TP
+		SccAuxPath1 = https://gulfportenergy.visualstudio.com
+		SccLocalPath1 = ..\\..\\Libs\\Org.TP
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\..\\Libs\\Org.WSO\\Org.WSO.csproj
+		SccProjectTopLevelParentUniqueName2 = MainSvc_DxExcelExtract.sln
+		SccProjectName2 = ../../Libs/Org.WSO
+		SccAuxPath2 = https://gulfportenergy.visualstudio.com
+		SccLocalPath2 = ..\\..\\Libs\\Org.WSO
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\..\\Libs\\Org.Notify\\Org.Notify.csproj
+		SccProjectTopLevelParentUniqueName3 = MainSvc_DxExcelExtract.sln
+		SccProjectName3 = ../../Libs/Org.Notify
+		SccAuxPath3 = https://gulfportenergy.visualstudio.com
+		SccLocalPath3 = ..\\..\\Libs\\Org.Notify
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB3E6F9C-468D-4EAC-9C12-5A692E22737A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3E6F9C-468D-4EAC-9C12-5A692E22737A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3E6F9C-468D-4EAC-9C12-5A692E22737A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DB3E6F9C-468D-4EAC-9C12-5A692E22737A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3E6F9C-468D-4EAC-9C12-5A692E22737A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB3E6F9C-468D-4EAC-9C12-5A692E22737A}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|x86.ActiveCfg = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB3E6F9C-468D-4EAC-9C12-5A692E22737A} = {4F323DF0-F20D-42A7-AD08-3ABE6DDA7FAB}
+		{7D0AE38C-0A48-40F7-859C-B9A05ABA5037} = {BE5E8A87-0315-4C4D-AE79-0490A7DFA89E}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {D99F1F86-4013-4D71-8638-DCE5F8357D46}
+		{859B20F5-1182-4480-8CE5-F3A794A488B6} = {D99F1F86-4013-4D71-8638-DCE5F8357D46}
+		{371D3EDF-6965-4A65-919C-C49E1546FD33} = {D99F1F86-4013-4D71-8638-DCE5F8357D46}
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1} = {D99F1F86-4013-4D71-8638-DCE5F8357D46}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEFTest_PdfSearch", "MEFTest_PdfSearch.csproj", "{D59F4726-6EBF-4070-99BD-94B47C37D38F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF} = {1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF}
+		{859B20F5-1182-4480-8CE5-F3A794A488B6} = {859B20F5-1182-4480-8CE5-F3A794A488B6}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - App", "1 - App", "{F4626537-B827-4310-AE0E-81B42A68769B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{063BF3BC-2A24-47CB-A05B-5E47C9E0338A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 - NuGet", "99 - NuGet", "{7B540AD9-424F-407C-8FE3-51A5FFC748ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E571AC74-715A-44B3-833D-E4EC3B10CD3A}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.PDF.Tasks", "..\..\Libs\Org.PDF.Tasks\Org.PDF.Tasks.csproj", "{1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {A43EC37D-35C1-4F80-9D14-978DA1312FA9}
+		{859B20F5-1182-4480-8CE5-F3A794A488B6} = {859B20F5-1182-4480-8CE5-F3A794A488B6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TP", "..\..\Libs\Org.TP\Org.TP.csproj", "{859B20F5-1182-4480-8CE5-F3A794A488B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Pdfx", "..\..\Libs\Org.Pdfx\Org.Pdfx.csproj", "{F187D9A1-BAC3-4338-87F5-0F018CF0ED64}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = MEFTest_PdfSearch.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com/defaultcollection
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\Libs\\Org.TP\\Org.TP.csproj
+		SccProjectTopLevelParentUniqueName1 = MEFTest_PdfSearch.sln
+		SccProjectName1 = ../../Libs/Org.TP
+		SccAuxPath1 = https://gulfportenergy.visualstudio.com/defaultcollection
+		SccLocalPath1 = ..\\..\\Libs\\Org.TP
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D59F4726-6EBF-4070-99BD-94B47C37D38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59F4726-6EBF-4070-99BD-94B47C37D38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59F4726-6EBF-4070-99BD-94B47C37D38F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D59F4726-6EBF-4070-99BD-94B47C37D38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D59F4726-6EBF-4070-99BD-94B47C37D38F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D59F4726-6EBF-4070-99BD-94B47C37D38F}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|x86.ActiveCfg = Release|Any CPU
+		{F187D9A1-BAC3-4338-87F5-0F018CF0ED64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F187D9A1-BAC3-4338-87F5-0F018CF0ED64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F187D9A1-BAC3-4338-87F5-0F018CF0ED64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F187D9A1-BAC3-4338-87F5-0F018CF0ED64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F187D9A1-BAC3-4338-87F5-0F018CF0ED64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F187D9A1-BAC3-4338-87F5-0F018CF0ED64}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D59F4726-6EBF-4070-99BD-94B47C37D38F} = {F4626537-B827-4310-AE0E-81B42A68769B}
+		{E571AC74-715A-44B3-833D-E4EC3B10CD3A} = {7B540AD9-424F-407C-8FE3-51A5FFC748ED}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {063BF3BC-2A24-47CB-A05B-5E47C9E0338A}
+		{1B3C82B7-44AC-4CE4-AE4F-9E52DC84F5BF} = {063BF3BC-2A24-47CB-A05B-5E47C9E0338A}
+		{859B20F5-1182-4480-8CE5-F3A794A488B6} = {063BF3BC-2A24-47CB-A05B-5E47C9E0338A}
+		{F187D9A1-BAC3-4338-87F5-0F018CF0ED64} = {063BF3BC-2A24-47CB-A05B-5E47C9E0338A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+﻿<LocalConfig>
+  <CI K="Vendor" V="ADSDI" />
+  <CI K="AppType" V="WinApp" />
+  <CI K="AppName" V="SvnHelper" />
+  <CI K="UseLocalAppData" V="True" />
+</LocalConfig>

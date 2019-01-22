@@ -1,0 +1,7 @@
+C:\DEV-MAIN\Main\Libs\Org.FSO\obj\Debug\Org.FSO.csprojResolveAssemblyReference.cache
+C:\DEV-MAIN\Main\Libs\Org.FSO\bin\Debug\Org.FSO.dll
+C:\DEV-MAIN\Main\Libs\Org.FSO\bin\Debug\Org.FSO.pdb
+C:\DEV-MAIN\Main\Libs\Org.FSO\bin\Debug\Org.GS.dll
+C:\DEV-MAIN\Main\Libs\Org.FSO\bin\Debug\Org.GS.pdb
+C:\DEV-MAIN\Main\Libs\Org.FSO\obj\Debug\Org.FSO.dll
+C:\DEV-MAIN\Main\Libs\Org.FSO\obj\Debug\Org.FSO.pdb

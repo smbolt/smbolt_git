@@ -1,0 +1,12 @@
+﻿<DxMapSet Name="GradyTIK" DxDocType="MidstreamPopStatement" OperatorName="Woodford Express">
+  <DxMap Name="FirstMap" DxMapType="SheetMap">
+    <DxFilterSet>
+      <DxFilter FilterMethod="SheetNames" SheetNames="*,!INPUT,!WEX Summary,!VEX Summary,!Imbalances"/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="Statement.RecordType" Src="*,1,9" Dest="*,1,$" IsRequired="True" DataType="Int" NoSrcCell="True" DefaultValue="Statement"/>
+      <DxMapItem Name="Statement.MeterNumber" Src="*,2,9" Dest="*,1,$" IsRequired="True" />
+      <DxMapItem Name="Statement.AccountingDate" Src="*,1,17" Dest="*,1,$" IsRequired="True" HelperFunction="ExtractDate(MMMM,D,YYYY)" />
+    </DxMapItemSet>
+  </DxMap>
+</DxMapSet>

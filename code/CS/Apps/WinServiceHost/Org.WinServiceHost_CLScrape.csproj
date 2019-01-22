@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3336DEE7-3061-45AE-9C17-0BF7B09497D4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Org.WinServiceHost</RootNamespace>
+    <AssemblyName>Org.WinServiceHost</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TaskEngine</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Images\Config_Small.ai" />
+    <None Include="Images\PauseService_Small.ai" />
+    <None Include="Images\ResumeService_Small.ai" />
+    <None Include="Images\StartService_Small.ai" />
+    <None Include="Images\StopService_Small.ai" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ProgramData\AppData\AppConfig\AppConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProgramData\AppData\AppConfig_CLScrape\AppConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Images\SplashImage.png" />
+    <Content Include="LocalConfig.xml" />
+    <None Include="Resources\SplashImage.png" />
+    <None Include="Images\adsdi.ico" />
+    <Content Include="Images\Config_Small.png" />
+    <Content Include="Images\PauseService_Small.png" />
+    <Content Include="Images\ResumeService_Small.png" />
+    <Content Include="Images\StartService_Small.png" />
+    <Content Include="Images\StopService_Small.png" />
+    <None Include="Images\WinServiceHostBanner.png" />
+    <None Include="Images\WinServiceHostLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProgramData\AppData\CentralConfig\" />
+    <Folder Include="ProgramData\AppData\Doc\" />
+    <Folder Include="ProgramData\AppData\Errors\" />
+    <Folder Include="ProgramData\AppData\Exports\" />
+    <Folder Include="ProgramData\AppData\Help\" />
+    <Folder Include="ProgramData\AppData\Imports\" />
+    <Folder Include="ProgramData\AppData\Log\" />
+    <Folder Include="ProgramData\AppData\MEFCatalog\CLScrape\1.0.0.0\" />
+    <Folder Include="ProgramData\AppData\Performance\" />
+    <Folder Include="ProgramData\AppData\Reports\" />
+    <Folder Include="ProgramData\AppData\Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Org.GS\Org.GS.csproj">
+      <Project>{a43ec37d-35c1-4f80-9d14-978da1312fa9}</Project>
+      <Name>Org.GS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.Notify\Org.Notify.csproj">
+      <Project>{af48a2f1-1ff5-4bdd-8590-dbd874e638e1}</Project>
+      <Name>Org.Notify</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.SF\Org.SF.csproj">
+      <Project>{75752b95-5d39-4ee6-bb41-3555122e62b1}</Project>
+      <Name>Org.SF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.TP\Org.TP.csproj">
+      <Project>{859b20f5-1182-4480-8ce5-f3a794a488b6}</Project>
+      <Name>Org.TP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.TSK.Business\Org.TSK.Business.csproj">
+      <Project>{aad6c4fe-ca4e-4a3d-8f73-4ef5710348a0}</Project>
+      <Name>Org.TSK.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.TSK\Org.TSK.csproj">
+      <Project>{7fa02d66-e682-4bdf-8487-75753948b2fc}</Project>
+      <Name>Org.TSK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.WinSvc\Org.WinSvc.csproj">
+      <Project>{40604b3b-c130-44a8-9c4f-de757ad152b9}</Project>
+      <Name>Org.WinSvc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>(if exist "$(TargetDir)*old.pdb" del "$(TargetDir)*old.pdb") &amp; (if exist "$(TargetDir)*.pdb" ren "$(TargetDir)*.pdb" *.old.pdb)
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="CSharpWPFDemo.ViewPortControlDemoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSharpWPFDemo"
+        mc:Ignorable="d"
+		xmlns:ChartDirector="clr-namespace:ChartDirector;assembly=netchartdir" UseLayoutRounding="True"
+        Title="Zooming and Scrolling with Viewport Control" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Loaded="Window_Loaded"
+        >
+    <DockPanel>
+        <Label Content="Advanced Software Engineering" Height="25" DockPanel.Dock="Top" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" 
+               FontSize="13" Background="#FF02098D" Foreground="#FFF4FF04" HorizontalContentAlignment="Right"/>
+        <StackPanel DockPanel.Dock="Left" Width="120" Background="#FFF0F0F0">
+            <RadioButton x:Name="pointerPB" Style="{StaticResource {x:Type ToggleButton}}" HorizontalContentAlignment="Left" Checked="pointerPB_Checked" >
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Image Source="pointer.gif" Height="16" />
+                    <TextBlock Text="Pointer" Margin="6,0,0,0" />
+                </StackPanel>
+            </RadioButton>
+            <RadioButton x:Name="zoomInPB" Style="{StaticResource {x:Type ToggleButton}}" HorizontalContentAlignment="Left" Checked="zoomInPB_Checked" >
+                <StackPanel Orientation="Horizontal" Margin="5" >
+                    <Image Source="zoomInIcon.gif" Height="16" />
+                    <TextBlock Text="Zoom In" Margin="6,0,0,0" />
+                </StackPanel>
+            </RadioButton>
+            <RadioButton x:Name="zoomOutPB" Style="{StaticResource {x:Type ToggleButton}}" HorizontalContentAlignment="Left" Checked="zoomOutPB_Checked">
+                <StackPanel Orientation="Horizontal" Margin="5" >
+                    <Image Source="zoomOutIcon.gif" Height="16" />
+                    <TextBlock Text="Zoom Out" Margin="6,0,0,0" />
+                </StackPanel>
+            </RadioButton>
+            <Button x:Name="savePB" Margin="0,32,0,0" HorizontalContentAlignment="Left" Click="savePB_Click">
+                <StackPanel Orientation="Horizontal" Margin="5" >
+                    <Image Source="saveIcon.gif" Width="14" Height="14" />
+                    <TextBlock Text="Save" Margin="6,0,0,0" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <ChartDirector:WPFChartViewer x:Name="WPFChartViewer1" DockPanel.Dock="Top" Width="640" Height="400" Margin="5,8,5,3" 
+            MouseMovePlotArea="WPFChartViewer1_MouseMovePlotArea" ViewPortChanged="WPFChartViewer1_ViewPortChanged" />
+        <ChartDirector:WPFViewPortControl x:Name="ViewPortControl1" DockPanel.Dock="Top" Width="640" Height="60" Margin="5,4,5,12" />
+    </DockPanel>
+</Window>

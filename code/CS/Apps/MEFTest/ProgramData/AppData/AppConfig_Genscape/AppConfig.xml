@@ -1,0 +1,490 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="MEFTest">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$!FSSTEM-PARM$" V="\\gulfport.local\data\Gulfport\Data Management\AppIntegration" />
+          <CI K="$FSSTEM-PARM$" V="\\gulfport.local\data\Gulfport\Applications\Data_Integration" />
+          <CI K="$ENV-PARM$" V="Test" />
+          <CI K="$TASKNODE-PARM$" V="GenscapeStmt" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="IsDryRun" V="True" />
+          <CI K="InputFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Ready" />
+          <CI K="ProcessedFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Processed" />
+          <CI K="ErrorFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Error" />
+          <CI K="ConfigFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Config" />
+          <CI K="~ModulesPath" V="C:\DEV-MAIN\Main\Libs\Gulfport.Colorado.Tasks\bin\Debug" />
+          <CI K="#ModulesPath" V="C:\DEV-MAIN\Main\Libs\Gulfport.FieldVisor.Tasks\bin\Debug" />
+          <CI K="@ModulesPath" V="C:\DEV-MAIN\Main\Libs\Gulfport.MWStmt.Tasks\bin\Debug" />
+          <CI K="ModulesPath" V="C:\DEV-MAIN\Main\Libs\Gulfport.Genscape.Tasks\bin\Debug" />
+          <CI K="ExcelExtractWcfTimeoutSeconds" V="180" />
+          <CI K="LogConfigDbSpec" V="Log" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="Database" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="NotSet" />
+          <CI K="LogFileSizeManagementMethod" V="NotManagedByThisApp" />
+          <CI K="LogFileSizeManagementAgent" V="None" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="LogConfigDbSpec">
+          <CI K="LogDbServer" V="OKC1EDW2001" />
+          <CI K="LogDbDsn" V="" />
+          <CI K="LogDbName" V="Logging" />
+          <CI K="LogDbUserId" V="" />
+          <CI K="LogDbPassword" V="" />
+          <CI K="LogDbType" V="SqlServer" />
+          <CI K="LogDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="MWStatementOptions">
+          <CI K="ProductionCutoffDay" V="25" />
+          <CI K="LastProductionDateProcessed" V="2016/02/01" />
+        </CIGroup>
+        <CIGroup Name="EMK3DataImportOptions">
+          <CI K="StatementIDs" V="2,3" />
+          <CI K="SellerID" V="321" />
+          <CI K="ProductType" V="2" />
+          <CI K="ModuleType" V="10" />
+          <CI K="ComponentCategory" V="10" />
+          <CI K="ImportUserName" V="GPImport" />
+          <CI K="ProcessingNote" V="MarkWest Statement Data Import" />
+          <CI K="ProductionDate" V="6/01/2016" />
+        </CIGroup>
+        <CIGroup Name="MWStmtConfigDbSpec">
+          <CI K="MWStmtDbServer" V="OKC1EDW0001" />
+          <CI K="MWStmtDbName" V="GPStatement" />
+          <CI K="MWStmtDbType" V="SqlServer" />
+          <CI K="MWStmtDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="EMK3TestConfigDbSpec">
+          <CI K="EMK3TestDbServer" V="OKC1SQL0002" />
+          <CI K="EMK3TestDbName" V="EMK3EntEd" />
+          <CI K="EMK3TestDbType" V="SqlServer" />
+          <CI K="EMK3TestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="NonOpConfigDbSpec">
+          <CI K="NonOpDbServer" V="OKC1SQL1001" />
+          <CI K="NonOpDbName" V="GPIntegration" />
+          <CI K="NonOpDbType" V="SqlServer" />
+          <CI K="NonOpDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="GPMasterTestConfigDbSpec">
+          <CI K="GPMasterTestDbServer" V="OKC1EDW2001" />
+          <CI K="GPMasterTestDbName" V="GPMaster" />
+          <CI K="GPMasterTestDbType" V="SqlServer" />
+          <CI K="GPMasterTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="GenscapeConfigDbSpec">
+          <CI K="GenscapeDbServer" V="OKC1SQL1002" />
+          <CI K="GenscapeDbName" V="Genscape" />
+          <CI K="GenscapeDbType" V="SqlServer" />
+          <CI K="GenscapeDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="MainSvcLocalConfigWsSpec">
+          <CI K="MainSvcLocalWsBinding" V="BasicHttp" />
+          <CI K="MainSvcLocalWsHost" V="localhost" />
+          <CI K="MainSvcLocalWsPort" V="32001" />
+          <CI K="MainSvcLocalWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="MainSvcTestConfigWsSpec">
+          <CI K="MainSvcTestWsBinding" V="BasicHttp" />
+          <CI K="MainSvcTestWsHost" V="OKC1WEB1001" />
+          <CI K="MainSvcTestWsPort" V="32301" />
+          <CI K="MainSvcTestWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="MainSvcProdConfigWsSpec">
+          <CI K="MainSvcProdWsBinding" V="BasicHttp" />
+          <CI K="MainSvcProdWsHost" V="OKC1WEB0001" />
+          <CI K="MainSvcProdWsPort" V="36301" />
+          <CI K="MainSvcProdWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+      </CISet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="TaskInfoDictionary">
+          <DI K="LEGEND" V="[TaskProcessorName]|[TaskProcessorVersion]|[TaskNodeFolder]|[StatementType]|[InputDbSpec]|[OutputDbSpec]" />
+          <DI K="GenscapeStmt" V="GenscapeStmtExtractAndLoad|1.0.0.0|GenscapeStmt|GenscapeStatement||Genscape" />
+          <DI K="TestStmt" V="TestStmtExtractAndLoad|1.0.0.0|TestStmt|TestStmt||MWStmt" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="EnvironmentDictionary">
+          <DI K="Production" V="Prod" />
+          <DI K="Test" V="Test" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="DbForEnv">
+          <DI K="GenscapeTest" V="OKC1SQL1002" />
+          <DI K="GenscapeProd" V="OKC1SQL0002" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="EMK3CoreImportComponents">
+          <DI K="GasWells|Wellheader" V="Inactive" />
+          <DI K="GasMeters|Wellheader" V="Inactive" />
+          <DI K="AllocatedDailyMeterProduction|ProductionData" V="Inactive" />
+          <DI K="GasProductionMCFDailies|ProductionData" V="Active" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="EMK3ImportComponents">
+          <DI K="ProductionData" V="Active" />
+          <DI K="GasAnalysis" V="Active" />
+          <DI K="GasAnalysisLiquids" V="Active" />
+          <DI K="PurchaserStatementData" V="Active" />
+          <DI K="PurchaserStatementLiquids" V="Active" />
+          <DI K="PurchaserStatementFees" V="Active" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ProductionDataCfg">
+          <DI K="ComponentImportID" V="E4787F2B-5D58-4A2E-9EE6-1D6150E43FE5" />
+          <DI K="ImportSpName" V="dbo.sp_gmm_Import_EMK3_Production" />
+          <DI K="ImportSpParam1" V="1" />
+          <DI K="ImportSpParam2" V="@NULL" />
+          <DI K="ImportSpParam3" V="@NULL" />
+          <DI K="ImportSpParam4" V="0" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="GasAnalysisCfg">
+          <DI K="ComponentImportID" V="9ACB9959-FC59-45E3-84F2-D78BE05252BA" />
+          <DI K="ImportSpName" V="dbo.sp_gmm_Import_EMK3_GasAnalysis" />
+          <DI K="ImportSpParam1" V="1" />
+          <DI K="ImportSpParam2" V="2" />
+          <DI K="ImportSpParam3" V="11111111111" />
+          <DI K="ImportSpParam4" V="0" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="GasAnalysisLiquidsCfg">
+          <DI K="ComponentImportID" V="485DE13A-A501-46C9-86C7-91406ADB7084" />
+          <DI K="ImportSpName" V="dbo.sp_gmm_Import_EMK3_GasAnalysisLiquids" />
+          <DI K="ImportSpParam1" V="1" />
+          <DI K="ImportSpParam2" V="@NULL" />
+          <DI K="ImportSpParam3" V="111111" />
+          <DI K="ImportSpParam4" V="0" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="PurchaserStatementDataCfg">
+          <DI K="ComponentImportID" V="4E16BA67-2235-4BDF-B609-B2230D5CACB6" />
+          <DI K="ImportSpName" V="dbo.sp_gmm_Import_EMK3_PurchaseStatements" />
+          <DI K="ImportSpParam1" V="1" />
+          <DI K="ImportSpParam2" V="2" />
+          <DI K="ImportSpParam3" V="11111111111111111111111111111111111111111" />
+          <DI K="ImportSpParam4" V="2" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="PurchaserStatementLiquidsCfg">
+          <DI K="ComponentImportID" V="B01BF727-AA68-4853-8B65-F5CE38A8DCB4" />
+          <DI K="ImportSpName" V="dbo.sp_gmm_Import_EMK3_PurchaseStatementsLiquids" />
+          <DI K="ImportSpParam1" V="1" />
+          <DI K="ImportSpParam2" V="2" />
+          <DI K="ImportSpParam3" V="11111111111111111" />
+          <DI K="ImportSpParam4" V="2" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="PurchaserStatementFeesCfg">
+          <DI K="ComponentImportID" V="D686FCD1-1E54-4B02-ADA2-83B40FD42E5B" />
+          <DI K="ImportSpName" V="dbo.sp_gmm_Import_EMK3_PurchaseStatementsFees" />
+          <DI K="ImportSpParam1" V="1" />
+          <DI K="ImportSpParam2" V="2" />
+          <DI K="ImportSpParam3" V="2" />
+          <DI K="ImportSpParam4" V="2" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="WellheaderCfg">
+          <DI K="ComponentImportID" V="B04186DB-959D-47DE-9179-952B123DD499" />
+          <DI K="ImportSpName" V="dbo.sp_gmm_Import_EMK3_Wellheader" />
+          <DI K="ImportSpParam1" V="1" />
+          <DI K="ImportSpParam2" V="1" />
+          <DI K="ImportSpParam3" V="111111111111111111111111111111111111111111111110" />
+          <DI K="ImportSpParam4" V="@NULL" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ProductIdCrossReference">
+          <DI K="1" V="18" />
+          <DI K="2" V="2" />
+          <DI K="3" V="3" />
+          <DI K="4" V="4" />
+          <DI K="5" V="5" />
+          <DI K="6" V="13" />
+          <DI K="7" V="16" />
+          <DI K="8" V="15" />
+          <DI K="9" V="9" />
+          <DI K="10" V="12" />
+          <DI K="11" V="10" />
+          <DI K="12" V="11" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Alberta_Export">
+          <DI K="Foothills BC" V="001" />
+          <DI K="Foothills SK" V="002" />
+          <DI K="Alliance" V="003" />
+          <DI K="Empress" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Alberta_Import">
+          <DI K="Alliance" V="001" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Appalachia_Export">
+          <DI K="TGP" V="001" />
+          <DI K="PEPL" V="002" />
+          <DI K="Algonquin" V="003" />
+          <DI K="DTI" V="004" />
+          <DI K="EasternShore" V="005" />
+          <DI K="REX EX" V="006" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Appalachia_Import">
+          <DI K="TGP" V="001" />
+          <DI K="TCO" V="002" />
+          <DI K="PEPL" V="003" />
+          <DI K="REX" V="004" />
+          <DI K="TCPL" V="005" />
+          <DI K="Crossroads" V="006" />
+          <DI K="Transco" V="007" />
+          <DI K="ANR" V="008" />
+          <DI K="TGT" V="009" />
+          <DI K="TETCO" V="010" />
+          <DI K="Iroquois" V="011" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="British Columbia_Export">
+          <DI K="NWPL" V="001" />
+          <DI K="GTN" V="002" />
+          <DI K="Alliance" V="003" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="British Columbia_Import">
+          <DI K="TC Nova" V="001" />
+          <DI K="Rec. from Foothills" V="002" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="California_Export">
+          <DI K="North Baja to Mexico" V="001" />
+          <DI K="EPNG 1903 to AZ at Ehrenberg" V="002" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="California_Import">
+          <DI K="Ruby" V="001" />
+          <DI K="El Paso" V="002" />
+          <DI K="Transwestern" V="003" />
+          <DI K="Gas Trans NW" V="004" />
+          <DI K="Southern Trails" V="005" />
+          <DI K="Kern" V="006" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Desert SW_Export">
+          <DI K="El Paso" V="001" />
+          <DI K="Transwestern" V="002" />
+          <DI K="Southern Trails" V="003" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Desert SW_Import">
+          <DI K="Transcolorado" V="001" />
+          <DI K="Northwest" V="002" />
+          <DI K="El Paso" V="003" />
+          <DI K="Transwestern" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="East Texas_Export">
+          <DI K="FGT" V="001" />
+          <DI K="GSPL/GCPL" V="002" />
+          <DI K="OkTex" V="003" />
+          <DI K="Sabine" V="004" />
+          <DI K="TGP" V="005" />
+          <DI K="Sonat" V="006" />
+          <DI K="Transco" V="007" />
+          <DI K="TGT" V="008" />
+          <DI K="NGPL" V="009" />
+          <DI K="Golden Pass" V="010" />
+          <DI K="Tiger" V="011" />
+          <DI K="Gulf States" V="012" />
+          <DI K="CEGT" V="013" />
+          <DI K="Trunkline" V="014" />
+          <DI K="Midcon Express" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="East Texas_Import">
+          <DI K="MC Express" V="001" />
+          <DI K="Gulf Crossing" V="002" />
+          <DI K="NGPL from OK" V="003" />
+          <DI K="TETCO" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Eastern Canada_Export">
+          <DI K="Great Lakes" V="001" />
+          <DI K="Viking" V="002" />
+          <DI K="St. Lawrence" V="003" />
+          <DI K="N. County Pipeline" V="004" />
+          <DI K="Iroquois" V="005" />
+          <DI K="Nat Fuels/TGP" V="006" />
+          <DI K="Empire" V="007" />
+          <DI K="PNGTS" V="008" />
+          <DI K="Maritimes NE" V="009" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Eastern Canada_Import">
+          <DI K="TC AB" V="001" />
+          <DI K="Great Lakes" V="002" />
+          <DI K="PEPL" V="003" />
+          <DI K="Bluewater" V="004" />
+          <DI K="Vector" V="005" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Louisiana_Export">
+          <DI K="Trunkline" V="001" />
+          <DI K="FGT" V="002" />
+          <DI K="Sonat" V="003" />
+          <DI K="MRT" V="004" />
+          <DI K="TETCO" V="005" />
+          <DI K="TGP" V="006" />
+          <DI K="Transco" V="007" />
+          <DI K="Texas Gas" V="008" />
+          <DI K="MEX east" V="009" />
+          <DI K="Gulf South" V="010" />
+          <DI K="SESH" V="011" />
+          <DI K="Columbia Gulf" V="012" />
+          <DI K="MIDLA" V="013" />
+          <DI K="Trans-Union" V="014" />
+          <DI K="ANR" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Louisiana_Import">
+          <DI K="NGPL" V="001" />
+          <DI K="ETC Tiger" V="002" />
+          <DI K="MEX" V="003" />
+          <DI K="Gulf Crossing" V="004" />
+          <DI K="Gulf South" V="005" />
+          <DI K="Gulf States" V="006" />
+          <DI K="Golden Pass" V="007" />
+          <DI K="Sabine" V="008" />
+          <DI K="TETCO ETX-LA" V="009" />
+          <DI K="Transco" V="010" />
+          <DI K="FGT" V="011" />
+          <DI K="CEGT" V="012" />
+          <DI K="Trunkline" V="013" />
+          <DI K="TGP" V="014" />
+          <DI K="Texas Gas" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Midcontinent_Export">
+          <DI K="ANR West Leg" V="001" />
+          <DI K="CEGT" V="002" />
+          <DI K="Fayetteville Express" V="003" />
+          <DI K="NGPL" V="004" />
+          <DI K="NNG" V="005" />
+          <DI K="MRT" V="006" />
+          <DI K="PEPL" V="007" />
+          <DI K="REX" V="008" />
+          <DI K="Tetco M1 24 Inch" V="009" />
+          <DI K="TGT" V="010" />
+          <DI K="Midcon Express" V="011" />
+          <DI K="Gulf Crossing" V="012" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Midcontinent_Import">
+          <DI K="CIG" V="001" />
+          <DI K="REX" V="002" />
+          <DI K="Trailblazer" V="003" />
+          <DI K="Chey Plains" V="004" />
+          <DI K="SSCPL" V="005" />
+          <DI K="KMIGT" V="006" />
+          <DI K="NNG Perm" V="007" />
+          <DI K="NGPL" V="008" />
+          <DI K="TW Perm" V="009" />
+          <DI K="EPNG Perm" V="010" />
+          <DI K="MRT" V="011" />
+          <DI K="TETCO" V="012" />
+          <DI K="Trans-Union" V="013" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Midwest_Export">
+          <DI K="GLGT" V="001" />
+          <DI K="PEPL Canada" V="002" />
+          <DI K="PEPL OH" V="003" />
+          <DI K="ANR" V="004" />
+          <DI K="TGT" V="005" />
+          <DI K="TETCO" V="006" />
+          <DI K="Vector" V="007" />
+          <DI K="Crossroads" V="008" />
+          <DI K="Michcon" V="009" />
+          <DI K="Bluewater" V="010" />
+          <DI K="REX to APP" V="011" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Midwest_Import">
+          <DI K="GLGT" V="001" />
+          <DI K="Viking" V="002" />
+          <DI K="Alliance" V="003" />
+          <DI K="REX VIA ROX" V="004" />
+          <DI K="PEPL" V="005" />
+          <DI K="NBPL" V="006" />
+          <DI K="ANR" V="007" />
+          <DI K="NGPL" V="008" />
+          <DI K="TGT" V="009" />
+          <DI K="TETCO" V="010" />
+          <DI K="NNG" V="011" />
+          <DI K="Trunkline" V="012" />
+          <DI K="MRT" V="013" />
+          <DI K="MGT" V="014" />
+          <DI K="REX VIA APP" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="New England_Export">
+          <DI K="Iroquois" V="001" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="New England_Import">
+          <DI K="Algonquin" V="001" />
+          <DI K="TGP" V="002" />
+          <DI K="Portland" V="003" />
+          <DI K="Transcanada" V="004" />
+          <DI K="Maritimes" V="005" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Pac NW_Export">
+          <DI K="PG&amp;E" V="001" />
+          <DI K="Tuscarora" V="002" />
+          <DI K="Paiute" V="003" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Pac NW_Import">
+          <DI K="West Coast" V="001" />
+          <DI K="Foothills" V="002" />
+          <DI K="NWPL" V="003" />
+          <DI K="Ruby Net Imports" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Rockies_Export">
+          <DI K="CIG" V="001" />
+          <DI K="REX" V="002" />
+          <DI K="TransCo" V="003" />
+          <DI K="Kern" V="004" />
+          <DI K="Trailblazer" V="005" />
+          <DI K="Chey Plains" V="006" />
+          <DI K="Ruby" V="007" />
+          <DI K="NWPL South" V="008" />
+          <DI K="NWPL North" V="009" />
+          <DI K="WBI" V="010" />
+          <DI K="SSCPL" V="011" />
+          <DI K="TIGT" V="012" />
+          <DI K="Bison" V="013" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Rockies_Import">
+          <DI K="DUMMY" V="001" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Southeast &amp; Mid-Atlantic_Export">
+          <DI K="Transco" V="001" />
+          <DI K="TETCO" V="002" />
+          <DI K="Trunkline" V="003" />
+          <DI K="TGP" V="004" />
+          <DI K="ANR" V="005" />
+          <DI K="TGT" V="006" />
+          <DI K="Columbia Gas" V="007" />
+          <DI K="Midwestern" V="008" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Southeast &amp; Mid-Atlantic_Import">
+          <DI K="Transco" V="001" />
+          <DI K="TETCO" V="002" />
+          <DI K="Trunkline" V="003" />
+          <DI K="TGP" V="004" />
+          <DI K="ANR" V="005" />
+          <DI K="Columbia Gulf" V="006" />
+          <DI K="Gulf South" V="007" />
+          <DI K="Midcon Express" V="008" />
+          <DI K="Fayetteville" V="009" />
+          <DI K="SESH" V="010" />
+          <DI K="SONAT" V="011" />
+          <DI K="TGT" V="012" />
+          <DI K="DTI" V="013" />
+          <DI K="Midla/Eastern Shore" V="014" />
+          <DI K="FGT" V="015" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Upper Rockies_Export">
+          <DI K="Alliance" V="001" />
+          <DI K="North Border" V="002" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="Upper Rockies_Import">
+          <DI K="North Border" V="001" />
+          <DI K="Alliance" V="002" />
+          <DI K="Bison" V="003" />
+          <DI K="WBI" V="004" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="West Texas_Export">
+          <DI K="EPNG Del to Midcon" V="001" />
+          <DI K="NGPL Del to Midcon" V="002" />
+          <DI K="NNG Del to Midcon" V="003" />
+          <DI K="TW Del to Midcon" V="004" />
+          <DI K="TW Exports West" V="005" />
+          <DI K="EPNG S. ML Exports" V="006" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="West Texas_Import">
+          <DI K="Rec. from EPNG N. ML" V="001" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

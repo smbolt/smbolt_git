@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B381EFC8-BAB1-4046-B441-F81907D7B66B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Org.OpsManager</RootNamespace>
+    <AssemblyName>OpsManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BasePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BasePanel.Designer.cs">
+      <DependentUpon>BasePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotifyConfigPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NotifyConfigPanel.Designer.cs">
+      <DependentUpon>NotifyConfigPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotifyConfigSetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NotifyConfigSetPanel.Designer.cs">
+      <DependentUpon>NotifyConfigSetPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotifyEventPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NotifyEventPanel.Designer.cs">
+      <DependentUpon>NotifyEventPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotifyGroupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NotifyGroupPanel.Designer.cs">
+      <DependentUpon>NotifyGroupPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotifyPersonPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NotifyPersonPanel.Designer.cs">
+      <DependentUpon>NotifyPersonPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotifyChangeResult.cs" />
+    <Compile Include="Controls\PanelFactory.cs" />
+    <Compile Include="Controls\PanelData.cs" />
+    <Compile Include="frmAssignTaskGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssignTaskGroup.Designer.cs">
+      <DependentUpon>frmAssignTaskGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisplay.Designer.cs">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditTaskParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditTaskParameter.Designer.cs">
+      <DependentUpon>frmEditTaskParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIdentifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIdentifier.Designer.cs">
+      <DependentUpon>frmIdentifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParameterSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParameterSet.Designer.cs">
+      <DependentUpon>frmParameterSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScheduledTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScheduledTask.Designer.cs">
+      <DependentUpon>frmScheduledTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScheduledTaskList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScheduledTaskList.Designer.cs">
+      <DependentUpon>frmScheduledTaskList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScheduleElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScheduleElement.Designer.cs">
+      <DependentUpon>frmScheduleElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaskParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaskParameters.Designer.cs">
+      <DependentUpon>frmTaskParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRunHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRunHistory.Designer.cs">
+      <DependentUpon>frmRunHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaskSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaskSchedule.Designer.cs">
+      <DependentUpon>frmTaskSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OpsData.cs" />
+    <EmbeddedResource Include="Controls\BasePanel.resx">
+      <DependentUpon>BasePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NotifyConfigPanel.resx">
+      <DependentUpon>NotifyConfigPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NotifyConfigSetPanel.resx">
+      <DependentUpon>NotifyConfigSetPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NotifyEventPanel.resx">
+      <DependentUpon>NotifyEventPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NotifyGroupPanel.resx">
+      <DependentUpon>NotifyGroupPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NotifyPersonPanel.resx">
+      <DependentUpon>NotifyPersonPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAssignTaskGroup.resx">
+      <DependentUpon>frmAssignTaskGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDisplay.resx">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditTaskParameter.resx">
+      <DependentUpon>frmEditTaskParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIdentifier.resx">
+      <DependentUpon>frmIdentifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParameterSet.resx">
+      <DependentUpon>frmParameterSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScheduledTask.resx">
+      <DependentUpon>frmScheduledTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScheduledTaskList.resx">
+      <DependentUpon>frmScheduledTaskList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScheduleElement.resx">
+      <DependentUpon>frmScheduleElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaskParameters.resx">
+      <DependentUpon>frmTaskParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRunHistory.resx">
+      <DependentUpon>frmRunHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaskSchedule.resx">
+      <DependentUpon>frmTaskSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ProgramData\AppData\AppConfig\AppConfig.xmlx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Org.GS\Org.GS.csproj">
+      <Project>{a43ec37d-35c1-4f80-9d14-978da1312fa9}</Project>
+      <Name>Org.GS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.SF\Org.SF.csproj">
+      <Project>{75752b95-5d39-4ee6-bb41-3555122e62b1}</Project>
+      <Name>Org.SF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.TSK.Business\Org.TSK.Business.csproj">
+      <Project>{aad6c4fe-ca4e-4a3d-8f73-4ef5710348a0}</Project>
+      <Name>Org.TSK.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Org.WSO\Org.WSO.csproj">
+      <Project>{371d3edf-6965-4a65-919c-c49e1546fd33}</Project>
+      <Name>Org.WSO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Right Arrow.png" />
+    <None Include="images\org.ico" />
+    <Content Include="images\config.ico" />
+    <Content Include="images\configset.ico" />
+    <Content Include="images\event.ico" />
+    <Content Include="images\group.ico" />
+    <Content Include="images\person.ico" />
+    <None Include="images\SplashImage.png" />
+    <Content Include="images\treeroot.ico" />
+    <Content Include="ProgramData\AppData\AppConfig\AppConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProgramData\AppData\Imports\GridConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProgramData\AppData\CentralConfig\" />
+    <Folder Include="ProgramData\AppData\Doc\" />
+    <Folder Include="ProgramData\AppData\Errors\" />
+    <Folder Include="ProgramData\AppData\Exports\" />
+    <Folder Include="ProgramData\AppData\Help\" />
+    <Folder Include="ProgramData\AppData\Log\" />
+    <Folder Include="ProgramData\AppData\MEFCatalog\" />
+    <Folder Include="ProgramData\AppData\Performance\" />
+    <Folder Include="ProgramData\AppData\Reports\" />
+    <Folder Include="ProgramData\AppData\Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

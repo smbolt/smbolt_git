@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeQueryWorkbench", "NodeQueryWorkbench.csproj", "{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{78DCFC49-0A20-4AF1-8EA2-6E0C607535C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 Libs", "20 Libs", "{B026C49C-338D-4E9E-9CA7-7410D3152E8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Dx.Business", "..\..\Libs\Org.Dx.Business\Org.Dx.Business.csproj", "{9FC01483-94A8-407B-AA5B-142390345FDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA}.Debug|x86.Build.0 = Debug|Any CPU
+		{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA}.Release|x86.ActiveCfg = Release|Any CPU
+		{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA}.Release|x86.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Debug|x86.Build.0 = Debug|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Release|x86.ActiveCfg = Release|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF1CB94B-1B7F-49B9-B2CD-9BEEB1E95AFA} = {78DCFC49-0A20-4AF1-8EA2-6E0C607535C0}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {B026C49C-338D-4E9E-9CA7-7410D3152E8D}
+		{9FC01483-94A8-407B-AA5B-142390345FDF} = {B026C49C-338D-4E9E-9CA7-7410D3152E8D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93C3D7A8-0291-430F-AE94-C4E4089D8FA5}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = NodeQueryWorkbench.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\Libs\\Org.Dx.Business\\Org.Dx.Business.csproj
+		SccProjectTopLevelParentUniqueName1 = NodeQueryWorkbench.sln
+		SccProjectName1 = ../../Libs/Org.Dx.Business
+		SccAuxPath1 = https://gulfportenergy.visualstudio.com
+		SccLocalPath1 = ..\\..\\Libs\\Org.Dx.Business
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

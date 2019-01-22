@@ -1,0 +1,16 @@
+﻿# Turn logging on
+log normal "C:\Distrib\Synclog.txt"
+
+# Set comparison criteria
+criteria timestamp size
+
+# Exclude certain file types
+filter "-*.*~"
+
+# Load the base folders
+load "C:\Local" "ftp://jdoe:mypassword@ftp.acme.com/reports"
+
+#Make the target identical to the source
+#includes deleting files that only exist on the target side
+
+sync mirror:lt->rt

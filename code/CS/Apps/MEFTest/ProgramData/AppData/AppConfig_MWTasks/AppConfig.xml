@@ -1,0 +1,263 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="MEFTest">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$!FSSTEM-PARM$" V="\\gulfport.local\data\Gulfport\Data Management\AppIntegration" />
+          <CI K="$FSSTEM-PARM$" V="\\gulfport.local\data\Gulfport\Applications\Data_Integration" />
+          <CI K="$ENV-PARM$" V="Test" />
+          <CI K="$TASKNODE-PARM$" V="MarkWestStatements-DryGas" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="IsDryRun" V="True" />
+          <CI K="InputFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Ready" />
+          <CI K="ProcessedFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Processed" />
+          <CI K="ErrorFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Error" />
+          <CI K="ModulesPath" V="C:\DEV-MAIN\Main\Libs\Gulfport.MWStmt.Tasks\bin\Debug" />
+          <CI K="ExcelExtractWcfTimeoutSeconds" V="180" />
+          <CI K="LogConfigDbSpec" V="Log" />
+          <CI K="GetParmsFromDb" V="False" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="Database" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="NotSet" />
+          <CI K="LogFileSizeManagementMethod" V="NotManagedByThisApp" />
+          <CI K="LogFileSizeManagementAgent" V="None" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="LogConfigDbSpec">
+          <CI K="LogDbServer" V="OKC1EDW2001" />
+          <CI K="LogDbDsn" V="" />
+          <CI K="LogDbName" V="Logging" />
+          <CI K="LogDbUserId" V="" />
+          <CI K="LogDbPassword" V="" />
+          <CI K="LogDbType" V="SqlServer" />
+          <CI K="LogDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="MWStatementOptions">
+          <CI K="ProductionCutoffDay" V="25" />
+          <CI K="LastProductionDateProcessed" V="2016/02/01" />
+        </CIGroup>
+        <CIGroup Name="MWStmtConfigDbSpec">
+          <CI K="MWStmtDbServer" V="OKC1EDW2001" />
+          <CI K="MWStmtDbName" V="GPStatement" />
+          <CI K="MWStmtDbType" V="SqlServer" />
+          <CI K="MWStmtDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="MainSvcLocalConfigWsSpec">
+          <CI K="MainSvcLocalWsBinding" V="BasicHttp" />
+          <CI K="MainSvcLocalWsHost" V="localhost" />
+          <CI K="MainSvcLocalWsPort" V="32001" />
+          <CI K="MainSvcLocalWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="MainSvcTestConfigWsSpec">
+          <CI K="MainSvcTestWsBinding" V="BasicHttp" />
+          <CI K="MainSvcTestWsHost" V="OKC1WEB1001" />
+          <CI K="MainSvcTestWsPort" V="32301" />
+          <CI K="MainSvcTestWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="MainSvcProdConfigWsSpec">
+          <CI K="MainSvcProdWsBinding" V="BasicHttp" />
+          <CI K="MainSvcProdWsHost" V="OKC1WEB0001" />
+          <CI K="MainSvcProdWsPort" V="36301" />
+          <CI K="MainSvcProdWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="TaskSchedulingProdConfigDbSpec">
+          <CI K="TaskSchedulingProdDbServer" V="OKC1EDW0001" />
+          <CI K="TaskSchedulingProdDbName" V="TaskScheduling" />
+          <CI K="TaskSchedulingProdDbType" V="SqlServer" />
+          <CI K="TaskSchedulingProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TaskSchedulingTestConfigDbSpec">
+          <CI K="TaskSchedulingTestDbServer" V="OKC1EDW2001" />
+          <CI K="TaskSchedulingTestDbName" V="TaskScheduling" />
+          <CI K="TaskSchedulingTestDbType" V="SqlServer" />
+          <CI K="TaskSchedulingTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="TaskInfoDictionary">
+          <DI K="LEGEND" V="[TaskProcessorName]|[TaskProcessorVersion]|[TaskNodeFolder]|[StatementType]|[InputDbSpec]|[OutputDbSpec]" />
+          <DI K="MidstreamPopStmt" V="MidstreamPopStmtExtractAndLoad|1.0.0.0|MidstreamPopEntity1|MidstreamPopStmt||MWStmt" />
+          <DI K="MWWetGasStmt" V="StmtExtractAndLoad|1.0.0.0|MWStmt-WetGas|GasStatement||MWStmt" />
+          <DI K="MWDampGasStmt" V="StmtExtractAndLoad|1.0.0.0|MWStmt-DampGas|DampGasStatement||MWStmt" />
+          <DI K="MonthlyMWDryGasStmt" V="DryGasStmtExtractAndLoad|1.0.0.0|MWStmt-DryGas|DryGasStatement||MWStmt" />
+          <DI K="MWPrelimStmt" V="PrelimStmtExtract|1.0.0.0|MWStmt-Prelim|PreliminaryStatement||MWStmt" />
+          <DI K="GPColorado" V="CoProdReportExtract|1.0.0.0|GPColoradoStmt|ColoradoProductionReport||MWStmt" />
+          <DI K="MWCondiStmt" V="CondiStmtExtract|1.0.0.0|MWStmt-Condi|CondiStatement||MWStmt"/>
+          <DI K="MWDampCondiStmt" V="CondiStmtExtract|1.0.0.0|MWStmt-DampCondi|DampCondiStatement||MWStmt" />
+          <DI K="MWGasAnalysisStmt" V="GasAnalysisStmtLoad|1.0.0.0|MWStmt-GasAnalysis|GasAnalysisStatement||MWStmt" />
+          <DI K="TestStmt" V="TestStmtExtractAndLoad|1.0.0.0|TestStmt|TestStmt||MWStmt" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="EnvironmentDictionary">
+          <DI K="Production" V="Prod" />
+          <DI K="Test" V="Test" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="DbForEnv">
+          <DI K="MWStmtTest" V="OKC1EDW2001" />
+          <DI K="MWStmtProd" V="OKC1EDW0001" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="VirtruvianGradyPopStmt">
+          <DI K="[000]RowType" V="Statement" />
+          <DI K="[001]MidstreamPopStmtID" V="#DB#" />
+          <DI K="[002]StatementFileId" V="" />
+          <DI K="[003]MeterNumber" V="" />
+          <DI K="[004]MeterName" V="" />
+          <DI K="[005]AccountingDate" V="" />
+          <DI K="[006]ProductionDate" V="" />
+          <DI K="[007]StatementMonth" V="" />
+          <DI K="[008]LeaseName" V="" />
+          <DI K="[009]LeaseNumber" V="" />
+          <DI K="[010]ContractNumber" V="" />
+          <DI K="[011]ContractParty" V="" />
+          <DI K="[012]ContractPartyNumber" V="" />
+          <DI K="[013]ContractBtuCondition" V="" />
+          <DI K="[014]State" V="" />
+          <DI K="[015]County" V="" />
+          <DI K="[016]FacilityName" V="" />
+          <DI K="[017]PressureBase" V="" />
+          <DI K="[018]AllocationDecimal" V="" />
+          <DI K="[019]RunID" V="" />
+          <DI K="[020]PaymentID" V="" />
+          <DI K="[021]SettleID" V="" />
+          <DI K="[022]Pressure" V="" />
+          <DI K="[023]BTUFactor" V="" />
+          <DI K="[024]FlowHours" V="" />
+          <DI K="[025]CCTNumber" V="" />
+          <DI K="[026]PressureBtu" V="" />
+          <DI K="[027]Suffix" V="" />
+          <DI K="[028]PlantHeatValueBase" V="" />
+          <DI K="[029]LiquidValue" V="" />
+          <DI K="[030]GrossValue" V="" />
+          <DI K="[031]NetValue" V="" />
+          <DI K="[032]ResidueValue" V="" />
+          <DI K="[033]ExemptValue" V="" />
+          <DI K="[034]FeesAndAdjustments" V="" />
+          <DI K="[035]Taxes" V="" />
+          <DI K="[036]TaxReimbursement" V="" />
+          <DI K="[037]HeliumValue" V="" />
+          <DI K="[038]TaxableValue" V="" />
+          <DI K="[039]PurchasedValue" V="" />
+          <DI K="[040]TaxesOKPR" V="" />
+          <DI K="[041]TaxesOKER" V="" />
+          <DI K="[042]TaxesOKEX" V="" />
+          <DI K="[043]TaxesOKMR" V="" />
+          <DI K="[044]RatePerMcf" V="" />
+          <DI K="[045]Basis" V="" />
+          <DI K="[046]GrossWellheadMcf" V="" />
+          <DI K="[047]GrossWellheadMmbtu" V="" />
+          <DI K="[048]NetDeliveredMcf" V="" />
+          <DI K="[049]NetDeliveredMmbtu" V="" />
+          <DI K="[050]AllocationDecimalMcf" V="" />
+          <DI K="[051]AllocationDecimalMmbtu" V="" />
+          <DI K="[052]PaystationMcf" V="" />
+          <DI K="[053]PaystationMmbtu" V="" />
+          <DI K="[054]WellheadBtuMcf" V="" />
+          <DI K="[055]WellheadBtuMmbtu" V="" />
+          <DI K="[056]CompressorFuelMcf" V="" />
+          <DI K="[057]CompressorFuelMmbtu" V="" />
+          <DI K="[058]NetOfCompressionMcf" V="" />
+          <DI K="[059]NetOfCompressionMmbtu" V="" />
+          <DI K="[060]BypassMcf" V="" />
+          <DI K="[061]BypassMmbtu" V="" />
+          <DI K="[062]SystemFuelMcf" V="" />
+          <DI K="[063]SystemFuelMmbtu" V="" />
+          <DI K="[064]PlantFuelMcf" V="" />
+          <DI K="[065]PlantFuelMmbtu" V="" />
+          <DI K="[066]CompressibilityFactor" V="" />
+          <DI K="[067]GasFactorMcf" V="" />
+          <DI K="[068]GasFactorMmbtu" V="" />
+          <DI K="[069]ContractualFieldDeductsMcf" V="" />
+          <DI K="[070]ContractualFieldDeductsMmbtu" V="" />
+          <DI K="[071]GasAvailableMcf" V="" />
+          <DI K="[072]GasAvailableMmbtu" V="" />
+          <DI K="[073]ContractPercentMcf" V="" />
+          <DI K="[074]ContractPercentMmbtu" V="" />
+          <DI K="[075]TIKResidueMcf" V="" />
+          <DI K="[076]TIKResidueMmbtu" V="" />
+          <DI K="[077]ResiduePriceMmbtu" V="" />
+          <DI K="[078]ResidueValueMmbtu" V="" />
+          <DI K="[079]ShrinkMmbtu" V="" />
+          <DI K="[080]TheoreticalMmbtu" V="" />
+          <DI K="[081]RawFieldDeductsMcf" V="" />
+          <DI K="[082]RawFieldDeductsMmbtu" V="" />
+          <DI K="[083]FuelType" V="" />
+          <DI K="[084]FuelTypeFixedPercent" V="" />
+          <DI K="[085]FieldLUMcf" V="" />
+          <DI K="[086]FieldLUMmbtu" V="" />
+          <DI K="[087]FuelTypeMcf" V="" />
+          <DI K="[088]FuelTypeMmbtu" V="" />
+          <DI K="[089]FieldFuelFlareMcf" V="" />
+          <DI K="[090]FieldFuelFlareMmbtu" V="" />
+          <DI K="[091]FieldShrinkMcf" V="" />
+          <DI K="[092]FieldShrinkMmbtu" V="" />
+          <DI K="[093]InletMcf" V="" />
+          <DI K="[094]InletMmbtu" V="" />
+          <DI K="[095]DeliveredMcf" V="" />
+          <DI K="[096]DeliveredMmbtu" V="" />
+          <DI K="[097]LeasePlantFuelsFieldMcf" V="" />
+          <DI K="[098]LeasePlantFuelsFieldMmbtu" V="" />
+          <DI K="[099]PlantInfoInletMcf" V="" />
+          <DI K="[100]PlantInfoInletMmbtu" V="" />
+          <DI K="[101]LeasePlantFuelsPlantMcf" V="" />
+          <DI K="[102]LeasePlantFueldPlantMmbtu" V="" />
+          <DI K="[103]ResidueSettlementNetDeliveredMmbtu" V="" />
+          <DI K="[104]NetResidueMcf" V="" />
+          <DI K="[105]NetResidueMmbtu" V="" />
+          <DI K="[106]ContractPercent" V="" />
+          <DI K="[107]ShrinkMcf" V="" />
+          <DI K="[108]TheoreticalResidueMcf" V="" />
+          <DI K="[109]TheoreticalResidueMmbtu" V="" />
+          <DI K="[110]SettlementResidueMcf" V="" />
+          <DI K="[111]SettlementResidueMmbtu" V="" />
+          <DI K="[112]PlantFuelFlareMcf" V="" />
+          <DI K="[113]PlantFuelFlareMmbtu" V="" />
+          <DI K="[114]AllocatedResidueMcf" V="" />
+          <DI K="[115]AllocatedResidueMmbtu" V="" />
+          <DI K="[116]Price" V="" />
+          <DI K="[117]ResidueReturnedMcf" V="" />
+          <DI K="[118]ResidueReturnedMmbtu" V="" />
+          <DI K="[119]TotalResidueValue" V="" />
+          <DI K="[120]ResidueSettlementCadizHopedaleFuel" V="" />
+          <DI K="[121]ResidueSettlementCadizCondiFuel" V="" />
+          <DI K="[122]ResidueSettlementResidueTIK" V="" />
+          <DI K="[123]ResidueBypassMmbtu" V="" />
+          <DI K="[124]ResidueSystemFuelMmbtu" V="" />
+          <DI K="[125]ResidueTotalTIKMmbtu" V="" />
+          <DI K="[126]ResiduePopPercent" V="" />
+          <DI K="[127]ResidueTotalGasMcf" V="" />
+          <DI K="[128]ResidueTotalGasMmbtu" V="" />
+          <DI K="[129]ResidueGasImbalance" V="" />
+          <DI K="[130]ResidueCashBalancingPayment" V="" />
+          <DI K="[131]ResidueDownstreamPenalties" V="" />
+          <DI K="[132]ResidueWeightedAvgNetPrice" V="" />
+          <DI K="[133]PercentPOPPayment" V="" />
+          <DI K="[134]PlantProductTypes" V="" />
+          <DI K="[135]PlantProductVolumesTheoretical" V="" />
+          <DI K="[136]PlantProductVolumesAllocated" V="" />
+          <DI K="[137]GasAnalysisTotalGPM" V="" />
+          <DI K="[138]GasAnalysisSulfurGPM" V="" />
+          <DI K="[139]GasAnalysisNitrogenGPM" V="" />
+          <DI K="[140]GasAnalysisCarbonDioxideGPM" V="" />
+          <DI K="[141]GasAnalysisOtherInertsGPM" V="" />
+          <DI K="[142]GasAnalysisMethaneGPM" V="" />
+          <DI K="[143]GasAnalysisEthaneGPM" V="" />
+          <DI K="[144]GasAnalysisPropaneGPM" V="" />
+          <DI K="[145]GasAnalysisIsoButaneGPM" V="" />
+          <DI K="[146]GasAnalysisButaneGPM" V="" />
+          <DI K="[147]GasAnalysisIsoPentaneGPM" V="" />
+          <DI K="[148]GasAnalysisPentaneGPM" V="" />
+          <DI K="[149]GasAnalysisHexanesGPM" V="" />
+          <DI K="[150]Components" V="" />
+          <DI K="[151]MolPercentage" V="" />
+          <DI K="[152]GPM" V="" />
+          <DI K="[153]TotalMolPercentage" V="" />
+          <DI K="[154]TotalGPM" V="" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

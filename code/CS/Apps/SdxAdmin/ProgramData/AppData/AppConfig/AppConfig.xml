@@ -1,0 +1,38 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="SdxAdmin">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="SelectedEnvironment" V="Test" />
+          <CI K="SelectedMode" V="Design" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="80" />
+          <CI K="MainFormVerticalSize" V="85" />
+        </CIGroup>
+        <CIGroup Name="SdxConfigDbSpec">
+          <CI K="SdxDbServer" V="OKC1EDW2001" />
+          <CI K="SdxDbName" V="GPStaging" />
+          <CI K="SdxDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Environments">
+          <LI V="Prod" />
+          <LI V="Test" />
+        </ConfigList>
+        <ConfigList Name="Modes">
+          <LI V="Design" />
+          <LI V="Load" />
+          <LI V="Extract" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="DbServers">
+          <DI K="Prod" V="OKC1EDW0001" />
+          <DI K="Test" V="OKC1EDW2001" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

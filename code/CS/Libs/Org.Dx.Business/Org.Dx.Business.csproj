@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9FC01483-94A8-407B-AA5B-142390345FDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Org.Dx.Business</RootNamespace>
+    <AssemblyName>Org.Dx.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\iTextSharp\5.5.8\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DxMapping\Algorithm.cs" />
+    <Compile Include="DxMapping\DxActionBase.cs" />
+    <Compile Include="DxMapping\DxActionParms.cs" />
+    <Compile Include="DxMapping\DxCellLocator.cs" />
+    <Compile Include="DxMapping\CellSearchCriteria.cs" />
+    <Compile Include="DxMapping\CellSearchCriteriaSet.cs" />
+    <Compile Include="DxMapping\ColumnIndexMap.cs" />
+    <Compile Include="DxMapping\ColumnMap.cs" />
+    <Compile Include="DxMapping\DxCommand.cs" />
+    <Compile Include="DxMapping\DxCommandSet.cs" />
+    <Compile Include="DxMapping\CreateRegionsAction.cs" />
+    <Compile Include="DxMapping\DxLocatorBase.cs" />
+    <Compile Include="DxMapping\DxMapItemExtensionMethods.cs" />
+    <Compile Include="DxMapping\DxProcessingRoutine.cs" />
+    <Compile Include="DxMapping\DxProcessingRoutineSet.cs" />
+    <Compile Include="DxMapping\DxRegion.cs" />
+    <Compile Include="DxMapping\CellDefinition.cs" />
+    <Compile Include="DxMapping\DxRegionRow.cs" />
+    <Compile Include="DxMapping\DxRegionRowSet.cs" />
+    <Compile Include="DxMapping\DxRegionSet.cs" />
+    <Compile Include="DxMapping\DataMappingAction.cs" />
+    <Compile Include="DxMapping\DataMapperFactory.cs" />
+    <Compile Include="DxMapping\NodeQueryFrameSlot.cs" />
+    <Compile Include="DxMapping\NodeQuery.cs" />
+    <Compile Include="DxMapping\NodeQueryElement.cs" />
+    <Compile Include="DxMapping\IDataMapper.cs" />
+    <Compile Include="DxMapping\MapperBase.cs" />
+    <Compile Include="DxMapping\NodeQueryFrame.cs" />
+    <Compile Include="DxMapping\RowToRowMapper.cs" />
+    <Compile Include="DxMapping\RowToSheetMapper.cs" />
+    <Compile Include="DxMapping\SheetFiltersAction.cs" />
+    <Compile Include="DxMapping\EntityMap.cs" />
+    <Compile Include="DxMapping\DxIndexLocator.cs" />
+    <Compile Include="DxMapping\IDxAction.cs" />
+    <Compile Include="DxMapping\SheetToSheetMapper.cs" />
+    <Compile Include="DxModels\DxCell.cs" />
+    <Compile Include="DxModels\DxCellSet.cs" />
+    <Compile Include="DxModels\DxColumn.cs" />
+    <Compile Include="DxMapping\DxFilter.cs" />
+    <Compile Include="DxMapping\DxFilterSet.cs" />
+    <Compile Include="DxModels\DxColumnSet.cs" />
+    <Compile Include="DxModels\DxIndexSet.cs" />
+    <Compile Include="DxMapping\DxMap.cs" />
+    <Compile Include="DxMapping\DxMapItem.cs" />
+    <Compile Include="DxMapping\DxMapItemSet.cs" />
+    <Compile Include="DxMapping\DxMapSet.cs" />
+    <Compile Include="DxModels\DxRow.cs" />
+    <Compile Include="DxModels\DxRowSet.cs" />
+    <Compile Include="DxModels\DxSearchCriteria.cs" />
+    <Compile Include="DxModels\DxWorkbook.cs" />
+    <Compile Include="DxModels\DxWorksheet.cs" />
+    <Compile Include="DxModels\Enums.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="MapRecon.cs" />
+    <Compile Include="MapReconSet.cs" />
+    <Compile Include="NodeSet.cs" />
+    <Compile Include="PdfUtility.cs" />
+    <Compile Include="TextProcessing\Enums.cs" />
+    <Compile Include="TextProcessing\ImageRenderListener.cs" />
+    <Compile Include="TextProcessing\Language\Cmd.cs" />
+    <Compile Include="TextProcessing\Language\Cmdx.cs" />
+    <Compile Include="TextProcessing\Language\CmdxData.cs" />
+    <Compile Include="TextProcessing\Language\CmdxFactory.cs" />
+    <Compile Include="TextProcessing\Language\CxCodes.cs" />
+    <Compile Include="TextProcessing\Language\CxException.cs" />
+    <Compile Include="TextProcessing\Language\ExtractFromPeerCell.cs" />
+    <Compile Include="TextProcessing\Language\ExtractLiteralToken.cs" />
+    <Compile Include="TextProcessing\Language\ExtractNextLine.cs" />
+    <Compile Include="TextProcessing\Language\ExtractNextToken.cs" />
+    <Compile Include="TextProcessing\Language\ExtractNextTokenOfType.cs" />
+    <Compile Include="TextProcessing\Language\ExtractNextTokens.cs" />
+    <Compile Include="TextProcessing\Language\ExtractPriorTokenOfType.cs" />
+    <Compile Include="TextProcessing\Language\ExtractPriorTokensOfType.cs" />
+    <Compile Include="TextProcessing\Language\ExtractStoredToken.cs" />
+    <Compile Include="TextProcessing\Language\ExtractStoredTokenBefore.cs" />
+    <Compile Include="TextProcessing\Language\ExtractStoredTokens.cs" />
+    <Compile Include="TextProcessing\Language\ExtractTextBefore.cs" />
+    <Compile Include="TextProcessing\Language\ExtractToken.cs" />
+    <Compile Include="TextProcessing\Language\ExtractXmlElementValue.cs" />
+    <Compile Include="TextProcessing\Language\frmCxExceptionDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextProcessing\Language\frmCxExceptionDisplay.Designer.cs">
+      <DependentUpon>frmCxExceptionDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextProcessing\Language\LocateToken.cs" />
+    <Compile Include="TextProcessing\Language\ProcessingCommand.cs" />
+    <Compile Include="TextProcessing\Language\ReplaceText.cs" />
+    <Compile Include="TextProcessing\Language\SetTsdCondition.cs" />
+    <Compile Include="TextProcessing\Language\SetGlobalVariable.cs" />
+    <Compile Include="TextProcessing\Language\SetRowIndex.cs" />
+    <Compile Include="TextProcessing\Language\RemoveStoredTokens.cs" />
+    <Compile Include="TextProcessing\Language\SetTextPosition.cs" />
+    <Compile Include="TextProcessing\Language\SetVariable.cs" />
+    <Compile Include="TextProcessing\Language\SetVariableFromXmlElementValue.cs" />
+    <Compile Include="TextProcessing\Language\SetXml.cs" />
+    <Compile Include="TextProcessing\Language\Token.cs" />
+    <Compile Include="TextProcessing\Language\TokenizeNextLine.cs" />
+    <Compile Include="TextProcessing\Language\Truncate.cs" />
+    <Compile Include="TextProcessing\Models\DataMap.cs" />
+    <Compile Include="TextProcessing\Models\DataMapSet.cs" />
+    <Compile Include="TextProcessing\Models\ExtensionMethods.cs" />
+    <Compile Include="TextProcessing\Models\ExtractionMap.cs" />
+    <Compile Include="TextProcessing\Models\ExtractSection.cs" />
+    <Compile Include="TextProcessing\Models\ExtractSectionSet.cs" />
+    <Compile Include="TextProcessing\Models\ExtractSpec.cs" />
+    <Compile Include="TextProcessing\Models\ExtractSpecSet.cs" />
+    <Compile Include="TextProcessing\Models\FormatSpec.cs" />
+    <Compile Include="TextProcessing\Models\FormatSpecSet.cs" />
+    <Compile Include="TextProcessing\Models\LocatedToken.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="TextProcessing\Models\RecogLine.cs" />
+    <Compile Include="TextProcessing\Models\RecogLineSet.cs" />
+    <Compile Include="TextProcessing\Models\RecogSpec.cs" />
+    <Compile Include="TextProcessing\Models\RecogSpecSet.cs" />
+    <Compile Include="TextProcessing\Models\SearchText.cs" />
+    <Compile Include="TextProcessing\Models\StatementData.cs" />
+    <Compile Include="TextProcessing\Models\StatementFile.cs" />
+    <Compile Include="TextProcessing\Models\Text.cs" />
+    <Compile Include="TextProcessing\Models\TextEngine.cs" />
+    <Compile Include="TextProcessing\Models\TextExtensionMethods.cs" />
+    <Compile Include="TextProcessing\Models\TextPattern.cs" />
+    <Compile Include="TextProcessing\Models\TextPatternSet.cs" />
+    <Compile Include="TextProcessing\Models\TextProcessingEnums.cs" />
+    <Compile Include="TextProcessing\Models\TextSet.cs" />
+    <Compile Include="TextProcessing\Models\TokenSearchCriteria.cs" />
+    <Compile Include="TextProcessing\Models\Tsd.cs" />
+    <Compile Include="TextProcessing\Models\TsdSet.cs" />
+    <Compile Include="TextProcessing\PdfImageExtractor.cs" />
+    <Compile Include="TextProcessing\TextExtractor.cs" />
+    <Compile Include="TextProcessing\TextUtility.cs" />
+    <Compile Include="WsMessages\ExcelExtractRequest.cs" />
+    <Compile Include="WsMessages\FileCompareRequest.cs" />
+    <Compile Include="WsMessages\FileCompareResponse.cs" />
+    <Compile Include="WsMessages\GetMapRequest.cs" />
+    <Compile Include="WsMessages\GetMapResponse.cs" />
+    <Compile Include="WsMessages\PdfExtractResponse.cs" />
+    <Compile Include="WsMessages\ExcelExtractResponse.cs" />
+    <Compile Include="DxModels\ExtensionMethods.cs" />
+    <Compile Include="DxMapping\MapEngine.cs" />
+    <Compile Include="WsMessages\MessageFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WsMessages\PdfExtractRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Org.GS\Org.GS.csproj">
+      <Project>{a43ec37d-35c1-4f80-9d14-978da1312fa9}</Project>
+      <Name>Org.GS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Org.TOCR\Org.TOCR.csproj">
+      <Project>{13a03497-422a-44c7-87ee-5aa084a1afb3}</Project>
+      <Name>Org.TOCR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Org.WSO\Org.WSO.csproj">
+      <Project>{371d3edf-6965-4a65-919c-c49e1546fd33}</Project>
+      <Name>Org.WSO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="TextProcessing\Language\frmCxExceptionDisplay.resx">
+      <DependentUpon>frmCxExceptionDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DxMapping\DxActionFactory.cs" />
+    <Content Include="Libs\iTextSharp\5.5.8\itextsharp.dll" />
+    <Content Include="TextProcessing\Language\TextProcessing.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

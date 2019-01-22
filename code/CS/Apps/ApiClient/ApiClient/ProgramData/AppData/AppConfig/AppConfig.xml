@@ -1,0 +1,55 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="ApiClient">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="OAuthServerURLHttp" V="http://localhost:5000" />
+          <CI K="OAuthServerURLHttps" V="https://localhost:5001" />
+        </CIGroup>
+          <CIGroup Name="UIManagement">
+              <CI K="MainFormHorizontalSize" V="75" />
+              <CI K="MainFormVerticalSize" V="85" />
+          </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="ApiRequests">
+          <LI V="http://localhost:5002/api/account" />
+          <LI V="http://localhost:5002/api/account/5" />
+          <LI V="http://localhost:5005/api/identity" />
+          <LI V="http://localhost:5005/api/identity/5" />
+        </ConfigList>
+        <ConfigList Name="ApiResources">
+            <LI V="api1" />
+        </ConfigList>
+        <ConfigList Name="ClientCredentialsClients">
+            <LI V="client" />
+        </ConfigList>
+        <ConfigList Name="ResourceOwnerPasswordClients">
+            <LI V="ro.client" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="GrantTypes">
+          <DI K="ClientCredentials" V="ClientCredentials" />
+          <DI K="ResourceOwnerPassword" V="ResourceOwnerPassword" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ClientCredentialsClients">
+          <DI K="ClientCredentials" V="ClientCredentials" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ResourceOwnerPassword">
+          <DI K="ResourceOwnerPassword" V="ResourceOwnerPassword" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ClientCredentialsClientSecrets">
+          <DI K="client" V="secret" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ResourceOwnerPasswordClientSecrets">
+          <DI K="ro.client" V="secret" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ResourceOwnerPasswordUserPasswords">
+          <DI K="alice" V="password" />
+          <DI K="bob" V="password" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="13.0"?>
+<QBXML>
+    <QBXMLMsgsRq onError="stopOnError">
+        <ItemInventoryAddRq>
+            <ItemInventoryAdd>
+                <!-- required -->
+                <Name >STRTYPE</Name>
+                <!-- required -->
+                <BarCode>
+                    <!-- optional -->
+                    <BarCodeValue >STRTYPE</BarCodeValue>
+                    <!-- optional -->
+                    <AssignEvenIfUsed >BOOLTYPE</AssignEvenIfUsed>
+                    <!-- optional -->
+                    <AllowOverride >BOOLTYPE</AllowOverride>
+                    <!-- optional -->
+                </BarCode>
+                <IsActive >BOOLTYPE</IsActive>
+                <!-- optional -->
+                <ClassRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </ClassRef>
+                <ParentRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </ParentRef>
+                <ManufacturerPartNumber >STRTYPE</ManufacturerPartNumber>
+                <!-- optional -->
+                <UnitOfMeasureSetRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </UnitOfMeasureSetRef>
+                <IsTaxIncluded >BOOLTYPE</IsTaxIncluded>
+                <!-- optional -->
+                <SalesTaxCodeRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </SalesTaxCodeRef>
+                <SalesDesc >STRTYPE</SalesDesc>
+                <!-- optional -->
+                <SalesPrice >PRICETYPE</SalesPrice>
+                <!-- optional -->
+                <IncomeAccountRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </IncomeAccountRef>
+                <PurchaseDesc >STRTYPE</PurchaseDesc>
+                <!-- optional -->
+                <PurchaseCost >PRICETYPE</PurchaseCost>
+                <!-- optional -->
+                <PurchaseTaxCodeRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </PurchaseTaxCodeRef>
+                <COGSAccountRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </COGSAccountRef>
+                <PrefVendorRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </PrefVendorRef>
+                <AssetAccountRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </AssetAccountRef>
+                <ReorderPoint >QUANTYPE</ReorderPoint>
+                <!-- optional -->
+                <Max >QUANTYPE</Max>
+                <!-- optional -->
+                <QuantityOnHand >QUANTYPE</QuantityOnHand>
+                <!-- optional -->
+                <TotalValue >AMTTYPE</TotalValue>
+                <!-- optional -->
+                <InventoryDate >DATETYPE</InventoryDate>
+                <!-- optional -->
+                <ExternalGUID >GUIDTYPE</ExternalGUID>
+                <!-- optional -->
+            </ItemInventoryAdd>
+            <IncludeRetElement >STRTYPE</IncludeRetElement>
+            <!-- optional, may repeat -->
+        </ItemInventoryAddRq>
+
+        <ItemInventoryAddRs statusCode="INTTYPE" statusSeverity="STRTYPE" statusMessage="STRTYPE">
+            <ItemInventoryRet>
+                <!-- optional -->
+                <ListID >IDTYPE</ListID>
+                <!-- required -->
+                <TimeCreated >DATETIMETYPE</TimeCreated>
+                <!-- required -->
+                <TimeModified >DATETIMETYPE</TimeModified>
+                <!-- required -->
+                <EditSequence >STRTYPE</EditSequence>
+                <!-- required -->
+                <Name >STRTYPE</Name>
+                <!-- required -->
+                <FullName >STRTYPE</FullName>
+                <!-- required -->
+                <BarCodeValue >STRTYPE</BarCodeValue>
+                <!-- optional -->
+                <IsActive >BOOLTYPE</IsActive>
+                <!-- optional -->
+                <ClassRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </ClassRef>
+                <ParentRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </ParentRef>
+                <Sublevel >INTTYPE</Sublevel>
+                <!-- required -->
+                <ManufacturerPartNumber >STRTYPE</ManufacturerPartNumber>
+                <!-- optional -->
+                <UnitOfMeasureSetRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </UnitOfMeasureSetRef>
+                <IsTaxIncluded >BOOLTYPE</IsTaxIncluded>
+                <!-- optional -->
+                <SalesTaxCodeRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </SalesTaxCodeRef>
+                <SalesDesc >STRTYPE</SalesDesc>
+                <!-- optional -->
+                <SalesPrice >PRICETYPE</SalesPrice>
+                <!-- optional -->
+                <IncomeAccountRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </IncomeAccountRef>
+                <PurchaseDesc >STRTYPE</PurchaseDesc>
+                <!-- optional -->
+                <PurchaseCost >PRICETYPE</PurchaseCost>
+                <!-- optional -->
+                <PurchaseTaxCodeRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </PurchaseTaxCodeRef>
+                <COGSAccountRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </COGSAccountRef>
+                <PrefVendorRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </PrefVendorRef>
+                <AssetAccountRef>
+                    <!-- optional -->
+                    <ListID >IDTYPE</ListID>
+                    <!-- optional -->
+                    <FullName >STRTYPE</FullName>
+                    <!-- optional -->
+                </AssetAccountRef>
+                <ReorderPoint >QUANTYPE</ReorderPoint>
+                <!-- optional -->
+                <Max >QUANTYPE</Max>
+                <!-- optional -->
+                <QuantityOnHand >QUANTYPE</QuantityOnHand>
+                <!-- optional -->
+                <AverageCost >PRICETYPE</AverageCost>
+                <!-- optional -->
+                <QuantityOnOrder >QUANTYPE</QuantityOnOrder>
+                <!-- optional -->
+                <QuantityOnSalesOrder >QUANTYPE</QuantityOnSalesOrder>
+                <!-- optional -->
+                <ExternalGUID >GUIDTYPE</ExternalGUID>
+                <!-- optional -->
+                <DataExtRet>
+                    <!-- optional, may repeat -->
+                    <OwnerID >GUIDTYPE</OwnerID>
+                    <!-- optional -->
+                    <DataExtName >STRTYPE</DataExtName>
+                    <!-- required -->
+                    <!-- DataExtType may have one of the following values: AMTTYPE, DATETIMETYPE, INTTYPE, PERCENTTYPE, PRICETYPE, QUANTYPE, STR1024TYPE, STR255TYPE -->
+                    <DataExtType >ENUMTYPE</DataExtType>
+                    <!-- required -->
+                    <DataExtValue >STRTYPE</DataExtValue>
+                    <!-- required -->
+                </DataExtRet>
+            </ItemInventoryRet>
+            <ErrorRecovery>
+                <!-- optional -->
+                <!-- BEGIN OR -->
+                <ListID >IDTYPE</ListID>
+                <!-- optional -->
+                <!-- OR -->
+                <OwnerID >GUIDTYPE</OwnerID>
+                <!-- optional -->
+                <!-- OR -->
+                <TxnID >IDTYPE</TxnID>
+                <!-- optional -->
+                <!-- END OR -->
+                <TxnNumber >INTTYPE</TxnNumber>
+                <!-- optional -->
+                <EditSequence >STRTYPE</EditSequence>
+                <!-- optional -->
+                <ExternalGUID >GUIDTYPE</ExternalGUID>
+                <!-- optional -->
+            </ErrorRecovery>
+        </ItemInventoryAddRs>
+    </QBXMLMsgsRq>
+</QBXML>

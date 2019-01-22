@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76D133D3-B820-4E6C-96EA-1E76A9F2886D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Org.Terminal</RootNamespace>
+    <AssemblyName>Org.Terminal</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ControlLine.cs" />
+    <Compile Include="Controls\ControlLineSet.cs" />
+    <Compile Include="Controls\ControlManager.cs" />
+    <Compile Include="Controls\Enums.cs" />
+    <Compile Include="Controls\FontSpec.cs" />
+    <Compile Include="Controls\MFBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MFBase.Designer.cs">
+      <DependentUpon>MFBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MFContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MFContainer.Designer.cs">
+      <DependentUpon>MFContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MFEventArgs.cs" />
+    <Compile Include="Controls\TextBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TextBlock.Designer.cs">
+      <DependentUpon>TextBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BMS\BmsMap.cs" />
+    <Compile Include="BMS\BmsMapSet.cs" />
+    <Compile Include="BMS\Bms_BASE.cs" />
+    <Compile Include="BMS\BmsLine.cs" />
+    <Compile Include="BMS\BmsLineSet.cs" />
+    <Compile Include="BMS\BmsMapSetFile.cs" />
+    <Compile Include="BMS\BmsStatement.cs" />
+    <Compile Include="BMS\BmsStatementSet.cs" />
+    <Compile Include="BMS\Bms_DFHMDF.cs" />
+    <Compile Include="BMS\Bms_DFHMDI.cs" />
+    <Compile Include="BMS\Bms_DFHMSD.cs" />
+    <Compile Include="BMS\BmsConstants.cs" />
+    <Compile Include="BMS\Enums.cs" />
+    <Compile Include="ScreenSpec\Enums.cs" />
+    <Compile Include="ScreenSpec\ExtensionMethods.cs" />
+    <Compile Include="ScreenSpec\FieldSpec.cs" />
+    <Compile Include="ScreenSpec\FieldSpecSet.cs" />
+    <Compile Include="BMS\BmsMapError.cs" />
+    <Compile Include="BMS\BmsMapErrorSet.cs" />
+    <Compile Include="BMS\Parenthetical.cs" />
+    <Compile Include="ScreenSpec\ScreenSpec.cs" />
+    <Compile Include="ScreenSpec\ScreenSpecSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Org.GS\Org.GS.csproj">
+      <Project>{a43ec37d-35c1-4f80-9d14-978da1312fa9}</Project>
+      <Name>Org.GS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Org.MF\Org.MF.csproj">
+      <Project>{8f630a96-d59d-4d90-95d5-bd3d7e0ef1b2}</Project>
+      <Name>Org.MF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Doc\CICS Documentation.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\MFBase.resx">
+      <DependentUpon>MFBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MFContainer.resx">
+      <DependentUpon>MFContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TextBlock.resx">
+      <DependentUpon>TextBlock.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

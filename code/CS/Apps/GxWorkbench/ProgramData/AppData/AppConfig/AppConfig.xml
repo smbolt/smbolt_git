@@ -1,0 +1,21 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="GxWorkbench">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="InputFile" V="$IMPORTS$\DeployWebService.json" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A43EC37D-35C1-4F80-9D14-978DA1312FA9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Org.GS</RootNamespace>
+    <AssemblyName>Org.GS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\ModuleBasedSolutions\Modules\ePRCManager\ePRCManager.Module.Solution\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WellMasterWeb\WellMasterWeb\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analysis\Analytic.cs" />
+    <Compile Include="Analysis\AnalyticSet.cs" />
+    <Compile Include="AppDomain\AppDomainEventManager.cs" />
+    <Compile Include="AppDomain\AppDomainInfo.cs" />
+    <Compile Include="AppDomain\AppDomainInfoSet.cs" />
+    <Compile Include="AppDomain\AppDomainObjectDescriptor.cs" />
+    <Compile Include="AppDomain\AppDomainObjectRegistry.cs" />
+    <Compile Include="AppDomain\AppDomainSupervisor.cs" />
+    <Compile Include="AppDomain\AppDomainUtility.cs" />
+    <Compile Include="AppDomain\ExtensionMethods.cs" />
+    <Compile Include="AppDomain\IAppDomainUtility.cs" />
+    <Compile Include="AppDomain\MarshalBase.cs" />
+    <Compile Include="Archive\Archiver.cs" />
+    <Compile Include="Binary\ExtensionMethods.cs" />
+    <Compile Include="Binary\MemMap.cs" />
+    <Compile Include="Caching\Cache.cs" />
+    <Compile Include="Code\ExtensionExclusion.cs" />
+    <Compile Include="Code\ExtensionExclusionSet.cs" />
+    <Compile Include="Code\IncludedExtension.cs" />
+    <Compile Include="Code\ExcludedFileSet.cs" />
+    <Compile Include="Code\IncludedFileSet.cs" />
+    <Compile Include="Code\IncludedExtensionSet.cs" />
+    <Compile Include="Code\MappingControl.cs" />
+    <Compile Include="Code\MappingControlSet.cs" />
+    <Compile Include="Code\MigrationEngine.cs" />
+    <Compile Include="Code\MigrationResult.cs" />
+    <Compile Include="Code\Migrator.cs" />
+    <Compile Include="Code\OpsControl.cs" />
+    <Compile Include="Code\OpsControlSet.cs" />
+    <Compile Include="Code\Profile.cs" />
+    <Compile Include="Code\ProfileSet.cs" />
+    <Compile Include="Configuration\AppConfig.cs" />
+    <Compile Include="Configuration\AppConfigHelper.cs" />
+    <Compile Include="Configuration\CO.cs" />
+    <Compile Include="Configuration\ConfigNotifySpec.cs" />
+    <Compile Include="Configuration\COSet.cs" />
+    <Compile Include="Configuration\FSAction.cs" />
+    <Compile Include="Configuration\FSActionGroup.cs" />
+    <Compile Include="Configuration\FSActionSet.cs" />
+    <Compile Include="Configuration\FSItem.cs" />
+    <Compile Include="Configuration\ConfigLogSpec.cs" />
+    <Compile Include="Configuration\Notifications\NotifyConfigSets.cs" />
+    <Compile Include="Configuration\Notifications\NotifyConfigSet.cs" />
+    <Compile Include="Configuration\Notifications\NotifyPersonGroup.cs" />
+    <Compile Include="Configuration\Notifications\NotifyRepository.cs" />
+    <Compile Include="Configuration\Notifications\NotifyEventGroup.cs" />
+    <Compile Include="Configuration\TaskProcessing\Enums.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskCalendar.cs" />
+    <Compile Include="Configuration\CI.cs" />
+    <Compile Include="Configuration\CIGroup.cs" />
+    <Compile Include="Configuration\CISet.cs" />
+    <Compile Include="Configuration\ConfigDbSpec.cs" />
+    <Compile Include="Configuration\ConfigDbSpecSet.cs" />
+    <Compile Include="Configuration\ConfigDictionary.cs" />
+    <Compile Include="Configuration\ConfigElement.cs" />
+    <Compile Include="Configuration\ConfigFtpSpec.cs" />
+    <Compile Include="Configuration\ConfigFtpSpecSet.cs" />
+    <Compile Include="Configuration\ConfigGroupAssignment.cs" />
+    <Compile Include="Configuration\ConfigItemProperty.cs" />
+    <Compile Include="Configuration\ConfigItemPropertySet.cs" />
+    <Compile Include="Configuration\ConfigList.cs" />
+    <Compile Include="Configuration\ConfigDictionarySet.cs" />
+    <Compile Include="Configuration\ConfigListSet.cs" />
+    <Compile Include="Configuration\ConfigObjectBase.cs" />
+    <Compile Include="Configuration\ConfigObjectFactory.cs" />
+    <Compile Include="Configuration\ConfigSecurity.cs" />
+    <Compile Include="Configuration\ConfigSecurity_XML.cs" />
+    <Compile Include="Configuration\ConfigSmtpSpec.cs" />
+    <Compile Include="Configuration\ConfigSmtpSpecSet.cs" />
+    <Compile Include="Configuration\ConfigUser.cs" />
+    <Compile Include="Configuration\ConfigUserSet.cs" />
+    <Compile Include="Configuration\ConfigSyncSpec.cs" />
+    <Compile Include="Configuration\ConfigWsSpec.cs" />
+    <Compile Include="Configuration\ConfigWsSpecSet.cs" />
+    <Compile Include="Configuration\Forms\frmConfigEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration\Forms\frmConfigEdit.Designer.cs">
+      <DependentUpon>frmConfigEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\Forms\frmSecurityCache.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration\Forms\frmSecurityCache.Designer.cs">
+      <DependentUpon>frmSecurityCache.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\ConfigGroup.cs" />
+    <Compile Include="Configuration\ConfigGroupAssignments.cs" />
+    <Compile Include="Configuration\ConfigGroupSet.cs" />
+    <Compile Include="Configuration\GridColumn.cs" />
+    <Compile Include="Configuration\GridColumnSet.cs" />
+    <Compile Include="Configuration\ColumnValueArray.cs" />
+    <Compile Include="Configuration\GridView.cs" />
+    <Compile Include="Configuration\GridViewSet.cs" />
+    <Compile Include="Configuration\DI.cs" />
+    <Compile Include="Configuration\LI.cs" />
+    <Compile Include="Configuration\LocalConfig.cs" />
+    <Compile Include="Configuration\Notifications\NotifyConfig.cs" />
+    <Compile Include="Configuration\Notifications\NotifyEvent.cs" />
+    <Compile Include="Configuration\Notifications\NotifyEventSet.cs" />
+    <Compile Include="Configuration\Notifications\NotifyGroup.cs" />
+    <Compile Include="Configuration\Notifications\NotifyGroupReference.cs" />
+    <Compile Include="Configuration\Notifications\NotifyGroupSet.cs" />
+    <Compile Include="Configuration\Notifications\NotifyPerson.cs" />
+    <Compile Include="Configuration\ProgramConfig.cs" />
+    <Compile Include="Configuration\ProgramConfigSet.cs" />
+    <Compile Include="Configuration\ProgramFunction.cs" />
+    <Compile Include="Configuration\ProgramFunctionControl.cs" />
+    <Compile Include="Configuration\ProgramFunctionSet.cs" />
+    <Compile Include="Configuration\ProgramRole.cs" />
+    <Compile Include="Configuration\ProgramRoleSet.cs" />
+    <Compile Include="Configuration\SmtpProfile.cs" />
+    <Compile Include="Configuration\SmtpProfileSet.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskConfig.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskConfigurations.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskConfigSet.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskDateTime.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskHolidayCalendar.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskParm.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskParmSet.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskSchedule.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskRunControl.cs" />
+    <Compile Include="Configuration\TaskProcessing\TaskScheduleElement.cs" />
+    <Compile Include="ControlSpec\ButtonSpec.cs" />
+    <Compile Include="ControlSpec\ControlSpecBase.cs" />
+    <Compile Include="ControlSpec\ControlSpecSet.cs" />
+    <Compile Include="Database\DbColumn.cs" />
+    <Compile Include="Database\DbColumnSet.cs" />
+    <Compile Include="Database\DbConstraint.cs" />
+    <Compile Include="Database\DbConstraintSet.cs" />
+    <Compile Include="Database\DbEntityBase.cs" />
+    <Compile Include="Database\DbTable.cs" />
+    <Compile Include="Database\DbTableSet.cs" />
+    <Compile Include="Database\DbType.cs" />
+    <Compile Include="Database\DbTypeSet.cs" />
+    <Compile Include="Database\DbUtility.cs" />
+    <Compile Include="Database\Enums.cs" />
+    <Compile Include="Dynamic\ClientModule.cs" />
+    <Compile Include="Dynamic\ClientModuleSet.cs" />
+    <Compile Include="Dynamic\DynamicControl\ControlSet.cs" />
+    <Compile Include="Dynamic\DynamicControl\Control.cs" />
+    <Compile Include="Dynamic\DynamicControl\ControlBase.cs" />
+    <Compile Include="Dynamic\DXO.cs" />
+    <Compile Include="Dynamic\DynamicControl\DynamicControl.cs" />
+    <Compile Include="Dynamic\DynamicControl\EventMap.cs" />
+    <Compile Include="Dynamic\DynamicControl\EventMapSet.cs" />
+    <Compile Include="Dynamic\DynamicFormBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dynamic\DynamicFormBase.Designer.cs">
+      <DependentUpon>DynamicFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic\ExceptionContainer.cs" />
+    <Compile Include="Dynamic\Module.cs" />
+    <Compile Include="Dynamic\ModuleManager.cs" />
+    <Compile Include="Dynamic\ModuleParms.cs" />
+    <Compile Include="Dynamic\ModuleProperties.cs" />
+    <Compile Include="Dynamic\ModuleSet.cs" />
+    <Compile Include="Dynamic\WinFormProperties.cs" />
+    <Compile Include="Encryption\Decryptor.cs" />
+    <Compile Include="Encryption\EncryptionException.cs" />
+    <Compile Include="Encryption\Encryptor.cs" />
+    <Compile Include="Encryption\PasswordHelper.cs" />
+    <Compile Include="Encryption\TokenMaker.cs" />
+    <Compile Include="Encryption\Vault.cs" />
+    <Compile Include="Exceptions\WebApiException.cs" />
+    <Compile Include="FileSystem\DirectoryManifest.cs" />
+    <Compile Include="FileSystem\Enums.cs" />
+    <Compile Include="FileSystem\ExtensionMethods.cs" />
+    <Compile Include="FileSystem\FileCompareEngine.cs" />
+    <Compile Include="FileSystem\FileCompareResult.cs" />
+    <Compile Include="FileSystem\FileCompareUtility.cs" />
+    <Compile Include="FileSystem\FileFormat.cs" />
+    <Compile Include="FileSystem\FileFormatSet.cs" />
+    <Compile Include="FileSystem\FileNamer.cs" />
+    <Compile Include="FileSystem\EncryptedFilePair.cs" />
+    <Compile Include="FileSystem\FileManifest.cs" />
+    <Compile Include="FileSystem\FileSystemItem.cs" />
+    <Compile Include="FileSystem\FileSystemItemSet.cs" />
+    <Compile Include="FileSystem\FSBase.cs" />
+    <Compile Include="FileSystem\FSEngine.cs" />
+    <Compile Include="FileSystem\OSFile.cs" />
+    <Compile Include="FileSystem\OSFileSet.cs" />
+    <Compile Include="FileSystem\OSFolder.cs" />
+    <Compile Include="FileSystem\OSFolderSet.cs" />
+    <Compile Include="FileSystem\SearchParms.cs" />
+    <Compile Include="FileSystem\SearchResults.cs" />
+    <Compile Include="Global\AssemblyMap.cs" />
+    <Compile Include="Global\AssemblyMapSet.cs" />
+    <Compile Include="Global\DateSpan.cs" />
+    <Compile Include="Global\OptionsList.cs" />
+    <Compile Include="HTO\Enums.cs" />
+    <Compile Include="HTO\ExtensionMethods.cs" />
+    <Compile Include="HTO\Hto.cs" />
+    <Compile Include="HTO\HtoFactory.cs" />
+    <Compile Include="HTO\HtoSet.cs" />
+    <Compile Include="OrgScript\Compilation\CompilationResult.cs" />
+    <Compile Include="OrgScript\Compilation\Compiler.cs" />
+    <Compile Include="OrgScript\Compilation\CompilerConfig.cs" />
+    <Compile Include="OrgScript\Compilation\CompilerMessage.cs" />
+    <Compile Include="OrgScript\Compilation\CompilerMessageSet.cs" />
+    <Compile Include="OrgScript\Compilation\ExtensionMethods.cs" />
+    <Compile Include="OrgScript\Compilation\CompilationJob.cs" />
+    <Compile Include="OrgScript\Compilation\SyntaxNode.cs" />
+    <Compile Include="OrgScript\Compilation\SyntaxNodeSet.cs" />
+    <Compile Include="OrgScript\Compilation\TokenSet.cs" />
+    <Compile Include="OrgScript\Runnable\Application.cs" />
+    <Compile Include="OrgScript\Runnable\Executable.cs" />
+    <Compile Include="OrgScript\Runnable\Library.cs" />
+    <Compile Include="OrgScript\Compilation\Parser.cs" />
+    <Compile Include="OrgScript\Compilation\SyntaxTree.cs" />
+    <Compile Include="OrgScript\Compilation\Enums.cs" />
+    <Compile Include="OrgScript\Compilation\Token.cs" />
+    <Compile Include="Performance\Enums.cs" />
+    <Compile Include="Performance\PerfEntry.cs" />
+    <Compile Include="Performance\PerfManager.cs" />
+    <Compile Include="TextProcessing\TextDetailSpec.cs" />
+    <Compile Include="Global\DiagnosticsManager.cs" />
+    <Compile Include="Global\FileObject.cs" />
+    <Compile Include="Global\FileSpec.cs" />
+    <Compile Include="Global\frmConfigData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\frmConfigData.Designer.cs">
+      <DependentUpon>frmConfigData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\frmLocateAppConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\frmLocateAppConfig.Designer.cs">
+      <DependentUpon>frmLocateAppConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\FxVersion.cs" />
+    <Compile Include="Global\Interfaces.cs" />
+    <Compile Include="Global\ModelBase.cs" />
+    <Compile Include="Global\ModelSet.cs" />
+    <Compile Include="Global\ObjectWrapper.cs" />
+    <Compile Include="Global\ProcessTimer.cs" />
+    <Compile Include="Global\PropertyInfoPair.cs" />
+    <Compile Include="Global\PropertyInfoPairSet.cs" />
+    <Compile Include="Global\Prox.cs" />
+    <Compile Include="Global\ProxSet.cs" />
+    <Compile Include="Global\SerializableObject.cs" />
+    <Compile Include="Global\SoftwareSegment.cs" />
+    <Compile Include="Global\SpParm.cs" />
+    <Compile Include="Global\SpParmSet.cs" />
+    <Compile Include="Global\SystemInfo.cs" />
+    <Compile Include="Global\TaskSet.cs" />
+    <Compile Include="Global\TestObject.cs" />
+    <Compile Include="Global\XMapHelper.cs" />
+    <Compile Include="Global\XmlLine.cs" />
+    <Compile Include="Global\XmlLineError.cs" />
+    <Compile Include="Global\XmlLineSet.cs" />
+    <Compile Include="Global\XmlReport.cs" />
+    <Compile Include="Global\XWrapper.cs" />
+    <Compile Include="Global\XWrapperSet.cs" />
+    <Compile Include="Interfaces\IPlugIn.cs" />
+    <Compile Include="Logging\AppLog.cs" />
+    <Compile Include="Logging\AppLogDetail.cs" />
+    <Compile Include="Logging\AppLogDetailSet.cs" />
+    <Compile Include="Logging\AppLogSet.cs" />
+    <Compile Include="Logging\LoggingRepository.cs" />
+    <Compile Include="Math\Equation.cs" />
+    <Compile Include="Math\Expression.cs" />
+    <Compile Include="Math\MathEnums.cs" />
+    <Compile Include="Math\MathExtensionMethods.cs" />
+    <Compile Include="Module\ModuleOnDisk.cs" />
+    <Compile Include="Module\ModuleOnDiskSet.cs" />
+    <Compile Include="Network\EmailClient.cs" />
+    <Compile Include="Network\EmailMessage.cs" />
+    <Compile Include="Network\PortPing.cs" />
+    <Compile Include="Network\SerialCom.cs" />
+    <Compile Include="Network\SerialComEventArgs.cs" />
+    <Compile Include="Network\SerialComInfo.cs" />
+    <Compile Include="Network\SerialComInfoSet.cs" />
+    <Compile Include="Network\SerialPortParms.cs" />
+    <Compile Include="Network\SmsClient.cs" />
+    <Compile Include="Notifications\EmailNotificationAddress.cs" />
+    <Compile Include="Notifications\EmailNotificationMessage.cs" />
+    <Compile Include="Notifications\EmailNotificationProcessor.cs" />
+    <Compile Include="Notifications\Enums.cs" />
+    <Compile Include="Notifications\INotificationProcessor.cs" />
+    <Compile Include="Notifications\Notification.cs" />
+    <Compile Include="Notifications\NotificationAddressBase.cs" />
+    <Compile Include="Notifications\NotificationEngine.cs" />
+    <Compile Include="Notifications\NotificationMessageBase.cs" />
+    <Compile Include="Notifications\NotificationOptions.cs" />
+    <Compile Include="Notifications\SmsNotificationAddress.cs" />
+    <Compile Include="Global\FileMatchCriteria.cs" />
+    <Compile Include="Global\FileSet.cs" />
+    <Compile Include="Ops\NotificationManager.cs" />
+    <Compile Include="Global\VariableSet.cs" />
+    <Compile Include="Other\DiagnosticsControl.cs" />
+    <Compile Include="Other\EventMessage.cs" />
+    <Compile Include="Other\ImportValues.cs" />
+    <Compile Include="Other\InstalledFrameworks.cs" />
+    <Compile Include="Other\IpdxCommand.cs" />
+    <Compile Include="Other\IpdxCommandSet.cs" />
+    <Compile Include="Other\ProgressMessage.cs" />
+    <Compile Include="Other\IpdxMessage.cs" />
+    <Compile Include="Other\TaskRequest.cs" />
+    <Compile Include="Other\TaskRequestSet.cs" />
+    <Compile Include="Other\NotifyMessage.cs" />
+    <Compile Include="Performance\PerfMetrics.cs" />
+    <Compile Include="Performance\PerfMetricSet.cs" />
+    <Compile Include="Parms\Parm.cs" />
+    <Compile Include="Parms\ParmSet.cs" />
+    <Compile Include="Performance\PerformanceInfo.cs" />
+    <Compile Include="Performance\PerformanceInfoSet.cs" />
+    <Compile Include="Security\ClientHash.cs" />
+    <Compile Include="Security\SecurityToken.cs" />
+    <Compile Include="Security\UserSession.cs" />
+    <Compile Include="ServiceManagement\Enums.cs" />
+    <Compile Include="ServiceManagement\ServiceEnvironment.cs" />
+    <Compile Include="ServiceManagement\ServiceEnvironmentSet.cs" />
+    <Compile Include="ServiceManagement\ServiceHost.cs" />
+    <Compile Include="ServiceManagement\ServiceHostSet.cs" />
+    <Compile Include="ServiceManagement\ServiceObject.cs" />
+    <Compile Include="ServiceManagement\ServiceSpec.cs" />
+    <Compile Include="ServiceManagement\ServiceSpecSet.cs" />
+    <Compile Include="SitesAndServices\WinServiceParms.cs" />
+    <Compile Include="TextProcessing\Enums.cs" />
+    <Compile Include="TextProcessing\TextNode.cs" />
+    <Compile Include="TextProcessing\TextNodeSpec.cs" />
+    <Compile Include="TextProcessing\TextNodeSet.cs" />
+    <Compile Include="TextProcessing\TncsExtensionMethods.cs" />
+    <Compile Include="UI\ToolActionEventArgs.cs" />
+    <Compile Include="UI\UIState.cs" />
+    <Compile Include="UI\UIWindow.cs" />
+    <Compile Include="UI\UIWindowSet.cs" />
+    <Compile Include="UI\WindowLocation.cs" />
+    <Compile Include="Global\Task.cs" />
+    <Compile Include="Utility\AppPoolManager.cs" />
+    <Compile Include="Utility\frmDisplayText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\frmDisplayText.Designer.cs">
+      <DependentUpon>frmDisplayText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\a.cs" />
+    <Compile Include="Global\AdsdiBase.cs" />
+    <Compile Include="Global\Alias.cs" />
+    <Compile Include="Global\AliasSet.cs" />
+    <Compile Include="Global\App.cs" />
+    <Compile Include="Global\AppInfo.cs" />
+    <Compile Include="Global\Attributes.cs" />
+    <Compile Include="Global\Constants.cs" />
+    <Compile Include="Global\ConstructorParms.cs" />
+    <Compile Include="Global\DbKeys.cs" />
+    <Compile Include="Global\Enums.cs" />
+    <Compile Include="Global\g.cs" />
+    <Compile Include="Global\ImageHelper.cs" />
+    <Compile Include="Global\ObjectFactory2.cs" />
+    <Compile Include="Global\ObjectMap.cs" />
+    <Compile Include="Global\ObjectMapContext.cs" />
+    <Compile Include="Global\ObjectMapEntry.cs" />
+    <Compile Include="Global\ObjectMapper.cs" />
+    <Compile Include="Global\XmlMapper.cs" />
+    <Compile Include="Licensing\ComputerSignature.cs" />
+    <Compile Include="Licensing\LicenseControl.cs" />
+    <Compile Include="Licensing\LicenseHelper.cs" />
+    <Compile Include="Logging\Enums.cs" />
+    <Compile Include="Logging\Location.cs" />
+    <Compile Include="Logging\LogContext.cs" />
+    <Compile Include="Logging\LogDetail.cs" />
+    <Compile Include="Logging\LogDetailSet.cs" />
+    <Compile Include="Logging\LogException.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LogRecord.cs" />
+    <Compile Include="Logging\LogRecordSet.cs" />
+    <Compile Include="Logging\Message.cs" />
+    <Compile Include="Network\Discovery.cs" />
+    <Compile Include="Performance\Category.cs" />
+    <Compile Include="Performance\CategorySet.cs" />
+    <Compile Include="Performance\Counter.cs" />
+    <Compile Include="Performance\CounterSet.cs" />
+    <Compile Include="Performance\PerfConfig.cs" />
+    <Compile Include="Performance\PerfProfile.cs" />
+    <Compile Include="Performance\PerfProfileSet.cs" />
+    <Compile Include="Process\ProcessParms.cs" />
+    <Compile Include="SitesAndServices\AppPool.cs" />
+    <Compile Include="SitesAndServices\AppPoolSet.cs" />
+    <Compile Include="SitesAndServices\WebSite.cs" />
+    <Compile Include="SitesAndServices\WebSiteSet.cs" />
+    <Compile Include="SitesAndServices\WinService.cs" />
+    <Compile Include="SitesAndServices\WinServiceSet.cs" />
+    <Compile Include="Utility\AssemblyHelper.cs" />
+    <Compile Include="Utility\HtmlToText.cs" />
+    <Compile Include="Utility\RegistryHelper.cs" />
+    <Compile Include="Utility\ServiceManager.cs" />
+    <Compile Include="Utility\SiteManager.cs" />
+    <Compile Include="Network\CdyneSmsAdapter.cs" />
+    <Compile Include="Network\EmailConfiguration.cs" />
+    <Compile Include="Network\EmailHelper.cs" />
+    <Compile Include="Network\NetworkHelper.cs" />
+    <Compile Include="Network\NTPClient.cs" />
+    <Compile Include="Network\sms.cs" />
+    <Compile Include="Network\SmsParms.cs" />
+    <Compile Include="Network\SmtpParms.cs" />
+    <Compile Include="Network\SmtpParmsSet.cs" />
+    <Compile Include="Other\CodedException.cs" />
+    <Compile Include="Other\Delegates.cs" />
+    <Compile Include="Other\IPDX.cs" />
+    <Compile Include="Other\UserContext.cs" />
+    <Compile Include="Resource1.Designer.cs" />
+    <Compile Include="Other\TaskResult.cs" />
+    <Compile Include="Other\TaskResultSet.cs" />
+    <Compile Include="Other\XmlHelper.cs" />
+    <Compile Include="Process\ProcessHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\DateUtility.cs" />
+    <Compile Include="Utility\ExtensionMethods.cs" />
+    <Compile Include="Utility\FileSegmentHeader.cs" />
+    <Compile Include="Utility\FileSystemChecks.cs" />
+    <Compile Include="Utility\FileSystemUtility.cs" />
+    <Compile Include="Utility\StartupLogging.cs" />
+    <Compile Include="Utility\Validation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuration\Forms\frmConfigEdit.resx">
+      <DependentUpon>frmConfigEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\Forms\frmSecurityCache.resx">
+      <DependentUpon>frmSecurityCache.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dynamic\DynamicFormBase.resx">
+      <DependentUpon>DynamicFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\frmConfigData.resx">
+      <DependentUpon>frmConfigData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\frmLocateAppConfig.resx">
+      <DependentUpon>frmLocateAppConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx" />
+    <EmbeddedResource Include="Utility\frmDisplayText.resx">
+      <DependentUpon>frmDisplayText.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Other\EFHelper.ttinclude" />
+    <None Include="Other\Modifying EF Context Template.docx" />
+    <None Include="Other\Modifying EF Entity Template.docx" />
+    <None Include="Performance\Performance Metrics.docx" />
+    <None Include="Resources\config.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\org.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global\AsciiExtended.txt" />
+    <Content Include="images\org.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="mscoree">
+      <Guid>{5477469E-83B1-11D2-8B49-00A0C9B7C9C4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OrgScript\Language\Low\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

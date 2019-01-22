@@ -1,0 +1,1 @@
+﻿nq:(OPERATOR)(METER)(*/0-5)(.)([int])/type:date

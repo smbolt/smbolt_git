@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B922953-B019-4B87-BF4E-D98D4DFF867F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NetMvcCharts</RootNamespace>
+    <AssemblyName>NetMvcCharts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="netchartdir">
+      <HintPath>..\bin\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\angry.png" />
+    <Content Include="Content\bg.png" />
+    <Content Include="Content\clock.png" />
+    <Content Include="Content\cloud.png" />
+    <Content Include="Content\computer.png" />
+    <Content Include="Content\doc.png" />
+    <Content Include="Content\gas.gif" />
+    <Content Include="Content\goto.gif" />
+    <Content Include="Content\laugh.png" />
+    <Content Include="Content\marble.png" />
+    <Content Include="Content\marble2.png" />
+    <Content Include="Content\marble3.png" />
+    <Content Include="Content\molecule.png" />
+    <Content Include="Content\nocomment.png" />
+    <Content Include="Content\pointer.gif" />
+    <Content Include="Content\rain.png" />
+    <Content Include="Content\robot1.png" />
+    <Content Include="Content\robot2.png" />
+    <Content Include="Content\robot3.png" />
+    <Content Include="Content\robot4.png" />
+    <Content Include="Content\robot5.png" />
+    <Content Include="Content\rock.png" />
+    <Content Include="Content\sad.png" />
+    <Content Include="Content\scrollew.gif" />
+    <Content Include="Content\scrollnesw.gif" />
+    <Content Include="Content\service.png" />
+    <Content Include="Content\small_computer.png" />
+    <Content Include="Content\small_molecule.png" />
+    <Content Include="Content\small_user.png" />
+    <Content Include="Content\smile.png" />
+    <Content Include="Content\snow.png" />
+    <Content Include="Content\snowy.png" />
+    <Content Include="Content\software.png" />
+    <Content Include="Content\star.png" />
+    <Content Include="Content\sun.png" />
+    <Content Include="Content\tile.gif" />
+    <Content Include="Content\wood.png" />
+    <Content Include="Content\xrange.gif" />
+    <Content Include="Content\xyrange.gif" />
+    <Content Include="Content\zoomInIcon.gif" />
+    <Content Include="Content\zoomOutIcon.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\cdjcv.js" />
+    <Content Include="Scripts\nozoom.cur" />
+    <Content Include="Scripts\spacer.gif" />
+    <Content Include="Scripts\wait.gif" />
+    <Content Include="Scripts\zoomin.cur" />
+    <Content Include="Scripts\zoomout.cur" />
+    <Content Include="Views\web.config" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnglepieController.cs" />
+    <Compile Include="Controllers\Angularpointer2Controller.cs" />
+    <Compile Include="Controllers\AngularpointerController.cs" />
+    <Compile Include="Controllers\ArealineController.cs" />
+    <Compile Include="Controllers\AxisscaleController.cs" />
+    <Compile Include="Controllers\BackgroundController.cs" />
+    <Compile Include="Controllers\BarlabelController.cs" />
+    <Compile Include="Controllers\BinaryseriesController.cs" />
+    <Compile Include="Controllers\BlackhbarmeterController.cs" />
+    <Compile Include="Controllers\BlackhlinearmeterController.cs" />
+    <Compile Include="Controllers\BlackroundmeterController.cs" />
+    <Compile Include="Controllers\BlacksemicirclemeterController.cs" />
+    <Compile Include="Controllers\BlackvbarmeterController.cs" />
+    <Compile Include="Controllers\BlackvlinearmeterController.cs" />
+    <Compile Include="Controllers\Boxwhisker2Controller.cs" />
+    <Compile Include="Controllers\BoxwhiskerController.cs" />
+    <Compile Include="Controllers\BubbleController.cs" />
+    <Compile Include="Controllers\BubblescaleController.cs" />
+    <Compile Include="Controllers\BuiltinsymbolsController.cs" />
+    <Compile Include="Controllers\CandlestickController.cs" />
+    <Compile Include="Controllers\CdinfoController.cs" />
+    <Compile Include="Controllers\CirclelabelpieController.cs" />
+    <Compile Include="Controllers\ClickbarController.cs" />
+    <Compile Include="Controllers\ClicklineController.cs" />
+    <Compile Include="Controllers\ClickpieController.cs" />
+    <Compile Include="Controllers\Colorbar2Controller.cs" />
+    <Compile Include="Controllers\ColorbarController.cs" />
+    <Compile Include="Controllers\ColorganttController.cs" />
+    <Compile Include="Controllers\ColorhbarmeterController.cs" />
+    <Compile Include="Controllers\ColorhlinearmeterController.cs" />
+    <Compile Include="Controllers\ColorroundmeterController.cs" />
+    <Compile Include="Controllers\ColorsemicirclemeterController.cs" />
+    <Compile Include="Controllers\ColorvbarmeterController.cs" />
+    <Compile Include="Controllers\ColorvlinearmeterController.cs" />
+    <Compile Include="Controllers\CompactlineController.cs" />
+    <Compile Include="Controllers\ConcentricController.cs" />
+    <Compile Include="Controllers\ConeController.cs" />
+    <Compile Include="Controllers\ConfidencebandController.cs" />
+    <Compile Include="Controllers\ContourcolorController.cs" />
+    <Compile Include="Controllers\ContourController.cs" />
+    <Compile Include="Controllers\ContourinterpolateController.cs" />
+    <Compile Include="Controllers\ContourlegendController.cs" />
+    <Compile Include="Controllers\CrosshairController.cs" />
+    <Compile Include="Controllers\CurvefittingController.cs" />
+    <Compile Include="Controllers\CustomclickController.cs" />
+    <Compile Include="Controllers\CustomsymbollineController.cs" />
+    <Compile Include="Controllers\CylinderbarController.cs" />
+    <Compile Include="Controllers\CylinderlightbarController.cs" />
+    <Compile Include="Controllers\Datatable2Controller.cs" />
+    <Compile Include="Controllers\DatatableController.cs" />
+    <Compile Include="Controllers\DepthareaController.cs" />
+    <Compile Include="Controllers\DepthbarController.cs" />
+    <Compile Include="Controllers\DonutController.cs" />
+    <Compile Include="Controllers\DonutshadingController.cs" />
+    <Compile Include="Controllers\DonutwidthController.cs" />
+    <Compile Include="Controllers\DualhbarController.cs" />
+    <Compile Include="Controllers\DualxaxisController.cs" />
+    <Compile Include="Controllers\DualyaxisController.cs" />
+    <Compile Include="Controllers\EnhancedareaController.cs" />
+    <Compile Include="Controllers\ErrlineController.cs" />
+    <Compile Include="Controllers\ExplodedpieController.cs" />
+    <Compile Include="Controllers\Finance2Controller.cs" />
+    <Compile Include="Controllers\FinanceController.cs" />
+    <Compile Include="Controllers\FinancedemoController.cs" />
+    <Compile Include="Controllers\FinancesymbolsController.cs" />
+    <Compile Include="Controllers\FloatingboxController.cs" />
+    <Compile Include="Controllers\FontpieController.cs" />
+    <Compile Include="Controllers\FontxyController.cs" />
+    <Compile Include="Controllers\FourqController.cs" />
+    <Compile Include="Controllers\FunnelController.cs" />
+    <Compile Include="Controllers\GanttController.cs" />
+    <Compile Include="Controllers\GapbarController.cs" />
+    <Compile Include="Controllers\GlasslightbarController.cs" />
+    <Compile Include="Controllers\GlassmultibarController.cs" />
+    <Compile Include="Controllers\GradientbarController.cs" />
+    <Compile Include="Controllers\GradientmultibarController.cs" />
+    <Compile Include="Controllers\HbarController.cs" />
+    <Compile Include="Controllers\HbarmeterController.cs" />
+    <Compile Include="Controllers\HbarmeterorientationController.cs" />
+    <Compile Include="Controllers\HboxwhiskerController.cs" />
+    <Compile Include="Controllers\HistogramController.cs" />
+    <Compile Include="Controllers\HlinearmeterController.cs" />
+    <Compile Include="Controllers\HlinearmeterorientationController.cs" />
+    <Compile Include="Controllers\HlocController.cs" />
+    <Compile Include="Controllers\IconameterController.cs" />
+    <Compile Include="Controllers\IcondonutController.cs" />
+    <Compile Include="Controllers\Iconpie2Controller.cs" />
+    <Compile Include="Controllers\IconpieController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\JsclickController.cs" />
+    <Compile Include="Controllers\LayerganttController.cs" />
+    <Compile Include="Controllers\Legendpie2Controller.cs" />
+    <Compile Include="Controllers\LegendpieController.cs" />
+    <Compile Include="Controllers\LinearzonemeterController.cs" />
+    <Compile Include="Controllers\LinecompareController.cs" />
+    <Compile Include="Controllers\LinefillController.cs" />
+    <Compile Include="Controllers\LogaxisController.cs" />
+    <Compile Include="Controllers\MarkbarController.cs" />
+    <Compile Include="Controllers\Markzone2Controller.cs" />
+    <Compile Include="Controllers\MarkzoneController.cs" />
+    <Compile Include="Controllers\MissingpointsController.cs" />
+    <Compile Include="Controllers\MultiaxesController.cs" />
+    <Compile Include="Controllers\MultibarController.cs" />
+    <Compile Include="Controllers\MulticylinderController.cs" />
+    <Compile Include="Controllers\MultidepthpieController.cs" />
+    <Compile Include="Controllers\MultihmeterController.cs" />
+    <Compile Include="Controllers\Multiline2Controller.cs" />
+    <Compile Include="Controllers\MultilineController.cs" />
+    <Compile Include="Controllers\MultipieController.cs" />
+    <Compile Include="Controllers\MultiradarController.cs" />
+    <Compile Include="Controllers\MultishapebarController.cs" />
+    <Compile Include="Controllers\MultistackbarController.cs" />
+    <Compile Include="Controllers\MultisymbollineController.cs" />
+    <Compile Include="Controllers\MultivmeterController.cs" />
+    <Compile Include="Controllers\NeonroundmeterController.cs" />
+    <Compile Include="Controllers\OverlapbarController.cs" />
+    <Compile Include="Controllers\ParamcurveController.cs" />
+    <Compile Include="Controllers\ParetoController.cs" />
+    <Compile Include="Controllers\PatternareaController.cs" />
+    <Compile Include="Controllers\PercentareaController.cs" />
+    <Compile Include="Controllers\PercentbarController.cs" />
+    <Compile Include="Controllers\PieshadingController.cs" />
+    <Compile Include="Controllers\PiestubController.cs" />
+    <Compile Include="Controllers\PolarareaController.cs" />
+    <Compile Include="Controllers\PolarbubbleController.cs" />
+    <Compile Include="Controllers\PolarlineController.cs" />
+    <Compile Include="Controllers\PolarscatterController.cs" />
+    <Compile Include="Controllers\PolarsplineController.cs" />
+    <Compile Include="Controllers\PolarvectorController.cs" />
+    <Compile Include="Controllers\Polarzones2Controller.cs" />
+    <Compile Include="Controllers\PolarzonesController.cs" />
+    <Compile Include="Controllers\PolygonbarController.cs" />
+    <Compile Include="Controllers\PosnegbarController.cs" />
+    <Compile Include="Controllers\PosnegwaterfallController.cs" />
+    <Compile Include="Controllers\PyramidelevationController.cs" />
+    <Compile Include="Controllers\PyramidgapController.cs" />
+    <Compile Include="Controllers\PyramidrotationController.cs" />
+    <Compile Include="Controllers\RealtimedemoController.cs" />
+    <Compile Include="Controllers\RealtimesnapshotController.cs" />
+    <Compile Include="Controllers\RealtimetrackController.cs" />
+    <Compile Include="Controllers\RectangularmeterController.cs" />
+    <Compile Include="Controllers\RoseController.cs" />
+    <Compile Include="Controllers\RotatedareaController.cs" />
+    <Compile Include="Controllers\RotatedlineController.cs" />
+    <Compile Include="Controllers\RotatedpyramidController.cs" />
+    <Compile Include="Controllers\RoundmeterController.cs" />
+    <Compile Include="Controllers\RoundmeterreadoutController.cs" />
+    <Compile Include="Controllers\ScattercontourController.cs" />
+    <Compile Include="Controllers\ScatterController.cs" />
+    <Compile Include="Controllers\ScatterlabelsController.cs" />
+    <Compile Include="Controllers\ScattersurfaceController.cs" />
+    <Compile Include="Controllers\ScattersymbolsController.cs" />
+    <Compile Include="Controllers\ScattertrendController.cs" />
+    <Compile Include="Controllers\SemicirclemeterController.cs" />
+    <Compile Include="Controllers\SemicirclemeterreadoutController.cs" />
+    <Compile Include="Controllers\ShadowpieController.cs" />
+    <Compile Include="Controllers\SidelabelpieController.cs" />
+    <Compile Include="Controllers\SimpleareaController.cs" />
+    <Compile Include="Controllers\Simplebar2Controller.cs" />
+    <Compile Include="Controllers\SimplebarController.cs" />
+    <Compile Include="Controllers\SimplelineController.cs" />
+    <Compile Include="Controllers\SimplepieController.cs" />
+    <Compile Include="Controllers\SimplepyramidController.cs" />
+    <Compile Include="Controllers\SimpleradarController.cs" />
+    <Compile Include="Controllers\SimplezoomscrollController.cs" />
+    <Compile Include="Controllers\SmoothcontourController.cs" />
+    <Compile Include="Controllers\SoftlightbarController.cs" />
+    <Compile Include="Controllers\SoftmultibarController.cs" />
+    <Compile Include="Controllers\SplinelineController.cs" />
+    <Compile Include="Controllers\SquareameterController.cs" />
+    <Compile Include="Controllers\StackedareaController.cs" />
+    <Compile Include="Controllers\StackedbarController.cs" />
+    <Compile Include="Controllers\StackradarController.cs" />
+    <Compile Include="Controllers\StackroseController.cs" />
+    <Compile Include="Controllers\SteplineController.cs" />
+    <Compile Include="Controllers\Surface2Controller.cs" />
+    <Compile Include="Controllers\Surface3Controller.cs" />
+    <Compile Include="Controllers\SurfaceaxisController.cs" />
+    <Compile Include="Controllers\SurfaceController.cs" />
+    <Compile Include="Controllers\SurfacelightingController.cs" />
+    <Compile Include="Controllers\SurfaceperspectiveController.cs" />
+    <Compile Include="Controllers\SurfaceshadingController.cs" />
+    <Compile Include="Controllers\SurfacewireframeController.cs" />
+    <Compile Include="Controllers\Symbolline2Controller.cs" />
+    <Compile Include="Controllers\SymbollineController.cs" />
+    <Compile Include="Controllers\TexturedonutController.cs" />
+    <Compile Include="Controllers\ThreedanglepieController.cs" />
+    <Compile Include="Controllers\ThreedareaController.cs" />
+    <Compile Include="Controllers\ThreedbarController.cs" />
+    <Compile Include="Controllers\Threedbubble2Controller.cs" />
+    <Compile Include="Controllers\Threedbubble3Controller.cs" />
+    <Compile Include="Controllers\ThreedbubbleController.cs" />
+    <Compile Include="Controllers\ThreeddepthpieController.cs" />
+    <Compile Include="Controllers\ThreeddonutController.cs" />
+    <Compile Include="Controllers\ThreeddonutshadingController.cs" />
+    <Compile Include="Controllers\ThreedlineController.cs" />
+    <Compile Include="Controllers\ThreedpieController.cs" />
+    <Compile Include="Controllers\ThreedpieshadingController.cs" />
+    <Compile Include="Controllers\ThreedpyramidController.cs" />
+    <Compile Include="Controllers\Threedscatter2Controller.cs" />
+    <Compile Include="Controllers\ThreedscatteraxisController.cs" />
+    <Compile Include="Controllers\ThreedscatterController.cs" />
+    <Compile Include="Controllers\ThreedscattergroupsController.cs" />
+    <Compile Include="Controllers\ThreedstackareaController.cs" />
+    <Compile Include="Controllers\TicksController.cs" />
+    <Compile Include="Controllers\TrackaxisController.cs" />
+    <Compile Include="Controllers\TrackboxController.cs" />
+    <Compile Include="Controllers\TrackfinanceController.cs" />
+    <Compile Include="Controllers\TracklabelController.cs" />
+    <Compile Include="Controllers\TracklegendController.cs" />
+    <Compile Include="Controllers\TrackvlegendController.cs" />
+    <Compile Include="Controllers\TrendlineController.cs" />
+    <Compile Include="Controllers\UnevenpointsController.cs" />
+    <Compile Include="Controllers\VarwidthbarController.cs" />
+    <Compile Include="Controllers\VbarmeterController.cs" />
+    <Compile Include="Controllers\VbarmeterorientationController.cs" />
+    <Compile Include="Controllers\VectorController.cs" />
+    <Compile Include="Controllers\ViewportcontroldemoController.cs" />
+    <Compile Include="Controllers\VlinearmeterController.cs" />
+    <Compile Include="Controllers\VlinearmeterorientationController.cs" />
+    <Compile Include="Controllers\WaterfallController.cs" />
+    <Compile Include="Controllers\WhitehbarmeterController.cs" />
+    <Compile Include="Controllers\WhitehlinearmeterController.cs" />
+    <Compile Include="Controllers\WhiteroundmeterController.cs" />
+    <Compile Include="Controllers\WhitesemicirclemeterController.cs" />
+    <Compile Include="Controllers\WhitevbarmeterController.cs" />
+    <Compile Include="Controllers\WhitevlinearmeterController.cs" />
+    <Compile Include="Controllers\XylineController.cs" />
+    <Compile Include="Controllers\XystubController.cs" />
+    <Compile Include="Controllers\XyzoomscrollController.cs" />
+    <Compile Include="Controllers\XzonecolorController.cs" />
+    <Compile Include="Controllers\YzonecolorController.cs" />
+    <Compile Include="Controllers\ZoomscrolltrackController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Views\Cdinfo\Index.cshtml" />
+    <Content Include="Views\Crosshair\Index.cshtml" />
+    <Content Include="Views\Customclick\Index.cshtml" />
+    <Content Include="Views\Financedemo\Index.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Index\Indexleft.cshtml" />
+    <Content Include="Views\Index\Indexright.cshtml" />
+    <Content Include="Views\Index\Indextop.cshtml" />
+    <Content Include="Views\Jsclick\Index.cshtml" />
+    <Content Include="Views\Piestub\Index.cshtml" />
+    <Content Include="Views\Realtimedemo\Index.cshtml" />
+    <Content Include="Views\Realtimesnapshot\Index.cshtml" />
+    <Content Include="Views\Realtimetrack\Index.cshtml" />
+    <Content Include="Views\Shared\ChartView.cshtml" />
+    <Content Include="Views\Simplezoomscroll\Index.cshtml" />
+    <Content Include="Views\Trackaxis\Index.cshtml" />
+    <Content Include="Views\Trackbox\Index.cshtml" />
+    <Content Include="Views\Trackfinance\Index.cshtml" />
+    <Content Include="Views\Tracklabel\Index.cshtml" />
+    <Content Include="Views\Tracklegend\Index.cshtml" />
+    <Content Include="Views\Trackvlegend\Index.cshtml" />
+    <Content Include="Views\Viewportcontroldemo\Index.cshtml" />
+    <Content Include="Views\Xystub\Index.cshtml" />
+    <Content Include="Views\Xyzoomscroll\Index.cshtml" />
+    <Content Include="Views\Zoomscrolltrack\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3758</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3729/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

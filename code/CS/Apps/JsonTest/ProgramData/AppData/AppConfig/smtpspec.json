@@ -1,0 +1,10 @@
+﻿[
+  {
+    "CIType": "ConfigSmtpSpec",
+    "CIName": "Default",
+    "SmtpServer": "smtp.gulfportenergy.com",
+    "SmtpPort": "25",
+		"AllowAnonymous": true,
+		"EmailFromAddress": "sbolt@gulfportenergy.com"
+  }
+]

@@ -1,0 +1,23 @@
+﻿<DxMapSet Name="NonOpProduction-Continental" DxDocType="NonOpProduction" OperatorName="Continental">
+  <DxMap Name="FirstMap" DxMapType="RowToRow">
+    <DxFilterSet>
+      <DxFilter FilterMethod="ColumnTypes" ColumnTypes="*,s,dt"/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="StatementStatusID" Src="*,*,*" Dest="*,*,1" IsRequired="True" DataType="Int" Validate="False" NoSrcCell="True" DefaultValue="1"/>
+      <DxMapItem Name="API" Src="*,*,0" Dest="*,*,15" IsRequired="False" DataType="Int" Validate="False"/>
+      <DxMapItem Name="WellName" Src="*,*,1" Dest="*,*,3" IsRequired="True" DataType="Varchar" Validate="True"/>
+      <DxMapItem Name="ProductionDate" Src="*,*,2" Dest="*,*,6" IsRequired="True" DataType="DateTime" Validate="True"/>
+      <DxMapItem Name="Oil" Src="*,*,3" Dest="*,*,9" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Water" Src="*,*,4" Dest="*,*,10" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Gas" Src="*,*,5" Dest="*,*,8" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="GasSales" Src="*,*,6" Dest="*,*,18" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="GasFlared" Src="*,*,7" Dest="*,*,21" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="GasVented" Src="*,*,8" Dest="*,*,22" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="TubingPressure" Src="*,*,9" Dest="*,*,11" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="CasingPressure" Src="*,*,10" Dest="*,*,12" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Downtime" Src="*,*,11" Dest="*,*,7" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Comments" Src="*,*,12" Dest="*,*,23" IsRequired="False" DataType="Varchar" Validate="False"/>    
+    </DxMapItemSet>
+  </DxMap>  
+</DxMapSet>

@@ -1,0 +1,1 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\NameTags\bin\Debug\NameTags.exe.config

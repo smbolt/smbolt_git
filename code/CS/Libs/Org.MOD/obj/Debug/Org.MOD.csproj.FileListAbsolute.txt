@@ -1,0 +1,7 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.MOD\bin\Debug\Org.MOD.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.MOD\bin\Debug\Org.MOD.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.MOD\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.MOD\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.MOD\obj\Debug\Org.MOD.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.MOD\obj\Debug\Org.MOD.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.MOD\obj\Debug\Org.MOD.pdb

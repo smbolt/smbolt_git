@@ -1,0 +1,37 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="EditorTest">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="ConfigItem1" V="ConfigValue1" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+      <UIState>
+        <UIWindowSet>
+          <UIWindow Name="MainForm" TypeName="frmMain" StartPosition="CenterScreen" IsMainForm="True">
+            <WindowLocation IsVisible="True" Location="18,43" Size="1309,688" />
+          </UIWindow>
+          <UIWindow Name="BmsEditor" TypeName="RichTextViewer" IsActive="False" WindowTitle="BMS Editor" StartPosition="Manual" IsDockable="False" WindowType="ToolWindow">
+            <WindowLocation IsVisible="True" Location="2009,68" Size="857,797" />
+          </UIWindow>
+          <UIWindow Name="ControlPanel" TypeName="ControlPanel" WindowTitle="Editor Control Panel" StartPosition="Manual" IsDockable="False" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="1414,35" Size="1537,436" />
+          </UIWindow>
+          <UIWindow Name="Editor1" TypeName="EditorPanel" WindowTitle="Editor1" StartPosition="Manual" WindowType="ToolWindow">
+            <WindowLocation IsDocked="True" Location="93,49" Size="1179,672" />
+          </UIWindow>
+        </UIWindowSet>
+      </UIState>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

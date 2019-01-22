@@ -1,0 +1,11 @@
+﻿----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0----+----1----+----2----+----3----+----4----+----5----+---
+0000001Organization One              1123 First Street                       Suite 1                                 Oklahoma City                 OK73139    
+0000002Organization Two              1123 Second Street                      Suite 2                                 Oklahoma City                 OK73139    
+0000003Organization Three            1123 Third Street                       Suite 3                                 Oklahoma City                 OK73139    
+0000004Organization Four             1123 Fourth Street                      Suite 4                                 Oklahoma City                 OK73139    
+0000005Organization Five             1123 Fifth Street                       Suite 5                                 Oklahoma City                 OK73139    
+0000006Organization Six              1123 Sixth Street                       Suite 6                                 Oklahoma City                 OK73139    
+0000007Organization Seven            1123 Seventh Street                     Suite 7                                 Oklahoma City                 OK73139    
+0000008Organization Eight            1123 Eighth Street                      Suite 8                                 Oklahoma City                 OK73139    
+0000009Organization Nine             1123 Ninth Street                       Suite 9                                 Oklahoma City                 OK73139    
+0000010Organization Ten              1123 Tenth Street                       Suite 10                                Oklahoma City                 OK73139    

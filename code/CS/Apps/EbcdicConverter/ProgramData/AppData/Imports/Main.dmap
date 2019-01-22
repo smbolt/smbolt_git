@@ -1,0 +1,28 @@
+﻿<DMapSet Name="Set1">
+  <DMap Name="Map1">
+    <DOSet>      
+      <DO Name="OrgEbcdic" Encoding="EBCDIC" RecFm="Fixed">
+        <DOSet>
+          <DO Name="ORG-ID" Pic="9(7) Comp-3" />
+          <DO Name="ORG-NAME" Pic="X(30)" />
+          <DO Name="ORG-ADDR1" Pic="X(40)" />
+          <DO Name="ORG-ADDR2" Pic="X(40)" />
+          <DO Name="ORG-CITY" Pic="X(30)" />
+          <DO Name="ORG-STATE-CD" Pic="X(2)" />
+          <DO Name="ORG-ZIP" Pic="X(9)" />
+        </DOSet>
+      </DO>      
+      <DO Name="OrgAscii" Enc="ASCII" RecFm="FixedLines">
+        <DOSet Delim="" Quoted="False">
+          <DO Name="OrgID" Pic="9(7)"/>
+          <DO Name="OrgName" Pic="X(30)" />
+          <DO Name="OrgAddr1" Pic="X(40)" />
+          <DO Name="OrgAddr2" Pic="X(40)" />
+          <DO Name="OrgCity" Pic="X(30)" />
+          <DO Name="OrgStateCode" Pic="X(2)" />
+          <DO Name="OrgZip" Pic="X(9)" />
+        </DOSet>
+      </DO>      
+    </DOSet>    
+  </DMap>
+</DMapSet>

@@ -1,0 +1,99 @@
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Box with Floating Legend</title>
+    @Scripts.Render("~/Scripts/cdjcv.js")
+</head>
+<body style="margin:5px 0px 0px 5px">
+<script type="text/javascript">
+
+//
+// Use the window load event to set up the MouseMovePlotArea event handler
+//
+JsChartViewer.addEventListener(window, 'load', function() {
+    var viewer = JsChartViewer.get('@ViewBag.Viewer.ID');
+
+    // Draw track cursor when mouse is moving over plotarea. Hide it when mouse leaves plot area.
+    viewer.attachHandler(["MouseMovePlotArea", "TouchStartPlotArea", "TouchMovePlotArea", "ChartMove"],
+    function(e) {
+        this.preventDefault(e);   // Prevent the browser from using touch events for other actions
+        trackBoxLegend(viewer, viewer.getPlotAreaMouseX(), viewer.getPlotAreaMouseY());
+        viewer.setAutoHide("all", ["MouseOutPlotArea", "TouchEndPlotArea"]);
+    });
+});
+
+//
+// Draw track box with legend
+//
+function trackBoxLegend(viewer, mouseX, mouseY)
+{
+    // Remove all previously drawn tracking object
+    viewer.hideObj("all");
+
+    // The chart and its plot area
+    var c = viewer.getChart();
+    var plotArea = c.getPlotArea();
+
+    // Get the data x-value that is nearest to the mouse
+    var xValue = c.getNearestXValue(mouseX);
+
+    // Compute the position of the box. This example assumes a label based x-axis, in which the labeling spacing
+    // is one x-axis unit. So the left and right sides of the box is 0.5 unit from the central x-value.
+    var boxLeft = Math.min(c.getXCoor(xValue - 0.5), c.getXCoor(xValue + 0.5));
+    var boxWidth = Math.max(0, Math.abs(c.getXCoor(xValue + 0.5) - c.getXCoor(xValue - 0.5)) - 1);
+    var boxTop = plotArea.getTopY();
+    var boxHeight = Math.max(0, plotArea.getHeight() - 2);
+
+    // Draw the track box
+    viewer.showTextBox("trackBox", boxLeft, boxTop, JsChartViewer.TopLeft, "",
+        "width:" + boxWidth + "px;height:" + boxHeight + "px;border:solid 1px black;");
+
+    // Array to hold the legend entries
+    var legendEntries = [];
+
+    // Iterate through all layers to build the legend array
+    for (var i = 0; i < c.getLayerCount(); ++i)
+    {
+        var layer = c.getLayerByZ(i);
+
+        // The data array index of the x-value
+        var xIndex = layer.getXIndexOf(xValue);
+
+        // Iterate through all the data sets in the layer
+        for (var j = 0; j < layer.getDataSetCount(); ++j)
+        {
+            var dataSet = layer.getDataSetByZ(j);
+
+            // Build the legend entry, consist of a colored square box, the name and the data value.
+            var dataColor = dataSet.getDataColor();
+            var dataValue = dataSet.getValue(xIndex);
+            if ((dataValue != null) && (dataColor != null))
+            {
+                legendEntries.push("<nobr>" + viewer.htmlRect(7, 7, dataColor) + " " +
+                    dataSet.getDataName() + ": " + dataValue.toPrecision(4) + "</nobr> ");
+            }
+        }
+    }
+
+    // Create the legend by joining the legend entries
+    if (legendEntries.length > 0)
+    {
+        var legend = "<u>" + c.xAxis().getFormattedLabel(xValue) + "</u><br />" + legendEntries.reverse().join("<br />");
+
+        // Display the legend at the bottom-right side of the mouse cursor
+        viewer.showTextBox("legend", mouseX + 16, mouseY + 16, JsChartViewer.TopLeft, legend,
+            "border:solid 1px black;background:#ffffcc;padding:3px;font:bold 11px Arial;-webkit-text-size-adjust:100%;");
+    }
+}
+
+</script>
+<div style="font-size:18pt; font-family:verdana; font-weight:bold">
+    Track Box with Floating Legend
+</div>
+<hr style="border:solid 1px #000080" />
+<!-- ****** Here is the chart viewer ****** -->
+@Html.Raw(ViewBag.Viewer.RenderHTML())
+</body>
+</html>

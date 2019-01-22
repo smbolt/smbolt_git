@@ -1,0 +1,5 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SoftwareUpdates\obj\Debug\Org.SoftwareUpdates.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SoftwareUpdates\obj\Debug\Org.SoftwareUpdates.frmUpdateError.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SoftwareUpdates\obj\Debug\Org.SoftwareUpdates.frmUpdateManager.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SoftwareUpdates\obj\Debug\Org.SoftwareUpdates.Resource1.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SoftwareUpdates\obj\Debug\Org.SoftwareUpdates.csproj.GenerateResource.Cache

@@ -1,0 +1,9 @@
+
+
+1.  Get away from binary serialization and use ADSDI xml serialization.
+
+2.  Get the file locations in the right place.
+
+3.  Use ADSDI.GS (configuration, logging, etc.)
+    
+    

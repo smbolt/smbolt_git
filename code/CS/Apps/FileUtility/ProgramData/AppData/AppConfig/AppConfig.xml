@@ -1,0 +1,44 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="FileUtility">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="DefaultSearchPath" V="K:\Projects\Utica - Point Pleasant Shale\Locations" />
+          <CI K="DefaultSearchFilter" V="" />
+          <CI K="DefaultFileLimit" V="10000" />
+          <CI K="ReportFileName" V="FileReport.txt" />
+          <CI K="LogPathTooLongExceptions" V="True" />
+          <CI K="WireUpMainFormEvent" V="False" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Continuous" />
+          <CI K="LogFileSizeManagementMethod" V="TotalBytes" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="2000000" />
+          <CI K="LogFileSizeTrim" V="1500000" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="SearchPaths">
+          <LI V="K:\Projects\Utica - Point Pleasant Shale\Locations" />
+          <LI V="C:\DEV-MAIN\Main" />
+          <LI V="C:\DEV-MAIN\Main\Apps" />
+          <LI V="C:\DEV-MAIN\Main\Libs" />
+          <LI V="C:\DevProjects\Main\GitRepos\Org\Source" />
+          <LI V="C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps" />
+          <LI V="C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs" />
+          <LI V="C:\DevProjects\Main\GitRepos\Org\Source" />
+        </ConfigList>
+        <ConfigList Name="SearchFilters">
+          <LI V="" />
+          <LI V="cs" />
+          <LI V="xml" />
+          <LI V="js" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

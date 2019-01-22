@@ -1,0 +1,32 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="SvcManager">
+      <CISet>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="85" />
+          <CI K="MainFormVerticalSize" V="85" />
+        </CIGroup>
+        <CIGroup Name="TaskProdConfigDbSpec">
+          <CI K="TaskProdDbServer" V="OKC1EDW0001" />
+          <CI K="TaskProdDbName" V="TaskScheduling" />
+          <CI K="TaskProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TaskTestConfigDbSpec">
+          <CI K="TaskTestDbServer" V="OKC1EDW2001" />
+          <CI K="TaskTestDbName" V="TaskScheduling" />
+          <CI K="TaskTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

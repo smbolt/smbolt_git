@@ -1,0 +1,58 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="RPTest">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$ORGDEV$" V="C:\DevProjects\Main\GitRepos\Org\Source" />
+          <CI K="$GPDEV$" V="C:\DEV-MAIN\Main" />
+          <CI K="$DEVPATH$" V="" />
+          <CI K="$DBPREFIX$" V="Dev" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="None" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="SoftwareUpdatesOptions" >
+          <CI K="SoftwareDbSpecPrefix" V="OrgSoftware" />          
+        </CIGroup>
+        <CIGroup Name="OrgSoftwareConfigDbSpec">
+          <CI K="OrgSoftwareDbServer" V="107.161.158.19,36501" />
+          <CI K="OrgSoftwareDbDsn" V="" />
+          <CI K="OrgSoftwareDbName" V="Software" />
+          <CI K="OrgSoftwareDbUserId" V="sa" />
+          <CI K="OrgSoftwareDbPassword" V="wrnCu8Kyw6/DrsOqw6DDn8K8wq3CvMK3" />
+          <CI K="OrgSoftwareDbPasswordEncoded" V="True" />
+          <CI K="OrgSoftwareDbType" V="SqlServer" />
+          <CI K="OrgSoftwareDbUseWindowsAuth" V="False" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="RequestProcessors">
+          <LI V="GetFrameworkVersions_1.0.0.0" />
+          <LI V="CheckForUpdates_1.0.0.0" />
+          <LI V="DownloadSoftware_1.0.0.0" />
+          <LI V="Ping_1.0.0.0" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+      <FSActionSet>
+        <FSActionGroup Name="Copy_SoftwareTasks" Src="$DEVPATH$\Libs\Org.SoftwareTasks\bin\Debug" Dst="$MEFCATALOG$\SoftwareTasks">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite">
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+      </FSActionSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

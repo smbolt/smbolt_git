@@ -1,0 +1,5 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\ApiClient\ApiClient\obj\Debug\ApiClient.csprojAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\ApiClient\ApiClient\obj\Debug\ApiClient.frmMain.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\ApiClient\ApiClient\obj\Debug\ApiClient.Properties.Resources.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\ApiClient\ApiClient\obj\Debug\ApiClient.csproj.GenerateResource.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\ApiClient\ApiClient\obj\Debug\ApiClient.csproj.CoreCompileInputs.cache

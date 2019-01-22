@@ -1,0 +1,358 @@
+﻿********************************************************************************
+* BMS MAP FOR PDF EDIT                                                         *
+*                                                                              *
+********************************************************************************
+*---+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8
+         PRINT NOGEN
+*----------------------------------------------------------------------*
+PDF2     DFHMSD TYPE=&SYSPARM,                                         X
+               LANG=COBOL,                                             X
+               MODE=INOUT,                                             X
+               TERM=3270-2,                                            X
+               CTRL=FREEKB,                                            X
+               STORAGE=AUTO,                                           X
+               TIOAPFX=YES
+*----------------------------------------------------------------------*
+PDFEDIT  DFHMDI SIZE=(24,80),                                          X
+               LINE=1,                                                 X
+               COLUMN=1
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,1),                                             X
+               LENGTH=4,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~Menu'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,7),                                             X
+               LENGTH=7,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~RefList'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,16),                                            X
+               LENGTH=7,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='R~efMode'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,25),                                            X
+               LENGTH=9,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~Utilities'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,36),                                            X
+               LENGTH=11,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~Workstation'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(1,49),                                            X
+               LENGTH=4,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='~Help'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(2,1),                                             X
+               LENGTH=80,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               FILL='-'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(3,1),                                             X
+               LENGTH=4,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=TURQUOISE,                                        X
+               INITIAL='EDIT'
+*----------------------------------------------------------------------*
+FILENM   DFHMDF POS=(3,11),                                            X
+               LENGTH=47,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(3,62),                                            X
+               LENGTH=7,                                               X
+               HFLEX=(F),                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Columns'
+*----------------------------------------------------------------------*
+COLFROM  DFHMDF POS=(3,70),                                            X
+               LENGTH=5,                                               X
+               HFLEX=(F),                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=TURQUOISE,                                        X
+               INITIAL='00001'
+*----------------------------------------------------------------------*
+COLTO    DFHMDF POS=(3,76),                                            X
+               LENGTH=5,                                               X
+               HFLEX=(F),                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=TURQUOISE,                                        X
+               INITIAL='00072'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(4,1),                                             X
+               LENGTH=12,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Command ===>'
+*----------------------------------------------------------------------*
+COMMAND  DFHMDF POS=(4,14),                                            X
+               LENGTH=46,                                              X
+               ATTRB=(UND),                                            X
+               COLOR=TURQUOISE
+*----------------------------------------------------------------------*
+         DFHMDF POS=(4,65),                                            X
+               LENGTH=11,                                              X
+               HFLEX=(F),                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=GREEN,                                            X
+               INITIAL='Scroll ===>'
+*----------------------------------------------------------------------*
+SCROLL   DFHMDF POS=(4,77),                                            X
+               LENGTH=4,                                               X
+               HFLEX=(F),                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=TURQUOISE,                                        X
+               INITIAL='HALF'
+*----------------------------------------------------------------------*
+@LC0           DFHMDF POS=(5,1),                                       X
+               LENGTH=6,                                               X
+               VFLEX=(O),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL0           DFHMDF POS=(5,8),                                       X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               VFLEX=(O),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN,                                            X
+               SKIPTO=BOTTOMLINE
+*----------------------------------------------------------------------*
+@LC1           DFHMDF POS=(6,1),                                       X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL1           DFHMDF POS=(6,8),                                       X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC2           DFHMDF POS=(7,1),                                       X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL2           DFHMDF POS=(7,8),                                       X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC3           DFHMDF POS=(8,1),                                       X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL3           DFHMDF POS=(8,8),                                       X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC4           DFHMDF POS=(9,1),                                       X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL4           DFHMDF POS=(9,8),                                       X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC5           DFHMDF POS=(10,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL5           DFHMDF POS=(10,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC6           DFHMDF POS=(11,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL6           DFHMDF POS=(11,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC7           DFHMDF POS=(12,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL7           DFHMDF POS=(12,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC8           DFHMDF POS=(13,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL8           DFHMDF POS=(13,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC9           DFHMDF POS=(14,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL9           DFHMDF POS=(14,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC10          DFHMDF POS=(15,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL10          DFHMDF POS=(15,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC11          DFHMDF POS=(16,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL11          DFHMDF POS=(16,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC12          DFHMDF POS=(17,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL12          DFHMDF POS=(17,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC13          DFHMDF POS=(18,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL13          DFHMDF POS=(18,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC14          DFHMDF POS=(19,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL14          DFHMDF POS=(19,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC15          DFHMDF POS=(20,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL15          DFHMDF POS=(20,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC16          DFHMDF POS=(21,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL16          DFHMDF POS=(21,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC17          DFHMDF POS=(22,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL17          DFHMDF POS=(22,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@LC18          DFHMDF POS=(23,1),                                      X
+               LENGTH=6,                                               X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN
+*----------------------------------------------------------------------*
+@TL18          DFHMDF POS=(23,8),                                      X
+               LENGTH=73,                                              X
+               HFLEX=(S),                                              X
+               ATTRB=(NORM),                                           X
+               COLOR=GREEN 
+*----------------------------------------------------------------------*
+BOTTOMLINE     DFHMDF POS=(24,1),                                      X
+               LENGTH=8,                                               X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='F4=Setup'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(24,11),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='F5=MyFiles'
+*----------------------------------------------------------------------*
+         DFHMDF POS=(24,23),                                           X
+               LENGTH=10,                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='F12=Cancel'
+*----------------------------------------------------------------------*
+#MODE    DFHMDF POS=(24,61),                                           X
+               LENGTH=20,                                              X
+               HFLEX=(F),                                              X
+               ATTRB=(PROT),                                           X
+               COLOR=BLUE,                                             X
+               INITIAL='                   i'
+*----------------------------------------------------------------------*
+         END
+*----------------------------------------------------------------------*

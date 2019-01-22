@@ -1,0 +1,72 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="LibTester">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="InputFileXml" V="\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\MWStmt-MonthlyAnalysis\MonthlyAnalysis-ExcelExtractResponse.txt" />
+          <CI K="InputFilePath" V="\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\MWStmt-MonthlyAnalysis\ReadyToProcess" />
+          <CI K="ErrorFilePath" V="\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\MWStmt-MonthlyAnalysis\FilesWithErrors" />
+          <CI K="ProcessedFilePath" V="\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\MWStmt-MonthlyAnalysis\Processed" />
+          <CI K="LogConfigDbSpec" V="Log" />
+        </CIGroup>
+        <CIGroup Name="TestStmtsConfigDbSpec">
+          <CI K="TestStmtsDbServer" V="OKC1EDW2001" />
+          <CI K="TestStmtsDbName" V="GPStatement" />
+          <CI K="TestStmtsDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TestConfigDbSpec">
+          <CI K="TestDbServer" V="OKC1EDW2001" />
+          <CI K="TestDbName" V="TaskScheduling" />
+          <CI K="TestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="ProdConfigDbSpec">
+          <CI K="ProdDbServer" V="OKC1EDW0001" />
+          <CI K="ProdDbName" V="TaskScheduling" />
+          <CI K="ProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TestMainSvcConfigWsSpec">
+          <CI K="TestMainSvcWsBinding" V="BasicHttp" />
+          <CI K="TestMainSvcWsHost" V="10.3.14.30" />
+          <CI K="TestMainSvcWsPort" V="32001" />
+          <CI K="TestMainSvcWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="Database" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="LogConfigDbSpec">
+          <CI K="LogDbServer" V="OKC1EDW2001" />
+          <CI K="LogDbDsn" V="" />
+          <CI K="LogDbName" V="Logging" />
+          <CI K="LogDbUserId" V="" />
+          <CI K="LogDbPassword" V="" />
+          <CI K="LogDbType" V="SqlServer" />
+          <CI K="LogDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TasksConfigDbSpec">
+          <CI K="TasksDbServer" V="OKC1EDW2001" />
+          <CI K="TasksDbName" V="TaskScheduling" />
+          <CI K="TasksDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="TestList1">
+          <LI V="TestValue1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="TestDictionary1">
+          <DI K="TestKey1" V="TestValue1" />
+          <DI K="TestKey2" V="TestValue2" />
+          <DI K="TestKey3" V="TestValue3" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

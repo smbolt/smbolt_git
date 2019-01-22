@@ -1,0 +1,63 @@
+<ExtractSpecSet>
+  <ExtractSpec Name="EnableMidstreamDryGas-A" RecogSpecName="EnableMidstreamDryGas" Desc="Enable Midstream Dry Gas Statement (A)">
+    <Tsd Name="ReportUnit" Iterate="True" IsReportUnit="True" BreakOnLine="0" >
+      <Cmd Code="SetTextStart(Gas Volume Statement)" />
+      <Cmd Code="SetTextEnd(Meter Statement)" />
+      <TsdSet>
+        <Tsd Name="Header">
+          <Cmd Code="SetTextStart()" />
+          <Cmd Code="SetTextEnd(Temp Gravity CO2 C1 C2 C3 IC4 NC4 IC5)" />
+          <Cmd Code="SetRowIndex(0)" />
+          <Cmd Code="ExtractLiteralToken(Statement.RecordType,Statement)" />
+          <Cmd Code="LocateToken([bol] [MMMM] [YYYY],beg)" />
+          <Cmd Code="ExtractNextTokens([date]Statement.ProductionDate.MM/DD/YYYY,2)" />
+          <Cmd Code="ExtractFromPeerCell([date]Statement.AccountingDate.MM/DD/YYYY,Statement.ProductionDate,hf=addMonth[1])" />
+          <Cmd Code="LocateToken([bol] Meter:)" />
+          <Cmd Code="ExtractToken(Statement.MeterNumber)" />
+          <Cmd Code="LocateToken([bol] Meter Name:)" />
+          <Cmd Code="ExtractTextBefore(Statement.MeterName,[eol])" />
+          <Cmd Code="LocateToken([bol] Location:)" />
+          <Cmd Code="SetTextPosition(next,1,line,before)" />
+          <Cmd Code="ExtractToken(Statement.County.StripCommas)" />
+          <Cmd Code="ExtractToken(Statement.State)" />
+        </Tsd>
+        <Tsd Name="GridTotals">
+          <Cmd Code="SetTextStart([bol] Totals,beg)" />
+          <Cmd Code="SetTextEnd(If you should have any questions,beg)" />
+          <Cmd Code="LocateToken([bol] Totals)" />
+          <Cmd Code="SetTextPosition(next,1,line,before)" />
+          <Cmd Code="ExtractToken(Statement.GrossWellheadMCF)" />
+          <Cmd Code="ExtractToken(Statement.GrossWellheadMMBTU)" />
+        </Tsd>
+      </TsdSet>
+    </Tsd>
+  </ExtractSpec>
+</ExtractSpecSet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

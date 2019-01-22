@@ -1,0 +1,21 @@
+﻿<DxMapSet Name="NonOpProduction-Newfield" DxDocType="NonOpProduction" OperatorName="Newfield">
+  <DxMap Name="FirstMap" DxMapType="RowToRow">
+    <DxFilterSet>
+      <DxFilter FilterMethod="ColumnTypes" ColumnTypes="*,*,*,*,dt"/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="StatementStatusID" Src="*,*,*" Dest="*,*,1" IsRequired="True" DataType="Int" Validate="False" NoSrcCell="True" DefaultValue="1"/>
+      <DxMapItem Name="OperatorWellID" Src="*,*,3" Dest="*,*,2" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="WellName" Src="*,*,2" Dest="*,*,3" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="Operator" Src="*,*,0" Dest="*,*,4" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="API" Src="*,*,3" Dest="*,*,15" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="ProductionDate" Src="*,*,4" Dest="*,*,6" IsRequired="True" DataType="DateTime" Validate="True"/>
+      <DxMapItem Name="Gas" Src="*,*,9" Dest="*,*,8" IsRequired="False" DataType="Float" Validate="False" DefaultValue="0"/>
+      <DxMapItem Name="Oil" Src="*,*,10" Dest="*,*,9" IsRequired="False" DataType="Float" Validate="False" DefaultValue="0"/>
+      <DxMapItem Name="Water" Src="*,*,11" Dest="*,*,10" IsRequired="False" DataType="Float" Validate="False" DefaultValue="0"/>
+      <DxMapItem Name="TubingPressure" Src="*,*,6" Dest="*,*,11" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="CasingPressure" Src="*,*,7" Dest="*,*,12" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Choke" Src="*,*,5" Dest="*,*,13" IsRequired="False" DataType="Float" Validate="False"/>
+    </DxMapItemSet>
+  </DxMap>
+</DxMapSet>

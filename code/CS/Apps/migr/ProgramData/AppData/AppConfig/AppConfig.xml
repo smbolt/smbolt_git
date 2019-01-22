@@ -1,0 +1,53 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="migr">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="@CommandLine" V="Profiles.STAGE-WinServiceHost -dr"  />
+          <CI K="CommandLine" V="Profiles.STAGE-WinServiceHost -w"  />
+          <CI K="ProfilesPath" V="C:\DEV-MAIN\Migr\Profiles" />
+          <CI K="InDiagnosticsMode" V="True" />
+          <CI K="LogToMemory" V="True" />
+          <CI K="~Deserialize_DebugBreak" V="OpsControlSet" />
+          <CI K="~Serialize_DebugBreak" V="UIState" />
+          <CI K="IsDryRun" V="False" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Daily" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+      </CISet>
+      <COSet>
+        <CO K="Test">
+          <AxProfileSet>
+            <AxProfile Name="BUILD-LoeForecaster">
+              <Axion Name="ClearAppFolder" AxionType="DeleteFiles" Tgt="$BUILD-STEM$\$APP-NAME$\Application Folder" />
+              <VariableSet>
+                <Variable K="APP-NAME" V="Loe Forecaster" />
+                <Variable K="HOST" V="localhost" />
+              </VariableSet>
+            </AxProfile>
+            <VariableSet>
+              <Variable K="DEV-STEM" V="C:\DEV-MAIN\Main" />
+              <Variable K="BUILD-STEM" V="C:\DEV-MAIN\Build\InstallerProjects" />
+              <Variable K="MIGR-STEM" V="\\gulfport.net\data\Public (All Companies)\Data Management\Migration" />
+              <Variable K="APPS" V="Apps" />
+              <Variable K="LIBS" V="Libs" />
+            </VariableSet>
+          </AxProfileSet>
+        </CO>
+      </COSet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="Value1" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

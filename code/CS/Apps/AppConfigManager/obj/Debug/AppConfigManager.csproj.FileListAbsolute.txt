@@ -1,0 +1,15 @@
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\bin\Debug\Org.AppConfigManager.exe.config
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\bin\Debug\Org.AppConfigManager.exe
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\bin\Debug\Org.AppConfigManager.pdb
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\bin\Debug\FastColoredTextBox.dll
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\bin\Debug\Org.GS.dll
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\bin\Debug\Org.GS.pdb
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\bin\Debug\FastColoredTextBox.xml
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\obj\Debug\AppConfigManager.csprojAssemblyReference.cache
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\obj\Debug\Org.AppConfigManager.frmMain.resources
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\obj\Debug\Org.AppConfigManager.Properties.Resources.resources
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\obj\Debug\AppConfigManager.csproj.GenerateResource.cache
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\obj\Debug\AppConfigManager.csproj.CoreCompileInputs.cache
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\obj\Debug\AppConfigManager.csproj.CopyComplete
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\obj\Debug\Org.AppConfigManager.exe
+C:\DEV-MAIN\FEAT-IM-50008\Apps\AppConfigManager\obj\Debug\Org.AppConfigManager.pdb

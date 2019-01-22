@@ -1,0 +1,79 @@
+﻿<AxProfileSet>
+  <VariableSet>
+    <Variable K="DEV-STEM" V="C:\DEV-MAIN\Main" />
+    <Variable K="BUILD-STEM" V="C:\DEV-MAIN\Build\InstallerProjects" />
+    <Variable K="MIGR-STEM" V="\\gulfport.net\data\Public (All Companies)\Data Management\Migration" />
+    <Variable K="APPS" V="Apps" />
+    <Variable K="LIBS" V="Libs" />
+  </VariableSet>
+
+  <AxProfile Name="STAGE-Task" >
+    <VariableSet>
+      <Variable K="PROJECT" V="Org.ShareFile.Tasks" />
+      <Variable K="MEFCAT-FOLDER" V="ShareFileTasks" />
+      <Variable K="VERSION" V="1.0.0.0" />
+    </VariableSet>
+
+    <Axion Name="CopyToMigrateFolder" AxionType="CopyFiles" IsActive="True" Src="$DEV-STEM$\$LIBS$\$PROJECT$\bin\Debug" Tgt="$MIGR-STEM$\MEFCatalog\$MEFCAT-FOLDER$\$VERSION$" >
+      <IncludedFileSet>
+        <FileSpec Name="*" />
+      </IncludedFileSet>
+      <ExcludedFileSet>
+        <FileSpec Name="*.vshost.*" />
+        <FileSpec Name="*.config" />
+      </ExcludedFileSet>
+    </Axion>
+  </AxProfile>
+             
+  <AxProfile Name="LOCAL-JunkFiles">
+    
+    <Axion Name="ClearJunkFolder" AxionType="DeleteFiles" IsActive="False" Tgt="C:\Nathan\migr\Download" >
+      <IncludedFileSet>
+        <FileSpec Name="*.sql" />
+      </IncludedFileSet>
+    </Axion>
+    
+    <Axion Name="MoveJunkFiles" AxionType="MoveFiles" IsActive="False" Src="C:\Nathan\migr\Download" Tgt="C:\Nathan\migr\Moved" >
+      <IncludedFileSet>
+        <FileSpec Name="*" />
+      </IncludedFileSet>
+    </Axion>
+    
+    <Axion Name="CopyJunkFiles" AxionType="CopyFiles" IsActive="False" Src="C:\Nathan\migr\Download" Tgt="C:\Nathan\migr\Moved" >
+      <IncludedFileSet>
+        <FileSpec Name="*" />
+      </IncludedFileSet>
+    </Axion>
+    
+  </AxProfile>
+
+  <AxProfile Name="BUILD-LoeForecaster">
+    <VariableSet>
+      <Variable K="APP-NAME" V="Loe Forecaster" />
+      <Variable K="HOST" V="localhost" />
+    </VariableSet>
+
+    <Axion Name="ClearAppFolder" AxionType="DeleteFiles" IsActive="True" Tgt="$BUILD-STEM$\$APP-NAME$\Application Folder" />
+
+  </AxProfile>
+
+  <AxProfile Name="STAGE-MainSvc">
+    <VariableSet>
+      <Variable K="APP-NAME" V="MainSvc.svc" />
+      <Variable K="SERVICE-NAME" V="SNMP Trap" />
+      <Variable K="HOST" V="localhost" />
+    </VariableSet>
+
+    <Axion Name="StopMainSvc" AxionType="StopWebSite" IsActive="False" Tgt="$HOST$.$SERVICE-NAME$" />
+
+    <Axion Name="StartMainSvc" AxionType="StartWebSite" IsActive="False" Tgt="$HOST$.$SERVICE-NAME$" />
+
+    <Axion Name="ValidateMainSvc" AxionType="VerifyWebSite" IsActive="False" Tgt="http,localhost,32001" />
+
+    <Axion Name="StopWinSvc" AxionType="StopWinService" IsActive="False" Tgt="$HOST$.$SERVICE-NAME$" />
+
+    <Axion Name="StartWinSvc" AxionType="StartWinService" IsActive="False" Tgt="$HOST$.$SERVICE-NAME$" />
+
+  </AxProfile>
+
+</AxProfileSet>

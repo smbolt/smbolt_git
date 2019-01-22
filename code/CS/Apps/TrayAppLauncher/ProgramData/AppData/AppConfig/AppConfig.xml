@@ -1,0 +1,24 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="TrayAppLauncher">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="$BRANCH$" V="FEAT-SB-50007" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="LaunchMenuItems">
+          <DI K="OpsManager" V="C:\DEV-MAIN\$BRANCH$\Apps\OpsManager\bin\Debug\OpsManager.exe" />
+          <DI K="StmtManager" V="C:\DEV-MAIN\$BRANCH$\Apps\StmtManager\bin\Debug\StmtManager.exe" />
+          <DI K="SvcManager" V="C:\DEV-MAIN\$BRANCH$\Apps\SvcManager\bin\Debug\Org.SvcManager.exe" />
+          <DI K="DxWorkbookTester" V="C:\DEV-MAIN\$BRANCH$\Apps\DxWorkbookTester\bin\Debug\DxWorkbookTester.exe" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

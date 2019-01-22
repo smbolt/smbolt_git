@@ -1,0 +1,280 @@
+<ExtractSpecSet>
+  <ExtractSpec Name="DCPSuperplantMidstreamPop-A" RecogSpecName="DCPSuperplantMidstreamPop" Desc="DCP Superplant Midstream POP Statement">
+    <Tsd Name="ReportUnit" Iterate="True" IsReportUnit="True" >
+      <Cmd Code="SetTextStart(percent of proceeds statement,beg)" />
+      <Cmd Code="SetTextEnd(Totals CONTRACT:)" />
+      <TsdSet>
+        <Tsd Name="Header">
+          <Cmd Code="SetTextStart()" />
+          <Cmd Code="SetTextEnd(Wellhead Information Component Settlement [eol],beg)" />
+          <Cmd Code="SetRowIndex(0)" />
+          <Cmd Code="ExtractLiteralToken(Statement.RecordType,Statement)" />
+          <Cmd Code="LocateToken(LP [eol])" />
+          <Cmd Code="ExtractNextToken(Statement.MeterNumber)" /> 
+          <Cmd Code="ExtractNextToken(Statement.PaymentID)" />
+          <Cmd Code="ExtractTextBefore(Statement.MeterName,SOK SUPERPLANT)" />
+          <Cmd Code="SetVariable([bool]FoundCHI0579000,find,OK CHI0579000)" />
+          <Cmd Code="ExtractTextBefore(Statement.FacilityName,OK CHI0579000,cond=FoundCHI0579000)" />
+          <Cmd Code="SetVariable([bool]FoundSOK0003000,find,OK SOK0003000)" />
+          <Cmd Code="ExtractTextBefore(Statement.FacilityName,OK SOK0003000,cond=FoundSOK0003000)" />
+          <Cmd Code="ExtractNextToken(Statement.State)" />
+          <Cmd Code="ExtractNextToken(Statement.ContractNumber)" />
+          <Cmd Code="ExtractTextBefore(Statement.OperatorName,[eol])" />
+          <Cmd Code="ExtractNextToken([dec]Statement.PressureBase)" />
+          <Cmd Code="ExtractNextTokens([date]Statement.ProductionDate.MM/DD/YYYY,2, end)" />
+          <Cmd Code="ExtractNextToken(DISCARD)" />
+          <Cmd Code="LocateToken(Production Date: [eol])" />
+          <Cmd Code="ExtractNextTokens([date]Statement.StatementDate.MM/DD/YYYY,3, end)" />
+          <Cmd Code="LocateToken(Value Value Adjustments Value Value [eol])" />
+          <Cmd Code="LocateToken(Value [eol])" />
+          <Cmd Code="ExtractNextTokens([date]Statement.AccountingDate.MM/DD/YYYY,2, end)" />
+          <Cmd Code="LocateToken(Accounting Date: Rate per MCF: [eol])" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,13)" />
+          <Cmd Code="ExtractStoredToken([int]Statement.ContractPartyNumber,0,remove)" />
+          <Cmd Code="RemoveStoredTokens(1)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.LiquidValue,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.ResidueValue,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.FeesAndAdjustments,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.GrossValue,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.ExemptValue,0,remove)" />
+          <Cmd Code="RemoveStoredTokens(5)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.NetValue,0,remove)" />
+        </Tsd>
+        <Tsd Name="WellHead">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(Residue Settlement [eol],beg)" />
+          <Cmd Code="SetRowIndex(0)" />
+          <Cmd Code="LocateToken(Gross WH :)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.GrossWellheadMCF)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.GrossWellheadMMBTU)" />
+          <Cmd Code="LocateToken(Allocation Decimal:)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.AllocationDecimal)" />
+          <Cmd Code="LocateToken(Paystation:)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.WHPaystationMCF)" />
+          <Cmd Code="ExtractTextBefore([decn]Statement.WHPaystationMMBTU,[eol],default=0)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.ResidueContractPercent)" />
+          <Cmd Code="LocateToken([bol] ETHANE)" />
+          <Cmd Code="TokenizeNextLine(7)" />
+          <Cmd Code="SetRowIndex(1)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Ethane)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.TheoreticalGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.FixedRecoveries,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.AllocatedGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.ShrinkMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.SettlementGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidPrice,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidValue,0,remove)" />
+          <Cmd Code="ExtractFromPeerCell([decn]Product.ContractPercent,Statement.ResidueContractPercent)" />
+          <Cmd Code="SetVariable([bool]GasLiftDeductionPresent,find,Gas Lift Deduction)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,5,cond=GasLiftDeductionPresent)" />
+          <Cmd Code="RemoveStoredTokens(3,cond=GasLiftDeductionPresent)" />
+          <Cmd Code="ExtractStoredToken(DISCARD,0,remove,cond=GasLiftDeductionPresent)" />
+          <Cmd Code="ExtractStoredToken(DISCARD,0,remove,cond=GasLiftDeductionPresent)" />
+          <Cmd Code="SetRowIndex(2)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Propane)" />
+          <Cmd Code="ExtractNextToken([decn]Product.ContractPercent)" />
+          <Cmd Code="LocateToken([bol] PROPANE)" />
+          <Cmd Code="TokenizeNextLine(6)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.TheoreticalGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.AllocatedGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.ShrinkMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.SettlementGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidPrice,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidValue,0,remove)" />
+          <Cmd Code="ExtractNextToken([decn]Product.FixedRecoveries)" />
+          <Cmd Code="SetRowIndex(3)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,IsoButane)" />
+          <Cmd Code="ExtractNextToken([decn]Product.ContractPercent)" />
+          <Cmd Code="SetVariable([bool]ContractualFieldPresent,find,Contractual Field)" />
+          <Cmd Code="LocateToken(Contractual Field,cond=ContractualFieldPresent)" />
+          <Cmd Code="SetRowIndex(0,cond=ContractualFieldPresent)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.WHGSystemLossMCF,cond=ContractualFieldPresent)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.WHGSystemLossMMBTU,cond=ContractualFieldPresent)" />
+          <Cmd Code="SetRowIndex(3)" />
+          <Cmd Code="LocateToken(ISO-BUTANE)" />
+          <Cmd Code="TokenizeNextLine(7)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.TheoreticalGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.FixedRecoveries,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.AllocatedGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.ShrinkMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.SettlementGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidPrice,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidValue,0,remove)" />
+          <Cmd Code="LocateToken(Deducts,cond=ContractualFieldPresent)" />
+          <Cmd Code="SetRowIndex(4)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Butane)" />
+          <Cmd Code="ExtractNextToken([decn]Product.ContractPercent)" />
+          <Cmd Code="LocateToken(NORMAL BUTANE)" />
+          <Cmd Code="TokenizeNextLine(7)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.TheoreticalGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.FixedRecoveries,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.AllocatedGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.ShrinkMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.SettlementGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidPrice,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidValue,0,remove)" />
+          <Cmd Code="SetRowIndex(0)" />
+          <Cmd Code="LocateToken(Net Delivered:)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.WHNetDeliveredMCF)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.WHNetDeliveredMMBTU)" />
+          <Cmd Code="SetRowIndex(5)" />
+          <Cmd Code="ExtractLiteralToken(Product.RecordType,Product)" />
+          <Cmd Code="ExtractLiteralToken(Product.ProductType,Pentanes Plus)" />
+          <Cmd Code="TokenizeNextLine(advanceToEol,6)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.AllocatedGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.ShrinkMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.ContractPercent,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.SettlementGallons,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidPrice,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Product.LiquidValue,0,remove)" />
+          <Cmd Code="LocateToken(PENTANES PLUS)" />
+          <Cmd Code="ExtractNextToken([decn]Product.TheoreticalGallons)" />
+          <Cmd Code="ExtractNextToken([decn]Product.FixedRecoveries)" />
+          <Cmd Code="SetRowIndex(0)" />
+          <Cmd Code="ExtractNextToken(DISCARD)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.WellheadBTU,math=*1000)" />
+          <Cmd Code="LocateToken(Wellhead BTU)" />
+          <Cmd Code="ExtractNextToken([decn]Statement.WHCompressibilityFactor)" />
+        </Tsd>
+        <Tsd Name="Residue">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(Fees / Adjustments Fee Rate Value Components Mol % GPM [eol],beg)" />
+          <Cmd Code="LocateToken(Shrink Price [eol])" />
+          <Cmd Code="SetVariable([bool]ElevenColumn,find,MMBTU Residue Residue Returned MCF MMBTU Residue Value)" />
+          <Cmd Code="LocateToken(Residue Value [eol])" />
+          <Cmd Code="TokenizeNextLine(advanceToEol)" />
+          <Cmd Code="SetRowIndex(0)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.ResidueNetDeliveredMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.ResidueShrinkMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.TheoreticalResidueMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.AllocatedResidueMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.ResidueReturnedMMBTU,0,remove,cond=ElevenColumn)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.NetResidueMCF,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.NetResidueMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken(DISCARD,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.SettlementResidueMMBTU,0,remove)" />
+          <Cmd Code="ExtractStoredToken([decn]Statement.ResiduePrice,0,remove)" />          
+        </Tsd>
+        <Tsd Name="FeesGasAnalysis1">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd(Plant Product Volumes [eol],beg)" />
+          <Cmd Code="SetRowIndex(6)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Helium)" />
+          <Cmd Code="LocateToken(Components Mol % GPM [eol])" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="SetRowIndex(7)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Nitrogen)" />
+          <Cmd Code="LocateToken(Nitrogen [eol])" />
+          <Cmd Code="ExtractPriorTokenOfType([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="SetRowIndex(8)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Carbon Dioxide)" />
+          <Cmd Code="LocateToken(Carbon Dioxide)" />
+          <Cmd Code="ExtractPriorTokenOfType([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="SetRowIndex(9)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Hydrogen Sulfide)" />
+          <Cmd Code="LocateToken(H2S [eol])" />
+          <Cmd Code="ExtractPriorTokenOfType([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="SetRowIndex(10)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Other Inerts)" />
+          <Cmd Code="LocateToken(Other Inerts)" />
+          <Cmd Code="ExtractPriorTokenOfType([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="SetRowIndex(11)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Methane)" />
+          <Cmd Code="LocateToken(Methane)" />
+          <Cmd Code="ExtractPriorTokenOfType([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="SetRowIndex(12)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Ethane)" />
+          <Cmd Code="LocateToken(Methane)" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentLiquidContent)" />
+        </Tsd>
+        <Tsd Name="FeesGasAnalysis2">
+          <Cmd Code="SetTextStart($priorEnd)" />
+          <Cmd Code="SetTextEnd()" />
+          <Cmd Code="SetRowIndex(13)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Propane)" />
+          <Cmd Code="LocateToken(Plant Product Volumes [eol])" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentLiquidContent)" />
+          <Cmd Code="SetRowIndex(14)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,IsoButane)" />
+          <Cmd Code="LocateToken(Propane [eol])" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentLiquidContent)" />          
+          
+          <Cmd Code="SetRowIndex(0)" />
+          <Cmd Code="LocateToken(Iso Butane [eol])" />
+          <Cmd Code="ExtractNextToken([decn]Statement.ResiduePlantBTU)" />
+          
+          <Cmd Code="SetRowIndex(15)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Butane)" />
+          <Cmd Code="LocateToken(Plant BTU [eol])" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentLiquidContent)" />
+          
+          <Cmd Code="SetRowIndex(16)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,IsoPentane)" />
+          <Cmd Code="LocateToken(Nor Butane [eol])" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentLiquidContent)" />
+          
+          <Cmd Code="SetRowIndex(17)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Pentane)" />
+          <Cmd Code="LocateToken(Iso Pentane [eol])" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentLiquidContent)" />
+          <Cmd Code="SetRowIndex(18)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.RecordType,GasAnalysis)" />
+          <Cmd Code="ExtractLiteralToken(GasAnalysis.ProductType,Hexanes Plus)" />
+          <Cmd Code="LocateToken(Nor Pentane GENERAL: [eol])" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentMolePercent)" />
+          <Cmd Code="ExtractNextToken([decn]GasAnalysis.ComponentLiquidContent)" />
+        </Tsd>
+      </TsdSet>
+    </Tsd>
+  </ExtractSpec>
+</ExtractSpecSet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

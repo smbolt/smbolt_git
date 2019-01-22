@@ -1,0 +1,132 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="MEFTest">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$!FSSTEM-PARM$" V="\\gulfport.local\data\Gulfport\Data Management\AppIntegration" />
+          <CI K="$FSSTEM-PARM$" V="\\gulfport.local\data\Gulfport\Applications\Data_Integration" />
+          <CI K="$ENV-PARM$" V="Test" />
+          <CI K="$TASKNODE-PARM$" V="MarkWestStatements-DryGas" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="IsDryRun" V="False" />
+          <CI K="InputFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Ready" />
+          <CI K="ProcessedFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Processed" />
+          <CI K="ErrorFilePath" V="$FSSTEM$\$ENV$\$TASKNODE$\Error" />
+          <CI K="~ModulesPath" V="C:\DEV-MAIN\Main\Libs\Gulfport.Colorado.Tasks\bin\Debug" />
+          <CI K="#ModulesPath" V="C:\DEV-MAIN\Main\Libs\Gulfport.FieldVisor.Tasks\bin\Debug" />
+          <CI K="ModulesPath" V="C:\DEV-MAIN\Main\Libs\Org.Ops.Tasks\bin\Debug" />
+          <CI K="ExcelExtractWcfTimeoutSeconds" V="180" />
+          <CI K="LogConfigDbSpec" V="Log" />
+          <CI K="Interval" V="5" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="Database" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="NotSet" />
+          <CI K="LogFileSizeManagementMethod" V="NotManagedByThisApp" />
+          <CI K="LogFileSizeManagementAgent" V="None" />
+          <CI K="LogFileAgeMaxDays" V="0" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+        <CIGroup Name="LogConfigDbSpec">
+          <CI K="LogDbServer" V="OKC1EDW2001" />
+          <CI K="LogDbDsn" V="" />
+          <CI K="LogDbName" V="Logging" />
+          <CI K="LogDbUserId" V="" />
+          <CI K="LogDbPassword" V="" />
+          <CI K="LogDbType" V="SqlServer" />
+          <CI K="LogDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="MWStatementOptions">
+          <CI K="ProductionCutoffDay" V="25" />
+          <CI K="LastProductionDateProcessed" V="2016/02/01" />
+        </CIGroup>
+        <CIGroup Name="EMK3DataImportOptions">
+          <CI K="StatementIDs" V="2,3" />
+          <CI K="SellerID" V="321" />
+          <CI K="ProductType" V="2" />
+          <CI K="ModuleType" V="10" />
+          <CI K="ComponentCategory" V="10" />
+          <CI K="ImportUserName" V="GPImport" />
+          <CI K="ProcessingNote" V="MarkWest Statement Data Import" />
+          <CI K="ProductionDate" V="6/01/2016" />
+        </CIGroup>
+        <CIGroup Name="MWStmtConfigDbSpec">
+          <CI K="MWStmtDbServer" V="OKC1EDW0001" />
+          <CI K="MWStmtDbName" V="GPStatement" />
+          <CI K="MWStmtDbType" V="SqlServer" />
+          <CI K="MWStmtDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="EMK3TestConfigDbSpec">
+          <CI K="EMK3TestDbServer" V="OKC1SQL0002" />
+          <CI K="EMK3TestDbName" V="EMK3EntEd" />
+          <CI K="EMK3TestDbType" V="SqlServer" />
+          <CI K="EMK3TestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="NonOpConfigDbSpec">
+          <CI K="NonOpDbServer" V="OKC1SQL1001" />
+          <CI K="NonOpDbName" V="GPIntegration" />
+          <CI K="NonOpDbType" V="SqlServer" />
+          <CI K="NonOpDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="GPMasterTestConfigDbSpec">
+          <CI K="GPMasterTestDbServer" V="OKC1EDW2001" />
+          <CI K="GPMasterTestDbName" V="GPMaster" />
+          <CI K="GPMasterTestDbType" V="SqlServer" />
+          <CI K="GPMasterTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="MainSvcLocalConfigWsSpec">
+          <CI K="MainSvcLocalWsBinding" V="BasicHttp" />
+          <CI K="MainSvcLocalWsHost" V="localhost" />
+          <CI K="MainSvcLocalWsPort" V="32001" />
+          <CI K="MainSvcLocalWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="MainSvcTestConfigWsSpec">
+          <CI K="MainSvcTestWsBinding" V="BasicHttp" />
+          <CI K="MainSvcTestWsHost" V="OKC1WEB1001" />
+          <CI K="MainSvcTestWsPort" V="32301" />
+          <CI K="MainSvcTestWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="MainSvcProdConfigWsSpec">
+          <CI K="MainSvcProdWsBinding" V="BasicHttp" />
+          <CI K="MainSvcProdWsHost" V="OKC1WEB0001" />
+          <CI K="MainSvcProdWsPort" V="36301" />
+          <CI K="MainSvcProdWsServiceName" V="MainSvc.svc" />
+        </CIGroup>
+        <CIGroup Name="TasksConfigDbSpec">
+          <CI K="TasksDbServer" V="OKC1EDW2001" />
+          <CI K="TasksDbName" V="TaskScheduling" />
+          <CI K="TasksDbType" V="SqlServer" />
+          <CI K="TasksDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="TaskInfoDictionary">
+          <DI K="LEGEND" V="[TaskProcessorName]|[TaskProcessorVersion]|[TaskNodeFolder]|[StatementType]|[InputDbSpec]|[OutputDbSpec]" />
+          <DI K="OpsDiagnostics" V="OpsDiagnostics|1.0.0.0||||" />
+          <DI K="OpsMaintenance" V="OpsMaintenance|1.0.0.0||||" />
+          <DI K="TaskMonitor" V="TaskMonitor|1.0.0.0||||" />
+          <DI K="TaskScheduler" V="TaskScheduler|1.0.0.0||||" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="EnvironmentDictionary">
+          <DI K="Production" V="Prod" />
+          <DI K="Test" V="Test" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="DbForEnv">
+          <DI K="MWStmtTest" V="OKC1EDW2001" />
+          <DI K="MWStmtProd" V="OKC1EDW0001" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="HourlyMonitoredTasks">
+          <DI K="DailyDownloadLaScadaFiles" V="8" />
+          <DI K="MonthlyMWDryGasStmt" V="120" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="LastNotificationSent">
+          <DI K="DailyDownloadLaScadaFiles" V="2016-10-08" />
+          <DI K="MonthlyMWDryGasStmt" V="2016-11-08" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

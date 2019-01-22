@@ -1,0 +1,101 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDomainWorkbench", "AppDomainWorkbench.csproj", "{BB581CBD-3687-4E19-914C-D4F2D1DAD9E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05709C0A-59F6-447C-8879-588FAD203F30} = {05709C0A-59F6-447C-8879-588FAD203F30}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{F427F2A9-6602-471F-B6B5-21377BD02878}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - AppDomainPlugins", "05 - AppDomainPlugins", "{D4060841-7A91-41DB-B785-89594B840A15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{437E26C7-1E8C-4C08-8D0C-61479F026002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A727935F-0812-43D6-BD42-E88CDB85BF11}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 - Nuget", "99 - Nuget", "{2220DE71-99CE-4708-BF30-B3E68FF30853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.PlugIn", "..\..\Libs\Org.PlugIn\Org.PlugIn.csproj", "{05709C0A-59F6-447C-8879-588FAD203F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TP", "..\..\Libs\Org.TP\Org.TP.csproj", "{859B20F5-1182-4480-8CE5-F3A794A488B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB581CBD-3687-4E19-914C-D4F2D1DAD9E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB581CBD-3687-4E19-914C-D4F2D1DAD9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB581CBD-3687-4E19-914C-D4F2D1DAD9E9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BB581CBD-3687-4E19-914C-D4F2D1DAD9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB581CBD-3687-4E19-914C-D4F2D1DAD9E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB581CBD-3687-4E19-914C-D4F2D1DAD9E9}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{05709C0A-59F6-447C-8879-588FAD203F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05709C0A-59F6-447C-8879-588FAD203F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05709C0A-59F6-447C-8879-588FAD203F30}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{05709C0A-59F6-447C-8879-588FAD203F30}.Debug|x86.Build.0 = Debug|Any CPU
+		{05709C0A-59F6-447C-8879-588FAD203F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05709C0A-59F6-447C-8879-588FAD203F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05709C0A-59F6-447C-8879-588FAD203F30}.Release|x86.ActiveCfg = Release|Any CPU
+		{05709C0A-59F6-447C-8879-588FAD203F30}.Release|x86.Build.0 = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|x86.Build.0 = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|x86.ActiveCfg = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB581CBD-3687-4E19-914C-D4F2D1DAD9E9} = {F427F2A9-6602-471F-B6B5-21377BD02878}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {437E26C7-1E8C-4C08-8D0C-61479F026002}
+		{A727935F-0812-43D6-BD42-E88CDB85BF11} = {2220DE71-99CE-4708-BF30-B3E68FF30853}
+		{05709C0A-59F6-447C-8879-588FAD203F30} = {D4060841-7A91-41DB-B785-89594B840A15}
+		{859B20F5-1182-4480-8CE5-F3A794A488B6} = {437E26C7-1E8C-4C08-8D0C-61479F026002}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA273AFE-5249-489F-96D6-3DD82B75A0D7}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = AppDomainWorkbench.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com/defaultcollection
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\Libs\\Org.TP\\Org.TP.csproj
+		SccProjectTopLevelParentUniqueName1 = AppDomainWorkbench.sln
+		SccProjectName1 = ../../Libs/Org.TP
+		SccAuxPath1 = https://gulfportenergy.visualstudio.com/defaultcollection
+		SccLocalPath1 = ..\\..\\Libs\\Org.TP
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

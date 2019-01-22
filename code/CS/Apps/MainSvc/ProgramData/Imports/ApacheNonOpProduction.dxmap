@@ -1,0 +1,24 @@
+﻿<DxMapSet Name="NonOpProduction-Apache" DxDocType="NonOpProduction" OperatorName="Apache">
+  <DxMap Name="FirstMap" DxMapType="RowToRow">
+    <DxFilterSet>
+      <DxFilter FilterMethod="ColumnTypes" ColumnTypes="*,*,*,dt"/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="StatementStatusID" Src="*,*,*" Dest="*,*,1" IsRequired="True" DataType="Int" Validate="False" NoSrcCell="True" DefaultValue="1"/>
+      <DxMapItem Name="OperatorWellID" Src="*,*,9" Dest="*,*,2" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="WellName" Src="*,*,4" Dest="*,*,3" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name ="Operator" Src="*,*,0" Dest ="*,*,4" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name ="FieldName" Src="*,*,5" Dest ="*,*,5" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name ="ProductionDate" Src="*,*,3" Dest ="*,*,6" IsRequired="False" DataType="DateTime" Validate="False"/>
+      <DxMapItem Name="Gas" Src="*,*,22" Dest="*,*,8" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Oil" Src="*,*,14" Dest="*,*,9" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Water" Src="*,*,18" Dest="*,*,10" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="API" Src="*,*,8" Dest="*,*,15" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="OilSales" Src="*,*,15" Dest="*,*,17" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="GasSales" Src="*,*,23" Dest="*,*,18" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="DaysOn" Src="*,*,31" Dest="*,*,19" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="GasFlared" Src="*,*,27" Dest="*,*,20" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="GasVented" Src="*,*,26" Dest="*,*,21" IsRequired="False" DataType="Float" Validate="False"/>
+    </DxMapItemSet>
+  </DxMap>
+</DxMapSet>

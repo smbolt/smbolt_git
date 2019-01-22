@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1C4B7AF-BB3B-4192-A7C0-A35509217B94}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>VBNETWin.ChartExplorer</StartupObject>
+    <RootNamespace>VBNETWin</RootNamespace>
+    <AssemblyName>VBNETWin</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>VBNETWin.xml</DocumentationFile>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>VBNETWin.xml</DocumentationFile>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="netchartdir">
+      <Name>netchartdir</Name>
+      <HintPath>..\bin\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="anglepie.vb" />
+    <Compile Include="angularpointer.vb" />
+    <Compile Include="angularpointer2.vb" />
+    <Compile Include="arealine.vb" />
+    <Compile Include="axisscale.vb" />
+    <Compile Include="background.vb" />
+    <Compile Include="barlabel.vb" />
+    <Compile Include="binaryseries.vb" />
+    <Compile Include="blackhbarmeter.vb" />
+    <Compile Include="blackhlinearmeter.vb" />
+    <Compile Include="blackroundmeter.vb" />
+    <Compile Include="blacksemicirclemeter.vb" />
+    <Compile Include="blackvbarmeter.vb" />
+    <Compile Include="blackvlinearmeter.vb" />
+    <Compile Include="boxwhisker.vb" />
+    <Compile Include="boxwhisker2.vb" />
+    <Compile Include="bubble.vb" />
+    <Compile Include="bubblescale.vb" />
+    <Compile Include="builtinsymbols.vb" />
+    <Compile Include="candlestick.vb" />
+    <Compile Include="ChartExplorer.Designer.vb">
+      <DependentUpon>ChartExplorer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChartExplorer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="circlelabelpie.vb" />
+    <Compile Include="colorbar.vb" />
+    <Compile Include="colorbar2.vb" />
+    <Compile Include="colorgantt.vb" />
+    <Compile Include="colorhbarmeter.vb" />
+    <Compile Include="colorhlinearmeter.vb" />
+    <Compile Include="colorroundmeter.vb" />
+    <Compile Include="colorsemicirclemeter.vb" />
+    <Compile Include="colorvbarmeter.vb" />
+    <Compile Include="colorvlinearmeter.vb" />
+    <Compile Include="compactline.vb" />
+    <Compile Include="concentric.vb" />
+    <Compile Include="cone.vb" />
+    <Compile Include="confidenceband.vb" />
+    <Compile Include="contour.vb" />
+    <Compile Include="contourcolor.vb" />
+    <Compile Include="contourinterpolate.vb" />
+    <Compile Include="contourlegend.vb" />
+    <Compile Include="frmviewportcontroldemo.Designer.vb">
+      <DependentUpon>frmviewportcontroldemo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmviewportcontroldemo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmrealtimezoomscroll.Designer.vb">
+      <DependentUpon>frmrealtimezoomscroll.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmrealtimezoomscroll.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crosshair.vb" />
+    <Compile Include="curvefitting.vb" />
+    <Compile Include="customsymbolline.vb" />
+    <Compile Include="cylinderbar.vb" />
+    <Compile Include="cylinderlightbar.vb" />
+    <Compile Include="datatable.vb" />
+    <Compile Include="datatable2.vb" />
+    <Compile Include="DemoModule.vb" />
+    <Compile Include="deptharea.vb" />
+    <Compile Include="depthbar.vb" />
+    <Compile Include="donut.vb" />
+    <Compile Include="donutshading.vb" />
+    <Compile Include="donutwidth.vb" />
+    <Compile Include="dualhbar.vb" />
+    <Compile Include="dualxaxis.vb" />
+    <Compile Include="dualyaxis.vb" />
+    <Compile Include="enhancedarea.vb" />
+    <Compile Include="errline.vb" />
+    <Compile Include="explodedpie.vb" />
+    <Compile Include="finance.vb" />
+    <Compile Include="finance2.vb" />
+    <Compile Include="financedemo.vb" />
+    <Compile Include="financesymbols.vb" />
+    <Compile Include="floatingbox.vb" />
+    <Compile Include="fontpie.vb" />
+    <Compile Include="fontxy.vb" />
+    <Compile Include="fourq.vb" />
+    <Compile Include="frmcrosshair.Designer.vb">
+      <DependentUpon>frmcrosshair.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmcrosshair.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmfinancedemo.Designer.vb">
+      <DependentUpon>frmfinancedemo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmfinancedemo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmrealtimedemo.Designer.vb">
+      <DependentUpon>frmrealtimedemo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmrealtimedemo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmrealtimetrack.Designer.vb">
+      <DependentUpon>frmrealtimetrack.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmrealtimetrack.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsimplezoomscroll.Designer.vb">
+      <DependentUpon>frmsimplezoomscroll.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmsimplezoomscroll.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmtrackaxis.Designer.vb">
+      <DependentUpon>frmtrackaxis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmtrackaxis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmtrackbox.Designer.vb">
+      <DependentUpon>frmtrackbox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmtrackbox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmtrackfinance.Designer.vb">
+      <DependentUpon>frmtrackfinance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmtrackfinance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmtracklabel.Designer.vb">
+      <DependentUpon>frmtracklabel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmtracklabel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmtracklegend.Designer.vb">
+      <DependentUpon>frmtracklegend.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmtracklegend.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmxyzoomscroll.Designer.vb">
+      <DependentUpon>frmxyzoomscroll.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmxyzoomscroll.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmzoomscrolltrack.Designer.vb">
+      <DependentUpon>frmzoomscrolltrack.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmzoomscrolltrack.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmzoomscrolltrack2.Designer.vb">
+      <DependentUpon>frmzoomscrolltrack2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmzoomscrolltrack2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="funnel.vb" />
+    <Compile Include="gantt.vb" />
+    <Compile Include="gapbar.vb" />
+    <Compile Include="glasslightbar.vb" />
+    <Compile Include="glassmultibar.vb" />
+    <Compile Include="gradientbar.vb" />
+    <Compile Include="gradientmultibar.vb" />
+    <Compile Include="hbar.vb" />
+    <Compile Include="hbarmeter.vb" />
+    <Compile Include="hbarmeterorientation.vb" />
+    <Compile Include="hboxwhisker.vb" />
+    <Compile Include="histogram.vb" />
+    <Compile Include="hlinearmeter.vb" />
+    <Compile Include="hlinearmeterorientation.vb" />
+    <Compile Include="hloc.vb" />
+    <Compile Include="iconameter.vb" />
+    <Compile Include="icondonut.vb" />
+    <Compile Include="iconpie.vb" />
+    <Compile Include="iconpie2.vb" />
+    <Compile Include="layergantt.vb" />
+    <Compile Include="legendpie.vb" />
+    <Compile Include="legendpie2.vb" />
+    <Compile Include="linearzonemeter.vb" />
+    <Compile Include="linecompare.vb" />
+    <Compile Include="linefill.vb" />
+    <Compile Include="logaxis.vb" />
+    <Compile Include="markbar.vb" />
+    <Compile Include="markzone.vb" />
+    <Compile Include="markzone2.vb" />
+    <Compile Include="missingpoints.vb" />
+    <Compile Include="multiaxes.vb" />
+    <Compile Include="multibar.vb" />
+    <Compile Include="multicylinder.vb" />
+    <Compile Include="multidepthpie.vb" />
+    <Compile Include="multihmeter.vb" />
+    <Compile Include="multiline.vb" />
+    <Compile Include="multiline2.vb" />
+    <Compile Include="multipie.vb" />
+    <Compile Include="multiradar.vb" />
+    <Compile Include="multishapebar.vb" />
+    <Compile Include="multistackbar.vb" />
+    <Compile Include="multisymbolline.vb" />
+    <Compile Include="multivmeter.vb" />
+    <Compile Include="neonroundmeter.vb" />
+    <Compile Include="overlapbar.vb" />
+    <Compile Include="paramcurve.vb" />
+    <Compile Include="ParamViewer.Designer.vb">
+      <DependentUpon>ParamViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ParamViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pareto.vb" />
+    <Compile Include="patternarea.vb" />
+    <Compile Include="percentarea.vb" />
+    <Compile Include="percentbar.vb" />
+    <Compile Include="pieshading.vb" />
+    <Compile Include="polararea.vb" />
+    <Compile Include="polarbubble.vb" />
+    <Compile Include="polarline.vb" />
+    <Compile Include="polarscatter.vb" />
+    <Compile Include="polarspline.vb" />
+    <Compile Include="polarvector.vb" />
+    <Compile Include="polarzones.vb" />
+    <Compile Include="polarzones2.vb" />
+    <Compile Include="polygonbar.vb" />
+    <Compile Include="posnegbar.vb" />
+    <Compile Include="posnegwaterfall.vb" />
+    <Compile Include="pyramidelevation.vb" />
+    <Compile Include="pyramidgap.vb" />
+    <Compile Include="pyramidrotation.vb" />
+    <Compile Include="realtimedemo.vb" />
+    <Compile Include="realtimetrack.vb" />
+    <Compile Include="realtimezoomscroll.vb" />
+    <Compile Include="rectangularmeter.vb" />
+    <Compile Include="rose.vb" />
+    <Compile Include="rotatedarea.vb" />
+    <Compile Include="rotatedline.vb" />
+    <Compile Include="rotatedpyramid.vb" />
+    <Compile Include="roundmeter.vb" />
+    <Compile Include="roundmeterreadout.vb" />
+    <Compile Include="scatter.vb" />
+    <Compile Include="scattercontour.vb" />
+    <Compile Include="scatterlabels.vb" />
+    <Compile Include="scattersurface.vb" />
+    <Compile Include="scattersymbols.vb" />
+    <Compile Include="scattertrend.vb" />
+    <Compile Include="semicirclemeter.vb" />
+    <Compile Include="semicirclemeterreadout.vb" />
+    <Compile Include="shadowpie.vb" />
+    <Compile Include="sidelabelpie.vb" />
+    <Compile Include="simplearea.vb" />
+    <Compile Include="simplebar.vb" />
+    <Compile Include="simplebar2.vb" />
+    <Compile Include="simpleline.vb" />
+    <Compile Include="simplepie.vb" />
+    <Compile Include="simplepyramid.vb" />
+    <Compile Include="simpleradar.vb" />
+    <Compile Include="simplezoomscroll.vb" />
+    <Compile Include="smoothcontour.vb" />
+    <Compile Include="softlightbar.vb" />
+    <Compile Include="softmultibar.vb" />
+    <Compile Include="splineline.vb" />
+    <Compile Include="squareameter.vb" />
+    <Compile Include="stackedarea.vb" />
+    <Compile Include="stackedbar.vb" />
+    <Compile Include="stackradar.vb" />
+    <Compile Include="stackrose.vb" />
+    <Compile Include="stepline.vb" />
+    <Compile Include="surface.vb" />
+    <Compile Include="surface2.vb" />
+    <Compile Include="surface3.vb" />
+    <Compile Include="surfaceaxis.vb" />
+    <Compile Include="surfacelighting.vb" />
+    <Compile Include="surfaceperspective.vb" />
+    <Compile Include="surfaceshading.vb" />
+    <Compile Include="surfacewireframe.vb" />
+    <Compile Include="symbolline.vb" />
+    <Compile Include="symbolline2.vb" />
+    <Compile Include="texturedonut.vb" />
+    <Compile Include="threedanglepie.vb" />
+    <Compile Include="threedarea.vb" />
+    <Compile Include="threedbar.vb" />
+    <Compile Include="threedbubble.vb" />
+    <Compile Include="threedbubble2.vb" />
+    <Compile Include="threedbubble3.vb" />
+    <Compile Include="threeddepthpie.vb" />
+    <Compile Include="threeddonut.vb" />
+    <Compile Include="threeddonutshading.vb" />
+    <Compile Include="threedline.vb" />
+    <Compile Include="threedpie.vb" />
+    <Compile Include="threedpieshading.vb" />
+    <Compile Include="threedpyramid.vb" />
+    <Compile Include="threedscatter.vb" />
+    <Compile Include="threedscatter2.vb" />
+    <Compile Include="threedscatteraxis.vb" />
+    <Compile Include="threedscattergroups.vb" />
+    <Compile Include="threedstackarea.vb" />
+    <Compile Include="ticks.vb" />
+    <Compile Include="trackaxis.vb" />
+    <Compile Include="trackbox.vb" />
+    <Compile Include="trackfinance.vb" />
+    <Compile Include="tracklabel.vb" />
+    <Compile Include="tracklegend.vb" />
+    <Compile Include="trendline.vb" />
+    <Compile Include="unevenpoints.vb" />
+    <Compile Include="varwidthbar.vb" />
+    <Compile Include="vbarmeter.vb" />
+    <Compile Include="vbarmeterorientation.vb" />
+    <Compile Include="vector.vb" />
+    <Compile Include="viewportcontroldemo.vb" />
+    <Compile Include="vlinearmeter.vb" />
+    <Compile Include="vlinearmeterorientation.vb" />
+    <Compile Include="waterfall.vb" />
+    <Compile Include="whitehbarmeter.vb" />
+    <Compile Include="whitehlinearmeter.vb" />
+    <Compile Include="whiteroundmeter.vb" />
+    <Compile Include="whitesemicirclemeter.vb" />
+    <Compile Include="whitevbarmeter.vb" />
+    <Compile Include="whitevlinearmeter.vb" />
+    <Compile Include="xyline.vb" />
+    <Compile Include="xyzoomscroll.vb" />
+    <Compile Include="xzonecolor.vb" />
+    <Compile Include="yzonecolor.vb" />
+    <Compile Include="zoomscrolltrack.vb" />
+    <Compile Include="zoomscrolltrack2.vb" />
+    <EmbeddedResource Include="ChartExplorer.resx">
+      <DependentUpon>ChartExplorer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmviewportcontroldemo.resx">
+      <DependentUpon>frmviewportcontroldemo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmrealtimezoomscroll.resx">
+      <DependentUpon>frmrealtimezoomscroll.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmcrosshair.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmcrosshair.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmfinancedemo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmfinancedemo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmrealtimedemo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmrealtimedemo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmrealtimetrack.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmrealtimetrack.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsimplezoomscroll.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmsimplezoomscroll.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmtrackaxis.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmtrackaxis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmtrackbox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmtrackbox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmtrackfinance.resx">
+      <DependentUpon>frmtrackfinance.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmtracklabel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmtracklabel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmtracklegend.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmtracklegend.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmxyzoomscroll.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmxyzoomscroll.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmzoomscrolltrack.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmzoomscrolltrack.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmzoomscrolltrack2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmzoomscrolltrack2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParamViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ParamViewer.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="angry.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="clock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cloud.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="computer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="doc.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gas.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="laugh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="marble.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="marble2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="marble3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="molecule.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="nocomment.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rain.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="robot5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="service.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="small_computer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="small_molecule.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="small_user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="smile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="snow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="snowy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="software.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="star.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sun.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tile.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wood.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+</Project>

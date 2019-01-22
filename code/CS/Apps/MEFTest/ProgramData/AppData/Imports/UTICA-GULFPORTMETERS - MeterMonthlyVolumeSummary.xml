@@ -1,0 +1,645 @@
+﻿<ExcelExtractResponse FilePath="\\gulfport.local\data\Gulfport\Data Management\AppIntegration\Test\MarkWestPrelimStatements\ReadyToProcess\UTICA-GULFPORTMETERS - MeterMonthlyVolumeSummary.xls">
+  <DxWorksheet WorksheetName="Sheet1" LastUsedRowIndex="125" LastUsedColumnIndex="30">
+    <DxCellArray Columns="30" Rows="125">
+      <DxCell R="2" C="2" Types="FFFFT" RawValue="Meter Monthly Summary" />
+      <DxCell R="3" C="21" Types="FFFFT" RawValue="MARKWEST ENERGY PARTNERS, LP" />
+      <DxCell R="4" C="2" Types="FFFFT" RawValue="February 01, 2016 - March 01, 2016" />
+      <DxCell R="7" C="2" Types="FFFFT" RawValue="List: UTICA-GULFPORT" />
+      <DxCell R="9" C="2" Types="FFFFT" RawValue=" " />
+      <DxCell R="11" C="2" Types="FFFFT" RawValue=" " />
+      <DxCell R="13" C="0" Types="FFFFT" RawValue="Re" />
+      <DxCell R="13" C="2" Types="FFFFT" RawValue="&#xA;Number" />
+      <DxCell R="13" C="3" Types="FFFFT" RawValue="&#xA;Name" />
+      <DxCell R="13" C="7" Types="FFFFT" RawValue="Avg DP&#xA;or Pulses" />
+      <DxCell R="13" C="12" Types="FFFFT" RawValue="Static Pressure" />
+      <DxCell R="13" C="14" Types="FFFFT" RawValue="Gas&#xA;Temp" />
+      <DxCell R="13" C="16" Types="FFFFT" RawValue="Avg &#xA;Gravity" />
+      <DxCell R="13" C="19" Types="FFFFT" RawValue="Flow&#xA;Hours" />
+      <DxCell R="13" C="20" Types="FFFFT" RawValue="&#xA;Volume" />
+      <DxCell R="13" C="23" Types="FFFFT" RawValue="Avg Daily&#xA;Volume" />
+      <DxCell R="13" C="25" Types="FFFFT" RawValue="Heating&#xA;Value" />
+      <DxCell R="13" C="26" Types="FFFFT" RawValue="&#xA;Energy" />
+      <DxCell R="13" C="28" Types="FFFFT" RawValue="Avg Daily&#xA;Energy" />
+      <DxCell R="16" C="2" Types="FFFFT" RawValue="February, 2016" />
+      <DxCell R="18" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="18" C="2" Types="FFFFT" RawValue="020-0001" />
+      <DxCell R="18" C="3" Types="FFFFT" RawValue="WAGNER PAD" />
+      <DxCell R="18" C="7" Types="FFFTF" RawValue="21.1489564703129" />
+      <DxCell R="18" C="12" Types="FFFTF" RawValue="148.003232884035" />
+      <DxCell R="18" C="14" Types="FFFTF" RawValue="67.0939254218814" />
+      <DxCell R="18" C="19" Types="FFFTF" RawValue="695.6625" />
+      <DxCell R="18" C="20" Types="FFFTF" RawValue="151001.402238711" />
+      <DxCell R="18" C="23" Types="FFFFT" RawValue="5,206.94" />
+      <DxCell R="18" C="25" Types="FFFTF" RawValue="1247.86596350361" />
+      <DxCell R="18" C="26" Types="FFFTF" RawValue="188429.510295005" />
+      <DxCell R="18" C="28" Types="FFFFT" RawValue="6,497.57" />
+      <DxCell R="20" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="20" C="2" Types="FFFFT" RawValue="020-0013" />
+      <DxCell R="20" C="3" Types="FFFFT" RawValue="BOYSCOUT 33H PAD" />
+      <DxCell R="20" C="7" Types="FFFTF" RawValue="35.3525821345304" />
+      <DxCell R="20" C="12" Types="FFFTF" RawValue="132.427330227156" />
+      <DxCell R="20" C="14" Types="FFFTF" RawValue="68.9960679397759" />
+      <DxCell R="20" C="19" Types="FFFTF" RawValue="677.686666666667" />
+      <DxCell R="20" C="20" Types="FFFTF" RawValue="41785.4610121565" />
+      <DxCell R="20" C="23" Types="FFFFT" RawValue="1,440.88" />
+      <DxCell R="20" C="25" Types="FFFTF" RawValue="1308.19779090371" />
+      <DxCell R="20" C="26" Types="FFFTF" RawValue="54663.6477879962" />
+      <DxCell R="20" C="28" Types="FFFFT" RawValue="1,884.95" />
+      <DxCell R="22" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="22" C="2" Types="FFFFT" RawValue="020-0030" />
+      <DxCell R="22" C="3" Types="FFFFT" RawValue="RYSER PAD" />
+      <DxCell R="22" C="7" Types="FFFTF" RawValue="12.039586069443" />
+      <DxCell R="22" C="12" Types="FFFTF" RawValue="144.727013886188" />
+      <DxCell R="22" C="14" Types="FFFTF" RawValue="71.9116086027095" />
+      <DxCell R="22" C="19" Types="FFFTF" RawValue="690.255" />
+      <DxCell R="22" C="20" Types="FFFTF" RawValue="50626.1171512363" />
+      <DxCell R="22" C="23" Types="FFFFT" RawValue="1,745.73" />
+      <DxCell R="22" C="25" Types="FFFTF" RawValue="1307.49568614329" />
+      <DxCell R="22" C="26" Types="FFFTF" RawValue="66193.4297814262" />
+      <DxCell R="22" C="28" Types="FFFFT" RawValue="2,282.53" />
+      <DxCell R="24" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="24" C="2" Types="FFFFT" RawValue="020-0031" />
+      <DxCell R="24" C="3" Types="FFFFT" RawValue="SHURGERT 1H PAD" />
+      <DxCell R="24" C="7" Types="FFFTF" RawValue="20.1551324265393" />
+      <DxCell R="24" C="12" Types="FFFTF" RawValue="149.647217924495" />
+      <DxCell R="24" C="14" Types="FFFTF" RawValue="69.7639048878499" />
+      <DxCell R="24" C="19" Types="FFFTF" RawValue="685.815833333333" />
+      <DxCell R="24" C="20" Types="FFFTF" RawValue="237315.610018171" />
+      <DxCell R="24" C="23" Types="FFFFT" RawValue="8,183.30" />
+      <DxCell R="24" C="25" Types="FFFTF" RawValue="1192.20048753145" />
+      <DxCell R="24" C="26" Types="FFFTF" RawValue="282927.785962487" />
+      <DxCell R="24" C="28" Types="FFFFT" RawValue="9,756.13" />
+      <DxCell R="26" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="26" C="2" Types="FFFFT" RawValue="020-0032" />
+      <DxCell R="26" C="3" Types="FFFFT" RawValue="SHURGERT 12H PAD" />
+      <DxCell R="26" C="7" Types="FFFTF" RawValue="34.7237394052142" />
+      <DxCell R="26" C="12" Types="FFFTF" RawValue="149.295680373346" />
+      <DxCell R="26" C="14" Types="FFFTF" RawValue="69.7309822171273" />
+      <DxCell R="26" C="19" Types="FFFTF" RawValue="690.7525" />
+      <DxCell R="26" C="20" Types="FFFTF" RawValue="452325.967134674" />
+      <DxCell R="26" C="23" Types="FFFFT" RawValue="15,597.45" />
+      <DxCell R="26" C="25" Types="FFFTF" RawValue="1220.92816392079" />
+      <DxCell R="26" C="26" Types="FFFTF" RawValue="552257.512547434" />
+      <DxCell R="26" C="28" Types="FFFFT" RawValue="19,043.36" />
+      <DxCell R="28" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="28" C="2" Types="FFFFT" RawValue="020-0033" />
+      <DxCell R="28" C="3" Types="FFFFT" RawValue="CLAY 4H PAD" />
+      <DxCell R="28" C="7" Types="FFFTF" RawValue="44.4707354889965" />
+      <DxCell R="28" C="12" Types="FFFTF" RawValue="145.671007098892" />
+      <DxCell R="28" C="14" Types="FFFTF" RawValue="67.5899275414288" />
+      <DxCell R="28" C="19" Types="FFFTF" RawValue="568.283611111111" />
+      <DxCell R="28" C="20" Types="FFFTF" RawValue="36901.1200566587" />
+      <DxCell R="28" C="23" Types="FFFFT" RawValue="1,272.45" />
+      <DxCell R="28" C="25" Types="FFFTF" RawValue="1292.32836762645" />
+      <DxCell R="28" C="26" Types="FFFTF" RawValue="47688.3642464094" />
+      <DxCell R="28" C="28" Types="FFFFT" RawValue="1,644.43" />
+      <DxCell R="30" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="30" C="2" Types="FFFFT" RawValue="020-0034" />
+      <DxCell R="30" C="3" Types="FFFFT" RawValue="BK STEVENS 16H PAD" />
+      <DxCell R="30" C="7" Types="FFFTF" RawValue="11.3711472787526" />
+      <DxCell R="30" C="12" Types="FFFTF" RawValue="147.539431345637" />
+      <DxCell R="30" C="14" Types="FFFTF" RawValue="66.1064223415352" />
+      <DxCell R="30" C="19" Types="FFFTF" RawValue="679.088333333333" />
+      <DxCell R="30" C="20" Types="FFFTF" RawValue="49535.249264595" />
+      <DxCell R="30" C="23" Types="FFFFT" RawValue="1,708.11" />
+      <DxCell R="30" C="25" Types="FFFTF" RawValue="1308.86473659177" />
+      <DxCell R="30" C="26" Types="FFFTF" RawValue="64834.9409807118" />
+      <DxCell R="30" C="28" Types="FFFFT" RawValue="2,235.69" />
+      <DxCell R="32" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="32" C="2" Types="FFFFT" RawValue="020-0035" />
+      <DxCell R="32" C="3" Types="FFFFT" RawValue="STOUT 28H PAD" />
+      <DxCell R="32" C="7" Types="FFFTF" RawValue="108.163155764769" />
+      <DxCell R="32" C="12" Types="FFFTF" RawValue="147.447912364694" />
+      <DxCell R="32" C="14" Types="FFFTF" RawValue="59.7682406166708" />
+      <DxCell R="32" C="19" Types="FFFTF" RawValue="454.205555555556" />
+      <DxCell R="32" C="20" Types="FFFTF" RawValue="26134.5992266818" />
+      <DxCell R="32" C="23" Types="FFFFT" RawValue="901.19" />
+      <DxCell R="32" C="25" Types="FFFTF" RawValue="1315.45274238981" />
+      <DxCell R="32" C="26" Types="FFFTF" RawValue="34378.8302239971" />
+      <DxCell R="32" C="28" Types="FFFFT" RawValue="1,185.48" />
+      <DxCell R="34" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="34" C="2" Types="FFFFT" RawValue="020-0036" />
+      <DxCell R="34" C="3" Types="FFFFT" RawValue="MILLIKEN 4H PAD" />
+      <DxCell R="34" C="7" Types="FFFTF" RawValue="16.2430770331643" />
+      <DxCell R="34" C="12" Types="FFFTF" RawValue="153.570317073308" />
+      <DxCell R="34" C="14" Types="FFFTF" RawValue="64.5178246475615" />
+      <DxCell R="34" C="19" Types="FFFTF" RawValue="652.331111111111" />
+      <DxCell R="34" C="20" Types="FFFTF" RawValue="53688.2159937254" />
+      <DxCell R="34" C="23" Types="FFFFT" RawValue="1,851.32" />
+      <DxCell R="34" C="25" Types="FFFTF" RawValue="1290.68816511798" />
+      <DxCell R="34" C="26" Types="FFFTF" RawValue="69294.7449893993" />
+      <DxCell R="34" C="28" Types="FFFFT" RawValue="2,389.47" />
+      <DxCell R="36" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="36" C="2" Types="FFFFT" RawValue="020-0037" />
+      <DxCell R="36" C="3" Types="FFFFT" RawValue="STUTZMAN 14H PAD" />
+      <DxCell R="36" C="7" Types="FFFTF" RawValue="23.6298328660919" />
+      <DxCell R="36" C="12" Types="FFFTF" RawValue="349.413871551204" />
+      <DxCell R="36" C="14" Types="FFFTF" RawValue="68.2152090506661" />
+      <DxCell R="36" C="19" Types="FFFTF" RawValue="674.303055555556" />
+      <DxCell R="36" C="20" Types="FFFTF" RawValue="212644.628532553" />
+      <DxCell R="36" C="23" Types="FFFFT" RawValue="7,332.57" />
+      <DxCell R="36" C="25" Types="FFFTF" RawValue="1075.68661442258" />
+      <DxCell R="36" C="26" Types="FFFTF" RawValue="228738.980541329" />
+      <DxCell R="36" C="28" Types="FFFFT" RawValue="7,887.55" />
+      <DxCell R="38" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="38" C="2" Types="FFFFT" RawValue="020-0038" />
+      <DxCell R="38" C="3" Types="FFFFT" RawValue="LYON 27H PAD" />
+      <DxCell R="38" C="7" Types="FFFTF" RawValue="23.436399910142" />
+      <DxCell R="38" C="12" Types="FFFTF" RawValue="130.891931225988" />
+      <DxCell R="38" C="14" Types="FFFTF" RawValue="40.6192329461778" />
+      <DxCell R="38" C="19" Types="FFFTF" RawValue="362.706944444444" />
+      <DxCell R="38" C="20" Types="FFFTF" RawValue="20799.9078529244" />
+      <DxCell R="38" C="23" Types="FFFFT" RawValue="717.24" />
+      <DxCell R="38" C="25" Types="FFFTF" RawValue="1275.53135828428" />
+      <DxCell R="38" C="26" Types="FFFTF" RawValue="26529.5138851857" />
+      <DxCell R="38" C="28" Types="FFFFT" RawValue="914.81" />
+      <DxCell R="40" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="40" C="2" Types="FFFFT" RawValue="020-0043" />
+      <DxCell R="40" C="3" Types="FFFFT" RawValue="MCCORT 28H PAD" />
+      <DxCell R="40" C="7" Types="FFFTF" RawValue="36.3797403400695" />
+      <DxCell R="40" C="12" Types="FFFTF" RawValue="350.911692301284" />
+      <DxCell R="40" C="14" Types="FFFTF" RawValue="68.4900667456463" />
+      <DxCell R="40" C="19" Types="FFFTF" RawValue="681.700277777778" />
+      <DxCell R="40" C="20" Types="FFFTF" RawValue="460132.522410897" />
+      <DxCell R="40" C="23" Types="FFFFT" RawValue="15,866.64" />
+      <DxCell R="40" C="25" Types="FFFTF" RawValue="1166.04569160917" />
+      <DxCell R="40" C="26" Types="FFFTF" RawValue="536535.545326486" />
+      <DxCell R="40" C="28" Types="FFFFT" RawValue="18,501.23" />
+      <DxCell R="42" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="42" C="2" Types="FFFFT" RawValue="020-0044" />
+      <DxCell R="42" C="3" Types="FFFFT" RawValue="BOLTEN 29H PAD" />
+      <DxCell R="42" C="7" Types="FFFTF" RawValue="11.6487999877432" />
+      <DxCell R="42" C="12" Types="FFFTF" RawValue="351.194945955266" />
+      <DxCell R="42" C="14" Types="FFFTF" RawValue="72.4424319436577" />
+      <DxCell R="42" C="19" Types="FFFTF" RawValue="680.102222222222" />
+      <DxCell R="42" C="20" Types="FFFTF" RawValue="292638.059086456" />
+      <DxCell R="42" C="23" Types="FFFFT" RawValue="10,090.97" />
+      <DxCell R="42" C="25" Types="FFFTF" RawValue="1141.53070221192" />
+      <DxCell R="42" C="26" Types="FFFTF" RawValue="334055.329082896" />
+      <DxCell R="42" C="28" Types="FFFFT" RawValue="11,519.15" />
+      <DxCell R="44" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="44" C="2" Types="FFFFT" RawValue="020-0054" />
+      <DxCell R="44" C="3" Types="FFFFT" RawValue="GROH 12H PAD" />
+      <DxCell R="44" C="7" Types="FFFTF" RawValue="7.36002081883852" />
+      <DxCell R="44" C="12" Types="FFFTF" RawValue="158.80335242287" />
+      <DxCell R="44" C="14" Types="FFFTF" RawValue="46.3896415677792" />
+      <DxCell R="44" C="19" Types="FFFTF" RawValue="467.515555555556" />
+      <DxCell R="44" C="20" Types="FFFTF" RawValue="4807.32974629329" />
+      <DxCell R="44" C="23" Types="FFFFT" RawValue="165.77" />
+      <DxCell R="44" C="25" Types="FFFTF" RawValue="1315.66755089129" />
+      <DxCell R="44" C="26" Types="FFFTF" RawValue="6324.84775363254" />
+      <DxCell R="44" C="28" Types="FFFFT" RawValue="218.10" />
+      <DxCell R="46" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="46" C="2" Types="FFFFT" RawValue="020-0061" />
+      <DxCell R="46" C="3" Types="FFFFT" RawValue="DARLA PAD" />
+      <DxCell R="46" C="7" Types="FFFTF" RawValue="15.4453132357983" />
+      <DxCell R="46" C="12" Types="FFFTF" RawValue="142.878920889997" />
+      <DxCell R="46" C="14" Types="FFFTF" RawValue="71.7436681890085" />
+      <DxCell R="46" C="19" Types="FFFTF" RawValue="688.426666666667" />
+      <DxCell R="46" C="20" Types="FFFTF" RawValue="380903.679030326" />
+      <DxCell R="46" C="23" Types="FFFFT" RawValue="13,134.61" />
+      <DxCell R="46" C="25" Types="FFFTF" RawValue="1243.92611436171" />
+      <DxCell R="46" C="26" Types="FFFTF" RawValue="473816.033402274" />
+      <DxCell R="46" C="28" Types="FFFFT" RawValue="16,338.48" />
+      <DxCell R="48" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="48" C="2" Types="FFFFT" RawValue="020-0065" />
+      <DxCell R="48" C="3" Types="FFFFT" RawValue="FAMILY 32H PAD" />
+      <DxCell R="48" C="7" Types="FFFTF" RawValue="12.8892245942918" />
+      <DxCell R="48" C="12" Types="FFFTF" RawValue="141.712919609376" />
+      <DxCell R="48" C="14" Types="FFFTF" RawValue="66.8485945076301" />
+      <DxCell R="48" C="19" Types="FFFTF" RawValue="692.365555555556" />
+      <DxCell R="48" C="20" Types="FFFTF" RawValue="279212.293256829" />
+      <DxCell R="48" C="23" Types="FFFFT" RawValue="9,628.01" />
+      <DxCell R="48" C="25" Types="FFFTF" RawValue="1171.35450219378" />
+      <DxCell R="48" C="26" Types="FFFTF" RawValue="327056.576774237" />
+      <DxCell R="48" C="28" Types="FFFFT" RawValue="11,277.81" />
+      <DxCell R="50" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="50" C="2" Types="FFFFT" RawValue="020-0069" />
+      <DxCell R="50" C="3" Types="FFFFT" RawValue="WESLEY 8H PAD" />
+      <DxCell R="50" C="7" Types="FFFTF" RawValue="42.565258144952" />
+      <DxCell R="50" C="12" Types="FFFTF" RawValue="359.168143010497" />
+      <DxCell R="50" C="14" Types="FFFTF" RawValue="71.4493760131413" />
+      <DxCell R="50" C="19" Types="FFFTF" RawValue="678.854444444444" />
+      <DxCell R="50" C="20" Types="FFFTF" RawValue="273277.623696308" />
+      <DxCell R="50" C="23" Types="FFFFT" RawValue="9,423.37" />
+      <DxCell R="50" C="25" Types="FFFTF" RawValue="1073.81179115873" />
+      <DxCell R="50" C="26" Types="FFFTF" RawValue="293765.272402206" />
+      <DxCell R="50" C="28" Types="FFFFT" RawValue="10,129.84" />
+      <DxCell R="52" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="52" C="2" Types="FFFFT" RawValue="020-0076" />
+      <DxCell R="52" C="3" Types="FFFFT" RawValue="GUSTINA BEAR 23H PAD" />
+      <DxCell R="52" C="7" Types="FFFTF" RawValue="30.8335727188377" />
+      <DxCell R="52" C="12" Types="FFFTF" RawValue="145.303080896061" />
+      <DxCell R="52" C="14" Types="FFFTF" RawValue="63.2000940857506" />
+      <DxCell R="52" C="19" Types="FFFTF" RawValue="695.99" />
+      <DxCell R="52" C="20" Types="FFFTF" RawValue="84395.4442584306" />
+      <DxCell R="52" C="23" Types="FFFFT" RawValue="2,910.19" />
+      <DxCell R="52" C="25" Types="FFFTF" RawValue="1328.753701558" />
+      <DxCell R="52" C="26" Types="FFFTF" RawValue="112140.758953022" />
+      <DxCell R="52" C="28" Types="FFFFT" RawValue="3,866.92" />
+      <DxCell R="54" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="54" C="2" Types="FFFFT" RawValue="020-0077" />
+      <DxCell R="54" C="3" Types="FFFFT" RawValue="MICHAEL 23H PAD" />
+      <DxCell R="54" C="7" Types="FFFTF" RawValue="26.8196493522598" />
+      <DxCell R="54" C="12" Types="FFFTF" RawValue="163.14230804523" />
+      <DxCell R="54" C="14" Types="FFFTF" RawValue="60.3464996567364" />
+      <DxCell R="54" C="19" Types="FFFTF" RawValue="678.56" />
+      <DxCell R="54" C="20" Types="FFFTF" RawValue="67451.4745098324" />
+      <DxCell R="54" C="23" Types="FFFFT" RawValue="2,325.91" />
+      <DxCell R="54" C="25" Types="FFFTF" RawValue="1298.52424554293" />
+      <DxCell R="54" C="26" Types="FFFTF" RawValue="87587.3750486383" />
+      <DxCell R="54" C="28" Types="FFFFT" RawValue="3,020.25" />
+      <DxCell R="56" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="56" C="2" Types="FFFFT" RawValue="020-0078" />
+      <DxCell R="56" C="3" Types="FFFFT" RawValue="KAREN 23H PAD" />
+      <DxCell R="56" C="7" Types="FFFTF" RawValue="160.31182429386" />
+      <DxCell R="56" C="12" Types="FFFTF" RawValue="229.793954003345" />
+      <DxCell R="56" C="14" Types="FFFTF" RawValue="58.6156519990813" />
+      <DxCell R="56" C="19" Types="FFFTF" RawValue="689.533611111111" />
+      <DxCell R="56" C="20" Types="FFFTF" RawValue="124122.002064433" />
+      <DxCell R="56" C="23" Types="FFFFT" RawValue="4,280.07" />
+      <DxCell R="56" C="25" Types="FFFTF" RawValue="1288.94789063883" />
+      <DxCell R="56" C="26" Types="FFFTF" RawValue="159986.79274282" />
+      <DxCell R="56" C="28" Types="FFFFT" RawValue="5,516.79" />
+      <DxCell R="58" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="58" C="2" Types="FFFFT" RawValue="020-0095" />
+      <DxCell R="58" C="3" Types="FFFFT" RawValue="INHERST 14H PAD" />
+      <DxCell R="58" C="7" Types="FFFTF" RawValue="50.4149075509628" />
+      <DxCell R="58" C="12" Types="FFFTF" RawValue="351.459119190246" />
+      <DxCell R="58" C="14" Types="FFFTF" RawValue="71.3162050415693" />
+      <DxCell R="58" C="19" Types="FFFTF" RawValue="679.204722222222" />
+      <DxCell R="58" C="20" Types="FFFTF" RawValue="440951.661895913" />
+      <DxCell R="58" C="23" Types="FFFFT" RawValue="15,205.23" />
+      <DxCell R="58" C="25" Types="FFFTF" RawValue="1080.41109168369" />
+      <DxCell R="58" C="26" Types="FFFTF" RawValue="476409.066408701" />
+      <DxCell R="58" C="28" Types="FFFFT" RawValue="16,427.90" />
+      <DxCell R="60" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="60" C="2" Types="FFFFT" RawValue="020-0096" />
+      <DxCell R="60" C="3" Types="FFFFT" RawValue="AMANDA 14H PAD" />
+      <DxCell R="60" C="7" Types="FFFTF" RawValue="54.0924219936722" />
+      <DxCell R="60" C="12" Types="FFFTF" RawValue="352.119902278977" />
+      <DxCell R="60" C="14" Types="FFFTF" RawValue="68.0964381181938" />
+      <DxCell R="60" C="19" Types="FFFTF" RawValue="682.198055555556" />
+      <DxCell R="60" C="20" Types="FFFTF" RawValue="453815.309555051" />
+      <DxCell R="60" C="23" Types="FFFFT" RawValue="15,648.80" />
+      <DxCell R="60" C="25" Types="FFFTF" RawValue="1113.67088178526" />
+      <DxCell R="60" C="26" Types="FFFTF" RawValue="505400.895959824" />
+      <DxCell R="60" C="28" Types="FFFFT" RawValue="17,427.62" />
+      <DxCell R="62" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="62" C="2" Types="FFFFT" RawValue="020-0098" />
+      <DxCell R="62" C="3" Types="FFFFT" RawValue="EAGLE CREEK 26HLP PAD" />
+      <DxCell R="62" C="7" Types="FFFTF" RawValue="50.4145852065815" />
+      <DxCell R="62" C="12" Types="FFFTF" RawValue="161.1925314917" />
+      <DxCell R="62" C="14" Types="FFFTF" RawValue="69.6561572168938" />
+      <DxCell R="62" C="19" Types="FFFTF" RawValue="685.675833333333" />
+      <DxCell R="62" C="20" Types="FFFTF" RawValue="388640.614832472" />
+      <DxCell R="62" C="23" Types="FFFFT" RawValue="13,401.40" />
+      <DxCell R="62" C="25" Types="FFFTF" RawValue="1187.18700422239" />
+      <DxCell R="62" C="26" Types="FFFTF" RawValue="461389.08724211" />
+      <DxCell R="62" C="28" Types="FFFFT" RawValue="15,909.97" />
+      <DxCell R="64" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="64" C="2" Types="FFFFT" RawValue="020-0104" />
+      <DxCell R="64" C="3" Types="FFFFT" RawValue="TRIPLE B 21H PAD" />
+      <DxCell R="64" C="7" Types="FFFTF" RawValue="15.1801177542356" />
+      <DxCell R="64" C="12" Types="FFFTF" RawValue="161.920318937366" />
+      <DxCell R="64" C="14" Types="FFFTF" RawValue="68.7802931966093" />
+      <DxCell R="64" C="19" Types="FFFTF" RawValue="686.581111111111" />
+      <DxCell R="64" C="20" Types="FFFTF" RawValue="407990.982021111" />
+      <DxCell R="64" C="23" Types="FFFFT" RawValue="14,068.65" />
+      <DxCell R="64" C="25" Types="FFFTF" RawValue="1157.2292431708" />
+      <DxCell R="64" C="26" Types="FFFTF" RawValue="472139.095344801" />
+      <DxCell R="64" C="28" Types="FFFFT" RawValue="16,280.66" />
+      <DxCell R="65" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="65" C="2" Types="FFFFT" RawValue="020-0105" />
+      <DxCell R="65" C="3" Types="FFFFT" RawValue="DUVALL 5H  PAD" />
+      <DxCell R="65" C="8" Types="FFFTF" RawValue="35.7278893781155" />
+      <DxCell R="65" C="12" Types="FFFTF" RawValue="351.395557330798" />
+      <DxCell R="65" C="14" Types="FFFTF" RawValue="71.1487354262834" />
+      <DxCell R="65" C="19" Types="FFFTF" RawValue="684.949722222222" />
+      <DxCell R="65" C="20" Types="FFFTF" RawValue="375409.794668123" />
+      <DxCell R="65" C="23" Types="FFFFT" RawValue="12,945.17" />
+      <DxCell R="65" C="25" Types="FFFTF" RawValue="1075.48515844013" />
+      <DxCell R="65" C="26" Types="FFFTF" RawValue="403747.662498623" />
+      <DxCell R="65" C="28" Types="FFFFT" RawValue="13,922.33" />
+      <DxCell R="67" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="67" C="2" Types="FFFFT" RawValue="020-0106" />
+      <DxCell R="67" C="3" Types="FFFFT" RawValue="BAHMER PAD" />
+      <DxCell R="67" C="8" Types="FFFTF" RawValue="38.4178914672328" />
+      <DxCell R="67" C="12" Types="FFFTF" RawValue="357.660263692308" />
+      <DxCell R="67" C="14" Types="FFFTF" RawValue="67.0078503620176" />
+      <DxCell R="67" C="19" Types="FFFTF" RawValue="679.328611111111" />
+      <DxCell R="67" C="20" Types="FFFTF" RawValue="580063.802649305" />
+      <DxCell R="67" C="23" Types="FFFFT" RawValue="20,002.20" />
+      <DxCell R="67" C="25" Types="FFFTF" RawValue="1147.44643206362" />
+      <DxCell R="67" C="26" Types="FFFTF" RawValue="665592.140719201" />
+      <DxCell R="67" C="28" Types="FFFFT" RawValue="22,951.45" />
+      <DxCell R="69" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="69" C="2" Types="FFFFT" RawValue="020-0107" />
+      <DxCell R="69" C="3" Types="FFFFT" RawValue="SANDRA X-XH PAD" />
+      <DxCell R="69" C="8" Types="FFFTF" RawValue="34.1403963244987" />
+      <DxCell R="69" C="12" Types="FFFTF" RawValue="145.280247198327" />
+      <DxCell R="69" C="14" Types="FFFTF" RawValue="67.0995295924345" />
+      <DxCell R="69" C="19" Types="FFFTF" RawValue="687.938055555556" />
+      <DxCell R="69" C="20" Types="FFFTF" RawValue="249074.885322695" />
+      <DxCell R="69" C="23" Types="FFFFT" RawValue="8,588.79" />
+      <DxCell R="69" C="25" Types="FFFTF" RawValue="1194.45549757332" />
+      <DxCell R="69" C="26" Types="FFFTF" RawValue="297508.866081137" />
+      <DxCell R="69" C="28" Types="FFFFT" RawValue="10,258.93" />
+      <DxCell R="71" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="71" C="2" Types="FFFFT" RawValue="020-0110" />
+      <DxCell R="71" C="3" Types="FFFFT" RawValue="BROTHERS 36H PAD" />
+      <DxCell R="71" C="8" Types="FFFTF" RawValue="45.8693245784676" />
+      <DxCell R="71" C="12" Types="FFFTF" RawValue="175.405298485425" />
+      <DxCell R="71" C="14" Types="FFFTF" RawValue="64.4467883347657" />
+      <DxCell R="71" C="19" Types="FFFTF" RawValue="693.629722222222" />
+      <DxCell R="71" C="20" Types="FFFTF" RawValue="321155.284406698" />
+      <DxCell R="71" C="23" Types="FFFFT" RawValue="11,074.32" />
+      <DxCell R="71" C="25" Types="FFFTF" RawValue="1163.82656619879" />
+      <DxCell R="71" C="26" Types="FFFTF" RawValue="374406.94628999" />
+      <DxCell R="71" C="28" Types="FFFFT" RawValue="12,910.58" />
+      <DxCell R="73" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="73" C="2" Types="FFFFT" RawValue="020-0114" />
+      <DxCell R="73" C="3" Types="FFFFT" RawValue="BARNESVILLE WEST DISCHARGE" />
+      <DxCell R="73" C="8" Types="FFFTF" RawValue="3584963991" />
+      <DxCell R="73" C="12" Types="FFFTF" RawValue="1077.99677759958" />
+      <DxCell R="73" C="14" Types="FFFTF" RawValue="84.5793177123867" />
+      <DxCell R="73" C="19" Types="FFFTF" RawValue="690.134166666667" />
+      <DxCell R="73" C="20" Types="FFFTF" RawValue="2552606.01148224" />
+      <DxCell R="73" C="23" Types="FFFFT" RawValue="88,020.90" />
+      <DxCell R="73" C="25" Types="FFFTF" RawValue="1258.05237795185" />
+      <DxCell R="73" C="26" Types="FFFTF" RawValue="3211312.06271941" />
+      <DxCell R="73" C="28" Types="FFFFT" RawValue="110,734.90" />
+      <DxCell R="75" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="75" C="2" Types="FFFFT" RawValue="020-0115" />
+      <DxCell R="75" C="3" Types="FFFFT" RawValue="BARNESVILLE WEST FUEL" />
+      <DxCell R="75" C="8" Types="FFFTF" RawValue="53.1166697232661" />
+      <DxCell R="75" C="12" Types="FFFTF" RawValue="139.223213446673" />
+      <DxCell R="75" C="14" Types="FFFTF" RawValue="17.1708765218129" />
+      <DxCell R="75" C="19" Types="FFFTF" RawValue="694.257222222222" />
+      <DxCell R="75" C="20" Types="FFFTF" RawValue="61744.7733678818" />
+      <DxCell R="75" C="23" Types="FFFFT" RawValue="2,129.13" />
+      <DxCell R="75" C="25" Types="FFFTF" RawValue="1258.08961742999" />
+      <DxCell R="75" C="26" Types="FFFTF" RawValue="77680.4583046996" />
+      <DxCell R="75" C="28" Types="FFFFT" RawValue="2,678.64" />
+      <DxCell R="77" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="77" C="2" Types="FFFFT" RawValue="020-0116" />
+      <DxCell R="77" C="3" Types="FFFFT" RawValue="HAYES X-1H PAD" />
+      <DxCell R="77" C="8" Types="FFFTF" RawValue="40.5443364894503" />
+      <DxCell R="77" C="12" Types="FFFTF" RawValue="150.689858150213" />
+      <DxCell R="77" C="14" Types="FFFTF" RawValue="67.9000609495834" />
+      <DxCell R="77" C="19" Types="FFFTF" RawValue="693.0425" />
+      <DxCell R="77" C="20" Types="FFFTF" RawValue="557018.810908652" />
+      <DxCell R="77" C="23" Types="FFFFT" RawValue="19,207.55" />
+      <DxCell R="77" C="25" Types="FFFTF" RawValue="1167.50147044755" />
+      <DxCell R="77" C="26" Types="FFFTF" RawValue="650320.280802797" />
+      <DxCell R="77" C="28" Types="FFFFT" RawValue="22,424.84" />
+      <DxCell R="79" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="79" C="2" Types="FFFFT" RawValue="020-0117" />
+      <DxCell R="79" C="3" Types="FFFFT" RawValue="DAVIDSON 36H PAD" />
+      <DxCell R="79" C="8" Types="FFFTF" RawValue="21.3290658408925" />
+      <DxCell R="79" C="12" Types="FFFTF" RawValue="141.720383543249" />
+      <DxCell R="79" C="14" Types="FFFTF" RawValue="64.8407386299947" />
+      <DxCell R="79" C="19" Types="FFFTF" RawValue="691.806666666667" />
+      <DxCell R="79" C="20" Types="FFFTF" RawValue="56111.6563793688" />
+      <DxCell R="79" C="23" Types="FFFFT" RawValue="1,934.88" />
+      <DxCell R="79" C="25" Types="FFFTF" RawValue="1319.33933105307" />
+      <DxCell R="79" C="26" Types="FFFTF" RawValue="74030.3151918362" />
+      <DxCell R="79" C="28" Types="FFFFT" RawValue="2,552.77" />
+      <DxCell R="81" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="81" C="2" Types="FFFFT" RawValue="020-0118" />
+      <DxCell R="81" C="3" Types="FFFFT" RawValue="SWALLIE PAD" />
+      <DxCell R="81" C="8" Types="FFFTF" RawValue="53.1163411487651" />
+      <DxCell R="81" C="12" Types="FFFTF" RawValue="151.30385979327" />
+      <DxCell R="81" C="14" Types="FFFTF" RawValue="71.5735214340844" />
+      <DxCell R="81" C="19" Types="FFFTF" RawValue="691.264722222222" />
+      <DxCell R="81" C="20" Types="FFFTF" RawValue="279256.371116425" />
+      <DxCell R="81" C="23" Types="FFFFT" RawValue="9,629.53" />
+      <DxCell R="81" C="25" Types="FFFTF" RawValue="1205.73092001647" />
+      <DxCell R="81" C="26" Types="FFFTF" RawValue="337573.274672599" />
+      <DxCell R="81" C="28" Types="FFFFT" RawValue="11,640.46" />
+      <DxCell R="83" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="83" C="2" Types="FFFFT" RawValue="020-0120" />
+      <DxCell R="83" C="3" Types="FFFFT" RawValue="STRONZ PAD" />
+      <DxCell R="83" C="8" Types="FFFTF" RawValue="69.1770694104981" />
+      <DxCell R="83" C="12" Types="FFFTF" RawValue="353.449263347051" />
+      <DxCell R="83" C="14" Types="FFFTF" RawValue="69.9792381667881" />
+      <DxCell R="83" C="19" Types="FFFTF" RawValue="676.455277777778" />
+      <DxCell R="83" C="20" Types="FFFTF" RawValue="1331945.19966445" />
+      <DxCell R="83" C="23" Types="FFFFT" RawValue="45,929.14" />
+      <DxCell R="83" C="25" Types="FFFTF" RawValue="1084.62544158692" />
+      <DxCell R="83" C="26" Types="FFFTF" RawValue="1444661.65035563" />
+      <DxCell R="83" C="28" Types="FFFFT" RawValue="49,815.92" />
+      <DxCell R="85" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="85" C="2" Types="FFFFT" RawValue="020-0121" />
+      <DxCell R="85" C="3" Types="FFFFT" RawValue="RIPLEY PAD" />
+      <DxCell R="85" C="8" Types="FFFTF" RawValue="15.0908913664254" />
+      <DxCell R="85" C="12" Types="FFFTF" RawValue="154.2404468816" />
+      <DxCell R="85" C="14" Types="FFFTF" RawValue="72.7387926853892" />
+      <DxCell R="85" C="19" Types="FFFTF" RawValue="693.319166666667" />
+      <DxCell R="85" C="20" Types="FFFTF" RawValue="118346.354573556" />
+      <DxCell R="85" C="23" Types="FFFFT" RawValue="4,080.91" />
+      <DxCell R="85" C="25" Types="FFFTF" RawValue="1328.69697351882" />
+      <DxCell R="85" C="26" Types="FFFTF" RawValue="157246.443148869" />
+      <DxCell R="85" C="28" Types="FFFFT" RawValue="5,422.29" />
+      <DxCell R="87" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="87" C="2" Types="FFFFT" RawValue="020-0122" />
+      <DxCell R="87" C="3" Types="FFFFT" RawValue="MILLER PAD" />
+      <DxCell R="87" C="8" Types="FFFTF" RawValue="45.611049108515" />
+      <DxCell R="87" C="12" Types="FFFTF" RawValue="161.133683743209" />
+      <DxCell R="87" C="14" Types="FFFTF" RawValue="61.0863570555016" />
+      <DxCell R="87" C="19" Types="FFFTF" RawValue="691.5725" />
+      <DxCell R="87" C="20" Types="FFFTF" RawValue="106427.309432057" />
+      <DxCell R="87" C="23" Types="FFFFT" RawValue="3,669.91" />
+      <DxCell R="87" C="25" Types="FFFTF" RawValue="1346.5522548395" />
+      <DxCell R="87" C="26" Types="FFFTF" RawValue="143548.725358658" />
+      <DxCell R="87" C="28" Types="FFFFT" RawValue="4,949.96" />
+      <DxCell R="89" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="89" C="2" Types="FFFFT" RawValue="020-0123" />
+      <DxCell R="89" C="3" Types="FFFFT" RawValue="PUSKARICH 18H PAD" />
+      <DxCell R="89" C="8" Types="FFFTF" RawValue="43.8674668095185" />
+      <DxCell R="89" C="12" Types="FFFTF" RawValue="166.548544291257" />
+      <DxCell R="89" C="14" Types="FFFTF" RawValue="64.2564333712438" />
+      <DxCell R="89" C="19" Types="FFFTF" RawValue="695.988055555556" />
+      <DxCell R="89" C="20" Types="FFFTF" RawValue="108926.062085846" />
+      <DxCell R="89" C="23" Types="FFFFT" RawValue="3,756.07" />
+      <DxCell R="89" C="25" Types="FFFTF" RawValue="1306.86087055423" />
+      <DxCell R="89" C="26" Types="FFFTF" RawValue="142351.208323553" />
+      <DxCell R="89" C="28" Types="FFFFT" RawValue="4,908.66" />
+      <DxCell R="91" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="91" C="2" Types="FFFFT" RawValue="020-0139" />
+      <DxCell R="91" C="3" Types="FFFFT" RawValue="WEST HAWK PAD" />
+      <DxCell R="91" C="8" Types="FFFTF" RawValue="61.1701158990472" />
+      <DxCell R="91" C="12" Types="FFFTF" RawValue="1161.10357077683" />
+      <DxCell R="91" C="14" Types="FFFTF" RawValue="75.9805542373845" />
+      <DxCell R="91" C="19" Types="FFFTF" RawValue="689.730833333333" />
+      <DxCell R="91" C="20" Types="FFFTF" RawValue="1264981.02797323" />
+      <DxCell R="91" C="23" Types="FFFFT" RawValue="43,620.04" />
+      <DxCell R="91" C="25" Types="FFFTF" RawValue="1039.48097372594" />
+      <DxCell R="91" C="26" Types="FFFTF" RawValue="1314923.71070246" />
+      <DxCell R="91" C="28" Types="FFFFT" RawValue="45,342.20" />
+      <DxCell R="93" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="93" C="2" Types="FFFFT" RawValue="020-0141" />
+      <DxCell R="93" C="3" Types="FFFFT" RawValue="TRUAX PAD" />
+      <DxCell R="93" C="8" Types="FFFTF" RawValue="9.42397206231863" />
+      <DxCell R="93" C="12" Types="FFFTF" RawValue="1154.64846351264" />
+      <DxCell R="93" C="14" Types="FFFTF" RawValue="76.6238981041273" />
+      <DxCell R="93" C="19" Types="FFFTF" RawValue="645.011111111111" />
+      <DxCell R="93" C="20" Types="FFFTF" RawValue="555079.895361849" />
+      <DxCell R="93" C="23" Types="FFFFT" RawValue="19,140.69" />
+      <DxCell R="93" C="25" Types="FFFTF" RawValue="1036.48769760402" />
+      <DxCell R="93" C="26" Types="FFFTF" RawValue="575333.482729883" />
+      <DxCell R="93" C="28" Types="FFFFT" RawValue="19,839.09" />
+      <DxCell R="95" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="95" C="2" Types="FFFFT" RawValue="020-0142" />
+      <DxCell R="95" C="3" Types="FFFFT" RawValue="JONES PAD" />
+      <DxCell R="95" C="8" Types="FFFTF" RawValue="20.5970861221223" />
+      <DxCell R="95" C="12" Types="FFFTF" RawValue="1149.29320028718" />
+      <DxCell R="95" C="14" Types="FFFTF" RawValue="66.500899280818" />
+      <DxCell R="95" C="19" Types="FFFTF" RawValue="670.148611111111" />
+      <DxCell R="95" C="20" Types="FFFTF" RawValue="313917.844646866" />
+      <DxCell R="95" C="23" Types="FFFFT" RawValue="10,824.75" />
+      <DxCell R="95" C="25" Types="FFFTF" RawValue="1036.99572495859" />
+      <DxCell R="95" C="26" Types="FFFTF" RawValue="325531.462887015" />
+      <DxCell R="95" C="28" Types="FFFFT" RawValue="11,225.22" />
+      <DxCell R="97" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="97" C="2" Types="FFFFT" RawValue="020-0147" />
+      <DxCell R="97" C="3" Types="FFFFT" RawValue="SHRIVER PAD" />
+      <DxCell R="97" C="8" Types="FFFTF" RawValue="84.2601596892699" />
+      <DxCell R="97" C="12" Types="FFFTF" RawValue="1173.10049549254" />
+      <DxCell R="97" C="14" Types="FFFTF" RawValue="71.6505191042129" />
+      <DxCell R="97" C="19" Types="FFFTF" RawValue="689.006111111111" />
+      <DxCell R="97" C="20" Types="FFFTF" RawValue="1362236.18935554" />
+      <DxCell R="97" C="23" Types="FFFFT" RawValue="46,973.66" />
+      <DxCell R="97" C="25" Types="FFFTF" RawValue="1038.70958936035" />
+      <DxCell R="97" C="26" Types="FFFTF" RawValue="1414967.7928573" />
+      <DxCell R="97" C="28" Types="FFFFT" RawValue="48,791.99" />
+      <DxCell R="99" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="99" C="2" Types="FFFFT" RawValue="020-0149" />
+      <DxCell R="99" C="3" Types="FFFFT" RawValue="VOZAR PAD" />
+      <DxCell R="99" C="8" Types="FFFTF" RawValue="40.8347756886144" />
+      <DxCell R="99" C="12" Types="FFFTF" RawValue="152.860917069293" />
+      <DxCell R="99" C="14" Types="FFFTF" RawValue="62.0949914132955" />
+      <DxCell R="99" C="19" Types="FFFTF" RawValue="682.231944444444" />
+      <DxCell R="99" C="20" Types="FFFTF" RawValue="116520.640953779" />
+      <DxCell R="99" C="23" Types="FFFFT" RawValue="4,017.95" />
+      <DxCell R="99" C="25" Types="FFFTF" RawValue="1332.22565190764" />
+      <DxCell R="99" C="26" Types="FFFTF" RawValue="155231.786855344" />
+      <DxCell R="99" C="28" Types="FFFFT" RawValue="5,352.82" />
+      <DxCell R="101" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="101" C="2" Types="FFFFT" RawValue="020-0157" />
+      <DxCell R="101" C="3" Types="FFFFT" RawValue="CAMPBELL WELL PAD" />
+      <DxCell R="101" C="8" Types="FFFTF" RawValue="87.9071938739661" />
+      <DxCell R="101" C="12" Types="FFFTF" RawValue="1173.04091373136" />
+      <DxCell R="101" C="14" Types="FFFTF" RawValue="67.9935370543285" />
+      <DxCell R="101" C="19" Types="FFFTF" RawValue="687.635555555556" />
+      <DxCell R="101" C="20" Types="FFFTF" RawValue="1357241.89792616" />
+      <DxCell R="101" C="23" Types="FFFFT" RawValue="46,801.44" />
+      <DxCell R="101" C="25" Types="FFFTF" RawValue="1036.47231630081" />
+      <DxCell R="101" C="26" Types="FFFTF" RawValue="1406743.65372403" />
+      <DxCell R="101" C="28" Types="FFFFT" RawValue="48,508.40" />
+      <DxCell R="103" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="103" C="2" Types="FFFFT" RawValue="020-0158" />
+      <DxCell R="103" C="3" Types="FFFFT" RawValue="HOWELL PAD" />
+      <DxCell R="103" C="8" Types="FFFTF" RawValue="208.500362885149" />
+      <DxCell R="103" C="12" Types="FFFTF" RawValue="1153.15419136252" />
+      <DxCell R="103" C="14" Types="FFFTF" RawValue="76.5781561171997" />
+      <DxCell R="103" C="19" Types="FFFTF" RawValue="689.978611111111" />
+      <DxCell R="103" C="20" Types="FFFTF" RawValue="1377329.54184441" />
+      <DxCell R="103" C="23" Types="FFFFT" RawValue="47,494.12" />
+      <DxCell R="103" C="25" Types="FFFTF" RawValue="1038.86661227787" />
+      <DxCell R="103" C="26" Types="FFFTF" RawValue="1430861.67512613" />
+      <DxCell R="103" C="28" Types="FFFFT" RawValue="49,340.06" />
+      <DxCell R="105" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="105" C="2" Types="FFFFT" RawValue="020-0164" />
+      <DxCell R="105" C="3" Types="FFFFT" RawValue="ROBINETTE PAD" />
+      <DxCell R="105" C="8" Types="FFFTF" RawValue="89.6131409016949" />
+      <DxCell R="105" C="12" Types="FFFTF" RawValue="1144.01034832827" />
+      <DxCell R="105" C="14" Types="FFFTF" RawValue="68.6224075455282" />
+      <DxCell R="105" C="19" Types="FFFTF" RawValue="682.400555555556" />
+      <DxCell R="105" C="20" Types="FFFTF" RawValue="1334165.07956827" />
+      <DxCell R="105" C="23" Types="FFFFT" RawValue="46,005.69" />
+      <DxCell R="105" C="25" Types="FFFTF" RawValue="1043.79330952922" />
+      <DxCell R="105" C="26" Types="FFFTF" RawValue="1392592.58386088" />
+      <DxCell R="105" C="28" Types="FFFFT" RawValue="48,020.43" />
+      <DxCell R="107" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="107" C="2" Types="FFFFT" RawValue="020-0165" />
+      <DxCell R="107" C="3" Types="FFFFT" RawValue="ROUTH WELL PAD" />
+      <DxCell R="107" C="8" Types="FFFTF" RawValue="90.722660870488" />
+      <DxCell R="107" C="12" Types="FFFTF" RawValue="1149.43194964868" />
+      <DxCell R="107" C="14" Types="FFFTF" RawValue="71.5428112354486" />
+      <DxCell R="107" C="19" Types="FFFTF" RawValue="681.789722222222" />
+      <DxCell R="107" C="20" Types="FFFTF" RawValue="1330400.78720223" />
+      <DxCell R="107" C="23" Types="FFFFT" RawValue="45,875.89" />
+      <DxCell R="107" C="25" Types="FFFTF" RawValue="1040.64415243304" />
+      <DxCell R="107" C="26" Types="FFFTF" RawValue="1384473.79959431" />
+      <DxCell R="107" C="28" Types="FFFFT" RawValue="47,740.48" />
+      <DxCell R="109" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="109" C="2" Types="FFFFT" RawValue="020-0169" />
+      <DxCell R="109" C="3" Types="FFFFT" RawValue="MCLAUGHLIN PAD" />
+      <DxCell R="109" C="8" Types="FFFTF" RawValue="152.676882825896" />
+      <DxCell R="109" C="12" Types="FFFTF" RawValue="352.380798810545" />
+      <DxCell R="109" C="14" Types="FFFTF" RawValue="66.0347437296354" />
+      <DxCell R="109" C="19" Types="FFFTF" RawValue="679.6175" />
+      <DxCell R="109" C="20" Types="FFFTF" RawValue="1141103.48552874" />
+      <DxCell R="109" C="23" Types="FFFFT" RawValue="39,348.40" />
+      <DxCell R="109" C="25" Types="FFFTF" RawValue="1155.7967631224" />
+      <DxCell R="109" C="26" Types="FFFTF" RawValue="1318883.71496181" />
+      <DxCell R="109" C="28" Types="FFFFT" RawValue="45,478.75" />
+      <DxCell R="111" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="111" C="2" Types="FFFFT" RawValue="020-0176" />
+      <DxCell R="111" C="3" Types="FFFFT" RawValue="CLARK PAD" />
+      <DxCell R="111" C="8" Types="FFFTF" RawValue="54.5488613843595" />
+      <DxCell R="111" C="12" Types="FFFTF" RawValue="365.530244860056" />
+      <DxCell R="111" C="14" Types="FFFTF" RawValue="67.3483671989761" />
+      <DxCell R="111" C="19" Types="FFFTF" RawValue="691.024166666667" />
+      <DxCell R="111" C="20" Types="FFFTF" RawValue="1380379.10532032" />
+      <DxCell R="111" C="23" Types="FFFFT" RawValue="47,599.28" />
+      <DxCell R="111" C="25" Types="FFFTF" RawValue="1073.0784465833" />
+      <DxCell R="111" C="26" Types="FFFTF" RawValue="1481255.06603317" />
+      <DxCell R="111" C="28" Types="FFFFT" RawValue="51,077.76" />
+      <DxCell R="113" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="113" C="2" Types="FFFFT" RawValue="020-0190" />
+      <DxCell R="113" C="3" Types="FFFFT" RawValue="LEPLEY WELL PAD" />
+      <DxCell R="113" C="8" Types="FFFTF" RawValue="72.9534263425381" />
+      <DxCell R="113" C="12" Types="FFFTF" RawValue="1190.15625098764" />
+      <DxCell R="113" C="14" Types="FFFTF" RawValue="68.4000008327144" />
+      <DxCell R="113" C="19" Types="FFFTF" RawValue="667.478611111111" />
+      <DxCell R="113" C="20" Types="FFFTF" RawValue="1960802.96791913" />
+      <DxCell R="113" C="23" Types="FFFFT" RawValue="67,613.90" />
+      <DxCell R="113" C="25" Types="FFFTF" RawValue="1055.27867430183" />
+      <DxCell R="113" C="26" Types="FFFTF" RawValue="2069193.55655279" />
+      <DxCell R="113" C="28" Types="FFFFT" RawValue="71,351.50" />
+      <DxCell R="114" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="114" C="2" Types="FFFFT" RawValue="020-0191" />
+      <DxCell R="114" C="3" Types="FFFFT" RawValue="Edge" />
+      <DxCell R="114" C="8" Types="FFFTF" RawValue="84.4607911679688" />
+      <DxCell R="114" C="12" Types="FFFTF" RawValue="1219.31041135074" />
+      <DxCell R="114" C="14" Types="FFFTF" RawValue="63.8011706201676" />
+      <DxCell R="114" C="19" Types="FFFTF" RawValue="424.374722222222" />
+      <DxCell R="114" C="20" Types="FFFTF" RawValue="1207950.01555947" />
+      <DxCell R="114" C="23" Types="FFFFT" RawValue="41,653.45" />
+      <DxCell R="114" C="25" Types="FFFTF" RawValue="1054.72195527653" />
+      <DxCell R="114" C="26" Types="FFFTF" RawValue="1276069.37639323" />
+      <DxCell R="114" C="28" Types="FFFFT" RawValue="44,002.39" />
+      <DxCell R="116" C="0" Types="FFFFT" RawValue="M" />
+      <DxCell R="116" C="2" Types="FFFFT" RawValue="020-0192" />
+      <DxCell R="116" C="3" Types="FFFFT" RawValue="WINESBURGH WELL PAD" />
+      <DxCell R="116" C="8" Types="FFFTF" RawValue="129.267095006594" />
+      <DxCell R="116" C="12" Types="FFFTF" RawValue="1185.59814485137" />
+      <DxCell R="116" C="14" Types="FFFTF" RawValue="68.7192896636718" />
+      <DxCell R="116" C="19" Types="FFFTF" RawValue="691.920277777778" />
+      <DxCell R="116" C="20" Types="FFFTF" RawValue="1153210.83116582" />
+      <DxCell R="116" C="23" Types="FFFFT" RawValue="39,765.89" />
+      <DxCell R="116" C="25" Types="FFFTF" RawValue="1054.64585846214" />
+      <DxCell R="116" C="26" Types="FFFTF" RawValue="1216229.02702272" />
+      <DxCell R="116" C="28" Types="FFFFT" RawValue="41,938.93" />
+      <DxCell R="118" C="16" Types="FFFFT" RawValue="Total" />
+      <DxCell R="118" C="20" Types="FFFTF" RawValue="27544502.9012295" />
+      <DxCell R="118" C="25" Types="FFFTF" RawValue="1110.95632258797" />
+      <DxCell R="118" C="26" Types="FFFTF" RawValue="30604814.6614511" />
+      <DxCell R="120" C="0" Types="FFFFT" RawValue="*** End of Report ***" />
+      <DxCell R="123" C="5" Types="FFFFT" RawValue="Copyright © 2002 - 2016 Flow-Cal, Inc. Houston, Texas&#xA;" />
+      <DxCell R="124" C="24" Types="FFFFT" RawValue="Print Date: 03/10/2016 11:00  Page 3" />
+    </DxCellArray>
+  </DxWorksheet>
+</ExcelExtractResponse>

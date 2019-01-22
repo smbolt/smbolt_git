@@ -1,0 +1,6 @@
+<LocalConfig>
+  <CI K="Vendor" V="ORG" />
+  <CI K="AppType" V="WcfService" />
+  <CI K="AppName" V="MainSvc" />
+  <CI K="UseLocalAppData" V="True" />
+</LocalConfig>

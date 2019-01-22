@@ -1,0 +1,16 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="ReportTest">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="~Deserialize_DebugBreak" V="ReportObject.TitleBox" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

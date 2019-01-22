@@ -1,0 +1,27 @@
+﻿<DxMapSet Name="NonOpProduction-Marathon" DxDocType="NonOpProduction" OperatorName="Marathon">
+  <DxMap Name="FirstMap" DxMapType="RowToRow">
+    <DxFilterSet>
+      <DxFilter FilterMethod="ColumnTypes" ColumnTypes="*,*,*,*,*,dt"/>
+    </DxFilterSet>
+    <DxMapItemSet>
+      <DxMapItem Name="StatementStatusID" Src="*,*,*" Dest="*,*,1" IsRequired="True" DataType="Int" Validate="False" NoSrcCell="True" DefaultValue="1"/>
+      <DxMapItem Name="OperatorWellID" Src="*,*,2" Dest="*,*,2" IsRequired="False" DataType="Varchar" Validate="False" />
+      <DxMapItem Name="API" Src="*,*,2" Dest="*,*,15" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="WellName" Src="*,*,3" Dest="*,*,3" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="ProductionDate" Src="*,*,5" Dest="*,*,6" IsRequired="True" DataType="DateTime" Validate="True"/>
+      <DxMapItem Name="Oil" Src="*,*,6" Dest="*,*,10" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Gas" Src="*,*,8" Dest="*,*,9" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Water" Src="*,*,10" Dest="*,*,11" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="GasSales" Src="*,*,9" Dest="*,*,18" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="OilSales" Src="*,*,7" Dest="*,*,17" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="CasingPressure" Src="*,*,12" Dest="*,*,13" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="TubingPressure" Src="*,*,13" Dest="*,*,12" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Choke" Src="*,*,11" Dest="*,*,14" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="Downtime" Src="*,*,14" Dest="*,*,7" IsRequired="False" DataType="Float" Validate="False"/>
+      <DxMapItem Name="DowntimeReason" Src="*,*,15" Dest="*,*,16" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="FieldName" Src="*,*,4" Dest="*,*,5" IsRequired="False" DataType="Varchar" Validate="False"/>
+      <DxMapItem Name="OwnerID" Src="*,*,0" Dest="*,*,22" IsRequired="False" DataType="Int" Validate="False"/>
+      <DxMapItem Name="Owner" Src="*,*,1" Dest="*,*,23" IsRequired="False" DataType="Varchar" Validate="False"/>
+    </DxMapItemSet>
+  </DxMap>
+</DxMapSet>

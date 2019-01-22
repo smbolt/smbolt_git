@@ -1,0 +1,31 @@
+﻿<a:document xmlns:a="http://schemas.adsdi.com/wordprocessingml-extensions/2010/main" >
+  <a:docInfo>
+    <a:name a:val="res1" />
+  </a:docInfo>
+  <a:body>
+    <a:sectPr a:name="sect0">
+      <a:pgMar a:top="1008" a:right="864" a:bottom="1008" a:left="864" a:header="432" a:footer="432" a:gutter="0" />
+      <a:pgSz a:w="12240" a:h="15840" a:orient="portrait"/>
+    </a:sectPr>
+    <a:tbl a:name="shell" a:tblPr="mnTbl">
+      <a:tr>
+        <a:tc a:tcPr="mnCell">
+          <a:tbl a:name="mnTbl" a:tblPr="mnTbl" a:tag="tgt">
+            <a:repeat a:count="10">
+              <a:tr>
+                <a:tc a:tcPr="leftMarker"/>
+                <a:tc a:tcPr="content1" a:tag="cTag#"/>
+                <a:tc a:tcPr="rightMarker"/>
+              </a:tr>
+              <a:tr>
+                <a:tc a:tcPr="leftSpacer"/>
+                <a:tc a:tcPr="centerSpacer"/>
+                <a:tc a:tcPr="rightSpacer"/>
+              </a:tr>              
+            </a:repeat>
+          </a:tbl>
+        </a:tc>
+      </a:tr>
+    </a:tbl>
+  </a:body>
+</a:document>

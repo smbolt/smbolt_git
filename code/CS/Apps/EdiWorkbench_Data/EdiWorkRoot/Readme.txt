@@ -1,0 +1,1 @@
+This folder "EdiWorkRoot" (in which this Readme file appears) has been created on April 2, 2014 by Steve Bolt.

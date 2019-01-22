@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SdxAdmin", "SdxAdmin.csproj", "{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{2D8D73C6-DEB6-4C1E-B4CA-2698E732B76A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Libs", "20 - Libs", "{43D2C984-326C-4304-95CE-760BD7FF0BC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Sdx.Business", "..\..\Libs\Org.Sdx.Business\Org.Sdx.Business.csproj", "{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7}.Debug|x86.Build.0 = Debug|Any CPU
+		{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7}.Release|x86.ActiveCfg = Release|Any CPU
+		{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7}.Release|x86.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F}.Debug|x86.Build.0 = Debug|Any CPU
+		{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F}.Release|x86.ActiveCfg = Release|Any CPU
+		{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{84A9077D-9BFC-4DA1-BA25-17C8CABAFAF7} = {2D8D73C6-DEB6-4C1E-B4CA-2698E732B76A}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {43D2C984-326C-4304-95CE-760BD7FF0BC3}
+		{ECD07AFB-BBF5-4C37-88D6-CCEDFB02779F} = {43D2C984-326C-4304-95CE-760BD7FF0BC3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B926D54-F8BD-4663-8277-30CCEEAD5AB4}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName0 = SdxAdmin.sln
+		SccProjectName0 = ../../Libs/Org.GS
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com
+		SccLocalPath0 = ..\\..\\Libs\\Org.GS
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

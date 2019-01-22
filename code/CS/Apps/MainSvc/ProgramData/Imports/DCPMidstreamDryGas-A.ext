@@ -1,0 +1,84 @@
+<ExtractSpecSet>
+  <ExtractSpec Name="DCPLindsayMidstreamDryGas-A" RecogSpecName="DCPLindsayMidstreamDryGas" Desc="DCP Lindsay Midstream Dry Gas (A)" >
+    <Tsd Name="ReportUnit" Iterate="True" IsReportUnit="True" BreakOnLine="0" >
+      <Cmd Code="SetTextStart(Operator Allocation Statement Report [eol],beg)" />
+      <Cmd Code="ProcessingCommand(PositionAdjust[10])" />
+      <Cmd Code="SetTextEnd(Operator Allocation Statement Report [eol],beg,orEnd)" />
+      <TsdSet>
+        <Tsd Name="Header">
+          <Cmd Code="SetTextStart()" />
+          <Cmd Code="SetTextEnd(WH MMBTU,beg)" />
+          <Cmd Code="LocateToken([bol] Prod Dt:)" />
+          <Cmd Code="SetGlobalVariable([date]ProductionDate,extractValue,[date])" />
+          <Cmd Code="LocateToken([bol] Acct Dt:)" />
+          <Cmd Code="SetGlobalVariable([date]AccountingDate,extractValue,[date])" />
+          <Cmd Code="LocateToken([bol] OPERATOR:)" />
+          <Cmd Code="SetGlobalVariable(OperatorID,extractValue)" />
+          <Cmd Code="LocateToken([bol] OPERATOR NAME:)" />
+          <Cmd Code="SetGlobalVariable(OperatorName,extractToEOL)" />
+        </Tsd>
+        <Tsd Name="Grid" Trim="True">
+          <Cmd Code="SetTextStart(WH MMBTU,end)" />
+          <Cmd Code="SetTextEnd()" />
+          <TsdSet>
+            <Tsd Name="GridRow" Iterate="True" NewWorksheet="True" >
+              <Cmd Code="SetTextStart($priorEnd)" />
+              <Cmd Code="SetTextEnd([eol],minTokens=9,trim)" />
+              <Cmd Code="SetRowIndex(+)" />
+              <Cmd Code="ExtractToken(Statement.RecordType,lit[Statement])" />   
+              <Cmd Code="ExtractToken([date]Statement.ProductionDate.mm/dd/yyyy,var[ProductionDate])" />
+              <Cmd Code="ExtractToken([date]Statement.AccountingDate.mm/dd/yyyy,var[AccountingDate])" />
+              <Cmd Code="ExtractToken([date]Statement.OperatorID,var[OperatorID])" />
+              <Cmd Code="ExtractToken([date]Statement.OperatorName,var[OperatorName])" />
+              <Cmd Code="TokenizeNextLine()" />
+              <Cmd Code="ExtractToken([decn]Statement.GrossWellheadMMBTU,stored,last)" />
+              <Cmd Code="ExtractToken([decn]Statement.GrossWellheadMCF,stored,last)" />
+              <Cmd Code="ExtractToken([decn]Statement.AllocationDecimal,stored,last)" />
+              <Cmd Code="ExtractToken(Statement.ContractNumber,stored,last)" />
+              <Cmd Code="SetVariable(MeterNumberBase,stored)" />
+              <Cmd Code="SetVariable(MeterNumberSuffix,stored,opt,[p'X'],[r'A|B|C|D|E'])" />
+              <Cmd Code="ExtractToken([decn]Statement.MeterNumber,var[MeterNumberBase|MeterNumberSuffix-o])" />
+              <!-- ONLY ONE OF THE FOLLOWING STATEMENTS WILL EXTRACT THE METER NAME - MAY NEED TO ADD ADDITIONAL VALUES -->
+              <Cmd Code="SetVariable(MeterName,stored,opt,join,trim,before=NULL|NULL)" />
+              <Cmd Code="SetVariable(MeterName,stored,opt,join,trim,before=BRADL|CHIT)" />
+              <Cmd Code="SetVariable(MeterName,stored,opt,join,trim,before=WATMO|CHIT)" />
+              <Cmd Code="SetVariable(MeterName,stored,opt,join,trim,before=RCRK|CHIT)" />
+              <Cmd Code="SetVariable(MeterName,stored,opt,join,trim,before=DCPD|NULL)" />
+              <Cmd Code="SetVariable(MeterName,stored,opt,join,trim,before=CHIT|CHIT)" />
+              <Cmd Code="ExtractToken(Statement.MeterName.stripPunctuation,var[MeterName],trim)" />
+            </Tsd>
+          </TsdSet>
+          
+        </Tsd>
+      </TsdSet>
+    </Tsd>
+  </ExtractSpec>
+</ExtractSpecSet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

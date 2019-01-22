@@ -1,0 +1,187 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSvcTest", "WebSvcTest.csproj", "{D11185A7-7A68-42B7-B789-1E338CA56448}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - App", "01 - App", "{1055879D-1A40-4DF8-93D2-AA16E208EFEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Libs", "10 - Libs", "{A6356B44-DED8-401F-B1A9-B97B43424FE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5282D6CB-E459-45CA-B0FA-A8CBA2FF0022}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 - Nuget", "99 - Nuget", "{41E39AF3-EEFD-44A5-9FAB-F84349156263}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.GS", "..\..\Libs\Org.GS\Org.GS.csproj", "{A43EC37D-35C1-4F80-9D14-978DA1312FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TP", "..\..\Libs\Org.TP\Org.TP.csproj", "{859B20F5-1182-4480-8CE5-F3A794A488B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.WSO", "..\..\Libs\Org.WSO\Org.WSO.csproj", "{371D3EDF-6965-4A65-919C-C49E1546FD33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.ZIP", "..\..\Libs\Org.ZIP\Org.ZIP.csproj", "{5DF092CA-0BBC-42D2-B16A-6D60C5B11F13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.DB", "..\..\Libs\Org.DB\Org.DB.csproj", "{A92C55EB-A2BF-4239-B87B-EEBD669584C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Dx.Business", "..\..\Libs\Org.Dx.Business\Org.Dx.Business.csproj", "{9FC01483-94A8-407B-AA5B-142390345FDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Notify", "..\..\Libs\Org.Notify\Org.Notify.csproj", "{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TSK", "..\..\Libs\Org.TSK\Org.TSK.csproj", "{7FA02D66-E682-4BDF-8487-75753948B2FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.TSK.Business", "..\..\Libs\Org.TSK.Business\Org.TSK.Business.csproj", "{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.WinSvc", "..\..\Libs\Org.WinSvc\Org.WinSvc.csproj", "{40604B3B-C130-44A8-9C4F-DE757AD152B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D11185A7-7A68-42B7-B789-1E338CA56448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11185A7-7A68-42B7-B789-1E338CA56448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11185A7-7A68-42B7-B789-1E338CA56448}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D11185A7-7A68-42B7-B789-1E338CA56448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11185A7-7A68-42B7-B789-1E338CA56448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D11185A7-7A68-42B7-B789-1E338CA56448}.Release|x86.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.ActiveCfg = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Debug|x86.Build.0 = Debug|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.ActiveCfg = Release|x86
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9}.Release|x86.Build.0 = Release|x86
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859B20F5-1182-4480-8CE5-F3A794A488B6}.Release|x86.ActiveCfg = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371D3EDF-6965-4A65-919C-C49E1546FD33}.Release|x86.ActiveCfg = Release|Any CPU
+		{5DF092CA-0BBC-42D2-B16A-6D60C5B11F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF092CA-0BBC-42D2-B16A-6D60C5B11F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF092CA-0BBC-42D2-B16A-6D60C5B11F13}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5DF092CA-0BBC-42D2-B16A-6D60C5B11F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF092CA-0BBC-42D2-B16A-6D60C5B11F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF092CA-0BBC-42D2-B16A-6D60C5B11F13}.Release|x86.ActiveCfg = Release|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC01483-94A8-407B-AA5B-142390345FDF}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FA02D66-E682-4BDF-8487-75753948B2FC}.Release|x86.ActiveCfg = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Debug|x86.Build.0 = Debug|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Release|x86.ActiveCfg = Release|Any CPU
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D11185A7-7A68-42B7-B789-1E338CA56448} = {1055879D-1A40-4DF8-93D2-AA16E208EFEE}
+		{5282D6CB-E459-45CA-B0FA-A8CBA2FF0022} = {41E39AF3-EEFD-44A5-9FAB-F84349156263}
+		{A43EC37D-35C1-4F80-9D14-978DA1312FA9} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+		{859B20F5-1182-4480-8CE5-F3A794A488B6} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+		{371D3EDF-6965-4A65-919C-C49E1546FD33} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+		{5DF092CA-0BBC-42D2-B16A-6D60C5B11F13} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+		{A92C55EB-A2BF-4239-B87B-EEBD669584C3} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+		{9FC01483-94A8-407B-AA5B-142390345FDF} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+		{AF48A2F1-1FF5-4BDD-8590-DBD874E638E1} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+		{7FA02D66-E682-4BDF-8487-75753948B2FC} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+		{AAD6C4FE-CA4E-4A3D-8F73-4EF5710348A0} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+		{40604B3B-C130-44A8-9C4F-DE757AD152B9} = {A6356B44-DED8-401F-B1A9-B97B43424FE2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B49D55AF-7822-41CD-BE75-CC0B1ACC0444}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gulfportenergy.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\Libs\\Org.TP\\Org.TP.csproj
+		SccProjectTopLevelParentUniqueName0 = WebSvcTest.sln
+		SccProjectName0 = ../../Libs/Org.TP
+		SccAuxPath0 = https://gulfportenergy.visualstudio.com
+		SccLocalPath0 = ..\\..\\Libs\\Org.TP
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\Libs\\Org.WSO\\Org.WSO.csproj
+		SccProjectTopLevelParentUniqueName1 = WebSvcTest.sln
+		SccProjectName1 = ../../Libs/Org.WSO
+		SccAuxPath1 = https://gulfportenergy.visualstudio.com
+		SccLocalPath1 = ..\\..\\Libs\\Org.WSO
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\..\\Libs\\Org.ZIP\\Org.ZIP.csproj
+		SccProjectTopLevelParentUniqueName2 = WebSvcTest.sln
+		SccProjectName2 = ../../Libs/Org.ZIP
+		SccAuxPath2 = https://gulfportenergy.visualstudio.com
+		SccLocalPath2 = ..\\..\\Libs\\Org.ZIP
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\..\\Libs\\Org.DB\\Org.DB.csproj
+		SccProjectTopLevelParentUniqueName3 = WebSvcTest.sln
+		SccProjectName3 = ../../Libs/Org.DB
+		SccAuxPath3 = https://gulfportenergy.visualstudio.com
+		SccLocalPath3 = ..\\..\\Libs\\Org.DB
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = ..\\..\\Libs\\Org.GS\\Org.GS.csproj
+		SccProjectTopLevelParentUniqueName4 = WebSvcTest.sln
+		SccProjectName4 = ../../Libs/Org.GS
+		SccAuxPath4 = https://gulfportenergy.visualstudio.com
+		SccLocalPath4 = ..\\..\\Libs\\Org.GS
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = ..\\..\\Libs\\Org.Dx.Business\\Org.Dx.Business.csproj
+		SccProjectTopLevelParentUniqueName5 = WebSvcTest.sln
+		SccProjectName5 = ../../Libs/Org.Dx.Business
+		SccAuxPath5 = https://gulfportenergy.visualstudio.com
+		SccLocalPath5 = ..\\..\\Libs\\Org.Dx.Business
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName6 = ..\\..\\Libs\\Org.Notify\\Org.Notify.csproj
+		SccProjectTopLevelParentUniqueName6 = WebSvcTest.sln
+		SccProjectName6 = ../../Libs/Org.Notify
+		SccAuxPath6 = https://gulfportenergy.visualstudio.com
+		SccLocalPath6 = ..\\..\\Libs\\Org.Notify
+		SccProvider6 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

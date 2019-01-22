@@ -1,0 +1,201 @@
+<w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+  <w:docDefaults xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:rPrDefault>
+      <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" w:eastAsiaTheme="minorHAnsi" w:cstheme="minorBidi" />
+      <w:sz w:val="22" />
+      <w:szCs w:val="22" />
+      <w:lang w:val="en-US" w:eastAsia="en-US" w:bidi="ar-SA" />
+    </w:rPrDefault>
+    <w:pPrDefault>
+      <w:spacing w:after="200" w:line="240" w:lineRule="exact" />
+    </w:pPrDefault>
+  </w:docDefaults>
+  <w:body name="body0" tag="1004">
+    <w:sectPr tag="1001">
+      <w:pgMar w:top="360" w:right="360" w:bottom="360" w:left="360" w:header="180" w:footer="0" w:gutter="0" />
+      <w:pgSz w:w="11520" w:h="7200" w:orient="portrait" />
+    </w:sectPr>
+    <w:tbl tag="1002" name="shell">
+      <w:tblPr>
+        <w:tblStyle w:val="TableGrid" />
+        <w:tblW w:w="5000" w:type="pct" />
+        <w:tblBorders>
+          <w:top w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+          <w:left w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+          <w:bottom w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+          <w:right w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+          <w:insideH w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+          <w:insideV w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+        </w:tblBorders>
+        <w:tblCellMar>
+          <w:top w:w="14" w:type="dxa" />
+          <w:left w:w="14" w:type="dxa" />
+          <w:bottom w:w="14" w:type="dxa" />
+          <w:right w:w="14" w:type="dxa" />
+        </w:tblCellMar>
+        <w:tblLook w:val="04A0" w:firstRow="true" w:lastRow="false" w:firstColumn="true" w:lastColumn="false" w:noHBand="false" w:noVBand="true" />
+      </w:tblPr>
+      <w:tr tag="1003" name="tr3">
+        <w:tc tag="r0" name="tc0">
+          <w:tcPr>
+            <w:tcW w:w="5000" w:type="pct" />
+          </w:tcPr>
+          <w:tbl tag="1005" name="header">
+            <w:tblPr>
+              <w:tblStyle w:val="TableGrid" />
+              <w:tblW w:w="5000" w:type="pct" />
+              <w:tblBorders>
+                <w:top w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:left w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:bottom w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:right w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:insideH w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:insideV w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+              </w:tblBorders>
+              <w:tblCellMar>
+                <w:top w:w="14" w:type="dxa" />
+                <w:left w:w="14" w:type="dxa" />
+                <w:bottom w:w="14" w:type="dxa" />
+                <w:right w:w="14" w:type="dxa" />
+              </w:tblCellMar>
+              <w:tblLook w:val="04A0" w:firstRow="true" w:lastRow="false" w:firstColumn="true" w:lastColumn="false" w:noHBand="false" w:noVBand="true" />
+            </w:tblPr>
+            <w:tr tag="1006" name="tr0">
+              <w:tc tag="1007" name="headerCell">
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct" />
+                  <w:trHeight w:val="1200" w:hRule="auto" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:color="BFBFBF" w:sz="1" w:space="0" w:shadow="false" w:frame="false" />
+                    <w:left w:val="single" w:color="BFBFBF" w:sz="1" w:space="0" w:shadow="false" w:frame="false" />
+                    <w:bottom w:val="single" w:color="BFBFBF" w:sz="1" w:space="0" w:shadow="false" w:frame="false" />
+                    <w:right w:val="single" w:color="BFBFBF" w:sz="1" w:space="0" w:shadow="false" w:frame="false" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p tag="1008" name="p0">
+                  <w:pPr>
+                    <w:pStyle w:val="ResumeTitle1" />
+                  </w:pPr>
+                  <w:pPr>
+                    <w:jc w:val="center" />
+                  </w:pPr>
+                  <w:r tag="1009">
+                    <w:rPr>
+                      <w:color w:val="000000" />
+                      <w:rFonts w:ascii="Calibri" />
+                      <w:b w:val="true" />
+                      <w:sz w:val="32" />
+                    </w:rPr>
+                    <w:t tag="1010">Steve M. Bolt</w:t>
+                  </w:r>
+                </w:p>
+                <w:p tag="1011" name="p1">
+                  <w:pPr>
+                    <w:jc w:val="center" />
+                  </w:pPr>
+                  <w:r tag="1012">
+                    <w:rPr>
+                      <w:color w:val="000000" />
+                      <w:rFonts w:ascii="Calibri" />
+                      <w:sz w:val="20" />
+                    </w:rPr>
+                    <w:t tag="1013">10313 S. Trafalgar Dr. Oklahoma City, OK 73139</w:t>
+                  </w:r>
+                </w:p>
+                <w:p tag="1014" name="p2">
+                  <w:pPr>
+                    <w:jc w:val="center" />
+                  </w:pPr>
+                  <w:r tag="1015">
+                    <w:rPr>
+                      <w:color w:val="0000ff" />
+                      <w:rFonts w:ascii="Calibri" />
+                      <w:sz w:val="20" />
+                      <w:u w:val="single" />
+                    </w:rPr>
+                    <w:t tag="1016">stephen.m.bolt@gmail.com</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:tbl tag="1017" name="profile">
+            <w:tblPr>
+              <w:tblStyle w:val="TableGrid" />
+              <w:tblW w:w="5000" w:type="pct" />
+              <w:tblBorders>
+                <w:top w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:left w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:bottom w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:right w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:insideH w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+                <w:insideV w:val="nil" w:color="auto" w:sz="0" w:space="0" w:shadow="false" w:frame="false" />
+              </w:tblBorders>
+              <w:tblCellMar>
+                <w:top w:w="14" w:type="dxa" />
+                <w:left w:w="14" w:type="dxa" />
+                <w:bottom w:w="14" w:type="dxa" />
+                <w:right w:w="14" w:type="dxa" />
+              </w:tblCellMar>
+              <w:tblLook w:val="04A0" w:firstRow="true" w:lastRow="false" w:firstColumn="true" w:lastColumn="false" w:noHBand="false" w:noVBand="true" />
+            </w:tblPr>
+            <w:tr tag="1018" name="tr1">
+              <w:tc tag="1019" name="profileHeader">
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct" />
+                  <w:trHeight w:val="0" w:hRule="auto" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:color="000000" w:sz="12" w:space="0" w:shadow="false" w:frame="false" />
+                    <w:left w:val="single" w:color="BFBFBF" w:sz="4" w:space="0" w:shadow="false" w:frame="false" />
+                    <w:bottom w:val="single" w:color="000000" w:sz="12" w:space="0" w:shadow="false" w:frame="false" />
+                    <w:right w:val="single" w:color="BFBFBF" w:sz="4" w:space="0" w:shadow="false" w:frame="false" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p tag="1020" name="p3">
+                  <w:pPr>
+                    <w:jc w:val="center" />
+                  </w:pPr>
+                  <w:r tag="1021">
+                    <w:rPr>
+                      <w:color w:val="000000" />
+                      <w:rFonts w:ascii="Calibri" />
+                      <w:sz w:val="22" />
+                      <w:b w:val="true" />
+                      <w:i w:val="false" />
+                    </w:rPr>
+                    <w:t tag="1022">High Level Technology and Management Profile</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <w:tr tag="1023" name="tr2">
+              <w:tc tag="1024" name="profileValue">
+                <w:tcPr>
+                  <w:tcW w:w="5000" w:type="pct" />
+                  <w:trHeight w:val="0" w:hRule="auto" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:color="BFBFBF" w:sz="1" w:space="0" w:shadow="false" w:frame="false" />
+                    <w:left w:val="single" w:color="BFBFBF" w:sz="1" w:space="0" w:shadow="false" w:frame="false" />
+                    <w:bottom w:val="single" w:color="BFBFBF" w:sz="1" w:space="0" w:shadow="false" w:frame="false" />
+                    <w:right w:val="single" w:color="BFBFBF" w:sz="1" w:space="0" w:shadow="false" w:frame="false" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p tag="1025" name="p4">
+                  <w:r tag="1026">
+                    <w:rPr>
+                      <w:color w:val="000000" />
+                      <w:rFonts w:ascii="Calibri" />
+                      <w:sz w:val="20" />
+                    </w:rPr>
+                    <w:t tag="1027">Highly accomplished senior technology professional with deep understanding and experience in a wide array of technologies and a long and successful career developing technology solutions to meet critical business needs.</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p tag="1028" name="p5" />
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+  </w:body>
+</w:document>

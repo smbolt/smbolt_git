@@ -1,0 +1,49 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="AppDomainManager">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$DEVPATH$" V="C:\DevProjects\Main\GitRepos\Org\Source\C#" />
+          <CI K="$COMPONENTCATALOG$" V="\\gulfport.net\data\Applications\Data_Integration\Test\ComponentCatalog" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="RunActionSetAtStartup" V="True" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="85" />
+          <CI K="MainFormVerticalSize" V="85" />
+        </CIGroup>
+        <CIGroup Name="DefaultConfigLogSpec">
+          <CI K="DefaultLogMethod" V="LocalFile" />
+          <CI K="DefaultLogDbSpecPrefix" V="Log" />
+          <CI K="DefaultLogPath" V="" />
+          <CI K="DefaultLogFileFrequency" V="Continuous" />
+          <CI K="DefaultLogFileSizeManagementMethod" V="TotalBytes" />
+          <CI K="DefaultLogFileSizeManagementAgent" V="Logger" />
+          <CI K="DefaultLogFileAgeMaxDays" V="60" />
+          <CI K="DefaultLogFileSizeMax" V="2000000" />
+          <CI K="DefaultLogFileSizeTrim" V="1500000" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="TaskConfiguration">
+          <DI K="Dummy" V="Dummy|Dummy|Org.PlugIn|Org.PlugIn.DummyPlugIn|Dummy" />
+          <DI K="CLScrape" V="CLScrape|CLScrape|Org.CLScrape.Tasks|Org.CLScrape.Tasks.CLScrapeTaskProcessor|CLScrape" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+      <FSActionSet>
+        <FSActionGroup Name="Copy_Dummy" Src="$DEVPATH$\Libs\Org.PlugIn\bin\Debug" Dst="$COMPONENTCATALOG$\Dummy">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite" IsActive="False">
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+      </FSActionSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

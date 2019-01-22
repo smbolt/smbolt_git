@@ -1,0 +1,30 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="Global">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="GlobalOption1" V="GlobalValue1" />
+        </CIGroup>
+      </CISet>
+    </ProgramConfig>
+    <ProgramConfig ConfigName="FileManager">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="MainFormHorizontalSize" V="90" />
+          <CI K="MainFormVerticalSize" V="93" />
+          <CI K="ArchiveSourceFolder" V="$IMPORTS$\Archive\Source" /> 
+          <CI K="ArchiveTargetFolder" V="$IMPORTS$\Archive\Target" />
+          <CI K="ExtractTargetFolder" V="$IMPORTS$\Extract\Target" />
+          <CI K="SegmentationSourceFolder" V="$IMPORTS$\Segmentation\Source" />
+          <CI K="SegmentationTargetFolder" V="$IMPORTS$\Segmentation\Target" />
+          <CI K="DesegmentationTargetFolder" V="$IMPORTS$\Desegmentation\Target" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

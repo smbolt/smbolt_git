@@ -1,0 +1,43 @@
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Clickable Chart</title>
+</head>
+<body style="margin:5px 0px 0px 5px">
+<script type="text/javascript">
+//
+//Client side script function to show and hide detail information.
+//
+function showInfo(year, revenue, grossMargin, backLog)
+{
+    var obj = document.getElementById('detailInfo');
+
+    if (!year)
+    {
+        obj.style.visibility = "hidden";
+        return;
+    }
+
+    var content = "<table border='1' cellpadding='3' style='font:10pt verdana; " +
+        "background-color:#CCCCFF' width='480px'>";
+    content += "<tr><td><b>Year</b></td><td width='300px'>" + year + "</td></tr>";
+    content += "<tr><td><b>Revenue</b></td><td>US$ " + revenue + "M</td></tr>";
+    content += "<tr><td><b>Gross Margin</b></td><td>" + grossMargin + "%</td></tr>";
+    content += "<tr><td><b>Back Log</b></td><td>US$ " + backLog + "M</td></tr>";
+    content += "</table>";
+
+    obj.innerHTML = content;
+    obj.style.visibility = "visible";
+}
+</script>
+<div style="font:bold 18pt verdana;">
+    Javascript Clickable Chart
+</div>
+<hr style="border:solid 1px #000080" />
+<!-- ****** Here is the chart viewer ****** -->
+@Html.Raw(ViewBag.Viewer.RenderHTML())
+<div id="detailInfo" style="margin-left:60px"></div>
+</body>
+</html>

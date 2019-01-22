@@ -1,0 +1,5 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\GraphicReportTest\obj\Debug\GraphicReportTest.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\GraphicReportTest\obj\Debug\Org.GraphicReportTest.frmMain.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\GraphicReportTest\obj\Debug\Org.GraphicReportTest.Properties.Resources.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\GraphicReportTest\obj\Debug\GraphicReportTest.csproj.GenerateResource.Cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\GraphicReportTest\obj\Debug\GraphicReportTest.csproj.CoreCompileInputs.cache

@@ -1,0 +1,29 @@
+<AppConfig>
+	<ProgramConfigSet>
+		<ProgramConfig ConfigName="NameTags">
+			<CISet>
+				<CIGroup Name="Options">
+					<CI K="DbSpecPrefix" V="CHCM" />
+				</CIGroup>
+				<CIGroup Name="CHCMConfigDbSpec">
+					<CI K="CHCMDbServer" V="104.168.147.171,36501" />
+					<CI K="CHCMDbName" V="CHCM" />
+					<CI K="CHCMDbUserId" V="sa" />
+					<CI K="CHCMDbPassword" V="gen126@Adsdi" />
+					<CI K="CHCMDbType" V="SqlServer" />
+					<CI K="CHCMDbUseWindowsAuth" V="False" />
+				</CIGroup>
+			</CISet>
+			<ConfigListSet>
+				<ConfigList Name="List1">
+					<LI V="Value1" />
+				</ConfigList>
+			</ConfigListSet>
+			<ConfigDictionarySet>
+				<ConfigDictionary Name="Dict1">
+					<DI K="Key1" V="Value1" />
+				</ConfigDictionary>
+			</ConfigDictionarySet>
+		</ProgramConfig>
+	</ProgramConfigSet>
+</AppConfig>

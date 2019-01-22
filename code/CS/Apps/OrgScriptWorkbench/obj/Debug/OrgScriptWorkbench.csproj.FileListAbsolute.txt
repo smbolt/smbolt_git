@@ -1,0 +1,5 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\OrgScriptWorkbench\obj\Debug\OrgScriptWorkbench.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\OrgScriptWorkbench\obj\Debug\Org.OrgScriptWorkbench.frmMain.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\OrgScriptWorkbench\obj\Debug\OrgScriptWorkbench.Properties.Resources.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\OrgScriptWorkbench\obj\Debug\OrgScriptWorkbench.csproj.GenerateResource.Cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\OrgScriptWorkbench\obj\Debug\OrgScriptWorkbench.csproj.CoreCompileInputs.cache

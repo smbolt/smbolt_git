@@ -1,0 +1,17 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\bin\Debug\Org.SF.dll.config
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\bin\Debug\Org.SF.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\bin\Debug\Org.SF.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\bin\Debug\FastColoredTextBox.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\bin\Debug\FastColoredTextBox.xml
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.frmConfig.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.frmDbConfig.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.frmProgress.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.frmSplash.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.frmTextDisplay.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.Resource1.resources
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.csproj.GenerateResource.Cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.SF\obj\Debug\Org.SF.pdb

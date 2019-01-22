@@ -1,0 +1,8 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TOCR\bin\Debug\Org.TOCR.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TOCR\bin\Debug\Org.TOCR.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TOCR\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TOCR\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TOCR\obj\Debug\Org.TOCR.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TOCR\obj\Debug\Org.TOCR.csproj.CoreCompileInputs.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TOCR\obj\Debug\Org.TOCR.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TOCR\obj\Debug\Org.TOCR.pdb

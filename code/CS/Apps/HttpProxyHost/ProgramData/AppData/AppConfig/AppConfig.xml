@@ -1,0 +1,34 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="HttpProxyHost">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="ConfigItem1" V="ConfigValue1" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+        <UIState>
+            <UIWindowSet>
+                <UIWindow Name="MainForm" TypeName="frmMain" StartPosition="CenterScreen" IsMainForm="True">
+                    <WindowLocation IsVisible="True" SizeMode="PercentOfScreen" Location="0,0" Size="0.9,0.95" />
+                </UIWindow>
+                <UIWindow Name="RawExtractedText" TypeName="RichTextViewer" WindowTitle="Raw Text Extract" StartPosition="Manual" WindowType="ToolWindow">
+                    <WindowLocation IsDocked="True" Location="2041,75" Size="1319,866" />
+                </UIWindow>
+                <UIWindow Name="ConfigEdit" TypeName="RichTextViewer" WindowTitle="Config Editor" StartPosition="Manual" WindowType="ToolWindow">
+                    <WindowLocation IsDocked="True" Location="3173,150" Size="1319,866" />
+                </UIWindow>
+            </UIWindowSet>
+        </UIState>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

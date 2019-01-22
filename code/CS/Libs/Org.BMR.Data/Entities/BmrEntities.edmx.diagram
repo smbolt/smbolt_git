@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f57cc6da68e848b599fcd4cd1063d19e" Name="Diagram1">
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AccountLoginToken" Width="1.5" PointX="7.5" PointY="59.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Address" Width="1.5" PointX="11.25" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AddressFormat" Width="1.5" PointX="9" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AddressType" Width="1.5" PointX="0.75" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AppLogDetail" Width="1.5" PointX="12.75" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AppLogDetailType" Width="1.5" PointX="10.5" PointY="56" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Calendar" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.ConfigItem" Width="1.5" PointX="3" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.ConfigItemType" Width="1.5" PointX="0.75" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Country" Width="1.5" PointX="6.75" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Coupon" Width="1.5" PointX="12" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.CouponType" Width="1.5" PointX="9.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.EmailAddress" Width="1.5" PointX="6" PointY="50.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.EmailAddressStatu" Width="1.5" PointX="6" PointY="48.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.EmailAddressType" Width="1.5" PointX="6" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Event" Width="1.5" PointX="8.25" PointY="63.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Group" Width="1.5" PointX="6" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.GroupMembership" Width="1.5" PointX="8.25" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.HolidayAction" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Module" Width="1.5" PointX="0.75" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Order" Width="1.5" PointX="6" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.OrderDetail" Width="1.5" PointX="11.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.OrgPerson" Width="1.5" PointX="5.25" PointY="76.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.OrgPersonType" Width="1.5" PointX="5.25" PointY="73" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.OrgStatu" Width="1.5" PointX="0.75" PointY="69.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.OrgType" Width="1.5" PointX="0.75" PointY="71.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PasswordChangeHistory" Width="1.5" PointX="3" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PasswordChangeReason" Width="1.5" PointX="0.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PeriodContext" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PersonAddress" Width="1.5" PointX="3" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PersonEmailAddress" Width="1.5" PointX="8.25" PointY="52.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PersonPhoneNumber" Width="1.5" PointX="6" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PersonType" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PhoneNumber" Width="1.5" PointX="10" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PhoneNumberFormat" Width="1.5" PointX="7.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PhoneNumberType" Width="1.5" PointX="3.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PoliticalUnit" Width="1.5" PointX="9" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PoliticalUnitType" Width="1.5" PointX="6.75" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PrivacyStatu" Width="1.5" PointX="0.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Product" Width="1.5" PointX="9" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.ProductCategory" Width="1.5" PointX="6.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Referral" Width="1.5" PointX="9" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.ReferralType" Width="1.5" PointX="6.75" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.RelatedOrg" Width="1.5" PointX="10" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.RelatedPerson" Width="1.5" PointX="11" PointY="43" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.RelationshipType" Width="1.5" PointX="7.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.ScheduledTask" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.ScheduledTaskParameter" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.SecurityQuestion" Width="1.5" PointX="3" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Service" Width="1.5" PointX="14.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Status" Width="1.5" PointX="0.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.StatusUsage" Width="1.5" PointX="3" PointY="62.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.sysdiagram" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.TaskSchedule" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.TaskScheduleElement" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.TaskScheduleExecutionType" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.TaskScheduleIntervalType" Width="1.5" PointX="3" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.TestTable1" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Address_AddressFormat" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Address_PoliticalUnit" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Address_PoliticalUnit1" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonAddress_AddressType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AppLogDetail_AppLogDetailTypeCode" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_ConfigItems_ConfigItemType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_ConfigItems_Module" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_ConfigItems_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PoliticalUnit_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Coupon_CouponType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonEmailAddress_EmailAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonEmailAddress_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonEmailAddress_EmailAddressType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AccountGroup_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AccountGroupMembership_AccountGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AccountGroupMembership_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_TaskScheduleElement_HolidayAction" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Order_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_OrderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Service_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_OrderDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_OrderDetail_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PasswordChangeHistory_PasswordChangeReason" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PasswordChangeHistory_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_TaskScheduleElement_PeriodContext" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonAddress_PrivacyStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonAddress_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonEmailAddress_PrivacyStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonPhoneNumber_PhoneNumberType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonPhoneNumber_PrivacyStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonPhoneNumber_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PhoneNumber_PhoneNumberFormat" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PoliticalUnit_PoliticalUnit" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PoliticalUnit_PoliticalUnitType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PoliticalUnit_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Product_ProductCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Product_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Service_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Referral_ReferralType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Referral_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_RelatedOrg_RelationshipType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_RelatedPerson_RelationshipType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_ScheduledTaskParameter_ScheduledTask" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_TaskSchedule_ScheduledTask" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_SecurityQuestion_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Service_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_StatusUsage_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_TaskScheduleElement_TaskSchedule" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_TaskScheduleElement_TaskScheduleExecutionType" ManuallyRouted="false" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_TaskScheduleElement_TaskScheduleIntervalType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.FrameworkVersion" Width="1.5" PointX="3" PointY="46.875" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Organization" Width="1.5" PointX="8" PointY="69.375" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.SoftwareModule" Width="1.5" PointX="12" PointY="33.5" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.SoftwareModuleType" Width="1.5" PointX="9.75" PointY="47.375" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.SoftwarePlatform" Width="1.5" PointX="3" PointY="41.25" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.SoftwareRepository" Width="1.5" PointX="3" PointY="44.125" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.SoftwareVersion" Width="1.5" PointX="14.25" PointY="34.375" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_FrameworkVersion_Status" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Group_Org1" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Org_Org1" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Org_OrgStatus11" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Org_OrgType1" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_OrgPerson_Org1" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_OrgPersonType_Org1" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_RelatedOrg_PrimaryOrg1" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_RelatedOrg_RelatedOrg1" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_SoftwareModule_SoftwareModuleType" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_SoftwareModule_Status" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_SoftwareVersion_SoftwareModule" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_SoftwarePlatform_Status" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_SoftwareVersion_SoftwarePlatform" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_SoftwareRepository_Status" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_SoftwareVersion_SoftwareRepository" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_SoftwareVersion_Status" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AccountStatu" Width="1.5" PointX="12.375" PointY="6.875" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AccountType" Width="1.5" PointX="14.375" PointY="0.875" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.PersonStatu" Width="1.5" PointX="14.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AccountTokenStatu" Width="1.5" PointX="14.375" PointY="9.75" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AccountLoginToken_AccountTokenStatus" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Person" Width="1.5" PointX="18.875" PointY="34.5" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Order_Person" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_OrgPerson_Person" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_PersonEmailAddress_Person" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_RelatedPerson_PrimaryPerson" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_RelatedPerson_RelatedPerson" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Resume" Width="1.5" PointX="21.875" PointY="36.125" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.ResumeStatu" Width="1.5" PointX="12.375" PointY="3.875" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Resume_ResumeStatus" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.Account" Width="1.5" PointX="16.625" PointY="33.75" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Account_Account" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Account_AccountStatus" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Account_AccountType" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Account_Org" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Account_SecurityQuestion" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AccountGroupMembership_Account" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AccountLoginToken_Account" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Order_Account" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Person_Account" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Referral_Account" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_Resume_Account" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AppLogEntity" Width="1.5" PointX="7.375" PointY="12.875" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AppLog" Width="1.5" PointX="18.875" PointY="41.875" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AppLog_Account" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AppLog_Account1" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AppLog_AppLogEntity" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AppLog_Event" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AppLog_Module" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AppLog_Org" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AppLogDetail_AppLog" />
+        <EntityTypeShape EntityType="Adsdi_OrgModel.AppLogSeverity" Width="1.5" PointX="14.375" PointY="3.875" />
+        <AssociationConnector Association="Adsdi_OrgModel.FK_AppLog_AppLogSeverity" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

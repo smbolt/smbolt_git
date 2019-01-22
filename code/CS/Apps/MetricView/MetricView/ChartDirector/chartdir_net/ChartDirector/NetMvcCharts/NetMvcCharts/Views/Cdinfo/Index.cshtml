@@ -1,0 +1,24 @@
+@{ Layout = null; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ChartDirector Information</title>
+</head>
+<body style="margin:5px 0px 0px 5px">
+    <div style="font:bold 18pt verdana;">
+        ChartDirector Information
+    </div>
+    <hr style="border:solid 1px #000080" />
+    <div style="font:10pt verdana;">
+        <ul style="list-style:square;">
+            <li>Description : @ViewBag.Description<br /><br /></li>
+            <li>Version : @ViewBag.MajorVersion.@ViewBag.MinorVersion.@ViewBag.MicroVersion<br /><br /></li>
+            <li>Copyright : @ViewBag.Copyright<br /><br /></li>
+            <li>Boot Log : <br /><ul><li>@Html.Raw(ViewBag.BootLog.Replace("\n", "</li><li>"))</li></ul><br /></li>
+            <li>Font Loading Test : <br /><ul><li>@Html.Raw(ViewBag.FontTest.Replace("\n", "</li><li>"))</li></ul></li>
+        </ul>
+    </div>
+</body>
+</html>

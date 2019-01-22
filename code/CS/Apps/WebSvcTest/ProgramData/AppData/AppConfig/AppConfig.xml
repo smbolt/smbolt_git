@@ -1,0 +1,212 @@
+﻿<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="WebSvcTest">
+      <CISet>
+        <CIGroup Name="Variables">
+          <CI K="$DEVPATH$" V="C:\DEV-MAIN\Main" />
+        </CIGroup>
+        <CIGroup Name="Options">
+          <CI K="SendFilesGenerate" V="10" />
+          <CI K="SecurityModel" V="Config" />
+          <CI K="RunActionSetAtStartup" V="True" />
+          <CI K="SelectedHost" V="LOCALHOST" />
+          <CI K="SelectedWebService" V="MainSvc (32001)" />
+          <CI K="SelectedTransaction" V="WsCommand" />
+          <CI K="UseConfigErrorForm" V="True" />
+          <CI K="FileName" V="\\gulfport.net\data\Applications\Data_Integration\Test\MidstreamPop_EQTDryGas\Manual\2829598_POOL_DTL_1.xlsx" />
+          <CI K="Parameters" V="True" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="80" />
+          <CI K="MainFormVerticalSize" V="90" />
+        </CIGroup>
+        <CIGroup Name="TestOptions">
+          <CI K="Frequency" V="1.0" />
+          <CI K="Duration" V="60" />
+        </CIGroup>
+        <CIGroup Name="WsHostConfigWsSpec">
+          <CI K="WsHostWsBinding" V="BasicHttp" />
+          <CI K="WsHostWsHost" V="localhost" />
+          <CI K="WsHostWsPort" V="36001" />
+          <CI K="WsHostWsServiceName" V="" />
+        </CIGroup>
+        <CIGroup Name="WinServiceConfigWsSpec">
+          <CI K="WinServiceWsBinding" V="BasicHttp" />
+          <CI K="WinServiceWsHost" V="OKCWEB1001" />
+          <CI K="WinServiceWsPort" V="32303" />
+          <CI K="WinServiceWsServiceName" V="" />
+        </CIGroup>
+        <CIGroup Name="Logging">
+          <CI K="LogMethod" V="LocalFile" />
+          <CI K="LogPath" V="" />
+          <CI K="LogFileFrequency" V="Continuous" />
+          <CI K="LogFileSizeManagementMethod" V="Aging" />
+          <CI K="LogFileSizeManagementAgent" V="Logger" />
+          <CI K="LogFileAgeMaxDays" V="20" />
+          <CI K="LogFileSizeMax" V="0" />
+          <CI K="LogFileSizeTrim" V="0" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="TransNames">
+          <LI V="WsCommand" />
+          <LI V="ServiceEngineCommand" />
+          <LI V="ExcelExtract" />
+          <LI V="PdfExtract" />
+          <LI V="Ping" />
+          <LI V="CheckForUpdates" />
+          <LI V="DownloadSoftware" />
+        </ConfigList>
+        <ConfigList Name="SubCommands">
+          <LI V="GetAssemblyReport" />
+          <LI V="GetAppDomainReport" />
+          <LI V="FlushAppDomains" />
+          <LI V="StartWinService" />
+          <LI V="StopWinService" />
+          <LI V="PauseWinService" />
+          <LI V="ResumeWinService" />
+          <LI V="GetWinServiceStatus" />
+          <LI V="GetWinerviceInfo" />
+          <LI V="GetWinServiceList" />
+          <LI V="StartWebSite" />
+          <LI V="StopWebSite" />
+          <LI V="GetWebSiteStatus" />
+          <LI V="GetWebSiteInfo" />
+          <LI V="GetWebServiceInfo" />
+          <LI V="GetWebSiteList" />
+          <LI V="StartAppPool" />
+          <LI V="RefreshTaskList" />
+          <LI V="RefreshTaskRequests" />
+          <LI V="GetRunningTaskReport" />
+        </ConfigList>
+        <ConfigList Name="SubCommandParameters">
+          <LI V="Start" />
+          <LI V="Stop" />
+          <LI V="Pause" />
+          <LI V="Resume" />
+        </ConfigList>
+        <ConfigList Name="UserGroups">
+          <LI V="WellMasterMinimal" />
+          <LI V="WellMasterEditAll" />
+          <LI V="WellMasterSiteAdmin" />
+          <LI V="UnlimitedUsers" />
+        </ConfigList>
+        <ConfigList Name="WorksheetsToInclude">
+          <LI V="VEX Summary" />
+          <LI V="WEX Summary" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="DevUsers">
+          <DI K="GPNET\L-GM5TK12" V="NREID" />
+          <DI K="GPNET\L-CBH0PN2" V="KROPER" />
+          <DI K="GPNET\L-D52CMC2" V="SBOLT" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="HostsAndEnvironments" >
+          <DI K="LOCALHOST" V="Dev" />
+          <DI K="OKC1WEB1001" V="Test" />
+          <DI K="OKC1WEB0001" V="Prod" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ServicesAndEnvironments" >
+          <DI K="MainSvc (32001)" V="Dev" />
+          <DI K="WinServiceHost (32101)" V="Dev" />          
+          <DI K="FileDataExtractWebService (32303)" V="Test" />
+          <DI K="ISO_FileDataExtractWebService (32304)" V="Test" />
+          <DI K="OpsMgmt01 (32302)" V="Test" />
+          <DI K="GPTaskService01 (32101)" V="Test" />
+          <DI K="GPTaskService02 (32102)" V="Test" />
+          <DI K="GPTaskService03 (32103)" V="Test" />
+          <DI K="GPTaskService04 (32104)" V="Test" />
+          <DI K="GPTaskService05 (32105)" V="Test" />          
+          <DI K="FileDataExtractWebService (36303)" V="Prod" />
+          <DI K="ISO_FileDataExtractWebService (36304)" V="Prod" />
+          <DI K="OpsMgmt01 (36302)" V="Prod" />
+          <DI K="GPTaskService01 (36101)" V="Prod" />
+          <DI K="GPTaskService02 (36102)" V="Prod" />
+          <DI K="GPTaskService03 (36103)" V="Prod" />
+          <DI K="GPTaskService04 (36104)" V="Prod" />
+          <DI K="GPTaskService05 (36105)" V="Prod" />
+        </ConfigDictionary>
+        <ConfigDictionary Name="ServiceNames" >
+          <DI K="MainSvc" V="MainSvc.svc" />
+          <DI K="FileDataExtractWebService" V="MainSvc.svc" />
+          <DI K="ISO_FileDataExtractWebService" V="MainSvc.svc" />
+          <DI K="OpsMgmt01" V="MainSvc.svc" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+      <FSActionSet>
+        <FSActionGroup Name="Copy_DxBusiness" Src="$DEVPATH$\Libs\Org.Dx.Business\bin\Debug" Dst="$MEFCATALOG$\DxBusiness">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite" IsActive="False">
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+        <FSActionGroup Name="Copy_WSO" Src="$DEVPATH$\Libs\Org.WSO\bin\Debug" Dst="$MEFCATALOG$\WSO">
+          <FSAction Name="Step1" FileSystemCommand="Copy" Dst="~\1.0.0.0" Options="Clear,Overwrite" IsActive="False">
+            <FSItem Name="*.dll" />
+            <FSItem Name="*.pdb" />
+          </FSAction>
+        </FSActionGroup>
+      </FSActionSet>
+      <ProgramFunctionControl>
+        <ProgramFunctionSet>
+          <ProgramFunction FunctionNumber="1" FunctionName="MinimalUse" />
+          <ProgramFunction FunctionNumber="2" FunctionName="EditAll" />
+          <ProgramFunction FunctionNumber="9" FunctionName="WebSiteAdmin" />
+          <ProgramFunction FunctionNumber="999" FunctionName="UnlimitedUse" />
+        </ProgramFunctionSet>
+        <ProgramRoleSet>
+          <ProgramRole RoleNumber="1" OrgRoleName="WellMasterMinimal" ClientRoleName="CLWellMasterMinimal" FunctionsAllowed="1" InheritedRoles="" CLSecurity="False" Hide="False" />
+          <ProgramRole RoleNumber="2" OrgRoleName="WellMasterEditAll" ClientRoleName="CLWellMasterEditAll" FunctionsAllowed="2,9,999" InheritedRoles="1" CLSecurity="False" Hide="False" />
+          <ProgramRole RoleNumber="9" OrgRoleName="WellMasterSiteAdmin" ClientRoleName="CLWellMasterSiteAdmin" FunctionsAllowed="2,9,999" InheritedRoles="1" CLSecurity="False" Hide="False" />
+          <ProgramRole RoleNumber="999" OrgRoleName="UnlimitedUsers" ClientRoleName="NotUsed" FunctionsAllowed="999" InheritedRoles="" CLSecurity="False" Hide="False" />
+        </ProgramRoleSet>
+      </ProgramFunctionControl>
+    </ProgramConfig>
+  </ProgramConfigSet>
+  <ConfigSecurity PasswordMinLth="6" PasswordMaxLth="20" PasswordReqMixCase="True" PasswordReqNbr="True" PasswordReqChgFreq="90">
+    <ConfigUserSet>
+      <ConfigUser UserType="Person" UserID="001" UserName="GPNET\sbolt" Password="wmpw" FirstName="Steve" LastName="Bolt" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="998" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="002" UserName="GPNET\ebrinker" Password="wmpw" FirstName="Erich" LastName="Brinker" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="001" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="003" UserName="GPNET\cmok" Password="wmpw" FirstName="Cheryn" LastName="Mok" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="001" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="004" UserName="GPNET\lelliott" Password="wmpw" FirstName="Lee" LastName="Elliott" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="001" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="005" UserName="GPNET\mcraft" Password="wmpw" FirstName="Mallory" LastName="Craft" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="001" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="006" UserName="GPNET\minimal" Password="wmpw" FirstName="Minimal" LastName="User" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="001" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+      <ConfigUser UserType="Person" UserID="007" UserName="GPNET\kroper" Password="wmpw" FirstName="Kelly" LastName="Roper" CompanyName="Gulfport" DepartmentName="Data Management">
+        <ConfigGroupAssignments>
+          <ConfigGroupAssignment GroupID="001" />
+        </ConfigGroupAssignments>
+      </ConfigUser>
+    </ConfigUserSet>
+    <ConfigGroupSet>
+      <ConfigGroup GroupID="001" GroupName="WellMasterMinimal" />
+      <ConfigGroup GroupID="002" GroupName="WellMasterEditAll" />
+      <ConfigGroup GroupID="998" GroupName="WellMasterSiteAdmin" />
+      <ConfigGroup GroupID="999" GroupName="UnlimitedUsers" />
+    </ConfigGroupSet>
+  </ConfigSecurity>
+</AppConfig>

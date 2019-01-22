@@ -1,0 +1,87 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="OpsManager">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="InitialEnv" V="Prod" />
+        </CIGroup>
+        <CIGroup Name="UIManagement">
+          <CI K="MainFormHorizontalSize" V="90" />
+          <CI K="MainFormVerticalSize" V="90" />
+        </CIGroup>
+        <CIGroup Name="TaskSchedulingProdConfigDbSpec">
+          <CI K="TaskSchedulingProdDbServer" V="OKC1EDW0001" />
+          <CI K="TaskSchedulingProdDbName" V="TaskScheduling" />
+          <CI K="TaskSchedulingProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TaskSchedulingTestConfigDbSpec">
+          <CI K="TaskSchedulingTestDbServer" V="OKC1EDW2001" />
+          <CI K="TaskSchedulingTestDbName" V="TaskScheduling" />
+          <CI K="TaskSchedulingTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="LoggingTestConfigDbSpec">
+          <CI K="LoggingTestDbServer" V="OKC1EDW2001" />
+          <CI K="LoggingTestDbName" V="Logging" />
+          <CI K="LoggingTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="LoggingProdConfigDbSpec">
+          <CI K="LoggingProdDbServer" V="OKC1EDW0001" />
+          <CI K="LoggingProdDbName" V="Logging" />
+          <CI K="LoggingProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="NotifyTestConfigDbSpec">
+          <CI K="NotifyTestDbServer" V="OKC1EDW2001" />
+          <CI K="NotifyTestDbName" V="Notifications" />
+          <CI K="NotifyTestDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="NotifyProdConfigDbSpec">
+          <CI K="NotifyProdDbServer" V="OKC1EDW0001" />
+          <CI K="NotifyProdDbName" V="Notifications" />
+          <CI K="NotifyProdDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="OpsMgmt01ProdConfigWsSpec">
+          <CI K="OpsMgmt01ProdWsBinding" V="BasicHttp" />
+          <CI K="OpsMgmt01ProdWsHost" V="OKC1WEB0001" />
+          <CI K="OpsMgmt01ProdWsPort" V="36305" />
+          <CI K="OpsMgmt01ProdWsServiceName" V="OpsMgmt02.svc" />
+        </CIGroup>
+        <CIGroup Name="OpsMgmt01TestConfigWsSpec">
+          <CI K="OpsMgmt01TestWsBinding" V="BasicHttp" />
+          <CI K="OpsMgmt01TestWsHost" V="OKC1WEB1001" />
+          <CI K="OpsMgmt01TestWsPort" V="32302" />
+          <CI K="OpsMgmt01TestWsServiceName" V="OpsMgmt01.svc" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="Environments">
+          <LI V="Test" />
+          <LI V="Prod" />
+        </ConfigList>
+        <ConfigList Name="WindowsServices">
+          <LI V="GPTaskService01" />
+          <LI V="GPTaskService02" />
+          <LI V="GPTaskService03" />
+          <LI V="GPTaskService04" />
+          <LI V="GPTaskService05" />
+          <LI V="GPTaskService06" />
+          <LI V="Smartsheet DataMesh Service" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="ServiceEndpoints" >
+          <DI K="Dev_WinServiceHost" V="LOCALHOST:32101" />
+          <DI K="Test_GPTaskService01" V="OKC1WEB1001:32101" />
+          <DI K="Test_GPTaskService02" V="OKC1WEB1001:32102" />
+          <DI K="Test_GPTaskService03" V="OKC1WEB1001:32103" />
+          <DI K="Test_GPTaskService04" V="OKC1WEB1001:32104" />
+          <DI K="Test_GPTaskService05" V="OKC1WEB1001:32105" />
+          <DI K="Prod_GPTaskService01" V="OKC1WEB0001:36101" />
+          <DI K="Prod_GPTaskService02" V="OKC1WEB0001:36102" />
+          <DI K="Prod_GPTaskService03" V="OKC1WEB0001:36103" />
+          <DI K="Prod_GPTaskService04" V="OKC1WEB0001:36104" />
+          <DI K="Prod_GPTaskService05" V="OKC1WEB0001:36105" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

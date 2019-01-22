@@ -1,0 +1,152 @@
+﻿Error	Meaning	Explanation
+0	The QuickBooks server processed the request successfully.	Status OK
+1	No match.	The filters used in the query request did not return any matching objects from QuickBooks.
+500	One or more objects cannot be found	The query request has not been fully completed. There was a required element("fieldValue") that could not be found in QuickBooks.
+501	Object not in this qbXML specification	Unable to represent objectName "fieldValue" in this version of the qbXML spec.
+510	Object cannot be returned	Unable to return object.
+530	Unsupported field	The field "fieldName" is not supported by this implementation.
+531	Unsupported enum value	The enum value "fieldValue" in the field "fieldName" is not supported by this implementation.
+550	Cannot save notes	The objectName object was saved successfully, but its corresponding Notes record could not be saved.
+560	Deprecated field used	This field will not always be supported.
+570	Cannot link to transaction	Unable to link to transaction "fieldValue" because it has already been closed.
+600	No cleared state to return	(For error recovery; no message is returned.)
+1000	Internal error	There has been an internal error when processing the request.
+1010	System not available	System not available
+1030	Unsupported message	This request is not supported by this implementation.
+1060	Invalid request ID	The request ID "fieldValue" is invalid, possibly too long, max 50 chars.
+3000	Invalid object ID	The given object ID "fieldValue" in the field "fieldName" is invalid.
+3010	Invalid Boolean	There was an error when converting the boolean value "fieldValue" in the field "fieldName"
+3020	Invalid date	There was an error when converting the date value "fieldValue" in the field "fieldName"
+3030	Invalid date range	Invalid date range: From date is greater than To date.
+3031	Invalid string range	The "From" or "To" values in the provided fieldName are invalid.
+3035	Invalid time interval	There was an error when converting the time interval "fieldValue" in the field "fieldName"
+3040	Invalid amount	There was an error when converting the amount "fieldValue" in the field "fieldName"
+3045	Invalid price	There was an error when converting the price "fieldValue" in the field "fieldName"
+3050	Invalid percentage	There was an error when converting the percent "fieldValue" in the field "fieldName"
+3060	Invalid quantity	There was an error when converting the quantity "fieldValue" in the field "fieldName"
+3065	Invalid GUID	There was an error when converting the GUID value "fieldValue" in the field "fieldName"
+3070	String too long	The string "fieldValue" in the field "fieldName" is too long.
+3080	Invalid string	The string "fieldValue" is invalid.
+3085	Invalid number	There was an error when converting the number "fieldValue" in the field "fieldName"
+3090	Invalid object name	There was an error when storing "fieldValue" in the "fieldName" field.
+3100	Name is not unique	The name "fieldValue" of the list element is already in use.
+3101	Resulting amount too large	Multiplying the rate and the quantity results in an amount that exceeds the maximum allowable amount.
+3110	Invalid enum value	The enumerated value "fieldValue" in the field "fieldName" is unknown.
+3120	Object not found	Object "fieldValue" specified in the request cannot be found.
+3121	OwnerID not found	Data Extension Definitions specified by OwnerID fieldValue not found for this object type.
+3130	Parent reference not found	There is an invalid reference to a parent "fieldValue" in the objectName list.
+3140	Reference not found	There is an invalid reference to QuickBooks fieldName "fieldValue" in the objectName.
+3150	Missing required element	There is a missing element "fieldName."
+3151	Invalid element for request	Cannot use the element "fieldName" in this request.
+3153	Element conflict in request	This error is returned whenever there is a conflict in the elements in the request. Each element has valid value, but their combination becomes invalid.
+3160	Object cannot be deleted	Cannot delete the object specified by the id = "fieldValue."
+3161	Cannot delete before closing date	An attempt was made to delete a fieldValue with a date that is on or before the closing date of the company. If you are sure you really want to do this, please ask a user with Admin privileges to remove the password for editing transactions on or before to closing date (this setting is in the Accounting Company Preferences), then try again.
+3162	Not allowed in multi-user mode	This operation is not allowed in multi-user mode.
+3170	Object cannot be modified	There was an error when modifying a fieldValue.
+3171	Cannot modify before closing date	An attempt was made to modify a fieldValue with a date that is on or before the closing date of the company. If you are sure you really want to do this, please ask a user with Admin privileges to remove the password for editing transactions on or before to closing date (this setting is in the Accounting Company Preferences), then try again.
+3172	Cannot modify prior to last condense	An attempt was made to modify a fieldValue with a date that is on or before the last inventory condensed date.
+3173	Related object deleted or modified	The related fieldName transaction object fieldValue was deleted or modified.
+3175	Object is in use	There was an error adding, modifying or deleting fieldValue because it is already in use.
+3176	Related object is in use	The related fieldName transaction object fieldValue is already in use." // "specified by the ID" is appended to fieldValue if necessary.
+3177	Duplicate AppliedToTxn IDs	The transaction object "fieldValue" may only be provided once in this request.
+3180	Object cannot be added	There was an error when saving a fieldValue.
+3185	Object cannot be voided	Cannot void the object specified by the id = "fieldValue"
+3190	Cannot clear required element	Cannot clear the element in the fieldName field.
+3200	Outdated edit sequence	The provided edit sequence "fieldValue" is out-of-date.
+3205	Invalid address	There was an error when composing an address in "fieldValue"
+3210	Other validation error	The "fieldName" field has an invalid value "fieldValue
+3220	Not authorized operation	There is no permission to perform this request, or the feature has been turned off in QuickBooks.
+3230	Status rollback	The request has been rolled-back.
+3231	Status unprocessed	The request has not been processed.
+3240	Time creation mismatch	Object "fieldValue" specified in the request cannot be found.
+3250	Feature not enabled	This feature is not enabled or not available in this version of QuickBooks.
+3260	Insufficient permissions	Insufficient permission level to perform this action.
+3261	Application has no sensitive data permission	The integrated application has no permission to access sensitive data.
+3262	Requires payroll subscription	In order to complete this request, the company data file has to be subscribed to the Intuit Payroll Service.
+3263	Not authorized for write access	This request cannot be completed because the integrated application had requested read-only access. Have the integrated application request read/write access, and have the QuickBooks administrator grant this access.
+3270	Missing posting account	Missing posting account.
+3280	Item type mismatch	The item "fieldValue" cannot be used in this line item. It does not have a correct type.
+3290	Item line out of order	The line items in the request are in a different order than the line items in the transaction.
+3300	Cannot open requested window	Could not open the requested objectName form or window.
+3301	Not allowed in unattended mode	Cannot perform this request unless an interactive QuickBooks user is logged in.
+3310	Unknown employee time status	Failed to save the Time Tracking transaction. The employee "fieldValue" provided in the TimeTrackingAdd request has the checkbox "Use time data to create paychecks" set to the Unknown state. Have your application ask the user whether or not to set time tracking for this employee. Then issue an EmployeeMod request to set this option to either True or False. If True, activities will be transferred to paychecks.
+3320	Could not create report	The required report could not be generated.
+3330	Invalid GUID for request	Cannot use the value "fieldValue" in the "fieldName" field in this request.
+3340	Not allowed in data event callback	This request cannot be processed from within a data event callback procedure.
+3350	Custom field list is full	Unable to define a new public data extension; the list of public extension definitions is full.
+3351	Invalid type for custom field	The value or values provided for AssignToObject or RemoveFromObject may not be used for public data extension requests.
+3352	Not allowed to reuse custom field	The data extension named "fieldValue" was previously defined with a different, incompatible AssignToObject. Unable to use the AssignToObject type in this request.
+3360	Callback app cannot be verified	The callback application cannot be found from the CLSID or ProgID provided in the subscription request.
+9001	Invalid checksum	(For error recovery; no message is returned.)
+9002	No stored response found	(For error recovery; no message is returned.)
+9003	Reinitialization problem	(For error recovery; no message is returned.)
+9004	Invalid message ID	(For error recovery; no message is returned.)
+9005	An error recovery record could not be saved	An attempt was made to save an error recovery record for a message set. The save operation failed and the record wasn't saved.
+9100	Macro name not unique	The macro name "fieldValue" is already in use; it may only be defined once.
+9101	Macro name too long	The macro name "fieldValue" is too long.
+9102	Macro name invalid	The macro name "fieldValue" contains invalid characters.
+9103	Macro substitution failure	The request was unable to use a macro value, probably due to an earlier error encountered when defining the macro.
+0x80040300	Attempted to retrieve a value before it has been set.
+0x80040301	Internal error interpreting the response.
+0x80040302	The given enum value is invalid.
+0x80040303	The given numeric value is out of range.
+0x80040304	The given string is longer than the maximum length allowed. (Note that for many strings, the maximum length is different for desktop versions of QuickBooks than for QuickBooks Online Edition.)
+0x80040305	The given value has an invalid format.
+0x80040306	Attempted to retrieve a value that has been set to empty.
+0x80040307	This message will indicate why the verification of the request set failed.
+0x80040308	Could not communicate with the QuickBooks SDK.
+0x80040309	The QuickBooks SDK is a pre-release version.
+0x8004030A	The given version of qbXML is not supported.
+0x8004030B	This feature is not supported in the specified version of qbXML.
+0x8004030C	This message set must be used with the QBSessionManager, not QBOESessionManager. -or- This message set must be used with the QBOESessionManager, not QBSessionManager.
+0x8004030D	HTTP-specific error text.
+0x8004030E	(Specific error-recovery messages will be sent with this HRESULT.)
+0x8004030F	This function is supported by a newer version of Request Processor.
+0x80040310	error recovery is enabled. Process or clear the saved Response status before issuing another request.
+0x80040311	The ConnectionTicket must be filled in.
+0x80040312	The Country value is invalid.
+0x80040400	QuickBooks found an error when parsing the provided XML text stream.
+0x80040401	Could not access QuickBooks.
+0x80040402	Unexpected error. Check the qbsdklog.txt file for possible, additional information.
+0x80040403	Could not open the specified QuickBooks company data file.
+0x80040404	The version of QuickBooks currently running does not support qbXML.
+0x80040405	qbXML components have not been installed.
+0x80040406	Could not determine the version of the QuickBooks company data file, or the data file has been modified and requires a newer version of QuickBooks.
+0x80040407	The installation of QuickBooks appears to be incomplete. Please reinstall QuickBooks.
+0x80040408	Could not start QuickBooks.
+0x80040409	The current version of QuickBooks cannot work with the specified company data file.
+0x8004040A	QuickBooks company data file is already open and it is different from the one requested.
+0x8004040B	Could not get the name of the current QuickBooks company data file.
+0x8004040C	BeginSession method has not been called or it did not succeed.
+0x8004040D	The ticket parameter is invalid.
+0x8004040E	There is not enough memory to complete the request.
+0x8004040F	The OpenConnection method has not been called.
+0x80040410	The QuickBooks company data file is currently open in a mode other than the one specified by your application.
+0x80040411	Before calling the BeginSession method, you must call the EndSession method to terminate the current session.
+0x80040412	You cannot make multiple successive calls to the OpenConnection method. Call CloseConnection before calling OpenConnection again.
+0x80040413	QuickBooks does not support the rollbackOnError value of the onError attribute.
+0x80040414	A modal dialog box is showing in the QuickBooks user interface. Your application cannot access QuickBooks until the user dismisses the dialog box.
+0x80040415	A call to the OpenConnection method must include the name of your application.
+0x80040416	If QuickBooks is not running, a call to the BeginSession method must include the name of the QuickBooks company data file.
+0x80040417	If the QuickBooks company data file is not open, a call to the BeginSession method must include the name of the data file.
+0x80040418	This application has not accessed this QuickBooks company data file before. Only the QuickBooks administrator can grant an application permission to access a QuickBooks company data file for the first time.
+0x80040419	This applications certificate is invalid. An application must have a valid certificate to access QuickBooks company data files.
+0x8004041A	This application does not have permission to access this QuickBooks company data file. The QuickBooks administrator can grant access permission through the Integrated Application preferences.
+0x8004041B	Unable to lock the necessary information to allow this application to access this company data file. Try again later.
+0x8004041C	An internal QuickBooks error occurred while trying to access the QuickBooks company data file.
+0x8004041D	This application is not allowed to log into this QuickBooks company data file automatically. The QuickBooks administrator can grant permission for automatic login through the Integrated Application preferences.
+0x8004041E	This applications certificate is expired. If you want to allow the application to log into QuickBooks automatically, log into QuickBooks and try again. Then click Allow Always when you are notified that the certificate has expired.
+0x8004041F	QuickBooks Basic cannot accept XML requests. Another product in the QuickBooks line, such as QuickBooks Pro or Premier, 2002 or later, is required.
+0x80040420	The QuickBooks user has denied access.
+0x80040421	The returned text is passed via the qbXML COM Request Processor directly from QuickBooks to your application and is not issued by the qbXML COM Request Processor itself. You may find it useful to copy the text verbatim to your message window.
+0x80040422	This application requires Single User file access mode and there is already another application sharing data with this QuickBooks company data file.
+0x80040423	The version of qbXML that was requested is not supported or is unknown.
+0x80040424	QuickBooks did not finish its initialization. Please try again later.
+0x80040425	Invalid parameter.
+0x80040426	Scripts are not allowed to call QBXMLRP.
+0x80040427	Unregistered QuickBooks.
+0x80040428	The current request processor does not support the request.
+0x80040429	The current messageset is not supported.
+0x8004042A	Remote access is not allowed.
+0x8004042B	Unsupported interface.
+0x8004042C	Certificate has been revoked.

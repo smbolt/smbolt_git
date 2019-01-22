@@ -1,0 +1,36 @@
+<AppConfig>
+  <ProgramConfigSet>
+    <ProgramConfig ConfigName="Metrics">
+      <CISet>
+        <CIGroup Name="Options">
+          <CI K="Env" V="Test" />
+          <CI K="MetricsDbSpecName" V="Metrics" />
+          <CI K="MetricObservationsDbSpecName" V="MetricObservations" />
+          <CI K="LoadLimit" V="50" />
+        </CIGroup>
+        <CIGroup Name="TestMetricsConfigDbSpec">
+          <CI K="TestMetricsDbServer" V="NB-99\SQL2014EE1" />
+          <CI K="TestMetricsDbName" V="Metrics" />
+          <CI K="TestMetricsDbType" V="SqlServer" />
+          <CI K="TestMetricsDbUseWindowsAuth" V="True" />
+        </CIGroup>
+        <CIGroup Name="TestMetricObservationsConfigDbSpec">
+          <CI K="TestMetricObservationsDbServer" V="NB-99\SQL2014EE1" />
+          <CI K="TestMetricObservationsDbName" V="MetricObservations" />
+          <CI K="TestMetricObservationsDbType" V="SqlServer" />
+          <CI K="TestMetricObservationsDbUseWindowsAuth" V="True" />
+        </CIGroup>
+      </CISet>
+      <ConfigListSet>
+        <ConfigList Name="List1">
+          <LI V="ListItem1" />
+        </ConfigList>
+      </ConfigListSet>
+      <ConfigDictionarySet>
+        <ConfigDictionary Name="Dictionary1">
+          <DI K="Key1" V="Value1" />
+        </ConfigDictionary>
+      </ConfigDictionarySet>
+    </ProgramConfig>
+  </ProgramConfigSet>
+</AppConfig>

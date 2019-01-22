@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IISLogUtility", "IISLogUtility.csproj", "{03F77724-045F-4574-8FBC-3B0767CACADD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03F77724-045F-4574-8FBC-3B0767CACADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F77724-045F-4574-8FBC-3B0767CACADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F77724-045F-4574-8FBC-3B0767CACADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F77724-045F-4574-8FBC-3B0767CACADD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD8D25BC-6B23-4DC7-BDBD-3DC28679B9E1}
+	EndGlobalSection
+EndGlobal

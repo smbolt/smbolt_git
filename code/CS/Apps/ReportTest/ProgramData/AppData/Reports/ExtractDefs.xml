@@ -1,0 +1,7 @@
+﻿<DXSet>
+  <DX Name="Extract1">
+    <DXColumnSet>
+      <DXColumn Name="Column1" />
+    </DXColumnSet>
+  </DX>
+</DXSet>

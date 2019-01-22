@@ -1,0 +1,12 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\bin\Debug\Org.Software.Data.dll.config
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\bin\Debug\Org.Software.Data.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\bin\Debug\Org.Software.Data.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\bin\Debug\EntityFramework.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\bin\Debug\Org.DB.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\bin\Debug\Org.DB.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\bin\Debug\EntityFramework.xml
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\obj\Debug\Org.Software.Data.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\obj\Debug\Org.Software.Data.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Software.Data\obj\Debug\Org.Software.Data.pdb

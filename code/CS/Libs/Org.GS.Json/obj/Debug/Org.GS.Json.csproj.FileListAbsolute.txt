@@ -1,0 +1,13 @@
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\bin\Debug\Org.GS.Json.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\bin\Debug\Org.GS.Json.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\bin\Debug\Newtonsoft.Json.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\bin\Debug\Org.GS.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\bin\Debug\Org.JSON.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\bin\Debug\Org.GS.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\bin\Debug\Org.JSON.pdb
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\bin\Debug\Org.JSON.dll.config
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\bin\Debug\Newtonsoft.Json.xml
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\obj\Debug\Org.GS.Json.csprojResolveAssemblyReference.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\obj\Debug\Org.GS.Json.csproj.CoreCompileInputs.cache
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\obj\Debug\Org.GS.Json.dll
+C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.GS.Json\obj\Debug\Org.GS.Json.pdb
