@@ -1,2 +1,0 @@
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.ApiClient\obj\Debug\Org.ApiClient.csprojAssemblyReference.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.ApiClient\obj\Debug\Org.ApiClient.csproj.CoreCompileInputs.cache

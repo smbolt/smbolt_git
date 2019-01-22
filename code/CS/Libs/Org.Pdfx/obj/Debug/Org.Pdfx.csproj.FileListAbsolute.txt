@@ -1,7 +1,0 @@
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Pdfx\bin\Debug\Org.Pdfx.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Pdfx\bin\Debug\Org.Pdfx.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Pdfx\bin\Debug\Org.GS.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Pdfx\bin\Debug\Org.GS.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Pdfx\obj\Debug\Org.Pdfx.csprojResolveAssemblyReference.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Pdfx\obj\Debug\Org.Pdfx.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.Pdfx\obj\Debug\Org.Pdfx.pdb

@@ -1,9 +1,0 @@
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TP\bin\Debug\Org.TP.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TP\bin\Debug\Org.TP.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TP\bin\Debug\Org.GS.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TP\bin\Debug\Org.GS.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TP\obj\Debug\Org.TP.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TP\obj\Debug\Org.TP.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TP\obj\Debug\Org.TP.csprojAssemblyReference.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TP\obj\Debug\Org.TP.csproj.CoreCompileInputs.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.TP\obj\Debug\Org.TP.csproj.CopyComplete

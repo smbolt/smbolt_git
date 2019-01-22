@@ -1,6 +1,0 @@
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.HttpProxy\bin\Debug\Org.HttpProxy.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.HttpProxy\bin\Debug\Org.HttpProxy.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.HttpProxy\obj\Debug\Org.HttpProxy.csprojAssemblyReference.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.HttpProxy\obj\Debug\Org.HttpProxy.csproj.CoreCompileInputs.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.HttpProxy\obj\Debug\Org.HttpProxy.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.HttpProxy\obj\Debug\Org.HttpProxy.pdb

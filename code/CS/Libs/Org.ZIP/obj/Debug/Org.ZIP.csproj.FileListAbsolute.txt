@@ -1,7 +1,0 @@
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.ZIP\bin\Debug\Org.ZIP.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.ZIP\bin\Debug\Org.ZIP.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.ZIP\bin\Debug\Org.GS.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.ZIP\bin\Debug\Org.GS.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.ZIP\obj\Debug\Org.ZIP.csprojResolveAssemblyReference.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.ZIP\obj\Debug\Org.ZIP.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.ZIP\obj\Debug\Org.ZIP.pdb

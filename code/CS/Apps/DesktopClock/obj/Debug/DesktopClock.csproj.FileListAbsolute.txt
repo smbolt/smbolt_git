@@ -1,9 +1,0 @@
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DesktopClock\bin\Debug\DesktopClock.exe.config
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DesktopClock\bin\Debug\DesktopClock.exe
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DesktopClock\bin\Debug\DesktopClock.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DesktopClock\obj\Debug\DesktopClock.csprojResolveAssemblyReference.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DesktopClock\obj\Debug\DesktopClock.Form1.resources
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DesktopClock\obj\Debug\DesktopClock.Properties.Resources.resources
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DesktopClock\obj\Debug\DesktopClock.csproj.GenerateResource.Cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DesktopClock\obj\Debug\DesktopClock.exe
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Apps\DesktopClock\obj\Debug\DesktopClock.pdb

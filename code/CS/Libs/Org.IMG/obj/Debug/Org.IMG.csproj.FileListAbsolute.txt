@@ -1,9 +1,0 @@
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.IMG\obj\Debug\Org.IMG.csprojResolveAssemblyReference.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.IMG\obj\Debug\Org.IMG.csproj.CoreCompileInputs.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.IMG\bin\Debug\Org.IMG.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.IMG\bin\Debug\Org.IMG.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.IMG\bin\Debug\ImageProcessor.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.IMG\bin\Debug\Org.GS.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.IMG\bin\Debug\Org.GS.pdb
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.IMG\obj\Debug\Org.IMG.dll
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.IMG\obj\Debug\Org.IMG.pdb

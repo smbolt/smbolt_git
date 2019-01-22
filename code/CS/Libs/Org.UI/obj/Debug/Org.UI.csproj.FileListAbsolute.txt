@@ -1,6 +1,0 @@
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.UI\obj\Debug\Org.UI.csprojResolveAssemblyReference.cache
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.UI\obj\Debug\Org.UI.NavButton.resources
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.UI\obj\Debug\Org.UI.NavSection.resources
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.UI\obj\Debug\Org.UI.UIBase.resources
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.UI\obj\Debug\Org.UI.UIPanel.resources
-C:\DevProjects\Main\GitRepos\Org\Source\C#\Libs\Org.UI\obj\Debug\Org.UI.csproj.GenerateResource.Cache
