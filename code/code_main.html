@@ -164,7 +164,7 @@
      it has been used, corrected, optimized, etc. repetitively across several years.
   </p>
   <p>
-     To implement a new instance of the task-processing service, you simply copy the binaries of the service to a new directory, run a PowerShell commmand to create a 
+     To implement a new instance of the task-processing service, you simply copy the executable code for the service to a new directory, run a commmand to create a 
      new Windows Service definition pointing to the main executable, move some "blue modules" (containing the desired business functions) into a subordinate directory 
      (so they can be discovered and loaded at run-time), update an operations control database with the task's schedule, parameters and notification configurations...
      then simply start the service using the operating system's Service Control Manager.  This can be done in less than 30 minutes by someone following directions.  
@@ -172,27 +172,28 @@
   </p>
   <p>
      Building new modules can be done very rapidly because they all adhere to the same, very simple interface and follow a consistent pattern of structure and behavior.  
-     There is no need to build anything that outside of the new "blue module" - scheduling, parameterization, logging, configuration, exception handling, 
+     There is no need to build anything that outside of the new "blue module".  Scheduling, parameterization, logging, configuration, exception handling, 
      notifications, a multi-threaded engine and more are all part of the very capable run-time "socket" into which the modules are loaded and run. 
   </p> 
   <p>
-     With these libraries I can focus on delivering <span style="font-style:italic;text-decoration: underline;">business value</span> instead of building 
+     With these libraries I can focus on delivering <span style="font-style:italic;text-decoration: underline;">business value</span> instead of having to build  
      <span style="font-style:italic;text-decoration: underline;">again</span> the necessary <span style="font-style:italic;text-decoration: underline;">operational overhead</span> 
      functions for applications.  And from an operations standpoint (concerning security, stability, reliability, performance, threading and much  more), 
      I like to say (because it has been my objective in building this and my experience in multiple environments) it simply "runs like a refrigerator" - by which 
      I mean, it just sits there and hums, doesn't cause any trouble and gets its work done on time. 
   </p> 
   <p> 
-     The Task Processing Framework (TPFX) is simply a completely generic and totally reusable framework. It is completely focused on providing business value by 
-     enabling business-value-creating modules to be developed very quickly. These value-creating modules thus have a solid "run-time home" and are freed from having  
-     to worry about (or even to know about) anything that exists outside of each module's specific <span style="font-style:italic;text-decoration: underline;">
-     business-value-providing</span> concerns. Everything else is provided by the framework.  All of the <span style="font-style:italic;text-decoration: underline;">
-     opertional</span> requirements have been met in a scope that is fully outside the visibiliy and concerns of the <span style="font-style:italic;text-decoration: 
-     underline;">business-focused</span> modules. 
+     The Task Processing Framework (TPFX) is simply a completely generic and totally reusable framework for automating technology-based business functions. 
+     It is completely focused on providing business value by enabling business value-creating modules to be developed very quickly. These value-creating modules thus 
+     have a solid "run-time home" and are freed from having to worry about (or even to know about) anything that exists outside of each module's specific 
+     <span style="font-style:italic;text-decoration: underline;"> business value-providing</span> concerns. Everything else is provided by the framework.  
+     All of the <span style="font-style:italic;text-decoration: underline;"> opertional</span> requirements have been met in a scope that is fully outside 
+     the visibiliy and concerns of the <span style="font-style:italic;text-decoration:underline;">business-focused</span> modules. 
   </p>
   <p>
-    <span style="font-style:italic;text-decoration: underline;">This</span> is what I mean when I speak of application systems architecture. And this is the kind
-    of design I am referring to when I talk about technology finding its purpose in being totally focused on providing business value.
+    <span style="font-style:italic;text-decoration: underline;">This</span> is what I mean when I speak of <span style="font-style:italic;text-decoration: underline;">
+    application systems architecture.</span> And this is the kind of design I am referring to when I speak about technology fulfilling its purpose in being totally 
+    focused on providing business value.
   </p>
   <br/>
 
